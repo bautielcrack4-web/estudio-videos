@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794177754.8328652,
+ "actualizado": 1794177817.8625164,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0298,
+  "deepseek": 0.0394,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0298
+  "total": 0.0394
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "1640 guion.txt\nVALIDAR /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- · etapa guion\n  ✓ guion: 1641 palabras (esperado 1105-1724 para 10 min)\nRESULTADO: OK"
-  },
-  {
-   "k": "ai",
-   "t": "Guion OK (1641 palabras). Lanzo la voz en segundo plano."
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p gates qc sfx segments && nohup python /opt/estudio/repo/motor/tools/voz.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/voz/voz.log 2>&1 & echo \"PID: $!\""
-  },
-  {
-   "k": "res",
-   "t": "PID: 3854"
-  },
-  {
-   "k": "ai",
-   "t": "Mientras la voz corre, uso `esperar.py` (no hago polling a mano)."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/voz/master.wav --timeout 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/voz/master.wav (53.3 MB, 115 s)"
-  },
-  {
-   "k": "tool",
-   "t": "tail -20 voz/voz.log; echo \"---\"; ls -la voz/; echo \"---\"; python -c \"\nimport wave\nw=wave.open('voz/master.wav')\nprint(w.getnframes()/w.getframerate(), 'seconds')\n\""
-  },
-  {
-   "k": "res",
-   "t": "voz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 4 bloques · 8381 caracteres\n  ✓ bloque 0: 148 s (s2.1-pro-free)\n  ✓ bloque 1: 173 s (s2.1-pro-free)\n  ✓ bloque 2: 185 s (s2.1-pro-free)\n  ✓ bloque 3: 99 s (s2.1-pro-free)\n✓ voz/master.wav 10.1 min\n---\ntotal 104060\ndrwxrwxrwx+  2 runner runner     4096 Nov  8 22:39 .\ndrwxrwxrwx+ 10 runner runner     4096 Nov  8 22:37 ..\n-rw-rw-rw-+ "
-  },
-  {
-   "k": "ai",
-   "t": "Voz lista (10.1 min). Ahora los tiempos por palabra."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- en 2>&1 | tail -5; echo \"---\"; python -c \"\nimport json\nc=json.load(open('captions.json'))\nprint(len(c), 'palabras')\nprint(c[0])\nprint(c[-1])\n\""
-  },
-  {
-   "k": "res",
-   "t": "✓ captions.json: 1634 palabras en 10.1 min\n---\n1634 palabras\n{'text': ' Hello,', 'startMs': 0, 'endMs': 460, 'timestampMs': 0, 'confidence': 1.0}\n{'text': ' in.', 'startMs': 603436, 'endMs': 603836, 'timestampMs': 603436, 'confidence': 1.0}"
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'EOF'\nimport json\nc=json.load(open('captions.json'))\n# build segments split at gaps > 350ms\nsegs=[]\ncur=[]\nprev_end=None\nfor w in c:\n    if prev_end is not None and w['startMs']-prev_end > 350:\n        segs.append((cur[0]['startMs'], prev_end, ' '.join(x['text'].strip() for x in cur)))\n        cur=[]\n    cur.append(w)\n    prev_end=w['endMs']\nif cur: segs.append((cur[0]['startMs'], prev_"
-  },
   {
    "k": "res",
    "t": "  0    0.00-   4.68 ( 4.68s) Hello, please come in. Sit here by the window where the light is good.\n  1    6.06-   8.96 ( 2.90s) I want to begin with a number. Two minutes.\n  2    9.34-  15.16 ( 5.82s) That is how long my mother stood at the basin in her kitchen every evening, washing her hands.\n  3   15.76-  27.52 (11.76s) Not two minutes with a cream, not with a bottle from a shop. Two minutes w"
@@ -178,6 +126,58 @@
   {
    "k": "res",
    "t": "# -*- coding: utf-8 -*-\r\n\"\"\"Avatar con InfiniteTalk (RunPod), UNA sola llamada por video (US$0,25 aprox.).\r\n   python <APP>/tools/avatar_it.py <carpeta_del_video> > <carpeta>/avatar/it.log 2>&1        (en segundo plano)\r\n\r\nLee <carpeta>/avatar_ranges.json (TODAS las ventanas donde se ve el avatar, plan CERRADO), voz/master.wav y la foto del\r\npresentador refs/avatar.png (máxima resolución, mirando "
+  },
+  {
+   "k": "ai",
+   "t": "Plan válido para la llamada única (352 s de reel, < 590). Lanzo el avatar ya y sigo con las fotos en paralelo."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log 2>&1 & echo \"avatar PID: $!\"; sleep 5; tail -5 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "avatar PID: 4890\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada"
+  },
+  {
+   "k": "ai",
+   "t": "Ahora escribo los 65 prompts (60 planos + 5 pantallas partidas), con 6 ideas creativas y sus detalles narrativos."
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\nimport json, os\n\nB = \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-\"\nT = (\"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n     \"slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\")\nTE = T + \", wrinkles, age spots, flyaway grey hairs\"\nAV = \"cinematic lighti"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/prompts.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python prompts.py"
+  },
+  {
+   "k": "res",
+   "t": "total prompts: 66\npedidos_01: 9 | pedidos_02: 57"
+  },
+  {
+   "k": "tool",
+   "t": "python -c \"\nimport json\nP=json.load(open('prompts_all.json')); ids={p['id'] for p in P}\nQ=json.load(open('planos.json')); need=[q['id'] for q in Q]\nfalta=[i for i in need if i not in ids and i!='p001']\nprint('planos:',len(need),'prompts:',len(ids))\nprint('faltan:',falta)\nprint('sobran:',sorted(ids-set(need)))\n\""
+  },
+  {
+   "k": "res",
+   "t": "planos: 65 prompts: 66\nfaltan: ['p035']\nsobran: ['p001_a', 'p001_b', 'p001_c']"
+  },
+  {
+   "k": "ai",
+   "t": "Falta p035. Lo agrego."
+  },
+  {
+   "k": "tool",
+   "t": "add(\"p035\", cara=True, type=TE,\n    moment=\"Sitting on the edge of the futon before bed, she opens her hands in her lap and looks at them, the quiet end of the ritual.\",\n    subject=\"the presenter seated on the edge of a futon\",\n    action=\"opening both hands palm up in her lap, her head bent, looking down at them\",\n    props=[\"a futon with a folded quilt\", \"a low floor lamp\", \"a teacup\", \"glasses"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/prompts.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   }
  ],
  "maquinas": 2,
