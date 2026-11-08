@@ -134,14 +134,18 @@ for r in ranges:
         q = esp(None, "Esperando avatar", "avatar", "sin_cuadro")
         if q: out.append([q, r["startMs"], r["endMs"], False])
 out.sort(key=lambda c: c[1])
-if _XR:   # huecos que dejaron las piezas: los tapa la foto vecina; si no hay, la pieza se queda quieta en su último cuadro (≤ 1,5 s)
-    for i in range(len(out) - 1):
-        c, d = out[i], out[i + 1]
-        if d[1] - c[2] <= 0: continue
-        if not c[3]: c[2] = d[1]
-        elif not d[3]: d[1] = c[2]
-        elif "/extrema/" in c[0] and d[1] - c[2] <= 1500: c[2] = d[1]
-        elif d[1] - c[2] <= 800: c[2] = d[1]                 # avatar que sigue un instante más (su clip continúa o queda quieto)
+# Sin huecos en la línea de tiempo, con o sin Edición extrema: los planos se pegan uno tras otro, así que un hueco (las piezas, o el
+# recorte de foto < 0,5 s que se descarta arriba) adelanta TODO lo que viene después y los labios se desfasan de la voz.
+# Los tapa la foto vecina; si no hay, la pieza se queda quieta en su último cuadro (≤ 1,5 s). El arranque de un video no se mueve (lipsync).
+if out and out[0][1] > 0 and not out[0][3]: out[0][1] = 0
+for i in range(len(out) - 1):
+    c, d = out[i], out[i + 1]
+    if d[1] - c[2] <= 0: continue
+    if not c[3]: c[2] = d[1]
+    elif not d[3]: d[1] = c[2]
+    elif "/extrema/" in c[0] and d[1] - c[2] <= 1500: c[2] = d[1]
+    elif d[1] - c[2] <= 800: c[2] = d[1]                 # avatar que sigue un instante más (su clip continúa o queda quieto)
+    else: print("⚠ HUECO sin tapar entre dos videos en", c[2], "ms: el video se va a adelantar", d[1] - c[2], "ms")
 # plan.json (lo dibuja el panel y lo revisa validar.py) sale de acá: nunca lo escribas a mano aparte
 def kind(p, isv):
     q = p.replace("\\", "/")
