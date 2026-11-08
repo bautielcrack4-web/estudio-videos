@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794179086.9816396,
+ "actualizado": 1794179150.058474,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.065,
+  "deepseek": 0.0673,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.2072
+  "total": 0.2095
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --shots && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa fotos --min 10"
-  },
-  {
-   "k": "res",
-   "t": "✓ shots_timed.json: 60 planos, 60 fotos distintas (cero repetidas). Seguí con render.py.\nVALIDAR /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- · etapa fotos\n  ✓ guion: 1641 palabras (esperado 1105-1724 para 10 min)\n  ✓ fotos: 68 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\nRESULTADO: OK"
-  },
-  {
-   "k": "tool",
-   "t": "cat >> gates/fotos_auto.txt <<'EOF'\n\nCONTROL FOTOS · lote grande (58 + 1 rehecha)\n\nRevisadas en 6 hojas (qc/hoja_A..F.jpg, 68 archivos):\n- A (p001-p012): todas bien; p011 salió con una persona joven en shorts vista de espaldas (no encajaba) → REHECHA.\n  La nueva p011 muestra la mano de una mujer mayor, la manga del cardigan y el paño en la canilla: correcta.\n- B (p013-p024): bien; las creativas p0"
-  },
-  {
-   "k": "res",
-   "t": "render pid: 11025\n---AVATAR---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 20; tail -12 render_test.log; echo \"---\"; ls segments/ 2>/dev/null | head; echo \"---AVATAR---\"; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "AVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A53.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A54.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A55.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A56.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A57.mp4\nAVATAR PENDIENT"
-  },
-  {
-   "k": "tool",
-   "t": "tail -3 render_test.log; pgrep -f \"render.py.*--limit 10\" || echo \"render terminado\"; ls segments/*.mp4 | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "AVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A62.mp4\nclips=123 frames=18120 (604.00s)\nhechos 10\n3564\n3566\n11476\n10"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg $(ls segments/*.mp4 | head -10) && echo ok"
-  },
   {
    "k": "res",
    "t": "hoja: qc/hoja_render.jpg (10 cuadros, 4x3)\nok"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback\" --timeout 540; echo \"---\"; tail -3 avatar/it.log; echo \"---RENDER---\"; tail -2 render.log"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 22:43:17 estado: IN_QUEUE · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n---RENDER---\nclips=123 frames=18120 (604.00s)\nhechos 123"
+  },
+  {
+   "k": "ai",
+   "t": "El render completo terminó. El avatar sigue en cola. Reviso una muestra de segmentos del resto del video."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render2.jpg segments/0030.mp4 segments/0050.mp4 segments/0070.mp4 segments/0090.mp4 segments/0105.mp4 segments/0118.mp4 && grep -i \"error\\|warn\\|falta\\|pendiente\" render.log | head -5"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_render2.jpg (6 cuadros, 4x2)\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A0.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A1.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A2.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A3.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de "
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_render2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 4890 -o pid,etime,cmd --no-headers || echo \"avatar process not running\"; echo \"---\"; cat avatar/it_llamada.json 2>/dev/null; echo; date"
+  },
+  {
+   "k": "res",
+   "t": "   4890       23:03 python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-\n---\n{\n \"estado\": \"corriendo\",\n \"t\": \"2026-11-08 22:42:46\",\n \"ventanas\": [\n  \"avatar/A0.mp4\",\n  \"avatar/A1.mp4\",\n  \"avatar/A2.mp4\",\n  \"avatar/A3.mp4\",\n  \"avatar/A4.mp4\",\n  \"avatar/A5.mp4\",\n  \"avatar/A6.mp4\",\n  \"avatar/A7.mp4\",\n  \"avatar/A8.mp4\",\n  \"avatar/A9.mp4\","
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -3 avatar/it.log"
   }
  ],
  "maquinas": 2,
