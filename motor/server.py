@@ -189,7 +189,7 @@ def launch(rid, text):
     d = rdir(rid); meta = jload(os.path.join(d, "meta.json"), {})
     turns = meta.setdefault("turns", []); k = len(turns)
     M = _cfg.leer()["modelo"]
-    env = dict(os.environ); env.pop("ANTHROPIC_API_KEY", None)
+    env = {k: v for k, v in os.environ.items() if k not in ("ANTHROPIC_API_KEY", "DEEPSEEK_API_KEY", "OPENAI_API_KEY", "FISH_API_KEY", "RUNPOD_API_KEY", "GROQ_API_KEY", "GH_TOKEN", "GITHUB_TOKEN")}   # ninguna clave en el entorno del agente
     env.update(CLAUDE_CONFIG_DIR=BRAIN, ANTHROPIC_BASE_URL=f"http://127.0.0.1:{PROXY_PORT}/r/{rid}", ANTHROPIC_AUTH_TOKEN="via-proxy",
                ANTHROPIC_MODEL=M, ANTHROPIC_DEFAULT_OPUS_MODEL=M, ANTHROPIC_DEFAULT_SONNET_MODEL=M, ANTHROPIC_DEFAULT_HAIKU_MODEL=M,
                ANTHROPIC_SMALL_FAST_MODEL=M, CLAUDE_CODE_SUBAGENT_MODEL=M, API_TIMEOUT_MS="600000",

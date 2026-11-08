@@ -4,7 +4,7 @@ Las claves se guardan SOLO en <DATOS>/config.json (fuera del repo). Nunca se imp
 import json, os
 
 DATOS = os.path.abspath(os.environ.get("ESTUDIO_DATA") or os.path.join(os.path.expanduser("~"), "EstudioVideos")).replace("\\", "/")
-CONFIG = DATOS + "/config.json"
+CONFIG = os.path.abspath(os.environ.get("ESTUDIO_CONFIG") or DATOS + "/config.json").replace("\\", "/")   # en la nube va fuera de la carpeta que se guarda
 CANALES = DATOS + "/canales"
 VIDEOS = DATOS + "/videos"
 APP = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace("\\", "/")
@@ -28,7 +28,7 @@ def leer():
     return c
 
 def guardar(c):
-    os.makedirs(DATOS, exist_ok=True)
+    os.makedirs(os.path.dirname(CONFIG), exist_ok=True)
     tmp = CONFIG + ".tmp"
     json.dump(c, open(tmp, "w", encoding="utf8"), ensure_ascii=False, indent=1)
     os.replace(tmp, CONFIG)
