@@ -89,7 +89,7 @@ if _XR:
 out = []
 for c in clips:
     p, a, b, isv = c
-    if not isv:
+    if not isv or "/clips/" in p:   # los clips de stock se recortan contra el avatar igual que una foto
         segs = [(a, b)]
         for r in ranges:
             ra, rb = r["startMs"], r["endMs"]
@@ -103,7 +103,7 @@ for c in clips:
             segs = ns
         for x, y in segs:
             if y - x >= 500:
-                out.append([p, x, y, False])
+                out.append([p, x, y, isv])
     else:
         out.append(c)
 
@@ -165,7 +165,8 @@ for i, (p, a, b, isv) in enumerate(out):
 XF_AV, XF_FOTO = 18, 9          # cuadros de fundido: avatar<->fotos 0.6 s, foto<->foto 0.3 s
 for i in range(len(plan)):
     if i == len(plan) - 1: plan[i].append(0); continue
-    av = ("/avatar/" in plan[i][0].replace("\\", "/")) or ("/avatar/" in plan[i + 1][0].replace("\\", "/")) or plan[i][2] or plan[i + 1][2]
+    _ea = lambda k: "/avatar/" in plan[k][0].replace("\\", "/") or (plan[k][2] and "/clips/" not in plan[k][0])   # un clip de stock funde corto, como una foto
+    av = _ea(i) or _ea(i + 1)
     xm = "/extrema/" in plan[i][0].replace("\\", "/") or "/extrema/" in plan[i + 1][0].replace("\\", "/")   # la pieza de edición extrema entra con corte corto: la 1ª palabra no queda tapada
     plan[i].append(XF_FOTO if xm and "/avatar/" not in plan[i][0] + plan[i + 1][0] else (XF_AV if av else XF_FOTO))
 os.makedirs(B + "/segments", exist_ok=True)
