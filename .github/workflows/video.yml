@@ -1,5 +1,5 @@
 name: video
-run-name: "🎬 ${{ inputs.titulo }}"
+run-name: "🎬 ${{ inputs.titulo }} · ${{ inputs.vid }}"
 
 on:
   workflow_dispatch:

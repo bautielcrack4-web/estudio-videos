@@ -4,7 +4,7 @@ Lo lanza .github/workflows/video.yml. Mismo motor que el Estudio de PC (server.p
 proxy que mide el gasto, guardián). Cada ~2 min publica el avance en la rama `estado` (videos/<vid>.json), que es lo
 que lee el panel. Lee los mensajes del panel (mensajes/<vid>.json). Al terminar sube final.mp4 a un Release.
 Si se acerca al límite de 6 h de GitHub, frena, guarda todo en la caché y se relanza solo en otra máquina."""
-import base64, json, os, shutil, subprocess, sys, time, urllib.error, urllib.request
+import base64, json, os, shutil, subprocess, sys, time, unicodedata, urllib.error, urllib.request
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.dirname(BASE)
@@ -153,6 +153,11 @@ def armar_panel(extra):
     js("video.json", vista)
     tl = server.timeline(rid); js("timeline.json", tl)
     g = server.gallery(rid); js("gallery.json", g)
+    prompts = {}                                   # lo que se le pidió a cada foto, para el visor del panel
+    for it in g["fotos"] + g["clips"]:
+        p = server.prompt_for(cwd, it["p"])
+        if p: prompts[it["p"]] = p[:4000]
+    js("prompts.json", prompts)
     ev = server.events(rid); ult = ev[-250:]
     cortos = [{k: (x[:1500] if isinstance(x, str) else x) for k, x in e.items()} for e in ult]
     js("chat.json", {"total": len(ev), "desde": len(ev) - len(ult), "ev": cortos})
@@ -272,7 +277,11 @@ if not st.get("rid"):
     st["seguir"] = 0
     log("video lanzado")
 else:
-    st["maquinas"] = st.get("maquinas", 1) + 1
+    st["maquinas"] = st.get("maquinas", 1) + 1; st["seguir"] = 0
+    try:                                           # el usuario pudo haber subido el tope desde el panel: solo se sube, nunca se baja
+        _mf = os.path.join(server.rdir(st["rid"]), "meta.json"); _m = server.jload(_mf, {})
+        if float(E.get("TOPE") or 0) > float(_m.get("cap") or 0): _m["cap"] = float(E["TOPE"]); server.jsave(_mf, _m)
+    except ValueError: pass
     server.launch(st["rid"], "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: "
                              "mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final.")
     log("video retomado, máquina", st["maquinas"])
@@ -299,8 +308,8 @@ while True:
     v = server.video(st["rid"])
     if v["pipeline"]["complete"]: break
     if v["estado"] == "tope": publicar("tope", {"error": "Se alcanzó el tope de gasto del video."}); sys.exit(0)
-    if clave_mala(): publicar("parado", {"error": "DeepSeek rechazó la clave: revisala en la pestaña Claves y relanzá."}); sys.exit(1)
-    if st.get("seguir", 0) >= 6: publicar("parado", {"error": "La sesión terminó sin completar el video (6 empujones)."}); sys.exit(1)
+    if clave_mala(): publicar("parado", {"error": "DeepSeek rechazó la clave. Cambiala en Configuración y mandá un mensaje acá para que siga."}); sys.exit(1)
+    if st.get("seguir", 0) >= 6: publicar("parado", {"error": "La sesión terminó sin completar el video. Mandá un mensaje acá para que siga desde donde quedó."}); sys.exit(1)
     st["seguir"] = st.get("seguir", 0) + 1; server.jsave(ST, st)
     server.launch(st["rid"], "Todavía falta terminar el video (final.mp4 + REPORTE.md). Seguí con el CAMINO RECTO del KIT desde donde "
                              "quedaste, sin rehacer lo que ya está y sin preguntar.")
@@ -313,6 +322,15 @@ if relanzar:
 v = server.video(st["rid"]); cwd = v["cwd"]
 fin = os.path.join(cwd, v["files"]["final"]) if v["files"].get("final") else None
 tag = "video-" + VID
+if not fin or not os.path.exists(fin):
+    publicar("parado", {"error": "La sesión dijo que terminó, pero no encontré el video final. Mandá un mensaje acá para que lo revise."}); sys.exit(1)
+_nom = re.sub(r"[^A-Za-z0-9]+", "-", unicodedata.normalize("NFKD", E.get("TITULO") or "").encode("ascii", "ignore").decode()).strip("-")[:90] or VID     # el MP4 se descarga con el título
+_dir = os.path.join("/tmp", "release_" + VID); os.makedirs(_dir, exist_ok=True)
+_mp4 = os.path.join(_dir, _nom + ".mp4")
+if os.path.exists(_mp4): os.remove(_mp4)
+try: os.link(fin, _mp4)
+except OSError: shutil.copy2(fin, _mp4)
+fin = _mp4
 archivos = [x for x in (fin, os.path.join(cwd, "REPORTE.md")) if x and os.path.exists(x)]
 _rep = os.path.join(cwd, "REPORTE.md")
 if os.path.exists(_rep):                           # lo único de texto que va al Release
@@ -321,8 +339,10 @@ if os.path.exists(_rep):                           # lo único de texto que va a
 r = subprocess.run(["gh", "release", "create", tag, *archivos, "--repo", REPO, "--title", (E.get("TITULO") or VID)[:120],
                     "--notes", f"Canal: {cid}. Hecho por el Estudio."], capture_output=True, text=True)
 if r.returncode != 0:
-    subprocess.run(["gh", "release", "upload", tag, *archivos, "--repo", REPO, "--clobber"], capture_output=True, text=True)
-url = f"https://github.com/{REPO}/releases/download/{tag}/{os.path.basename(fin)}" if fin else None
+    r = subprocess.run(["gh", "release", "upload", tag, *archivos, "--repo", REPO, "--clobber"], capture_output=True, text=True)
+    if r.returncode != 0:
+        publicar("parado", {"error": "El video quedó hecho, pero GitHub no me dejó guardarlo. Mandá un mensaje acá para reintentar."}); sys.exit(1)
+url = f"https://github.com/{REPO}/releases/download/{tag}/{os.path.basename(fin)}"
 st["final"] = {"final": url, "release": f"https://github.com/{REPO}/releases/tag/{tag}"}
 server.jsave(ST, st)
 publicar("listo")
