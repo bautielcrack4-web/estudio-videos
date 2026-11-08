@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794178006.6325154,
+ "actualizado": 1794178070.291772,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "9 fotos"
+   "info": "10 fotos"
   },
   {
    "k": "armado",
@@ -51,98 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0421,
+  "deepseek": 0.0475,
   "gpt": 0.0199,
   "gpt_img": 9,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.062
+  "total": 0.0674
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "Reviso el formato exacto que espera `fotos.py` antes de escribir los pedidos."
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 1,140p /opt/estudio/repo/motor/tools/fotos.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\r\n\"\"\"Fotos del b-roll. Motor (Configuración → Fotos): \"openai\" = gpt-image-2 SIEMPRE low + Batch y SIN foto de referencia;\r\n\"manual\" = las hace el usuario con lo que quiera (gratis).\r\n   python <APP>/tools/fotos.py <carpeta_del_video> <pedidos.json> > <carpeta>/fotos/fotos.log 2>&1      (en segundo plano)\r\npedidos.json = [{\"id\":\"b01_gancho\", \"cara\": true|false, \"prompt\": { J"
-  },
-  {
-   "k": "ai",
-   "t": "El plan quedó cerrado (63 ventanas, 55 % avatar, sin problemas). Antes de lanzar la única llamada del avatar, verifico qué valida `avatar_it.py`."
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 1,90p /opt/estudio/repo/motor/tools/avatar_it.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\r\n\"\"\"Avatar con InfiniteTalk (RunPod), UNA sola llamada por video (US$0,25 aprox.).\r\n   python <APP>/tools/avatar_it.py <carpeta_del_video> > <carpeta>/avatar/it.log 2>&1        (en segundo plano)\r\n\r\nLee <carpeta>/avatar_ranges.json (TODAS las ventanas donde se ve el avatar, plan CERRADO), voz/master.wav y la foto del\r\npresentador refs/avatar.png (máxima resolución, mirando "
-  },
-  {
-   "k": "ai",
-   "t": "Plan válido para la llamada única (352 s de reel, < 590). Lanzo el avatar ya y sigo con las fotos en paralelo."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log 2>&1 & echo \"avatar PID: $!\"; sleep 5; tail -5 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "avatar PID: 4890\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada"
-  },
-  {
-   "k": "ai",
-   "t": "Ahora escribo los 65 prompts (60 planos + 5 pantallas partidas), con 6 ideas creativas y sus detalles narrativos."
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\nimport json, os\n\nB = \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-\"\nT = (\"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n     \"slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\")\nTE = T + \", wrinkles, age spots, flyaway grey hairs\"\nAV = \"cinematic lighti"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/prompts.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python prompts.py"
-  },
-  {
-   "k": "res",
-   "t": "total prompts: 66\npedidos_01: 9 | pedidos_02: 57"
-  },
-  {
-   "k": "tool",
-   "t": "python -c \"\nimport json\nP=json.load(open('prompts_all.json')); ids={p['id'] for p in P}\nQ=json.load(open('planos.json')); need=[q['id'] for q in Q]\nfalta=[i for i in need if i not in ids and i!='p001']\nprint('planos:',len(need),'prompts:',len(ids))\nprint('faltan:',falta)\nprint('sobran:',sorted(ids-set(need)))\n\""
-  },
-  {
-   "k": "res",
-   "t": "planos: 65 prompts: 66\nfaltan: ['p035']\nsobran: ['p001_a', 'p001_b', 'p001_c']"
-  },
-  {
-   "k": "ai",
-   "t": "Falta p035. Lo agrego."
-  },
-  {
-   "k": "tool",
-   "t": "add(\"p035\", cara=True, type=TE,\n    moment=\"Sitting on the edge of the futon before bed, she opens her hands in her lap and looks at them, the quiet end of the ritual.\",\n    subject=\"the presenter seated on the edge of a futon\",\n    action=\"opening both hands palm up in her lap, her head bent, looking down at them\",\n    props=[\"a futon with a folded quilt\", \"a low floor lamp\", \"a teacup\", \"glasses"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/prompts.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python prompts.py && python -c \"\nimport json\nP=json.load(open('prompts_all.json')); ids={p['id'] for p in P}\nQ=json.load(open('planos.json')); need=[q['id'] for q in Q]\nprint('faltan:',[i for i in need if i not in ids and i!='p001'])\nprint('sobran:',sorted(ids-set(need)))\nprint('ped1 ids:',[p['id'] for p in json.load(open('pedidos_01.json'))])\n\""
-  },
-  {
-   "k": "res",
-   "t": "total prompts: 67\npedidos_01: 9 | pedidos_02: 58\nfaltan: []\nsobran: ['p001_a', 'p001_b', 'p001_c']\nped1 ids: ['p001_a', 'p001_b', 'p001_c', 'p002', 'p005', 'p008', 'p012', 'p017', 'p027']"
-  },
   {
    "k": "ai",
    "t": "Lanzo la primera tanda de fotos (9). Primero pasa la compuerta; si falla, no gasta nada."
@@ -178,6 +94,90 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/*.png\" 9 --timeout 540; echo \"---\"; tail -4 fotos/fotos_01.log"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 9 archivos (160 s)\n---\n22:45:14 batch 3f5f7c92: in_progress 0/9\n22:46:44 batch 3f5f7c92: completed 9/9\n22:46:46 ✓ batch 3f5f7c92: 9 fotos bajadas, 0 fallidas (US$0.020)\n22:46:46 FIN: 9/9 fotos en fotos/ (3 min)"
+  },
+  {
+   "k": "ai",
+   "t": "Fotos de prueba listas. Armo la hoja de contacto y la miro."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fotos.jpg /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_a.png /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_b.png /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_c.png /opt/estudio/datos"
+  },
+  {
+   "k": "res",
+   "t": "hoja: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fotos.jpg (9 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fotos.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_a.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_b.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "p001_a es la más fuerte (manos en el agua, vapor, cara de alivio, reloj a las 7:10, se entiende sin audio). La elijo y anoto."
+  },
+  {
+   "k": "tool",
+   "t": "cp fotos/p001_a.png fotos/p001.png && cp fotos/p001_a.json fotos/p001.json && ls -la fotos/p001.* && cat > gates/fotos_auto.txt <<'EOF'\nCONTROL FOTOS · primera tanda (9)\n\nMiradas una por una y en hoja de contacto (qc/hoja_fotos.jpg):\n- p001_a: elegida como p001. Manos entrando al agua tibia, vapor, ojos cerrados con alivio, reloj a las 7:10,\n  paño doblado, pava y jabón. Se entiende en chico y sin"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion    1938 Nov  8 22:47 fotos/p001.json\n-rw-rw-rw-+ 1 sesion sesion 1086939 Nov  8 22:47 fotos/p001.png\ndone"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/pedidos_02.json > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/fotos_02.log 2>&1 & echo \"fotos02 PID: $!\"; sleep 10; tail -8 fotos/fotos_02.log; echo \"---SFX---\"; tail -12 sonidos.log; e"
+  },
+  {
+   "k": "res",
+   "t": "fotos02 PID: 6813\n22:47:11 → batch batch_6af0fbeedb4c8190b4c07a5ed4943817 · 58 fotos · sin referencia · low 1088x608\n22:47:11 batch d4943817: validating 0/0\n---SFX---\nok agua: agua.mp3 (1 s, Water splash) · agua_2.mp3 (1 s, Sea water splash) · agua_3.mp3 (2 s, Water drop splashes in cave)\nok grifo: grifo.mp3 (4 s, Water sink running) · grifo_2.mp3 (1 s, Water bubble) · grifo_3.mp3 (1 s, Water spla"
+  },
+  {
+   "k": "tool",
+   "t": "python -c \"\nimport json\nP=json.load(open('planos.json'))\nfor p in P:\n    if p['id'] in ('p001','p017','p024','p026','p027','p032','p041','p045','p046','p048','p055','p058','s05'):\n        print(p['id'], p['startMs']/1000, '-', p['endMs']/1000)\n\""
+  },
+  {
+   "k": "res",
+   "t": "p001 4.7 - 9.34\np017 147.0 - 152.0\np024 217.0 - 222.0\np026 237.0 - 242.4\np027 247.5 - 252.5\np032 301.5 - 306.0\np041 399.44 - 403.14\np045 443.0 - 449.0\np046 464.7 - 468.0\np048 482.0 - 486.0\np055 550.0 - 553.96\np058 578.0 - 582.0\ns05 453.52 - 464.7"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"file\": \"agua.mp3\", \"t\": 4700, \"gain\": 0.05, \"fade\": 0.4},\n {\"file\": \"grifo.mp3\", \"t\": 147000, \"gain\": 0.045, \"fade\": 0.5},\n {\"file\": \"pano.mp3\", \"t\": 301500, \"gain\": 0.05, \"fade\": 0.3},\n {\"file\": \"reloj.mp3\", \"t\": 399440, \"gain\": 0.04, \"fade\": 0.4},\n {\"file\": \"papel.mp3\", \"t\": 482000, \"gain\": 0.045, \"fade\": 0.3}\n]\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/cues.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "ai",
+   "t": "Espero el lote grande de fotos."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/*.png\" 68 --timeout 540; echo \"---\"; tail -5 fotos/fotos_02.log"
   }
  ],
  "maquinas": 2,
