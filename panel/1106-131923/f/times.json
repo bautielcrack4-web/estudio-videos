@@ -1,0 +1,1583 @@
+{
+"dur": 1090.643016,
+"sentences": [
+{
+"i": 0,
+"text": "Seven in the morning.",
+"s": 0.0,
+"e": 1.835
+},
+{
+"i": 1,
+"text": "You are in the shower, rushing.",
+"s": 1.835,
+"e": 4.307
+},
+{
+"i": 2,
+"text": "Ten minutes before you have to be somewhere.",
+"s": 4.307,
+"e": 7.651
+},
+{
+"i": 3,
+"text": "By nine, your skin feels tight and your shoulders are up by your ears.",
+"s": 7.651,
+"e": 13.336
+},
+{
+"i": 4,
+"text": "I know that shower.",
+"s": 13.336,
+"e": 15.399
+},
+{
+"i": 5,
+"text": "My name is Reiko.",
+"s": 15.399,
+"e": 17.175
+},
+{
+"i": 6,
+"text": "I am fifty-five, and I spent twenty-five years as a beautician in Osaka.",
+"s": 17.175,
+"e": 23.55
+},
+{
+"i": 7,
+"text": "And in all those years, not one client ever told me she bathed in the morning.",
+"s": 23.55,
+"e": 30.007
+},
+{
+"i": 8,
+"text": "Not one.",
+"s": 30.007,
+"e": 30.273
+},
+{
+"i": 9,
+"text": "We bathe at night.",
+"s": 30.273,
+"e": 31.229
+},
+{
+"i": 10,
+"text": "Every night.",
+"s": 31.229,
+"e": 32.748
+},
+{
+"i": 11,
+"text": "Not because we are cleaner than you.",
+"s": 32.748,
+"e": 34.37
+},
+{
+"i": 12,
+"text": "Because the bath is not the same thing for us.",
+"s": 34.37,
+"e": 40.57
+},
+{
+"i": 13,
+"text": "For you, a shower is a job you finish.",
+"s": 40.57,
+"e": 41.517
+},
+{
+"i": 14,
+"text": "For us, the bath is the last room of the day, and it has a beginning, a middle, and an end.",
+"s": 41.517,
+"e": 49.769
+},
+{
+"i": 15,
+"text": "I did not understand how much that mattered until I was forty-eight, and my body started to change in ways that no cream could fix.",
+"s": 49.769,
+"e": 62.01
+},
+{
+"i": 16,
+"text": "My skin got drier.",
+"s": 62.01,
+"e": 63.567
+},
+{
+"i": 17,
+"text": "My sleep got lighter.",
+"s": 63.567,
+"e": 65.453
+},
+{
+"i": 18,
+"text": "My hands, which had been in water all day at the salon, started to crack at the knuckles every winter.",
+"s": 65.453,
+"e": 73.117
+},
+{
+"i": 19,
+"text": "That is when my mother, who is now eighty-two, said to me, Reiko, you are washing yourself like a foreigner.",
+"s": 73.117,
+"e": 82.229
+},
+{
+"i": 20,
+"text": "She did not mean it as an insult.",
+"s": 82.229,
+"e": 84.871
+},
+{
+"i": 21,
+"text": "She meant I was rushing.",
+"s": 84.871,
+"e": 87.039
+},
+{
+"i": 22,
+"text": "So let me give you the seven rules I learned in that salon, first from women who were older than me, and then from my own body.",
+"s": 87.039,
+"e": 96.896
+},
+{
+"i": 23,
+"text": "These are not rules from a book.",
+"s": 96.896,
+"e": 99.529
+},
+{
+"i": 24,
+"text": "They are the things I actually do, in my own bathroom, in Osaka, almost every night of my life.",
+"s": 99.529,
+"e": 108.422
+},
+{
+"i": 25,
+"text": "Rule number one.",
+"s": 108.422,
+"e": 109.747
+},
+{
+"i": 26,
+"text": "The water is not hot.",
+"s": 109.747,
+"e": 110.53
+},
+{
+"i": 27,
+"text": "It is warm.",
+"s": 110.53,
+"e": 111.936
+},
+{
+"i": 28,
+"text": "I know.",
+"s": 111.936,
+"e": 113.283
+},
+{
+"i": 29,
+"text": "This is the one that disappoints people.",
+"s": 113.283,
+"e": 114.299
+},
+{
+"i": 30,
+"text": "You want the bath that turns your skin pink, the one that makes you say ahhh when you get in.",
+"s": 114.299,
+"e": 124.059
+},
+{
+"i": 31,
+"text": "That bath feels wonderful for ten minutes, and then it takes something from you.",
+"s": 124.059,
+"e": 130.067
+},
+{
+"i": 32,
+"text": "In the salon, we had a client who came every Thursday, a woman in her late fifties who ran a small flower shop near the station.",
+"s": 130.067,
+"e": 140.676
+},
+{
+"i": 33,
+"text": "She always arrived with her forearms red and itchy, and she always said the same thing.",
+"s": 140.676,
+"e": 148.547
+},
+{
+"i": 34,
+"text": "It is the cold weather.",
+"s": 148.547,
+"e": 150.371
+},
+{
+"i": 35,
+"text": "It was not the cold weather.",
+"s": 150.371,
+"e": 152.104
+},
+{
+"i": 36,
+"text": "She was bathing at forty-five degrees, sometimes hotter, because it was the only way she could feel warm.",
+"s": 152.104,
+"e": 160.988
+},
+{
+"i": 37,
+"text": "And her skin was paying for it every single night.",
+"s": 160.988,
+"e": 164.744
+},
+{
+"i": 38,
+"text": "Forty-one degrees.",
+"s": 164.744,
+"e": 166.47
+},
+{
+"i": 39,
+"text": "That is the number.",
+"s": 166.47,
+"e": 168.113
+},
+{
+"i": 40,
+"text": "In Fahrenheit, about a hundred and six.",
+"s": 168.113,
+"e": 171.592
+},
+{
+"i": 41,
+"text": "It sounds cool when you read it, and the first time you sit in it you will think it is not enough.",
+"s": 171.592,
+"e": 178.317
+},
+{
+"i": 42,
+"text": "Give it three minutes.",
+"s": 178.317,
+"e": 180.205
+},
+{
+"i": 43,
+"text": "Your body adjusts, your shoulders drop, and the heat goes deeper than the hot water ever did, because you can stay.",
+"s": 180.205,
+"e": 189.599
+},
+{
+"i": 44,
+"text": "That is the trick.",
+"s": 189.599,
+"e": 190.936
+},
+{
+"i": 45,
+"text": "Hot water makes you leave.",
+"s": 190.936,
+"e": 193.198
+},
+{
+"i": 46,
+"text": "Warm water lets you stay.",
+"s": 193.198,
+"e": 195.748
+},
+{
+"i": 47,
+"text": "Test it with your elbow, not your hand.",
+"s": 195.748,
+"e": 198.58
+},
+{
+"i": 48,
+"text": "Your hand has been in water all day and it lies to you.",
+"s": 198.58,
+"e": 203.01
+},
+{
+"i": 49,
+"text": "The inside of your forearm is honest.",
+"s": 203.01,
+"e": 206.42
+},
+{
+"i": 50,
+"text": "If it feels pleasantly warm and not sharp, that is forty-one.",
+"s": 206.42,
+"e": 211.71
+},
+{
+"i": 51,
+"text": "Rule number two.",
+"s": 211.71,
+"e": 213.196
+},
+{
+"i": 52,
+"text": "You wash before you get in.",
+"s": 213.196,
+"e": 215.461
+},
+{
+"i": 53,
+"text": "Not in the tub.",
+"s": 215.461,
+"e": 217.016
+},
+{
+"i": 54,
+"text": "Before the tub.",
+"s": 217.016,
+"e": 218.492
+},
+{
+"i": 55,
+"text": "This is the part that visitors find strange.",
+"s": 218.492,
+"e": 221.96
+},
+{
+"i": 56,
+"text": "In a Japanese bathroom, the tub is not where you clean yourself.",
+"s": 221.96,
+"e": 227.096
+},
+{
+"i": 57,
+"text": "The tub is where you rest.",
+"s": 227.096,
+"e": 227.645
+},
+{
+"i": 58,
+"text": "The cleaning happens on a small stool, on the floor, next to the tub, with a bucket and a hand shower.",
+"s": 227.645,
+"e": 237.068
+},
+{
+"i": 59,
+"text": "You sit down.",
+"s": 237.068,
+"e": 238.499
+},
+{
+"i": 60,
+"text": "You wash your hair, you rinse.",
+"s": 238.499,
+"e": 240.001
+},
+{
+"i": 61,
+"text": "You wash your body, you rinse everything.",
+"s": 240.001,
+"e": 244.127
+},
+{
+"i": 62,
+"text": "And only then do you step into the water.",
+"s": 244.127,
+"e": 247.206
+},
+{
+"i": 63,
+"text": "The water stays clean the whole time.",
+"s": 247.206,
+"e": 250.172
+},
+{
+"i": 64,
+"text": "You are not sitting in your own soap.",
+"s": 250.172,
+"e": 252.805
+},
+{
+"i": 65,
+"text": "And sitting down is not a small detail.",
+"s": 252.805,
+"e": 256.028
+},
+{
+"i": 66,
+"text": "When you stand in a shower, you tense.",
+"s": 256.028,
+"e": 258.884
+},
+{
+"i": 67,
+"text": "Your knees lock, your back arches a little, your whole body is braced for the next thing.",
+"s": 258.884,
+"e": 265.845
+},
+{
+"i": 68,
+"text": "When you sit on a stool, your belly softens, your breath goes lower, and you actually slow down.",
+"s": 265.845,
+"e": 273.214
+},
+{
+"i": 69,
+"text": "I did not believe this until I tried it.",
+"s": 273.214,
+"e": 276.437
+},
+{
+"i": 70,
+"text": "The first week I sat down to wash, I felt silly.",
+"s": 276.437,
+"e": 280.378
+},
+{
+"i": 71,
+"text": "By the second week, it was the only part of my day when nobody could call me.",
+"s": 280.378,
+"e": 286.61
+},
+{
+"i": 72,
+"text": "This is also the biggest difference between a Japanese bath and an American shower, and I say it with love, because I have seen both.",
+"s": 286.61,
+"e": 296.654
+},
+{
+"i": 73,
+"text": "You shower like you are being timed.",
+"s": 296.654,
+"e": 299.354
+},
+{
+"i": 74,
+"text": "The water goes on, the soap goes on, the water goes off, and the whole thing is over in six minutes.",
+"s": 299.354,
+"e": 306.549
+},
+{
+"i": 75,
+"text": "It is efficient.",
+"s": 306.549,
+"e": 308.014
+},
+{
+"i": 76,
+"text": "It is also the reason a shower never makes you feel better, only clean.",
+"s": 308.014,
+"e": 313.595
+},
+{
+"i": 77,
+"text": "You cannot rush a bath and get the bath.",
+"s": 313.595,
+"e": 316.939
+},
+{
+"i": 78,
+"text": "The bath does not work that way.",
+"s": 316.939,
+"e": 320.419
+},
+{
+"i": 79,
+"text": "The bath is the one part of your day that refuses to be optimized.",
+"s": 320.419,
+"e": 325.44
+},
+{
+"i": 80,
+"text": "But here is the part I really want you to hear, and it is the rule that took me the longest.",
+"s": 325.44,
+"e": 332.575
+},
+{
+"i": 81,
+"text": "The order.",
+"s": 332.575,
+"e": 332.953
+},
+{
+"i": 82,
+"text": "Most women wash their face, then their hair, then their body, then their feet, all in one go.",
+"s": 332.953,
+"e": 339.865
+},
+{
+"i": 83,
+"text": "In Osaka, we finish at the feet.",
+"s": 339.865,
+"e": 342.434
+},
+{
+"i": 84,
+"text": "The feet are last for a reason.",
+"s": 342.434,
+"e": 345.237
+},
+{
+"i": 85,
+"text": "Hair first, because the shampoo runs down.",
+"s": 345.237,
+"e": 348.469
+},
+{
+"i": 86,
+"text": "Face second, while your hands are still clean and the water is still clear.",
+"s": 348.469,
+"e": 354.851
+},
+{
+"i": 87,
+"text": "Then your body, from the neck down, in long strokes, not scrubbing in circles.",
+"s": 354.851,
+"e": 362.584
+},
+{
+"i": 88,
+"text": "And the feet, last, with a small brush or a rough cloth, one foot at a time, sitting down.",
+"s": 362.584,
+"e": 368.486
+},
+{
+"i": 89,
+"text": "Between the toes.",
+"s": 368.486,
+"e": 371.216
+},
+{
+"i": 90,
+"text": "The heels.",
+"s": 371.216,
+"e": 372.494
+},
+{
+"i": 91,
+"text": "The ankles, where the skin gets thick and grey and nobody looks.",
+"s": 372.494,
+"e": 376.703
+},
+{
+"i": 92,
+"text": "Why last?",
+"s": 376.703,
+"e": 378.385
+},
+{
+"i": 93,
+"text": "Because your feet touch the floor.",
+"s": 378.385,
+"e": 379.398
+},
+{
+"i": 94,
+"text": "They touch the bath mat, the tiles, the slippers, the whole day.",
+"s": 379.398,
+"e": 385.693
+},
+{
+"i": 95,
+"text": "If you wash them first, everything you do after puts the day back on them.",
+"s": 385.693,
+"e": 392.743
+},
+{
+"i": 96,
+"text": "And more than that, the feet are where the whole thing becomes real.",
+"s": 392.743,
+"e": 397.713
+},
+{
+"i": 97,
+"text": "When you finally wash your feet, you are finished.",
+"s": 397.713,
+"e": 401.002
+},
+{
+"i": 98,
+"text": "Your body knows it.",
+"s": 401.002,
+"e": 402.588
+},
+{
+"i": 99,
+"text": "That is the signal, not the soap.",
+"s": 402.588,
+"e": 405.523
+},
+{
+"i": 100,
+"text": "Now, this is also where I see women make their first mistake.",
+"s": 405.523,
+"e": 411.738
+},
+{
+"i": 101,
+"text": "They use a loofah, a hard one, and they scrub.",
+"s": 411.738,
+"e": 414.842
+},
+{
+"i": 102,
+"text": "Hard.",
+"s": 414.842,
+"e": 415.544
+},
+{
+"i": 103,
+"text": "Until the skin is pink.",
+"s": 415.544,
+"e": 417.274
+},
+{
+"i": 104,
+"text": "I understand it.",
+"s": 417.274,
+"e": 419.03
+},
+{
+"i": 105,
+"text": "It feels like progress.",
+"s": 419.03,
+"e": 420.933
+},
+{
+"i": 106,
+"text": "But after fifty, your skin is thinner than it was at thirty, and it does not grow back the way it used to.",
+"s": 420.933,
+"e": 428.633
+},
+{
+"i": 107,
+"text": "A hard scrub takes off the top layer that you actually need.",
+"s": 428.633,
+"e": 433.59
+},
+{
+"i": 108,
+"text": "I had a client, a retired schoolteacher, who scrubbed her arms every night for years because she thought it would keep them smooth.",
+"s": 433.59,
+"e": 444.916
+},
+{
+"i": 109,
+"text": "Her arms were the driest part of her body.",
+"s": 444.916,
+"e": 448.437
+},
+{
+"i": 110,
+"text": "When she stopped, when she went back to a soft cloth and her own hands, three weeks later the skin was softer than it had been in a decade.",
+"s": 448.437,
+"e": 459.071
+},
+{
+"i": 111,
+"text": "Use your hands.",
+"s": 459.071,
+"e": 460.34
+},
+{
+"i": 112,
+"text": "Use a soft cotton cloth.",
+"s": 460.34,
+"e": 462.633
+},
+{
+"i": 113,
+"text": "Use a wooden bucket to pour the water, because the weight of the water in your hands makes you slow down.",
+"s": 462.633,
+"e": 470.418
+},
+{
+"i": 114,
+"text": "That is not tradition for the sake of tradition.",
+"s": 470.418,
+"e": 473.981
+},
+{
+"i": 115,
+"text": "That is a machine for making you slow.",
+"s": 473.981,
+"e": 477.334
+},
+{
+"i": 116,
+"text": "Rule number three is about time.",
+"s": 477.334,
+"e": 479.639
+},
+{
+"i": 117,
+"text": "Ten minutes in the water.",
+"s": 479.639,
+"e": 481.623
+},
+{
+"i": 118,
+"text": "Not forty.",
+"s": 481.623,
+"e": 482.899
+},
+{
+"i": 119,
+"text": "I know women who read in the bath for an hour.",
+"s": 482.899,
+"e": 486.703
+},
+{
+"i": 120,
+"text": "I did it too, when I was young, with a magazine and a glass of something.",
+"s": 486.703,
+"e": 492.556
+},
+{
+"i": 121,
+"text": "And I would come out wrinkled and dizzy, and I would sleep badly.",
+"s": 492.556,
+"e": 497.271
+},
+{
+"i": 122,
+"text": "Now I set a small clock, the old kind with sand, and I give the water ten minutes.",
+"s": 497.271,
+"e": 505.345
+},
+{
+"i": 123,
+"text": "Twelve at the most, in winter.",
+"s": 505.345,
+"e": 507.125
+},
+{
+"i": 124,
+"text": "That is enough for your body to warm all the way through, and it is not enough for you to cook.",
+"s": 507.125,
+"e": 515.958
+},
+{
+"i": 125,
+"text": "What happens after forty minutes?",
+"s": 515.958,
+"e": 516.418
+},
+{
+"i": 126,
+"text": "You sweat out water you need.",
+"s": 516.418,
+"e": 519.084
+},
+{
+"i": 127,
+"text": "Your blood pressure drops, and when you stand up, the room tilts.",
+"s": 519.084,
+"e": 524.904
+},
+{
+"i": 128,
+"text": "Your skin, which was holding moisture, gives it back to the air.",
+"s": 524.904,
+"e": 531.634
+},
+{
+"i": 129,
+"text": "And your sleep, which is the real reason we do this, gets worse, not better.",
+"s": 531.634,
+"e": 537.723
+},
+{
+"i": 130,
+"text": "Ten minutes.",
+"s": 537.723,
+"e": 538.969
+},
+{
+"i": 131,
+"text": "Then out.",
+"s": 538.969,
+"e": 540.229
+},
+{
+"i": 132,
+"text": "And here is the thing that makes the ten minutes count.",
+"s": 540.229,
+"e": 544.096
+},
+{
+"i": 133,
+"text": "You do not take your phone in.",
+"s": 544.096,
+"e": 546.609
+},
+{
+"i": 134,
+"text": "Not for music, not for a podcast, not for the news.",
+"s": 546.609,
+"e": 550.732
+},
+{
+"i": 135,
+"text": "If you are in the water with a screen, you are not in the water.",
+"s": 550.732,
+"e": 555.532
+},
+{
+"i": 136,
+"text": "You are at work, in a small wet room.",
+"s": 555.532,
+"e": 558.798
+},
+{
+"i": 137,
+"text": "I know how that sounds.",
+"s": 558.798,
+"e": 560.967
+},
+{
+"i": 138,
+"text": "I am not a monk.",
+"s": 560.967,
+"e": 562.625
+},
+{
+"i": 139,
+"text": "But I will tell you what I noticed in the salon, again and again, with women my age.",
+"s": 562.625,
+"e": 570.081
+},
+{
+"i": 140,
+"text": "The ones who could not sit in a bath without their phone were the ones who could not fall asleep without it either.",
+"s": 570.081,
+"e": 577.949
+},
+{
+"i": 141,
+"text": "It was the same muscle.",
+"s": 577.949,
+"e": 580.172
+},
+{
+"i": 142,
+"text": "And it is a muscle.",
+"s": 580.172,
+"e": 582.143
+},
+{
+"i": 143,
+"text": "You train it, or it trains you.",
+"s": 582.143,
+"e": 585.49
+},
+{
+"i": 144,
+"text": "Now, the towel.",
+"s": 585.49,
+"e": 586.033
+},
+{
+"i": 145,
+"text": "Nobody writes about this one, and it changed my skin the most.",
+"s": 586.033,
+"e": 591.755
+},
+{
+"i": 146,
+"text": "It is not a big fluffy towel.",
+"s": 591.755,
+"e": 594.804
+},
+{
+"i": 147,
+"text": "It is small, thin, cotton, about the size of a hand towel.",
+"s": 594.804,
+"e": 599.707
+},
+{
+"i": 148,
+"text": "Look.",
+"s": 599.707,
+"e": 600.439
+},
+{
+"i": 149,
+"text": "In Japan we call it a tenugui, and we do two things with it.",
+"s": 600.439,
+"e": 605.513
+},
+{
+"i": 150,
+"text": "One, we wash with it, folded, in long strokes.",
+"s": 605.513,
+"e": 608.25
+},
+{
+"i": 151,
+"text": "Two, when we are in the water, we put it on top of our head, or folded on the edge of the tub.",
+"s": 608.25,
+"e": 617.538
+},
+{
+"i": 152,
+"text": "It sounds like nothing.",
+"s": 617.538,
+"e": 619.146
+},
+{
+"i": 153,
+"text": "Try it.",
+"s": 619.146,
+"e": 620.116
+},
+{
+"i": 154,
+"text": "A cool wet cloth on your head while your body is warm changes the whole experience.",
+"s": 620.116,
+"e": 626.836
+},
+{
+"i": 155,
+"text": "It keeps your face from flushing, it keeps you from getting lightheaded, and it gives your hands something to do that is not a phone.",
+"s": 626.836,
+"e": 637.36
+},
+{
+"i": 156,
+"text": "But the real rule is what happens when you get out.",
+"s": 637.36,
+"e": 641.238
+},
+{
+"i": 157,
+"text": "You do not rub.",
+"s": 641.238,
+"e": 642.74
+},
+{
+"i": 158,
+"text": "You pat.",
+"s": 642.74,
+"e": 643.699
+},
+{
+"i": 159,
+"text": "Your skin after a warm bath is soft and open, and if you take a big towel and rub it back and forth, you are pulling at it, and you are taking off the water and the oil at the same time.",
+"s": 643.699,
+"e": 660.1
+},
+{
+"i": 160,
+"text": "I did this for years.",
+"s": 660.1,
+"e": 661.406
+},
+{
+"i": 161,
+"text": "Years of rubbing, every night, and then wondering why my arms were itchy in bed.",
+"s": 661.406,
+"e": 668.23
+},
+{
+"i": 162,
+"text": "Now I pat.",
+"s": 668.23,
+"e": 668.28
+},
+{
+"i": 163,
+"text": "I press the towel against my arm, count to three, move on.",
+"s": 668.28,
+"e": 673.399
+},
+{
+"i": 164,
+"text": "Legs, belly, back, the same.",
+"s": 673.399,
+"e": 674.96
+},
+{
+"i": 165,
+"text": "It takes longer.",
+"s": 674.96,
+"e": 675.946
+},
+{
+"i": 166,
+"text": "It is the best thirty seconds of my evening.",
+"s": 675.946,
+"e": 680.664
+},
+{
+"i": 167,
+"text": "Rule number four.",
+"s": 680.664,
+"e": 682.068
+},
+{
+"i": 168,
+"text": "The three minutes after you get out.",
+"s": 682.068,
+"e": 684.853
+},
+{
+"i": 169,
+"text": "This is the one that took me years to understand, and it is the reason I am telling you all of this.",
+"s": 684.853,
+"e": 692.076
+},
+{
+"i": 170,
+"text": "When you come out of a warm bath, your skin is still holding water.",
+"s": 692.076,
+"e": 697.282
+},
+{
+"i": 171,
+"text": "Not dry yet.",
+"s": 697.282,
+"e": 698.65
+},
+{
+"i": 172,
+"text": "Still damp, still soft.",
+"s": 698.65,
+"e": 701.185
+},
+{
+"i": 173,
+"text": "For about three minutes, whatever you put on your skin goes in.",
+"s": 701.185,
+"e": 705.882
+},
+{
+"i": 174,
+"text": "After that, the water has evaporated, and you are putting cream on a closed door.",
+"s": 705.882,
+"e": 713.12
+},
+{
+"i": 175,
+"text": "So I keep a bottle of lotion on the shelf, right next to the towel, and I put it on while I am still damp.",
+"s": 713.12,
+"e": 720.856
+},
+{
+"i": 176,
+"text": "Not a fancy one.",
+"s": 720.856,
+"e": 722.59
+},
+{
+"i": 177,
+"text": "The one I have used for twenty years costs about eight hundred yen at the drugstore.",
+"s": 722.59,
+"e": 730.133
+},
+{
+"i": 178,
+"text": "I do my arms first, because they dry first.",
+"s": 730.133,
+"e": 733.26
+},
+{
+"i": 179,
+"text": "Then my legs, from the ankle up.",
+"s": 733.26,
+"e": 736.518
+},
+{
+"i": 180,
+"text": "Then my neck, and the backs of my hands, always the backs of my hands.",
+"s": 736.518,
+"e": 741.156
+},
+{
+"i": 181,
+"text": "I am fifty-five.",
+"s": 741.156,
+"e": 743.409
+},
+{
+"i": 182,
+"text": "My hands have been in water, shampoo, and dye for twenty-five years.",
+"s": 743.409,
+"e": 749.141
+},
+{
+"i": 183,
+"text": "I will not lie to you and say they look like a twenty-year-old's.",
+"s": 749.141,
+"e": 754.75
+},
+{
+"i": 184,
+"text": "But they do not look fifty-five either, and I think this is why.",
+"s": 754.75,
+"e": 759.545
+},
+{
+"i": 185,
+"text": "And then, this is the part that sounds like nothing and is everything.",
+"s": 759.545,
+"e": 766.218
+},
+{
+"i": 186,
+"text": "I put something on my feet, and I put socks on.",
+"s": 766.218,
+"e": 770.284
+},
+{
+"i": 187,
+"text": "In Osaka, even in summer, a lot of us do this.",
+"s": 770.284,
+"e": 774.74
+},
+{
+"i": 188,
+"text": "The feet are the furthest thing from your heart, and they are the first thing to get cold, and cold feet at night will wake you up at three in the morning for no reason you can name.",
+"s": 774.74,
+"e": 787.462
+},
+{
+"i": 189,
+"text": "Warm feet, warm socks, and the body lets go.",
+"s": 787.462,
+"e": 791.419
+},
+{
+"i": 190,
+"text": "I had a client, a woman of sixty-three who came to the salon for her hair every three weeks, and she told me she had not slept through the night in four years.",
+"s": 791.419,
+"e": 803.907
+},
+{
+"i": 191,
+"text": "I did not give her a cream.",
+"s": 803.907,
+"e": 805.99
+},
+{
+"i": 192,
+"text": "I did not give her a tea.",
+"s": 805.99,
+"e": 807.96
+},
+{
+"i": 193,
+"text": "I asked her one question.",
+"s": 807.96,
+"e": 810.081
+},
+{
+"i": 194,
+"text": "What time do you wash?",
+"s": 810.081,
+"e": 812.09
+},
+{
+"i": 195,
+"text": "She washed at eleven at night, in a hurry, standing up, in and out.",
+"s": 812.09,
+"e": 817.983
+},
+{
+"i": 196,
+"text": "I told her, move it to nine, sit down, and put socks on before bed.",
+"s": 817.983,
+"e": 822.971
+},
+{
+"i": 197,
+"text": "Two months later she came in and said, I do not know what you did to me.",
+"s": 822.971,
+"e": 828.035
+},
+{
+"i": 198,
+"text": "I did nothing.",
+"s": 828.035,
+"e": 829.455
+},
+{
+"i": 199,
+"text": "Her body was waiting for a line to be drawn.",
+"s": 829.455,
+"e": 832.978
+},
+{
+"i": 200,
+"text": "Rule number five.",
+"s": 832.978,
+"e": 834.478
+},
+{
+"i": 201,
+"text": "The last five minutes are not for washing.",
+"s": 834.478,
+"e": 837.386
+},
+{
+"i": 202,
+"text": "After the water, after the lotion, I sit on the edge of the tub, or on the little stool, for five minutes.",
+"s": 837.386,
+"e": 846.775
+},
+{
+"i": 203,
+"text": "The light is low.",
+"s": 846.775,
+"e": 848.169
+},
+{
+"i": 204,
+"text": "Not the bright bathroom light, that white light that makes you look tired.",
+"s": 848.169,
+"e": 853.548
+},
+{
+"i": 205,
+"text": "One small lamp, or the light from the hallway with the door half open.",
+"s": 853.548,
+"e": 859.637
+},
+{
+"i": 206,
+"text": "I do not dry my hair yet.",
+"s": 859.637,
+"e": 861.901
+},
+{
+"i": 207,
+"text": "I do not clean the bathroom yet.",
+"s": 861.901,
+"e": 864.56
+},
+{
+"i": 208,
+"text": "I sit, and I let my body come back down.",
+"s": 864.56,
+"e": 865.42
+},
+{
+"i": 209,
+"text": "This is the part that Western women find hardest, I think.",
+"s": 865.42,
+"e": 870.078
+},
+{
+"i": 210,
+"text": "You are taught that the bathroom is a place where you do things.",
+"s": 870.078,
+"e": 877.162
+},
+{
+"i": 211,
+"text": "You do your makeup, you do your hair, you do your teeth, you do your skin.",
+"s": 877.162,
+"e": 883.117
+},
+{
+"i": 212,
+"text": "And then you leave, and the day starts or the day ends, and there is no moment in between.",
+"s": 883.117,
+"e": 890.674
+},
+{
+"i": 213,
+"text": "In Japan, that moment in between is the point.",
+"s": 890.674,
+"e": 894.483
+},
+{
+"i": 214,
+"text": "The bath is not preparation for something.",
+"s": 894.483,
+"e": 897.818
+},
+{
+"i": 215,
+"text": "The bath is the thing.",
+"s": 897.818,
+"e": 899.752
+},
+{
+"i": 216,
+"text": "And this is where the steam matters.",
+"s": 899.752,
+"e": 902.24
+},
+{
+"i": 217,
+"text": "When you finish, do not open the window and let all the heat out.",
+"s": 902.24,
+"e": 907.812
+},
+{
+"i": 218,
+"text": "Leave the door closed, leave the steam in the room, and let the bathroom stay warm for a while.",
+"s": 907.812,
+"e": 915.383
+},
+{
+"i": 219,
+"text": "In winter, that warm room is the difference between going to bed warm and going to bed braced.",
+"s": 915.383,
+"e": 922.991
+},
+{
+"i": 220,
+"text": "It sounds small.",
+"s": 922.991,
+"e": 924.252
+},
+{
+"i": 221,
+"text": "Small things, every night, for twenty years.",
+"s": 924.252,
+"e": 927.984
+},
+{
+"i": 222,
+"text": "That is the whole secret.",
+"s": 927.984,
+"e": 930.403
+},
+{
+"i": 223,
+"text": "There is no big thing.",
+"s": 930.403,
+"e": 932.598
+},
+{
+"i": 224,
+"text": "Now, I promised you I would be honest about the rule that took me the longest, and I have saved it for the end.",
+"s": 932.598,
+"e": 941.427
+},
+{
+"i": 225,
+"text": "When I was forty-eight, and my skin was cracking and my sleep was broken, I did all of this.",
+"s": 941.427,
+"e": 949.698
+},
+{
+"i": 226,
+"text": "The forty-one degrees.",
+"s": 949.698,
+"e": 951.935
+},
+{
+"i": 227,
+"text": "The stool.",
+"s": 951.935,
+"e": 953.156
+},
+{
+"i": 228,
+"text": "The ten minutes.",
+"s": 953.156,
+"e": 954.237
+},
+{
+"i": 229,
+"text": "The three-minute lotion.",
+"s": 954.237,
+"e": 956.862
+},
+{
+"i": 230,
+"text": "And after two months, I did not feel better.",
+"s": 956.862,
+"e": 958.683
+},
+{
+"i": 231,
+"text": "I felt the same.",
+"s": 958.683,
+"e": 960.35
+},
+{
+"i": 232,
+"text": "I was ready to say it was nonsense, that it was just something my mother did because she was born in a different time.",
+"s": 960.35,
+"e": 970.813
+},
+{
+"i": 233,
+"text": "And then I understood what I was doing wrong.",
+"s": 970.813,
+"e": 974.314
+},
+{
+"i": 234,
+"text": "I was doing all of it, but I was still doing it in a hurry.",
+"s": 974.314,
+"e": 979.333
+},
+{
+"i": 235,
+"text": "I was washing at night, yes, but I was washing at eleven o'clock, after the dishes, after the phone calls, after the last email, with my mind still full of the day.",
+"s": 979.333,
+"e": 992.832
+},
+{
+"i": 236,
+"text": "The bath was the last item on a list.",
+"s": 992.832,
+"e": 995.688
+},
+{
+"i": 237,
+"text": "And a bath that is the last item on a list is just a shower with more water.",
+"s": 995.688,
+"e": 1000.606
+},
+{
+"i": 238,
+"text": "So I moved it.",
+"s": 1000.606,
+"e": 1001.947
+},
+{
+"i": 239,
+"text": "Now the bath is at nine.",
+"s": 1001.947,
+"e": 1003.496
+},
+{
+"i": 240,
+"text": "The dishes can wait.",
+"s": 1003.496,
+"e": 1005.867
+},
+{
+"i": 241,
+"text": "The phone can wait.",
+"s": 1005.867,
+"e": 1006.133
+},
+{
+"i": 242,
+"text": "For forty minutes, the bathroom door is closed and the day is over, whether the day agrees with me or not.",
+"s": 1006.133,
+"e": 1014.155
+},
+{
+"i": 243,
+"text": "That is the rule.",
+"s": 1014.155,
+"e": 1016.99
+},
+{
+"i": 244,
+"text": "Not the temperature, not the towel, not the lotion, although all of them matter.",
+"s": 1016.99,
+"e": 1022.025
+},
+{
+"i": 245,
+"text": "The rule is that the bath is not the end of your day.",
+"s": 1022.025,
+"e": 1026.218
+},
+{
+"i": 246,
+"text": "It is the line between your day and your night.",
+"s": 1026.218,
+"e": 1030.629
+},
+{
+"i": 247,
+"text": "And you get to draw that line.",
+"s": 1030.629,
+"e": 1033.265
+},
+{
+"i": 248,
+"text": "That is what I learned in Osaka, in twenty-five years, from women who never once called it self-care.",
+"s": 1033.265,
+"e": 1040.545
+},
+{
+"i": 249,
+"text": "They would have laughed at that word.",
+"s": 1040.545,
+"e": 1042.919
+},
+{
+"i": 250,
+"text": "To them it was just Tuesday.",
+"s": 1042.919,
+"e": 1045.301
+},
+{
+"i": 251,
+"text": "So tomorrow night, I would like you to try one thing.",
+"s": 1045.301,
+"e": 1049.4
+},
+{
+"i": 252,
+"text": "Not seven.",
+"s": 1049.4,
+"e": 1050.932
+},
+{
+"i": 253,
+"text": "One.",
+"s": 1050.932,
+"e": 1051.959
+},
+{
+"i": 254,
+"text": "Fill the tub, or even just the basin, with water that is warm and not hot.",
+"s": 1051.959,
+"e": 1057.173
+},
+{
+"i": 255,
+"text": "Sit down on something.",
+"s": 1057.173,
+"e": 1058.628
+},
+{
+"i": 256,
+"text": "Wash your feet last.",
+"s": 1058.628,
+"e": 1060.45
+},
+{
+"i": 257,
+"text": "Then pat yourself dry, put on your lotion while your skin is still damp, and sit for five minutes with the light low and nothing in your hands.",
+"s": 1060.45,
+"e": 1074.024
+},
+{
+"i": 258,
+"text": "And I want to know something, because I am curious about you.",
+"s": 1074.024,
+"e": 1078.343
+},
+{
+"i": 259,
+"text": "In your house, growing up, was the bath in the morning or at night?",
+"s": 1078.343,
+"e": 1083.658
+},
+{
+"i": 260,
+"text": "Tell me in the comments, and subscribe if you want more of these.",
+"s": 1083.658,
+"e": 1088.627
+},
+{
+"i": 261,
+"text": "I am Reiko.",
+"s": 1088.627,
+"e": 1089.816
+},
+{
+"i": 262,
+"text": "Good night.",
+"s": 1089.816,
+"e": 1090.66
+}
+]
+}

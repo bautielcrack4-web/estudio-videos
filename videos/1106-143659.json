@@ -1,0 +1,79 @@
+{
+ "vid": "1106-143659",
+ "titulo": "SIMULACRO · prueba en seco",
+ "canal": "Michiko's Kyoto Closet",
+ "estado": "listo",
+ "actualizado": 1794132072.1701865,
+ "creado": 1793986619.175111,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "124 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "0:49 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "3 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "2 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "3 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 0.8 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.0782,
+  "gpt": 0.0,
+  "gpt_img": 0,
+  "avatarity": 0.014,
+  "avy_img": 4,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.0782
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1106-143659/final.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1106-143659"
+}

@@ -1,0 +1,856 @@
+[
+  {
+    "text": " 7",
+    "startMs": 0,
+    "endMs": 400,
+    "timestampMs": 400,
+    "confidence": 1.0
+  },
+  {
+    "text": " handbags.",
+    "startMs": 400,
+    "endMs": 1660,
+    "timestampMs": 1660,
+    "confidence": 1.0
+  },
+  {
+    "text": " That",
+    "startMs": 1660,
+    "endMs": 1800,
+    "timestampMs": 1800,
+    "confidence": 1.0
+  },
+  {
+    "text": " is",
+    "startMs": 1800,
+    "endMs": 2000,
+    "timestampMs": 2000,
+    "confidence": 1.0
+  },
+  {
+    "text": " all",
+    "startMs": 2000,
+    "endMs": 2300,
+    "timestampMs": 2300,
+    "confidence": 1.0
+  },
+  {
+    "text": " I",
+    "startMs": 2300,
+    "endMs": 2500,
+    "timestampMs": 2500,
+    "confidence": 1.0
+  },
+  {
+    "text": " kept",
+    "startMs": 2500,
+    "endMs": 2880,
+    "timestampMs": 2880,
+    "confidence": 1.0
+  },
+  {
+    "text": " from",
+    "startMs": 2880,
+    "endMs": 3240,
+    "timestampMs": 3240,
+    "confidence": 1.0
+  },
+  {
+    "text": " 30",
+    "startMs": 3240,
+    "endMs": 3720,
+    "timestampMs": 3720,
+    "confidence": 1.0
+  },
+  {
+    "text": " years",
+    "startMs": 3720,
+    "endMs": 4160,
+    "timestampMs": 4160,
+    "confidence": 1.0
+  },
+  {
+    "text": " of",
+    "startMs": 4160,
+    "endMs": 4440,
+    "timestampMs": 4440,
+    "confidence": 1.0
+  },
+  {
+    "text": " buying",
+    "startMs": 4440,
+    "endMs": 4780,
+    "timestampMs": 4780,
+    "confidence": 1.0
+  },
+  {
+    "text": " them.",
+    "startMs": 4780,
+    "endMs": 5840,
+    "timestampMs": 5840,
+    "confidence": 1.0
+  },
+  {
+    "text": " And",
+    "startMs": 5840,
+    "endMs": 5940,
+    "timestampMs": 5940,
+    "confidence": 1.0
+  },
+  {
+    "text": " I",
+    "startMs": 5940,
+    "endMs": 6180,
+    "timestampMs": 6180,
+    "confidence": 1.0
+  },
+  {
+    "text": " am",
+    "startMs": 6180,
+    "endMs": 6380,
+    "timestampMs": 6380,
+    "confidence": 1.0
+  },
+  {
+    "text": " 68",
+    "startMs": 6380,
+    "endMs": 7120,
+    "timestampMs": 7120,
+    "confidence": 1.0
+  },
+  {
+    "text": " in",
+    "startMs": 7120,
+    "endMs": 7600,
+    "timestampMs": 7600,
+    "confidence": 1.0
+  },
+  {
+    "text": " Kyoto.",
+    "startMs": 7600,
+    "endMs": 8700,
+    "timestampMs": 8700,
+    "confidence": 1.0
+  },
+  {
+    "text": " 5",
+    "startMs": 8700,
+    "endMs": 8960,
+    "timestampMs": 8960,
+    "confidence": 1.0
+  },
+  {
+    "text": " feet",
+    "startMs": 8960,
+    "endMs": 9320,
+    "timestampMs": 9320,
+    "confidence": 1.0
+  },
+  {
+    "text": " tall.",
+    "startMs": 9320,
+    "endMs": 10140,
+    "timestampMs": 10140,
+    "confidence": 1.0
+  },
+  {
+    "text": " Here",
+    "startMs": 10800,
+    "endMs": 11000,
+    "timestampMs": 11000,
+    "confidence": 1.0
+  },
+  {
+    "text": " is",
+    "startMs": 11000,
+    "endMs": 11280,
+    "timestampMs": 11280,
+    "confidence": 1.0
+  },
+  {
+    "text": " the",
+    "startMs": 11280,
+    "endMs": 11440,
+    "timestampMs": 11440,
+    "confidence": 1.0
+  },
+  {
+    "text": " first",
+    "startMs": 11440,
+    "endMs": 11800,
+    "timestampMs": 11800,
+    "confidence": 1.0
+  },
+  {
+    "text": " mistake.",
+    "startMs": 11800,
+    "endMs": 12680,
+    "timestampMs": 12680,
+    "confidence": 1.0
+  },
+  {
+    "text": " A",
+    "startMs": 12680,
+    "endMs": 12800,
+    "timestampMs": 12800,
+    "confidence": 1.0
+  },
+  {
+    "text": " bag",
+    "startMs": 12800,
+    "endMs": 13120,
+    "timestampMs": 13120,
+    "confidence": 1.0
+  },
+  {
+    "text": " that",
+    "startMs": 13120,
+    "endMs": 13380,
+    "timestampMs": 13380,
+    "confidence": 1.0
+  },
+  {
+    "text": " is",
+    "startMs": 13380,
+    "endMs": 13600,
+    "timestampMs": 13600,
+    "confidence": 1.0
+  },
+  {
+    "text": " too",
+    "startMs": 13600,
+    "endMs": 13820,
+    "timestampMs": 13820,
+    "confidence": 1.0
+  },
+  {
+    "text": " big",
+    "startMs": 13820,
+    "endMs": 14240,
+    "timestampMs": 14240,
+    "confidence": 1.0
+  },
+  {
+    "text": " for",
+    "startMs": 14240,
+    "endMs": 14460,
+    "timestampMs": 14460,
+    "confidence": 1.0
+  },
+  {
+    "text": " your",
+    "startMs": 14460,
+    "endMs": 14680,
+    "timestampMs": 14680,
+    "confidence": 1.0
+  },
+  {
+    "text": " frame",
+    "startMs": 14680,
+    "endMs": 15140,
+    "timestampMs": 15140,
+    "confidence": 1.0
+  },
+  {
+    "text": " does",
+    "startMs": 15140,
+    "endMs": 15680,
+    "timestampMs": 15680,
+    "confidence": 1.0
+  },
+  {
+    "text": " not",
+    "startMs": 15680,
+    "endMs": 15980,
+    "timestampMs": 15980,
+    "confidence": 1.0
+  },
+  {
+    "text": " make",
+    "startMs": 15980,
+    "endMs": 16200,
+    "timestampMs": 16200,
+    "confidence": 1.0
+  },
+  {
+    "text": " you",
+    "startMs": 16200,
+    "endMs": 16400,
+    "timestampMs": 16400,
+    "confidence": 1.0
+  },
+  {
+    "text": " look",
+    "startMs": 16400,
+    "endMs": 16620,
+    "timestampMs": 16620,
+    "confidence": 1.0
+  },
+  {
+    "text": " organized.",
+    "startMs": 16620,
+    "endMs": 17060,
+    "timestampMs": 17060,
+    "confidence": 1.0
+  },
+  {
+    "text": " It",
+    "startMs": 17820,
+    "endMs": 17960,
+    "timestampMs": 17960,
+    "confidence": 1.0
+  },
+  {
+    "text": " makes",
+    "startMs": 17960,
+    "endMs": 18260,
+    "timestampMs": 18260,
+    "confidence": 1.0
+  },
+  {
+    "text": " you",
+    "startMs": 18260,
+    "endMs": 18460,
+    "timestampMs": 18460,
+    "confidence": 1.0
+  },
+  {
+    "text": " look",
+    "startMs": 18460,
+    "endMs": 18820,
+    "timestampMs": 18820,
+    "confidence": 1.0
+  },
+  {
+    "text": " like",
+    "startMs": 18820,
+    "endMs": 19220,
+    "timestampMs": 19220,
+    "confidence": 1.0
+  },
+  {
+    "text": " you",
+    "startMs": 19220,
+    "endMs": 19380,
+    "timestampMs": 19380,
+    "confidence": 1.0
+  },
+  {
+    "text": " are",
+    "startMs": 19380,
+    "endMs": 19460,
+    "timestampMs": 19460,
+    "confidence": 1.0
+  },
+  {
+    "text": " moving",
+    "startMs": 19460,
+    "endMs": 19860,
+    "timestampMs": 19860,
+    "confidence": 1.0
+  },
+  {
+    "text": " house.",
+    "startMs": 19860,
+    "endMs": 20720,
+    "timestampMs": 20720,
+    "confidence": 1.0
+  },
+  {
+    "text": " I",
+    "startMs": 20720,
+    "endMs": 20880,
+    "timestampMs": 20880,
+    "confidence": 1.0
+  },
+  {
+    "text": " lived",
+    "startMs": 20880,
+    "endMs": 21360,
+    "timestampMs": 21360,
+    "confidence": 1.0
+  },
+  {
+    "text": " 19",
+    "startMs": 21360,
+    "endMs": 22000,
+    "timestampMs": 22000,
+    "confidence": 1.0
+  },
+  {
+    "text": " years",
+    "startMs": 22000,
+    "endMs": 22420,
+    "timestampMs": 22420,
+    "confidence": 1.0
+  },
+  {
+    "text": " in",
+    "startMs": 22420,
+    "endMs": 22680,
+    "timestampMs": 22680,
+    "confidence": 1.0
+  },
+  {
+    "text": " California,",
+    "startMs": 22680,
+    "endMs": 23800,
+    "timestampMs": 23800,
+    "confidence": 1.0
+  },
+  {
+    "text": " in",
+    "startMs": 23800,
+    "endMs": 23920,
+    "timestampMs": 23920,
+    "confidence": 1.0
+  },
+  {
+    "text": " Sunnyvale.",
+    "startMs": 23920,
+    "endMs": 24960,
+    "timestampMs": 24960,
+    "confidence": 1.0
+  },
+  {
+    "text": " I",
+    "startMs": 24480,
+    "endMs": 25400,
+    "timestampMs": 25400,
+    "confidence": 1.0
+  },
+  {
+    "text": " did",
+    "startMs": 25400,
+    "endMs": 25680,
+    "timestampMs": 25680,
+    "confidence": 1.0
+  },
+  {
+    "text": " it",
+    "startMs": 25680,
+    "endMs": 25880,
+    "timestampMs": 25880,
+    "confidence": 1.0
+  },
+  {
+    "text": " the",
+    "startMs": 25880,
+    "endMs": 26000,
+    "timestampMs": 26000,
+    "confidence": 1.0
+  },
+  {
+    "text": " American",
+    "startMs": 26000,
+    "endMs": 26560,
+    "timestampMs": 26560,
+    "confidence": 1.0
+  },
+  {
+    "text": " way",
+    "startMs": 26560,
+    "endMs": 26840,
+    "timestampMs": 26840,
+    "confidence": 1.0
+  },
+  {
+    "text": " too.",
+    "startMs": 26840,
+    "endMs": 27620,
+    "timestampMs": 27620,
+    "confidence": 1.0
+  },
+  {
+    "text": " The",
+    "startMs": 27280,
+    "endMs": 27860,
+    "timestampMs": 27860,
+    "confidence": 1.0
+  },
+  {
+    "text": " giant",
+    "startMs": 27860,
+    "endMs": 28420,
+    "timestampMs": 28420,
+    "confidence": 1.0
+  },
+  {
+    "text": " tote,",
+    "startMs": 28420,
+    "endMs": 29180,
+    "timestampMs": 29180,
+    "confidence": 1.0
+  },
+  {
+    "text": " the",
+    "startMs": 29180,
+    "endMs": 29440,
+    "timestampMs": 29440,
+    "confidence": 1.0
+  },
+  {
+    "text": " strap",
+    "startMs": 29440,
+    "endMs": 29840,
+    "timestampMs": 29840,
+    "confidence": 1.0
+  },
+  {
+    "text": " that",
+    "startMs": 29840,
+    "endMs": 30080,
+    "timestampMs": 30080,
+    "confidence": 1.0
+  },
+  {
+    "text": " slides",
+    "startMs": 30080,
+    "endMs": 30540,
+    "timestampMs": 30540,
+    "confidence": 1.0
+  },
+  {
+    "text": " off",
+    "startMs": 30540,
+    "endMs": 30780,
+    "timestampMs": 30780,
+    "confidence": 1.0
+  },
+  {
+    "text": " the",
+    "startMs": 30780,
+    "endMs": 30940,
+    "timestampMs": 30940,
+    "confidence": 1.0
+  },
+  {
+    "text": " shoulder,",
+    "startMs": 30940,
+    "endMs": 31700,
+    "timestampMs": 31700,
+    "confidence": 1.0
+  },
+  {
+    "text": " the",
+    "startMs": 31700,
+    "endMs": 32040,
+    "timestampMs": 32040,
+    "confidence": 1.0
+  },
+  {
+    "text": " bag",
+    "startMs": 32040,
+    "endMs": 32480,
+    "timestampMs": 32480,
+    "confidence": 1.0
+  },
+  {
+    "text": " so",
+    "startMs": 32480,
+    "endMs": 32700,
+    "timestampMs": 32700,
+    "confidence": 1.0
+  },
+  {
+    "text": " heavy",
+    "startMs": 32700,
+    "endMs": 33180,
+    "timestampMs": 33180,
+    "confidence": 1.0
+  },
+  {
+    "text": " you",
+    "startMs": 33180,
+    "endMs": 33560,
+    "timestampMs": 33560,
+    "confidence": 1.0
+  },
+  {
+    "text": " lean",
+    "startMs": 33560,
+    "endMs": 33800,
+    "timestampMs": 33800,
+    "confidence": 1.0
+  },
+  {
+    "text": " away",
+    "startMs": 33800,
+    "endMs": 34140,
+    "timestampMs": 34140,
+    "confidence": 1.0
+  },
+  {
+    "text": " from",
+    "startMs": 34000,
+    "endMs": 34480,
+    "timestampMs": 34480,
+    "confidence": 1.0
+  },
+  {
+    "text": " it",
+    "startMs": 34480,
+    "endMs": 34720,
+    "timestampMs": 34720,
+    "confidence": 1.0
+  },
+  {
+    "text": " all",
+    "startMs": 34720,
+    "endMs": 34880,
+    "timestampMs": 34880,
+    "confidence": 1.0
+  },
+  {
+    "text": " day.",
+    "startMs": 34880,
+    "endMs": 35380,
+    "timestampMs": 35380,
+    "confidence": 1.0
+  },
+  {
+    "text": " My",
+    "startMs": 35040,
+    "endMs": 35640,
+    "timestampMs": 35640,
+    "confidence": 1.0
+  },
+  {
+    "text": " mother",
+    "startMs": 35640,
+    "endMs": 36000,
+    "timestampMs": 36000,
+    "confidence": 1.0
+  },
+  {
+    "text": " dressed",
+    "startMs": 36000,
+    "endMs": 36480,
+    "timestampMs": 36480,
+    "confidence": 1.0
+  },
+  {
+    "text": " brides",
+    "startMs": 36480,
+    "endMs": 37000,
+    "timestampMs": 37000,
+    "confidence": 1.0
+  },
+  {
+    "text": " in",
+    "startMs": 37000,
+    "endMs": 37380,
+    "timestampMs": 37380,
+    "confidence": 1.0
+  },
+  {
+    "text": " Gion",
+    "startMs": 37380,
+    "endMs": 37620,
+    "timestampMs": 37620,
+    "confidence": 1.0
+  },
+  {
+    "text": " for",
+    "startMs": 37620,
+    "endMs": 37960,
+    "timestampMs": 37960,
+    "confidence": 1.0
+  },
+  {
+    "text": " 40",
+    "startMs": 37960,
+    "endMs": 38360,
+    "timestampMs": 38360,
+    "confidence": 1.0
+  },
+  {
+    "text": " years.",
+    "startMs": 38360,
+    "endMs": 39380,
+    "timestampMs": 39380,
+    "confidence": 1.0
+  },
+  {
+    "text": " She",
+    "startMs": 38940,
+    "endMs": 39560,
+    "timestampMs": 39560,
+    "confidence": 1.0
+  },
+  {
+    "text": " carried",
+    "startMs": 39560,
+    "endMs": 39880,
+    "timestampMs": 39880,
+    "confidence": 1.0
+  },
+  {
+    "text": " a",
+    "startMs": 39880,
+    "endMs": 40140,
+    "timestampMs": 40140,
+    "confidence": 1.0
+  },
+  {
+    "text": " small",
+    "startMs": 40140,
+    "endMs": 40500,
+    "timestampMs": 40500,
+    "confidence": 1.0
+  },
+  {
+    "text": " silk",
+    "startMs": 40500,
+    "endMs": 40840,
+    "timestampMs": 40840,
+    "confidence": 1.0
+  },
+  {
+    "text": " pouch",
+    "startMs": 40840,
+    "endMs": 41300,
+    "timestampMs": 41300,
+    "confidence": 1.0
+  },
+  {
+    "text": " and",
+    "startMs": 41300,
+    "endMs": 41740,
+    "timestampMs": 41740,
+    "confidence": 1.0
+  },
+  {
+    "text": " nothing",
+    "startMs": 41740,
+    "endMs": 42080,
+    "timestampMs": 42080,
+    "confidence": 1.0
+  },
+  {
+    "text": " else.",
+    "startMs": 42080,
+    "endMs": 43060,
+    "timestampMs": 43060,
+    "confidence": 1.0
+  },
+  {
+    "text": " Tonight",
+    "startMs": 42620,
+    "endMs": 43520,
+    "timestampMs": 43520,
+    "confidence": 1.0
+  },
+  {
+    "text": " I",
+    "startMs": 43520,
+    "endMs": 43880,
+    "timestampMs": 43880,
+    "confidence": 1.0
+  },
+  {
+    "text": " will",
+    "startMs": 43880,
+    "endMs": 44060,
+    "timestampMs": 44060,
+    "confidence": 1.0
+  },
+  {
+    "text": " show",
+    "startMs": 44060,
+    "endMs": 44340,
+    "timestampMs": 44340,
+    "confidence": 1.0
+  },
+  {
+    "text": " you",
+    "startMs": 44340,
+    "endMs": 44560,
+    "timestampMs": 44560,
+    "confidence": 1.0
+  },
+  {
+    "text": " all",
+    "startMs": 44560,
+    "endMs": 44880,
+    "timestampMs": 44880,
+    "confidence": 1.0
+  },
+  {
+    "text": " seven,",
+    "startMs": 44880,
+    "endMs": 45620,
+    "timestampMs": 45620,
+    "confidence": 1.0
+  },
+  {
+    "text": " one",
+    "startMs": 45620,
+    "endMs": 46000,
+    "timestampMs": 46000,
+    "confidence": 1.0
+  },
+  {
+    "text": " by",
+    "startMs": 46000,
+    "endMs": 46200,
+    "timestampMs": 46200,
+    "confidence": 1.0
+  },
+  {
+    "text": " one.",
+    "startMs": 46200,
+    "endMs": 47100,
+    "timestampMs": 47100,
+    "confidence": 1.0
+  },
+  {
+    "text": " The",
+    "startMs": 47020,
+    "endMs": 47600,
+    "timestampMs": 47600,
+    "confidence": 1.0
+  },
+  {
+    "text": " last",
+    "startMs": 47600,
+    "endMs": 47940,
+    "timestampMs": 47940,
+    "confidence": 1.0
+  },
+  {
+    "text": " one",
+    "startMs": 47940,
+    "endMs": 48300,
+    "timestampMs": 48300,
+    "confidence": 1.0
+  },
+  {
+    "text": " cost",
+    "startMs": 48300,
+    "endMs": 48640,
+    "timestampMs": 48640,
+    "confidence": 1.0
+  },
+  {
+    "text": " nothing",
+    "startMs": 48640,
+    "endMs": 49000,
+    "timestampMs": 49000,
+    "confidence": 1.0
+  },
+  {
+    "text": " to",
+    "startMs": 49000,
+    "endMs": 49260,
+    "timestampMs": 49260,
+    "confidence": 1.0
+  },
+  {
+    "text": " fix.",
+    "startMs": 49260,
+    "endMs": 49840,
+    "timestampMs": 49840,
+    "confidence": 1.0
+  }
+]

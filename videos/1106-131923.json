@@ -1,0 +1,79 @@
+{
+ "vid": "1106-131923",
+ "titulo": "Reiko · baño nocturno",
+ "canal": "Reiko",
+ "estado": "listo",
+ "actualizado": 1794132089.506199,
+ "creado": 1793981963.291354,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "2.785 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "18:10 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "9 clips · 14 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "730 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "14 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 18.2 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.0692,
+  "gpt": 0.0,
+  "gpt_img": 0,
+  "avatarity": 0.014,
+  "avy_img": 4,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.0692
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1106-131923/final.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1106-131923"
+}
