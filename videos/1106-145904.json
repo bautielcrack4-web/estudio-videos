@@ -1,0 +1,79 @@
+{
+ "vid": "1106-145904",
+ "titulo": "9 Japanese Hair Rules After 60 That Take 10 Years Off Your Face",
+ "canal": "Michiko's Kyoto Closet",
+ "estado": "listo",
+ "actualizado": 1794131943.3242886,
+ "creado": 1793987944.094172,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "2.519 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "16:38 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "10 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "184 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "5 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "5 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 16.6 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.347,
+  "gpt": 0.317,
+  "gpt_img": 85,
+  "avatarity": 0.6615,
+  "avy_img": 189,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.664
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1106-145904/ds-mk10ds-11061919.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1106-145904"
+}
