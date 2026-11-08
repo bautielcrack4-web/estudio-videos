@@ -1,0 +1,79 @@
+{
+ "vid": "1107-183450",
+ "titulo": "After Burying 7,000 People, This Is the Funeral I Want for Myself",
+ "canal": "Ernie Navarro, Funeral Director",
+ "estado": "listo",
+ "actualizado": 1794131075.9574075,
+ "creado": 1794087290.1700213,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "3.987 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "25:26 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "107 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "215 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "2 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "6 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 25.4 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.3463,
+  "gpt": 0.4412,
+  "gpt_img": 177,
+  "avatarity": 0.7385,
+  "avy_img": 211,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.7875
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-183450/final_7fdd4d4cfc1a.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-183450"
+}

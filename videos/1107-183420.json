@@ -1,0 +1,79 @@
+{
+ "vid": "1107-183420",
+ "titulo": "Después de enterrar a 6.000 personas, esto es lo que quiero en mi propio funeral",
+ "canal": "Don Ernesto, el Funerario",
+ "estado": "listo",
+ "actualizado": 1794131152.599692,
+ "creado": 1794087260.8725939,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "3.995 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "26:59 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "126 clips · 2 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "230 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "19 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "6 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 27.0 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.3657,
+  "gpt": 0.9367,
+  "gpt_img": 245,
+  "avatarity": 0.889,
+  "avy_img": 254,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 1.3024
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-183420/final.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-183420"
+}

@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182748",
+ "titulo": "I Buried 7,000 People in San Antonio — The 9 Things Families Regret Paying For",
+ "canal": "Ernie Navarro, Funeral Director",
+ "estado": "listo",
+ "actualizado": 1794131165.3882902,
+ "creado": 1794086868.9443,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "4.516 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "29:19 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "105 clips · 2 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "311 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "5 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 29.3 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.4655,
+  "gpt": 0.5062,
+  "gpt_img": 262,
+  "avatarity": 1.092,
+  "avy_img": 312,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.9717
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182748/final_a54cd9107bb3.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182748"
+}

@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182643",
+ "titulo": "Lo que las familias nunca ven después de que se cierra el ataúd",
+ "canal": "Don Ernesto, el Funerario",
+ "estado": "listo",
+ "actualizado": 1794131137.901951,
+ "creado": 1794086804.0018609,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "4.685 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "31:16 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "112 clips"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "254 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "1 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "9 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 31.3 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.3034,
+  "gpt": 1.0789,
+  "gpt_img": 223,
+  "avatarity": 0.889,
+  "avy_img": 254,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 1.3823
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182643/final_9e60f646c6f0.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182643"
+}
