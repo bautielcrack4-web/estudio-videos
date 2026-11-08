@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794178385.7463288,
+ "actualizado": 1794178452.5397153,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "68 fotos"
+   "info": "67 fotos"
   },
   {
    "k": "armado",
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0546,
+  "deepseek": 0.0556,
   "gpt": 0.14,
   "gpt_img": 67,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1946
+  "total": 0.1956
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "p001 4.7 - 9.34\np017 147.0 - 152.0\np024 217.0 - 222.0\np026 237.0 - 242.4\np027 247.5 - 252.5\np032 301.5 - 306.0\np041 399.44 - 403.14\np045 443.0 - 449.0\np046 464.7 - 468.0\np048 482.0 - 486.0\np055 550.0 - 553.96\np058 578.0 - 582.0\ns05 453.52 - 464.7"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"file\": \"agua.mp3\", \"t\": 4700, \"gain\": 0.05, \"fade\": 0.4},\n {\"file\": \"grifo.mp3\", \"t\": 147000, \"gain\": 0.045, \"fade\": 0.5},\n {\"file\": \"pano.mp3\", \"t\": 301500, \"gain\": 0.05, \"fade\": 0.3},\n {\"file\": \"reloj.mp3\", \"t\": 399440, \"gain\": 0.04, \"fade\": 0.4},\n {\"file\": \"papel.mp3\", \"t\": 482000, \"gain\": 0.045, \"fade\": 0.3}\n]\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/cues.json (file state is current in your context — no need to Read it back)"
-  },
   {
    "k": "ai",
    "t": "Espero el lote grande de fotos."
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/pedidos_fix.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f fotos/p011.png && nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/pedidos_fix.json > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/fotos_fix.log 2>&1 & echo \"fix PID: $!\"; sleep 8; tail -4 fotos/fotos_fix.log; echo \"---AVATAR---\""
+  },
+  {
+   "k": "res",
+   "t": "fix PID: 9411\n22:53:08 → batch batch_6af0fd5417d88190880378231df95f7c · 1 fotos · sin referencia · low 1088x608\n22:53:08 batch 1df95f7c: validating 0/0\n---AVATAR---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p011.png\" --timeout 420; tail -3 fotos/fotos_fix.log"
   }
  ],
  "maquinas": 2,
