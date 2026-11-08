@@ -1,0 +1,69 @@
+{
+ "vid": "20261108-193228",
+ "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
+ "canal": "kyoto-grace",
+ "estado": "trabajando",
+ "actualizado": 1794177216.3622112,
+ "creado": 1794177216.3543255,
+ "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530743024",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "pending",
+   "info": ""
+  }
+ ],
+ "costo": {
+  "deepseek": 0.0,
+  "gpt": 0.0,
+  "gpt_img": 0,
+  "whisper": 0.0,
+  "avatar": 0.0,
+  "total": 0.0
+ },
+ "eventos": [
+  {
+   "k": "user",
+   "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n\nHacé un video term"
+  }
+ ],
+ "maquinas": 1,
+ "extrema": "1"
+}
