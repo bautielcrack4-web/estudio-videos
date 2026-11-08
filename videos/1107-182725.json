@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182725",
+ "titulo": "Why I Told My Own Mother Never to Buy a Prepaid Funeral — 40 Years in the Business",
+ "canal": "Ernie Navarro, Funeral Director",
+ "estado": "listo",
+ "actualizado": 1794130993.9530122,
+ "creado": 1794086845.4667985,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "3.783 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "24:38 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "113 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "196 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "2 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "21 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 24.6 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.3285,
+  "gpt": 0.3429,
+  "gpt_img": 167,
+  "avatarity": 0.735,
+  "avy_img": 210,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.6714
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182725/final_da0fb8b30b3a.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182725"
+}

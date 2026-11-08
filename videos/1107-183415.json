@@ -1,0 +1,79 @@
+{
+ "vid": "1107-183415",
+ "titulo": "Qué pasa con un mexicano que muere en Estados Unidos y lo regresan a su pueblo",
+ "canal": "Don Ernesto, el Funerario",
+ "estado": "listo",
+ "actualizado": 1794130978.7089581,
+ "creado": 1794087255.5204678,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "4.317 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "27:47 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "130 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "244 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "5 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 27.8 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.4536,
+  "gpt": 0.4195,
+  "gpt_img": 117,
+  "avatarity": 0.4445,
+  "avy_img": 127,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.8731
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-183415/final_efae0a2db55b.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-183415"
+}

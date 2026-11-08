@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182636",
+ "titulo": "Lo que de verdad hay dentro de la urna que te dan en la funeraria",
+ "canal": "Don Ernesto, el Funerario",
+ "estado": "listo",
+ "actualizado": 1794130934.7475686,
+ "creado": 1794086796.559684,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "4.763 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "32:00 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "117 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "150 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "6 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 32.0 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.2711,
+  "gpt": 0.465,
+  "gpt_img": 134,
+  "avatarity": 0.5285,
+  "avy_img": 151,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.7361
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182636/final_ecae72f9cd05.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182636"
+}

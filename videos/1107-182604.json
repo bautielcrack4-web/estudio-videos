@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182604",
+ "titulo": "Medicare Pays for This When a Parent Is Dying — 9 Hospice Benefits Families Never Ask For",
+ "canal": "Hospice Chaplain Rosa",
+ "estado": "listo",
+ "actualizado": 1794130963.3955328,
+ "creado": 1794086764.7321906,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "4.270 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "25:57 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "96 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "166 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "8 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 26.0 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.1958,
+  "gpt": 0.3757,
+  "gpt_img": 139,
+  "avatarity": 0.5845,
+  "avy_img": 167,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.5715
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182604/final_f0f74b59a410.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182604"
+}

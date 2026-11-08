@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182613",
+ "titulo": "The Last Thing Dying Parents Do With Their Hands — A Hospice Chaplain of 34 Years",
+ "canal": "Hospice Chaplain Rosa",
+ "estado": "listo",
+ "actualizado": 1794131010.857992,
+ "creado": 1794086773.564598,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "5.679 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "33:22 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "122 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "147 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "10 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 33.4 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.3132,
+  "gpt": 0.2676,
+  "gpt_img": 136,
+  "avatarity": 0.574,
+  "avy_img": 164,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.5808
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182613/final_8ae7c8712c43.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182613"
+}
