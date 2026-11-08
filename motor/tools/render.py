@@ -56,6 +56,35 @@ for s in shots:
         continue
     clips.append([p, s["startMs"], s["endMs"], p.endswith(".mp4")])
 
+# EDICIÓN EXTREMA (opcional): extrema/manifest.json = [{"mp4":"extrema/xm03.mp4","startMs":..,"endMs":..}]
+# Cada pieza tapa la línea de fotos/clips en su tramo. Nunca pisa un tramo de avatar; si falta el mp4 queda el b-roll normal.
+try:
+    _xm = json.load(open(B + "/extrema/manifest.json", encoding="utf-8")) if os.path.exists(B + "/extrema/manifest.json") else []
+except Exception as e:
+    print("extrema: manifest ilegible ->", e); _xm = []
+_XR = []
+for x in _xm:
+    try:
+        f = B + "/" + x["mp4"]; a, b = int(x["startMs"]), int(x["endMs"])
+        if not (os.path.exists(f) and os.path.getsize(f) > 50000) or b - a < 700: continue
+        if any(not (b <= r["startMs"] or a >= r["endMs"]) for r in ranges): print("extrema: pisa al avatar, va b-roll ->", x["mp4"]); continue
+        if any(not (b <= u[1] or a >= u[2]) for u in _XR): continue
+        _XR.append([f, a, b])
+    except Exception as e: print("extrema: pieza salteada ->", e)
+if _XR:
+    _nc = []
+    for p, a, b, isv in clips:
+        segs = [(a, b)]
+        for _f, ra, rb in _XR:
+            segs = [s2 for x, y in segs for s2 in (((x, y),) if (y <= ra or x >= rb) else tuple(t for t in ((x, ra), (rb, y)) if t[1] - t[0] > 0))]
+        segs = [t for t in segs if t[1] - t[0] >= 400]
+        _vis = lambda t: (t[1] - t[0]) - sum(max(0, min(t[1], r["endMs"]) - max(t[0], r["startMs"])) for r in ranges)
+        if len(segs) > 1: segs = [max(segs, key=_vis)]       # la pieza partió la foto: queda el pedazo que más se ve, la foto no vuelve
+        _nc += [[p, x, y, isv] for x, y in segs]
+    clips = _nc + [[f, a, b, True] for f, a, b in _XR]
+    clips.sort(key=lambda c: c[1])
+    print("extrema: %d piezas en la línea" % len(_XR))
+
 # recortar contra los tramos de avatar
 out = []
 for c in clips:
@@ -105,6 +134,14 @@ for r in ranges:
         q = esp(None, "Esperando avatar", "avatar", "sin_cuadro")
         if q: out.append([q, r["startMs"], r["endMs"], False])
 out.sort(key=lambda c: c[1])
+if _XR:   # huecos que dejaron las piezas: los tapa la foto vecina; si no hay, la pieza se queda quieta en su último cuadro (≤ 1,5 s)
+    for i in range(len(out) - 1):
+        c, d = out[i], out[i + 1]
+        if d[1] - c[2] <= 0: continue
+        if not c[3]: c[2] = d[1]
+        elif not d[3]: d[1] = c[2]
+        elif "/extrema/" in c[0] and d[1] - c[2] <= 1500: c[2] = d[1]
+        elif d[1] - c[2] <= 800: c[2] = d[1]                 # avatar que sigue un instante más (su clip continúa o queda quieto)
 # plan.json (lo dibuja el panel y lo revisa validar.py) sale de acá: nunca lo escribas a mano aparte
 def kind(p, isv):
     q = p.replace("\\", "/")
@@ -125,7 +162,8 @@ XF_AV, XF_FOTO = 18, 9          # cuadros de fundido: avatar<->fotos 0.6 s, foto
 for i in range(len(plan)):
     if i == len(plan) - 1: plan[i].append(0); continue
     av = ("/avatar/" in plan[i][0].replace("\\", "/")) or ("/avatar/" in plan[i + 1][0].replace("\\", "/")) or plan[i][2] or plan[i + 1][2]
-    plan[i].append(XF_AV if av else XF_FOTO)
+    xm = "/extrema/" in plan[i][0].replace("\\", "/") or "/extrema/" in plan[i + 1][0].replace("\\", "/")   # la pieza de edición extrema entra con corte corto: la 1ª palabra no queda tapada
+    plan[i].append(XF_FOTO if xm and "/avatar/" not in plan[i][0] + plan[i + 1][0] else (XF_AV if av else XF_FOTO))
 os.makedirs(B + "/segments", exist_ok=True)
 json.dump([{"n": x[1], "d": x[3]} for x in plan], open(B + "/segments/xf.json", "w"))
 print("clips=%d frames=%d (%.2fs)" % (len(plan), sum(x[1] for x in plan), sum(x[1] for x in plan) / FPS))

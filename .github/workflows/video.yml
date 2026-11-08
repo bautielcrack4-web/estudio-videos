@@ -10,6 +10,7 @@ on:
       idea:    { description: "idea opcional", required: false, default: "" }
       minutos: { description: "duración en minutos", required: false, default: "" }
       tope:    { description: "tope de gasto de DeepSeek en US$", required: false, default: "2" }
+      extrema: { description: "1 = edición extrema (motion graphics, tope duro US$0,20)", required: false, default: "" }
 
 permissions:
   contents: write
@@ -72,6 +73,7 @@ jobs:
           IDEA: ${{ inputs.idea }}
           MINUTOS: ${{ inputs.minutos }}
           TOPE: ${{ inputs.tope }}
+          EXTREMA: ${{ inputs.extrema }}
           ESTUDIO_DATA: /opt/estudio/datos
           ESTUDIO_CONFIG_PUB: /opt/estudio/publico.json
           ESTUDIO_USUARIO_SESION: sesion
@@ -118,7 +120,8 @@ jobs:
           IDEA: ${{ inputs.idea }}
           MINUTOS: ${{ inputs.minutos }}
           TOPE: ${{ inputs.tope }}
+          EXTREMA: ${{ inputs.extrema }}
         run: |
           if [ -f "/opt/estudio/datos/relanzar_$VID" ]; then
-            gh workflow run video.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"               -f vid="$VID" -f canal="$CANAL" -f titulo="$TITULO" -f idea="$IDEA" -f minutos="$MINUTOS" -f tope="$TOPE"
+            gh workflow run video.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"               -f vid="$VID" -f canal="$CANAL" -f titulo="$TITULO" -f idea="$IDEA" -f minutos="$MINUTOS" -f tope="$TOPE" -f extrema="$EXTREMA"
           fi

@@ -250,11 +250,11 @@ def publicar(estado, extra=None):
                 ev.append({"k": x.get("k"), "t": tapar(t or "")[:400]})
         o = {"vid": VID, "titulo": E.get("TITULO"), "canal": cid, "estado": estado, "actualizado": time.time(),
              "creado": st.get("creado"), "run": RUN_URL, "pasos": (v.get("pipeline") or {}).get("steps"),
-             "costo": v.get("cost"), "eventos": ev, "maquinas": st.get("maquinas", 1)}
+             "costo": v.get("cost"), "eventos": ev, "maquinas": st.get("maquinas", 1), "extrema": "1" if str(E.get("EXTREMA") or "") == "1" else ""}
         o.update(st.get("final") or {})
         o.update(extra or {})
         escribir_estado(f"videos/{VID}.json", o)
-        publicar_panel({k: o.get(k) for k in ("titulo", "canal", "run", "estado", "error", "final", "release", "actualizado", "maquinas")})
+        publicar_panel({k: o.get(k) for k in ("titulo", "canal", "run", "estado", "error", "final", "release", "actualizado", "maquinas", "extrema")})
     except Exception as e: log("no pude publicar el estado:", type(e).__name__)
 
 
@@ -317,6 +317,35 @@ while True:
 if relanzar:
     open(os.path.join(_cfg.DATOS, "relanzar_" + VID), "w").write("1")
     publicar("trabajando", {"nota": "sigue en otra máquina"}); sys.exit(0)
+
+# ── 3b) EDICIÓN EXTREMA (si el panel la pidió): corre acá, fuera de la sesión, con tope duro. Nunca rompe el video:
+#        se guarda el final de la sesión y, si algo sale mal, vuelve ése.
+if str(E.get("EXTREMA") or "").lower() in ("1", "true", "si", "sí") and not st.get("extrema"):
+    _v = server.video(st["rid"]); _cwd = _v["cwd"]
+    _fin = os.path.join(_cwd, _v["files"]["final"]) if _v["files"].get("final") else None
+    if not _fin or not os.path.exists(_fin): log("extrema: no hay final todavía, se saltea")
+    elif time.time() - T0 > LIMITE - 50 * 60: log("extrema: no alcanza el tiempo de esta máquina, va sin edición extrema")
+    else:
+        publicar("trabajando", {"nota": "edición extrema"})
+        _bk = _fin + ".sin_extrema.mp4"; shutil.copy2(_fin, _bk)
+        _T = lambda *c, t=3600: subprocess.run([sys.executable, *c], capture_output=True, text=True, timeout=t)
+        _ok = False
+        try:
+            r = _T(BASE + "/tools/extrema.py", _cwd, "--tope", str(min(float(E.get("TOPE_EXTREMA") or 0.20), 0.20)), t=5400)
+            for _l in [l for l in (r.stdout or "").splitlines() if "extrema:" in l][-14:]: log(_l[:200])
+            _man = server.jload(os.path.join(_cwd, "extrema", "manifest.json"), []) or []
+            if _man:
+                r1 = _T(BASE + "/tools/render.py", _cwd, t=5400); r2 = _T(BASE + "/tools/assemble.py", _cwd, t=3600)
+                r3 = _T(BASE + "/tools/validar.py", _cwd, "--etapa", "final", t=900)
+                _ok = r1.returncode == 0 and r2.returncode == 0 and r3.returncode == 0 and os.path.getsize(_fin) > 1e6
+                if not _ok: log("extrema: el armado con las piezas no pasó (", r1.returncode, r2.returncode, r3.returncode, ") -> vuelve el final sin edición extrema")
+                else: log("extrema: %d piezas en el video" % len(_man))
+        except Exception as e:
+            log("extrema: falló (", type(e).__name__, ") -> vuelve el final sin edición extrema")
+        if not _ok: shutil.copy2(_bk, _fin)
+        try: os.remove(_bk)
+        except OSError: pass
+    st["extrema"] = True; server.jsave(ST, st)
 
 # ── 4) entrega: Release con el final y el reporte
 v = server.video(st["rid"]); cwd = v["cwd"]
