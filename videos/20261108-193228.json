@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794178322.7453136,
+ "actualizado": 1794178385.7463288,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "10 fotos"
+   "info": "68 fotos"
   },
   {
    "k": "armado",
@@ -51,114 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0475,
-  "gpt": 0.0199,
-  "gpt_img": 9,
+  "deepseek": 0.0546,
+  "gpt": 0.14,
+  "gpt_img": 67,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0674
+  "total": 0.1946
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "Lanzo la primera tanda de fotos (9). Primero pasa la compuerta; si falla, no gasta nada."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/pedidos_01.json > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/fotos_01.log 2>&1 & echo \"fotos PID: $!\"; sleep 12; tail -15 fotos/fotos_01.log"
-  },
-  {
-   "k": "res",
-   "t": "fotos PID: 5849\n22:43:43 → batch batch_6af0fb1f68208190894265883f5f7c92 · 9 fotos · sin referencia · low 1088x608\n22:43:43 batch 3f5f7c92: validating 0/0"
-  },
-  {
-   "k": "ai",
-   "t": "La compuerta pasó y el batch está en vuelo. Mientras, preparo los sonidos."
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"id\": \"agua\", \"tags\": [\"water\", \"splash\"], \"q\": \"water splash basin\", \"min\": 0.5, \"max\": 6},\n {\"id\": \"grifo\", \"tags\": [\"water\", \"faucet\"], \"q\": \"faucet running water\", \"min\": 1, \"max\": 6},\n {\"id\": \"pano\", \"tags\": [\"cloth\", \"wipe\"], \"q\": \"cloth wipe soft\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"pava\", \"tags\": [\"kettle\", \"boiling\"], \"q\": \"kettle boiling steam\", \"min\": 1, \"max\": 8},\n {\"id\": \"taza\", \"tag"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/sonidos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/sfx_pedidos.json --tomas 3 > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/sonidos.log 2>&1 & echo \"sfx PID: $!\"; sleep 3; tail -5 sonidos.log; echo \"---AVATAR---\"; tail -6 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "sfx PID: 5882\n---AVATAR---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/*.png\" 9 --timeout 540; echo \"---\"; tail -4 fotos/fotos_01.log"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 9 archivos (160 s)\n---\n22:45:14 batch 3f5f7c92: in_progress 0/9\n22:46:44 batch 3f5f7c92: completed 9/9\n22:46:46 ✓ batch 3f5f7c92: 9 fotos bajadas, 0 fallidas (US$0.020)\n22:46:46 FIN: 9/9 fotos en fotos/ (3 min)"
-  },
-  {
-   "k": "ai",
-   "t": "Fotos de prueba listas. Armo la hoja de contacto y la miro."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fotos.jpg /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_a.png /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_b.png /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_c.png /opt/estudio/datos"
-  },
-  {
-   "k": "res",
-   "t": "hoja: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fotos.jpg (9 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fotos.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_a.png\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p001_b.png\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "p001_a es la más fuerte (manos en el agua, vapor, cara de alivio, reloj a las 7:10, se entiende sin audio). La elijo y anoto."
-  },
-  {
-   "k": "tool",
-   "t": "cp fotos/p001_a.png fotos/p001.png && cp fotos/p001_a.json fotos/p001.json && ls -la fotos/p001.* && cat > gates/fotos_auto.txt <<'EOF'\nCONTROL FOTOS · primera tanda (9)\n\nMiradas una por una y en hoja de contacto (qc/hoja_fotos.jpg):\n- p001_a: elegida como p001. Manos entrando al agua tibia, vapor, ojos cerrados con alivio, reloj a las 7:10,\n  paño doblado, pava y jabón. Se entiende en chico y sin"
-  },
-  {
-   "k": "res",
-   "t": "-rw-rw-rw-+ 1 sesion sesion    1938 Nov  8 22:47 fotos/p001.json\n-rw-rw-rw-+ 1 sesion sesion 1086939 Nov  8 22:47 fotos/p001.png\ndone"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/pedidos_02.json > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/fotos_02.log 2>&1 & echo \"fotos02 PID: $!\"; sleep 10; tail -8 fotos/fotos_02.log; echo \"---SFX---\"; tail -12 sonidos.log; e"
-  },
-  {
-   "k": "res",
-   "t": "fotos02 PID: 6813\n22:47:11 → batch batch_6af0fbeedb4c8190b4c07a5ed4943817 · 58 fotos · sin referencia · low 1088x608\n22:47:11 batch d4943817: validating 0/0\n---SFX---\nok agua: agua.mp3 (1 s, Water splash) · agua_2.mp3 (1 s, Sea water splash) · agua_3.mp3 (2 s, Water drop splashes in cave)\nok grifo: grifo.mp3 (4 s, Water sink running) · grifo_2.mp3 (1 s, Water bubble) · grifo_3.mp3 (1 s, Water spla"
-  },
-  {
-   "k": "tool",
-   "t": "python -c \"\nimport json\nP=json.load(open('planos.json'))\nfor p in P:\n    if p['id'] in ('p001','p017','p024','p026','p027','p032','p041','p045','p046','p048','p055','p058','s05'):\n        print(p['id'], p['startMs']/1000, '-', p['endMs']/1000)\n\""
-  },
   {
    "k": "res",
    "t": "p001 4.7 - 9.34\np017 147.0 - 152.0\np024 217.0 - 222.0\np026 237.0 - 242.4\np027 247.5 - 252.5\np032 301.5 - 306.0\np041 399.44 - 403.14\np045 443.0 - 449.0\np046 464.7 - 468.0\np048 482.0 - 486.0\np055 550.0 - 553.96\np058 578.0 - 582.0\ns05 453.52 - 464.7"
@@ -178,6 +78,106 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/*.png\" 68 --timeout 540; echo \"---\"; tail -5 fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 68 archivos (285 s)\n---\n22:47:41 batch d4943817: in_progress 1/58\n22:48:41 batch d4943817: in_progress 31/58\n22:52:12 batch d4943817: completed 58/58\n22:52:19 ✓ batch d4943817: 58 fotos bajadas, 0 fallidas (US$0.120)\n22:52:19 FIN: 58/58 fotos en fotos/ (5 min)"
+  },
+  {
+   "k": "ai",
+   "t": "Todas las fotos bajaron. Armo las hojas de contacto y las reviso."
+  },
+  {
+   "k": "tool",
+   "t": "T=/opt/estudio/repo/motor/tools/hoja.py && python $T qc/hoja_A.jpg fotos/p001.png fotos/p002.png fotos/p003.png fotos/p004.png fotos/p005.png fotos/p006.png fotos/p007.png fotos/p008.png fotos/p009.png fotos/p010.png fotos/p011.png fotos/p012.png && python $T qc/hoja_B.jpg fotos/p013.png fotos/p014.png fotos/p015.png fotos/p016.png fotos/p017.png fotos/p018.png fotos/p019.png fotos/p020.png fotos/"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_A.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_B.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_C.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_D.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_E.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_F.jpg (5 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_A.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_B.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_C.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_D.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_E.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_F.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p036.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p011.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p010.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "Solo p011 salió mal (persona joven en shorts, encuadre desde atrás). La rehago en una sola ronda."
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"id\": \"p011\", \"cara\": false, \"prompt\": {\n  \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9, wrinkles, age spots\",\n  \"moment\": \"A basin at home with the plain things already there, a woman's hand reaching for the cotton cloth on the tap befo"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/pedidos_fix.json (file state is current in your context — no need to Read it back)"
   }
  ],
  "maquinas": 2,
