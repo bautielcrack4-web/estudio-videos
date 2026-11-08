@@ -3,9 +3,9 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794177216.3622112,
+ "actualizado": 1794177382.0945683,
  "creado": 1794177216.3543255,
- "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530743024",
+ "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
   {
    "k": "guion",
@@ -51,19 +51,47 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0,
+  "deepseek": 0.0039,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0
+  "total": 0.0039
  },
  "eventos": [
   {
    "k": "user",
    "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n\nHacé un video term"
+  },
+  {
+   "k": "ai",
+   "t": "I'll start by getting oriented in the working folder and reading the brief."
+  },
+  {
+   "k": "tool",
+   "t": "ls -la && echo \"---REFS---\" && ls -la refs/ 2>/dev/null && echo \"---TOOLS---\" && ls /opt/estudio/repo/motor/tools/"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/BRIEF.md\"}"
+  },
+  {
+   "k": "res",
+   "t": "total 60\ndrwxrwxrwx+ 6 runner runner 4096 Nov  8 22:33 .\ndrwxrwxrwx+ 3 runner runner 4096 Nov  8 22:33 ..\n-rw-rw-rw-+ 1 runner runner 8260 Nov  8 22:33 BRIEF.md\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 avatar\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 fotos\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 refs\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 voz\n---REFS---\ntotal 5876\ndrwxrwxrwx+"
+  },
+  {
+   "k": "res",
+   "t": "1\t# BRIEF — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n2\t\n3\tHacé un video terminado, sin preguntar nada y sin frenar: `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4` + `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/REPORTE.md` + `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/meta.json`. Trabajá todo den"
+  },
+  {
+   "k": "ai",
+   "t": "Brief and folder confirmed. Writing the ~10-minute English script now."
+  },
+  {
+   "k": "user",
+   "t": "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final."
   }
  ],
- "maquinas": 1,
+ "maquinas": 2,
  "extrema": "1"
 }
