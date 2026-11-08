@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794177562.0966346,
+ "actualizado": 1794177628.3640778,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.009,
+  "deepseek": 0.0125,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.009
+  "total": 0.0125
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "I'll start by getting oriented in the working folder and reading the brief."
-  },
-  {
-   "k": "tool",
-   "t": "ls -la && echo \"---REFS---\" && ls -la refs/ 2>/dev/null && echo \"---TOOLS---\" && ls /opt/estudio/repo/motor/tools/"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/BRIEF.md\"}"
-  },
-  {
-   "k": "res",
-   "t": "total 60\ndrwxrwxrwx+ 6 runner runner 4096 Nov  8 22:33 .\ndrwxrwxrwx+ 3 runner runner 4096 Nov  8 22:33 ..\n-rw-rw-rw-+ 1 runner runner 8260 Nov  8 22:33 BRIEF.md\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 avatar\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 fotos\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 refs\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 voz\n---REFS---\ntotal 5876\ndrwxrwxrwx+"
-  },
-  {
-   "k": "res",
-   "t": "1\t# BRIEF — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n2\t\n3\tHacé un video terminado, sin preguntar nada y sin frenar: `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4` + `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/REPORTE.md` + `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/meta.json`. Trabajá todo den"
-  },
   {
    "k": "ai",
    "t": "Brief and folder confirmed. Writing the ~10-minute English script now."
@@ -178,6 +158,26 @@
   {
    "k": "res",
    "t": "✓ captions.json: 1634 palabras en 10.1 min\n---\n1634 palabras\n{'text': ' Hello,', 'startMs': 0, 'endMs': 460, 'timestampMs': 0, 'confidence': 1.0}\n{'text': ' in.', 'startMs': 603436, 'endMs': 603836, 'timestampMs': 603436, 'confidence': 1.0}"
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'EOF'\nimport json\nc=json.load(open('captions.json'))\n# build segments split at gaps > 350ms\nsegs=[]\ncur=[]\nprev_end=None\nfor w in c:\n    if prev_end is not None and w['startMs']-prev_end > 350:\n        segs.append((cur[0]['startMs'], prev_end, ' '.join(x['text'].strip() for x in cur)))\n        cur=[]\n    cur.append(w)\n    prev_end=w['endMs']\nif cur: segs.append((cur[0]['startMs'], prev_"
+  },
+  {
+   "k": "res",
+   "t": "  0    0.00-   4.68 ( 4.68s) Hello, please come in. Sit here by the window where the light is good.\n  1    6.06-   8.96 ( 2.90s) I want to begin with a number. Two minutes.\n  2    9.34-  15.16 ( 5.82s) That is how long my mother stood at the basin in her kitchen every evening, washing her hands.\n  3   15.76-  27.52 (11.76s) Not two minutes with a cream, not with a bottle from a shop. Two minutes w"
+  },
+  {
+   "k": "ai",
+   "t": "Voy a revisar cómo `planos.py` lee `avatar_ranges.json` (para pantalla partida) antes de escribir el plan."
+  },
+  {
+   "k": "tool",
+   "t": "sed -n 1,200p /opt/estudio/repo/motor/tools/planos.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"PLANOS — arma los planos del b-roll y shots_timed.json. NO escribas scripts propios para esto.\n  1) python <APP>/tools/planos.py <carpeta>\n       Necesita captions.json y avatar_ranges.json (el plan de ventanas: escribilo vos ANTES).\n       → planos.json: un plano de b-roll cada ~5 s (entre las ventanas del avatar), cortado en pausas del habla, con el\n         TEXTO que "
   }
  ],
  "maquinas": 2,
