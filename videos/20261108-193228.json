@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794177691.3943262,
+ "actualizado": 1794177754.8328652,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0193,
+  "deepseek": 0.0298,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0193
+  "total": 0.0298
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "Hello, please come in. Sit here, by the window, where the light is good.\n\nI want to begin with a number. Two minutes. That is how long my mother stood at the basin in our kitchen every evening, washing her hands. Not two minutes with a cream, not with a bottle from a shop. Two minutes with warm water, a plain cotton cloth, and the small towel she kept folded on a hook by the window. She was sixty-"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/guion.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "wc -w guion.txt && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa guion --min 10"
-  },
   {
    "k": "res",
    "t": "1640 guion.txt\nVALIDAR /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- · etapa guion\n  ✓ guion: 1641 palabras (esperado 1105-1724 para 10 min)\nRESULTADO: OK"
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "# -*- coding: utf-8 -*-\r\n\"\"\"Fotos del b-roll. Motor (Configuración → Fotos): \"openai\" = gpt-image-2 SIEMPRE low + Batch y SIN foto de referencia;\r\n\"manual\" = las hace el usuario con lo que quiera (gratis).\r\n   python <APP>/tools/fotos.py <carpeta_del_video> <pedidos.json> > <carpeta>/fotos/fotos.log 2>&1      (en segundo plano)\r\npedidos.json = [{\"id\":\"b01_gancho\", \"cara\": true|false, \"prompt\": { J"
+  },
+  {
+   "k": "ai",
+   "t": "El plan quedó cerrado (63 ventanas, 55 % avatar, sin problemas). Antes de lanzar la única llamada del avatar, verifico qué valida `avatar_it.py`."
+  },
+  {
+   "k": "tool",
+   "t": "sed -n 1,90p /opt/estudio/repo/motor/tools/avatar_it.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\r\n\"\"\"Avatar con InfiniteTalk (RunPod), UNA sola llamada por video (US$0,25 aprox.).\r\n   python <APP>/tools/avatar_it.py <carpeta_del_video> > <carpeta>/avatar/it.log 2>&1        (en segundo plano)\r\n\r\nLee <carpeta>/avatar_ranges.json (TODAS las ventanas donde se ve el avatar, plan CERRADO), voz/master.wav y la foto del\r\npresentador refs/avatar.png (máxima resolución, mirando "
   }
  ],
  "maquinas": 2,
