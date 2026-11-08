@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794178578.9021275,
+ "actualizado": 1794178643.4264007,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "16 segmentos"
+   "info": "61 segmentos"
   },
   {
    "k": "qc",
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0638,
+  "deepseek": 0.065,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.206
+  "total": 0.2072
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p011.png\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "p011 ahora sí. Genero `shots_timed.json` y valido la etapa fotos."
-  },
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/planos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --shots && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa fotos --min 10"
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "render full pid: 11892"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py 2>&1 | head -30"
+  },
+  {
+   "k": "res",
+   "t": "HERRAMIENTA DEL ESTUDIO: espera UNA sola vez hasta que pase algo (en vez de sleep + ls + tail una y otra vez).\n   python <APP>/tools/esperar.py --log <archivo.log> [--busca \"EXIT|FIN|✓|Traceback|Error\"]   termina cuando el log tiene esa palabra\n   python <APP>/tools/esperar.py --existe <archivo>                                          termina cuando el archivo existe (y dejó de crecer)\n   python "
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback\" --timeout 540; echo \"---\"; tail -3 avatar/it.log; echo \"---RENDER---\"; tail -2 render.log"
   }
  ],
  "maquinas": 2,
