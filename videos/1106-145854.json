@@ -1,0 +1,79 @@
+{
+ "vid": "1106-145854",
+ "titulo": "The 8 Color Pairs My Mother Put Next to Older Faces Instead of Black (Kyoto Kimono Dresser)",
+ "canal": "Michiko's Kyoto Closet",
+ "estado": "listo",
+ "actualizado": 1794131710.2224517,
+ "creado": 1793987934.7003438,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "2.578 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "17:03 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "9 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "223 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "12 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "5 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 17.1 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.3349,
+  "gpt": 0.2186,
+  "gpt_img": 61,
+  "avatarity": 0.763,
+  "avy_img": 218,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.5535
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1106-145854/ds-mk07ds-11071735.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1106-145854"
+}
