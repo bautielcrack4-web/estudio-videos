@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794177499.1683578,
+ "actualizado": 1794177562.0966346,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -16,14 +16,14 @@
   {
    "k": "voz",
    "n": "Voz",
-   "st": "active",
-   "info": "4 bloques"
+   "st": "done",
+   "info": "10:03 min"
   },
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "por palabra"
   },
   {
    "k": "avatar",
@@ -51,18 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0085,
+  "deepseek": 0.009,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0085
+  "total": 0.009
  },
  "eventos": [
-  {
-   "k": "user",
-   "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n\nHacé un video term"
-  },
   {
    "k": "ai",
    "t": "I'll start by getting oriented in the working folder and reading the brief."
@@ -158,6 +154,30 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/voz/master.wav --timeout 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/voz/master.wav (53.3 MB, 115 s)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -20 voz/voz.log; echo \"---\"; ls -la voz/; echo \"---\"; python -c \"\nimport wave\nw=wave.open('voz/master.wav')\nprint(w.getnframes()/w.getframerate(), 'seconds')\n\""
+  },
+  {
+   "k": "res",
+   "t": "voz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 4 bloques · 8381 caracteres\n  ✓ bloque 0: 148 s (s2.1-pro-free)\n  ✓ bloque 1: 173 s (s2.1-pro-free)\n  ✓ bloque 2: 185 s (s2.1-pro-free)\n  ✓ bloque 3: 99 s (s2.1-pro-free)\n✓ voz/master.wav 10.1 min\n---\ntotal 104060\ndrwxrwxrwx+  2 runner runner     4096 Nov  8 22:39 .\ndrwxrwxrwx+ 10 runner runner     4096 Nov  8 22:37 ..\n-rw-rw-rw-+ "
+  },
+  {
+   "k": "ai",
+   "t": "Voz lista (10.1 min). Ahora los tiempos por palabra."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- en 2>&1 | tail -5; echo \"---\"; python -c \"\nimport json\nc=json.load(open('captions.json'))\nprint(len(c), 'palabras')\nprint(c[0])\nprint(c[-1])\n\""
+  },
+  {
+   "k": "res",
+   "t": "✓ captions.json: 1634 palabras en 10.1 min\n---\n1634 palabras\n{'text': ' Hello,', 'startMs': 0, 'endMs': 460, 'timestampMs': 0, 'confidence': 1.0}\n{'text': ' in.', 'startMs': 603436, 'endMs': 603836, 'timestampMs': 603436, 'confidence': 1.0}"
   }
  ],
  "maquinas": 2,
