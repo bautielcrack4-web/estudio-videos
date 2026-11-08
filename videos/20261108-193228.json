@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794179654.8203528,
+ "actualizado": 1794179717.792492,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -40,45 +40,25 @@
   {
    "k": "armado",
    "n": "Armado",
-   "st": "active",
+   "st": "done",
    "info": "123 segmentos"
   },
   {
    "k": "qc",
    "n": "QC",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "REPORTE.md"
   }
  ],
  "costo": {
-  "deepseek": 0.0673,
+  "deepseek": 0.0692,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.2095
+  "total": 0.2114
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_render.jpg (10 cuadros, 4x3)\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "El render de prueba alterna avatar/fotos correctamente (el avatar todavía es el cuadro con cartel de espera). Valido y dejo la nota del control."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa render --min 10 2>&1 | tail -20"
-  },
   {
    "k": "res",
    "t": "VALIDAR /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- · etapa render\n  ✓ guion: 1641 palabras (esperado 1105-1724 para 10 min)\n  ✓ fotos: 68 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\n  ✓ fotos: 6 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  ✓ render: movimiento al azar (plan_motion de tools/render.py)"
@@ -178,6 +158,26 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 22:43:17 estado: IN_QUEUE · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE"
+  },
+  {
+   "k": "ai",
+   "t": "Sigue en cola (~33 min). Mientras, dejo armado el REPORTE con lo ya verificado."
+  },
+  {
+   "k": "tool",
+   "t": "# REPORTE — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n\n## Estado\n- Guion, voz, tiempos, planos, fotos, sonidos y render completo: OK.\n- Avatar: llamada única en curso (cola del servicio). Cuando bajen los 63 clips: rerender de los tramos de avatar + assemble + revisor + control final.\n\n## Qué se hizo\n- **Guion** (inglés, 1.641 palabras, ~10 min): gancho con el número \"dos m"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/REPORTE.md (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -3 avatar/it.log; ps -p 4890 -o etime= --no-headers"
   }
  ],
  "maquinas": 2,
