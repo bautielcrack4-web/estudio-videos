@@ -1,0 +1,85 @@
+name: video
+run-name: "🎬 ${{ inputs.titulo }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      vid:     { description: "id del video (lo pone el panel)", required: true }
+      canal:   { description: "id del canal (carpeta canales/)", required: true }
+      titulo:  { description: "título", required: true }
+      idea:    { description: "idea opcional", required: false, default: "" }
+      minutos: { description: "duración en minutos", required: false, default: "" }
+      tope:    { description: "tope de gasto de DeepSeek en US$", required: false, default: "2" }
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: video-${{ inputs.vid }}
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+
+      - name: Herramientas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          npm i -g @anthropic-ai/claude-code > /dev/null
+          pip install -q -r motor/requirements.txt
+
+      - name: Recuperar lo hecho (si es una máquina siguiente)
+        uses: actions/cache/restore@v4
+        with:
+          path: /home/runner/datos
+          key: datos-${{ inputs.vid }}-${{ github.run_id }}
+          restore-keys: datos-${{ inputs.vid }}-
+
+      - name: Hacer el video
+        env:
+          VID: ${{ inputs.vid }}
+          CANAL: ${{ inputs.canal }}
+          TITULO: ${{ inputs.titulo }}
+          IDEA: ${{ inputs.idea }}
+          MINUTOS: ${{ inputs.minutos }}
+          TOPE: ${{ inputs.tope }}
+          ESTUDIO_DATA: /home/runner/datos
+          GH_TOKEN: ${{ github.token }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FISH_API_KEY: ${{ secrets.FISH_API_KEY }}
+          RUNPOD_API_KEY: ${{ secrets.RUNPOD_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python -u motor/nube.py
+
+      - name: Guardar lo hecho
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /home/runner/datos
+          key: datos-${{ inputs.vid }}-${{ github.run_id }}
+
+      - name: Seguir en otra máquina (límite de 6 h de GitHub)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VID: ${{ inputs.vid }}
+          CANAL: ${{ inputs.canal }}
+          TITULO: ${{ inputs.titulo }}
+          IDEA: ${{ inputs.idea }}
+          MINUTOS: ${{ inputs.minutos }}
+          TOPE: ${{ inputs.tope }}
+        run: |
+          if [ -f "/home/runner/datos/relanzar_$VID" ]; then
+            gh workflow run video.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"               -f vid="$VID" -f canal="$CANAL" -f titulo="$TITULO" -f idea="$IDEA" -f minutos="$MINUTOS" -f tope="$TOPE"
+          fi
