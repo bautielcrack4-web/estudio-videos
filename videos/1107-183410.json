@@ -1,0 +1,79 @@
+{
+ "vid": "1107-183410",
+ "titulo": "Las 7 cosas que la funeraria no te dice antes de firmar el contrato",
+ "canal": "Don Ernesto, el Funerario",
+ "estado": "listo",
+ "actualizado": 1794130830.6569557,
+ "creado": 1794087250.0538,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "3.713 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "25:02 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "102 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "572 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "8 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 0.0 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.4485,
+  "gpt": 1.0937,
+  "gpt_img": 286,
+  "avatarity": 1.127,
+  "avy_img": 322,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 1.5422
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-183410/final.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-183410"
+}

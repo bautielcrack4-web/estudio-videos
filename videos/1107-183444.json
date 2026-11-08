@@ -1,0 +1,79 @@
+{
+ "vid": "1107-183444",
+ "titulo": "Why Mexican Families Pay Half for the Same Funeral — A San Antonio Funeral Director",
+ "canal": "Ernie Navarro, Funeral Director",
+ "estado": "listo",
+ "actualizado": 1794130864.6810784,
+ "creado": 1794087284.2662694,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "4.305 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "27:49 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "17 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 27.8 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.3322,
+  "gpt": 0.2965,
+  "gpt_img": 121,
+  "avatarity": 0.525,
+  "avy_img": 150,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.6287
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-183444/final.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-183444"
+}

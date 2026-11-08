@@ -1,0 +1,79 @@
+{
+ "vid": "1108-034704",
+ "titulo": "My Kyoto Closet At 68: The 10 Things I Gave Away And Never Bought Again",
+ "canal": "Michiko's Kyoto Closet",
+ "estado": "listo",
+ "actualizado": 1794130799.667406,
+ "creado": 1794120424.4491706,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "2.935 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "19:21 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "178 clips · 3 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "154 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "2 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "23 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final en GitHub · 19.4 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.2373,
+  "gpt": 0.329,
+  "gpt_img": 146,
+  "avatarity": 0.539,
+  "avy_img": 154,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.5663
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1108-034704/final_cc0f58b6b05e.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1108-034704"
+}
