@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182547",
+ "titulo": "Dying Patients All See the Same 3 Things — A Hospice Chaplain Explains What Families Miss",
+ "canal": "Hospice Chaplain Rosa",
+ "estado": "listo",
+ "actualizado": 1794131291.7396123,
+ "creado": 1794086747.4157443,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "5.243 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "31:15 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "125 clips · 2 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "120 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "skip",
+   "info": ""
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "7 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 31.3 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.2151,
+  "gpt": 0.5001,
+  "gpt_img": 114,
+  "avatarity": 0.4235,
+  "avy_img": 121,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.7152
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182547/final_2b348d60ec6d.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182547"
+}

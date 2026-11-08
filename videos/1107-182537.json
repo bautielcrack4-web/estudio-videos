@@ -1,0 +1,79 @@
+{
+ "vid": "1107-182537",
+ "titulo": "What the Final 48 Hours of Life Actually Look Like (A Hospice Chaplain of 34 Years)",
+ "canal": "Hospice Chaplain Rosa",
+ "estado": "listo",
+ "actualizado": 1794131348.3302853,
+ "creado": 1794086737.3460956,
+ "run": "",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "done",
+   "info": "5.217 palabras"
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "done",
+   "info": "31:18 min"
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "done",
+   "info": "por palabra"
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "done",
+   "info": "142 clips · 1 cuadros"
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "done",
+   "info": "200 fotos"
+  },
+  {
+   "k": "clips",
+   "n": "Clips",
+   "st": "done",
+   "info": "1 clips"
+  },
+  {
+   "k": "sonido",
+   "n": "Sonido",
+   "st": "done",
+   "info": "17 efectos"
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "done",
+   "info": "final.mp4 · 31.3 min"
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "done",
+   "info": "REPORTE.md"
+  }
+ ],
+ "costo": {
+  "deepseek": 0.2436,
+  "gpt": 0.5988,
+  "gpt_img": 169,
+  "avatarity": 0.6825,
+  "avy_img": 195,
+  "avy_vid": 0,
+  "agnes_ok": 0,
+  "total": 0.8424
+ },
+ "eventos": [],
+ "maquinas": 1,
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-1107-182537/final_c51aa3c2ed0c.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-1107-182537"
+}
