@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794177817.8625164,
+ "actualizado": 1794177880.866414,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0394,
+  "deepseek": 0.0421,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0394
+  "total": 0.0421
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "  0    0.00-   4.68 ( 4.68s) Hello, please come in. Sit here by the window where the light is good.\n  1    6.06-   8.96 ( 2.90s) I want to begin with a number. Two minutes.\n  2    9.34-  15.16 ( 5.82s) That is how long my mother stood at the basin in her kitchen every evening, washing her hands.\n  3   15.76-  27.52 (11.76s) Not two minutes with a cream, not with a bottle from a shop. Two minutes w"
-  },
-  {
-   "k": "ai",
-   "t": "Voy a revisar cómo `planos.py` lee `avatar_ranges.json` (para pantalla partida) antes de escribir el plan."
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 1,200p /opt/estudio/repo/motor/tools/planos.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"PLANOS — arma los planos del b-roll y shots_timed.json. NO escribas scripts propios para esto.\n  1) python <APP>/tools/planos.py <carpeta>\n       Necesita captions.json y avatar_ranges.json (el plan de ventanas: escribilo vos ANTES).\n       → planos.json: un plano de b-roll cada ~5 s (entre las ventanas del avatar), cortado en pausas del habla, con el\n         TEXTO que "
-  },
-  {
-   "k": "ai",
-   "t": "Escribo el plan de ventanas del avatar y genero `planos.json`."
-  },
-  {
-   "k": "tool",
-   "t": "import json\n\nW = [\n (0, 4.7, None, None),\n (9.34, 12.0, None, None),\n (15.76, 18.6, None, None),\n (22.0, 25.0, None, None),\n (28.34, 31.1, None, None),\n (34.0, 37.5, None, None),\n (40.5, 44.0, None, None),\n (47.5, 52.0, None, None),\n (56.5, 61.0, None, None),\n (66.5, 71.0, None, None),\n (76.0, 80.48, None, None),\n (80.48, 91.5, \"s01\", \"izq\"),\n (95.9, 100.3, None, None),\n (103.5, 108.0, None, None)"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gen_ranges.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python gen_ranges.py && python /opt/estudio/repo/motor/tools/planos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-"
-  },
-  {
-   "k": "res",
-   "t": "ventanas: 63 avatar: 333.7 s = 55.2 %\nproblemas: ninguno\n✓ planos.json: 60 planos de b-roll (4.5 min de b-roll, 13.3 por minuto) + 5 fotos de pantalla partida · 63 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
-  },
-  {
-   "k": "tool",
-   "t": "python -c \"\nimport json\nP=json.load(open('planos.json'))\nfor p in P:\n    print(p['id'], p.get('split',False), p['seg'], '|', p['texto'][:150])\n\""
-  },
-  {
-   "k": "res",
-   "t": "p001 False 4.6 | I want to begin with a number. Two minutes.\np002 False 3.8 | her kitchen every evening, washing her hands.\np003 False 3.4 | from a shop. Two minutes with warm water,\np004 False 3.3 | kept folded on a hook by the window.\np005 False 2.9 | thing people noticed about her. Not because\np006 False 3.0 | I am sixty-eight years old, and I have\np007 False 3.5 | house, the kind with a long n"
-  },
   {
    "k": "ai",
    "t": "Reviso el formato exacto que espera `fotos.py` antes de escribir los pedidos."
@@ -178,6 +134,50 @@
   {
    "k": "res",
    "t": "The file /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/prompts.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python prompts.py && python -c \"\nimport json\nP=json.load(open('prompts_all.json')); ids={p['id'] for p in P}\nQ=json.load(open('planos.json')); need=[q['id'] for q in Q]\nprint('faltan:',[i for i in need if i not in ids and i!='p001'])\nprint('sobran:',sorted(ids-set(need)))\nprint('ped1 ids:',[p['id'] for p in json.load(open('pedidos_01.json'))])\n\""
+  },
+  {
+   "k": "res",
+   "t": "total prompts: 67\npedidos_01: 9 | pedidos_02: 58\nfaltan: []\nsobran: ['p001_a', 'p001_b', 'p001_c']\nped1 ids: ['p001_a', 'p001_b', 'p001_c', 'p002', 'p005', 'p008', 'p012', 'p017', 'p027']"
+  },
+  {
+   "k": "ai",
+   "t": "Lanzo la primera tanda de fotos (9). Primero pasa la compuerta; si falla, no gasta nada."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/pedidos_01.json > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/fotos_01.log 2>&1 & echo \"fotos PID: $!\"; sleep 12; tail -15 fotos/fotos_01.log"
+  },
+  {
+   "k": "res",
+   "t": "fotos PID: 5849\n22:43:43 → batch batch_6af0fb1f68208190894265883f5f7c92 · 9 fotos · sin referencia · low 1088x608\n22:43:43 batch 3f5f7c92: validating 0/0"
+  },
+  {
+   "k": "ai",
+   "t": "La compuerta pasó y el batch está en vuelo. Mientras, preparo los sonidos."
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"id\": \"agua\", \"tags\": [\"water\", \"splash\"], \"q\": \"water splash basin\", \"min\": 0.5, \"max\": 6},\n {\"id\": \"grifo\", \"tags\": [\"water\", \"faucet\"], \"q\": \"faucet running water\", \"min\": 1, \"max\": 6},\n {\"id\": \"pano\", \"tags\": [\"cloth\", \"wipe\"], \"q\": \"cloth wipe soft\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"pava\", \"tags\": [\"kettle\", \"boiling\"], \"q\": \"kettle boiling steam\", \"min\": 1, \"max\": 8},\n {\"id\": \"taza\", \"tag"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/sonidos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/sfx_pedidos.json --tomas 3 > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/sonidos.log 2>&1 & echo \"sfx PID: $!\"; sleep 3; tail -5 sonidos.log; echo \"---AVATAR---\"; tail -6 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "sfx PID: 5882\n---AVATAR---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/*.png\" 9 --timeout 540; echo \"---\"; tail -4 fotos/fotos_01.log"
   }
  ],
  "maquinas": 2,
