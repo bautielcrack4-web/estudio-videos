@@ -3,21 +3,21 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794177382.0945683,
+ "actualizado": 1794177436.2490065,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
   {
    "k": "guion",
    "n": "Guion",
-   "st": "pending",
-   "info": ""
+   "st": "done",
+   "info": "1.640 palabras"
   },
   {
    "k": "voz",
    "n": "Voz",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "3 bloques"
   },
   {
    "k": "tiempos",
@@ -51,12 +51,12 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0039,
+  "deepseek": 0.0085,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0039
+  "total": 0.0085
  },
  "eventos": [
   {
@@ -90,6 +90,74 @@
   {
    "k": "user",
    "t": "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final."
+  },
+  {
+   "k": "tool",
+   "t": "ls -la && echo \"---voz---\" && ls -la voz/ && echo \"---fotos---\" && ls fotos/ | head -80 && echo \"count: $(ls fotos/ 2>/dev/null | wc -l)\" && echo \"---avatar---\" && ls -la avatar/ && echo \"---gates---\" && ls -la gates/ 2>/dev/null && echo \"---qc---\" && ls -la qc/ 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\ntotal 60\ndrwxrwxrwx+ 6 runner runner 4096 Nov  8 22:33 .\ndrwxrwxrwx+ 3 runner runner 4096 Nov  8 22:33 ..\n-rw-rwxrw-+ 1 runner runner 8260 Nov  8 22:33 BRIEF.md\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 avatar\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 fotos\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 refs\ndrwxrwxrwx+ 2 runner runner 4096 Nov  8 22:33 voz\n---voz---\ntotal 16\ndr"
+  },
+  {
+   "k": "ai",
+   "t": "La carpeta está vacía — no hay nada hecho todavía. Arranco el camino recto desde el guion."
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/refs/canal.json\"}"
+  },
+  {
+   "k": "res",
+   "t": "1\t{\n2\t \"nombre\": \"Kyoto Grace\",\n3\t \"idioma\": \"en\",\n4\t \"presentador\": \"An elderly woman with light-medium warm skin, an oval face, visible laugh lines, and dark brown eyes, her gray shoulder-length hair parted and loosely swept back, no facial hair, wears an oatmeal-beige open knit cardigan over a white scoop-neck t-shirt and gray trousers, with small pearl earrings, a thin necklace, and dark-rimme"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/refs/voz.txt"
+  },
+  {
+   "k": "res",
+   "t": "Hello, please come in. This is my home in Kyoto. I want to tell you something my mother taught me when I was a little girl. She said, Michiko, your clothes speak before you do, so be careful what they say. I didn't understand. I was maybe 10 years old. But now I'm 68."
+  },
+  {
+   "k": "ai",
+   "t": "Ahora el guion completo."
+  },
+  {
+   "k": "tool",
+   "t": "Hello, please come in. Sit here, by the window, where the light is good.\n\nI want to begin with a number. Two minutes. That is how long my mother stood at the basin in our kitchen every evening, washing her hands. Not two minutes with a cream, not with a bottle from a shop. Two minutes with warm water, a plain cotton cloth, and the small towel she kept folded on a hook by the window. She was sixty-"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/guion.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "wc -w guion.txt && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa guion --min 10"
+  },
+  {
+   "k": "res",
+   "t": "1640 guion.txt\nVALIDAR /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- · etapa guion\n  ✓ guion: 1641 palabras (esperado 1105-1724 para 10 min)\nRESULTADO: OK"
+  },
+  {
+   "k": "ai",
+   "t": "Guion OK (1641 palabras). Lanzo la voz en segundo plano."
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p gates qc sfx segments && nohup python /opt/estudio/repo/motor/tools/voz.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/voz/voz.log 2>&1 & echo \"PID: $!\""
+  },
+  {
+   "k": "res",
+   "t": "PID: 3854"
+  },
+  {
+   "k": "ai",
+   "t": "Mientras la voz corre, uso `esperar.py` (no hago polling a mano)."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/voz/master.wav --timeout 540"
   }
  ],
  "maquinas": 2,
