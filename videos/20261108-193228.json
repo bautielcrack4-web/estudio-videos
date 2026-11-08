@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794178452.5397153,
+ "actualizado": 1794178515.5048666,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -34,14 +34,14 @@
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "active",
-   "info": "67 fotos"
+   "st": "done",
+   "info": "68 fotos"
   },
   {
    "k": "armado",
    "n": "Armado",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "10 segmentos"
   },
   {
    "k": "qc",
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0556,
-  "gpt": 0.14,
-  "gpt_img": 67,
+  "deepseek": 0.058,
+  "gpt": 0.1422,
+  "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1956
+  "total": 0.2002
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "Espero el lote grande de fotos."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/*.png\" 68 --timeout 540; echo \"---\"; tail -5 fotos/fotos_02.log"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 68 archivos (285 s)\n---\n22:47:41 batch d4943817: in_progress 1/58\n22:48:41 batch d4943817: in_progress 31/58\n22:52:12 batch d4943817: completed 58/58\n22:52:19 ✓ batch d4943817: 58 fotos bajadas, 0 fallidas (US$0.120)\n22:52:19 FIN: 58/58 fotos en fotos/ (5 min)"
-  },
-  {
-   "k": "ai",
-   "t": "Todas las fotos bajaron. Armo las hojas de contacto y las reviso."
-  },
-  {
-   "k": "tool",
-   "t": "T=/opt/estudio/repo/motor/tools/hoja.py && python $T qc/hoja_A.jpg fotos/p001.png fotos/p002.png fotos/p003.png fotos/p004.png fotos/p005.png fotos/p006.png fotos/p007.png fotos/p008.png fotos/p009.png fotos/p010.png fotos/p011.png fotos/p012.png && python $T qc/hoja_B.jpg fotos/p013.png fotos/p014.png fotos/p015.png fotos/p016.png fotos/p017.png fotos/p018.png fotos/p019.png fotos/p020.png fotos/"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_A.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_B.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_C.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_D.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_E.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_F.jpg (5 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_A.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_B.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p011.png\" --timeout 420; tail -3 fotos/fotos_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p011.png (1.0 MB, 90 s)\n22:54:38 batch 1df95f7c: completed 1/1\n22:54:39 ✓ batch 1df95f7c: 1 fotos bajadas, 0 fallidas (US$0.002)\n22:54:39 FIN: 1/1 fotos en fotos/ (2 min)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/fotos/p011.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "p011 ahora sí. Genero `shots_timed.json` y valido la etapa fotos."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/planos.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --shots && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa fotos --min 10"
+  },
+  {
+   "k": "res",
+   "t": "✓ shots_timed.json: 60 planos, 60 fotos distintas (cero repetidas). Seguí con render.py.\nVALIDAR /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- · etapa fotos\n  ✓ guion: 1641 palabras (esperado 1105-1724 para 10 min)\n  ✓ fotos: 68 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\nRESULTADO: OK"
+  },
+  {
+   "k": "tool",
+   "t": "cat >> gates/fotos_auto.txt <<'EOF'\n\nCONTROL FOTOS · lote grande (58 + 1 rehecha)\n\nRevisadas en 6 hojas (qc/hoja_A..F.jpg, 68 archivos):\n- A (p001-p012): todas bien; p011 salió con una persona joven en shorts vista de espaldas (no encajaba) → REHECHA.\n  La nueva p011 muestra la mano de una mujer mayor, la manga del cardigan y el paño en la canilla: correcta.\n- B (p013-p024): bien; las creativas p0"
+  },
+  {
+   "k": "res",
+   "t": "render pid: 11025\n---AVATAR---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 20; tail -12 render_test.log; echo \"---\"; ls segments/ 2>/dev/null | head; echo \"---AVATAR---\"; tail -3 avatar/it.log"
   }
  ],
  "maquinas": 2,
