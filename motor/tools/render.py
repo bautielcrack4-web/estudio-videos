@@ -7,7 +7,7 @@ Lee <carpeta>/shots_timed.json  = [{"id":"b01_gancho","startMs":0,"endMs":3200},
         PANTALLA PARTIDA: agregá "foto":"<id>" y "lado":"izq"|"der" → el avatar ocupa esa mitad (encuadrado en la cara)
         y la foto la otra mitad, con movimiento. Sirve para tramos de avatar más largos sin que se vuelva estático.
      <carpeta>/voz/master.wav (mide la duración sola).
-Si un clip de avatar todavía no existe usa su "frame" como foto fija; cuando el clip llega, volvé a correr: SOLO se rehacen los segmentos cuya fuente cambió.
+Si un clip de avatar todavía no existe usa su "frame" como foto fija con el cartel «Esperando avatar» (si falta una imagen, «Esperando imagen»); cuando el clip llega, volvé a correr: SOLO se rehacen los segmentos cuya fuente cambió.
 Escribe plan.json (para el panel y validar.py) + segments/NNNN.mp4 + segments/xf.json (fundidos avatar 0,6 s / foto 0,3 s). Después: python <APP>/tools/assemble.py <carpeta>."""
 import json, os, re, sys, subprocess, shutil
 from concurrent.futures import ThreadPoolExecutor
@@ -28,6 +28,15 @@ rp = B + "/avatar_ranges.json"
 if os.path.exists(rp):
     ranges = json.load(open(rp, encoding="utf-8"))
 
+def esp(origen, texto, tipo, clave):
+    """Lo que todavía no llegó se muestra con un cartel elegante. Es sólo vista previa: validar.py no deja entregarlo."""
+    try:
+        import espera
+        return espera.cartel(origen, texto, espera.ruta(B, tipo, clave))
+    except Exception as e:
+        print("cartel de espera no disponible:", e)
+        return origen
+
 def img_for(sid):
     for d in ("fotos", "clips", "avatar/frames", "avatar"):
         for ext in (".jpg", ".jpeg", ".png", ".webp", ".mp4"):
@@ -41,7 +50,9 @@ clips = []
 for s in shots:
     p = img_for(s["id"])
     if not p:
-        print("FALTA IMG", s["id"])
+        print("FALTA IMG", s["id"], "-> va el cartel de espera")
+        q = esp(None, "Esperando imagen", "foto", "imagen")
+        if q: clips.append([q, s["startMs"], s["endMs"], False])
         continue
     clips.append([p, s["startMs"], s["endMs"], p.endswith(".mp4")])
 
@@ -87,10 +98,12 @@ for r in ranges:
             if fp and not fp.endswith(".mp4"): SPL[(f, r["startMs"])] = {"foto": fp, "lado": "der" if r.get("lado") == "der" else "izq"}
             else: print("PANTALLA PARTIDA: falta la foto", r["foto"], "-> ese tramo va con el avatar entero")
     elif r.get("frame") and os.path.exists(absp(r["frame"])):
-        print("AVATAR PENDIENTE (va su primer cuadro fijo):", r["file"])
-        out.append([absp(r["frame"]), r["startMs"], r["endMs"], False])
+        print("AVATAR PENDIENTE (va su cuadro fijo con el cartel de espera):", r["file"])
+        out.append([esp(absp(r["frame"]), "Esperando avatar", "avatar", r["frame"]), r["startMs"], r["endMs"], False])
     else:
-        print("FALTA AVATAR y su frame:", r["file"], "-> ese tramo queda con la foto que haya debajo")
+        print("FALTA AVATAR y su frame:", r["file"], "-> va el cartel de espera")
+        q = esp(None, "Esperando avatar", "avatar", "sin_cuadro")
+        if q: out.append([q, r["startMs"], r["endMs"], False])
 out.sort(key=lambda c: c[1])
 # plan.json (lo dibuja el panel y lo revisa validar.py) sale de acá: nunca lo escribas a mano aparte
 def kind(p, isv):
@@ -156,7 +169,8 @@ def build(i):
     n = n0 + D                      # cola para el fundido con el siguiente
     dst = "%s/%04d.mp4" % (SEG, i)
     sp = SPLS[i]
-    firma = "%s|%d|%d|%.3f|%s|%s" % (p, n, int(isv), OFFS[i], "" if isv and not sp else json.dumps(_MOT.get(i), sort_keys=True), json.dumps(sp, sort_keys=True) if sp else "")
+    _ver = lambda f: "%d:%d" % (os.path.getsize(f), int(os.path.getmtime(f)))   # si rehacés una foto con el mismo nombre, el segmento se rehace
+    firma = "%s|%d|%d|%.3f|%s|%s|%s" % (p, n, int(isv), OFFS[i], "" if isv and not sp else json.dumps(_MOT.get(i), sort_keys=True), json.dumps(sp, sort_keys=True) if sp else "", _ver(p) + ("," + _ver(sp["foto"]) if sp else ""))
     if os.path.exists(dst) and os.path.exists(dst + ".src") and open(dst + ".src", encoding="utf-8").read() == firma:
         return i, 0
     if sp:   # avatar en una mitad (encuadrado en la cara) + foto con movimiento en la otra, con una línea fina en el medio

@@ -26,7 +26,7 @@ def transcribir(audio, idioma="", t0=0.0, tramo=None):
     partes.append(f"--{bnd}--\r\n".encode())
     url = "https://api.groq.com/openai/v1/audio/transcriptions" if groq else "https://api.openai.com/v1/audio/transcriptions"
     quien = "Groq" if groq else "OpenAI"
-    q = urllib.request.Request(url, data=b"".join(partes),
+    q = urllib.request.Request(_cfg.url(url), data=b"".join(partes),
                                headers={"Authorization": "Bearer " + (groq or _cfg.clave("openai")), "Content-Type": "multipart/form-data; boundary=" + bnd, "User-Agent": "estudio-videos/1.0"})
     t = credito = 0
     while True:

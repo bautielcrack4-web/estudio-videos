@@ -33,7 +33,7 @@ if path:
 if cmd:
     if re.search(CLAVES, cmd) and not re.search(r"(?i)(meta|plan|captions|canal|pedidos)\w*\.json", cmd.replace("config.json", "")):
         bloquear("config.json tiene las claves: no se lee ni se imprime.")
-    if re.search(r"(?i)(_API_KEY|api[_-]?key|Bearer\s+sk-|\$env:|printenv|\benv\b\s*$)", cmd):
+    if re.search(r"(?i)(_API_KEY|api[_-]?key|Bearer\s+sk-|\$env:|printenv|\benv\b\s*$|/proc/|/privado|estado_git|\.git/config|\bsudo\b)", cmd):
         bloquear("no se leen ni se imprimen claves.")
     VERBO = r"(sed\s+-i|>>?|\btee\b|\brm\b|\bcp\b|\bmv\b|Set-Content|Out-File|Add-Content|Remove-Item|Copy-Item|Move-Item|\btruncate\b)"
     if re.search(r"(?i)" + VERBO + r"[^|;&\n]*?" + PROT, cmd):

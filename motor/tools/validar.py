@@ -50,15 +50,19 @@ if hasta >= 1:
     fotos = [f.replace("\\", "/") for f in glob.glob(P("fotos", "*")) if f.lower().endswith(IMG)]
     if not fotos: A("no hay fotos en fotos/")
     else:
-        sin, malos = 0, 0
+        sin, malos, creativas = 0, 0, 0
         for f in fotos:
             side = os.path.splitext(f)[0] + ".json"
             if not os.path.exists(side): sin += 1; continue
             try: pj = json.load(open(side, encoding="utf8")).get("prompt")
             except Exception: pj = None
             if not isinstance(pj, dict) or "nothing blurred out" not in json.dumps(pj).lower(): malos += 1
+            elif pj.get("detalle_narrativo"): creativas += 1
         (OK if sin == 0 else A)("fotos: %d · %d sin su prompt al lado (no salieron de tools/fotos.py)" % (len(fotos), sin))
         (OK if malos == 0 else A)("fotos: %d con prompt incompleto" % malos)
+        if hasta >= 2: (OK if creativas >= 4 else A)("fotos: %d imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)" % creativas)
+    if os.path.exists(P("avatar_ranges.json")) and not os.path.exists(P("planos.json")):
+        A("no hay planos.json: corré tools/planos.py (un plano = una foto, sin repetir) en vez de armar los planos a mano.")
     # 2c. revisión visual propia (no frena: Claude revisa en paralelo)
     if not os.path.exists(P("gates", "fotos_auto.txt")):
         A("falta tu revisión visual de las fotos de prueba: mirá qc/hoja_fotos.jpg con Read y escribí gates/fotos_auto.txt (después SEGUÍ, no esperes).")
@@ -82,6 +86,30 @@ if hasta >= 2:
             (OK if not huecos else F if grandes else A)("plan.json: %d huecos sin imagen%s" % (len(huecos), (" (ej. %.1f-%.1f s)" % (grandes or huecos)[0]) if huecos else ""))
             largos = [s for s in segs if s["t1"] - s["t0"] > 8 and str(s.get("kind", "")).startswith("foto")]
             if largos: A("plan.json: %d fotos duran más de 8 s (cortes cada 3-6 s)" % len(largos))
+            # un video JAMÁS repite una imagen: la misma foto en tramos no seguidos, en una pantalla partida o copiada con otro nombre
+            es_foto = lambda s: "/fotos/" in str(s.get("file", "")).replace("\\", "/")
+            vistos, rep, prev = {}, [], None
+            for s in segs:
+                f = os.path.basename(str(s.get("file", ""))).lower()
+                if not es_foto(s): prev = None; continue
+                if f != prev and f in vistos: rep.append("%s en %ds y %ds" % (f, vistos[f], s["t0"]))
+                vistos.setdefault(f, s["t0"]); prev = f
+            try: _rg = json.load(open(P("avatar_ranges.json"), encoding="utf8"))
+            except Exception: _rg = []
+            _usadas = {str(s["file"]) for s in segs if es_foto(s)}
+            for r in _rg:
+                if not r.get("foto"): continue
+                f = next((x for x in glob.glob(P("fotos", str(r["foto"]) + ".*")) if x.lower().endswith(IMG)), "")
+                if f and f.replace("\\", "/") in {u.replace("\\", "/") for u in _usadas}: rep.append("%s también en la pantalla partida de %ds" % (os.path.basename(f), r["startMs"] / 1000))
+                if f: _usadas.add(f)
+            import hashlib
+            _hash = {}
+            for f in sorted(_usadas):
+                try: h = hashlib.md5(open(f, "rb").read()).hexdigest()
+                except OSError: continue
+                if h in _hash: rep.append("%s y %s son la misma imagen" % (os.path.basename(_hash[h]), os.path.basename(f)))
+                _hash.setdefault(h, f)
+            (OK if not rep else F)("fotos repetidas: %s" % ("ninguna (cada plano con su foto)" if not rep else "%d — un video nunca repite imagen (ej. %s). Usá tools/planos.py: un plano = una foto" % (len(rep), rep[0])))
             s0 = segs[0] if segs else {}
             (OK if s0 and str(s0.get("kind", "")).startswith("av") and str(s0.get("file", "")).lower().endswith(".mp4") and s0.get("t0", 9) <= 0.3 else F)("apertura: lo primero que se ve es el AVATAR hablando (clip real) desde el segundo 0 (nunca una foto antes)")
             largos_av = [s for s in segs if str(s.get("kind", "")).startswith("av") and s["t0"] < 30 and s["t1"] - s["t0"] > (10.5 if s["t0"] <= 0.3 else 6.5)]
@@ -101,6 +129,8 @@ if hasta >= 2:
                 ult = max(ult, s["t1"])
             if tot - ult > 25: sin.append((ult, tot))
             (OK if not sin else FB)("ritmo del avatar: nunca más de 15 s sin avatar%s" % ((" (%d huecos, ej. %.0f-%.0f s)" % (len(sin), sin[0][0], sin[0][1])) if sin else ""))
+            esperas = [s for s in segs if "/espera/" in str(s.get("file", "")).replace("\\", "/")]
+            if etapa == "final": (OK if not esperas else F)("sin carteles de espera%s" % ((" — hay %d tramos con «Esperando…» (el primero en %.0f s): no se entrega hasta que llegue lo que falta y vuelvas a renderizar" % (len(esperas), esperas[0]["t0"])) if esperas else ""))
             quietos = [s for s in segs if str(s.get("kind", "")).startswith("av") and not str(s.get("file", "")).lower().endswith(".mp4")]
             if etapa == "final": (OK if not quietos else F)("avatar: %d de %d tramos son FOTO FIJA (falta el clip del avatar: %s) — no se entrega hasta que estén los clips" % (len(quietos), len([s for s in segs if str(s.get("kind", "")).startswith("av")]), ", ".join(sorted(set(os.path.basename(str(s.get("file", ""))) for s in quietos)))) if quietos else "avatar: todos los tramos son clips reales")
         except Exception as e: F("plan.json ilegible: %s" % e)
@@ -137,6 +167,15 @@ if hasta >= 3:
     (OK if os.path.exists(P("REPORTE.md")) else A)("REPORTE.md")
     if not os.path.exists(P("gates", "final_auto.txt")):
         A("falta tu revisión visual del final (cuadros cada 30 s en qc/): escribí gates/final_auto.txt.")
+    if not os.path.exists(P("gates", "revisor_final.json")): A("falta el revisor final: python tools/revisor.py <carpeta> (no frena, pero mira cosas que vos no ves).")
+    co, ch = P("gates", "correcciones.txt"), P("gates", "correcciones_hechas.txt")
+    if os.path.exists(co) and (not os.path.exists(ch) or os.path.getmtime(ch) < os.path.getmtime(co)):
+        A("hay correcciones sin aplicar (gates/correcciones.txt es más nuevo que gates/correcciones_hechas.txt): aplicalas y anotalas.")
+    if os.path.exists(P("cues.json")):
+        try: _fal = [c["file"] for c in json.load(open(P("cues.json"), encoding="utf8")) if not os.path.exists(P("sfx", c["file"]))]
+        except Exception: _fal = ["cues.json ilegible"]
+        (OK if not _fal else A)("sonido: cues.json con sus archivos%s" % ((" (faltan: %s)" % ", ".join(_fal[:5])) if _fal else ""))
+    else: A("no hay cues.json: el video sale sin efectos de sonido (KIT §5b).")
 
 print("VALIDAR %s · etapa %s" % (cwd, etapa))
 for m in oks: print("  ✓", m)

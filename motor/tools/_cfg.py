@@ -38,6 +38,14 @@ def clave(nombre):
     if not v: raise SystemExit(f"⛔ falta la clave de {nombre}: cargala en el panel → Configuración")
     return v
 
+PUENTE = (os.environ.get("ESTUDIO_PUENTE") or "").rstrip("/")   # en la nube la sesión no tiene claves: el puente las agrega del otro lado
+_SERVICIOS = {"api.openai.com": "openai", "api.groq.com": "groq", "api.fish.audio": "fish", "api.runpod.ai": "runpod", "api.github.com": "github", "api.deepseek.com": "deepseek"}
+def url(u):
+    if not PUENTE: return u
+    h, _, r = u.split("://", 1)[1].partition("/")
+    if h not in _SERVICIOS: raise SystemExit("⛔ ese servicio no está permitido")
+    return f"{PUENTE}/k/{_SERVICIOS[h]}" + ("/" + r if r else "")
+
 def gasto(carpeta, tag, usd, **extra):
     """Anota un gasto en <carpeta>/gasto.jsonl (el panel lo suma al costo del video)."""
     import time

@@ -64,7 +64,7 @@ log(f"InfiniteTalk: {len(R)} ventanas · reel {t:.1f} s · 1 llamada")
 
 # ── GitHub: hospedar los inputs un rato
 def gh(method, path, body=None):
-    q = urllib.request.Request("https://api.github.com" + path, method=method, data=json.dumps(body).encode() if body is not None else None,
+    q = urllib.request.Request(_cfg.url("https://api.github.com" + path), method=method, data=json.dumps(body).encode() if body is not None else None,
                                headers={"Authorization": "Bearer " + _cfg.clave("github"), "Accept": "application/vnd.github+json",
                                         "User-Agent": "estudio-videos", "X-GitHub-Api-Version": "2022-11-28"})
     try: return json.load(urllib.request.urlopen(q, timeout=300))
@@ -100,7 +100,7 @@ def borrar_inputs():
 
 # ── RunPod: 1 sola llamada
 def rp(path, body=None):
-    q = urllib.request.Request(EP + path, data=json.dumps(body).encode() if body is not None else None,
+    q = urllib.request.Request(_cfg.url(EP + path), data=json.dumps(body).encode() if body is not None else None,
                                headers={"Authorization": "Bearer " + _cfg.clave("runpod"), "Content-Type": "application/json"})
     return json.load(urllib.request.urlopen(q, timeout=120))
 
@@ -155,11 +155,13 @@ for c in cortes:
         k = int(np.argmax(np.correlate(eb, er, "valid"))); lag = k / 200.0 - (n - b0)
         if abs(lag) > 0.8: lag = 0.0   # medición dudosa: se queda en el nominal
     s = max(0.0, n + lag)
-    os.makedirs(os.path.dirname(f"{B}/{c['file']}"), exist_ok=True)
-    tmp = f"{B}/{c['file']}.tmp.mp4"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s:.3f}", "-t", f"{c['dur']:.3f}", "-i", reel,
-                    "-c:v", "libx264", "-crf", "17", "-preset", "fast", "-c:a", "aac", tmp], check=True)
     c["real"] = round(s, 3); c["lag_ms"] = round(lag * 1000); sync.append(c)
+def _cortar(c):   # en paralelo y veryfast: uno por uno tardaba ~25 min, y el render igual los recodifica
+    os.makedirs(os.path.dirname(f"{B}/{c['file']}"), exist_ok=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-threads", "2", "-ss", f"{c['real']:.3f}", "-t", f"{c['dur']:.3f}", "-i", reel,
+                    "-c:v", "libx264", "-crf", "17", "-preset", "veryfast", "-c:a", "aac", f"{B}/{c['file']}.tmp.mp4"], check=True)
+from concurrent.futures import ThreadPoolExecutor
+with ThreadPoolExecutor(4) as _ex: list(_ex.map(_cortar, sync))
 for c in sync: os.replace(f"{B}/{c['file']}.tmp.mp4", f"{B}/{c['file']}")   # todos juntos: nadie rearma a medias
 json.dump({"reel_s": round(dur_reel, 2), "cortes": sync, "perdidas": perdidas}, open(f"{B}/avatar/it_sync.json", "w"), indent=1)
 mx = max([abs(c["lag_ms"]) for c in sync] or [0])

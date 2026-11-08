@@ -50,7 +50,7 @@ for p in peds:
         try: j = json.loads(j)
         except Exception: problemas.append(f"{i}: el prompt tiene que ser un objeto JSON"); continue
     if not isinstance(j, dict): problemas.append(f"{i}: el prompt tiene que ser un objeto JSON"); continue
-    creativa = bool(re.search(r"grid|collage|illustration|infographic|diagram|notebook|flat lay|before.?after", str(j.get("type", "")), re.I))
+    creativa = bool(j.get("detalle_narrativo")) or bool(re.search(r"grid|collage|illustration|infographic|diagram|notebook|flat lay|before.?after", str(j.get("type", "")), re.I))   # imagen creativa (KIT §4b)
     falt = [k for k in CAMPOS if not j.get(k)] if not creativa else [k for k in ("type", "subject", "avoid") if not j.get(k)]
     if falt: problemas.append(f"{i}: faltan campos {','.join(falt)}")
     if "nothing blurred out" not in json.dumps(j).lower(): problemas.append(f"{i}: falta la cláusula \"nothing blurred out\" (en type)")
@@ -66,8 +66,7 @@ for p in peds:
         txt = " ".join(str(j.get(k, "")) for k in ("moment", "subject", "setting", "action"))
         if VACIO.search(txt): problemas.append(f"{i}: escena vacía/catálogo ('{VACIO.search(txt).group(0)}')")
         av = str(j.get("avoid", "")).lower()
-        for w in ("watermark", "readable text"):
-            if w not in av: problemas.append(f"{i}: 'avoid' sin '{w}'")
+        if "watermark" not in av: problemas.append(f"{i}: 'avoid' sin 'watermark'")   # el texto legible en una foto está bien: nunca se exige evitarlo
         cam = re.sub(r"\W+", " ", str(j.get("camera", "")).lower()).strip(); camaras[cam] = camaras.get(cam, 0) + 1
     if p.get("cara"):
         if len(PRESENTADOR) < 60: problemas.append(f"{i}: pide al presentador pero el canal no tiene su descripción física detallada (Mis canales → Presentador, ≥60 caracteres)")
@@ -88,7 +87,7 @@ for p in peds:   # el prompt queda al lado de la foto (el panel lo muestra y el 
 def api(path, data=None, headers=None, raw=False, timeout=600):
     h = {"Authorization": "Bearer " + _cfg.clave("openai"), "User-Agent": "estudio-videos/1.0"}; h.update(headers or {})
     for intento in range(1000):
-        q = urllib.request.Request(API + path, data=data, headers=h, method="POST" if data is not None else "GET")
+        q = urllib.request.Request(_cfg.url(API + path), data=data, headers=h, method="POST" if data is not None else "GET")
         try:
             r = urllib.request.urlopen(q, timeout=timeout)
             if intento: _cfg.alerta("OpenAI")

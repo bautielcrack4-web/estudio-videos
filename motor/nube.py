@@ -78,6 +78,13 @@ c["github"] = TOK                                  # token del propio workflow: 
 c["avatar_repo"] = REPO.split("/")[1]
 c["fotos_motor"] = "openai"
 _cfg.guardar(c)
+os.chmod(_cfg.CONFIG, 0o600)
+# La sesión de DeepSeek corre con otro usuario y solo ve esta copia SIN claves; las herramientas usan el puente del motor.
+_pub = E.get("ESTUDIO_CONFIG_PUB")
+if _pub:
+    with open(_pub, "w", encoding="utf8") as _f: json.dump({k: ("via-puente" if v and k in _cfg.CLAVES + _cfg.OPCIONALES else v) for k, v in c.items()}, _f)
+    os.chmod(_pub, 0o644)
+for _k in ("DEEPSEEK_API_KEY", "OPENAI_API_KEY", "FISH_API_KEY", "RUNPOD_API_KEY", "GROQ_API_KEY"): E.pop(_k, None)
 
 # ── 2) el canal (lo sube el panel a canales/<id>/ del repo)
 cid = E["CANAL"]
@@ -112,16 +119,19 @@ def limpio(o):
 
 # ── lo que muestra el panel: se publica entero en la rama `estado` (panel/<vid>/…) con git, que no gasta la cuota de la API
 GIT_DIR = os.path.join(os.path.dirname(_cfg.DATOS.rstrip("/\\")), "estado_git")
-GIT_URL = f"https://x-access-token:{TOK}@" + E.get("GITHUB_SERVER_URL", "https://github.com").split("://")[-1] + f"/{REPO}.git"
+GIT_HOST = E.get("GITHUB_SERVER_URL", "https://github.com").rstrip("/")
+GIT_URL = f"{GIT_HOST}/{REPO}.git"                 # sin token en la URL: ni en .git/config ni en la lista de procesos
+GIT_ENV = dict(E, GIT_CONFIG_COUNT="1", GIT_CONFIG_KEY_0=f"http.{GIT_HOST}/.extraheader",
+               GIT_CONFIG_VALUE_0="AUTHORIZATION: basic " + base64.b64encode(f"x-access-token:{TOK}".encode()).decode())
 
 
 def git(*a):
-    return subprocess.run(["git", "-C", GIT_DIR, *a], capture_output=True, text=True, timeout=300)
+    return subprocess.run(["git", "-C", GIT_DIR, *a], capture_output=True, text=True, timeout=300, env=GIT_ENV)
 
 
 def preparar_git():
     if os.path.isdir(os.path.join(GIT_DIR, ".git")): return
-    os.makedirs(GIT_DIR, exist_ok=True)
+    os.makedirs(GIT_DIR, mode=0o700, exist_ok=True)
     git("init", "-q"); git("remote", "add", "origin", GIT_URL)
     git("config", "user.name", "estudio"); git("config", "user.email", "estudio@users.noreply.github.com")
 
@@ -141,7 +151,7 @@ def armar_panel(extra):
     vista = {k: x for k, x in v.items() if k != "cwd"}
     vista["nube"] = extra
     js("video.json", vista)
-    js("timeline.json", server.timeline(rid))
+    tl = server.timeline(rid); js("timeline.json", tl)
     g = server.gallery(rid); js("gallery.json", g)
     ev = server.events(rid); ult = ev[-250:]
     cortos = [{k: (x[:1500] if isinstance(x, str) else x) for k, x in e.items()} for e in ult]
@@ -161,6 +171,13 @@ def armar_panel(extra):
         if not j: pub.pop("t:" + rel, None); continue
         dst = os.path.join(base, "t", rel + ".jpg"); os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.copy2(j, dst); n += 1
 
+    for rel in {x["fr"] for x in tl["lanes"] if x.get("fr")}:     # la foto fija sobre la que el visor dice «Esperando avatar»
+        full = os.path.join(cwd, rel)
+        if not nuevo("t:" + rel, full): continue
+        j = server.thumb(full, 1280, "/tmp/estudio_t")
+        if not j: pub.pop("t:" + rel, None); continue
+        dst = os.path.join(base, "t", rel + ".jpg"); os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.copy2(j, dst)
+
     F = v.get("files") or {}
     for rel in [F.get(k) for k in ("guion", "reporte", "captions")] + ["planos.json"]:     # textos que abre el panel
         if not rel: continue
@@ -177,6 +194,19 @@ def armar_panel(extra):
     server.jsave(ST, st)
 
 
+def con_clave():
+    """Última red antes de cada commit al repo público: la clave tal cual, en base64, en hex o al revés."""
+    formas = []
+    for v in SECRETOS:
+        b = v.encode(); formas += [b, base64.b64encode(b), base64.b64encode(b).rstrip(b"="), b.hex().encode(), b[::-1]]
+    for rel in git("diff", "--cached", "--name-only", "-z").stdout.split("\0"):
+        p = os.path.join(GIT_DIR, rel)
+        if rel and os.path.isfile(p):
+            with open(p, "rb") as f: d = f.read()
+            if any(x in d for x in formas): return True
+    return False
+
+
 def publicar_panel(extra):
     """Un solo commit con todo lo del panel. Si otro video (o un mensaje) empujó justo antes, se reintenta sobre lo nuevo."""
     if not st.get("rid"): return
@@ -188,6 +218,8 @@ def publicar_panel(extra):
             armar_panel(extra)
             git("add", "-A", "panel/" + VID)
             if git("diff", "--cached", "--quiet").returncode == 0: return
+            if con_clave():
+                git("reset", "-q", "--hard", "HEAD"); log("⛔ publicación frenada: un archivo traía una clave; no se subió nada"); return
             git("commit", "-q", "-m", "panel " + VID)
             if git("push", "-q", "origin", "HEAD:refs/heads/estado").returncode == 0: return
             time.sleep(4 + 3 * intento)
@@ -282,6 +314,10 @@ v = server.video(st["rid"]); cwd = v["cwd"]
 fin = os.path.join(cwd, v["files"]["final"]) if v["files"].get("final") else None
 tag = "video-" + VID
 archivos = [x for x in (fin, os.path.join(cwd, "REPORTE.md")) if x and os.path.exists(x)]
+_rep = os.path.join(cwd, "REPORTE.md")
+if os.path.exists(_rep):                           # lo único de texto que va al Release
+    with open(_rep, encoding="utf8", errors="replace") as _f: _t = tapar(_f.read())
+    with open(_rep, "w", encoding="utf8") as _f: _f.write(_t)
 r = subprocess.run(["gh", "release", "create", tag, *archivos, "--repo", REPO, "--title", (E.get("TITULO") or VID)[:120],
                     "--notes", f"Canal: {cid}. Hecho por el Estudio."], capture_output=True, text=True)
 if r.returncode != 0:

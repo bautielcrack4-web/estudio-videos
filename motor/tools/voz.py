@@ -3,8 +3,9 @@
    python <APP>/tools/voz.py <carpeta_del_video> > <carpeta>/voz/voz.log 2>&1
 Lee <carpeta>/guion.txt y la muestra de voz del canal en <carpeta>/refs/voz.wav (+ refs/voz.txt = lo que se dice en la muestra).
 Parte el guion en bloques de ~2500 caracteres, genera 3 a la vez, rehace los que salen cortos o largos y une todo en voz/master.wav.
+La voz se clona una sola vez en la cuenta de Fish, sin filtros, y los videos siguientes reutilizan ese clon.
 Si se corta, volver a correrlo: sólo rehace los bloques que faltan. Los tags de emoción ([whispering], [excited]…) se respetan."""
-import json, os, re, subprocess, sys, time
+import hashlib, json, os, re, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _cfg
@@ -21,6 +22,31 @@ REF = B + "/refs/voz.wav"
 if not os.path.exists(REF): sys.exit("⛔ falta refs/voz.wav (la muestra de voz del canal)")
 ref_txt = open(B + "/refs/voz.txt", encoding="utf8").read().strip() if os.path.exists(B + "/refs/voz.txt") else ""
 ref = ReferenceAudio(audio=open(REF, "rb").read(), text=ref_txt)
+
+
+def voz_guardada():
+    """La voz del canal se clona UNA sola vez en la cuenta de Fish del usuario, tal cual viene: sin limpiar ni mejorar el audio
+    (la reducción de ruido la vuelve robótica). Los videos siguientes del canal encuentran ese clon por su nombre y lo reutilizan.
+    El nombre sale del audio: si el canal cambia de voz, se clona la nueva. Si Fish no deja, sigue con la muestra."""
+    titulo = "estudio-" + hashlib.sha1(ref.audio).hexdigest()[:12]
+    try:
+        s = Session(_cfg.clave("fish"), base_url=_cfg.url("https://api.fish.audio"))
+        for m in s.list_models(self_only=True, title=titulo, page_size=20).items:
+            if m.title == titulo and m.state == "trained":
+                print("voz: uso el clon guardado en Fish", flush=True); return m.id
+        m = s.create_model(title=titulo, visibility="private", voices=[ref.audio], texts=[ref_txt] if ref_txt else None, enhance_audio_quality=False)
+        for _ in range(30):
+            if m.state == "trained":
+                print("voz: clon creado en Fish, sin filtros (no se vuelve a clonar)", flush=True); return m.id
+            time.sleep(4); m = s.get_model(m.id)
+        print("voz: el clon no terminó a tiempo, sigo con la muestra", flush=True)
+    except SystemExit: raise
+    except Exception as e:
+        print("voz: no pude guardar el clon (%s), sigo con la muestra" % str(e)[:160], flush=True)
+    return None
+
+
+VOZ = voz_guardada()
 
 
 def bloques(t, n=2500):
@@ -56,10 +82,10 @@ def sintetizar(i, txt):
     for intento in range(4):
         for be in BACK:
             try:
-                s = Session(_cfg.clave("fish")); tmp = out + ".tmp.wav"
+                s = Session(_cfg.clave("fish"), base_url=_cfg.url("https://api.fish.audio")); tmp = out + ".tmp.wav"
                 with open(tmp, "wb") as f:
                     for ch in s.tts(TTSRequest(text=txt, format="wav", chunk_length=300, normalize=True, temperature=1.0, top_p=0.95,
-                                               references=[ref]), backend=be):
+                                               **({"reference_id": VOZ} if VOZ and intento < 2 else {"references": [ref]})), backend=be):
                         f.write(ch)
                 d = dur(tmp)
                 if not (0.5 * esperado <= d <= 2.2 * esperado): err = f"duración rara {d:.0f} s (esperado ~{esperado:.0f})"; continue

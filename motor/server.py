@@ -86,11 +86,66 @@ def gasto_carpeta(cwd):
 
 
 # ───────────── proxy de medición (sólo 127.0.0.1) ─────────────
+# Puente de claves (nube): la sesión llama a /k/<servicio>/... y la clave se agrega ACÁ; solo estas rutas pasan.
+PUENTE_RUTAS = {
+    "openai": ("api.openai.com", r"^/v1/(files|batches|audio/transcriptions)(/|\?|$)"),
+    "groq": ("api.groq.com", r"^/openai/v1/audio/transcriptions(\?|$)"),
+    "fish": ("api.fish.audio", r"^/(v1/tts|model)(/|\?|$)"),
+    "runpod": ("api.runpod.ai", r"^/v2/infinitetalk/"),
+    "github": ("api.github.com", r"^/repos/{REPO}(/contents/|\?|$)"),
+    "deepseek": ("api.deepseek.com", r"^/chat/completions(\?|$)"),
+}
+def _secretos():
+    c = _cfg.leer()
+    return [v.encode() for v in (str(c.get(k) or "").strip() for k in _cfg.CLAVES + _cfg.OPCIONALES) if len(v) >= 8 and v != "via-puente"]
+def _sin_claves(b):
+    for s in _secretos(): b = b.replace(s, b"[oculto]")
+    return b
+
+
 class Proxy(http.server.BaseHTTPRequestHandler):
     def log_message(self, *a): pass
     def do_GET(self): self.fwd()
     def do_POST(self): self.fwd()
+    def do_PUT(self): self.fwd()
+    def do_DELETE(self): self.fwd()
+    def cuerpo(self):
+        if "chunked" in (self.headers.get("Transfer-Encoding") or "").lower():
+            data = b""
+            while True:
+                n = int(self.rfile.readline().split(b";")[0], 16)
+                if not n: self.rfile.readline(); return data
+                data += self.rfile.read(n); self.rfile.readline()
+        n = int(self.headers.get("Content-Length") or 0)
+        return self.rfile.read(n) if n else None
+    def puente(self):
+        m = re.match(r"^/k/(\w+)(/[^#]*)$", self.path)
+        reg = PUENTE_RUTAS.get(m.group(1)) if m else None
+        rest = m.group(2) if m else ""
+        patron = reg[1].replace("{REPO}", re.escape(os.environ.get("GITHUB_REPOSITORY") or "-")) if reg else ""
+        key = (_cfg.leer().get(m.group(1)) or "").strip() if reg else ""
+        if not reg or not key or ".." in rest or "%2e" in rest.lower() or not re.match(patron, rest): self.send_error(403); return
+        data = self.cuerpo()
+        fuera = ("host", "content-length", "transfer-encoding", "accept-encoding", "connection", "authorization", "x-api-key")
+        hdr = {k: v for k, v in self.headers.items() if k.lower() not in fuera}
+        hdr["Authorization"] = f"Bearer {key}"; hdr["Accept-Encoding"] = "identity"
+        try:
+            c = http.client.HTTPSConnection(reg[0], timeout=900); c.request(self.command, rest, body=data, headers=hdr); r = c.getresponse()
+        except Exception:
+            self.send_error(502); return
+        self.send_response(r.status)
+        for k, v in r.getheaders():
+            if k.lower() not in ("content-length", "transfer-encoding", "connection", "content-encoding"): self.send_header(k, v)
+        self.send_header("Connection", "close"); self.end_headers()
+        kb = key.encode()
+        while True:
+            ch = r.read1(65536)
+            if not ch: break
+            try: self.wfile.write(ch.replace(kb, b"[oculto]")); self.wfile.flush()
+            except Exception: break
+        c.close()
     def fwd(self):
+        if self.path.startswith("/k/"): return self.puente()
         m = re.match(r"^/r/([\w.-]+)(/.*)$", self.path)
         if not m or not os.path.exists(os.path.join(rdir(m.group(1)), "meta.json")): self.send_error(404); return
         rid, rest = m.group(1), m.group(2)
@@ -98,8 +153,8 @@ class Proxy(http.server.BaseHTTPRequestHandler):
         if cap and spent(rid)["usd"] >= cap:
             body = json.dumps({"type": "error", "error": {"type": "billing_error", "message": f"Tope del video alcanzado (US${cap})"}}).encode()
             self.send_response(402); self.send_header("Content-Type", "application/json"); self.send_header("Content-Length", str(len(body))); self.end_headers(); self.wfile.write(body); return
-        n = int(self.headers.get("Content-Length") or 0)
-        data = self.rfile.read(n) if n else None
+        data = self.cuerpo()
+        if data: data = _sin_claves(data)        # última red: ninguna clave le llega al modelo aunque aparezca en un texto
         key = (_cfg.leer().get("deepseek") or "").strip()
         hdr = {k: v for k, v in self.headers.items() if k.lower() not in ("host", "content-length", "accept-encoding", "connection", "authorization", "x-api-key")}
         hdr["Authorization"] = f"Bearer {key}"; hdr["x-api-key"] = key; hdr["Accept-Encoding"] = "identity"
@@ -171,6 +226,7 @@ if os.name == "nt":
 else:
     def alive(pid):
         try: os.kill(int(pid), 0); return True
+        except PermissionError: return True      # en la nube el proceso es de otro usuario
         except Exception: return False
 
 def run_files(d): return sorted(x for x in os.listdir(d) if re.match(r"^run\d*\.jsonl$", x))
@@ -199,6 +255,11 @@ def launch(rid, text):
            "--append-system-prompt", kit()]
     sid = session_id(d)
     if sid: cmd += ["--resume", sid]
+    sesion = os.environ.get("ESTUDIO_USUARIO_SESION")
+    if sesion:       # nube: otro usuario de Linux, sin acceso a las claves, y con entorno armado por lista blanca
+        pasa = {x: v for x, v in env.items() if x in ("PATH", "LANG", "LC_ALL", "TZ", "GITHUB_REPOSITORY", "GITHUB_SERVER_URL", "API_TIMEOUT_MS", "BASH_MAX_TIMEOUT_MS", "BASH_DEFAULT_TIMEOUT_MS", "ESTUDIO_DATA") or x.startswith(("ANTHROPIC_", "CLAUDE_"))}
+        pasa.update(HOME="/home/" + sesion, USER=sesion, ESTUDIO_CONFIG=os.environ["ESTUDIO_CONFIG_PUB"], ESTUDIO_PUENTE=f"http://127.0.0.1:{PROXY_PORT}")
+        cmd = ["sudo", "-n", "-H", "-u", sesion, "--", "env", "-i", *[f"{x}={v}" for x, v in pasa.items()], "sh", "-c", 'umask 002; exec "$0" "$@"', *cmd]
     out = open(os.path.join(d, f"run{k:02d}.jsonl"), "w", encoding="utf8"); err = open(os.path.join(d, f"run{k:02d}.err"), "w", encoding="utf8")
     kw = {"creationflags": 0x00000200 | 0x08000000} if os.name == "nt" else {"start_new_session": True}
     out.close()   # lo escribe el filtro (saca los miles de eventos thinking_tokens que no sirven)
@@ -225,6 +286,7 @@ def stop(rid):
     if meta.get("pid"):
         if os.name == "nt": subprocess.run(["taskkill", "/T", "/F", "/PID", str(meta["pid"])], capture_output=True)
         else:
+            if os.environ.get("ESTUDIO_USUARIO_SESION"): subprocess.run(["sudo", "-n", "pkill", "-9", "-u", os.environ["ESTUDIO_USUARIO_SESION"]], capture_output=True); return
             try: os.killpg(int(meta["pid"]), 9)
             except Exception: pass
 
@@ -445,6 +507,15 @@ def timeline(rid):
                 out["lanes"].append({"t0": g["startMs"] / 1000, "t1": g.get("endMs", g["startMs"]) / 1000, "k": "foto", "f": f, "pend": not f})
             for g in jload(os.path.join(cwd, "avatar_ranges.json"), []) or []:
                 out["lanes"].append({"t0": g["startMs"] / 1000, "t1": g["endMs"] / 1000, "k": "avatar", "f": g.get("file", "")})
+        except Exception as e: out["err"] = str(e)
+    if not s["final"]:   # lo que el avatar todavía no trajo: el visor muestra su cuadro fijo con «Esperando avatar»
+        try:
+            R = jload(os.path.join(cwd, "avatar_ranges.json"), []) or []
+            for x in out["lanes"]:
+                if x["k"] != "avatar": continue
+                r = next((g for g in R if g.get("startMs", 0) / 1000 - .05 <= x["t0"] < g.get("endMs", 0) / 1000), None)
+                if r and r.get("frame") and os.path.exists(os.path.join(cwd, r["frame"])): x["fr"] = r["frame"]
+                if not (str(x.get("f") or "").lower().endswith(".mp4") and os.path.exists(os.path.join(cwd, x["f"]))): x["pend"] = True
         except Exception as e: out["err"] = str(e)
     if s["captions"]:
         try:

@@ -12,6 +12,8 @@ VOZ = B + "/voz/master.wav"
 # los cues salen de cues.json (cada video los suyos); sin archivo = sin SFX
 CUES = [(c["file"], c["t"], c["gain"], c["fade"]) for c in
         json.load(open(B + "/cues.json", encoding="utf-8"))] if os.path.exists(B + "/cues.json") else []
+for _c in [c for c in CUES if not os.path.exists(SFXDIR + "/" + c[0])]: print("falta el SFX", _c[0], "(va sin él)")
+CUES = [c for c in CUES if os.path.exists(SFXDIR + "/" + c[0])]
 
 def run(cmd, **kw):
     r = subprocess.run(cmd, capture_output=True, text=True, **kw)
@@ -27,7 +29,11 @@ XF = json.load(open(B + "/segments/xf.json")) if os.path.exists(B + "/segments/x
 if XF: segs = segs[:len(XF)]
 print("segmentos:", len(segs))
 
-def xfade_chain(files, ns, ds, out, crf):
+ENTREGA = ["-color_range", "tv", "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-g", "60", "-keyint_min", "60",
+           "-sc_threshold", "0", "-maxrate", "5M", "-bufsize", "10M"]   # listo para YouTube: bt709, rango tv, keyframe cada 2 s
+VF_ENTREGA = "scale=out_color_matrix=bt709:out_range=limited,format=yuv420p,setparams=range=tv:color_primaries=bt709:color_trc=bt709:colorspace=bt709"
+
+def xfade_chain(files, ns, ds, out, crf, entrega=False):
     """Une con fundidos sin correr los tiempos: cada archivo trae ds[k] cuadros de cola extra."""
     ins, fc, prev, t = [], [], "[v0]", 0
     for k, f in enumerate(files):
@@ -38,8 +44,10 @@ def xfade_chain(files, ns, ds, out, crf):
         if d > 0: fc.append("%s[v%d]xfade=transition=fade:duration=%.4f:offset=%.4f%s" % (prev, k, d / 30, t / 30, o))
         else: fc.append("%s[v%d]concat=n=2:v=1:a=0%s" % (prev, k, o))
         prev = o
-    run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", prev if len(files) > 1 else "[v0]",
-         "-c:v", "libx264", "-crf", str(crf), "-preset", "veryfast" if crf < 20 else "medium", "-pix_fmt", "yuv420p", "-r", "30", "-an", out])
+    if len(files) == 1: prev = "[v0]"
+    if entrega: fc.append("%s%s[fin]" % (prev, VF_ENTREGA)); prev = "[fin]"
+    run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", prev,
+         "-c:v", "libx264", "-crf", str(crf), "-preset", "veryfast" if crf < 20 else "medium", "-pix_fmt", "yuv420p", "-r", "30", "-an"] + (ENTREGA if entrega else []) + [out])
 
 if XF and len(XF) == len(segs):
     TMP = B + "/xf_tmp"; os.makedirs(TMP, exist_ok=True)
@@ -50,7 +58,7 @@ if XF and len(XF) == len(segs):
         xfade_chain([B + "/segments/" + segs[i] for i in idx], [XF[i]["n"] for i in idx], [XF[i]["d"] for i in idx], out, 14)
         chunks.append(out); cn.append(sum(XF[i]["n"] for i in idx)); cd.append(XF[idx[-1]]["d"])
         print("tramo", len(chunks), "listo")
-    xfade_chain(chunks, cn, cd, video, 20)
+    xfade_chain(chunks, cn, cd, video, 20, entrega=True)
 else:
     print("sin xf.json: corte seco")
     lst = B + "/concat.txt"
@@ -58,8 +66,8 @@ else:
         for f in segs:
             fh.write("file '%s/segments/%s'\n" % (B, f))
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst,
-         "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-pix_fmt", "yuv420p",
-         "-r", "30", "-an", video])
+         "-vf", VF_ENTREGA, "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-pix_fmt", "yuv420p",
+         "-r", "30", "-an"] + ENTREGA + [video])
 
 # mezcla de audio
 inputs = ["-i", VOZ]
@@ -70,19 +78,20 @@ def dur(p):
                                  "-of", "csv=p=0", p], capture_output=True, text=True).stdout.strip())
 
 audio = B + "/audio_mix.m4a"
+VOZ_ESTEREO = "pan=stereo|c0=c0|c1=c0"   # la voz va igual a los dos canales (con -ac 2 bajaba 3 dB)
 if not CUES:
     # sin SFX: la voz sola (amix con 1 entrada no es válido en ffmpeg)
-    run(["ffmpeg", "-v", "error", "-y", "-i", VOZ, "-ac", "2", "-c:a", "aac", "-b:a", "192k", audio])
+    run(["ffmpeg", "-v", "error", "-y", "-i", VOZ, "-af", VOZ_ESTEREO, "-c:a", "aac", "-b:a", "192k", "-ar", "48000", audio])
 else:
     parts = []
     for i, (f, t, g, fo) in enumerate(CUES, start=1):
         d = min(dur(SFXDIR + "/" + f), 20.0)
-        parts.append("[%d:a]volume=%.4f,atrim=0:%.2f,afade=t=out:st=%.2f:d=%.2f,adelay=%d|%d[a%d]"
+        parts.append("[%d:a]aformat=channel_layouts=stereo,volume=%.4f,atrim=0:%.2f,afade=t=out:st=%.2f:d=%.2f,adelay=%d|%d[a%d]"
                      % (i, g, d, max(0.0, d - fo), fo, t, t, i))
     mix = "".join("[a%d]" % i for i in range(1, len(CUES) + 1))
-    fc = ";".join(parts) + ";[0:a]" + mix + ("amix=inputs=%d:normalize=0:duration=first[out]" % (len(CUES) + 1))
+    fc = ";".join(parts) + ";[0:a]" + VOZ_ESTEREO + "[voz];[voz]" + mix + ("amix=inputs=%d:normalize=0:duration=first[out]" % (len(CUES) + 1))
     run(["ffmpeg", "-v", "error", "-y"] + inputs + ["-filter_complex", fc.strip(";"),
-         "-map", "[out]", "-ac", "2", "-c:a", "aac", "-b:a", "192k", audio])
+         "-map", "[out]", "-ac", "2", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", audio])
 
 final = B + "/final.mp4"
 run(["ffmpeg", "-v", "error", "-y", "-i", video, "-i", audio,
