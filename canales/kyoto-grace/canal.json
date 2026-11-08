@@ -6,5 +6,57 @@
  "biblia": "Michiko is a 68-year-old woman who has lived in Kyoto her whole life. She grew up in a machiya house with her mother and grandmother, and for many years she helped women choose clothes in a small neighborhood shop in the city, learning by watching how fabric falls, how a collar sits, how a woman stands. She does not call herself an expert; she says she is simply old enough to have seen what lasts. Her tone is warm, slow and unhurried, like someone pouring tea: she opens with a small memory, then gives one simple lesson. She talks about fit, fabric, layering, seasonal dressing, posture, mending, and quiet daily care for skin, hands and hair. She never talks about celebrity trends, fast fashion hauls, cosmetic procedures, diets or medical matters, and she never sells products. Typical phrases: \"Hello, please come in.\" / \"My mother taught me this when I was a little girl.\" / \"Your clothes speak before you do.\" / \"Let us take our time.\" / \"Small things, done every day.\" Each episode covers one garment or one habit: a memory, one lesson, a simple demonstration, and a gentle question to close. She never promises youth, beauty results, health benefits or quick transformation.",
  "prohibidas": "miracle, cure, guaranteed, instant results, lose weight fast, medical advice, forever young",
  "min": 10,
- "cara_cx": 0.6355
+ "cara_cx": 0.6355,
+ "plan": [
+  {
+   "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
+   "idea": "Michiko remembers her mother turning a collar by hand at the neighborhood shop. She shows how to press the collar stand and set the roll so a plain shirt sits neatly at the neck. You will learn one small check to do before you wear it.",
+   "minutos": null
+  },
+  {
+   "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
+   "idea": "A memory of her grandmother dressing for cold mornings leads into a simple layering order: smooth base, thin knit, gentle tuck. Michiko demonstrates how to build warmth without a bulky silhouette. You will learn what to put underneath and where to stop tucking.",
+   "minutos": null
+  },
+  {
+   "titulo": "A 4-Stitch Mend Keeps a Worn Cuff Going Another Winter",
+   "idea": "Michiko recalls a cuff her mother repaired before it tore through. She demonstrates a few small stabilizing stitches inside the cuff and a light press. You will learn how to catch wear early and make a favorite sleeve last longer.",
+   "minutos": null
+  },
+  {
+   "titulo": "Set a Jacket Shoulder and Stand Taller in Photos",
+   "idea": "At the shop mirror, Michiko learned that a jacket should sit, not be forced. She shows how to check the shoulder seam and let the jacket settle with one calm breath. You will learn a quiet posture habit for photographs and ordinary days.",
+   "minutos": null
+  },
+  {
+   "titulo": "Fold a Cotton Scarf for Autumn Wind in 2 Minutes",
+   "idea": "Michiko opens with a memory of a scarf tied against the first cold wind. She demonstrates a simple triangle fold and a knot that stays close without tightening. You will learn a seasonal scarf fold you can repeat by feel.",
+   "minutos": null
+  },
+  {
+   "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
+   "idea": "Michiko remembers watching her mother care for her hands after a day of handling fabric. She shows a warm-water rinse, thorough drying and a slow massage with a plain cloth. You will learn a small evening habit that asks for no special products.",
+   "minutos": null
+  },
+  {
+   "titulo": "The 1-Minute Brush Habit for Neat Short Hair",
+   "idea": "A childhood memory of her mother brushing her hair before school introduces a simple order: ends first, then the crown, then the part. Michiko demonstrates the strokes slowly on short hair. You will learn a daily brushing habit that leaves hair tidy without fuss.",
+   "minutos": null
+  },
+  {
+   "titulo": "Take In a Waistband 2 cm by Hand in One Evening",
+   "idea": "Michiko remembers altering a skirt at the shop when a waistband sat too loose. She shows how to pin 2 cm, sew a small invisible stitch by hand and press the seam flat. You will learn a basic fitting adjustment you can do without a machine.",
+   "minutos": null
+  },
+  {
+   "titulo": "Choose a Shirt That Still Looks Crisp at 6 p.m.",
+   "idea": "From years of watching fabric fall, Michiko explains how weight and weave matter more than a label. She holds a shirt to the light and checks the seam and collar edge. You will learn what to feel and look for before you buy a shirt.",
+   "minutos": null
+  },
+  {
+   "titulo": "Fold a Wool Sweater to Hold Its Shape in Storage",
+   "idea": "Michiko recalls her grandmother stacking sweaters rather than hanging them. She demonstrates folding the sleeves across the body and smoothing the knit before storage. You will learn a storage fold that helps a wool sweater keep its shape.",
+   "minutos": null
+  }
+ ]
 }
