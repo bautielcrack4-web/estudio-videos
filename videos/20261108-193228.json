@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794181292.6652663,
+ "actualizado": 1794181355.628998,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0704,
+  "deepseek": 0.0711,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.2126
+  "total": 0.2133
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gates/render_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "import json\n\nd = {\n    \"title\": \"A 2-Minute Evening Hand Ritual for Warm, Soft Hands\",\n    \"description\": (\n        \"Hello, please come in. Tonight I want to share a small evening habit I learned from my mother: \"\n        \"two minutes at the basin with warm water, a plain cotton cloth, and no special products at all.\\n\\n\"\n        \"In this video I show the three parts of the ritual, a warm-water ri"
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/write_meta.py (file state is current in your context — no need to Read it back)"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -5 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 23:20:55 estado: IN_PROGRESS · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n0"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -6 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l; ps -p 4890 -o etime= --no-header"
   }
  ],
  "maquinas": 2,
