@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794185004.8872094,
+ "actualizado": 1794185241.4050894,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "185 segmentos"
+   "info": "257 segmentos"
   },
   {
    "k": "qc",
@@ -51,70 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1131,
+  "deepseek": 0.1188,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1649
+  "total": 0.1706
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "16 clips a repedir (ronda segura)\nPID:21125\n00:28:36 → 16 clips por buscar\n=== FOTOS p022 ===\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0\n00:27:49 batch d777ee8e: in_progress 0/1\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 25; tail -4 clips/stock_04.log; python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix4.jpg clips/p025.mp4 clips/p029.mp4 clips/p033.mp4 clips/p041.mp4 clips/p046.mp4 clips/p048.mp4 clips/p050.mp4 clips/p054.mp4 clips/p058.mp4 clips/p079.mp4 clips/p080.mp4 clips/p090.mp4 && echo ok"
-  },
-  {
-   "k": "res",
-   "t": "00:28:36 → 16 clips por buscar\nno existe: clips/p090.mp4\nhoja: qc/sh_fix4.jpg (11 cuadros, 4x3)\nok"
-  },
-  {
-   "k": "tool",
-   "t": "cat clips/stock_04.log; echo \"---\"; ls clips/*.mp4 | wc -l; ps -p 21125 -o pid,etime,cmd 2>/dev/null || echo \"proceso terminado\""
-  },
-  {
-   "k": "res",
-   "t": "00:28:36 → 16 clips por buscar\n---\n138\n    PID     ELAPSED CMD\n  21125       00:54 python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/stock_04.json"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 45; tail -12 clips/stock_04.log; ls clips/*.mp4 | wc -l; echo \"=== FOTOS ===\"; tail -3 fotos/fotos_03.log; ls fotos/p022.png 2>/dev/null && echo p022_lista; echo \"=== AVATAR ===\"; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "00:28:36 → 16 clips por buscar\n00:29:32 bajados 16/16\n00:29:32 FIN: 16/16 clips en clips/\n139\n=== FOTOS ===\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0\n00:27:49 batch d777ee8e: in_progress 0/1\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix4.jpg clips/p025.mp4 clips/p029.mp4 clips/p033.mp4 clips/p041.mp4 clips/p046.mp4 clips/p048.mp4 clips/p050.mp4 clips/p054.mp4 clips/p058.mp4 clips/p079.mp4 clips/p080.mp4 clips/p090.mp4"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/sh_fix4.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_fix4.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'PY'\nimport json, os\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nQ={\"p048\":[\"white shirt collar detail\",\"shirt folded collar close\"],\n   \"p080\":[\"folded floral blouse\",\"flower fabric pattern close\"],\n   \"p090\":[\"beige knit fabric texture\",\"wool knit close up\"]}\nfor i in Q:\n    for ext in ('.mp4','.json'):\n        p=f'{B}/clips/{i}{ext}'\n        if os.path.exi"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n00:30:36 → 3 clips por buscar\n00:30:40 bajados 3/3\n00:30:40 FIN: 3/3 clips en clips/\n=== FOTOS ===\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0\n00:27:49 batch d777ee8e: in_progress 0/1"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix5.jpg clips/p048.mp4 clips/p080.mp4 clips/p090.mp4; tail -8 fotos/fotos_03.log"
-  },
   {
    "k": "res",
    "t": "hoja: qc/sh_fix5.jpg (3 cuadros, 3x1)\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0\n00:27:49 batch d777ee8e: in_progress 0/1"
@@ -178,6 +122,62 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log render.log --busca \"hechos\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 23439 -o pid,etime,cmd 2>/dev/null || echo \"render terminado\"; ls segments/*.mp4 | wc -l; ls segments/*.src | wc -l; echo \"=== AVATAR ===\"; tail -4 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "    PID     ELAPSED CMD\n  23439       09:31 python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\n214\n209\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n0"
+  },
+  {
+   "k": "tool",
+   "t": "{\n \"title\": \"10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead\",\n \"description\": \"Hello, please come in. Last spring, the week I turned sixty-eight, I emptied one drawer and laid ten tops on the tatami. A tight black turtleneck, a stiff white shirt with a pointed collar, a satin shell, a cropped jacket, a blouse with flowers the size of saucers, a ribbed jersey top, a thick acrylic sweater,"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/meta.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log render.log --busca \"hechos\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'hechos' (115 s):\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A97.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A98.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A99.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A100.mp4\nclips=257 frames=37498 (1249.93s)\nhechos 257"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa render --min 15; echo \"=== AVATAR ===\"; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "VALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa render\n  ✓ guion: 16741 caracteres, 3275 palabras (hacen falta 13500-17250 para 15 min: bien)\n  ✓ fotos: 17 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\n  ✓ fotos: 6 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  ✓ render: movimiento al azar (pl"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'PY'\nimport json\np=json.load(open('plan.json',encoding='utf8'))['segments']\nbr=[(i,s) for i,s in enumerate(p) if s['kind'] in ('foto','clip')]\nidxs=[br[int(k*(len(br)-1)/11)][0] for k in range(12)]\nprint(' '.join(f'segments/{i:04d}.mp4' for i in idxs))\nopen('_sheet_render.txt','w').write(' '.join(f'segments/{i:04d}.mp4' for i in idxs))\nfor i in idxs: print(i, p[i]['t0'], p[i]['kind'], "
+  },
+  {
+   "k": "res",
+   "t": "segments/0001.mp4 segments/0025.mp4 segments/0048.mp4 segments/0071.mp4 segments/0092.mp4 segments/0117.mp4 segments/0139.mp4 segments/0163.mp4 segments/0187.mp4 segments/0209.mp4 segments/0232.mp4 segments/0256.mp4\n1 4.58 foto p001.png\n25 125.46 clip p015.mp4\n48 237.72 clip p029.mp4\n71 348.14 clip p043.mp4\n92 442.36 clip p057.mp4\n117 572.48 clip p071.mp4\n139 679.76 clip p085.mp4\n163 799.0 clip p0"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_render_full.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
   }
  ],
  "maquinas": 1,
