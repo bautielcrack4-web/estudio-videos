@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794212761.236678,
+ "actualizado": 1794212825.70098,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3451,
+  "deepseek": 0.3489,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9869
+  "total": 0.9907
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "total 1084580\ndrwxrwxrwx+  3 runner runner      4096 Nov  9 07:44 .\ndrwxrwxrwx+ 12 runner runner      4096 Nov  9 07:22 ..\n-rw-rw-rw-+  1 runner runner         5 Nov  9 07:21 EN_CURSO\ndrwxrwxrwx+  2 runner runner      4096 Nov  9 07:29 gen\n-rw-rw-rw-+  1 runner runner      3067 Nov  9 07:29 libre.json\n-rw-rw-rw-+  1 runner runner      1063 Nov  9 07:29 momentos.json\n-rw-rw-rw-+  1 sesion sesion   "
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"render.py\\|assemble.py\\|previo\\|avatar_it\\|final.mp4\" /opt/estudio/repo/motor/nube.py | head -40"
-  },
   {
    "k": "res",
    "t": "5:que lee el panel. Lee los mensajes del panel (mensajes/<vid>.json). Al terminar sube final.mp4 a un Release.\n287:                 (\"extrema\", \"Edición extrema\"), (\"previo\", \"Render sin avatar\"), (\"render\", \"Render\"), (\"armado\", \"Armado\"), (\"revisor\", \"Revisor\"), (\"correcciones\", \"Correcciones\"), (\"entrega\", \"Entrega\")]\n437:    \"\"\"Arranca extrema.py en segundo plano MIENTRAS se espera el avatar; "
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ls -lt /tmp/armado_*.log 2>/dev/null | head -2; for f in /tmp/armado_*.log; do echo \"== $f\"; tail -6 \"$f\"; done; echo \"---procs---\"; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|assemble.py\" | head -3; echo \"seg=$(ls segments/[0-9]*.mp4 | wc -l)\"; ls -la final.mp4 2>/dev/null || true"
+  },
+  {
+   "k": "res",
+   "t": "-rw-r--r-- 1 runner runner 242 Nov  9 08:19 /tmp/armado_20261109-061952.log\n== /tmp/armado_20261109-061952.log\nclips=224 frames=38458 (1281.93s)\nreusados de otra posición: 116\nhechos 224\nsegmentos: 224\ncapas de edición extrema: 3\ntramos: 43 de 43 por codificar · 4 a la vez\n---procs---\n  49041 python          /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemb"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
   }
  ],
  "maquinas": 1,
@@ -258,14 +258,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 367,
+    "seg": 432,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 7567,
+  "total_s": 7632,
   "avatar_s": 5356,
-  "sin_avatar_s": 2211,
+  "sin_avatar_s": 2275,
   "cerrado": false
  }
 }
