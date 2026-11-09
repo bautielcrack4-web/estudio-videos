@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183427.9181097,
+ "actualizado": 1794183491.3953712,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -22,20 +22,20 @@
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "active",
+   "st": "done",
    "info": "por palabra"
   },
   {
    "k": "avatar",
    "n": "Avatar",
-   "st": "pending",
+   "st": "skip",
    "info": ""
   },
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "6 fotos"
   },
   {
    "k": "armado",
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0608,
-  "gpt": 0.0,
-  "gpt_img": 0,
+  "deepseek": 0.0642,
+  "gpt": 0.025,
+  "gpt_img": 9,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0608
+  "total": 0.0892
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Updated task #2 status"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"3\", \"status\": \"completed\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #3 status"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"4\", \"status\": \"in_progress\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #4 status"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"5\", \"status\": \"in_progress\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #5 status"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json > fotos/fotos_01.log 2>&1 & echo \"FOTOS_PID:$!\"; nohup python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > avatar/it.log 2>&1 & ech"
-  },
-  {
-   "k": "res",
-   "t": "FOTOS_PID:5994\nAVATAR_PID:5995"
-  },
   {
    "k": "tool",
    "t": "sleep 10; echo \"=== FOTOS ===\"; cat fotos/fotos_01.log; echo \"=== AVATAR ===\"; cat avatar/it.log"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"fotos/*.png\" 9 --max 480"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 9 archivos (155 s)"
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p qc gates && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png fotos/p017.png fotos/p027.png fotos/p040.png fotos/p106.png fotos/p124.png fotos/p126.png && ls -la qc/hoja_fotos.jpg && tail -3 fotos/fotos_01.log"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fotos.jpg (9 cuadros, 4x3)\n-rw-rw-rw-+ 1 sesion sesion 339860 Nov  9 00:17 qc/hoja_fotos.jpg\n00:17:39 batch 8e630f0c: completed 5/5\n00:17:40 ✓ batch 8e630f0c: 5 fotos bajadas, 0 fallidas (US$0.016)\n00:17:40 FIN: 9/9 fotos en fotos/ (4 min)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_fotos.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'PY'\nimport json, shutil, os\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\n# elegir p001_b como hero\nshutil.copyfile(f'{B}/fotos/p001_b.png', f'{B}/fotos/p001.png')\nd=json.load(open(f'{B}/fotos/p001_b.json',encoding='utf8'))\nd['id']='p001'\njson.dump(d, open(f'{B}/fotos/p001.json','w',encoding='utf8'), ensure_ascii=False, indent=1)\nfor x in ('p001_a','p001_b','p"
+  },
+  {
+   "k": "res",
+   "t": "p001 listo; p126 borrada para repedir\nok"
+  },
+  {
+   "k": "tool",
+   "t": "tail -20 pedidos_02.json"
+  },
+  {
+   "k": "res",
+   "t": "   \"detalle_narrativo\": \"A cat asleep on the stool just outside the door; a chalk price written on a small board; a paper receipt tucked into the blouse sleeve.\"\n  }\n },\n {\n  \"id\": \"p152\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out,"
   }
  ],
  "maquinas": 1,
