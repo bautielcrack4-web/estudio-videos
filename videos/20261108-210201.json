@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183824.0478861,
+ "actualizado": 1794183887.5964057,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0739,
+  "deepseek": 0.0812,
   "gpt": 0.0488,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1227
+  "total": 0.13
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "tail -20 pedidos_02.json"
-  },
-  {
-   "k": "res",
-   "t": "   \"detalle_narrativo\": \"A cat asleep on the stool just outside the door; a chalk price written on a small board; a paper receipt tucked into the blouse sleeve.\"\n  }\n },\n {\n  \"id\": \"p152\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out,"
-  },
-  {
-   "k": "tool",
-   "t": "   \"avoid\": \"cinematic lighting, dramatic shadows, studio look, perfect plastic skin, empty clean background, depth-of-field blur, date stamp, watermark, extra fingers, deformed hands\"\n  }\n },\n {\n  \"id\": \"p126\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutte"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_02.json has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_02.json > fotos/fotos_02.log 2>&1 & echo \"PID:$!\"; sleep 12; cat fotos/fotos_02.log"
-  },
-  {
-   "k": "res",
-   "t": "PID:9428\n00:18:19 → batch batch_6af1114b9de48190919a0966a978846c · 9 fotos · sin referencia · low 1088x608\n00:18:20 → batch batch_6af1114c8cf08190a2e9952bf7c40f6a · 1 fotos · con la cara del presentador · low 1088x608\n00:18:20 batch a978846c: in_progress 0/9\n00:18:21 batch f7c40f6a: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "echo \"=== STOCK ===\"; tail -10 clips/stock.log; ls clips/*.mp4 2>/dev/null | wc -l; echo \"=== AVATAR ===\"; tail -5 avatar/it.log; echo \"=== SFX ===\"; tail -8 sonidos.log; ls sfx/"
-  },
-  {
-   "k": "res",
-   "t": "=== STOCK ===\n00:14:11 → 140 clips por buscar\n00:17:44 bajados 140/140\n00:17:44 FIN: 140/140 clips en clips/\n140\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n=== SFX ===\nok tela: tela.mp3 (1 s, Cloth slide out) · tela_2.mp3 (1 s, Squishing a soggy cloth shirt)\nok papel: papel.mp3 (1 s"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"file\": \"cajon.mp3\", \"t\": 16200, \"gain\": 0.055, \"fade\": 0.25},\n {\"file\": \"tela.mp3\", \"t\": 164760, \"gain\": 0.04, \"fade\": 0.3},\n {\"file\": \"papel.mp3\", \"t\": 275080, \"gain\": 0.045, \"fade\": 0.25},\n {\"file\": \"te_2.mp3\", \"t\": 1220420, \"gain\": 0.05, \"fade\": 0.5}\n]\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/cues.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"fotos/*.png\" 16 --max 420"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 16 archivos (195 s)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos2.jpg fotos/p002.png fotos/p013.png fotos/p066.png fotos/p097.png fotos/p119.png fotos/p126.png fotos/p136.png fotos/p143.png fotos/p147.png fotos/p152.png && tail -3 fotos/fotos_02.log"
-  },
   {
    "k": "res",
    "t": "hoja: qc/hoja_fotos2.jpg (10 cuadros, 4x3)\n00:21:52 batch a978846c: completed 9/9\n00:21:53 ✓ batch a978846c: 9 fotos bajadas, 0 fallidas (US$0.021)\n00:21:53 FIN: 10/10 fotos en fotos/ (4 min)"
@@ -178,6 +126,58 @@
   {
    "k": "res",
    "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'PY'\nimport json, os\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nQ={\n \"p004\": [\"black turtleneck close up\", \"black high neck sweater\"],\n \"p006\": [\"floral blouse close up\", \"large flower print dress\"],\n \"p007\": [\"folded sweaters stack\", \"knit tops folded drawer\"],\n \"p010\": [\"seamstress hands fabric\", \"tailor hands measuring cloth\"],\n \"p012\": [\"japanese fabric "
+  },
+  {
+   "k": "res",
+   "t": "borrados y stock_02.json listo\nPID:14423\n00:23:46 → 6 clips por buscar\n00:23:55 bajados 6/6\n00:23:55 FIN: 6/6 clips en clips/"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_fix.jpg clips/p004.mp4 clips/p006.mp4 clips/p007.mp4 clips/p010.mp4 clips/p012.mp4 clips/p016.mp4"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_clips_fix.jpg (6 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_clips_fix.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_A.jpg clips/p018.mp4 clips/p019.mp4 clips/p020.mp4 clips/p021.mp4 clips/p022.mp4 clips/p023.mp4 clips/p024.mp4 clips/p025.mp4 clips/p026.mp4 clips/p028.mp4 clips/p029.mp4 clips/p030.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_B.jpg clips/p031.mp4 clips/p032.mp4 clips/p033.mp4 clips/p034.mp4 clips/p035.mp4 clips/p036.mp4 clips/p037.mp4 c"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/sh_A.jpg (12 cuadros, 4x3)\nhoja: qc/sh_B.jpg (12 cuadros, 4x3)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_A.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_B.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_C.jpg clips/p044.mp4 clips/p045.mp4 clips/p046.mp4 clips/p047.mp4 clips/p048.mp4 clips/p049.mp4 clips/p050.mp4 clips/p051.mp4 clips/p052.mp4 clips/p053.mp4 clips/p054.mp4 clips/p055.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_D.jpg clips/p056.mp4 clips/p057.mp4 clips/p058.mp4 clips/p059.mp4 clips/p060.mp4 clips/p061.mp4 clips/p062.mp4 c"
   }
  ],
  "maquinas": 1,
