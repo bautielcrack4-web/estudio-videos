@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794208841.1958795,
+ "actualizado": 1794208905.0651972,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -40,8 +40,8 @@
   {
    "k": "armado",
    "n": "Armado",
-   "st": "skip",
-   "info": ""
+   "st": "done",
+   "info": "10 segmentos"
   },
   {
    "k": "qc",
@@ -51,98 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2608,
+  "deepseek": 0.2803,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.6526
+  "total": 0.6721
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_06.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_07.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_08.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_09.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_10.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_11.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_12.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_13.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "Revisión completa: 154 fotos buenas. Rehago en una sola ronda las 5 con cara ajena/encuadre (p002, p050, p105, p127, p134) y los 2 prompts rechazados (p098, p133)."
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Ronda unica de rehechas: encuadres sin cara + dos prompts rechazados por el filtro.\"\"\"\nfrom foto_base import foto, escribir\n\nP = []\nP.append(foto(\"p002\",\n    \"She reaches up and presses two fingertips against the band of her shirt collar at her neck, testing how it sits, her eyes lowered in concentration.\",\n    \"the weathered hands and lower neck of a 68-year-old Japanes"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_redo.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python escenas_redo.py && python - <<'PY'\nimport json,re\npeds=json.load(open('pedidos_redo.json'))\nPROH=[\"cinematic\",\"35mm\",\"bokeh\",\"8k\",\"highly detailed\",\"photorealistic\",\"golden hour\",\"out of focus\",\"blurry\",\"soft focus\",\"shallow depth of field\",\"subject isolation\",\"stock photo\",\"studio lighting\"]\nVACIO=re.compile(r\"\\b(empty room|nobody|no one|no people|unoccupied|bare room|minimalist|isolated o"
-  },
-  {
-   "k": "res",
-   "t": "✓ pedidos_redo.json: 7 pedidos\nredo 7 errores 0 camara max 1"
-  },
   {
    "k": "tool",
    "t": "rm -f fotos/p002.png fotos/p002.json fotos/p050.png fotos/p050.json fotos/p105.png fotos/p105.json fotos/p127.png fotos/p127.json fotos/p134.png fotos/p134.json\nnohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_redo.json > fotos/fotos_redo.log 2>&1 & echo \"PID=$!\"; sleep 5; tail -4 fotos/fotos_redo.log; echo ---AVATAR---; tail -2 avatar/it.log"
@@ -178,6 +94,90 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_redo.log --busca \"FIN:\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'FIN:' (440 s):\n07:04:04 batch 375af8b3: validating 0/0\n07:04:34 batch 375af8b3: in_progress 0/7\n07:13:36 batch 375af8b3: in_progress 3/7\n07:20:37 batch 375af8b3: completed 7/7\n07:20:38 ✓ batch 375af8b3: 7 fotos bajadas, 0 fallidas (US$0.017)\n07:20:38 FIN: 7/7 fotos en fotos/ (17 min)"
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'PY'\nimport json,glob,os\nplan=[p['id'] for p in json.load(open('planos.json'))]\nhave={os.path.splitext(os.path.basename(f))[0] for f in glob.glob('fotos/*.png')+glob.glob('fotos/*.jpg')}\nprint('planos',len(plan),'fotos',len(have),'faltan',[i for i in plan if i not in have])\nPY\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_redo.jpg fotos/p002.png fotos/p050.png fotos/p105.png foto"
+  },
+  {
+   "k": "res",
+   "t": "planos 156 fotos 156 faltan []\nhoja: qc/hoja_redo.jpg (7 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_redo.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'PY'\nfrom PIL import Image\nim=Image.open('fotos/p127.png').convert('RGB')\nprint(im.size)\nw,h=im.size\n# recorte 16:9 de la mitad inferior: manos, bandeja de té y cojín, sin la cara\nbox=(int(w*0.12), int(h*0.40), int(w*0.12)+int(h*0.60*16/9), int(h*0.40)+int(h*0.60))\nbox=(max(0,box[0]),max(0,box[1]),min(w,box[2]),min(h,box[3]))\nc=im.crop(box)\nprint('crop',box,c.size)\nc=c.resize((1088,612)"
+  },
+  {
+   "k": "res",
+   "t": "(1088, 608)\ncrop (130, 243, 778, 607) (648, 364)\nhoja: qc/hoja_p127.jpg (1 cuadros, 1x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_p127.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"niega\\|segunda\\|hecho\\|mtime\\|armado.json\\|final.mp4\" /opt/estudio/repo/motor/tools/assemble.py | head -30; echo ---; grep -n \"limit\\|previo\" /opt/estudio/repo/motor/tools/render.py | head -30"
+  },
+  {
+   "k": "res",
+   "t": "3:Une segments/ (con los fundidos de xf.json) + voz/master.wav + SFX de cues.json -> final.mp4 (1920x1080 30fps, audio ESTÉREO AAC 192k).\n12:FINAL = B + \"/final.mp4\"\n13:EST = B + \"/gates/armado.json\"\n15:_LOCK = open(B + \"/gates/.armado.lock\", \"a\"); fcntl.flock(_LOCK, fcntl.LOCK_EX)     # de a uno: el segundo que entra encuentra todo hecho\n91:    elif abs(os.path.getmtime(FINAL) - float(rev.get(\"fi"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/planos.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo --shots && nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo --limit 10 > render_test.log 2>&1 & echo \"PID=$!\""
+  },
+  {
+   "k": "res",
+   "t": "PID=22275"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 5; ls -la shots_timed.json 2>/dev/null; tail -8 render_test.log 2>/dev/null; echo \"---\"; pgrep -af \"render.py.*--limit\" | head -3"
+  },
+  {
+   "k": "res",
+   "t": "<persisted-output>\nOutput too large (43.3KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-one-collar-press-makes-a-plain-shirt-loo/fd4ebb58-e36a-4d9d-a8e7-e3fd08ada688/tool-results/b3sz3tp1l.txt\n\nPreview (first 2KB):\n-rw-rw-rw-+ 1 sesion sesion 8656 Nov  9 07:21 shots_timed.json\n---\n3806 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF"
+  },
+  {
+   "k": "tool",
+   "t": "cat render_test.log 2>/dev/null | tail -12; echo \"---procesos---\"; pgrep -af \"python .*tools/render.py\" | head -3; echo \"---avatar---\"; tail -2 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "<persisted-output>\nOutput too large (43.3KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-one-collar-press-makes-a-plain-shirt-loo/fd4ebb58-e36a-4d9d-a8e7-e3fd08ada688/tool-results/bmw4ewgnd.txt\n\nPreview (first 2KB):\n---procesos---\n3806 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOS"
+  },
+  {
+   "k": "tool",
+   "t": "ls segments/ 2>/dev/null | head; echo \"count=$(ls segments/*.mp4 2>/dev/null | wc -l)\"; echo \"logsize=$(stat -c%s render_test.log 2>/dev/null)\"; echo \"---procs python---\"; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|fotos.py|avatar_it\" | head"
+  },
+  {
+   "k": "res",
+   "t": "0000.mp4\n0000.mp4.src\n0001.mp4\n0001.mp4.src\n0002.mp4\n0002.mp4.src\n0003.mp4\n0003.mp4.src\n0004.mp4\n0004.mp4.src\ncount=9\nlogsize=0\n---procs python---\n   7852 python          python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\n  22279 python          python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/one-collar-pres"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"segments/*.mp4\" 10 --max 300; tail -5 render_test.log; ls segments/*.mp4 | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 10 archivos (0 s)\n10"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,28 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 2147,
+    "seg": 2211,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 3158,
+    "seg": 3222,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "extrema",
+    "n": "Edición extrema",
+    "seg": 0,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3647,
+  "total_s": 3711,
   "avatar_s": 30,
-  "sin_avatar_s": 3617,
+  "sin_avatar_s": 3681,
   "cerrado": false
  }
 }
