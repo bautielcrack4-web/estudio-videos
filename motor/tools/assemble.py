@@ -15,13 +15,25 @@ CUES = [(c["file"], c["t"], c["gain"], c["fade"]) for c in
 for _c in [c for c in CUES if not os.path.exists(SFXDIR + "/" + c[0])]: print("falta el SFX", _c[0], "(va sin él)")
 CUES = [c for c in CUES if os.path.exists(SFXDIR + "/" + c[0])]
 
-def run(cmd, **kw):
+def run(cmd, fatal=True, **kw):
     r = subprocess.run(cmd, capture_output=True, text=True, **kw)
     if r.returncode != 0:
         print("FALLO:", " ".join(cmd)[:400])
         print(r.stderr[-1500:])
-        sys.exit(1)
+        if fatal: sys.exit(1)
     return r
+
+def leer_capas():
+    """Edición extrema: componentes con transparencia que van encima de lo que hay en pantalla (extrema/capas.json)."""
+    try: L = json.load(open(B + "/extrema/capas.json", encoding="utf-8"))
+    except Exception: return []
+    out = []
+    for c in L if isinstance(L, list) else []:
+        try:
+            m = str(c["mov"]); t = float(c["startMs"]) / 1000
+            if re.fullmatch(r"extrema/xm\d+\.mov", m) and t >= 0 and os.path.getsize(B + "/" + m) > 10000: out.append((B + "/" + m, t))
+        except (KeyError, TypeError, ValueError, OSError): pass
+    return out[:12]
 
 segs = sorted(f for f in os.listdir(B + "/segments") if re.match(r"\d{4}\.mp4$", f))
 video = B + "/video_noaudio.mp4"
@@ -33,7 +45,7 @@ ENTREGA = ["-color_range", "tv", "-colorspace", "bt709", "-color_primaries", "bt
            "-sc_threshold", "0", "-maxrate", "5M", "-bufsize", "10M"]   # listo para YouTube: bt709, rango tv, keyframe cada 2 s
 VF_ENTREGA = "scale=out_color_matrix=bt709:out_range=limited,format=yuv420p,setparams=range=tv:color_primaries=bt709:color_trc=bt709:colorspace=bt709"
 
-def xfade_chain(files, ns, ds, out, crf, entrega=False):
+def xfade_chain(files, ns, ds, out, crf, entrega=False, capas=()):
     """Une con fundidos sin correr los tiempos: cada archivo trae ds[k] cuadros de cola extra."""
     ins, fc, prev, t = [], [], "[v0]", 0
     for k, f in enumerate(files):
@@ -45,9 +57,13 @@ def xfade_chain(files, ns, ds, out, crf, entrega=False):
         else: fc.append("%s[v%d]concat=n=2:v=1:a=0%s" % (prev, k, o))
         prev = o
     if len(files) == 1: prev = "[v0]"
+    for k, (f, t) in enumerate(capas):      # van en esta misma pasada: el video no se codifica una vez más
+        n = len(files) + k; ins += ["-i", f]
+        fc.append("[%d:v]format=yuva420p,setpts=PTS-STARTPTS+%.3f/TB[o%d]" % (n, t, k))
+        fc.append("%s[o%d]overlay=0:0:eof_action=pass:repeatlast=0[c%d]" % (prev, k, k)); prev = "[c%d]" % k
     if entrega: fc.append("%s%s[fin]" % (prev, VF_ENTREGA)); prev = "[fin]"
-    run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", prev,
-         "-c:v", "libx264", "-crf", str(crf), "-preset", "veryfast" if crf < 20 else "medium", "-pix_fmt", "yuv420p", "-r", "30", "-an"] + (ENTREGA if entrega else []) + [out])
+    return run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", prev,
+         "-c:v", "libx264", "-crf", str(crf), "-preset", "veryfast" if crf < 20 else "medium", "-pix_fmt", "yuv420p", "-r", "30", "-an"] + (ENTREGA if entrega else []) + [out], fatal=not capas).returncode == 0
 
 if XF and len(XF) == len(segs):
     TMP = B + "/xf_tmp"; os.makedirs(TMP, exist_ok=True)
@@ -58,7 +74,11 @@ if XF and len(XF) == len(segs):
         xfade_chain([B + "/segments/" + segs[i] for i in idx], [XF[i]["n"] for i in idx], [XF[i]["d"] for i in idx], out, 14)
         chunks.append(out); cn.append(sum(XF[i]["n"] for i in idx)); cd.append(XF[idx[-1]]["d"])
         print("tramo", len(chunks), "listo")
-    xfade_chain(chunks, cn, cd, video, 20, entrega=True)
+    CAPAS = leer_capas()
+    if CAPAS: print("capas de edición extrema:", len(CAPAS))
+    if not CAPAS or not xfade_chain(chunks, cn, cd, video, 20, entrega=True, capas=CAPAS):     # si las capas fallan, el video sale igual sin ellas
+        if CAPAS: print("las capas fallaron: va sin ellas")
+        xfade_chain(chunks, cn, cd, video, 20, entrega=True)
 else:
     print("sin xf.json: corte seco")
     lst = B + "/concat.txt"

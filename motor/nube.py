@@ -195,11 +195,11 @@ def armar_panel(extra):
         R = server.jload(os.path.join(X, "render.json"), {}) or {}
         tl["xm"] = []
         for m in M:
-            i = str(m.get("id") or ""); rel = "extrema/" + i + ".mp4"; full = os.path.join(cwd, rel); dst = os.path.join(base, "f", rel)
+            i = str(m.get("id") or ""); rel = "extrema/" + i + ".mp4"; arch = str(m.get("arch") or rel); full = os.path.join(cwd, arch); dst = os.path.join(base, "f", rel); capa = arch.endswith(".mov")
             hecha = bool((R.get(i) or {}).get("ok")) and os.path.exists(full)
             if hecha and nuevo("x:" + rel, full):
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
-                try: mal = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", full, "-an", "-vf", "scale=640:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "30", "-pix_fmt", "yuv420p", "-movflags", "+faststart", dst], capture_output=True, timeout=120).returncode
+                try: mal = subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=0x2c2c2e:s=640x360:r=30", "-i", full, "-an", "-filter_complex", "[1:v]scale=640:360,format=yuva420p[o];[0:v][o]overlay=shortest=1,format=yuv420p", "-c:v", "libx264", "-preset", "veryfast", "-crf", "30", "-movflags", "+faststart", dst] if capa else ["ffmpeg", "-v", "error", "-y", "-i", full, "-an", "-vf", "scale=640:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "30", "-pix_fmt", "yuv420p", "-movflags", "+faststart", dst], capture_output=True, timeout=120).returncode
                 except subprocess.TimeoutExpired: mal = 1
                 if mal:
                     pub.pop("x:" + rel, None)
@@ -331,6 +331,7 @@ def xm_fin(log_tail=True):
     """Cierra la extrema de fondo (si sigue viva la corta: el video no la espera) y pasa sus líneas al log."""
     p = xm["p"]
     if p and p.poll() is None:
+        if os.environ.get("ESTUDIO_USUARIO_SESION"): subprocess.run(["sudo", "-n", "pkill", "-9", "-u", os.environ["ESTUDIO_USUARIO_SESION"], "-f", "/tmp/extrema_pkg"], capture_output=True)      # el render corre como el usuario sin claves: se para aparte, sin tocar la sesión
         try: os.killpg(p.pid, 15)                  # también el render de Remotion que cuelga de ella
         except OSError: p.terminate()
         try: p.wait(30)
@@ -408,7 +409,7 @@ if XM_ON and not st.get("extrema"):
         try:
             r = _T(BASE + "/tools/extrema.py", _cwd, "--tope", str(min(float(E.get("TOPE_EXTREMA") or 0.20), 0.20)), t=5400)
             for _l in [l for l in (r.stdout or "").splitlines() if "extrema:" in l][-14:]: log(_l[:200])
-            _man = server.jload(os.path.join(_cwd, "extrema", "manifest.json"), []) or []
+            _man = (server.jload(os.path.join(_cwd, "extrema", "manifest.json"), []) or []) + (server.jload(os.path.join(_cwd, "extrema", "capas.json"), []) or [])
             if _man:
                 r1 = _T(BASE + "/tools/render.py", _cwd, t=5400); r2 = _T(BASE + "/tools/assemble.py", _cwd, t=3600)
                 r3 = _T(BASE + "/tools/validar.py", _cwd, "--etapa", "final", t=900)
