@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205192.71168,
+ "actualizado": 1794205260.2337818,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1107,
+  "deepseek": 0.1224,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4062
+  "total": 0.4179
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "ps -p 24930 -o pid,etime,cmd --no-headers; ls -la render.log; tail -5 render.log; ps -p 24354 -o pid,etime --no-headers"
-  },
-  {
-   "k": "res",
-   "t": "  24930       00:22 python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\n-rw-rw-rw-+ 1 sesion sesion 0 Nov  9 05:45 render.log\n  24354       01:03"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la plan.json segments/xf.json 2>/dev/null; python /opt/estudio/repo/motor/tools/validar.py . --etapa render --min 8 2>&1 | tail -30"
-  },
-  {
-   "k": "res",
-   "t": "-rw-rw-rw-+ 1 sesion sesion 17609 Nov  9 05:45 plan.json\n-rw-rw-rw-+ 1 sesion sesion  2350 Nov  9 05:45 segments/xf.json\nVALIDAR /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q · etapa render\n  ✓ guion: 8479 caracteres, 1670 palabras (hacen falta 7200-9200 para 8 min: bien)\n  ✓ fotos: 20 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto"
-  },
-  {
-   "k": "ai",
-   "t": "Render-stage validation is fully green. Waiting for the render to finish."
-  },
-  {
-   "k": "tool",
-   "t": "cat >> gates/fotos_auto.txt <<'EOF'\n- Revisión final de las 20 fotos (hojas qc/hoja_fotos_all1.jpg y all2.jpg): caras coherentes con el avatar, manos correctas,\n  detalles narrativos legibles. Sin repeticiones. No hubo que rehacer ninguna.\n- p029 muestra a una mujer joven de espaldas en el espejo (demostración, no es la presentadora): se acepta como recurso de b-roll.\nEOF\npython /opt/estudio/repo/"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'hechos' (265 s):\nclips=112 frames=19505 (650.17s)\nhechos 112"
-  },
-  {
-   "k": "ai",
-   "t": "Render complete (112 segments, 650 s). Assembling with voice and sound cues."
-  },
-  {
-   "k": "tool",
-   "t": "ls extrema/ 2>/dev/null; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > assemble.log 2>&1 & echo \"PID assemble: $!\"; sleep 5; tail -3 assemble.log"
-  },
-  {
-   "k": "res",
-   "t": "  24354       05:47\nPID assemble: 29115"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"4\", \"status\": \"completed\"}"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"6\", \"status\": \"in_progress\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #4 status"
-  },
   {
    "k": "res",
    "t": "Updated task #6 status"
@@ -178,6 +126,58 @@
   {
    "k": "res",
    "t": "✓ existe final.mp4 (395.5 MB, 365 s)"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 29115 -o pid,etime --no-headers 2>/dev/null || echo \"assemble terminó\"; tail -6 assemble.log; echo \"---\"; python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 8 2>&1 | tail -30"
+  },
+  {
+   "k": "res",
+   "t": "assemble terminó\ntramo 1 listo\ntramo 2 listo\ntramo 3 listo\ntramo 4 listo\ntramo 5 listo\nfinal: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/final.mp4 650.166016 s\n---\nVALIDAR /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q · etapa final\n  ✓ guion: 8479 caracteres, 1670 palabras (hacen falta 7200-9200 para 8 min: bien)\n  ✓ fotos: 20 · 0 sin su prompt al lado "
+  },
+  {
+   "k": "ai",
+   "t": "Final validation catches a 0.73 s video/voice length mismatch. Trimming the tail to the voice duration."
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -y -i final.mp4 -t 649.40 -map 0 -c copy -movflags +faststart final_trim.mp4 && ffprobe -v error -show_entries format=duration -of csv=p=0 final_trim.mp4"
+  },
+  {
+   "k": "res",
+   "t": "649.466667"
+  },
+  {
+   "k": "tool",
+   "t": "mv final_trim.mp4 final.mp4; python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 8 2>&1 | tail -8"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ duración real: 10.8 min (pedidos: 8)\n  ✓ meta.json con title\n  ✓ meta.json con title y description (>200 caracteres)\n  ✓ sonido: cues.json con sus archivos\n  !  REPORTE.md\n  !  falta tu revisión visual del final (cuadros cada 30 s en qc/): escribí gates/final_auto.txt.\n  !  falta el revisor final: python tools/revisor.py <carpeta> (no frena, pero mira cosas que vos no ves).\nRESULTADO: OK"
+  },
+  {
+   "k": "ai",
+   "t": "Final validation passes. Running the final reviewer."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > revisor.log 2>&1 & echo \"PID revisor: $!\"; sleep 3; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; ls extrema/ 2>/dev/null | head"
+  },
+  {
+   "k": "res",
+   "t": "PID revisor: 36478\n  24354       36:00\ngen\nlibre.json\nmomentos.json\nrender.json\nxm01.mp4\nxm02.mov\nxm03.mov\nxm04.mov"
+  },
+  {
+   "k": "tool",
+   "t": "cat gasto.jsonl 2>/dev/null | tail -20; echo \"---\"; tail -5 revisor.log"
+  },
+  {
+   "k": "res",
+   "t": "{\"t\": 1794198471.4695747, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 649}\n{\"t\": 1794198691.165456, \"tag\": \"juez_stock\", \"usd\": 0.00593, \"llamadas\": 39}\n{\"t\": 1794198740.2591093, \"tag\": \"juez_stock\", \"usd\": 0.0006, \"llamadas\": 4}\n{\"t\": 1794198813.7510467, \"tag\": \"fotos_gpt\", \"usd\": 0.00699, \"n\": 3}\n{\"t\": 1794198819.1731887, \"tag\": \"juez_stock\", \"usd\": 0.00214, \"llamadas\": 14}\n{\"t\": 1794198863.5553687, \"t"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe gates/revisor_final.json --max 540"
   }
  ],
  "maquinas": 1,
