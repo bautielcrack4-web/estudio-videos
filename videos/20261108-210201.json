@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794190378.5047977,
+ "actualizado": 1794190442.1728992,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,62 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1809,
+  "deepseek": 0.192,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4827
+  "total": 0.4938
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > render3.log 2>&1 & echo \"PID:$!\"; sleep 10; tail -2 render3.log"
-  },
-  {
-   "k": "res",
-   "t": "PID:52157"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log render3.log --busca \"hechos\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'hechos' (215 s):\nclips=257 frames=37498 (1249.93s)\nhechos 257"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/assemble.py . 2>&1 | tail -20"
-  },
-  {
-   "k": "res",
-   "t": "Command running in background with ID: bpaw6iq4s. Output is being written to: /tmp/claude-1002/-opt-estudio-datos-videos-10-tops-i-gave-away-at-68-what-i-wear-in/a2b588b1-04ed-4775-a95e-3a7b27e56aa9/tasks/bpaw6iq4s.output. You will be notified when it completes. To check interim output, use Read on that file path."
-  },
-  {
-   "k": "tool",
-   "t": "{\"task_id\": \"bpaw6iq4s\", \"block\": true, \"timeout\": 600000}"
-  },
-  {
-   "k": "res",
-   "t": "<retrieval_status>timeout</retrieval_status>\n\n<task_id>bpaw6iq4s</task_id>\n\n<task_type>local_bash</task_type>\n\n<status>running</status>"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/tmp/claude-1002/-opt-estudio-datos-videos-10-tops-i-gave-away-at-68-what-i-wear-in/a2b588b1-04ed-4775-a95e-3a7b27e56aa9/tasks/bpaw6iq4s.output\"}"
-  },
-  {
-   "k": "res",
-   "t": "<system-reminder>Warning: the file exists but is shorter than the provided offset (1). The file has 1 lines.</system-reminder>"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la xf_tmp/ 2>/dev/null | tail -5; ls xf_tmp/*.mp4 2>/dev/null | wc -l; ps aux | grep -c \"[f]fmpeg\"; ps -o pid,etime,cmd -C ffmpeg | head -3"
-  },
   {
    "k": "res",
    "t": "-rw-rw-rw-+  1 sesion sesion 126141752 Nov  9 01:40 c006.mp4\n-rw-rw-rw-+  1 sesion sesion 150170389 Nov  9 01:41 c007.mp4\n-rw-rw-rw-+  1 sesion sesion 112775601 Nov  9 01:42 c008.mp4\n-rw-rw-rw-+  1 sesion sesion 102254713 Nov  9 01:44 c009.mp4\n-rw-rw-rw-+  1 sesion sesion  36499722 Nov  9 01:44 c010.mp4\n11\n5\n    PID     ELAPSED CMD\n  60522       06:38 ffmpeg -v error -y -i ./xf_tmp/c000.mp4 -i ./x"
@@ -178,6 +130,54 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe gates/revisor_final.json --max 480"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe gates/revisor_final.json (0.0 MB, 130 s)"
+  },
+  {
+   "k": "tool",
+   "t": "cat revisor.log; echo \"=== CORRECCIONES ===\"; cat gates/correcciones.txt 2>/dev/null || echo \"(sin correcciones)\"; ls qc/f_*.jpg | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "⚠ 3 cosas para arreglar en gates/correcciones.txt:\n  · HUECO NEGRO 984.6-986.6 s → mirá en plan.json qué falta ahí, arreglalo y volvé a correr render.py + assemble.py.\n  · HUECO NEGRO 989.7-990.8 s → mirá en plan.json qué falta ahí, arreglalo y volvé a correr render.py + assemble.py.\n  · FINAL ~16:30: cuadro completamente negro, sin imagen → mirá en plan.json qué hay en ese segundo. Si es una foto"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\np=json.load(open('plan.json',encoding='utf8'))['segments']\nfor i,s in enumerate(p):\n    if 975 <= s['t0'] <= 1000 or 975 <= s['t1'] <= 1000:\n        print(i,s)\n\"; echo \"=== frames ===\"; for t in 984.6 986.0 989.7 990.5 991.0; do ffmpeg -v error -y -ss $t -i final.mp4 -frames:v 1 qc/black_$t.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_black.jpg qc/black_"
+  },
+  {
+   "k": "res",
+   "t": "198 {'kind': 'clip', 't0': 971.92, 't1': 978.58, 'file': '/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/clips/p120.mp4'}\n199 {'kind': 'av', 't0': 978.58, 't1': 984.1, 'file': '/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/avatar/A79.mp4'}\n200 {'kind': 'clip', 't0': 984.1, 't1': 990.72, 'file': '/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wea"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_black.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f clips/p121.mp4 clips/p121.json && cat > stock_06.json <<'EOF'\n[{\"id\":\"p121\",\"buscar\":[\"cream silk fabric folds\",\"beige satin fabric close up\"]}]\nEOF\npython /opt/estudio/repo/motor/tools/stock.py . stock_06.json > clips/stock_06.log 2>&1; cat clips/stock_06.log; ffmpeg -v error -y -ss 0.3 -i clips/p121.mp4 -frames:v 1 qc/p121_new.jpg; ffmpeg -v error -y -ss 2.0 -i clips/p121.mp4 -frames:v 1 q"
+  },
+  {
+   "k": "res",
+   "t": "02:13:34 → 1 clips por buscar\n02:13:36 bajados 1/1\n02:13:36 FIN: 1/1 clips en clips/\nhoja: qc/g_p121.jpg (2 cuadros, 2x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/g_p121.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/render.py . 2>&1 | tail -3"
   }
  ],
  "maquinas": 1,
