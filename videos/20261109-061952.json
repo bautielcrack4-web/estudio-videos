@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205593.920668,
+ "actualizado": 1794205656.6693969,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -17,7 +17,7 @@
    "k": "voz",
    "n": "Voz",
    "st": "active",
-   "info": "3 bloques"
+   "info": "6 bloques"
   },
   {
    "k": "tiempos",
@@ -51,110 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0489,
+  "deepseek": 0.0629,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0489
+  "total": 0.0629
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "A good roll is a soft curve. A poor one is a hard crease, or no curve at all.\n\nThe stand was not always part of the shirt. In my grandmother's time, collars were often detachable, held on with a small button at the back and two at the front. A man might own one shirt and three collars, and a woman would turn a collar inside out when the first side wore thin. The stand existed so the collar could h"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "This can soften the look of old shine. It will not remove deep damage, and I will not pretend otherwise. Prevention is the quiet work.\n\nNot every fabric asks for the same hand. Poplin is smooth and tight, and it takes a beautiful press, but it also shines if you hurry. Oxford cloth is rougher, with a small basket weave, and it forgives a heavy hand; press it with a little more steam and let it coo"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "A collar should sit like a hand resting on a shoulder, present but not pressing.\n\nHere is a check for the days when you wear a jacket. Put the jacket on over the shirt and stand in front of the mirror. At the back of your neck, the collar should rise about one centimeter above the jacket. If it disappears entirely, the jacket is sitting too high or the collar stand is too short, and your neck will"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "This cloth is your pressing cloth, and it matters more than the iron.\n\nAbout those collar stays. Some are metal, cool and slightly heavy; some are thin plastic, and some are nothing more than a folded piece of cardboard. I have seen a man use the cardboard from a box of matches. If the stays are bent, replace them; a bent stay makes a bent collar, and no iron can straighten a collar around a crook"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "The fabric does not remember the iron. It remembers the shape it cools in.\n\nIf you do not own a pressing board, you do not need one. A thick towel folded twice on a table will do, and a rolled magazine under the collar gives you the curve. For the roll, a clean sock rolled into a tube is enough. The tools are not the secret. I have pressed collars with a pot of hot water and a cloth in a house whe"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "If the collar is two centimeters too large, no button and no iron will make it right. Let it go, and use it for gardening.\n\nBefore you buy a shirt, do one small thing in the shop. Pinch the collar between your thumb and forefinger. You should feel three even layers, with no lump at the edge and no hard glue near the fold. Then bend the leaf gently back and let it go. A good collar returns to its c"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "Small things, done every day: a little space, a little patience, and the shirt lasts another five years.\n\nHere in Kyoto, we have a rainy season in June and July that my grandmother called the season of small dampnesses. The air holds water, and a shirt that is put away even slightly damp will grow a smell that no washing can fully remove. In 1993, a customer named Mrs. Sato brought me a linen shir"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport re\nt=open('guion.txt',encoding='utf8').read()\ncar=len(re.sub(r'\\s+',' ',re.sub(r'\\[[^\\]]*\\]|\\([^)]*\\)','',t)).strip())\nw=len(re.findall(r\"[^\\W\\d_]+(?:'[^\\W\\d_]+)?\",t))\nprint('caracteres:',car,'palabras:',w)\nprint('tags:',re.findall(r\"\\[[a-z ]+\\]|\\(laughs\\)\",t))\nPY\npython /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-l"
-  },
-  {
-   "k": "res",
-   "t": "caracteres: 19176 palabras: 3740\ntags: ['[whispering]', '[emphatically]', '[emphatically]']\nVALIDAR /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo · etapa guion\n  ✓ guion: 19176 caracteres, 3740 palabras (hacen falta 18000-23000 para 20 min: bien)\nRESULTADO: OK"
-  },
-  {
-   "k": "ai",
-   "t": "Guion OK (19.176 caracteres). Lanzo la voz en segundo plano."
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p qc gates && nohup python /opt/estudio/repo/motor/tools/voz.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo > /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/voz.log 2>&1 & echo \"PID=$!\""
-  },
-  {
-   "k": "res",
-   "t": "PID=4562"
-  },
-  {
-   "k": "tool",
-   "t": "cd /opt/estudio/repo/motor/tools && sed -n '60,140p' fotos.py"
-  },
-  {
-   "k": "res",
-   "t": "    hit = [w for w in PROHIBIDOS if w in sin_avoid.replace(\"nothing blurred out\", \"\")]\n    if hit: problemas.append(f\"{i}: palabras prohibidas {hit} (dan look de IA/stock)\")\n    if not creativa:\n        if len(str(j.get(\"moment\", \"\"))) < 70: problemas.append(f\"{i}: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\")\n        props = j.get(\"props\") or []\n        if isins"
-  },
-  {
-   "k": "tool",
-   "t": "tail -5 /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/voz.log 2>/dev/null; ls -la /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/"
-  },
-  {
-   "k": "res",
-   "t": "voz: uso el clon guardado en Fish\nvoz: 9 bloques · 19268 caracteres\ntotal 11196\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 06:25 .\ndrwxrwxrwx+ 8 runner runner    4096 Nov  9 06:25 ..\n-rw-rw-rw-+ 1 sesion sesion 3739972 Nov  9 06:25 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 3915604 Nov  9 06:25 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 3778465 Nov  9 06:25 blk_002.wav.tmp.wav\n-rw-rw-rw-"
-  },
-  {
-   "k": "ai",
-   "t": "El guion está listo. Preparo las 3 variantes del gancho y las mando ya al Batch."
-  },
   {
    "k": "tool",
    "t": "[\n {\n  \"id\": \"p001_a\",\n  \"cara\": true,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"She is pressing the collar stand of a plain white shirt with an old black iron at the exact second the steam lifts, the coll"
@@ -178,6 +82,102 @@
   {
    "k": "res",
    "t": "voz: uso el clon guardado en Fish\nvoz: 9 bloques · 19268 caracteres\ntotal 23620\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 06:25 .\ndrwxrwxrwx+ 8 runner runner    4096 Nov  9 06:25 ..\n-rw-rw-rw-+ 1 sesion sesion 8034675 Nov  9 06:26 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 8123796 Nov  9 06:26 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7998186 Nov  9 06:26 blk_002.wav.tmp.wav\n-rw-rw-rw-"
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && grep -n \"frame\\|frames\\|A%d\\|it_sync\\|it_llamada\\|file\" avatar_it.py | head -50 && echo \"---RENDER frame---\" && grep -n '\"frame\"\\|get(\"frame\"\\|r\\[\"frame\"\\]' render.py | head -20"
+  },
+  {
+   "k": "res",
+   "t": "10:⛔ 1 sola llamada por video: si avatar/it_llamada.json dice \"ok\" o \"corriendo\", se niega. Un FAILED no cobra: ahí sí se puede repetir.\r\n14:sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\r\n21:LED = f\"{B}/avatar/it_llamada.json\"\r\n41:    if b[\"startMs\"] < a[\"endMs\"]: sale(f\"⛔ ventanas superpuestas: {a['file']} y {b['file']}\")\r\n51:    segs.append((a, b)); cortes.append({\"file\": r[\"fil"
+  },
+  {
+   "k": "tool",
+   "t": "tail -8 voz/voz.log; ls -la voz/ | head -20; echo ---; tail -4 fotos/fotos_hook.log"
+  },
+  {
+   "k": "res",
+   "t": "voz: uso el clon guardado en Fish\nvoz: 9 bloques · 19268 caracteres\n  ✓ bloque 2: 166 s (s2.1-pro-free)\ntotal 43444\ndrwxrwxrwx+ 2 runner runner     4096 Nov  9 06:26 .\ndrwxrwxrwx+ 8 runner runner     4096 Nov  9 06:25 ..\n-rw-rw-rw-+ 1 sesion sesion 14802178 Nov  9 06:26 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 14869865 Nov  9 06:26 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 14647598 No"
+  },
+  {
+   "k": "ai",
+   "t": "Mientras la voz termina, escribo el generador del plan de ventanas del avatar (lo correré con `captions.json`)."
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Genera avatar_ranges.json a partir de captions.json, cortando SIEMPRE en pausas del habla.\nPatron: 4 ventanas a pantalla completa (<=6 s) + 1 ventana en pantalla partida (7-12 s),\ncon huecos de b-roll de ~7 s (1 foto) y ~10-11 s (2 fotos). Avatar ~45 % del video, <= 560 s.\n\"\"\"\nimport json, subprocess, sys\n\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shi"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gen_avatar_plan.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"subject\": \"Guion 20 min validado\", \"description\": \"guion.txt ~20.000 caracteres, validar etapa guion OK\", \"activeForm\": \"Escribiendo el guion\"}"
+  },
+  {
+   "k": "res",
+   "t": "Task #1 created successfully: Guion 20 min validado"
+  },
+  {
+   "k": "tool",
+   "t": "{\"subject\": \"Voz + tiempos\", \"description\": \"voz.py en segundo plano, luego tiempos.py en inglés\", \"activeForm\": \"Generando voz y tiempos\"}"
+  },
+  {
+   "k": "res",
+   "t": "Task #2 created successfully: Voz + tiempos"
+  },
+  {
+   "k": "tool",
+   "t": "{\"subject\": \"Plan de planos y avatar\", \"description\": \"gen_avatar_plan.py, planos.py, avatar_ranges cerrado\", \"activeForm\": \"Armando el plan de planos\"}"
+  },
+  {
+   "k": "res",
+   "t": "Task #3 created successfully: Plan de planos y avatar"
+  },
+  {
+   "k": "tool",
+   "t": "{\"subject\": \"Fotos (3 gancho + 6 prueba + lote)\", \"description\": \"pedidos al Batch, hojas de contacto, rehechas, planos --shots\", \"activeForm\": \"Generando fotos\"}"
+  },
+  {
+   "k": "res",
+   "t": "Task #4 created successfully: Fotos (3 gancho + 6 prueba + lote)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"subject\": \"Avatar InfiniteTalk\", \"description\": \"avatar_it.py 1 llamada en segundo plano\", \"activeForm\": \"Generando avatar\"}"
+  },
+  {
+   "k": "res",
+   "t": "Task #5 created successfully: Avatar InfiniteTalk"
+  },
+  {
+   "k": "tool",
+   "t": "{\"subject\": \"Sonido + render + final\", \"description\": \"sonidos/cues, render prueba y full, assemble, revisor, validar final, meta+REPORTE\", \"activeForm\": \"Armando y revisando el video\"}"
+  },
+  {
+   "k": "res",
+   "t": "Task #6 created successfully: Sonido + render + final"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"1\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #1 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"2\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #2 status"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --busca \"maestro|master|✓ bloque 8|FIN|Error|Traceback\" --max 540"
   }
  ],
  "maquinas": 1,
@@ -202,14 +202,14 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 81,
+    "seg": 143,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 400,
+  "total_s": 463,
   "avatar_s": 0,
-  "sin_avatar_s": 400,
+  "sin_avatar_s": 463,
   "cerrado": false
  }
 }
