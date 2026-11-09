@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794193476.3709042,
+ "actualizado": 1794193539.889702,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2372,
+  "deepseek": 0.2424,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.539
+  "total": 0.5442
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "PreToolUse:Bash hook error: [\"/opt/hostedtoolcache/Python/3.11.18/x64/bin/python\" \"/opt/estudio/repo/motor/tools/guard.py\"]: BLOQUEADO (regla dura del Estudio): el avatar va SOLO por `python <APP>/tools/avatar_it.py <carpeta>` (1 llamada por video). Nunca RunPod directo.\n"
-  },
-  {
-   "k": "tool",
-   "t": "Revisor final (09-11 02:13), 3 avisos, todos la misma causa:\n1) HUECO NEGRO 984.6-986.6 s, 2) HUECO NEGRO 989.7-990.8 s, 3) cuadro negro ~16:30.\n   Causa: clips/p121.mp4 (silk fabric sheen) era satén negro casi sin luz; el clip entero se veía negro.\n   Arreglo: borré clips/p121.mp4 y lo repedí con búsqueda de satén claro (cream silk fabric folds). El nuevo clip es beige/crema y se ve bien.\n   Volv"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/gates/correcciones_hechas.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "Revisión visual del final (42 cuadros cada 30 s en qc/f_*.jpg; hojas qc/rev_A.jpg a rev_D.jpg):\n- Apertura 0 s: avatar real hablando desde el cuadro 1, encuadre limpio y cara coincidente con refs/avatar.png.\n- Alternancia avatar / b-roll: 41 % de avatar en 101 ventanas de 3-6 s; nunca más de 10 s sin avatar.\n- Fotos del presentador (p001, p022, p027, p124, p147): cara consistente con el avatar, ma"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/gates/final_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "# REPORTE — 10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead\n\n## Entregado\n- `final.mp4`: 1920x1080, 30 fps, H.264 CRF 20, bt709 rango tv, keyframe cada 2 s, AAC 192 k estéreo 48 kHz.\n- Duración: **20.8 min (1249,9 s)**, exactamente la de `voz/master.wav` (0,00 s de diferencia).\n- `guion.txt`: 16.741 caracteres hablados (dentro del rango pedido de 13.500-17.250). Inglés, voz de Michiko.\n- "
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/REPORTE.md (file state is current in your context — no need to Read it back)"
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble2.log --busca \"final:\" --max 480"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'final:' (100 s):\ntramo 7 listo\ntramo 8 listo\ntramo 9 listo\ntramo 10 listo\ntramo 11 listo\nfinal: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/final.mp4 1249.933008 s"
+  },
+  {
+   "k": "tool",
+   "t": "for t in 984.6 986.0 989.7 990.5; do ffmpeg -v error -y -ss $t -i final.mp4 -frames:v 1 qc/fix_$t.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fix_black.jpg qc/fix_984.6.jpg qc/fix_986.0.jpg qc/fix_989.7.jpg qc/fix_990.5.jpg; nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > revisor2.log 2>&1 & echo \"REV_PI"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fix_black.jpg (4 cuadros, 4x1)\nREV_PID:83622"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_fix_black.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log revisor2.log --busca \"cuadros revisados|Sin fallas|correcciones.txt\" --max 480"
   }
  ],
  "maquinas": 1,
