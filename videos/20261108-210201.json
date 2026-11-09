@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183754.383722,
+ "actualizado": 1794183824.0478861,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0707,
+  "deepseek": 0.0739,
   "gpt": 0.0488,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1195
+  "total": 0.1227
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/sonidos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/sfx_pedidos.json --tomas 3 > sonidos.log 2>&1 & echo \"PID:$!\"; sleep 12; tail -12 sonidos.log"
-  },
-  {
-   "k": "res",
-   "t": "PID:7343\nok tela: tela.mp3 (1 s, Cloth slide out) · tela_2.mp3 (1 s, Squishing a soggy cloth shirt)\nok papel: papel.mp3 (1 s, Big paper page turn) · papel_2.mp3 (1 s, Pages of paper moving) · papel_3.mp3 (1 s, Paper slide)\nok te: te.mp3 (3 s, Liquid poured in a jar with ice) · te_2.mp3 (4 s, Pouring water to mug) · te_3.mp3 (2 s, Pouring drink with ice)\nok cajon: cajon.mp3 (1 s, Old drawer opening"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"fotos/*.png\" 9 --max 480"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 9 archivos (155 s)"
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p qc gates && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png fotos/p017.png fotos/p027.png fotos/p040.png fotos/p106.png fotos/p124.png fotos/p126.png && ls -la qc/hoja_fotos.jpg && tail -3 fotos/fotos_01.log"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos.jpg (9 cuadros, 4x3)\n-rw-rw-rw-+ 1 sesion sesion 339860 Nov  9 00:17 qc/hoja_fotos.jpg\n00:17:39 batch 8e630f0c: completed 5/5\n00:17:40 ✓ batch 8e630f0c: 5 fotos bajadas, 0 fallidas (US$0.016)\n00:17:40 FIN: 9/9 fotos en fotos/ (4 min)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_fotos.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'PY'\nimport json, shutil, os\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\n# elegir p001_b como hero\nshutil.copyfile(f'{B}/fotos/p001_b.png', f'{B}/fotos/p001.png')\nd=json.load(open(f'{B}/fotos/p001_b.json',encoding='utf8'))\nd['id']='p001'\njson.dump(d, open(f'{B}/fotos/p001.json','w',encoding='utf8'), ensure_ascii=False, indent=1)\nfor x in ('p001_a','p001_b','p"
-  },
-  {
-   "k": "res",
-   "t": "p001 listo; p126 borrada para repedir\nok"
-  },
   {
    "k": "tool",
    "t": "tail -20 pedidos_02.json"
@@ -178,6 +134,50 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in --limit 10 > render_test.log 2>&1 & echo \"PID:$!\"; sleep 20; tail -12 render_test.log; echo \"=== AVATAR ===\"; tail -4 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "PID:13038\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 30; cat render_test.log | tail -20; ls segments/ 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "AVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A83.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A84.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A85.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A86.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A87.mp4\nAVATAR PENDIENT"
+  },
+  {
+   "k": "tool",
+   "t": "ls segments/*.mp4 | head -12 && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg $(ls segments/*.mp4 | head -10) && echo done"
+  },
+  {
+   "k": "res",
+   "t": "segments/0000.mp4\nsegments/0001.mp4\nsegments/0002.mp4\nsegments/0003.mp4\nsegments/0004.mp4\nsegments/0005.mp4\nsegments/0006.mp4\nsegments/0007.mp4\nsegments/0008.mp4\nsegments/0009.mp4\nhoja: qc/hoja_render.jpg (10 cuadros, 4x3)\ndone"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_render.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_hook.jpg clips/p004.mp4 clips/p005.mp4 clips/p006.mp4 clips/p007.mp4 clips/p008.mp4 clips/p009.mp4 clips/p010.mp4 clips/p011.mp4 clips/p012.mp4 clips/p014.mp4 clips/p015.mp4 clips/p016.mp4 && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_clips_hook.jpg (12 cuadros, 4x3)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_clips_hook.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
   }
  ],
  "maquinas": 1,
