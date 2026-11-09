@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184080.801781,
+ "actualizado": 1794184153.1859639,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,54 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0977,
+  "deepseek": 0.1028,
   "gpt": 0.0488,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1465
+  "total": 0.1516
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_D.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_E.jpg clips/p069.mp4 clips/p070.mp4 clips/p071.mp4 clips/p072.mp4 clips/p073.mp4 clips/p074.mp4 clips/p075.mp4 clips/p076.mp4 clips/p077.mp4 clips/p078.mp4 clips/p079.mp4 clips/p080.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_F.jpg clips/p081.mp4 clips/p082.mp4 clips/p083.mp4 clips/p084.mp4 clips/p085.mp4 clips/p086.mp4 clips/p087.mp4 c"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/sh_E.jpg (12 cuadros, 4x3)\nhoja: qc/sh_F.jpg (12 cuadros, 4x3)\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_E.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_F.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_G.jpg clips/p093.mp4 clips/p094.mp4 clips/p095.mp4 clips/p096.mp4 clips/p098.mp4 clips/p099.mp4 clips/p100.mp4 clips/p101.mp4 clips/p102.mp4 clips/p103.mp4 clips/p104.mp4 clips/p105.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_H.jpg clips/p107.mp4 clips/p108.mp4 clips/p109.mp4 clips/p110.mp4 clips/p111.mp4 clips/p112.mp4 clips/p113.mp4 c"
-  },
   {
    "k": "res",
    "t": "hoja: qc/sh_G.jpg (12 cuadros, 4x3)\nhoja: qc/sh_H.jpg (12 cuadros, 4x3)\nhoja: qc/sh_I.jpg (12 cuadros, 4x3)\nok"
@@ -178,6 +138,46 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix1.jpg clips/p007.mp4 clips/p025.mp4 clips/p026.mp4 clips/p029.mp4 clips/p033.mp4 clips/p034.mp4 clips/p041.mp4 clips/p043.mp4 clips/p046.mp4 clips/p048.mp4 clips/p049.mp4 clips/p050.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix2.jpg clips/p054.mp4 clips/p055.mp4 clips/p058.mp4 clips/p065.mp4 clips/p074.mp4 clips/p079.mp4 clips/p080"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/sh_fix1.jpg (12 cuadros, 4x3)\nhoja: qc/sh_fix2.jpg (12 cuadros, 4x3)\nhoja: qc/sh_fix3.jpg (9 cuadros, 4x3)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_fix1.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_fix2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_fix3.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'PY'\nimport json, os\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nQ={\n \"p025\": [\"clothes on wooden hangers\", \"cardigan hanging chair\"],\n \"p029\": [\"tatami room window light\", \"garden leaves gentle wind\"],\n \"p033\": [\"folded shirts on shelf\", \"shirt hem fabric close\"],\n \"p041\": [\"silk scarf folded\", \"teacup steam close up\"],\n \"p046\": [\"folded clothes on chair\", \""
+  },
+  {
+   "k": "res",
+   "t": "16 clips a repedir (ronda segura)\nPID:21125\n00:28:36 → 16 clips por buscar\n=== FOTOS p022 ===\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0\n00:27:49 batch d777ee8e: in_progress 0/1\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 25; tail -4 clips/stock_04.log; python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix4.jpg clips/p025.mp4 clips/p029.mp4 clips/p033.mp4 clips/p041.mp4 clips/p046.mp4 clips/p048.mp4 clips/p050.mp4 clips/p054.mp4 clips/p058.mp4 clips/p079.mp4 clips/p080.mp4 clips/p090.mp4 && echo ok"
   }
  ],
  "maquinas": 1,
