@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205782.9446836,
+ "actualizado": 1794205857.2776525,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -22,8 +22,8 @@
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "skip",
-   "info": ""
+   "st": "done",
+   "info": "por palabra"
   },
   {
    "k": "avatar",
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0673,
+  "deepseek": 0.071,
   "gpt": 0.0094,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0767
+  "total": 0.0804
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Genera avatar_ranges.json a partir de captions.json, cortando SIEMPRE en pausas del habla.\nPatron: 4 ventanas a pantalla completa (<=6 s) + 1 ventana en pantalla partida (7-12 s),\ncon huecos de b-roll de ~7 s (1 foto) y ~10-11 s (2 fotos). Avatar ~45 % del video, <= 560 s.\n\"\"\"\nimport json, subprocess, sys\n\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shi"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gen_avatar_plan.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Guion 20 min validado\", \"description\": \"guion.txt ~20.000 caracteres, validar etapa guion OK\", \"activeForm\": \"Escribiendo el guion\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #1 created successfully: Guion 20 min validado"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Voz + tiempos\", \"description\": \"voz.py en segundo plano, luego tiempos.py en inglés\", \"activeForm\": \"Generando voz y tiempos\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #2 created successfully: Voz + tiempos"
-  },
   {
    "k": "tool",
    "t": "{\"subject\": \"Plan de planos y avatar\", \"description\": \"gen_avatar_plan.py, planos.py, avatar_ranges cerrado\", \"activeForm\": \"Armando el plan de planos\"}"
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_gancho.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_gancho.jpg (3 cuadros, 3x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_gancho.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe captions.json --max 540 && python - <<'PY'\nimport json\nc=json.load(open('captions.json'))\nprint('palabras:',len(c),'inicio:',c[0],'fin:',c[-1])\nPY"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe captions.json (0.4 MB, 5 s)\npalabras: 3736 inicio: {'text': ' Hello,', 'startMs': 0, 'endMs': 480, 'timestampMs': 0, 'confidence': 1.0} fin: {'text': ' now.', 'startMs': 1409758, 'endMs': 1410058, 'timestampMs': 1409758, 'confidence': 1.0}"
+  },
+  {
+   "k": "tool",
+   "t": "python gen_avatar_plan.py"
   }
  ],
  "maquinas": 1,
@@ -209,21 +209,21 @@
    {
     "k": "tiempos",
     "n": "Tiempos",
-    "seg": 20,
+    "seg": 28,
     "pasadas": 1,
-    "fin": false
+    "fin": true
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 100,
+    "seg": 174,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 589,
+  "total_s": 663,
   "avatar_s": 0,
-  "sin_avatar_s": 589,
+  "sin_avatar_s": 663,
   "cerrado": false
  }
 }
