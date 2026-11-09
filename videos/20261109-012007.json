@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794200975.086004,
+ "actualizado": 1794201038.0016806,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -55,8 +55,8 @@
   "gpt": 0.007,
   "gpt_img": 3,
   "whisper": 0.0,
-  "avatar": 0.0,
-  "total": 0.0816
+  "avatar": 0.25,
+  "total": 0.3316
  },
  "eventos": [
   {
