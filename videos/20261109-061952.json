@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205367.9639053,
+ "actualizado": 1794205405.340833,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,17 +51,65 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0,
+  "deepseek": 0.0124,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0
+  "total": 0.0124
  },
  "eventos": [
   {
    "k": "user",
    "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — One Collar Press Makes a Plain Shirt Look Tailored · Kyoto Grace\n\nHacé un video termi"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/ && echo \"---REFS---\" && ls -la /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/refs/ 2>/dev/null && echo \"---TOOLS---\" && ls /opt/estudio/repo/motor/tools/"
+  },
+  {
+   "k": "res",
+   "t": "total 60\ndrwxrwxrwx+ 6 runner runner 4096 Nov  9 06:22 .\ndrwxrwxrwx+ 3 runner runner 4096 Nov  9 06:22 ..\n-rw-rw-rw-+ 1 runner runner 8550 Nov  9 06:22 BRIEF.md\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 06:22 avatar\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 06:22 fotos\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 06:22 refs\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 06:22 voz\n---REFS---\ntotal 5880\ndrwxrwxrwx+"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/BRIEF.md 2>/dev/null | head -100"
+  },
+  {
+   "k": "res",
+   "t": "# BRIEF — One Collar Press Makes a Plain Shirt Look Tailored · Kyoto Grace\n\nHacé un video terminado, sin preguntar nada y sin frenar: `/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/final.mp4` + `/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/REPORTE.md` + `/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/meta.json`. Trabajá todo dentro de "
+  },
+  {
+   "k": "tool",
+   "t": "cat refs/voz.txt && echo \"---CANAL---\" && head -80 refs/canal.json && echo \"---AVATAR IMG---\" && file refs/avatar.png refs/cara.png && python -c \"from PIL import Image; im=Image.open('refs/avatar.png'); print(im.size)\""
+  },
+  {
+   "k": "res",
+   "t": "Hello, please come in. This is my home in Kyoto. I want to tell you something my mother taught me when I was a little girl. She said, Michiko, your clothes speak before you do, so be careful what they say. I didn't understand. I was maybe 10 years old. But now I'm 68.---CANAL---\n{\n \"nombre\": \"Kyoto Grace\",\n \"idioma\": \"en\",\n \"presentador\": \"An elderly woman with light-medium warm skin, an oval face"
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && for f in planos.py fotos.py validar.py avatar_it.py; do echo \"===== $f =====\"; head -60 \"$f\"; done"
+  },
+  {
+   "k": "res",
+   "t": "===== planos.py =====\n# -*- coding: utf-8 -*-\n\"\"\"PLANOS — arma los planos del b-roll y shots_timed.json. NO escribas scripts propios para esto.\n  1) python <APP>/tools/planos.py <carpeta>\n       Necesita captions.json y avatar_ranges.json (el plan de ventanas: escribilo vos ANTES).\n       → planos.json: un plano de b-roll cada ~5 s (entre las ventanas del avatar), cortado en pausas del habla, con "
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && sed -n '60,200p' planos.py"
+  },
+  {
+   "k": "res",
+   "t": "            ideal = a + L * k / n\n            c = min(cortes_ok, key=lambda x: abs(x - ideal))\n            if abs(c - ideal) > 900 or c - bordes[-1] < MIN or b - c < MIN: c = int(ideal)\n            bordes.append(c)\n        bordes.append(b)\n        for x, y in zip(bordes, bordes[1:]):\n            P.append({\"id\": \"p%03d\" % (len(P) + 1), \"startMs\": int(x), \"endMs\": int(y), \"seg\": round((y - x) / 1000"
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && sed -n '60,220p' validar.py"
+  },
+  {
+   "k": "res",
+   "t": "            if not isinstance(pj, dict) or \"nothing blurred out\" not in json.dumps(pj).lower(): malos += 1\n            elif pj.get(\"detalle_narrativo\"): creativas += 1\n        (OK if sin == 0 else A)(\"fotos: %d · %d sin su prompt al lado (no salieron de tools/fotos.py)\" % (len(fotos), sin))\n        (OK if malos == 0 else A)(\"fotos: %d con prompt incompleto\" % malos)\n        if hasta >= 2: (OK if c"
   }
  ],
  "maquinas": 1,
@@ -79,14 +127,14 @@
    {
     "k": "guion",
     "n": "Guion",
-    "seg": 0,
+    "seg": 38,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 174,
+  "total_s": 211,
   "avatar_s": 0,
-  "sin_avatar_s": 174,
+  "sin_avatar_s": 211,
   "cerrado": false
  }
 }
