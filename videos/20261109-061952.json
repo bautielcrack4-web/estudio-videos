@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205719.6514318,
+ "actualizado": 1794205782.9446836,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -17,7 +17,7 @@
    "k": "voz",
    "n": "Voz",
    "st": "done",
-   "info": "9 bloques"
+   "info": "23:30 min"
   },
   {
    "k": "tiempos",
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0629,
+  "deepseek": 0.0673,
   "gpt": 0.0094,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0723
+  "total": 0.0767
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "[\n {\n  \"id\": \"p001_a\",\n  \"cara\": true,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"She is pressing the collar stand of a plain white shirt with an old black iron at the exact second the steam lifts, the coll"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/pedidos_hook.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_hook.json > fotos/fotos_hook.log 2>&1 & echo \"PID=$!\""
-  },
-  {
-   "k": "res",
-   "t": "PID=4760"
-  },
-  {
-   "k": "tool",
-   "t": "tail -6 /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/voz.log; ls -la /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/ | head"
-  },
-  {
-   "k": "res",
-   "t": "voz: uso el clon guardado en Fish\nvoz: 9 bloques · 19268 caracteres\ntotal 23620\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 06:25 .\ndrwxrwxrwx+ 8 runner runner    4096 Nov  9 06:25 ..\n-rw-rw-rw-+ 1 sesion sesion 8034675 Nov  9 06:26 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 8123796 Nov  9 06:26 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7998186 Nov  9 06:26 blk_002.wav.tmp.wav\n-rw-rw-rw-"
-  },
-  {
-   "k": "tool",
-   "t": "cd /opt/estudio/repo/motor/tools && grep -n \"frame\\|frames\\|A%d\\|it_sync\\|it_llamada\\|file\" avatar_it.py | head -50 && echo \"---RENDER frame---\" && grep -n '\"frame\"\\|get(\"frame\"\\|r\\[\"frame\"\\]' render.py | head -20"
-  },
-  {
-   "k": "res",
-   "t": "10:⛔ 1 sola llamada por video: si avatar/it_llamada.json dice \"ok\" o \"corriendo\", se niega. Un FAILED no cobra: ahí sí se puede repetir.\r\n14:sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\r\n21:LED = f\"{B}/avatar/it_llamada.json\"\r\n41:    if b[\"startMs\"] < a[\"endMs\"]: sale(f\"⛔ ventanas superpuestas: {a['file']} y {b['file']}\")\r\n51:    segs.append((a, b)); cortes.append({\"file\": r[\"fil"
-  },
-  {
-   "k": "tool",
-   "t": "tail -8 voz/voz.log; ls -la voz/ | head -20; echo ---; tail -4 fotos/fotos_hook.log"
-  },
-  {
-   "k": "res",
-   "t": "voz: uso el clon guardado en Fish\nvoz: 9 bloques · 19268 caracteres\n  ✓ bloque 2: 166 s (s2.1-pro-free)\ntotal 43444\ndrwxrwxrwx+ 2 runner runner     4096 Nov  9 06:26 .\ndrwxrwxrwx+ 8 runner runner     4096 Nov  9 06:25 ..\n-rw-rw-rw-+ 1 sesion sesion 14802178 Nov  9 06:26 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 14869865 Nov  9 06:26 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 14647598 No"
-  },
-  {
-   "k": "ai",
-   "t": "Mientras la voz termina, escribo el generador del plan de ventanas del avatar (lo correré con `captions.json`)."
-  },
   {
    "k": "tool",
    "t": "# -*- coding: utf-8 -*-\n\"\"\"Genera avatar_ranges.json a partir de captions.json, cortando SIEMPRE en pausas del habla.\nPatron: 4 ventanas a pantalla completa (<=6 s) + 1 ventana en pantalla partida (7-12 s),\ncon huecos de b-roll de ~7 s (1 foto) y ~10-11 s (2 fotos). Avatar ~45 % del video, <= 560 s.\n\"\"\"\nimport json, subprocess, sys\n\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shi"
@@ -178,6 +134,50 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --busca \"maestro|master|✓ bloque 8|FIN|Error|Traceback\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene '✓ bloque 8' (95 s):\n  ✓ bloque 0: 179 s (s2.1-pro-free)\n  ✓ bloque 1: 185 s (s2.1-pro-free)\n  ✓ bloque 5: 155 s (s2.1-pro-free)\n  ✓ bloque 3: 175 s (s2.1-pro-free)\n  ✓ bloque 4: 171 s (s2.1-pro-free)\n  ✓ bloque 8: 57 s (s2.1-pro-free)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -8 voz/voz.log; ls -la voz/master.wav 2>/dev/null || echo \"sin master\""
+  },
+  {
+   "k": "res",
+   "t": "voz: 9 bloques · 19268 caracteres\n  ✓ bloque 2: 166 s (s2.1-pro-free)\n  ✓ bloque 0: 179 s (s2.1-pro-free)\n  ✓ bloque 1: 185 s (s2.1-pro-free)\n  ✓ bloque 5: 155 s (s2.1-pro-free)\n  ✓ bloque 3: 175 s (s2.1-pro-free)\n  ✓ bloque 4: 171 s (s2.1-pro-free)\n  ✓ bloque 8: 57 s (s2.1-pro-free)\nsin master"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe voz/master.wav --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe voz/master.wav (124.4 MB, 45 s)"
+  },
+  {
+   "k": "tool",
+   "t": "ffprobe -v error -show_entries format=duration -of csv=p=0 voz/master.wav; tail -3 voz/voz.log; echo ---FOTOS---; tail -4 fotos/fotos_hook.log; ls fotos/"
+  },
+  {
+   "k": "res",
+   "t": "1410.115964\n  ✓ bloque 6: 147 s (s2.1-pro-free)\n  ✓ bloque 7: 174 s (s2.1-pro-free)\n✓ voz/master.wav 23.5 min\n---FOTOS---\n06:26:32 batch 3bbae593: in_progress 0/3\n06:28:02 batch 3bbae593: completed 3/3\n06:28:03 ✓ batch 3bbae593: 3 fotos bajadas, 0 fallidas (US$0.009)\n06:28:03 FIN: 3/3 fotos en fotos/ (2 min)\n_batches.json\nfotos_hook.log\np001_a.json\np001_a.png\np001_b.json\np001_b.png\np001_c.json\np00"
+  },
+  {
+   "k": "ai",
+   "t": "La voz salió de 23,5 min. Lanzo los tiempos y miro las 3 variantes del gancho."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo en > /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/tiempos.log 2>&1 & echo \"PID=$!\""
+  },
+  {
+   "k": "res",
+   "t": "PID=5415"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_gancho.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png"
   }
  ],
  "maquinas": 1,
@@ -202,21 +202,28 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 206,
+    "seg": 249,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "tiempos",
+    "n": "Tiempos",
+    "seg": 20,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 36,
+    "seg": 100,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 526,
+  "total_s": 589,
   "avatar_s": 0,
-  "sin_avatar_s": 526,
+  "sin_avatar_s": 589,
   "cerrado": false
  }
 }
