@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794186317.8434136,
+ "actualizado": 1794186381.4775627,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.12,
+  "deepseek": 0.1271,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1718
+  "total": 0.1789
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe fotos/p022.png --max 300"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe fotos/p022.png (1.2 MB, 250 s)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/fotos/p022.png\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "sed -n '150,280p' /opt/estudio/repo/motor/tools/render.py"
-  },
-  {
-   "k": "res",
-   "t": "def kind(p, isv):\r\n    q = p.replace(\"\\\\\", \"/\")\r\n    return \"av\" if \"/avatar/\" in q else (\"clip\" if isv else \"foto\")\r\njson.dump({\"voice_dur\": round(AUDIO_MS / 1000, 3),\r\n           \"segments\": [dict({\"kind\": kind(p, v), \"t0\": round(a / 1000, 3), \"t1\": round(b / 1000, 3), \"file\": p}, **({\"split\": True} if (p, a) in SPL else {})) for p, a, b, v in out]},\r\n          open(B + \"/plan.json\", \"w\", encodi"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py . --shots && ls clips/*.mp4 | wc -l && ls fotos/*.png | wc -l"
-  },
   {
    "k": "res",
    "t": "✓ shots_timed.json: 156 planos, 156 fotos distintas (cero repetidas). Seguí con render.py.\n139\n17"
@@ -174,6 +142,38 @@
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: 00:14:02 estado: IN_PROGRESS → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 00:14:02 estado: IN_PROGRESS → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\np=json.load(open('plan.json',encoding='utf8'))['segments']\nfor i,s in enumerate(p[:40]):\n    if s['kind']!='av': print(i,s['t0'],s['kind'],s['file'].split('/')[-1])\n\" | head -20\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_hook_render.jpg segments/0001.mp4 segments/0003.mp4 segments/0005.mp4 segments/0007.mp4 segments/0009.mp4 segments/0011.mp4 segments/0013.mp4 se"
+  },
+  {
+   "k": "res",
+   "t": "1 4.58 foto p001.png\n3 16.2 foto p002.png\n5 28.52 clip p003.mp4\n7 40.76 clip p004.mp4\n8 44.49 clip p005.mp4\n10 53.08 clip p006.mp4\n12 64.9 clip p007.mp4\n14 76.04 clip p008.mp4\n15 79.16 clip p009.mp4\n17 88.56 clip p010.mp4\n18 92.16 clip p011.mp4\n20 100.62 clip p012.mp4\n22 113.18 foto p013.png\n23 116.79 clip p014.mp4\n25 125.46 clip p015.mp4\n27 137.68 clip p016.mp4\n28 142.04 foto p017.png\n30 151.34 c"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_hook_render.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/repo/motor/tools/assemble.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/assemble.py <carpeta_del_video>\nUne segments/ (con los fundidos de xf.json) + voz/master.wav + SFX de cues.json -> final.mp4 (1920x1080 30fps, audio ESTÉREO AAC 192k).\ncues.json = [{\"file\":\"tela.mp3\",\"t\":171100,\"gain\":0.07,\"fade\":0.4}, ...]  (archivos en <carpeta>/sfx/; t en ms; gain 0.035-0.08 = -29"
   },
   {
    "k": "tool",
