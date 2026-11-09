@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794213281.307093,
+ "actualizado": 1794213346.1974452,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3489,
+  "deepseek": 0.3524,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9907
+  "total": 0.9942
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "5:que lee el panel. Lee los mensajes del panel (mensajes/<vid>.json). Al terminar sube final.mp4 a un Release.\n287:                 (\"extrema\", \"Edición extrema\"), (\"previo\", \"Render sin avatar\"), (\"render\", \"Render\"), (\"armado\", \"Armado\"), (\"revisor\", \"Revisor\"), (\"correcciones\", \"Correcciones\"), (\"entrega\", \"Entrega\")]\n437:    \"\"\"Arranca extrema.py en segundo plano MIENTRAS se espera el avatar; "
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --log avatar/it.log --busca \"fallo|FAILED|TIMED_OUT|Traceback\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 06:44:54 estado: IN_PROGRESS · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "date; python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --log avatar/it.log --busca \"fallo|FAILED|TIMED_OUT|Traceback\" --max 540"
-  },
   {
    "k": "res",
    "t": "Mon Nov  9 08:09:25 UTC 2026\n✓ existe avatar/A0.mp4 (2.1 MB, 315 s)"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "for f in /tmp/armado_*.log; do echo \"== $f\"; tail -8 \"$f\"; done; echo \"---\"; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"assemble.py\" | head -2; ls -la final.mp4 2>/dev/null || true; ls -la video_noaudio.mp4 2>/dev/null || true"
+  },
+  {
+   "k": "res",
+   "t": "== /tmp/armado_20261109-061952.log\nhechos 228\nextrema: 2 piezas en la línea\nclips=224 frames=38458 (1281.93s)\nreusados de otra posición: 116\nhechos 224\nsegmentos: 224\ncapas de edición extrema: 3\ntramos: 43 de 43 por codificar · 4 a la vez\n---\n  49041 python          /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/one-collar-"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 49041 -o pid,etime,%cpu,%mem,args | tail -2; python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
   }
  ],
  "maquinas": 1,
@@ -258,14 +258,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 887,
+    "seg": 952,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 8087,
+  "total_s": 8152,
   "avatar_s": 5356,
-  "sin_avatar_s": 2731,
+  "sin_avatar_s": 2796,
   "cerrado": false
  }
 }
