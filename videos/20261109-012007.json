@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794198824.9750326,
+ "actualizado": 1794198894.7548857,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,74 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0617,
+  "deepseek": 0.0682,
   "gpt": 0.007,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0687
+  "total": 0.0752
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "[\n{\"id\":\"p003\",\"cara\":false,\"prompt\":{\n\"type\":\"amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n\"moment\":\"Her hands hold a steaming iron teapot above the three thin pieces laid on the tatami, while a heavy wool coat hangs forgotten on the wall behind.\",\n\"subject\":\"a pair of hands h"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/pedidos_02.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "tail -6 clips/stock.log; echo \"---fotos---\"; tail -8 fotos/fotos_01.log; echo \"---avatar---\"; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "04:30:32 → 39 clips por buscar\n04:31:31 juez: 39/39 planos juzgados con visión · US$0.0059\n04:31:40 bajados 39/39\n04:31:40 FIN: 39/39 clips en clips/\n---fotos---\n04:31:00 → batch batch_6af14c841528819085a46ab65dab0471 · 3 fotos · sin referencia · low 1088x608\n04:31:01 → batch batch_6af14c84dc6c81908e9168ce1d4b4f4b · 3 fotos · con la cara del presentador · low 1088x608\n04:31:01 batch 5dab0471: vali"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json,glob,os\nrows=[]\nfor f in sorted(glob.glob('clips/p*.json')):\n    d=json.load(open(f)); j=d.get('juez')\n    rows.append((os.path.basename(f)[:-5], j[1] if j else None, j[2] if j else '', d.get('buscar','')))\nlow=[r for r in rows if r[1] is not None and r[1]<=4]\nprint('low:',len(low))\nfor r in low: print(r)\nprint('sin juez:',[r[0] for r in rows if r[1] is None])\nprint('total"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"<string>\", line 6, in <module>\nIndexError: list index out of range"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json,glob,os\nfor f in sorted(glob.glob('clips/p*.json'))[:3]:\n    print(f, json.load(open(f)))\n\""
-  },
-  {
-   "k": "res",
-   "t": "clips/p004.json {'id': 'p004', 'fuente': 'Pexels', 'buscar': 'elderly woman clothing shop', 'pexels': 8195363, 'pagina': 'https://www.pexels.com/video/man-looking-at-women-s-clothing-in-the-shop-8195363/', 'autor': 'Kampus Production', 'prev': 'https://videos.pexels.com/video-files/8195363/8195363-sd_640_360_25fps.mp4', 'juez': [7, 'elderly woman browsing clothes racks']}\nclips/p006.json {'id': 'p"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json,glob,os\nrows=[]\nfor f in sorted(glob.glob('clips/p*.json')):\n    d=json.load(open(f)); j=d.get('juez')\n    sc=j[0] if isinstance(j,list) and j else None\n    why=j[1] if isinstance(j,list) and len(j)>1 else ''\n    rows.append((os.path.basename(f)[:-5],sc,why,d.get('pagina','')))\nlow=[r for r in rows if r[1] is not None and r[1]<=5]\nprint('low/5:',len(low))\nfor r in low: pri"
-  },
-  {
-   "k": "res",
-   "t": "low/5: 4\np036 5 | hands sorting hanging clothes\np048 4 | woman in sweater, not resting flat\np053 4 | sweater but no hand tuck\np055 4 | sewing machine, not hand stitching\nsin juez: []\ntotal 39 avg 7.4"
-  },
-  {
-   "k": "ai",
-   "t": "Stock is in (avg judge 7.4). Four clips scored low — replacing them with more literal searches."
-  },
-  {
-   "k": "tool",
-   "t": "[\n{\"id\":\"p036\",\"muestra\":\"hands sorting folded sweaters in a wooden drawer\",\"buscar\":[\"hands folded sweaters drawer\",\"sorting folded clothes drawer\",\"hands opening clothes drawer\"]},\n{\"id\":\"p048\",\"muestra\":\"two thin sweaters resting flat on a chair, one after another\",\"buscar\":[\"folded sweater on chair\",\"sweater lying on chair\",\"folded knitwear stack chair\"]},\n{\"id\":\"p053\",\"muestra\":\"a hand restin"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_02.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f clips/p036.mp4 clips/p036.json clips/p048.mp4 clips/p048.json clips/p053.mp4 clips/p053.json clips/p055.mp4 clips/p055.json && python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_02.json 2>&1 | tail -8"
-  },
-  {
-   "k": "res",
-   "t": "04:32:12 → 4 clips por buscar\n04:32:20 juez: 4/4 planos juzgados con visión · US$0.0006\n04:32:24 bajados 4/4\n04:32:24 FIN: 4/4 clips en clips/"
-  },
   {
    "k": "tool",
    "t": "set -- $(ls clips/p*.mp4 | sort); i=1; while [ $# -gt 0 ]; do n=$((i*12)); batch=$(printf '%s\\n' \"$@\" | head -12); python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_$i.jpg $batch >/dev/null 2>&1; echo \"hoja $i: $(echo \"$batch\" | tr '\\n' ' ')\"; shift 12 2>/dev/null || shift $#; i=$((i+1)); done; ls -la qc/hoja_clips_*"
@@ -178,6 +118,66 @@
   {
    "k": "res",
    "t": "04:33:18 → 14 clips por buscar\n04:33:39 juez: 14/14 planos juzgados con visión · US$0.0021\n04:33:43 bajados 14/14\n04:33:43 FIN: 14/14 clips en clips/\n---fotos---\n04:33:02 batch 1d4b4f4b: in_progress 0/3\n04:33:32 batch 5dab0471: completed 3/3\n04:33:33 ✓ batch 5dab0471: 3 fotos bajadas, 0 fallidas (US$0.007)\n04:33:33 batch 1d4b4f4b: in_progress 0/3"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nfor i in ['p008','p011','p015','p024','p026','p027','p033','p034','p036','p038','p044','p045','p049','p055']:\n    d=json.load(open('clips/%s.json'%i)); j=d.get('juez') or [None,'']\n    print(i, j[0], '|', j[1], '|', d.get('buscar'))\n\"; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_5.jpg clips/p008.mp4 clips/p011.mp4 clips/p015.mp4 clips/p024.mp4 clips/p026.mp4"
+  },
+  {
+   "k": "res",
+   "t": "p008 8 | snow falling on temple statue | snow japanese temple gate\np011 7 | ribbed knit closeup, collar-like | high neckline fabric closeup\np015 7 | hands holding sweater near rack | sweater drying rack\np024 9 | oversized sweater, mirror fitting | woman loose sweater mirror\np026 7 | woman tucking sweater into skirt | woman tucking sweater into skirt\np027 9 | hands measuring waist with tape | tailo"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_clips_5.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_clips_6.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "[\n{\"id\":\"p026\",\"muestra\":\"a woman at a mirror pushing her whole sweater into her waistband\",\"buscar\":[\"sweater tucked into skirt\",\"hands tucking knit waist\",\"woman adjusting sweater waist mirror\"]},\n{\"id\":\"p027\",\"muestra\":\"hands measuring down from the hip bone with a soft tape\",\"buscar\":[\"tailor tape measure waist\",\"measuring tape hip clothes\",\"hands at hip bone woman\"]},\n{\"id\":\"p034\",\"muestra\":\""
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_04.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "for i in p026 p027 p034 p038; do rm -f clips/$i.mp4 clips/$i.json; done; python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_04.json 2>&1 | tail -6; python3 -c \"\nimport json\nfor i in ['p026','p027','p034','p038']:\n    j=json.load(open('clips/%s.json'%i)).get('juez')"
+  },
+  {
+   "k": "res",
+   "t": "04:34:15 → 4 clips por buscar\n04:34:23 juez: 4/4 planos juzgados con visión · US$0.0006\n04:34:24 bajados 4/4\n04:34:24 FIN: 4/4 clips en clips/\np026 4 | woman adjusting waist, generic\np027 9 | tape around hip bone close-up\np034 6 | knit hem texture close up\np038 7 | white collar under knit sleeve\n04:33:32 batch 5dab0471: completed 3/3\n04:33:33 ✓ batch 5dab0471: 3 fotos bajadas, 0 fallidas (US$0.007"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_clips_7.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "[\n{\"id\":\"agua\",\"tags\":[\"water\",\"pour\"],\"q\":\"water pour\",\"min\":0.5,\"max\":6},\n{\"id\":\"tela\",\"tags\":[\"fabric\",\"cloth\"],\"q\":\"fabric rustle\",\"min\":0.5,\"max\":5},\n{\"id\":\"papel\",\"tags\":[\"paper\",\"page\"],\"q\":\"paper\",\"min\":0.4,\"max\":4},\n{\"id\":\"aguja\",\"tags\":[\"sewing\",\"thread\"],\"q\":\"sewing\",\"min\":0.5,\"max\":5}\n]\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f clips/p026.mp4 clips/p026.json; cat > stock_05.json <<'EOF'\n[{\"id\":\"p026\",\"muestra\":\"a woman at a mirror pushing her whole sweater into her waistband\",\"buscar\":[\"woman getting dressed mirror\",\"woman mirror clothes bedroom\",\"woman adjusting waistband mirror\"]}]\nEOF\npython /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/dat"
   }
  ],
  "maquinas": 1,
