@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184300.327381,
+ "actualizado": 1794184368.4833071,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -29,7 +29,7 @@
    "k": "avatar",
    "n": "Avatar",
    "st": "done",
-   "info": "85 clips"
+   "info": "102 clips"
   },
   {
    "k": "fotos",
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1349,
+  "deepseek": 0.1362,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5271
+  "total": 0.5284
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A24.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A26.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/f_011.jpg\"}"
@@ -178,6 +158,26 @@
   {
    "k": "tool",
    "t": "mkdir -p avatar/orig_blur; ok=0; for i in $(seq 26 62); do f=avatar/A$i.mp4; cp \"$f\" avatar/orig_blur/; ffmpeg -v error -y -i \"$f\" -filter_complex \"[0:v]split[a][b];[b]crop=iw*0.30:ih:0:0,gblur=sigma=10[bb];[a][bb]overlay=0:0\" -c:v libx264 -crf 18 -pix_fmt yuv420p -r 25 -c:a copy \"avatar/A$i.tmp.mp4\" && mv \"avatar/A$i.tmp.mp4\" \"$f\" && ok=$((ok+1)); done; echo \"procesados: $ok\"; ffprobe -v error -s"
+  },
+  {
+   "k": "res",
+   "t": "procesados: 37\ncodec_type=video\nwidth=832\nheight=464\nr_frame_rate=25/1\nnb_frames=133\ncodec_type=audio\nr_frame_rate=0/0\nnb_frames=230"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_fix.log 2>&1 & echo \"pid: $!\"; sleep 5; tail -2 render_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "pid: 40294"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_fix.log --busca \"hechos 123|Traceback|Error\" --timeout 540; echo \"---\"; tail -3 render_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'hechos 123' (40 s):\nclips=123 frames=18120 (604.00s)\nhechos 123\n---\nclips=123 frames=18120 (604.00s)\nhechos 123"
   }
  ],
  "maquinas": 2,
