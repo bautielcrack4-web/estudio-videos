@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205128.3713496,
+ "actualizado": 1794205192.71168,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "112 segmentos"
+   "info": "final.mp4 · 10.8 min"
   },
   {
    "k": "qc",
@@ -59,10 +59,6 @@
   "total": 0.4062
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "gate escrito"
-  },
   {
    "k": "tool",
    "t": "ps -p 24930 -o pid,etime,cmd --no-headers; ls -la render.log; tail -5 render.log; ps -p 24354 -o pid,etime --no-headers"
@@ -178,6 +174,10 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe final.mp4 (395.5 MB, 365 s)"
   }
  ],
  "maquinas": 1,
