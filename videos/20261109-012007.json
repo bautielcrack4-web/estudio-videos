@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794201171.5379744,
+ "actualizado": 1794201234.5606992,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "3 fotos"
+   "info": "7 fotos"
   },
   {
    "k": "armado",
@@ -51,70 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0768,
-  "gpt": 0.007,
-  "gpt_img": 3,
+  "deepseek": 0.0812,
+  "gpt": 0.0157,
+  "gpt_img": 6,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3338
+  "total": 0.3469
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "[\n{\"id\":\"agua\",\"tags\":[\"water\",\"pour\"],\"q\":\"water pour\",\"min\":0.5,\"max\":6},\n{\"id\":\"tela\",\"tags\":[\"fabric\",\"cloth\"],\"q\":\"fabric rustle\",\"min\":0.5,\"max\":5},\n{\"id\":\"papel\",\"tags\":[\"paper\",\"page\"],\"q\":\"paper\",\"min\":0.4,\"max\":4},\n{\"id\":\"aguja\",\"tags\":[\"sewing\",\"thread\"],\"q\":\"sewing\",\"min\":0.5,\"max\":5}\n]\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f clips/p026.mp4 clips/p026.json; cat > stock_05.json <<'EOF'\n[{\"id\":\"p026\",\"muestra\":\"a woman at a mirror pushing her whole sweater into her waistband\",\"buscar\":[\"woman getting dressed mirror\",\"woman mirror clothes bedroom\",\"woman adjusting waistband mirror\"]}]\nEOF\npython /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/dat"
-  },
-  {
-   "k": "res",
-   "t": "04:34:39 → 1 clips por buscar\n04:34:43 juez: 1/1 planos juzgados con visión · US$0.0001\n04:34:45 bajados 1/1\n04:34:45 FIN: 1/1 clips en clips/\np026 [5, 'woman at mirror adjusting clothes']\nok agua: agua.mp3 (4 s, Pouring water to mug) · agua_2.mp3 (1 s, Pouring water) · agua_3.mp3 (1 s, Water bubble)\nok tela: tela.mp3 (1 s, Cloth slide out) · tela_2.mp3 (1 s, Squishing a soggy cloth shirt)\nok pape"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nW=json.load(open('captions.json'))\nkeys=['kettle','tuck','fold','page','needle','time','sighed','line']\nfor k in keys:\n    hits=[(w['text'].strip(),round(w['startMs']/1000,1)) for w in W if k in w['text'].lower()]\n    print(k,hits[:6])\n\""
-  },
-  {
-   "k": "res",
-   "t": "kettle [('kettle', 9.0)]\ntuck [('tucked', 20.6), ('tuck.', 71.1), ('tuck', 283.2), ('tuck', 286.7), ('tucked', 323.3), ('tucked', 329.8)]\nfold [('fold', 445.2), ('fold', 449.8), ('fold', 453.6), ('Fold', 527.4)]\npage [('page.', 439.7)]\nneedle [('needle.', 588.6)]\ntime [('time.', 76.8), ('time', 104.9), ('times,', 450.5), ('time', 555.7), ('times', 566.6), ('time.', 649.0)]\nsighed [('sighed.', 301."
-  },
-  {
-   "k": "tool",
-   "t": "[\n{\"file\":\"agua.mp3\",\"t\":9000,\"gain\":0.05,\"fade\":0.5},\n{\"file\":\"tela.mp3\",\"t\":283200,\"gain\":0.045,\"fade\":0.4},\n{\"file\":\"tela.mp3\",\"t\":527400,\"gain\":0.04,\"fade\":0.4},\n{\"file\":\"papel.mp3\",\"t\":439700,\"gain\":0.035,\"fade\":0.4},\n{\"file\":\"agua.mp3\",\"t\":649000,\"gain\":0.045,\"fade\":0.6}\n]\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/cues.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_01.log --busca \"FIN:|⛔\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 04:33:33 batch 1d4b4f4b: in_progress 0/3 → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ls fotos/*.png 2>/dev/null; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_test1.jpg fotos/p002.png fotos/p018.png fotos/p028.png >/dev/null 2>&1; ls -la qc/hoja_fotos_test1.jpg 2>/dev/null; echo \"--- avatar ---\"; tail -4 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "fotos/p002.png\nfotos/p018.png\nfotos/p028.png\n-rw-rw-rw-+ 1 sesion sesion 94794 Nov  9 04:44 qc/hoja_fotos_test1.jpg\n--- avatar ---\n04:29:05 InfiniteTalk: 56 ventanas · reel 334.0 s · 1 llamada\n04:29:14 RUN cbd6e8fc-0b67-4581-b8d8-bfb7b5850d12-u2\n04:29:44 estado: IN_PROGRESS"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_fotos_test1.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "tool",
    "t": "{\n \"title\": \"Layer a Thin Sweater Without Bulk in 3 Quiet Steps\",\n \"description\": \"Hello, please come in. On a cold morning in Kyoto, I lay three pieces on the tatami: a thin undershirt, a fine wool sweater, and one finger's width of tucked fabric. Together they weigh about two hundred and forty grams, less than the iron teapot in my hands, and they are warmer than the heavy coat I wore in 1998. W"
@@ -178,6 +122,62 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_01.log --busca \"FIN:|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'FIN:' (90 s):\n04:33:33 batch 1d4b4f4b: in_progress 0/3\n04:52:38 batch 1d4b4f4b: in_progress 1/3\n04:53:09 batch 1d4b4f4b: in_progress 2/3\n05:13:14 batch 1d4b4f4b: completed 3/3\n05:13:15 ✓ batch 1d4b4f4b: 3 fotos bajadas, 0 fallidas (US$0.009)\n05:13:15 FIN: 6/6 fotos en fotos/ (42 min)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_hook.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png >/dev/null; sleep 5; tail -4 fotos/fotos_02.log; echo \"--- avatar ---\"; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "05:11:38 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:12:08 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:12:38 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:13:08 ya hay otro fotos.py en este video (pid 6327): espero que termine\n--- avatar ---\n04:29:44 estado: IN_PROGRESS\n05:10:21 estado: COMPLETED\n✓ 56 clips cortados · desfase"
+  },
+  {
+   "k": "ai",
+   "t": "Avatar is complete (56 clips, max sync lag 200 ms). Reviewing the hook variants."
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_fotos_hook.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "cp fotos/p001_a.png fotos/p001.png && cp fotos/p001_a.json fotos/p001.json && python3 -c \"\nimport json\nd=json.load(open('fotos/p001.json')); d['id']='p001'; json.dump(d,open('fotos/p001.json','w'),ensure_ascii=False,indent=1)\ns=json.load(open('avatar/it_sync.json')); print('cortes',len(s['cortes']),'perdidas',s['perdidas'],'lag max',max(abs(c['lag_ms']) for c in s['cortes']))\n\"; ls avatar/A0.mp4 a"
+  },
+  {
+   "k": "res",
+   "t": "cortes 56 perdidas [] lag max 200\navatar/A0.mp4\navatar/A55.mp4\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_avatar.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json,os,glob\nP=json.load(open('planos.json'))\nphotos={'p001','p002','p003','p005','p009','p012','p018','p020','p023','p028','p029','p031','p035','p037','p039','p046','p051'}\nfal=[]\nfor p in P:\n    i=p['id']\n    if i in photos:\n        if not glob.glob('fotos/%s.*'%i): fal.append(i+'(foto)')\n    elif not os.path.exists('clips/%s.mp4'%i): fal.append(i+'(clip)')\nprint('faltan',len"
+  },
+  {
+   "k": "res",
+   "t": "faltan 0 []\nplanos 56 clips 39 fotos 7"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json,glob\nP=json.load(open('planos.json'))\nphotos={'p001','p002','p003','p005','p009','p012','p018','p020','p023','p028','p029','p031','p035','p037','p039','p046','p051'}\nfal=[p['id'] for p in P if p['id'] in photos and not glob.glob('fotos/%s.png'%p['id'])]\nprint('faltan fotos',len(fal),fal)\nprint('imgs',len(glob.glob('fotos/*.png')))\n\"; tail -5 fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "faltan fotos 13 ['p003', 'p005', 'p009', 'p012', 'p020', 'p023', 'p029', 'p031', 'p035', 'p037', 'p039', 'p046', 'p051']\nimgs 7\n05:13:08 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:13:39 → batch batch_6af1568366e88190ae3292e8359521a0 · 11 fotos · sin referencia · low 1088x608\n05:13:40 → batch batch_6af1568447048190b2d3497813f3c202 · 2 fotos · con la cara del presentador · "
   }
  ],
  "maquinas": 1,
