@@ -2,8 +2,8 @@
  "vid": "20261109-012007",
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
- "estado": "trabajando",
- "actualizado": 1794205582.4186704,
+ "estado": "listo",
+ "actualizado": 1794205619.7824233,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -182,5 +182,7 @@
  ],
  "maquinas": 1,
  "extrema": "1",
- "ahorro": "1"
+ "ahorro": "1",
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-20261109-012007/Layer-a-Thin-Sweater-Without-Bulk-in-3-Quiet-Steps.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261109-012007"
 }
