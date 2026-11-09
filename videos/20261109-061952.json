@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794206550.4225147,
+ "actualizado": 1794206623.724225,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1036,
+  "deepseek": 0.1118,
   "gpt": 0.0094,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.113
+  "total": 0.1212
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "pgrep -af \"gen_avatar_plan\" || echo \"no corre\"; ls -la avatar_ranges.json 2>/dev/null || echo \"sin avatar_ranges\""
-  },
-  {
-   "k": "res",
-   "t": "5722 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash-1794205370920-2z9adh.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'python gen_avatar_plan.py' < /dev/null && pwd -P >| /tmp/claude-1e94-cwd\n5742 python gen_avatar_plan.py\n6258 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash-1794205370920-2z9adh.sh 2>/dev/null || true"
-  },
-  {
-   "k": "tool",
-   "t": "pkill -f gen_avatar_plan.py; sleep 1; pgrep -af gen_avatar_plan || echo \"muertos\""
-  },
-  {
-   "k": "res",
-   "t": "Exit code 144"
-  },
   {
    "k": "tool",
    "t": "pkill -9 -f gen_avatar_plan.py 2>/dev/null; sleep 1; pgrep -af gen_avatar_plan || echo \"muertos\"; cat > /tmp/test_gen.py <<'PY'\nimport json, subprocess, sys, time\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\"\nW = json.load(open(f\"{B}/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\", \"\").strip()]\nD = W[-1][\"endMs\"] + 400\nCUT = sorted({int(w[\"endMs\"]) fo"
@@ -178,6 +162,22 @@
   {
    "k": "res",
    "t": "✓ planos.json: 139 planos de b-roll (12.3 min de b-roll, 11.3 por minuto) + 17 fotos de pantalla partida · 89 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'PY'\nimport json\nP=json.load(open('planos.json'))\nprint('total',len(P))\nfor p in P:\n    t=p['texto'].replace('\\n',' ')\n    print(f\"{p['id']} | {p['seg']:>4} | {'SPLIT' if p.get('split') else '     '} | {t[:170]}\")\nPY"
+  },
+  {
+   "k": "res",
+   "t": "total 156\np001 |  7.1 |       | our time. Before I say anything else, I want you to look at one small thing,\np002 |  6.8 |       | fingers and feel the band that touches your neck. Is it soft and flat, like a ribbon that has given\np003 |  5.6 |       | it belongs? This whole video is about that narrow band of cloth.\np004 |  3.9 |       | One press of an iron made in the right place can make a plai"
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && grep -n \"chunk\\|100\\|50\\|lote\\|batch\" fotos.py | head -40"
+  },
+  {
+   "k": "res",
+   "t": "10:Guarda cada prompt al lado de su foto (fotos/<id>.json), manda los batches, espera (consulta cada 30 s) y baja fotos/<id>.png.\n11:Si se corta o fallan algunas, volver a correrlo con el mismo pedidos.json: sólo pide las que faltan y retoma los batches en vuelo.\n25:ST = O + \"/_batches.json\"\n79:    problemas.append(\"lote: más del 30 % de las fotos con la MISMA cámara — variá (manos a 40 cm, plano "
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 867,
+    "seg": 940,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1356,
+  "total_s": 1430,
   "avatar_s": 0,
-  "sin_avatar_s": 1356,
+  "sin_avatar_s": 1430,
   "cerrado": false
  }
 }
