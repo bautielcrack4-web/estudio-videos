@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794198495.6979973,
+ "actualizado": 1794198564.1494994,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,106 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0242,
+  "deepseek": 0.0332,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0242
+  "total": 0.0332
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Task #6 created successfully: Sonido, render y assemble"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Revisor, validación final, meta y reporte\", \"description\": \"revisor.py, correcciones, validar final, meta.json, REPORTE.md\", \"activeForm\": \"Cerrando QC y entrega\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #7 created successfully: Revisor, validación final, meta y reporte"
-  },
-  {
-   "k": "ai",
-   "t": "Now I'll write the script (~8,000 characters, English, Michiko's voice)."
-  },
-  {
-   "k": "tool",
-   "t": "Hello, please come in. Mind the step. [whispering] It is a cold morning in Kyoto, and I want to show you something before the kettle finishes.\n\nLook at this. Three pieces, laid on the tatami. A thin white undershirt. A fine wool sweater. And one finger's width of tucked fabric. Together they weigh about two hundred and forty grams, less than the iron teapot in my hands. On a February morning, this"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/guion.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 8"
-  },
-  {
-   "k": "res",
-   "t": "VALIDAR /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q · etapa guion\n  ✓ guion: 8955 caracteres, 1765 palabras (hacen falta 7200-9200 para 8 min: bien)\nRESULTADO: OK"
-  },
-  {
-   "k": "ai",
-   "t": "Script validates at 8,955 chars. Starting voice generation in the background."
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p gates qc && cat > gates/guion_auto.txt <<'EOF'\nControl guion (auto):\n- guion.txt escrito en inglés, voz de Michiko (68, Kioto): gancho con número+objeto (240 g, tres piezas), credencial (31 años en la tienda de Shijo),\n  prueba interactiva en el minuto ~4 (subir los brazos + sentarse), like/suscribe antes del último punto, cierre con pregunta y gancho al próximo video.\n- Longitud validada"
-  },
-  {
-   "k": "res",
-   "t": "PID voz: 4215"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/repo/motor/tools/voz.py\"}"
-  },
-  {
-   "k": "res",
-   "t": "1\t# -*- coding: utf-8 -*-\n2\t\"\"\"Voz con el CLON de la voz del canal (Fish Audio). Uso (en segundo plano, con log):\n3\t   python <APP>/tools/voz.py <carpeta_del_video> > <carpeta>/voz/voz.log 2>&1\n4\tLee <carpeta>/guion.txt y la muestra de voz del canal en <carpeta>/refs/voz.wav (+ refs/voz.txt = lo que se dice en la muestra).\n5\tParte el guion en bloques de ~2500 caracteres, genera 3 a la vez, rehace "
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/repo/motor/tools/tiempos.py\"}"
-  },
-  {
-   "k": "res",
-   "t": "1\t# -*- coding: utf-8 -*-\n2\t\"\"\"Tiempos POR PALABRA de la voz (Groq whisper GRATIS si hay clave \"groq\"; si no, OpenAI whisper-1). Uso:\n3\t   python <APP>/tools/tiempos.py <carpeta_del_video> [idioma: es|en|pt…]\n4\tLee voz/master.wav y escribe captions.json = [{\"text\":\" palabra\",\"startMs\":1234,\"endMs\":1500}, …].\n5\tCosto: US$0,006 por minuto de audio (queda anotado en gasto.jsonl).\"\"\"\n6\timport json, os"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --busca \"✓ voz/master|⛔|Traceback|fallaron\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene '✓ voz/master' (135 s):\nvoz: 4 bloques · 9092 caracteres\n  ✓ bloque 1: 174 s (s2.1-pro-free)\n  ✓ bloque 2: 175 s (s2.1-pro-free)\n  ✓ bloque 0: 187 s (s2.1-pro-free)\n  ✓ bloque 3: 131 s (s2.1-pro-free)\n✓ voz/master.wav 11.1 min"
-  },
-  {
-   "k": "ai",
-   "t": "Voice is 11.1 min — too long for the ~8 min brief. I'll trim the script to ~7,400 chars (still ≥7,200 required) and regenerate."
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"import re;t=open('guion.txt').read();ps=re.split(r'\\n\\s*\\n',t);[print(len(re.sub(r'\\s+',' ',re.sub(r'\\[[^\\]]*\\]','',p)).strip()),'|',p[:70]) for p in ps]\""
-  },
-  {
-   "k": "res",
-   "t": "129 | Hello, please come in. Mind the step. [whispering] It is a cold mornin\n341 | Look at this. Three pieces, laid on the tatami. A thin white undershir\n423 | My name is Michiko. I am sixty-eight years old, and for thirty-one yea\n143 | Today I will give you three quiet steps. A smooth base, a thin knit, a\n552 | The first step is the one almost everyone gets wrong. Most women reach\n319 | She was r"
-  },
-  {
-   "k": "tool",
-   "t": "Hello, please come in. Mind the step. [whispering] It is a cold morning in Kyoto, and I want to show you something before the kettle finishes.\n\nLook at this. Three pieces, laid on the tatami. A thin white undershirt. A fine wool sweater. And one finger's width of tucked fabric. Together they weigh about two hundred and forty grams, less than the iron teapot in my hands. On a February morning, this"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 8 && rm -f voz/blk_*.wav voz/master.wav voz/lista.txt && nohup python /opt/estudio/repo/motor/tools/voz.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > voz/voz.log 2>&1 & echo \"relanzado\""
-  },
   {
    "k": "res",
    "t": "relanzado"
@@ -178,6 +86,98 @@
   {
    "k": "res",
    "t": "✓ captions.json: 1657 palabras en 10.8 min\n1657 words 649.8 s"
+  },
+  {
+   "k": "ai",
+   "t": "Voice: 10.8 min, 1,657 words. Now I'll build the avatar window plan from word pauses (≤6 s windows, gaps ~6 s, no gap >15 s)."
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Construye avatar_ranges.json a partir de captions.json: ventanas de ~5.8 s cortadas en pausas,\nhuecos de ~6 s (nunca > 15 s), primera desde 0 y última cerca del final. Cubre ~50 %.\"\"\"\nimport json\n\nB = \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\"\nW = json.load(open(B + \"/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\", \"\").strip"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python build_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\nventanas: 0 · avatar 0.0 s = 0 % de 650 s · reel 0.0 s\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py\", line 72, in <module>\n    print(\"primer startMs:\", R2[0][\"startMs\"], \"· hueco máximo:\", round(mx, 1), \"s · total windows <=590:\", reel <= 590)\n                             ~~^^^\nIndexError: list index out o"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nW=json.load(open('captions.json'))\nprint(W[:8])\ng=[b['startMs']-a['endMs'] for a,b in zip(W,W[1:])]\nimport statistics\nprint('gaps min/med/max',min(g),statistics.median(g),max(g),'n>=90',sum(x>=90 for x in g),'n',len(g))\nprint('last',W[-1])\n\""
+  },
+  {
+   "k": "res",
+   "t": "[{'text': ' Hello,', 'startMs': 0, 'endMs': 520, 'timestampMs': 0, 'confidence': 1.0}, {'text': ' please', 'startMs': 520, 'endMs': 660, 'timestampMs': 520, 'confidence': 1.0}, {'text': ' come', 'startMs': 660, 'endMs': 960, 'timestampMs': 660, 'confidence': 1.0}, {'text': ' in.', 'startMs': 960, 'endMs': 1340, 'timestampMs': 960, 'confidence': 1.0}, {'text': ' Mind', 'startMs': 1340, 'endMs': 200"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nW=json.load(open('captions.json'))\np=[0]\nfor a,b in zip(W,W[1:]):\n    if b['startMs']-a['endMs']>=90: p.append(int((a['endMs']+b['startMs'])/2))\np.append(W[-1]['endMs'])\nprint(len(p))\nprint(p[:30])\nprint(p[30:60])\n\""
+  },
+  {
+   "k": "res",
+   "t": "114\n[0, 10740, 21660, 28680, 35070, 38480, 40270, 48300, 50080, 57610, 64390, 72020, 77760, 82060, 86340, 88630, 95190, 110350, 119320, 120820, 123180, 125460, 132240, 144270, 150060, 158370, 163131, 171341, 177501, 192611]\n[200591, 211681, 215321, 222501, 230441, 233151, 238021, 244281, 247441, 253591, 261211, 267101, 269981, 274051, 279251, 282131, 285281, 289631, 293711, 299351, 302361, 308221,"
+  },
+  {
+   "k": "ai",
+   "t": "Whisper's word timestamps are near-contiguous, so pause-based windows don't fit. I'll fall back to fixed 5.8 s windows (still snapping to pauses when available)."
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Construye avatar_ranges.json: ventanas de 5.8 s, huecos de 6 s (nunca > 15 s),\nprimera desde 0 y última cerca del final. Si hay una pausa del habla cerca del borde, corta ahí.\"\"\"\nimport json\n\nB = \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\"\nW = json.load(open(B + \"/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\", \"\").strip()]\nf"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python build_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
+  },
+  {
+   "k": "res",
+   "t": "ventanas: 56 · avatar 320.0 s = 49 % de 650 s · reel 336.8 s\nprimer startMs: 0 · hueco máximo: 7.0 s · reel<=590: True · durs: [4.8, 4.9, 5.0, 5.1, 5.3, 5.4, 5.6, 5.7, 5.8, 5.9, 6.0, 8.2]\n✓ planos.json: 55 planos de b-roll (5.5 min de b-roll, 10.0 por minuto) · 56 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
+  },
+  {
+   "k": "tool",
+   "t": "    if fin - end < 600:           # último tramo: cerrar en el fin de la voz\n        end = fin"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python build_avatar.py && python /opt/estudio/repo/motor/tools/planos.py . && python3 -c \"\nimport json\np=json.load(open('planos.json'))\nprint(len(p),'planos')\nfor x in p[:8]: print(x['id'],x['startMs'],x['endMs'],x['seg'],'|',x['texto'][:110])\n\""
+  },
+  {
+   "k": "res",
+   "t": "ventanas: 56 · avatar 317.2 s = 49 % de 650 s · reel 334.0 s\nprimer startMs: 0 · hueco máximo: 7.0 s · reel<=590: True · durs: [4.8, 4.9, 5.0, 5.1, 5.3, 5.4, 5.6, 5.7, 5.8, 5.9, 6.0]\n✓ planos.json: 56 planos de b-roll (5.6 min de b-roll, 10.1 por minuto) · 56 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n56 planos\np001 5800 "
+  },
+  {
+   "k": "ai",
+   "t": "Plan closed: 56 windows, 49% avatar, first at 0, max 6 s per window, max gap 7 s. Launching the single InfiniteTalk call in the background."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > avatar/it.log 2>&1 & echo \"PID avatar: $!\"; sleep 2; head -5 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "PID avatar: 5369"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\np=json.load(open('planos.json'))\nfor x in p: print(x['id'], x['seg'], '|', x['texto'])\n\""
+  },
+  {
+   "k": "res",
+   "t": "p001 4.9 | and I want to show you something before the kettle finishes.\np002 5.1 | a fine wool sweater, and one finger's width of tucked fabric.\np003 6.0 | my hands. On a February morning, this is warmer than the heavy coat I wore in\np004 6.0 | My name is Michiko. I am 68 years old, and for 31 years I helped women\np005 6.0 | I was the woman who stood beside the mirror for 40 minutes, watching wher"
   }
  ],
  "maquinas": 1,
