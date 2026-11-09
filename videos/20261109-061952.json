@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205656.6693969,
+ "actualizado": 1794205719.6514318,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -16,26 +16,26 @@
   {
    "k": "voz",
    "n": "Voz",
-   "st": "active",
-   "info": "6 bloques"
+   "st": "done",
+   "info": "9 bloques"
   },
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "pending",
+   "st": "skip",
    "info": ""
   },
   {
    "k": "avatar",
    "n": "Avatar",
-   "st": "pending",
+   "st": "skip",
    "info": ""
   },
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "3 fotos"
   },
   {
    "k": "armado",
@@ -52,11 +52,11 @@
  ],
  "costo": {
   "deepseek": 0.0629,
-  "gpt": 0.0,
-  "gpt_img": 0,
+  "gpt": 0.0094,
+  "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0629
+  "total": 0.0723
  },
  "eventos": [
   {
@@ -202,14 +202,21 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 143,
+    "seg": 206,
+    "pasadas": 1,
+    "fin": false
+   },
+   {
+    "k": "fotos",
+    "n": "Fotos y stock",
+    "seg": 36,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 463,
+  "total_s": 526,
   "avatar_s": 0,
-  "sin_avatar_s": 463,
+  "sin_avatar_s": 526,
   "cerrado": false
  }
 }
