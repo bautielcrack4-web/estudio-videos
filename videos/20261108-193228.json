@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184236.5064719,
+ "actualizado": 1794184300.327381,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -29,7 +29,7 @@
    "k": "avatar",
    "n": "Avatar",
    "st": "done",
-   "info": "64 clips"
+   "info": "85 clips"
   },
   {
    "k": "fotos",
@@ -51,86 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1277,
+  "deepseek": 0.1349,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5199
+  "total": 0.5271
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_0.5.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "El clip final tiene el jardín glitcheado en todo su largo. Verifico si otros clips tienen lo mismo."
-  },
-  {
-   "k": "tool",
-   "t": "for a in A1 A10 A20 A30 A40 A50 A55 A60; do ffmpeg -v error -y -ss 1.5 -i avatar/$a.mp4 -frames:v 1 qc/chk_$a.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_chk.jpg qc/chk_A1.jpg qc/chk_A10.jpg qc/chk_A20.jpg qc/chk_A30.jpg qc/chk_A40.jpg qc/chk_A50.jpg qc/chk_A55.jpg qc/chk_A60.jpg"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_chk.jpg (8 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_chk.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A60.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A40.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A30.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A1.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "for a in A12 A16 A20 A24 A26 A28; do ffmpeg -v error -y -ss 1.5 -i avatar/$a.mp4 -frames:v 1 qc/chk_$a.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_chk2.jpg qc/chk_A12.jpg qc/chk_A16.jpg qc/chk_A20.jpg qc/chk_A24.jpg qc/chk_A26.jpg qc/chk_A28.jpg"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_chk2.jpg (6 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A20.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +106,78 @@
   {
    "k": "res",
    "t": "codec_name=h264\nwidth=832\nheight=464\nnb_frames=133\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/crop_test.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "El recorte deforma o corta las manos. Pruebo una alternativa: desenfocar solo el jardín del fondo en todos los clips, con el borde sobre el marco de madera."
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -y -i avatar/A60.mp4 -filter_complex \"[0:v]split[a][b];[b]crop=iw*0.30:ih:0:0,gblur=sigma=10[bb];[a][bb]overlay=0:0\" -c:v libx264 -crf 18 -pix_fmt yuv420p -an avatar/testcrop/A60_blur.mp4 && ffmpeg -v error -y -ss 1.5 -i avatar/testcrop/A60_blur.mp4 -frames:v 1 qc/blur_test.jpg && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "ok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/blur_test.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "El desenfoque queda natural (el borde cae sobre el marco). Antes de aplicarlo a los 63 clips, verifico fps y audio de los clips."
+  },
+  {
+   "k": "tool",
+   "t": "ffprobe -v error -show_entries stream=index,codec_type,codec_name,width,height,r_frame_rate,nb_frames,sample_rate,channels -of default=noprint_wrappers=1 avatar/A60.mp4; echo \"---blur test---\"; ffprobe -v error -show_entries stream=codec_type,r_frame_rate,nb_frames -of default=noprint_wrappers=1 avatar/testcrop/A60_blur.mp4"
+  },
+  {
+   "k": "res",
+   "t": "index=0\ncodec_name=h264\ncodec_type=video\nwidth=832\nheight=464\nr_frame_rate=25/1\nnb_frames=133\nindex=1\ncodec_name=aac\ncodec_type=audio\nsample_rate=44100\nchannels=2\nr_frame_rate=0/0\nnb_frames=230\n---blur test---\ncodec_type=video\nr_frame_rate=25/1\nnb_frames=133"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"avatar\\|-an\\|audio\" /opt/estudio/repo/motor/tools/render.py | head -30"
+  },
+  {
+   "k": "res",
+   "t": "3:Lee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\r\n4:     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg\",\"startMs\":3200,\"endMs\":8900}, ...]  (opcional)\r\n7:        PANTALLA PARTIDA: agregá \"foto\":\"<id>\" y \"lado\":\"izq\"|\"der\" → el avatar ocup"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -y -ss 1.5 -i avatar/A25.mp4 -frames:v 1 qc/chk_A25.jpg && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "ok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A25.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "A25 está limpio; el glitch arranca en A26. Aplico el desenfoque de fondo sólo a A26–A62 (el cambio cae entre ventanas, detrás de una foto), con copia de los originales."
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p avatar/orig_blur; ok=0; for i in $(seq 26 62); do f=avatar/A$i.mp4; cp \"$f\" avatar/orig_blur/; ffmpeg -v error -y -i \"$f\" -filter_complex \"[0:v]split[a][b];[b]crop=iw*0.30:ih:0:0,gblur=sigma=10[bb];[a][bb]overlay=0:0\" -c:v libx264 -crf 18 -pix_fmt yuv420p -r 25 -c:a copy \"avatar/A$i.tmp.mp4\" && mv \"avatar/A$i.tmp.mp4\" \"$f\" && ok=$((ok+1)); done; echo \"procesados: $ok\"; ffprobe -v error -s"
   }
  ],
  "maquinas": 2,
