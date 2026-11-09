@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794207190.7122567,
+ "actualizado": 1794207253.5529337,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,78 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1862,
+  "deepseek": 0.2027,
   "gpt": 0.0243,
   "gpt_img": 9,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.2105
+  "total": 0.227
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "    \"a 68-year-old woman in a white shirt with both arms raised above her head, framed from the chin down, the collar visible at her neck, the tatami room behind\",\n    \"her arms are caught halfway up, her chin lowered toward her own collar, the fabric moving with her\",\n    \"room\", 1, 0, 0, 2))"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_b.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "    \"the side of an older woman's jaw and neck with a white collar, a narrow strip of shadow between them, her grey hair swept back, the face partly out of frame\",\n    \"her head is caught slightly turned, one finger near the gap between collar and skin\",\n    \"room\", 9, 0, 0, 2))"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_b.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "    \"a 68-year-old woman pulling a white shirt over her head, seen from behind and the side, shoulders lifted, the collar crooked, the tatami room behind\",\n    \"her arms are caught mid-motion in the sleeves, the shirt still settling, the collar visibly off-centre\",\n    \"room\", 9, 0, 1, 0))"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_c.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n -A4 'foto(\"p035\"\\|foto(\"p037\"' escenas_b.py"
-  },
-  {
-   "k": "res",
-   "t": "(Bash completed with no output)"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"p035\\|p037\\|p074\\|p076\" escenas_b.py"
-  },
-  {
-   "k": "res",
-   "t": "131:P.append(foto(\"p074\",\n141:P.append(foto(\"p076\","
-  },
-  {
-   "k": "tool",
-   "t": "grep -n -A5 'foto(\"p035\"\\|foto(\"p037\"' escenas_a.py"
-  },
-  {
-   "k": "res",
-   "t": "162:P.append(foto(\"p035\",\n163-    \"She turns her head slowly to the side, watching whether the collar travels with her neck or stands still like a stiff band.\",\n164-    \"Michiko's neck and shoulder in profile, her head turned to one side, the white collar around her neck, grey hair at the temple\",\n165-    \"her head is caught mid-turn, the collar close against the skin, her eyes looking down along "
-  },
-  {
-   "k": "tool",
-   "t": "    \"the neck and shoulder of a 68-year-old woman in profile, her head turned to one side, the white collar around her neck, grey hair at the temple\",\n    \"her head is caught mid-turn, the collar close against the skin, the line of her shoulder leading out of frame\",\n    \"room\", 9, 0, 0, 0))"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_a.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "    \"the upper body of a 68-year-old woman standing stiffly with raised shoulders, a white shirt buttoned high, a tight collar, her hands at her sides, framed from the chest up without her face\",\n    \"her shoulders are caught lifted toward her ears, her chin tucked, the collar pressing under her jaw\",\n    \"room\", 1, 0, 1, 2))"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_a.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
   {
    "k": "tool",
    "t": "python escenas_a.py && python escenas_b.py && python escenas_c.py && python - <<'PY'\nimport json,re\npeds=[]\nfor f in ('pedidos_a.json','pedidos_b.json','pedidos_c.json'):\n    peds+=json.load(open(f))\nPROH=[\"cinematic\",\"35mm\",\"bokeh\",\"8k\",\"highly detailed\",\"photorealistic\",\"golden hour\",\"out of focus\",\"blurry\",\"soft focus\",\"shallow depth of field\",\"subject isolation\",\"stock photo\",\"studio lighting\""
@@ -178,6 +114,70 @@
   {
    "k": "res",
    "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "def foto(pid, momento, subject, action, pool, cam, st, li, co, cara=False, extra=(), props=None, type_=None):\n    P = props if props is not None else pick_props(pool, extra)\n    # las escenas de tecnica que no son del presentador se encuadran sin cara: evita que aparezca \"otra Michiko\"\n    if not cara and pool != \"vintage1968\":\n        s = (subject + \" \" + action).lower()\n        if (\"her hand\" in"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/foto_base.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python escenas_a.py && python escenas_b.py && python escenas_c.py && python - <<'PY'\nimport json,re\npeds=[]\nfor f in ('pedidos_a.json','pedidos_b.json','pedidos_c.json'):\n    peds+=json.load(open(f))\njson.dump(peds,open('pedidos_full.json','w',encoding='utf8'),ensure_ascii=False,indent=1)\nPROH=[\"cinematic\",\"35mm\",\"bokeh\",\"8k\",\"highly detailed\",\"photorealistic\",\"golden hour\",\"out of focus\",\"blurry\""
+  },
+  {
+   "k": "res",
+   "t": "✓ pedidos_a.json: 43 pedidos\n✓ pedidos_b.json: 57 pedidos\n✓ pedidos_c.json: 49 pedidos\nfull 149 caras 13 (+p001+p079= 15 ) camara max 28 18.8%\nerrores 0\ntest-ok"
+  },
+  {
+   "k": "ai",
+   "t": "El lote completo pasa la compuerta (149 fotos, 0 errores). Lo lanzo."
+  },
+  {
+   "k": "tool",
+   "t": "pgrep -af \"tools/fotos.py\" || echo \"nada corriendo\"; nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_full.json > fotos/fotos_full.log 2>&1 & echo \"PID=$!\"; sleep 4; tail -5 fotos/fotos_full.log"
+  },
+  {
+   "k": "res",
+   "t": "<persisted-output>\nOutput too large (43.4KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-one-collar-press-makes-a-plain-shirt-loo/fd4ebb58-e36a-4d9d-a8e7-e3fd08ada688/tool-results/bmz6wipc4.txt\n\nPreview (first 2KB):\n3806 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOSITORY=bautielcr"
+  },
+  {
+   "k": "tool",
+   "t": "tail -6 fotos/fotos_full.log; echo ---; ls fotos/*.png | wc -l; echo ---AVATAR---; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "06:53:32 → batch batch_6af16dec6e4881908c69e33cf5d39714 · 136 fotos · sin referencia · low 1088x608\n06:53:33 → batch batch_6af16ded1bcc81908aeea2dceb382ee0 · 13 fotos · con la cara del presentador · low 1088x608\n06:53:33 batch f5d39714: validating 0/0\n06:53:33 batch eb382ee0: validating 0/0\n---\n7\n---AVATAR---\n06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"id\": \"vapor\", \"tags\": [\"steam\"], \"q\": \"steam\", \"min\": 1.0, \"max\": 6},\n {\"id\": \"tela\", \"tags\": [\"fabric\", \"cloth\"], \"q\": \"cloth\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"papel\", \"tags\": [\"paper\"], \"q\": \"paper\", \"min\": 0.5, \"max\": 3},\n {\"id\": \"agua\", \"tags\": [\"water\"], \"q\": \"water pour\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"pajaros\", \"tags\": [\"birds\"], \"q\": \"birds\", \"min\": 2, \"max\": 9}\n]\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/sonidos.py . sfx_pedidos.json --tomas 3 > sonidos.log 2>&1 & echo \"PID=$!\""
+  },
+  {
+   "k": "res",
+   "t": "PID=10653"
+  },
+  {
+   "k": "tool",
+   "t": "CONTROL FOTOS — revisión visual (hoja qc/hoja_fotos.jpg)\nFecha: 2026-11-09\n\nPrimera tanda: 3 variantes del gancho (p001_a/b/c) + 6 fotos de prueba variadas\n(p002 manos/cuello, p011 memoria 1968, p021 flat lay creativo, p050 plancha técnica,\np079 espejo con saco cara:true, p105 comprobación en la tienda).\n\nELEGIDA PARA p001: p001_c (close-up del cuello con la mano bajo el cuello de la camisa).\nMoti"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 20; tail -15 sonidos.log; echo ---; ls -la sfx/ 2>/dev/null; echo ---AVATAR---; tail -3 avatar/it.log"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 497,
+    "seg": 559,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1507,
+    "seg": 1570,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1997,
+  "total_s": 2060,
   "avatar_s": 30,
-  "sin_avatar_s": 1966,
+  "sin_avatar_s": 2029,
   "cerrado": false
  }
 }
