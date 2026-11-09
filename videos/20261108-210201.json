@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794187816.867049,
+ "actualizado": 1794187883.4774985,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1602,
+  "deepseek": 0.1617,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.462
+  "total": 0.4635
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "PID:38511"
-  },
-  {
-   "k": "tool",
-   "t": "for f in A0 A50 A100; do ffmpeg -v error -y -ss 1.2 -i avatar/$f.mp4 -frames:v 1 qc/$f.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar.jpg qc/A0.jpg qc/A50.jpg qc/A100.jpg; ffprobe -v error -show_entries format=duration -of csv=p=0 avatar/A0.mp4"
-  },
   {
    "k": "res",
    "t": "hoja: qc/hoja_avatar.jpg (3 cuadros, 3x1)\n4.880000"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log render3.log --busca \"hechos\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'hechos' (215 s):\nclips=257 frames=37498 (1249.93s)\nhechos 257"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/assemble.py . 2>&1 | tail -20"
   }
  ],
  "maquinas": 1,
