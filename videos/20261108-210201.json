@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183887.5964057,
+ "actualizado": 1794183953.4370902,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0812,
+  "deepseek": 0.087,
   "gpt": 0.0488,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.13
+  "total": 0.1358
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos2.jpg (10 cuadros, 4x3)\n00:21:52 batch a978846c: completed 9/9\n00:21:53 ✓ batch a978846c: 9 fotos bajadas, 0 fallidas (US$0.021)\n00:21:53 FIN: 10/10 fotos en fotos/ (4 min)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_fotos2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "cat >> gates/fotos_auto.txt <<'EOF'\n\nSegunda tanda (10 fotos, hoja qc/hoja_fotos2.jpg):\n- p002: cajón abierto, manos sacando el último top, caja de caridad y bolsa. Correcta.\n- p013: niña doblando calcetines en el mostrador de 1987, libreta y botones. Correcta.\n- p066: dos muestras de tela contra el shoji (satén y lino mate). Correcta.\n- p097: dedos pellizcando el tejido acanalado en la cintura. M"
-  },
-  {
-   "k": "res",
-   "t": "✓ shots_timed.json: 156 planos, 156 fotos distintas (cero repetidas). Seguí con render.py.\nVALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa fotos\n  ✓ guion: 16741 caracteres, 3275 palabras (hacen falta 13500-17250 para 15 min: bien)\n  ✓ fotos: 16 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\nRESULTADO: OK"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in --limit 10 > render_test.log 2>&1 & echo \"PID:$!\"; sleep 20; tail -12 render_test.log; echo \"=== AVATAR ===\"; tail -4 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "PID:13038\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 30; cat render_test.log | tail -20; ls segments/ 2>/dev/null | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "AVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A83.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A84.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A85.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A86.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A87.mp4\nAVATAR PENDIENT"
-  },
-  {
-   "k": "tool",
-   "t": "ls segments/*.mp4 | head -12 && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg $(ls segments/*.mp4 | head -10) && echo done"
-  },
-  {
-   "k": "res",
-   "t": "segments/0000.mp4\nsegments/0001.mp4\nsegments/0002.mp4\nsegments/0003.mp4\nsegments/0004.mp4\nsegments/0005.mp4\nsegments/0006.mp4\nsegments/0007.mp4\nsegments/0008.mp4\nsegments/0009.mp4\nhoja: qc/hoja_render.jpg (10 cuadros, 4x3)\ndone"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_hook.jpg clips/p004.mp4 clips/p005.mp4 clips/p006.mp4 clips/p007.mp4 clips/p008.mp4 clips/p009.mp4 clips/p010.mp4 clips/p011.mp4 clips/p012.mp4 clips/p014.mp4 clips/p015.mp4 clips/p016.mp4 && echo ok"
@@ -178,6 +126,58 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_C.jpg clips/p044.mp4 clips/p045.mp4 clips/p046.mp4 clips/p047.mp4 clips/p048.mp4 clips/p049.mp4 clips/p050.mp4 clips/p051.mp4 clips/p052.mp4 clips/p053.mp4 clips/p054.mp4 clips/p055.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_D.jpg clips/p056.mp4 clips/p057.mp4 clips/p058.mp4 clips/p059.mp4 clips/p060.mp4 clips/p061.mp4 clips/p062.mp4 c"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/sh_C.jpg (12 cuadros, 4x3)\nhoja: qc/sh_D.jpg (12 cuadros, 4x3)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_C.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_D.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_E.jpg clips/p069.mp4 clips/p070.mp4 clips/p071.mp4 clips/p072.mp4 clips/p073.mp4 clips/p074.mp4 clips/p075.mp4 clips/p076.mp4 clips/p077.mp4 clips/p078.mp4 clips/p079.mp4 clips/p080.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_F.jpg clips/p081.mp4 clips/p082.mp4 clips/p083.mp4 clips/p084.mp4 clips/p085.mp4 clips/p086.mp4 clips/p087.mp4 c"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/sh_E.jpg (12 cuadros, 4x3)\nhoja: qc/sh_F.jpg (12 cuadros, 4x3)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_E.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_F.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_G.jpg clips/p093.mp4 clips/p094.mp4 clips/p095.mp4 clips/p096.mp4 clips/p098.mp4 clips/p099.mp4 clips/p100.mp4 clips/p101.mp4 clips/p102.mp4 clips/p103.mp4 clips/p104.mp4 clips/p105.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_H.jpg clips/p107.mp4 clips/p108.mp4 clips/p109.mp4 clips/p110.mp4 clips/p111.mp4 clips/p112.mp4 clips/p113.mp4 c"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/sh_G.jpg (12 cuadros, 4x3)\nhoja: qc/sh_H.jpg (12 cuadros, 4x3)\nhoja: qc/sh_I.jpg (12 cuadros, 4x3)\nok"
   }
  ],
  "maquinas": 1,
