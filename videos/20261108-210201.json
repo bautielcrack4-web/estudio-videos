@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794182779.6875532,
+ "actualizado": 1794182847.2164176,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -17,7 +17,7 @@
    "k": "voz",
    "n": "Voz",
    "st": "active",
-   "info": "3 bloques"
+   "info": "6 bloques"
   },
   {
    "k": "tiempos",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0284,
+  "deepseek": 0.0298,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0284
+  "total": 0.0298
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Voz con el CLON de la voz del canal (Fish Audio). Uso (en segundo plano, con log):\n   python <APP>/tools/voz.py <carpeta_del_video> > <carpeta>/voz/voz.log 2>&1\nLee <carpeta>/guion.txt y la muestra de voz del canal en <carpeta>/refs/voz.wav (+ refs/voz.txt = lo que se dice en la muestra).\nParte el guion en bloques de ~2500 caracteres, genera 3 a la vez, rehace los que sa"
-  },
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/repo/motor/tools/avatar_it.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\r\n\"\"\"Avatar con InfiniteTalk (RunPod), UNA sola llamada por video (US$0,25 aprox.).\r\n   python <APP>/tools/avatar_it.py <carpeta_del_video> > <carpeta>/avatar/it.log 2>&1        (en segundo plano)\r\n\r\nLee <carpeta>/avatar_ranges.json (TODAS las ventanas donde se ve el avatar, plan CERRADO), voz/master.wav y la foto del\r\npresentador refs/avatar.png (máxima resolución, mirando "
-  },
-  {
-   "k": "tool",
-   "t": "sed -n '1,120p' /opt/estudio/repo/motor/tools/render.py"
-  },
   {
    "k": "res",
    "t": "# -*- coding: utf-8 -*-\r\n\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/render.py <carpeta_del_video> [--limit N]\r\nLee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\r\n     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1."
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 20; tail -5 voz/voz.log; ls -la voz/ | head"
+  },
+  {
+   "k": "res",
+   "t": "voz: uso el clon guardado en Fish\nvoz: 8 bloques · 16811 caracteres\ntotal 21808\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 00:06 .\ndrwxrwxrwx+ 6 runner runner    4096 Nov  9 00:05 ..\n-rw-rw-rw-+ 1 sesion sesion 7468403 Nov  9 00:06 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7377729 Nov  9 00:06 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7452162 Nov  9 00:06 blk_002.wav.tmp.wav\n-rw-rw-rw-"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/repo/motor/tools/esperar.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"HERRAMIENTA DEL ESTUDIO: espera UNA sola vez hasta que pase algo (en vez de sleep + ls + tail una y otra vez).\n   python <APP>/tools/esperar.py --log <archivo.log> [--busca \"EXIT|FIN|✓|Traceback|Error\"]   termina cuando el log tiene esa palabra\n   python <APP>/tools/esperar.py --existe <archivo>                                          termina cuando el archivo existe (y"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe voz/master.wav --max 480"
   }
  ],
  "maquinas": 1,
