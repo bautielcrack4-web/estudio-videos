@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794187604.9507482,
+ "actualizado": 1794187681.654216,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1542,
+  "deepseek": 0.1602,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.456
+  "total": 0.462
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "    PID     ELAPSED CMD\n   5995    01:01:38 python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n0"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'COMPLETED' (325 s):\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n01:20:21 estado: COMPLETED"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|⛔|Traceback\" --max 480"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'clips cortados' (50 s):\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n01:20:21 estado: COMPLETED\n✓ 101 clips cortados · desfase corregido (máx 395 ms)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"5\", \"status\": \"completed\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #5 status"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > render2.log 2>&1 & echo \"PID:$!\"; sleep 15; tail -3 render2.log"
-  },
   {
    "k": "res",
    "t": "PID:38511"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "kill 38511 2>/dev/null; sleep 2; mkdir -p avatar/orig; python3 - <<'PY'\nimport glob, os, shutil, subprocess\nfrom concurrent.futures import ThreadPoolExecutor\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nfs=sorted(glob.glob(f'{B}/avatar/A*.mp4'))\nprint(len(fs),'clips')\nfor f in fs:\n    shutil.copy2(f, f'{B}/avatar/orig/'+os.path.basename(f))\ndef crop(f):\n    tmp=f+'.tmp.mp"
+  },
+  {
+   "k": "res",
+   "t": "101 clips\nfin\n1920,1080"
+  },
+  {
+   "k": "tool",
+   "t": "for f in A0 A75 A100; do ffmpeg -v error -y -ss 1.0 -i avatar/$f.mp4 -frames:v 1 qc/${f}_c.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar_clean.jpg qc/A0_c.jpg qc/A75_c.jpg qc/A100_c.jpg"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_avatar_clean.jpg (3 cuadros, 3x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_avatar_clean.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > render3.log 2>&1 & echo \"PID:$!\"; sleep 10; tail -2 render3.log"
+  },
+  {
+   "k": "res",
+   "t": "PID:52157"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log render3.log --busca \"hechos\" --max 540"
   }
  ],
  "maquinas": 1,
