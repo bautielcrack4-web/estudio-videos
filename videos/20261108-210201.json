@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794182973.7030377,
+ "actualizado": 1794183036.9193451,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -16,14 +16,14 @@
   {
    "k": "voz",
    "n": "Voz",
-   "st": "active",
-   "info": "8 bloques"
+   "st": "done",
+   "info": "20:49 min"
   },
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "por palabra"
   },
   {
    "k": "avatar",
@@ -51,62 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0298,
+  "deepseek": 0.0334,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0298
+  "total": 0.0334
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\r\n\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/render.py <carpeta_del_video> [--limit N]\r\nLee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\r\n     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1."
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Escribir guion (~15.000 caracteres) y validar\", \"description\": \"guion.txt en inglés, canal Kyoto Grace, 10 tops, gancho, prueba interactiva min 4, like/sub, cierre. Validar etapa guion.\", \"activeForm\": \"Escribiendo el guion\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #1 created successfully: Escribir guion (~15.000 caracteres) y validar"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Generar voz y tiempos\", \"description\": \"voz.py en segundo plano, luego tiempos.py en, captions.json.\", \"activeForm\": \"Generando voz y tiempos\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #2 created successfully: Generar voz y tiempos"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Plan de avatar y planos\", \"description\": \"avatar_ranges.json dinámico (~50%, ventanas 3-6s, primera en 0, gaps ≤15s), planos.py → planos.json.\", \"activeForm\": \"Armando ventanas de avatar y planos\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #3 created successfully: Plan de avatar y planos"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Fotos (≤20) + clips de stock (modo Ahorro)\", \"description\": \"3 variantes p001, 20 fotos máx (cara ≥3, 4-6 creativas con detalle_narrativo), stock.py para todos los demás planos. Revisar hojas.\", \"activeForm\": \"Generando fotos y descargando clips\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #4 created successfully: Fotos (≤20) + clips de stock (modo Ahorro)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Avatar InfiniteTalk (1 llamada)\", \"description\": \"avatar_it.py con plan cerrado, en segundo plano.\", \"activeForm\": \"Generando avatar\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #5 created successfully: Avatar InfiniteTalk (1 llamada)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Render, assemble, sonido y QC final\", \"description\": \"planos.py --shots, render --limit 10, revisión, render completo, assemble, sonidos/cues, revisor, validar final, meta.json, REPORTE.md.\", \"activeForm\": \"Renderizando y cerrando\"}"
-  },
   {
    "k": "res",
    "t": "Task #6 created successfully: Render, assemble, sonido y QC final"
@@ -178,6 +130,54 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe voz/master.wav --max 480"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe voz/master.wav (110.2 MB, 175 s)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -12 voz/voz.log; ffprobe -v error -show_entries format=duration -of csv=p=0 voz/master.wav"
+  },
+  {
+   "k": "res",
+   "t": "voz: uso el clon guardado en Fish\nvoz: 8 bloques · 16811 caracteres\n  ✓ bloque 1: 125 s (s2.1-pro-free)\n  ✓ bloque 0: 168 s (s2.1-pro-free)\n  ✓ bloque 2: 172 s (s2.1-pro-free)\n  ✓ bloque 3: 155 s (s2.1-pro-free)\n  ✓ bloque 5: 149 s (s2.1-pro-free)\n  ✓ bloque 4: 168 s (s2.1-pro-free)\n  ✓ bloque 6: 154 s (s2.1-pro-free)\n  ✓ bloque 7: 159 s (s2.1-pro-free)\n✓ voz/master.wav 20.8 min\n1249.931224"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"1\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #1 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"2\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #2 status"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in en > voz/tiempos.log 2>&1 & echo \"PID:$!\""
+  },
+  {
+   "k": "res",
+   "t": "PID:5409"
+  },
+  {
+   "k": "tool",
+   "t": "# Genera avatar_ranges.json: ventanas cortas (4-6 s) en frases importantes,\n# gaps de 6-8 s para 1-2 planos de b-roll, total ~520 s (<= 560), primera en 0.\nimport json, random, subprocess, sys\n\nB = \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\"\nW = [w for w in json.load(open(f\"{B}/captions.json\", encoding=\"utf8\")) if w.get(\"text\", \"\").strip()]\nW.sort(key=lambda w: w[\"startMs\""
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 30; tail -5 voz/tiempos.log; ls -la captions.json 2>/dev/null"
   }
  ],
  "maquinas": 1,
