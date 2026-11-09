@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794203391.5167058,
+ "actualizado": 1794203457.457457,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "110 segmentos"
+   "info": "112 segmentos"
   },
   {
    "k": "qc",
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1011,
+  "deepseek": 0.1026,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3966
+  "total": 0.3981
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "All 20 photos pass review. Building the final shot timeline and running the 10-segment test render."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py . --shots && python /opt/estudio/repo/motor/tools/render.py . --limit 10 2>&1 | tail -8"
-  },
-  {
-   "k": "res",
-   "t": "✓ shots_timed.json: 56 planos, 56 fotos distintas (cero repetidas). Seguí con render.py.\nclips=112 frames=19505 (650.17s)\nhechos 10"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg segments/0000.mp4 segments/0001.mp4 segments/0002.mp4 segments/0003.mp4 segments/0004.mp4 segments/0005.mp4 segments/0006.mp4 segments/0007.mp4 segments/0008.mp4 segments/0009.mp4 >/dev/null; echo ok"
-  },
-  {
-   "k": "res",
-   "t": "ok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "Test render looks clean and correctly alternates avatar/b-roll. Running the full render."
-  },
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > render.log 2>&1 & echo \"PID render: $!\"; sleep 3; head -3 render.log"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "cat >> gates/fotos_auto.txt <<'EOF'\n- Revisión final de las 20 fotos (hojas qc/hoja_fotos_all1.jpg y all2.jpg): caras coherentes con el avatar, manos correctas,\n  detalles narrativos legibles. Sin repeticiones. No hubo que rehacer ninguna.\n- p029 muestra a una mujer joven de espaldas en el espejo (demostración, no es la presentadora): se acepta como recurso de b-roll.\nEOF\npython /opt/estudio/repo/"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'hechos' (265 s):\nclips=112 frames=19505 (650.17s)\nhechos 112"
+  },
+  {
+   "k": "ai",
+   "t": "Render complete (112 segments, 650 s). Assembling with voice and sound cues."
+  },
+  {
+   "k": "tool",
+   "t": "ls extrema/ 2>/dev/null; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > assemble.log 2>&1 & echo \"PID assemble: $!\"; sleep 5; tail -3 assemble.log"
+  },
+  {
+   "k": "res",
+   "t": "  24354       05:47\nPID assemble: 29115"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"4\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"6\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #4 status"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #6 status"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 540"
   }
  ],
  "maquinas": 1,
