@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794212037.7708576,
+ "actualizado": 1794212102.5022264,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -28,8 +28,8 @@
   {
    "k": "avatar",
    "n": "Avatar",
-   "st": "skip",
-   "info": ""
+   "st": "done",
+   "info": "89 clips"
   },
   {
    "k": "fotos",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3278,
+  "deepseek": 0.3314,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9696
+  "total": 0.9732
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "led = {\"estado\": \"corriendo\", \"t\": time.strftime(\"%Y-%m-%d %H:%M:%S\"), \"enviado\": round(time.time(), 1), \"ventanas\": [r[\"file\"] for r in R], \"reel_s\": round(t, 1)}\r\njson.dump(led, open(LED, \"w\"), indent=1)\r\nreel = f\"{O}/reel.mp4\"\r\ntry:\r\n    j = rp(\"/run\", {\"input\": {\"prompt\": prompt, \"image\": subidos[\"face.png\"][1], \"audio\": subidos[\"audio.wav\"][1], \"size\": \"720p\",\r\n                              \""
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo --etapa render --min 20"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\nVALIDAR /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo · etapa render\n  ✓ guion: 19176 caracteres, 3740 palabras (hacen falta 18000-23000 para 20 min: bien)\n  ✓ fotos: 156 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\n  ✓ fotos: 6 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  ✓ render: movimient"
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport json\np=json.load(open('plan.json'))\nfor s in p['segments'][:12]:\n    print(s.get('t0'),s.get('t1'),round(s['t1']-s['t0'],2),s.get('kind'),s.get('split'),s.get('file'),s.get('foto',''))\nprint('--- split count', sum(1 for s in p['segments'] if s.get('split')))\nfor s in p['segments']:\n    if s.get('split'): print('split',s.get('t0'),s.get('t1'),s.get('foto'),s.get('lado')); bre"
-  },
   {
    "k": "res",
    "t": "0.0 5.52 5.52 av None /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/avatar/espera/904497b045.jpg \n5.52 12.58 7.06 foto None /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/fotos/p001.png \n12.58 18.02 5.44 av None /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/avatar/espera/904497b045.jpg \n18.02 24.82 6.8 foto None /opt/estudio/datos/video"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "date; python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --log avatar/it.log --busca \"fallo|FAILED|TIMED_OUT|Traceback\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "Mon Nov  9 08:09:25 UTC 2026\n✓ existe avatar/A0.mp4 (2.1 MB, 315 s)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -6 avatar/it.log; ls avatar/A*.mp4 2>/dev/null | wc -l; echo \"---sync---\"; ls -la avatar/it_sync.json 2>/dev/null || echo \"sin sync\""
+  },
+  {
+   "k": "res",
+   "t": "06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS\n08:13:35 estado: COMPLETED\n✓ 89 clips cortados · desfase corregido (máx 395 ms)\n89\n---sync---\n-rw-rw-rw-+ 1 sesion sesion 11116 Nov  9 08:14 avatar/it_sync.json"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 20; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|assemble.py\" | head -4; echo \"---\"; ls -la final.mp4 2>/dev/null || echo \"sin final\"; tail -3 avatar/it.log"
   }
  ],
  "maquinas": 1,
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 6844,
+  "total_s": 6909,
   "avatar_s": 5356,
-  "sin_avatar_s": 1487,
+  "sin_avatar_s": 1552,
   "cerrado": false
  }
 }
