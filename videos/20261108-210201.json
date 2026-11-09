@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794190182.7476258,
+ "actualizado": 1794190246.5265574,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "257 segmentos"
+   "info": "final.mp4 · 20.8 min"
   },
   {
    "k": "qc",
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1711,
+  "deepseek": 0.1775,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4729
+  "total": 0.4793
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "ffmpeg -v error -y -ss 1.0 -i avatar/A75.mp4 -vf \"crop=624:351:208:56,scale=960:540:flags=lanczos\" -frames:v 1 qc/crop4.jpg\nffmpeg -v error -y -ss 1.0 -i avatar/A100.mp4 -vf \"crop=624:351:208:56,scale=960:540:flags=lanczos\" -frames:v 1 qc/crop5.jpg\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_crops2.jpg qc/crop4.jpg qc/crop5.jpg"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_crops2.jpg (2 cuadros, 2x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_crops2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 38511 -o pid,etime 2>/dev/null || echo \"render2 terminado\"; tail -3 render2.log; ls -la avatar/A0.mp4"
-  },
-  {
-   "k": "res",
-   "t": "    PID     ELAPSED\n  38511       01:56\n-rw-rw-rw-+ 1 sesion sesion 1765039 Nov  9 01:20 avatar/A0.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "kill 38511 2>/dev/null; sleep 2; mkdir -p avatar/orig; python3 - <<'PY'\nimport glob, os, shutil, subprocess\nfrom concurrent.futures import ThreadPoolExecutor\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nfs=sorted(glob.glob(f'{B}/avatar/A*.mp4'))\nprint(len(fs),'clips')\nfor f in fs:\n    shutil.copy2(f, f'{B}/avatar/orig/'+os.path.basename(f))\ndef crop(f):\n    tmp=f+'.tmp.mp"
-  },
   {
    "k": "res",
    "t": "101 clips\nfin\n1920,1080"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la video_noaudio.mp4 audio_mix.m4a final.mp4 2>/dev/null; ps -o pid,etime,cmd -C ffmpeg | head -2 | cut -c1-100"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion  25952300 Nov  9 02:10 audio_mix.m4a\n-rw-rw-rw-+ 1 sesion sesion 685693861 Nov  9 02:09 video_noaudio.mp4\n    PID     ELAPSED CMD\n  63486       00:28 ffmpeg -v error -y -i ./voz/master.wav -i ./sfx/cajon.mp3 -i ./sfx/tela.mp3 -i ."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 300"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe final.mp4 (716.2 MB, 10 s)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 15; echo \"=== PROBE ===\"; ffprobe -v error -show_entries format=duration:stream=codec_type,width,height,r_frame_rate -of json final.mp4 | head -40"
+  },
+  {
+   "k": "res",
+   "t": "VALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa final\n  ✓ guion: 16741 caracteres, 3275 palabras (hacen falta 13500-17250 para 15 min: bien)\n  ✓ fotos: 17 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\n  ✓ fotos: 6 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  ✓ render: movimiento al azar (pla"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > revisor.log 2>&1 & echo \"PID:$!\"; sleep 20; tail -10 revisor.log"
   }
  ],
  "maquinas": 1,
