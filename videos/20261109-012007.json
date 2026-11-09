@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794198627.4031749,
+ "actualizado": 1794198690.3781989,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,90 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0332,
+  "deepseek": 0.0462,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0332
+  "total": 0.0462
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 8; echo \"---\"; sleep 3; tail -5 voz/voz.log 2>/dev/null; ls voz/"
-  },
-  {
-   "k": "res",
-   "t": "VALIDAR /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q · etapa guion\n  ✓ guion: 8479 caracteres, 1670 palabras (hacen falta 7200-9200 para 8 min: bien)\nRESULTADO: OK\n---\nvoz: uso el clon guardado en Fish\nvoz: 4 bloques · 8616 caracteres\nblk_000.wav.tmp.wav\nblk_001.wav.tmp.wav\nblk_002.wav.tmp.wav\nmanifest.json\nvoz.log"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --busca \"✓ voz/master|⛔|Traceback|fallaron\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene '✓ voz/master' (130 s):\nvoz: 4 bloques · 8616 caracteres\n  ✓ bloque 0: 170 s (s2.1-pro-free)\n  ✓ bloque 2: 174 s (s2.1-pro-free)\n  ✓ bloque 1: 174 s (s2.1-pro-free)\n  ✓ bloque 3: 132 s (s2.1-pro-free)\n✓ voz/master.wav 10.8 min"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q en 2>&1 | tail -5 && python3 -c \"import json;w=json.load(open('captions.json'));print(len(w),'words',round(w[-1]['endMs']/1000,1),'s')\""
-  },
-  {
-   "k": "res",
-   "t": "✓ captions.json: 1657 palabras en 10.8 min\n1657 words 649.8 s"
-  },
-  {
-   "k": "ai",
-   "t": "Voice: 10.8 min, 1,657 words. Now I'll build the avatar window plan from word pauses (≤6 s windows, gaps ~6 s, no gap >15 s)."
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Construye avatar_ranges.json a partir de captions.json: ventanas de ~5.8 s cortadas en pausas,\nhuecos de ~6 s (nunca > 15 s), primera desde 0 y última cerca del final. Cubre ~50 %.\"\"\"\nimport json\n\nB = \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\"\nW = json.load(open(B + \"/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\", \"\").strip"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python build_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\nventanas: 0 · avatar 0.0 s = 0 % de 650 s · reel 0.0 s\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py\", line 72, in <module>\n    print(\"primer startMs:\", R2[0][\"startMs\"], \"· hueco máximo:\", round(mx, 1), \"s · total windows <=590:\", reel <= 590)\n                             ~~^^^\nIndexError: list index out o"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nW=json.load(open('captions.json'))\nprint(W[:8])\ng=[b['startMs']-a['endMs'] for a,b in zip(W,W[1:])]\nimport statistics\nprint('gaps min/med/max',min(g),statistics.median(g),max(g),'n>=90',sum(x>=90 for x in g),'n',len(g))\nprint('last',W[-1])\n\""
-  },
-  {
-   "k": "res",
-   "t": "[{'text': ' Hello,', 'startMs': 0, 'endMs': 520, 'timestampMs': 0, 'confidence': 1.0}, {'text': ' please', 'startMs': 520, 'endMs': 660, 'timestampMs': 520, 'confidence': 1.0}, {'text': ' come', 'startMs': 660, 'endMs': 960, 'timestampMs': 660, 'confidence': 1.0}, {'text': ' in.', 'startMs': 960, 'endMs': 1340, 'timestampMs': 960, 'confidence': 1.0}, {'text': ' Mind', 'startMs': 1340, 'endMs': 200"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nW=json.load(open('captions.json'))\np=[0]\nfor a,b in zip(W,W[1:]):\n    if b['startMs']-a['endMs']>=90: p.append(int((a['endMs']+b['startMs'])/2))\np.append(W[-1]['endMs'])\nprint(len(p))\nprint(p[:30])\nprint(p[30:60])\n\""
-  },
-  {
-   "k": "res",
-   "t": "114\n[0, 10740, 21660, 28680, 35070, 38480, 40270, 48300, 50080, 57610, 64390, 72020, 77760, 82060, 86340, 88630, 95190, 110350, 119320, 120820, 123180, 125460, 132240, 144270, 150060, 158370, 163131, 171341, 177501, 192611]\n[200591, 211681, 215321, 222501, 230441, 233151, 238021, 244281, 247441, 253591, 261211, 267101, 269981, 274051, 279251, 282131, 285281, 289631, 293711, 299351, 302361, 308221,"
-  },
-  {
-   "k": "ai",
-   "t": "Whisper's word timestamps are near-contiguous, so pause-based windows don't fit. I'll fall back to fixed 5.8 s windows (still snapping to pauses when available)."
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Construye avatar_ranges.json: ventanas de 5.8 s, huecos de 6 s (nunca > 15 s),\nprimera desde 0 y última cerca del final. Si hay una pausa del habla cerca del borde, corta ahí.\"\"\"\nimport json\n\nB = \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\"\nW = json.load(open(B + \"/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\", \"\").strip()]\nf"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python build_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
-  },
   {
    "k": "res",
    "t": "ventanas: 56 · avatar 320.0 s = 49 % de 650 s · reel 336.8 s\nprimer startMs: 0 · hueco máximo: 7.0 s · reel<=590: True · durs: [4.8, 4.9, 5.0, 5.1, 5.3, 5.4, 5.6, 5.7, 5.8, 5.9, 6.0, 8.2]\n✓ planos.json: 55 planos de b-roll (5.5 min de b-roll, 10.0 por minuto) · 56 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
@@ -178,6 +102,82 @@
   {
    "k": "ai",
    "t": "Avatar is running. Now I'll send all 39 stock-clip requests in one batch."
+  },
+  {
+   "k": "tool",
+   "t": "[\n{\"id\":\"p004\",\"muestra\":\"an elderly woman standing among clothes in a small neighborhood shop\",\"buscar\":[\"elderly woman clothing shop\",\"woman browsing clothes racks\",\"kimono shop interior\"]},\n{\"id\":\"p006\",\"muestra\":\"hands folding a small stack of thin knits on tatami\",\"buscar\":[\"folding clothes pile hands\",\"folded sweaters stack\"]},\n{\"id\":\"p007\",\"muestra\":\"a woman pulling a thick sweater over her"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_01.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"1\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #1 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"2\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #2 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"3\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #3 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"4\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #4 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"5\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #5 status"
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p clips && nohup python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_01.json > clips/stock.log 2>&1 & echo \"PID stock: $!\"; sleep 2; head -5 clips/stock.log; echo \"--- avatar ---\"; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "PID stock: 6250\n04:30:32 → 39 clips por buscar\n--- avatar ---\n04:29:05 InfiniteTalk: 56 ventanas · reel 334.0 s · 1 llamada\n04:29:14 RUN cbd6e8fc-0b67-4581-b8d8-bfb7b5850d12-u2\n04:29:44 estado: IN_PROGRESS"
+  },
+  {
+   "k": "ai",
+   "t": "Now the first photo batch: 3 hook variants + 3 varied test shots."
+  },
+  {
+   "k": "tool",
+   "t": "[\n{\"id\":\"p001_a\",\"cara\":true,\"prompt\":{\n\"type\":\"amateur phone photo, mild JPEG compression, real skin texture with pores, wrinkles, age spots, flyaway grey hairs, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n\"moment\":\"Before the kettle finishes, her hands are already at her waist, caught mid-tuck, showing the smooth line"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/pedidos_01.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/pedidos_01.json > fotos/fotos_01.log 2>&1 & echo \"PID fotos: $!\"; sleep 8; tail -12 fotos/fotos_01.log"
+  },
+  {
+   "k": "res",
+   "t": "PID fotos: 6327\n04:31:00 → batch batch_6af14c841528819085a46ab65dab0471 · 3 fotos · sin referencia · low 1088x608\n04:31:01 → batch batch_6af14c84dc6c81908e9168ce1d4b4f4b · 3 fotos · con la cara del presentador · low 1088x608\n04:31:01 batch 5dab0471: validating 0/0\n04:31:01 batch 1d4b4f4b: validating 0/0"
   }
  ],
  "maquinas": 1,
