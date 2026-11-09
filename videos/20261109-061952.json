@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794211785.8342874,
+ "actualizado": 1794211848.8867595,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -223,7 +223,7 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 5092,
+    "seg": 5155,
     "pasadas": 1,
     "fin": false
    },
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 6592,
+  "total_s": 6655,
   "avatar_s": 30,
-  "sin_avatar_s": 6562,
+  "sin_avatar_s": 6625,
   "cerrado": false
  }
 }
