@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794208970.7488935,
+ "actualizado": 1794209034.6568182,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "done",
-   "info": "31 segmentos"
+   "info": "55 segmentos"
   },
   {
    "k": "qc",
@@ -51,18 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2921,
+  "deepseek": 0.2941,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.6839
+  "total": 0.6859
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nfrom PIL import Image\nim=Image.open('fotos/p127.png').convert('RGB')\nprint(im.size)\nw,h=im.size\n# recorte 16:9 de la mitad inferior: manos, bandeja de té y cojín, sin la cara\nbox=(int(w*0.12), int(h*0.40), int(w*0.12)+int(h*0.60*16/9), int(h*0.40)+int(h*0.60))\nbox=(max(0,box[0]),max(0,box[1]),min(w,box[2]),min(h,box[3]))\nc=im.crop(box)\nprint('crop',box,c.size)\nc=c.resize((1088,612)"
-  },
   {
    "k": "res",
    "t": "(1088, 608)\ncrop (130, 243, 778, 607) (648, 364)\nhoja: qc/hoja_p127.jpg (1 cuadros, 1x1)"
@@ -178,6 +174,10 @@
   {
    "k": "res",
    "t": "PID=24305"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
   }
  ],
  "maquinas": 1,
@@ -223,7 +223,7 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 2277,
+    "seg": 2341,
     "pasadas": 1,
     "fin": false
    },
@@ -237,21 +237,21 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 66,
+    "seg": 130,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "previo",
     "n": "Render sin avatar",
-    "seg": 75,
+    "seg": 203,
     "pasadas": 2,
     "fin": false
    }
   ],
-  "total_s": 3777,
+  "total_s": 3841,
   "avatar_s": 30,
-  "sin_avatar_s": 3746,
+  "sin_avatar_s": 3810,
   "cerrado": false
  }
 }
