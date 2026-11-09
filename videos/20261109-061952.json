@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794210056.2387896,
+ "actualizado": 1794210122.030151,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3084,
+  "deepseek": 0.3161,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.7002
+  "total": 0.7079
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "✓ hay 10 archivos (0 s)\n10"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 10; tail -8 render_test.log; echo \"---\"; ls -la plan.json segments/xf.json 2>/dev/null; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep render.py | head -2"
-  },
-  {
-   "k": "res",
-   "t": "AVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A83.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A84.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A85.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A86.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A87.mp4\nAVATAR PENDIENT"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg segments/0000.mp4 segments/0001.mp4 segments/0002.mp4 segments/0003.mp4 segments/0004.mp4 segments/0005.mp4 segments/0006.mp4 segments/0007.mp4 segments/0008.mp4 segments/0009.mp4"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_render.jpg (10 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "CONTROL RENDER — 10 segmentos de prueba (qc/hoja_render.jpg)\nFecha: 2026-11-09\n\nMiré los 10 primeros segmentos (los que arma render.py --limit 10):\n- 0000: ventana de avatar (A0). Todavía muestra el cuadro fijo de refs/avatar.png con el\n  cartel «Esperando avatar»: es lo esperado mientras InfiniteTalk está IN_PROGRESS.\n- 0001: p001 (gancho, cuello nítido y cara). Se ve a 1920x1080, encuadre correc"
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gates/render_auto.txt (file state is current in your context — no need to Read it back)"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ls segments/[0-9]*.mp4 | sed -n '1p;20p;40p;60p;80p;100p;120p;140p' | tr '\\n' ' '; echo; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_previo.jpg $(ls segments/[0-9]*.mp4 | sed -n '11p;31p;51p;71p;91p;111p;131p;143p')"
+  },
+  {
+   "k": "res",
+   "t": "segments/0000.mp4 segments/0026.mp4 segments/0058.mp4 segments/0090.mp4 segments/0123.mp4 segments/0154.mp4 segments/0188.mp4 segments/0221.mp4 \nhoja: qc/hoja_previo.jpg (8 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_previo.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "date; tail -4 avatar/it.log; python - <<'PY'\nimport json,time\nd=json.load(open('avatar/it_llamada.json'))\nprint('estado',d.get('estado'),'enviado',d.get('enviado'),'genera',d.get('genera'))\nprint('hace', round((time.time()-d['enviado'])/60,1),'min desde el envio')\nPY"
+  },
+  {
+   "k": "res",
+   "t": "Mon Nov  9 07:41:50 UTC 2026\n06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS\nestado corriendo enviado 1794206663.8 genera 1794206694.1\nhace 57.5 min desde el envio"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
   }
  ],
  "maquinas": 1,
@@ -223,7 +223,7 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 3362,
+    "seg": 3428,
     "pasadas": 1,
     "fin": false
    },
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 1151,
+    "seg": 1217,
     "pasadas": 1,
     "fin": false
    },
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 4862,
+  "total_s": 4928,
   "avatar_s": 30,
-  "sin_avatar_s": 4832,
+  "sin_avatar_s": 4898,
   "cerrado": false
  }
 }
