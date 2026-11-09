@@ -2,8 +2,8 @@
  "vid": "20261108-210201",
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
- "estado": "trabajando",
- "actualizado": 1794193759.2852268,
+ "estado": "listo",
+ "actualizado": 1794199199.3061461,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -183,5 +183,6 @@
  "maquinas": 1,
  "extrema": "1",
  "ahorro": "1",
- "nota": "edición extrema"
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-20261108-210201/10-Tops-I-Gave-Away-at-68-What-I-Wear-in-Kyoto-Instead.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261108-210201"
 }
