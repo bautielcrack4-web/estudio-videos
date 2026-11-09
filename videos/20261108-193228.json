@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794182679.9613671,
+ "actualizado": 1794182777.2490547,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.074,
+  "deepseek": 0.0762,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4662
+  "total": 0.4684
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_render2.jpg (6 cuadros, 4x2)\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A0.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A1.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A2.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A3.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de "
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_render2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 4890 -o pid,etime,cmd --no-headers || echo \"avatar process not running\"; echo \"---\"; cat avatar/it_llamada.json 2>/dev/null; echo; date"
-  },
-  {
-   "k": "res",
-   "t": "   4890       23:03 python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-\n---\n{\n \"estado\": \"corriendo\",\n \"t\": \"2026-11-08 22:42:46\",\n \"ventanas\": [\n  \"avatar/A0.mp4\",\n  \"avatar/A1.mp4\",\n  \"avatar/A2.mp4\",\n  \"avatar/A3.mp4\",\n  \"avatar/A4.mp4\",\n  \"avatar/A5.mp4\",\n  \"avatar/A6.mp4\",\n  \"avatar/A7.mp4\",\n  \"avatar/A8.mp4\",\n  \"avatar/A9.mp4\","
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 22:43:17 estado: IN_QUEUE · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE"
-  },
-  {
-   "k": "ai",
-   "t": "Sigue en cola (~33 min). Mientras, dejo armado el REPORTE con lo ya verificado."
-  },
-  {
-   "k": "tool",
-   "t": "# REPORTE — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n\n## Estado\n- Guion, voz, tiempos, planos, fotos, sonidos y render completo: OK.\n- Avatar: llamada única en curso (cola del servicio). Cuando bajen los 63 clips: rerender de los tramos de avatar + assemble + revisor + control final.\n\n## Qué se hizo\n- **Guion** (inglés, 1.641 palabras, ~10 min): gancho con el número \"dos m"
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/REPORTE.md (file state is current in your context — no need to Read it back)"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_av.log 2>&1 & echo \"pid: $!\"; sleep 10; tail -3 render_av.log"
+  },
+  {
+   "k": "res",
+   "t": "pid: 24704"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_av.log --busca \"hechos 123|Traceback|Error\" --timeout 540; echo \"---\"; tail -4 render_av.log"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'hechos 123' (70 s):\nclips=123 frames=18120 (604.00s)\nhechos 123\n---\nclips=123 frames=18120 (604.00s)\nhechos 123"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar.jpg avatar/A0.mp4 avatar/A8.mp4 avatar/A16.mp4 avatar/A24.mp4 avatar/A32.mp4 avatar/A40.mp4 avatar/A50.mp4 avatar/A62.mp4"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_avatar.jpg (8 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_avatar.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "Avatar consistente y sin glitches. Ensamblo el video final."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log 2>&1 & echo \"assemble pid: $!\"; sleep 10; tail -4 assemble.log"
   }
  ],
  "maquinas": 2,
