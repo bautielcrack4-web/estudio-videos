@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794198894.7548857,
+ "actualizado": 1794198958.711243,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0682,
+  "deepseek": 0.0704,
   "gpt": 0.007,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0752
+  "total": 0.0774
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "set -- $(ls clips/p*.mp4 | sort); i=1; while [ $# -gt 0 ]; do n=$((i*12)); batch=$(printf '%s\\n' \"$@\" | head -12); python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_$i.jpg $batch >/dev/null 2>&1; echo \"hoja $i: $(echo \"$batch\" | tr '\\n' ' ')\"; shift 12 2>/dev/null || shift $#; i=$((i+1)); done; ls -la qc/hoja_clips_*"
-  },
-  {
-   "k": "res",
-   "t": "hoja 1: clips/p004.mp4 clips/p006.mp4 clips/p007.mp4 clips/p008.mp4 clips/p010.mp4 clips/p011.mp4 clips/p013.mp4 clips/p014.mp4 clips/p015.mp4 clips/p016.mp4 clips/p017.mp4 clips/p019.mp4 \nhoja 2: clips/p021.mp4 clips/p022.mp4 clips/p024.mp4 clips/p025.mp4 clips/p026.mp4 clips/p027.mp4 clips/p030.mp4 clips/p032.mp4 clips/p033.mp4 clips/p034.mp4 clips/p036.mp4 clips/p038.mp4 \nhoja 3: clips/p040.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_clips_1.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_clips_2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_clips_3.jpg\"}"
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "rm -f clips/p026.mp4 clips/p026.json; cat > stock_05.json <<'EOF'\n[{\"id\":\"p026\",\"muestra\":\"a woman at a mirror pushing her whole sweater into her waistband\",\"buscar\":[\"woman getting dressed mirror\",\"woman mirror clothes bedroom\",\"woman adjusting waistband mirror\"]}]\nEOF\npython /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/dat"
+  },
+  {
+   "k": "res",
+   "t": "04:34:39 → 1 clips por buscar\n04:34:43 juez: 1/1 planos juzgados con visión · US$0.0001\n04:34:45 bajados 1/1\n04:34:45 FIN: 1/1 clips en clips/\np026 [5, 'woman at mirror adjusting clothes']\nok agua: agua.mp3 (4 s, Pouring water to mug) · agua_2.mp3 (1 s, Pouring water) · agua_3.mp3 (1 s, Water bubble)\nok tela: tela.mp3 (1 s, Cloth slide out) · tela_2.mp3 (1 s, Squishing a soggy cloth shirt)\nok pape"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nW=json.load(open('captions.json'))\nkeys=['kettle','tuck','fold','page','needle','time','sighed','line']\nfor k in keys:\n    hits=[(w['text'].strip(),round(w['startMs']/1000,1)) for w in W if k in w['text'].lower()]\n    print(k,hits[:6])\n\""
+  },
+  {
+   "k": "res",
+   "t": "kettle [('kettle', 9.0)]\ntuck [('tucked', 20.6), ('tuck.', 71.1), ('tuck', 283.2), ('tuck', 286.7), ('tucked', 323.3), ('tucked', 329.8)]\nfold [('fold', 445.2), ('fold', 449.8), ('fold', 453.6), ('Fold', 527.4)]\npage [('page.', 439.7)]\nneedle [('needle.', 588.6)]\ntime [('time.', 76.8), ('time', 104.9), ('times,', 450.5), ('time', 555.7), ('times', 566.6), ('time.', 649.0)]\nsighed [('sighed.', 301."
+  },
+  {
+   "k": "tool",
+   "t": "[\n{\"file\":\"agua.mp3\",\"t\":9000,\"gain\":0.05,\"fade\":0.5},\n{\"file\":\"tela.mp3\",\"t\":283200,\"gain\":0.045,\"fade\":0.4},\n{\"file\":\"tela.mp3\",\"t\":527400,\"gain\":0.04,\"fade\":0.4},\n{\"file\":\"papel.mp3\",\"t\":439700,\"gain\":0.035,\"fade\":0.4},\n{\"file\":\"agua.mp3\",\"t\":649000,\"gain\":0.045,\"fade\":0.6}\n]\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/cues.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_01.log --busca \"FIN:|⛔\" --max 540"
   }
  ],
  "maquinas": 1,
