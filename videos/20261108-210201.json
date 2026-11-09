@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184017.3461776,
+ "actualizado": 1794184080.801781,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0953,
+  "deepseek": 0.0977,
   "gpt": 0.0488,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1441
+  "total": 0.1465
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_B.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_C.jpg clips/p044.mp4 clips/p045.mp4 clips/p046.mp4 clips/p047.mp4 clips/p048.mp4 clips/p049.mp4 clips/p050.mp4 clips/p051.mp4 clips/p052.mp4 clips/p053.mp4 clips/p054.mp4 clips/p055.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_D.jpg clips/p056.mp4 clips/p057.mp4 clips/p058.mp4 clips/p059.mp4 clips/p060.mp4 clips/p061.mp4 clips/p062.mp4 c"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/sh_C.jpg (12 cuadros, 4x3)\nhoja: qc/sh_D.jpg (12 cuadros, 4x3)\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_C.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "python3 - <<'PY'\nimport json, os\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nQ={\n \"p007\": [\"folded knit sweaters stack\", \"sweaters folded on shelf\"],\n \"p025\": [\"cardigan hanging on door\", \"woman folding cardigan hands\"],\n \"p026\": [\"hands touching neck close up\", \"woman hand at collar neck\"],\n \"p029\": [\"woman shoulder stretch garden\", \"older woman arms raised stretch\"],\n "
+  },
+  {
+   "k": "res",
+   "t": "33 clips a repedir\nPID:18896\n00:26:52 → 33 clips por buscar"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f clips/p022.mp4 clips/p022.json && cat > pedidos_03.json <<'EOF'\n[\n {\n  \"id\": \"p022\",\n  \"cara\": true,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, wrinkles, age spots, flyaway grey hairs, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"She stands in o"
+  },
+  {
+   "k": "res",
+   "t": "PID:19089\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 20; echo \"=== STOCK03 ===\"; tail -8 clips/stock_03.log; ls clips/*.mp4 | wc -l; echo \"=== AVATAR ===\"; tail -5 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "=== STOCK03 ===\n00:26:52 → 33 clips por buscar\n00:27:47 bajados 33/33\n00:27:47 FIN: 33/33 clips en clips/\n139\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix1.jpg clips/p007.mp4 clips/p025.mp4 clips/p026.mp4 clips/p029.mp4 clips/p033.mp4 clips/p034.mp4 clips/p041.mp4 clips/p043.mp4 clips/p046.mp4 clips/p048.mp4 clips/p049.mp4 clips/p050.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix2.jpg clips/p054.mp4 clips/p055.mp4 clips/p058.mp4 clips/p065.mp4 clips/p074.mp4 clips/p079.mp4 clips/p080"
   }
  ],
  "maquinas": 1,
