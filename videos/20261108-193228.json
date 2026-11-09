@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183412.5589015,
+ "actualizado": 1794183477.5063875,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0797,
+  "deepseek": 0.0802,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4719
+  "total": 0.4724
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'COMPLETED' (230 s):\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n00:04:03 estado: COMPLETED\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PR"
-  },
-  {
-   "k": "ai",
-   "t": "El trabajo terminó. Espero que baje y corte los 63 clips."
-  },
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"✓ avatar|Traceback|Error|falta\" --timeout 540; echo \"---\"; tail -8 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor.log 2>&1 & echo \"revisor pid: $!\"; sleep 8; tail -5 revisor.log"
+  },
+  {
+   "k": "res",
+   "t": "revisor pid: 32323"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gates/correcciones.txt --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -12 revisor.log; echo \"---\"; cat gates/correcciones.txt 2>/dev/null"
   }
  ],
  "maquinas": 2,
