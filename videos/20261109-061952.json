@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794207758.606775,
+ "actualizado": 1794207833.263571,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,98 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2245,
+  "deepseek": 0.2451,
   "gpt": 0.3753,
   "gpt_img": 156,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.5998
+  "total": 0.6204
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "PID=10653"
-  },
-  {
-   "k": "tool",
-   "t": "CONTROL FOTOS — revisión visual (hoja qc/hoja_fotos.jpg)\nFecha: 2026-11-09\n\nPrimera tanda: 3 variantes del gancho (p001_a/b/c) + 6 fotos de prueba variadas\n(p002 manos/cuello, p011 memoria 1968, p021 flat lay creativo, p050 plancha técnica,\np079 espejo con saco cara:true, p105 comprobación en la tienda).\n\nELEGIDA PARA p001: p001_c (close-up del cuello con la mano bajo el cuello de la camisa).\nMoti"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 20; tail -15 sonidos.log; echo ---; ls -la sfx/ 2>/dev/null; echo ---AVATAR---; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "ok vapor: vapor.mp3 (1 s, Steam swoosh) · vapor_2.mp3 (1 s, Steam powered mech suit activate)\nok tela: tela.mp3 (1 s, Cloth slide out) · tela_2.mp3 (1 s, Squishing a soggy cloth shirt)\nok papel: papel.mp3 (1 s, Paper slide) · papel_2.mp3 (1 s, Paper quick movement) · papel_3.mp3 (1 s, Quick paper crumple sound)\nok agua: agua.mp3 (4 s, Pouring water to mug) · agua_2.mp3 (1 s, Pouring water) · agua_"
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport json,re\nC=json.load(open('captions.json'))\ndef find(pat, n=3):\n    out=[]; rx=re.compile(pat,re.I)\n    txt=\" \".join(w['text'].strip() for w in C)\n    for i,w in enumerate(C):\n        if rx.search(w['text'].strip()):\n            ctx=\" \".join(x['text'].strip() for x in C[max(0,i-2):i+4])\n            out.append((w['startMs'],ctx))\n            if len(out)>=n: break\n    return ou"
-  },
-  {
-   "k": "res",
-   "t": "## hiss\n  478780  a small hiss, and that is\n## steam\n  80760  back who steamed the garments, marked\n  110680  cloud of steam, and the sound\n## towel\n  536700  A rolled towel works well about\n  544760  around the towel for a slow\n## 1976\n  68340  years, from 1976 until 2008, I\n## garden is quiet\n## tea is still warm\n## roll it over\n## lift, move\n## sheet of paper|photograph|note\n## spray starch"
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport json,re\nC=json.load(open('captions.json'))\nfor pat in [\"garden\",\"warm\",\"goodbye\",\"coming in\",\"thank you\",\"button it from\",\"marble\",\"vinegar\",\"starch\",\"hanger\"]:\n    hits=[(w['startMs'],\" \".join(x['text'].strip() for x in C[max(0,i-2):i+4])) for i,w in enumerate(C) if re.search(pat,w['text'],re.I)]\n    print(\"##\",pat, hits[-3:] if hits else \"—\")\nPY\nls fotos/*.png | wc -l; tai"
-  },
-  {
-   "k": "res",
-   "t": "## garden [(64420, 'and a garden that is most'), (937720, 'it for gardening. Before you buy'), (1270680, 'in. The garden is quiet this')]\n## warm [(1132580, 'take a warm shower. The steam'), (1265020, 'sweater feel warmer than three thick'), (1273580, 'is still warm. Small things done')]\n## goodbye [(1281060, 'carry yourself. Goodbye for now.')]\n## coming in —\n## thank you —\n## button it from —\n##"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"file\": \"papel.mp3\", \"t\": 68340, \"gain\": 0.04, \"fade\": 0.3},\n {\"file\": \"vapor.mp3\", \"t\": 478780, \"gain\": 0.06, \"fade\": 0.3},\n {\"file\": \"tela.mp3\", \"t\": 536700, \"gain\": 0.045, \"fade\": 0.4},\n {\"file\": \"pajaros_2.mp3\", \"t\": 1270680, \"gain\": 0.035, \"fade\": 0.5},\n {\"file\": \"agua.mp3\", \"t\": 1273580, \"gain\": 0.045, \"fade\": 0.5}\n]\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/cues.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "{\n \"title\": \"One Collar Press Makes a Plain Shirt Look Tailored\",\n \"description\": \"Hello, please come in. This morning I want to show you one small thing my mother taught me in the spring of 1968, when I was ten years old and she was helping at a little clothing shop on Teramachi Street. A boy's white shirt was lying on the pressing board with the collar curled at the tips, and she said it was not"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/meta.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"def absp\" -A6 /opt/estudio/repo/motor/tools/render.py; tail -2 avatar/it.log; tail -2 fotos/fotos_full.log"
-  },
-  {
-   "k": "res",
-   "t": "126:def absp(f): return f if (\":\" in f or f.startswith(\"/\")) else B + \"/\" + f\n127-# un mismo clip puede ir en pedazos (intro partida en tramos ≤ 6 s con fotos entre medio):\n128-# cada pedazo arranca en (startMs - clipStartMs) dentro del clip, así el lipsync sigue a la voz.\n129-# clipStartMs = dónde empieza ese clip en la voz; si no se da, el startMs más chico de ese archivo.\n130-OFF = {}\n131-SPL ="
-  },
-  {
-   "k": "tool",
-   "t": "# REPORTE — One Collar Press Makes a Plain Shirt Look Tailored · Kyoto Grace\n\n## Estado\nEn producción. Se actualiza al final con los números definitivos.\n\n## Qué se hizo\n- **Guion**: 19.176 caracteres (3.740 palabras), inglés, voz de Michiko. Pasa el validador de guion (18.000–23.000 para 20 min).\n  Estructura: gancho con objeto concreto (el cuello de la camisa), credencial (32 años en la tienda d"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/REPORTE.md (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_full.log --busca \"FIN:\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'FIN:' (420 s):\n07:01:07 batch f5d39714: finalizing 134/136\n07:01:37 batch f5d39714: completed 134/136\n07:01:54   ✗ p098: {\"message\": \"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 3ed925d1-ec8b-456d-86d5-9e41700d684a. safety_viol\n07:01:54   ✗ p133: {\"message\": \"Your request was rejected by t"
-  },
-  {
-   "k": "ai",
-   "t": "El lote llegó: 147/149 (2 rechazadas por el filtro). Armo las hojas de 12 y las reviso."
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport json,glob,os\nplan=[p['id'] for p in json.load(open('planos.json'))]\nhave={os.path.splitext(os.path.basename(f))[0] for f in glob.glob('fotos/*.png')+glob.glob('fotos/*.jpg')}\nfalt=[i for i in plan if i not in have]\nprint('planos',len(plan),'fotos',len(have),'faltan',falt)\n# ids en orden\nids=[i for i in plan if i in have]\nprint('total a revisar',len(ids))\nfor k in range(0,len"
-  },
   {
    "k": "res",
    "t": "planos 156 fotos 154 faltan ['p098', 'p133']\ntotal a revisar 154\nhoja 01: p001 p002 p003 p004 p005 p006 p007 p008 p009 p010 p011 p012\nhoja 02: p013 p014 p015 p016 p017 p018 p019 p020 p021 p022 p023 p024\nhoja 03: p025 p026 p027 p028 p029 p030 p031 p032 p033 p034 p035 p036\nhoja 04: p037 p038 p039 p040 p041 p042 p043 p044 p045 p046 p047 p048\nhoja 05: p049 p050 p051 p052 p053 p054 p055 p056 p057 p058 "
@@ -178,6 +94,90 @@
   {
    "k": "res",
    "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_04.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_05.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_06.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_07.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_08.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_09.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_10.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_11.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_12.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_13.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "Revisión completa: 154 fotos buenas. Rehago en una sola ronda las 5 con cara ajena/encuadre (p002, p050, p105, p127, p134) y los 2 prompts rechazados (p098, p133)."
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 1065,
+    "seg": 1139,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2075,
+    "seg": 2150,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2565,
+  "total_s": 2639,
   "avatar_s": 30,
-  "sin_avatar_s": 2534,
+  "sin_avatar_s": 2609,
   "cerrado": false
  }
 }
