@@ -2,7 +2,7 @@
 
 ## Estado final
 **Video terminado.** `final.mp4` de 604,00 s (10:04), 1920x1080, 30 fps, H.264 CRF 20, AAC 192k estéreo 48 kHz.
-`validar.py --etapa final` = OK. Revisor final: 21 cuadros, sin fallas.
+`validar.py --etapa final` = OK. Revisor final (2 pasadas, 21 cuadros cada una): sin fallas.
 
 ## Qué se hizo
 - **Guion** (inglés, 1.641 palabras): gancho con el número "dos minutos" y el objeto concreto (palangana, paño de algodón);
@@ -28,12 +28,16 @@
   ni de taza: se siguió sin ellas.
 - **Render**: 123 clips, 18.120 frames, 604,0 s; escala 4K antes del zoom; fundidos avatar 0,6 s / foto 0,3 s.
 - **QC**: guion, fotos, render y final validados; revisor final sin correcciones.
+- **Corrección propia**: en los clips de avatar A26-A62 el jardín de fondo salió con un mosaico de cuadrados de color
+  (artefacto de generación). Sin segunda llamada de avatar disponible, se aplicó un desenfoque suave y fijo a la franja
+  izquierda del fondo (0-30 %), con el borde sobre el marco del shoji, se rehizo el render de esos tramos y se reensambló.
+  Verificado a 470 s, 500 s y 603,5 s: sin mosaico.
 
 ## Gasto
 - Fotos: US$0,142 (9 de prueba + 58 del lote + 1 rehecha).
 - Avatar: ~US$0,25 (llamada única).
-- Revisor: US$0,001.
-- Total aproximado: **US$0,39**.
+- Revisor: US$0,003 (dos pasadas).
+- Total aproximado: **US$0,40**.
 
 ## Problemas y decisiones
 - p011 (baño) salió con una persona joven en shorts vista de espaldas: se rehízo en una sola ronda y quedó correcta.
