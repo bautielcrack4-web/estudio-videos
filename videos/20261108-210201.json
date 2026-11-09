@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794187205.4778469,
+ "actualizado": 1794187268.8363087,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1309,
+  "deepseek": 0.1323,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
-  "avatar": 0.0,
-  "total": 0.1827
+  "avatar": 0.25,
+  "total": 0.4341
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Updated task #4 status"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log render.log --busca \"hechos\" --max 540"
-  },
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'COMPLETED' (325 s):\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n01:20:21 estado: COMPLETED"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|⛔|Traceback\" --max 480"
   }
  ],
  "maquinas": 1,
