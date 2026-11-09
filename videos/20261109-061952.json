@@ -1,0 +1,92 @@
+{
+ "vid": "20261109-061952",
+ "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
+ "canal": "kyoto-grace",
+ "estado": "trabajando",
+ "actualizado": 1794205367.9639053,
+ "creado": 1794205367.7569036,
+ "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "pending",
+   "info": ""
+  }
+ ],
+ "costo": {
+  "deepseek": 0.0,
+  "gpt": 0.0,
+  "gpt_img": 0,
+  "whisper": 0.0,
+  "avatar": 0.0,
+  "total": 0.0
+ },
+ "eventos": [
+  {
+   "k": "user",
+   "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — One Collar Press Makes a Plain Shirt Look Tailored · Kyoto Grace\n\nHacé un video termi"
+  }
+ ],
+ "maquinas": 1,
+ "extrema": "1",
+ "ahorro": "",
+ "etapas": {
+  "filas": [
+   {
+    "k": "maquina",
+    "n": "Preparar la máquina",
+    "seg": 174,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "guion",
+    "n": "Guion",
+    "seg": 0,
+    "pasadas": 1,
+    "fin": false
+   }
+  ],
+  "total_s": 174,
+  "avatar_s": 0,
+  "sin_avatar_s": 174,
+  "cerrado": false
+ }
+}
