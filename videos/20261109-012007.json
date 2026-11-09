@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794199967.7441082,
+ "actualizado": 1794200030.628677,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0729,
+  "deepseek": 0.0735,
   "gpt": 0.007,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0799
+  "total": 0.0805
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "04:33:18 → 14 clips por buscar\n04:33:39 juez: 14/14 planos juzgados con visión · US$0.0021\n04:33:43 bajados 14/14\n04:33:43 FIN: 14/14 clips en clips/\n---fotos---\n04:33:02 batch 1d4b4f4b: in_progress 0/3\n04:33:32 batch 5dab0471: completed 3/3\n04:33:33 ✓ batch 5dab0471: 3 fotos bajadas, 0 fallidas (US$0.007)\n04:33:33 batch 1d4b4f4b: in_progress 0/3"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nfor i in ['p008','p011','p015','p024','p026','p027','p033','p034','p036','p038','p044','p045','p049','p055']:\n    d=json.load(open('clips/%s.json'%i)); j=d.get('juez') or [None,'']\n    print(i, j[0], '|', j[1], '|', d.get('buscar'))\n\"; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_5.jpg clips/p008.mp4 clips/p011.mp4 clips/p015.mp4 clips/p024.mp4 clips/p026.mp4"
-  },
   {
    "k": "res",
    "t": "p008 8 | snow falling on temple statue | snow japanese temple gate\np011 7 | ribbed knit closeup, collar-like | high neckline fabric closeup\np015 7 | hands holding sweater near rack | sweater drying rack\np024 9 | oversized sweater, mirror fitting | woman loose sweater mirror\np026 7 | woman tucking sweater into skirt | woman tucking sweater into skirt\np027 9 | hands measuring waist with tape | tailo"
@@ -174,6 +166,14 @@
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/meta.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_01.log --busca \"FIN:|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 04:53:09 batch 1d4b4f4b: in_progress 2/3 → hacé otra cosa útil y volvé a llamar"
   },
   {
    "k": "tool",
