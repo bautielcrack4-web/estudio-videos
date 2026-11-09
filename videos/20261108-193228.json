@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184172.4077067,
+ "actualizado": 1794184236.5064719,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -29,7 +29,7 @@
    "k": "avatar",
    "n": "Avatar",
    "st": "done",
-   "info": "63 clips"
+   "info": "64 clips"
   },
   {
    "k": "fotos",
@@ -51,106 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.119,
+  "deepseek": 0.1277,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5112
+  "total": 0.5199
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "for t in 600.5 601.5 602.5 603.5; do ffmpeg -v error -y -ss $t -i final.mp4 -frames:v 1 qc/end_$t.jpg; done; for t in 0.5 2 3.5; do ffmpeg -v error -y -ss $t -i avatar/A62.mp4 -frames:v 1 qc/a62_$t.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_end.jpg qc/end_600.5.jpg qc/end_601.5.jpg qc/end_602.5.jpg qc/end_603.5.jpg qc/a62_0.5.jpg qc/a62_2.jpg qc/a62_3.5.jpg"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_end.jpg (7 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_end.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "El glitch está en el tramo final de A62 (~últimos 1,5 s). Lo acoto para cortar antes."
-  },
-  {
-   "k": "tool",
-   "t": "for t in 2.4 2.7 3.0 3.2; do ffmpeg -v error -y -ss $t -i avatar/A62.mp4 -frames:v 1 qc/a62_$t.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_a62.jpg qc/a62_2.4.jpg qc/a62_2.7.jpg qc/a62_3.0.jpg qc/a62_3.2.jpg"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_a62.jpg (4 cuadros, 4x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_a62.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_3.5.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "for t in 3.15 3.25 3.35; do ffmpeg -v error -y -ss $t -i avatar/A62.mp4 -frames:v 1 qc/a62_$t.jpg; done; echo ok"
-  },
-  {
-   "k": "res",
-   "t": "ok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_3.15.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_3.0.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_2.7.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_2.4.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/a62_0.5.jpg\"}"
@@ -178,6 +86,98 @@
   {
    "k": "res",
    "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A60.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A40.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A30.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A1.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "for a in A12 A16 A20 A24 A26 A28; do ffmpeg -v error -y -ss 1.5 -i avatar/$a.mp4 -frames:v 1 qc/chk_$a.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_chk2.jpg qc/chk_A12.jpg qc/chk_A16.jpg qc/chk_A20.jpg qc/chk_A24.jpg qc/chk_A26.jpg qc/chk_A28.jpg"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_chk2.jpg (6 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A20.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A24.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A26.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/f_011.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/f_012.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "El glitch es de fondo (jardín) desde ~A26 y solo se nota a pantalla completa; en pantalla partida queda oculto. Pruebo un recorte limpio en un clip para evaluar si conviene."
+  },
+  {
+   "k": "tool",
+   "t": "ffprobe -v error -show_entries stream=width,height,codec_name,nb_frames -select_streams v -of default=noprint_wrappers=1 avatar/A60.mp4; mkdir -p avatar/testcrop; ffmpeg -v error -y -i avatar/A60.mp4 -vf \"crop=iw*0.70:ih:iw*0.30:0,scale=1920:1080:flags=lanczos\" -c:v libx264 -crf 18 -pix_fmt yuv420p -an avatar/testcrop/A60_crop.mp4 && ffmpeg -v error -y -ss 1.5 -i avatar/testcrop/A60_crop.mp4 -fram"
+  },
+  {
+   "k": "res",
+   "t": "codec_name=h264\nwidth=832\nheight=464\nnb_frames=133\nok"
   }
  ],
  "maquinas": 2,
