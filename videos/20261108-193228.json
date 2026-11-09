@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183919.3751578,
+ "actualizado": 1794183982.4171062,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0802,
+  "deepseek": 0.0832,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4724
+  "total": 0.4754
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"✓ avatar|Traceback|Error|falta\" --timeout 540; echo \"---\"; tail -8 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 63 archivos (20 s)\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n00:04:03 estado: COMPLETED\n✓ 63 clips cortados · desfase corregido (máx 200 ms)\n63"
-  },
-  {
-   "k": "ai",
-   "t": "63 clips listos. Rehago los tramos de avatar y ensamblo."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_av.log 2>&1 & echo \"pid: $!\"; sleep 10; tail -3 render_av.log"
-  },
-  {
-   "k": "res",
-   "t": "pid: 24704"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_av.log --busca \"hechos 123|Traceback|Error\" --timeout 540; echo \"---\"; tail -4 render_av.log"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'hechos 123' (70 s):\nclips=123 frames=18120 (604.00s)\nhechos 123\n---\nclips=123 frames=18120 (604.00s)\nhechos 123"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar.jpg avatar/A0.mp4 avatar/A8.mp4 avatar/A16.mp4 avatar/A24.mp4 avatar/A32.mp4 avatar/A40.mp4 avatar/A50.mp4 avatar/A62.mp4"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_avatar.jpg (8 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_avatar.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "Avatar consistente y sin glitches. Ensamblo el video final."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log 2>&1 & echo \"assemble pid: $!\"; sleep 10; tail -4 assemble.log"
-  },
   {
    "k": "res",
    "t": "assemble pid: 28947"
@@ -178,6 +126,58 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gates/correcciones.txt --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -12 revisor.log; echo \"---\"; cat gates/correcciones.txt 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\n… sigue esperando tras 540 s · log: (21 cuadros revisados, US$0.001) · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar\n---\n✓ el revisor no encontró fallas.\n(21 cuadros revisados, US$0.001)\n---"
+  },
+  {
+   "k": "ai",
+   "t": "El revisor no encontró fallas. Reviso los cuadros finales y cierro los gates."
+  },
+  {
+   "k": "tool",
+   "t": "ls qc/ | head -30; echo \"---\"; ls qc/f_*.jpg | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "f_001.jpg\nf_002.jpg\nf_003.jpg\nf_004.jpg\nf_005.jpg\nf_006.jpg\nf_007.jpg\nf_008.jpg\nf_009.jpg\nf_010.jpg\nf_011.jpg\nf_012.jpg\nf_013.jpg\nf_014.jpg\nf_015.jpg\nf_016.jpg\nf_017.jpg\nf_018.jpg\nf_019.jpg\nf_020.jpg\nf_021.jpg\nfinal_info.json\nhoja_A.jpg\nhoja_B.jpg\nhoja_C.jpg\nhoja_D.jpg\nhoja_E.jpg\nhoja_F.jpg\nhoja_avatar.jpg\nhoja_fotos.jpg\n---\n21"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final1.jpg qc/f_001.jpg qc/f_002.jpg qc/f_003.jpg qc/f_004.jpg qc/f_005.jpg qc/f_006.jpg qc/f_007.jpg qc/f_008.jpg qc/f_009.jpg qc/f_010.jpg qc/f_011.jpg && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final2.jpg qc/f_012.jpg qc/f_013.jpg qc/f_014.jpg qc/f_015.jpg qc/f_016.jpg qc/f_017.jpg qc/f_018.jpg qc/f_019.jpg qc/f_020.jpg qc/f_021."
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_final1.jpg (11 cuadros, 4x3)\nhoja: qc/hoja_final2.jpg (10 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_final1.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -y -ss 85 -i final.mp4 -frames:v 1 qc/frame_85.jpg && ffmpeg -v error -y -ss 296 -i final.mp4 -frames:v 1 qc/frame_296.jpg && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_split.jpg qc/frame_85.jpg qc/frame_296.jpg && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_split.jpg (2 cuadros, 2x1)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_split.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "La pantalla partida funciona (avatar + foto, alternando lado). Escribo las notas de control final."
   }
  ],
  "maquinas": 2,
