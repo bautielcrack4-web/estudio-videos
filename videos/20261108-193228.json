@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794185071.3101482,
+ "actualizado": 1794185135.438783,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1442,
+  "deepseek": 0.1471,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5364
+  "total": 0.5393
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "procesados: 37\ncodec_type=video\nwidth=832\nheight=464\nr_frame_rate=25/1\nnb_frames=133\ncodec_type=audio\nr_frame_rate=0/0\nnb_frames=230"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_fix.log 2>&1 & echo \"pid: $!\"; sleep 5; tail -2 render_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "pid: 40294"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_fix.log --busca \"hechos 123|Traceback|Error\" --timeout 540; echo \"---\"; tail -3 render_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'hechos 123' (40 s):\nclips=123 frames=18120 (604.00s)\nhechos 123\n---\nclips=123 frames=18120 (604.00s)\nhechos 123"
-  },
-  {
-   "k": "tool",
-   "t": "python -c \"\nimport json\np=json.load(open('plan.json'))\nprint(type(p), len(p))\nprint(p[0] if isinstance(p,list) else list(p)[:5])\n\" 2>/dev/null | head -5; ls segments/ | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "<class 'dict'> 2\n['voice_dur', 'segments']\n247"
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'EOF'\nimport json\np=json.load(open('plan.json'))\nsegs=p['segments']\nfor s in segs:\n    t=s if isinstance(s,dict) else {}\n    print(t) if False else None\nprint(segs[0])\nEOF"
-  },
   {
    "k": "res",
    "t": "{'kind': 'av', 't0': 0.0, 't1': 4.7, 'file': '/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/A0.mp4'}"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor2.log --busca \"✓ el revisor|correcciones|Traceback|Error\" --timeout 540; echo \"---\"; tail -6 revisor2.log; ls -la gates/correcciones.txt 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n✓ el log tiene '✓ el revisor' (50 s):\n✓ el revisor no encontró fallas.\n(21 cuadros revisados, US$0.002)\n---\n✓ el revisor no encontró fallas.\n(21 cuadros revisados, US$0.002)"
+  },
+  {
+   "k": "ai",
+   "t": "Segunda revisión limpia. Actualizo las notas y el REPORTE."
+  },
+  {
+   "k": "tool",
+   "t": "cat >> gates/final_auto.txt <<'EOF'\n\nSEGUNDA PASADA (corrección propia)\n- Detecté un glitch de generación en el fondo (jardín) de los clips de avatar A26-A62: las hojas se veían como\n  un mosaico de cuadrados de color.\n- Como no hay segunda llamada de avatar, apliqué un desenfoque suave y fijo sólo a la franja izquierda del fondo\n  (0-30 % del cuadro) de esos 37 clips, con el borde sobre el marco "
+  },
+  {
+   "k": "res",
+   "t": "reporte actualizado\n  ✓ REPORTE.md\n  ✓ sonido: cues.json con sus archivos\nRESULTADO: OK"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la final.mp4 meta.json REPORTE.md; ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,r_frame_rate -of default=noprint_wrappers=1 final.mp4 | head -8"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion      4221 Nov  9 00:44 REPORTE.md\n-rw-rw-rw-+ 1 sesion sesion 326744330 Nov  9 00:43 final.mp4\n-rw-rw-rw-+ 1 sesion sesion       714 Nov  8 22:56 meta.json\ncodec_name=h264\nwidth=1920\nheight=1080\nr_frame_rate=30/1\ncodec_name=aac\nr_frame_rate=0/0\nduration=604.000000"
+  },
+  {
+   "k": "ai",
+   "t": "Seguí y cerré una última revisión de calidad que valió la pena.\n\n**Encontré y corregí un glitch:** los clips de avatar A26–A62 (desde ~4 min) tenían el jardín de fondo convertido en un mosaico de cuadrados de color. Como no hay segunda llamada de avatar, apliqué un desenfoque suave sólo a la franja izquierda del fondo (0–30 %), con el borde sobre el marco del shoji — se lee como profundidad de cam"
+  },
+  {
+   "k": "end",
+   "t": "Seguí y cerré una última revisión de calidad que valió la pena.\n\n**Encontré y corregí un glitch:** los clips de avatar A26–A62 (desde ~4 min) tenían el jardín de fondo convertido en un mosaico de cuadrados de color. Como no hay segunda llamada de avatar, apliqué un desenfoque suave sólo a la franja izquierda del fondo (0–30 %), con el borde sobre el marco del shoji — se lee como profundidad de cam"
   }
  ],
  "maquinas": 2,
