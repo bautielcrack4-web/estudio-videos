@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794191689.1759694,
+ "actualizado": 1794191752.9462402,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2218,
+  "deepseek": 0.2253,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5236
+  "total": 0.5271
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Command running in background with ID: bgo02ox6x. Output is being written to: /tmp/claude-1002/-opt-estudio-datos-videos-10-tops-i-gave-away-at-68-what-i-wear-in/a2b588b1-04ed-4775-a95e-3a7b27e56aa9/tasks/bgo02ox6x.output. You will be notified when it completes. To check interim output, use Read on that file path."
-  },
-  {
-   "k": "tool",
-   "t": "{\"task_id\": \"bgo02ox6x\", \"block\": true, \"timeout\": 300000}"
-  },
-  {
-   "k": "res",
-   "t": "<retrieval_status>success</retrieval_status>\n\n<task_id>bgo02ox6x</task_id>\n\n<task_type>local_bash</task_type>\n\n<status>completed</status>\n\n<exit_code>0</exit_code>\n\n<output>\nclips=257 frames=37498 (1249.93s)\nhechos 257\n</output>"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > assemble2.log 2>&1 & echo \"PID:$!\"; sleep 5; echo started"
-  },
   {
    "k": "res",
    "t": "PID:74479\nstarted"
@@ -174,6 +158,22 @@
   {
    "k": "res",
    "t": "---\n-rw-rw-rw-+ 1 sesion sesion 716155025 Nov  9 02:10 final.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble2.log --busca \"final:\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ps -o pid,etime -p 74479 2>/dev/null || echo \"assemble terminado\"; ls -la video_noaudio.mp4 final.mp4 2>/dev/null; ps -o pid,etime,cmd -C ffmpeg | head -2 | cut -c1-120"
+  },
+  {
+   "k": "res",
+   "t": "    PID     ELAPSED\n  74479       10:30\n-rw-rw-rw-+ 1 sesion sesion 716155025 Nov  9 02:10 final.mp4\n-rw-rw-rw-+ 1 sesion sesion 685693861 Nov  9 02:09 video_noaudio.mp4\n    PID     ELAPSED CMD\n  78715       01:16 ffmpeg -v error -y -i /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/segments/01"
   },
   {
    "k": "tool",
