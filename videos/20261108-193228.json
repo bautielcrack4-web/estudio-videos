@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183285.5098,
+ "actualizado": 1794183349.1016548,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,42 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0767,
+  "deepseek": 0.0785,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4689
+  "total": 0.4707
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 23:20:55 estado: IN_PROGRESS · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n      41:20"
-  },
-  {
-   "k": "ai",
-   "t": "El avatar pasó a IN_PROGRESS. Espero los clips."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -4 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 23:20:55 estado: IN_PROGRESS · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n0"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -5 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 23:20:55 estado: IN_PROGRESS · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n0"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -6 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l; ps -p 4890 -o etime= --no-header"
-  },
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: 23:20:55 estado: IN_PROGRESS · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n0\n   01:08:30"
@@ -178,6 +150,34 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -6 assemble.log; ls -la final.mp4 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n… sigue esperando tras 540 s · log: (vacío) · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar\n---"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 28947 -o pid,etime,stat,cmd --no-headers || echo \"no process\"; ls -la assemble.log; wc -c assemble.log; ls -la segments/ | tail -3; ls qc/ | head"
+  },
+  {
+   "k": "res",
+   "t": "  28947       09:17 S    python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-\n-rw-rw-rw-+ 1 sesion sesion 0 Nov  9 00:06 assemble.log\n0 assemble.log\n-rw-rw-rw-+  1 sesion sesion 1957735 Nov  9 00:05 0122.mp4\n-rw-rw-rw-+  1 sesion sesion     113 Nov  9 00:05 0122.mp4.src\n-rw-rw-rw-+  1 sesion sesion    2571 Nov  9 00:04 xf.json\nhoja_A.j"
+  },
+  {
+   "k": "tool",
+   "t": "ps --ppid 28947 -o pid,etime,stat,cmd --no-headers; echo \"---\"; ps aux | grep -E \"ffmpeg|assemble\" | grep -v grep | head -8"
+  },
+  {
+   "k": "res",
+   "t": "<persisted-output>\nOutput too large (36.7KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-a-2-minute-evening-hand-ritual-for-warm-/68a4ddb7-104b-4c46-864f-133623abac44/tool-results/blgn2neaz.txt\n\nPreview (first 2KB):\n  31407       05:47 Sl   ffmpeg -v error -y -i /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/xf_tmp/c000.mp4 -i /opt/estudio"
+  },
+  {
+   "k": "ai",
+   "t": "El ffmpeg está en la pasada de fundidos (5 bloques). Espero."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -8 assemble.log; ls -la final.mp4 2>/dev/null"
   }
  ],
  "maquinas": 2,
