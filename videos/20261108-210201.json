@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184475.1348217,
+ "actualizado": 1794184538.4363685,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -35,13 +35,13 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "done",
-   "info": "16 fotos"
+   "info": "17 fotos"
   },
   {
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "10 segmentos"
+   "info": "20 segmentos"
   },
   {
    "k": "qc",
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1088,
-  "gpt": 0.0488,
-  "gpt_img": 19,
+  "deepseek": 0.1124,
+  "gpt": 0.0518,
+  "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1576
+  "total": 0.1642
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "PID:19089\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 20; echo \"=== STOCK03 ===\"; tail -8 clips/stock_03.log; ls clips/*.mp4 | wc -l; echo \"=== AVATAR ===\"; tail -5 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "=== STOCK03 ===\n00:26:52 → 33 clips por buscar\n00:27:47 bajados 33/33\n00:27:47 FIN: 33/33 clips en clips/\n139\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix1.jpg clips/p007.mp4 clips/p025.mp4 clips/p026.mp4 clips/p029.mp4 clips/p033.mp4 clips/p034.mp4 clips/p041.mp4 clips/p043.mp4 clips/p046.mp4 clips/p048.mp4 clips/p049.mp4 clips/p050.mp4\npython /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix2.jpg clips/p054.mp4 clips/p055.mp4 clips/p058.mp4 clips/p065.mp4 clips/p074.mp4 clips/p079.mp4 clips/p080"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/sh_fix1.jpg (12 cuadros, 4x3)\nhoja: qc/sh_fix2.jpg (12 cuadros, 4x3)\nhoja: qc/sh_fix3.jpg (9 cuadros, 4x3)\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_fix1.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_fix2.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe fotos/p022.png --max 300"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe fotos/p022.png (1.2 MB, 250 s)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/fotos/p022.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "sed -n '150,280p' /opt/estudio/repo/motor/tools/render.py"
+  },
+  {
+   "k": "res",
+   "t": "def kind(p, isv):\r\n    q = p.replace(\"\\\\\", \"/\")\r\n    return \"av\" if \"/avatar/\" in q else (\"clip\" if isv else \"foto\")\r\njson.dump({\"voice_dur\": round(AUDIO_MS / 1000, 3),\r\n           \"segments\": [dict({\"kind\": kind(p, v), \"t0\": round(a / 1000, 3), \"t1\": round(b / 1000, 3), \"file\": p}, **({\"split\": True} if (p, a) in SPL else {})) for p, a, b, v in out]},\r\n          open(B + \"/plan.json\", \"w\", encodi"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/planos.py . --shots && ls clips/*.mp4 | wc -l && ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "✓ shots_timed.json: 156 planos, 156 fotos distintas (cero repetidas). Seguí con render.py.\n139\n17"
+  },
+  {
+   "k": "tool",
+   "t": "cat > gates/render_auto.txt <<'EOF'\nRevisión del render de prueba (10 segmentos, qc/hoja_render.jpg):\n- Lo primero es el avatar (cuadro fijo con cartel «Esperando avatar» porque el clip todavía no había llegado). Cuando llegue A0.mp4 se re-renderiza.\n- El b-roll alterna cada ~4-9 s y el zoom/encuadre se ve estable; los clips se recortan bien a 1920x1080.\n- p001 (hero, Michiko con el cuello alto) e"
   }
  ],
  "maquinas": 1,
