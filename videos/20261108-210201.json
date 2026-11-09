@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794190246.5265574,
+ "actualizado": 1794190314.9004207,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1775,
+  "deepseek": 0.1809,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4793
+  "total": 0.4827
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "101 clips\nfin\n1920,1080"
-  },
-  {
-   "k": "tool",
-   "t": "for f in A0 A75 A100; do ffmpeg -v error -y -ss 1.0 -i avatar/$f.mp4 -frames:v 1 qc/${f}_c.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar_clean.jpg qc/A0_c.jpg qc/A75_c.jpg qc/A100_c.jpg"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_avatar_clean.jpg (3 cuadros, 3x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_avatar_clean.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > revisor.log 2>&1 & echo \"PID:$!\"; sleep 20; tail -10 revisor.log"
+  },
+  {
+   "k": "res",
+   "t": "PID:63617"
+  },
+  {
+   "k": "tool",
+   "t": "sed -n '1,80p' /opt/estudio/repo/motor/tools/revisor.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"REVISOR FINAL (no frena): saca cuadros de final.mp4 y los mira con visión (deepseek-flash, menos de US$0,01 por video, con tu clave de DeepSeek).\n   python <APP>/tools/revisor.py <carpeta>\n1. Deja qc/f_001.jpg, f_002.jpg… (un cuadro cada 30 s) y qc/final_info.json. Mide los huecos negros ≥ 0,5 s (sin IA).\n2. Busca fallas claras: cara o cuerpo deformes, glitch del avatar,"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe gates/revisor_final.json --max 480"
   }
  ],
  "maquinas": 1,
