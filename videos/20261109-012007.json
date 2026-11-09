@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794201038.0016806,
+ "actualizado": 1794201102.7722263,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -28,8 +28,8 @@
   {
    "k": "avatar",
    "n": "Avatar",
-   "st": "skip",
-   "info": ""
+   "st": "done",
+   "info": "56 clips"
   },
   {
    "k": "fotos",
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0746,
+  "deepseek": 0.0761,
   "gpt": 0.007,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3316
+  "total": 0.3331
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "[\n{\"id\":\"p026\",\"muestra\":\"a woman at a mirror pushing her whole sweater into her waistband\",\"buscar\":[\"sweater tucked into skirt\",\"hands tucking knit waist\",\"woman adjusting sweater waist mirror\"]},\n{\"id\":\"p027\",\"muestra\":\"hands measuring down from the hip bone with a soft tape\",\"buscar\":[\"tailor tape measure waist\",\"measuring tape hip clothes\",\"hands at hip bone woman\"]},\n{\"id\":\"p034\",\"muestra\":\""
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_04.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "for i in p026 p027 p034 p038; do rm -f clips/$i.mp4 clips/$i.json; done; python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_04.json 2>&1 | tail -6; python3 -c \"\nimport json\nfor i in ['p026','p027','p034','p038']:\n    j=json.load(open('clips/%s.json'%i)).get('juez')"
-  },
-  {
-   "k": "res",
-   "t": "04:34:15 → 4 clips por buscar\n04:34:23 juez: 4/4 planos juzgados con visión · US$0.0006\n04:34:24 bajados 4/4\n04:34:24 FIN: 4/4 clips en clips/\np026 4 | woman adjusting waist, generic\np027 9 | tape around hip bone close-up\np034 6 | knit hem texture close up\np038 7 | white collar under knit sleeve\n04:33:32 batch 5dab0471: completed 3/3\n04:33:33 ✓ batch 5dab0471: 3 fotos bajadas, 0 fallidas (US$0.007"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_clips_7.jpg\"}"
@@ -178,6 +158,26 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_01.log --busca \"FIN:|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 04:53:09 batch 1d4b4f4b: in_progress 2/3 → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la fotos/*.png; echo \"---\"; tail -3 fotos/fotos_01.log"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion 1148458 Nov  9 04:33 fotos/p002.png\n-rw-rw-rw-+ 1 sesion sesion 1213007 Nov  9 04:33 fotos/p018.png\n-rw-rw-rw-+ 1 sesion sesion 1296842 Nov  9 04:33 fotos/p028.png\n---\n04:33:33 batch 1d4b4f4b: in_progress 0/3\n04:52:38 batch 1d4b4f4b: in_progress 1/3\n04:53:09 batch 1d4b4f4b: in_progress 2/3"
+  },
+  {
+   "k": "ai",
+   "t": "The face batch is slow (2/3). I'll queue the second photo batch now so it submits as soon as the lock frees."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/pedidos_02.json > fotos/fotos_02.log 2>&1 & echo \"PID fotos2: $!\"; sleep 8; tail -6 fotos/fotos_02.log; ls fotos/*.json | wc -l"
   }
  ],
  "maquinas": 1,
