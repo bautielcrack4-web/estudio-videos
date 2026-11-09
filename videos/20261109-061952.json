@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794211211.0719955,
+ "actualizado": 1794211274.538775,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3219,
+  "deepseek": 0.3259,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.7137
+  "total": 0.7177
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "tail -10 avatar/it.log; echo \"---previo---\"; tail -6 render_previo.log; echo \"seg=$(ls segments/[0-9]*.mp4 | wc -l)\"; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|avatar_it\" | head -4"
-  },
-  {
-   "k": "res",
-   "t": "06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS\n---previo---\nclips=228 frames=38458 (1281.93s)\nhechos 228\nseg=143\n   7852 python          python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo"
-  },
-  {
-   "k": "tool",
-   "t": "cat avatar/it_llamada.json; echo \"---\"; grep -n \"estado\\|IN_PROGRESS\\|sleep\\|timeout\\|run\" /opt/estudio/repo/motor/tools/avatar_it.py | sed -n '1,40p'"
-  },
   {
    "k": "res",
    "t": "{\n \"estado\": \"corriendo\",\n \"t\": \"2026-11-09 06:44:23\",\n \"enviado\": 1794206663.8,\n \"ventanas\": [\n  \"avatar/A0.mp4\",\n  \"avatar/A1.mp4\",\n  \"avatar/A2.mp4\",\n  \"avatar/A3.mp4\",\n  \"avatar/A4.mp4\",\n  \"avatar/A5.mp4\",\n  \"avatar/A6.mp4\",\n  \"avatar/A7.mp4\",\n  \"avatar/A8.mp4\",\n  \"avatar/A9.mp4\",\n  \"avatar/A10.mp4\",\n  \"avatar/A11.mp4\",\n  \"avatar/A12.mp4\",\n  \"avatar/A13.mp4\",\n  \"avatar/A14.mp4\",\n  \"avatar/A15."
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"render.py\\|assemble.py\\|previo\\|avatar_it\\|final.mp4\" /opt/estudio/repo/motor/nube.py | head -40"
+  },
+  {
+   "k": "res",
+   "t": "5:que lee el panel. Lee los mensajes del panel (mensajes/<vid>.json). Al terminar sube final.mp4 a un Release.\n287:                 (\"extrema\", \"Edición extrema\"), (\"previo\", \"Render sin avatar\"), (\"render\", \"Render\"), (\"armado\", \"Armado\"), (\"revisor\", \"Revisor\"), (\"correcciones\", \"Correcciones\"), (\"entrega\", \"Entrega\")]\n437:    \"\"\"Arranca extrema.py en segundo plano MIENTRAS se espera el avatar; "
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --log avatar/it.log --busca \"fallo|FAILED|TIMED_OUT|Traceback\" --max 540"
   }
  ],
  "maquinas": 1,
@@ -223,7 +223,7 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 4517,
+    "seg": 4580,
     "pasadas": 1,
     "fin": false
    },
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 2306,
+    "seg": 2370,
     "pasadas": 1,
     "fin": false
    },
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 6017,
+  "total_s": 6081,
   "avatar_s": 30,
-  "sin_avatar_s": 5987,
+  "sin_avatar_s": 6050,
   "cerrado": false
  }
 }
