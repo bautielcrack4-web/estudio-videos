@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794211147.9026961,
+ "actualizado": 1794211211.0719955,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -59,10 +59,6 @@
   "total": 0.7137
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
-  },
   {
    "k": "tool",
    "t": "tail -10 avatar/it.log; echo \"---previo---\"; tail -6 render_previo.log; echo \"seg=$(ls segments/[0-9]*.mp4 | wc -l)\"; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|avatar_it\" | head -4"
@@ -178,6 +174,10 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
   }
  ],
  "maquinas": 1,
@@ -223,7 +223,7 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 4454,
+    "seg": 4517,
     "pasadas": 1,
     "fin": false
    },
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 2243,
+    "seg": 2306,
     "pasadas": 1,
     "fin": false
    },
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 5954,
+  "total_s": 6017,
   "avatar_s": 30,
-  "sin_avatar_s": 5924,
+  "sin_avatar_s": 5987,
   "cerrado": false
  }
 }
