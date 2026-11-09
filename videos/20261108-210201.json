@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794192837.3726165,
+ "actualizado": 1794192901.0065253,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2305,
+  "deepseek": 0.2339,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5323
+  "total": 0.5357
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_C.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_D.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -174,6 +158,22 @@
   {
    "k": "res",
    "t": "root        3831  0.0  0.0  12672  5892 ?        Ss   00:03   0:00 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL\nsesion      3833  0.6  2.5 74363808 410820 ?     Sl   00:03   1:06 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --disallow\nsesion     74479  0.0  0.0  18208 11828 ?        S    02:25   0:00 python /opt"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble2.log --busca \"final:\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la video_noaudio.mp4 final.mp4 2>/dev/null; ps aux | grep -E \"[f]fmpeg|[a]ssemble\" | cut -c1-110"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion 716155025 Nov  9 02:10 final.mp4\n-rw-rw-rw-+ 1 sesion sesion 408420400 Nov  9 02:54 video_noaudio.mp4\nroot        3831  0.0  0.0  12672  5892 ?        Ss   00:03   0:00 sudo -n -H -u sesion -- env -i ESTUDIO_DATA\nsesion      3833  0.6  2.5 74363808 417528 ?     Sl   00:03   1:09 /opt/hostedtoolcache/node/20.20.2/x64/bin/c\nsesion     74479  0.0  0.0  18208 11828 ?       "
   },
   {
    "k": "tool",
