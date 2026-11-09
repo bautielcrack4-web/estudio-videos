@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794206938.5614552,
+ "actualizado": 1794207001.411554,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "1 fotos"
+   "info": "6 fotos"
   },
   {
    "k": "armado",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1321,
-  "gpt": 0.0094,
-  "gpt_img": 3,
+  "deepseek": 0.1335,
+  "gpt": 0.0213,
+  "gpt_img": 8,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1415
+  "total": 0.1548
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "Encontré el bug: mezclaba segundos y milisegundos en el generador. Lo corrijo."
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Genera avatar_ranges.json a partir de captions.json, cortando SIEMPRE en pausas del habla.\nPatron: 4 ventanas a pantalla completa (<=6 s) + 1 ventana en pantalla partida (7-12 s),\nhuecos de b-roll de ~7 s (1 foto) y ~10-11 s (2 fotos). Avatar <= 560 s.\n\"\"\"\nimport json, subprocess\n\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\"\nW = json.load(open"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gen_avatar_plan.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "timeout 120 python gen_avatar_plan.py"
-  },
   {
    "k": "res",
    "t": "ventanas: 109 (split 22) · avatar 558.2s = 39.6% · reel 590.9s (tope 590)\nduracion: 1410.1s · b-roll 851.9s · hueco max 11.5s · min 6.6s\nfotos b-roll estimadas: 153 + 22 split = 175\nprimera: {'file': 'avatar/A0.mp4', 'frame': 'refs/avatar.png', 'startMs': 0, 'endMs': 4460, 'tipo_plan': 'full'}\nultima: {'file': 'avatar/A108.mp4', 'frame': 'refs/avatar.png', 'startMs': 1395878, 'endMs': 1403178, 'ti"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python escenas_test.py && python /opt/estudio/repo/motor/tools/fotos.py . pedidos_test.json 2>&1 | head -20"
+  },
+  {
+   "k": "res",
+   "t": "✓ pedidos_test.json: 6 pedidos\n06:44:46 → batch batch_6af16bdeb0dc81908fc285907442cb9c · 5 fotos · sin referencia · low 1088x608\n06:44:47 → batch batch_6af16bdf6c248190919d8460d160209b · 1 fotos · con la cara del presentador · low 1088x608\n06:44:47 batch 7442cb9c: validating 0/0\n06:44:47 batch d160209b: validating 0/0\n06:45:17 batch 7442cb9c: in_progress 0/5\n06:45:17 batch d160209b: in_progress 0/"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_test.json > fotos/fotos_test.log 2>&1 & echo \"PID=$!\"; sleep 2; tail -4 fotos/fotos_test.log; echo ---AVATAR---; tail -6 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "PID=9453\n06:49:23 batch 7442cb9c: completed 5/5\n06:49:24 ✓ batch 7442cb9c: 5 fotos bajadas, 0 fallidas (US$0.012)\n06:49:24 batch d160209b: in_progress 0/1\n---AVATAR---\n06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS"
+  },
+  {
+   "k": "ai",
+   "t": "Mientras corre el Batch, escribo el resto de las escenas (156 fotos, un prompt por plano). Voy por bloques."
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 244,
+    "seg": 307,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1255,
+    "seg": 1318,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1745,
+  "total_s": 1807,
   "avatar_s": 30,
-  "sin_avatar_s": 1714,
+  "sin_avatar_s": 1777,
   "cerrado": false
  }
 }
