@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183691.0319624,
+ "actualizado": 1794183754.383722,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -34,14 +34,14 @@
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "active",
-   "info": "7 fotos"
+   "st": "done",
+   "info": "16 fotos"
   },
   {
    "k": "armado",
    "n": "Armado",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "10 segmentos"
   },
   {
    "k": "qc",
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0678,
-  "gpt": 0.0281,
-  "gpt_img": 10,
+  "deepseek": 0.0707,
+  "gpt": 0.0488,
+  "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0959
+  "total": 0.1195
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "planos: 156 fotos: 16 stock: 140 mapeados: 140\nsin mapear: []\nsobran: []\n✓ stock_01.json"
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p clips && nohup python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/stock_01.json > clips/stock.log 2>&1 & echo \"PID:$!\"; sleep 15; tail -8 clips/stock.log"
-  },
-  {
-   "k": "res",
-   "t": "PID:7240\n00:14:11 → 140 clips por buscar"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\n  \"id\": \"p002\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The open tansu drawer is almost empty now: a few tops still folded inside, a paper bag beside it, and her hands are lifting t"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_02.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "echo \"=== FOTOS ===\"; tail -6 fotos/fotos_01.log; echo \"=== STOCK ===\"; tail -6 clips/stock.log; echo \"=== AVATAR ===\"; tail -6 avatar/it.log; echo \"=== archivos ===\"; ls fotos/*.png 2>/dev/null | wc -l; ls clips/*.mp4 2>/dev/null | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "=== FOTOS ===\n00:13:36 batch 76277b87: in_progress 0/4\n00:13:36 batch 8e630f0c: validating 0/0\n00:14:06 batch 76277b87: in_progress 0/4\n00:14:07 batch 8e630f0c: in_progress 0/5\n00:14:37 batch 76277b87: in_progress 0/4\n00:14:37 batch 8e630f0c: in_progress 0/5\n=== STOCK ===\n00:14:11 → 140 clips por buscar\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 9740"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"id\": \"tela\", \"tags\": [\"cloth\", \"fabric\"], \"q\": \"cloth rustle\", \"min\": 0.5, \"max\": 5},\n {\"id\": \"papel\", \"tags\": [\"paper\"], \"q\": \"paper page\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"te\", \"tags\": [\"water\", \"pour\"], \"q\": \"tea pour\", \"min\": 1, \"max\": 6},\n {\"id\": \"cajon\", \"tags\": [\"drawer\", \"wood\"], \"q\": \"drawer open\", \"min\": 0.5, \"max\": 3},\n {\"id\": \"percha\", \"tags\": [\"hanger\", \"clothes\"], \"q\": \"hanger cl"
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"fotos/*.png\" 16 --max 420"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 16 archivos (195 s)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos2.jpg fotos/p002.png fotos/p013.png fotos/p066.png fotos/p097.png fotos/p119.png fotos/p126.png fotos/p136.png fotos/p143.png fotos/p147.png fotos/p152.png && tail -3 fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fotos2.jpg (10 cuadros, 4x3)\n00:21:52 batch a978846c: completed 9/9\n00:21:53 ✓ batch a978846c: 9 fotos bajadas, 0 fallidas (US$0.021)\n00:21:53 FIN: 10/10 fotos en fotos/ (4 min)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_fotos2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "cat >> gates/fotos_auto.txt <<'EOF'\n\nSegunda tanda (10 fotos, hoja qc/hoja_fotos2.jpg):\n- p002: cajón abierto, manos sacando el último top, caja de caridad y bolsa. Correcta.\n- p013: niña doblando calcetines en el mostrador de 1987, libreta y botones. Correcta.\n- p066: dos muestras de tela contra el shoji (satén y lino mate). Correcta.\n- p097: dedos pellizcando el tejido acanalado en la cintura. M"
+  },
+  {
+   "k": "res",
+   "t": "✓ shots_timed.json: 156 planos, 156 fotos distintas (cero repetidas). Seguí con render.py.\nVALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa fotos\n  ✓ guion: 16741 caracteres, 3275 palabras (hacen falta 13500-17250 para 15 min: bien)\n  ✓ fotos: 16 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\nRESULTADO: OK"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in --limit 10 > render_test.log 2>&1 & echo \"PID:$!\"; sleep 20; tail -12 render_test.log; echo \"=== AVATAR ===\"; tail -4 avatar/it.log"
   }
  ],
  "maquinas": 1,
