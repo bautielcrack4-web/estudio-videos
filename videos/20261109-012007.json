@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794203905.1487992,
+ "actualizado": 1794203969.1583533,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1026,
+  "deepseek": 0.1039,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3981
+  "total": 0.3994
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > render.log 2>&1 & echo \"PID render: $!\"; sleep 3; head -3 render.log"
-  },
-  {
-   "k": "res",
-   "t": "PID render: 24733\nextrema: esperando las piezas (máx. 10 min)"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la extrema/ 2>/dev/null; stat -c '%y %n' extrema/EN_CURSO 2>/dev/null; ls -la extrema/manifest.json 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\ntotal 20\ndrwxrwxrwx+  2 runner runner 4096 Nov  9 05:44 .\ndrwxrwxrwx+ 12 runner runner 4096 Nov  9 05:44 ..\n-rw-rw-rw-+  1 runner runner    5 Nov  9 05:44 EN_CURSO\n2026-11-09 05:44:23.660225277 +0000 extrema/EN_CURSO"
-  },
   {
    "k": "tool",
    "t": "cat extrema/EN_CURSO; echo; ps aux | grep -E \"render.py|extrema\" | grep -v grep | head; kill 24733 2>/dev/null; sleep 1; rm -f extrema/EN_CURSO; rmdir extrema 2>/dev/null; ls -d extrema 2>/dev/null || echo \"extrema eliminado\""
@@ -174,6 +158,22 @@
   {
    "k": "res",
    "t": "Updated task #6 status"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 29115 -o pid,etime,cmd --no-headers 2>/dev/null || echo \"assemble terminó\"; ls -la final.mp4 2>/dev/null; ls xf_tmp/ 2>/dev/null | head; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; ls extrema/ 2>/dev/null | head"
+  },
+  {
+   "k": "res",
+   "t": "  29115       09:14 python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\nc000.mp4\nc001.mp4\nc002.mp4\nc003.mp4\nc004.mp4\n  24354       15:01\ngen\nlibre.json\nmomentos.json"
   },
   {
    "k": "tool",
