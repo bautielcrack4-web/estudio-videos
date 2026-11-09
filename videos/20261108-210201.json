@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183301.2285783,
+ "actualizado": 1794183364.544058,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0602,
+  "deepseek": 0.0608,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0602
+  "total": 0.0608
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"2\", \"status\": \"completed\"}"
-  },
   {
    "k": "res",
    "t": "Updated task #2 status"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/sonidos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/sfx_pedidos.json --tomas 3 > sonidos.log 2>&1 & echo \"PID:$!\"; sleep 12; tail -12 sonidos.log"
+  },
+  {
+   "k": "res",
+   "t": "PID:7343\nok tela: tela.mp3 (1 s, Cloth slide out) · tela_2.mp3 (1 s, Squishing a soggy cloth shirt)\nok papel: papel.mp3 (1 s, Big paper page turn) · papel_2.mp3 (1 s, Pages of paper moving) · papel_3.mp3 (1 s, Paper slide)\nok te: te.mp3 (3 s, Liquid poured in a jar with ice) · te_2.mp3 (4 s, Pouring water to mug) · te_3.mp3 (2 s, Pouring drink with ice)\nok cajon: cajon.mp3 (1 s, Old drawer opening"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"fotos/*.png\" 9 --max 480"
   }
  ],
  "maquinas": 1,
