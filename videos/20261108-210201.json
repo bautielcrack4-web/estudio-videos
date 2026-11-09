@@ -3,21 +3,21 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794182716.5059142,
+ "actualizado": 1794182779.6875532,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
   {
    "k": "guion",
    "n": "Guion",
-   "st": "active",
-   "info": "3.452 palabras"
+   "st": "done",
+   "info": "3.266 palabras"
   },
   {
    "k": "voz",
    "n": "Voz",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "3 bloques"
   },
   {
    "k": "tiempos",
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.019,
+  "deepseek": 0.0284,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.019
+  "total": 0.0284
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/repo/motor/tools/planos.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"PLANOS — arma los planos del b-roll y shots_timed.json. NO escribas scripts propios para esto.\n  1) python <APP>/tools/planos.py <carpeta>\n       Necesita captions.json y avatar_ranges.json (el plan de ventanas: escribilo vos ANTES).\n       → planos.json: un plano de b-roll cada ~5 s (entre las ventanas del avatar), cortado en pausas del habla, con el\n         TEXTO que "
-  },
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/repo/motor/tools/fotos.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Fotos del b-roll. Motor (Configuración → Fotos): \"openai\" = gpt-image-2.5-sunburst SIEMPRE low + Batch; referencia SOLO en las fotos del presentador;\n\"manual\" = las hace el usuario con lo que quiera (gratis).\n   python <APP>/tools/fotos.py <carpeta_del_video> <pedidos.json> > <carpeta>/fotos/fotos.log 2>&1      (en segundo plano)\npedidos.json = [{\"id\":\"b01_gancho\", \"cara"
-  },
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/repo/motor/tools/stock.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Clips de stock del MODO AHORRO (Pexels, gratis). Uso:\n   python <APP>/tools/stock.py <carpeta> <pedidos.json> > <carpeta>/clips/stock.log 2>&1      (en segundo plano)\npedidos = [{\"id\":\"p003\", \"buscar\":[\"senior hands kneading dough\", \"kneading bread close up\"]}, …]\n  · id = el del plano de planos.json. \"buscar\" = 1 a 3 búsquedas EN INGLÉS, de la más precisa a la más gener"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"clips\\|split\\|fotos\\|avatar_ranges\\|def \\|plan_motion\\|xf.json\" /opt/estudio/repo/motor/tools/render.py | head -80"
-  },
-  {
-   "k": "res",
-   "t": "3:Lee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\r\n4:     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg\",\"startMs\":3200,\"endMs\":8900}, ...]  (opcional)\r\n11:Escribe plan.json (para el panel y validar.py) + segments/NNNN.mp4 + segments/xf.js"
-  },
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/repo/motor/tools/voz.py; echo \"===TIEMPOS===\"; cat /opt/estudio/repo/motor/tools/tiempos.py"
-  },
   {
    "k": "res",
    "t": "# -*- coding: utf-8 -*-\n\"\"\"Voz con el CLON de la voz del canal (Fish Audio). Uso (en segundo plano, con log):\n   python <APP>/tools/voz.py <carpeta_del_video> > <carpeta>/voz/voz.log 2>&1\nLee <carpeta>/guion.txt y la muestra de voz del canal en <carpeta>/refs/voz.wav (+ refs/voz.txt = lo que se dice en la muestra).\nParte el guion en bloques de ~2500 caracteres, genera 3 a la vez, rehace los que sa"
@@ -178,6 +142,42 @@
   {
    "k": "res",
    "t": "Exit code 1\nchars 17637 words 3461\nVALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa guion\n  ✗ guion: 17637 caracteres, 3461 palabras (hacen falta 13500-17250 para 15 min: recortalo)\nRESULTADO: FALLA (1)"
+  },
+  {
+   "k": "tool",
+   "t": "[warmly] Hello, please come in. Sit by the window, where the light is soft. The garden is quiet this morning, so we have time.\n\nLast spring, the week I turned sixty-eight, I cleared one drawer in my bedroom. It was the drawer where I kept the tops I no longer wore but could not throw away. I laid everything on the tatami and counted. Ten tops. I gave every one of them away, to my neighbor, to my d"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport re\nt=open('guion.txt',encoding='utf8').read()\ncar=len(re.sub(r'\\s+',' ',re.sub(r'\\[[^\\]]*\\]|\\([^)]*\\)','',t)).strip())\nw=len(re.findall(r\\\"[^\\W\\d_]+(?:'[^\\W\\d_]+)?\\\",t))\nprint('chars',car,'words',w)\n\" && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in --etapa guion --min 15"
+  },
+  {
+   "k": "res",
+   "t": "chars 16741 words 3275\nVALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa guion\n  ✓ guion: 16741 caracteres, 3275 palabras (hacen falta 13500-17250 para 15 min: bien)\nRESULTADO: OK"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/voz.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > voz/voz.log 2>&1 & echo \"PID:$!\""
+  },
+  {
+   "k": "res",
+   "t": "PID:4667"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nc=json.load(open('/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/refs/canal.json'))\nprint(c.keys())\nprint(json.dumps(c.get('plan',[])[:4],ensure_ascii=False,indent=1)[:3000])\n\""
+  },
+  {
+   "k": "res",
+   "t": "dict_keys(['nombre', 'idioma', 'presentador', 'escena', 'biblia', 'prohibidas', 'min', 'cara_cx', 'plan'])\n[\n {\n  \"titulo\": \"One Collar Press Makes a Plain Shirt Look Tailored\",\n  \"idea\": \"Michiko remembers her mother turning a collar by hand at the neighborhood shop. She shows how to press the collar stand and set the roll so a plain shirt sits neatly at the neck. You will learn one small check t"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 20; tail -5 voz/voz.log; ls -la voz/ | head"
   }
  ],
  "maquinas": 1,
