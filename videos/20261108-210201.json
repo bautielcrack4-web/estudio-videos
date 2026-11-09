@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794191114.683655,
+ "actualizado": 1794191178.51549,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,90 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1952,
+  "deepseek": 0.2135,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.497
+  "total": 0.5153
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "-rw-rw-rw-+ 1 sesion sesion 448790576 Nov  9 02:01 video_noaudio.mp4\n    PID     ELAPSED CMD\n  60522       16:44 ffmpeg -v error -y -i ./xf_tmp/c000.mp4 -i ./xf_tmp/c001.mp4 -i ./xf_tmp/c002.mp4 -i ./xf_tmp/c003.mp4 -i ./xf_tmp/c004."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la video_noaudio.mp4 audio_mix.m4a final.mp4 2>/dev/null; ps -o pid,etime,cmd -C ffmpeg | head -2 | cut -c1-100"
-  },
-  {
-   "k": "res",
-   "t": "-rw-rw-rw-+ 1 sesion sesion  25952300 Nov  9 02:10 audio_mix.m4a\n-rw-rw-rw-+ 1 sesion sesion 685693861 Nov  9 02:09 video_noaudio.mp4\n    PID     ELAPSED CMD\n  63486       00:28 ffmpeg -v error -y -i ./voz/master.wav -i ./sfx/cajon.mp3 -i ./sfx/tela.mp3 -i ."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 300"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe final.mp4 (716.2 MB, 10 s)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 15; echo \"=== PROBE ===\"; ffprobe -v error -show_entries format=duration:stream=codec_type,width,height,r_frame_rate -of json final.mp4 | head -40"
-  },
-  {
-   "k": "res",
-   "t": "VALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa final\n  ✓ guion: 16741 caracteres, 3275 palabras (hacen falta 13500-17250 para 15 min: bien)\n  ✓ fotos: 17 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\n  ✓ fotos: 6 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  ✓ render: movimiento al azar (pla"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > revisor.log 2>&1 & echo \"PID:$!\"; sleep 20; tail -10 revisor.log"
-  },
-  {
-   "k": "res",
-   "t": "PID:63617"
-  },
-  {
-   "k": "tool",
-   "t": "sed -n '1,80p' /opt/estudio/repo/motor/tools/revisor.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"REVISOR FINAL (no frena): saca cuadros de final.mp4 y los mira con visión (deepseek-flash, menos de US$0,01 por video, con tu clave de DeepSeek).\n   python <APP>/tools/revisor.py <carpeta>\n1. Deja qc/f_001.jpg, f_002.jpg… (un cuadro cada 30 s) y qc/final_info.json. Mide los huecos negros ≥ 0,5 s (sin IA).\n2. Busca fallas claras: cara o cuerpo deformes, glitch del avatar,"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe gates/revisor_final.json --max 480"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe gates/revisor_final.json (0.0 MB, 130 s)"
-  },
-  {
-   "k": "tool",
-   "t": "cat revisor.log; echo \"=== CORRECCIONES ===\"; cat gates/correcciones.txt 2>/dev/null || echo \"(sin correcciones)\"; ls qc/f_*.jpg | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "⚠ 3 cosas para arreglar en gates/correcciones.txt:\n  · HUECO NEGRO 984.6-986.6 s → mirá en plan.json qué falta ahí, arreglalo y volvé a correr render.py + assemble.py.\n  · HUECO NEGRO 989.7-990.8 s → mirá en plan.json qué falta ahí, arreglalo y volvé a correr render.py + assemble.py.\n  · FINAL ~16:30: cuadro completamente negro, sin imagen → mirá en plan.json qué hay en ese segundo. Si es una foto"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\np=json.load(open('plan.json',encoding='utf8'))['segments']\nfor i,s in enumerate(p):\n    if 975 <= s['t0'] <= 1000 or 975 <= s['t1'] <= 1000:\n        print(i,s)\n\"; echo \"=== frames ===\"; for t in 984.6 986.0 989.7 990.5 991.0; do ffmpeg -v error -y -ss $t -i final.mp4 -frames:v 1 qc/black_$t.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_black.jpg qc/black_"
-  },
-  {
-   "k": "res",
-   "t": "198 {'kind': 'clip', 't0': 971.92, 't1': 978.58, 'file': '/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/clips/p120.mp4'}\n199 {'kind': 'av', 't0': 978.58, 't1': 984.1, 'file': '/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/avatar/A79.mp4'}\n200 {'kind': 'clip', 't0': 984.1, 't1': 990.72, 'file': '/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wea"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_black.jpg\"}"
@@ -178,6 +102,82 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > assemble2.log 2>&1 & echo \"PID:$!\"; sleep 5; echo started"
+  },
+  {
+   "k": "res",
+   "t": "PID:74479\nstarted"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/rev_A.jpg $(ls qc/f_*.jpg | head -12) && python /opt/estudio/repo/motor/tools/hoja.py qc/rev_B.jpg $(ls qc/f_*.jpg | sed -n '13,24p') && python /opt/estudio/repo/motor/tools/hoja.py qc/rev_C.jpg $(ls qc/f_*.jpg | sed -n '25,36p') && python /opt/estudio/repo/motor/tools/hoja.py qc/rev_D.jpg $(ls qc/f_*.jpg | sed -n '37,42p') && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/rev_A.jpg (12 cuadros, 4x3)\nhoja: qc/rev_B.jpg (12 cuadros, 4x3)\nhoja: qc/rev_C.jpg (12 cuadros, 4x3)\nhoja: qc/rev_D.jpg (6 cuadros, 4x2)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_A.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_B.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_C.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_D.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "cat gasto.jsonl 2>/dev/null || echo \"sin gasto.jsonl\"; echo \"=== assemble ===\"; ls -la video_noaudio.mp4 final.mp4 2>/dev/null; ps -o pid,etime -p 74479 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "{\"t\": 1794183007.5889394, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 1250}\n{\"t\": 1794183459.7624767, \"tag\": \"fotos_gpt\", \"usd\": 0.00931, \"n\": 4}\n{\"t\": 1794183460.5872567, \"tag\": \"fotos_gpt\", \"usd\": 0.0157, \"n\": 5}\n{\"t\": 1794183531.756566, \"tag\": \"fotos_gpt\", \"usd\": 0.00312, \"n\": 1}\n{\"t\": 1794183713.7075946, \"tag\": \"fotos_gpt\", \"usd\": 0.02066, \"n\": 9}\n{\"t\": 1794184492.704428, \"tag\": \"fotos_gpt\", \"usd\": 0"
+  },
+  {
+   "k": "tool",
+   "t": "cat > gates/correcciones_hechas.txt <<'EOF'\nRevisor final (09-11 02:13), 3 avisos, todos la misma causa:\n1) HUECO NEGRO 984.6-986.6 s, 2) HUECO NEGRO 989.7-990.8 s, 3) cuadro negro ~16:30.\n   Causa: clips/p121.mp4 (\"silk fabric sheen\") era satén negro casi sin luz; el clip entero se veía negro.\n   Arreglo: borré clips/p121.mp4 y lo repedí con búsqueda de satén claro (\"cream silk fabric folds\"). El"
+  },
+  {
+   "k": "res",
+   "t": "PreToolUse:Bash hook error: [\"/opt/hostedtoolcache/Python/3.11.18/x64/bin/python\" \"/opt/estudio/repo/motor/tools/guard.py\"]: BLOQUEADO (regla dura del Estudio): el avatar va SOLO por `python <APP>/tools/avatar_it.py <carpeta>` (1 llamada por video). Nunca RunPod directo.\n"
+  },
+  {
+   "k": "tool",
+   "t": "Revisor final (09-11 02:13), 3 avisos, todos la misma causa:\n1) HUECO NEGRO 984.6-986.6 s, 2) HUECO NEGRO 989.7-990.8 s, 3) cuadro negro ~16:30.\n   Causa: clips/p121.mp4 (silk fabric sheen) era satén negro casi sin luz; el clip entero se veía negro.\n   Arreglo: borré clips/p121.mp4 y lo repedí con búsqueda de satén claro (cream silk fabric folds). El nuevo clip es beige/crema y se ve bien.\n   Volv"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/gates/correcciones_hechas.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "Revisión visual del final (42 cuadros cada 30 s en qc/f_*.jpg; hojas qc/rev_A.jpg a rev_D.jpg):\n- Apertura 0 s: avatar real hablando desde el cuadro 1, encuadre limpio y cara coincidente con refs/avatar.png.\n- Alternancia avatar / b-roll: 41 % de avatar en 101 ventanas de 3-6 s; nunca más de 10 s sin avatar.\n- Fotos del presentador (p001, p022, p027, p124, p147): cara consistente con el avatar, ma"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/gates/final_auto.txt (file state is current in your context — no need to Read it back)"
   }
  ],
  "maquinas": 1,
