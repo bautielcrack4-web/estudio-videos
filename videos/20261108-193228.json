@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794217797.2165978,
+ "actualizado": 1794217860.4728599,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42590033103",
  "pasos": [
@@ -214,9 +214,9 @@
     "fin": true
    }
   ],
-  "total_s": 40581,
+  "total_s": 40644,
   "avatar_s": 0,
-  "sin_avatar_s": 40581,
+  "sin_avatar_s": 40644,
   "cerrado": false
  }
 }
