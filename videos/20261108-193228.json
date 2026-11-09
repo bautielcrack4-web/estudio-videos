@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794182616.8461108,
+ "actualizado": 1794182679.9613671,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -28,8 +28,8 @@
   {
    "k": "avatar",
    "n": "Avatar",
-   "st": "skip",
-   "info": ""
+   "st": "done",
+   "info": "63 clips"
   },
   {
    "k": "fotos",
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0729,
+  "deepseek": 0.074,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
-  "avatar": 0.0,
-  "total": 0.2151
+  "avatar": 0.25,
+  "total": 0.4662
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py 2>&1 | head -30"
-  },
-  {
-   "k": "res",
-   "t": "HERRAMIENTA DEL ESTUDIO: espera UNA sola vez hasta que pase algo (en vez de sleep + ls + tail una y otra vez).\n   python <APP>/tools/esperar.py --log <archivo.log> [--busca \"EXIT|FIN|✓|Traceback|Error\"]   termina cuando el log tiene esa palabra\n   python <APP>/tools/esperar.py --existe <archivo>                                          termina cuando el archivo existe (y dejó de crecer)\n   python "
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback\" --timeout 540; echo \"---\"; tail -3 avatar/it.log; echo \"---RENDER---\"; tail -2 render.log"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 22:43:17 estado: IN_QUEUE · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n---RENDER---\nclips=123 frames=18120 (604.00s)\nhechos 123"
-  },
-  {
-   "k": "ai",
-   "t": "El render completo terminó. El avatar sigue en cola. Reviso una muestra de segmentos del resto del video."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render2.jpg segments/0030.mp4 segments/0050.mp4 segments/0070.mp4 segments/0090.mp4 segments/0105.mp4 segments/0118.mp4 && grep -i \"error\\|warn\\|falta\\|pendiente\" render.log | head -5"
-  },
   {
    "k": "res",
    "t": "hoja: qc/hoja_render2.jpg (6 cuadros, 4x2)\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A0.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A1.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A2.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de espera): avatar/A3.mp4\nAVATAR PENDIENTE (va su cuadro fijo con el cartel de "
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -8 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'COMPLETED' (230 s):\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n00:04:03 estado: COMPLETED\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PR"
+  },
+  {
+   "k": "ai",
+   "t": "El trabajo terminó. Espero que baje y corte los 63 clips."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"✓ avatar|Traceback|Error|falta\" --timeout 540; echo \"---\"; tail -8 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 63 archivos (20 s)\n---\n22:42:39 InfiniteTalk: 63 ventanas · reel 352.6 s · 1 llamada\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n00:04:03 estado: COMPLETED\n✓ 63 clips cortados · desfase corregido (máx 200 ms)\n63"
+  },
+  {
+   "k": "ai",
+   "t": "63 clips listos. Rehago los tramos de avatar y ensamblo."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/render_av.log 2>&1 & echo \"pid: $!\"; sleep 10; tail -3 render_av.log"
   }
  ],
  "maquinas": 2,
