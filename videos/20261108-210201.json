@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794187333.6204224,
+ "actualizado": 1794187460.5713766,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -29,7 +29,7 @@
    "k": "avatar",
    "n": "Avatar",
    "st": "done",
-   "info": "101 clips"
+   "info": "202 clips"
   },
   {
    "k": "fotos",
@@ -51,70 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1402,
+  "deepseek": 0.1542,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.442
+  "total": 0.456
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 00:14:02 estado: IN_PROGRESS → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 00:14:02 estado: IN_PROGRESS → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\np=json.load(open('plan.json',encoding='utf8'))['segments']\nfor i,s in enumerate(p[:40]):\n    if s['kind']!='av': print(i,s['t0'],s['kind'],s['file'].split('/')[-1])\n\" | head -20\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_hook_render.jpg segments/0001.mp4 segments/0003.mp4 segments/0005.mp4 segments/0007.mp4 segments/0009.mp4 segments/0011.mp4 segments/0013.mp4 se"
-  },
-  {
-   "k": "res",
-   "t": "1 4.58 foto p001.png\n3 16.2 foto p002.png\n5 28.52 clip p003.mp4\n7 40.76 clip p004.mp4\n8 44.49 clip p005.mp4\n10 53.08 clip p006.mp4\n12 64.9 clip p007.mp4\n14 76.04 clip p008.mp4\n15 79.16 clip p009.mp4\n17 88.56 clip p010.mp4\n18 92.16 clip p011.mp4\n20 100.62 clip p012.mp4\n22 113.18 foto p013.png\n23 116.79 clip p014.mp4\n25 125.46 clip p015.mp4\n27 137.68 clip p016.mp4\n28 142.04 foto p017.png\n30 151.34 c"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_hook_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/repo/motor/tools/assemble.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/assemble.py <carpeta_del_video>\nUne segments/ (con los fundidos de xf.json) + voz/master.wav + SFX de cues.json -> final.mp4 (1920x1080 30fps, audio ESTÉREO AAC 192k).\ncues.json = [{\"file\":\"tela.mp3\",\"t\":171100,\"gain\":0.07,\"fade\":0.4}, ...]  (archivos en <carpeta>/sfx/; t en ms; gain 0.035-0.08 = -29"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 00:14:02 estado: IN_PROGRESS → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 5995 -o pid,etime,cmd 2>/dev/null || echo \"avatar_it terminó\"; tail -4 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
-  },
   {
    "k": "res",
    "t": "    PID     ELAPSED CMD\n   5995    01:01:38 python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n0"
@@ -178,6 +122,62 @@
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_avatar2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 avatar/A75.mp4; ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 avatar/A0.mp4"
+  },
+  {
+   "k": "res",
+   "t": "832,464\n832,464"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -y -ss 1.0 -i avatar/A75.mp4 -vf \"crop=640:360:192:52,scale=960:540\" -frames:v 1 qc/crop1.jpg\nffmpeg -v error -y -ss 1.0 -i avatar/A75.mp4 -vf \"crop=608:342:224:61,scale=960:540\" -frames:v 1 qc/crop2.jpg\nffmpeg -v error -y -ss 1.0 -i avatar/A100.mp4 -vf \"crop=608:342:224:61,scale=960:540\" -frames:v 1 qc/crop3.jpg\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_crops.jpg qc/cro"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_crops.jpg (3 cuadros, 3x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_crops.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -y -ss 1.0 -i avatar/A75.mp4 -vf \"crop=624:351:208:56,scale=960:540:flags=lanczos\" -frames:v 1 qc/crop4.jpg\nffmpeg -v error -y -ss 1.0 -i avatar/A100.mp4 -vf \"crop=624:351:208:56,scale=960:540:flags=lanczos\" -frames:v 1 qc/crop5.jpg\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_crops2.jpg qc/crop4.jpg qc/crop5.jpg"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_crops2.jpg (2 cuadros, 2x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_crops2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 38511 -o pid,etime 2>/dev/null || echo \"render2 terminado\"; tail -3 render2.log; ls -la avatar/A0.mp4"
+  },
+  {
+   "k": "res",
+   "t": "    PID     ELAPSED\n  38511       01:56\n-rw-rw-rw-+ 1 sesion sesion 1765039 Nov  9 01:20 avatar/A0.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "kill 38511 2>/dev/null; sleep 2; mkdir -p avatar/orig; python3 - <<'PY'\nimport glob, os, shutil, subprocess\nfrom concurrent.futures import ThreadPoolExecutor\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nfs=sorted(glob.glob(f'{B}/avatar/A*.mp4'))\nprint(len(fs),'clips')\nfor f in fs:\n    shutil.copy2(f, f'{B}/avatar/orig/'+os.path.basename(f))\ndef crop(f):\n    tmp=f+'.tmp.mp"
   }
  ],
  "maquinas": 1,
