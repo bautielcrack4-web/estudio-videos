@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794193348.5241506,
+ "actualizado": 1794193412.6115427,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2339,
+  "deepseek": 0.2372,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5357
+  "total": 0.539
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "cat gasto.jsonl 2>/dev/null || echo \"sin gasto.jsonl\"; echo \"=== assemble ===\"; ls -la video_noaudio.mp4 final.mp4 2>/dev/null; ps -o pid,etime -p 74479 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "{\"t\": 1794183007.5889394, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 1250}\n{\"t\": 1794183459.7624767, \"tag\": \"fotos_gpt\", \"usd\": 0.00931, \"n\": 4}\n{\"t\": 1794183460.5872567, \"tag\": \"fotos_gpt\", \"usd\": 0.0157, \"n\": 5}\n{\"t\": 1794183531.756566, \"tag\": \"fotos_gpt\", \"usd\": 0.00312, \"n\": 1}\n{\"t\": 1794183713.7075946, \"tag\": \"fotos_gpt\", \"usd\": 0.02066, \"n\": 9}\n{\"t\": 1794184492.704428, \"tag\": \"fotos_gpt\", \"usd\": 0"
-  },
-  {
-   "k": "tool",
-   "t": "cat > gates/correcciones_hechas.txt <<'EOF'\nRevisor final (09-11 02:13), 3 avisos, todos la misma causa:\n1) HUECO NEGRO 984.6-986.6 s, 2) HUECO NEGRO 989.7-990.8 s, 3) cuadro negro ~16:30.\n   Causa: clips/p121.mp4 (\"silk fabric sheen\") era satén negro casi sin luz; el clip entero se veía negro.\n   Arreglo: borré clips/p121.mp4 y lo repedí con búsqueda de satén claro (\"cream silk fabric folds\"). El"
-  },
   {
    "k": "res",
    "t": "PreToolUse:Bash hook error: [\"/opt/hostedtoolcache/Python/3.11.18/x64/bin/python\" \"/opt/estudio/repo/motor/tools/guard.py\"]: BLOQUEADO (regla dura del Estudio): el avatar va SOLO por `python <APP>/tools/avatar_it.py <carpeta>` (1 llamada por video). Nunca RunPod directo.\n"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble2.log --busca \"final:\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la video_noaudio.mp4 final.mp4 2>/dev/null; ps -o pid,etime -p 74479 2>/dev/null || echo \"assemble terminado\"; ps aux | grep \"[f]fmpeg\" | cut -c1-90"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion 716155025 Nov  9 02:10 final.mp4\n-rw-rw-rw-+ 1 sesion sesion 656146480 Nov  9 03:03 video_noaudio.mp4\n    PID     ELAPSED\n  74479       38:06\nroot        3831  0.0  0.0  12672  5892 ?        Ss   00:03   0:00 sudo -n -H -u sesion --\nsesion      3833  0.6  2.6 74363808 430448 ?     Sl   00:03   1:12 /opt/hostedtoolcache/no\nsesion     80259  382 13.3 6373176 2188212 ?    "
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble2.log --busca \"final:\" --max 480"
   }
  ],
  "maquinas": 1,
