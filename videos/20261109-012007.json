@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794204809.5065067,
+ "actualizado": 1794204873.2025845,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1066,
+  "deepseek": 0.1107,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4021
+  "total": 0.4062
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "head -40 /opt/estudio/repo/motor/tools/extrema.py; echo \"---\"; ls -la extrema/ 2>/dev/null | head"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\r\n\"\"\"EDICIÓN EXTREMA (opcional, la activa el panel): python <APP>/tools/extrema.py <carpeta_del_video> [--tope 0.20] [--max 12] [--sin-render]\r\nPor defecto va la edición LIBRE (extrema_libre.py): DeepSeek decide y programa cada componente; el código corre como el usuario sin claves.\r\nDeja extrema/manifest.json (escenas completas: render.py las mete en la línea, nunca sobre e"
-  },
-  {
-   "k": "ai",
-   "t": "An optional \"extrema\" enhancement process is running in the background (auto-launched). I'll relaunch the render; it waits up to 10 min for those pieces, then proceeds without them."
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 24354 -o pid,etime,cmd --no-headers 2>/dev/null || echo \"extrema terminó\"; ls -la extrema/ 2>/dev/null | head; nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > render.log 2>&1 & echo \"PID render: $!\"; sleep 3; head -3 render.log"
-  },
-  {
-   "k": "res",
-   "t": "  24354       00:40 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extrema.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q --tope 0.2 --fondo\nPID render: 24930"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 5; cat render.log | head -5; cat > gates/render_auto.txt <<'EOF'\nControl render (auto):\n- Render de prueba de 10 segmentos (segments/0000-0009) revisado en qc/hoja_render.jpg con Read.\n- 0000 avatar A0 desde el segundo 0 (clip real, labios en sync); 0001 p001 (gancho, manos en la cintura);\n  0002 A1; 0003 p002 (flat lay 240 g); 0004 A2; 0005 p003 (tetera); 0006 A3; 0007 p004 (tienda);\n  0008"
-  },
   {
    "k": "res",
    "t": "gate escrito"
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 300"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 300 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 29115 -o pid,etime --no-headers 2>/dev/null || echo \"assemble terminó\"; ls -la final.mp4 audio_mix.m4a 2>/dev/null; tail -c 500 assemble.log"
+  },
+  {
+   "k": "res",
+   "t": "  29115       23:28"
+  },
+  {
+   "k": "tool",
+   "t": "ps --ppid 29115 -o pid,etime,pcpu,cmd --no-headers 2>/dev/null; ls -la /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/*.m4a 2>/dev/null; ls -la /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/tmp* 2>/dev/null; df -h . | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "  31969       14:24  235 ffmpeg -v error -y -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c000.mp4 -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c001.mp4 -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c002.mp4 -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c003.mp4 -i /opt/estu"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
   }
  ],
  "maquinas": 1,
