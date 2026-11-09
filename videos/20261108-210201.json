@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183036.9193451,
+ "actualizado": 1794183110.9572055,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0334,
+  "deepseek": 0.0375,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0334
+  "total": 0.0375
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Task #6 created successfully: Render, assemble, sonido y QC final"
-  },
-  {
-   "k": "tool",
-   "t": "[warmly] Hello, please come in. Sit here, by the window, where the light is soft. The garden is quiet this morning, so we have time.\n\nLast spring, the week I turned sixty-eight, I cleared one drawer in my bedroom. It was the drawer where I kept the tops I no longer wore but could not throw away. I took everything out and laid it on the tatami, and I counted. Ten tops. Ten. I gave every one of them"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/guion.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport re\nt=open('guion.txt',encoding='utf8').read()\ncar=len(re.sub(r'\\s+',' ',re.sub(r'\\[[^\\]]*\\]|\\([^)]*\\)','',t)).strip())\nw=len(re.findall(r\\\"[^\\W\\d_]+(?:'[^\\W\\d_]+)?\\\",t))\nprint('chars',car,'words',w)\n\" && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in --etapa guion --min 15"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\nchars 17637 words 3461\nVALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa guion\n  ✗ guion: 17637 caracteres, 3461 palabras (hacen falta 13500-17250 para 15 min: recortalo)\nRESULTADO: FALLA (1)"
-  },
-  {
-   "k": "tool",
-   "t": "[warmly] Hello, please come in. Sit by the window, where the light is soft. The garden is quiet this morning, so we have time.\n\nLast spring, the week I turned sixty-eight, I cleared one drawer in my bedroom. It was the drawer where I kept the tops I no longer wore but could not throw away. I laid everything on the tatami and counted. Ten tops. I gave every one of them away, to my neighbor, to my d"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport re\nt=open('guion.txt',encoding='utf8').read()\ncar=len(re.sub(r'\\s+',' ',re.sub(r'\\[[^\\]]*\\]|\\([^)]*\\)','',t)).strip())\nw=len(re.findall(r\\\"[^\\W\\d_]+(?:'[^\\W\\d_]+)?\\\",t))\nprint('chars',car,'words',w)\n\" && python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in --etapa guion --min 15"
-  },
-  {
-   "k": "res",
-   "t": "chars 16741 words 3275\nVALIDAR /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in · etapa guion\n  ✓ guion: 16741 caracteres, 3275 palabras (hacen falta 13500-17250 para 15 min: bien)\nRESULTADO: OK"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/voz.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > voz/voz.log 2>&1 & echo \"PID:$!\""
-  },
-  {
-   "k": "res",
-   "t": "PID:4667"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nc=json.load(open('/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/refs/canal.json'))\nprint(c.keys())\nprint(json.dumps(c.get('plan',[])[:4],ensure_ascii=False,indent=1)[:3000])\n\""
-  },
-  {
-   "k": "res",
-   "t": "dict_keys(['nombre', 'idioma', 'presentador', 'escena', 'biblia', 'prohibidas', 'min', 'cara_cx', 'plan'])\n[\n {\n  \"titulo\": \"One Collar Press Makes a Plain Shirt Look Tailored\",\n  \"idea\": \"Michiko remembers her mother turning a collar by hand at the neighborhood shop. She shows how to press the collar stand and set the roll so a plain shirt sits neatly at the neck. You will learn one small check t"
-  },
   {
    "k": "tool",
    "t": "sleep 20; tail -5 voz/voz.log; ls -la voz/ | head"
@@ -178,6 +126,58 @@
   {
    "k": "tool",
    "t": "sleep 30; tail -5 voz/tiempos.log; ls -la captions.json 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "✓ captions.json: 3242 palabras en 20.8 min\n-rw-rw-rw-+ 1 sesion sesion 322326 Nov  9 00:10 captions.json"
+  },
+  {
+   "k": "tool",
+   "t": "python plan_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\nventanas: 14 · avatar 1069 s (85.5 %) · reel 1073 s (tope 590)\ngap min 6.5 s · gap max 43.3 s · primera 0-4580 ms\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py\", line 59, in <module>\n    assert reel <= 585, \"reel demasiado largo\"\n           ^^^^^^^^^^^\nAssertionError: reel demasiado largo"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nW=[w for w in json.load(open('captions.json',encoding='utf8')) if w.get('text','').strip()]\nW.sort(key=lambda w:w['startMs'])\nprint(len(W), W[0], W[1], W[-1])\nstarts=[0]+[w['startMs'] for i,w in enumerate(W) if i and w['startMs']-W[i-1]['endMs']>=90]\nends=[w['endMs'] for i,w in enumerate(W) if i+1<len(W) and W[i+1]['startMs']-w['endMs']>=100]\nprint('starts',len(starts),'en"
+  },
+  {
+   "k": "res",
+   "t": "3242 {'text': ' Hello,', 'startMs': 0, 'endMs': 460, 'timestampMs': 0, 'confidence': 1.0} {'text': ' please', 'startMs': 460, 'endMs': 700, 'timestampMs': 460, 'confidence': 1.0} {'text': ' Goodbye.', 'startMs': 1249060, 'endMs': 1249360, 'timestampMs': 1249060, 'confidence': 1.0}\nstarts 180 ends 179 maxgap 1820\nends first [1380, 4580, 12400, 15120, 21240, 26000, 40760, 66420, 73600, 78880, 85660,"
+  },
+  {
+   "k": "tool",
+   "t": "# candidatos: cualquier borde de palabra; los que caen en pausa se prefieren\nstarts = sorted(set([0] + [w[\"startMs\"] for w in W]))\npausa_start = {w[\"startMs\"] for i, w in enumerate(W) if i and w[\"startMs\"] - W[i-1][\"endMs\"] >= 120}\nends = sorted(set([w[\"endMs\"] for w in W] + [TOTAL]))\npausa_end = {w[\"endMs\"] for i, w in enumerate(W) if i + 1 < len(W) and W[i+1][\"startMs\"] - w[\"endMs\"] >= 120}"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "    # inicio: primera palabra >= cur; si hay una pausa en los 1,5 s siguientes, mejor\n    s = cur if cur == 0 else next((x for x in starts if x >= cur), cur)\n    if s >= TOTAL - 4000:\n        break\n    ps = [x for x in pausa_start if s <= x <= s + 1500]\n    if ps:\n        s = min(ps)\n    # fin: borde de palabra mas cercano a s + 5.0 s, dentro de [4.2, 5.8]\n    target = s + rng.choice([4600, 4800, "
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python plan_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
+  },
+  {
+   "k": "res",
+   "t": "ventanas: 101 · avatar 511 s (40.9 %) · reel 541 s (tope 590)\ngap min 6.3 s · gap max 9.6 s · primera 0-4580 ms\n✓ avatar_ranges.json\n✓ planos.json: 156 planos de b-roll (12.3 min de b-roll, 12.7 por minuto) · 101 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nP=json.load(open('planos.json',encoding='utf8'))\nfor p in P:\n    print(p['id'], p['startMs'], p['endMs'], '|', p['texto'][:150])\n\""
+  },
+  {
+   "k": "res",
+   "t": "p001 4580 10940 | The garden is quiet this morning, so we have time. Last spring, the week, I\np002 16200 23220 | was the drawer where I kept the tops I no longer wore but could not throw away. I laid everything on\np003 28520 35280 | to my neighbor, to my daughter-in-law, to a charity box near the station, and I have not missed\np004 40760 44490 | A black turtleneck tight at the throat, a\np005 44490"
   }
  ],
  "maquinas": 1,
