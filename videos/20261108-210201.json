@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183174.6188347,
+ "actualizado": 1794183238.047767,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,86 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0375,
+  "deepseek": 0.0509,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0375
+  "total": 0.0509
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "voz: uso el clon guardado en Fish\nvoz: 8 bloques · 16811 caracteres\ntotal 21808\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 00:06 .\ndrwxrwxrwx+ 6 runner runner    4096 Nov  9 00:05 ..\n-rw-rw-rw-+ 1 sesion sesion 7468403 Nov  9 00:06 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7377729 Nov  9 00:06 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7452162 Nov  9 00:06 blk_002.wav.tmp.wav\n-rw-rw-rw-"
-  },
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/repo/motor/tools/esperar.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"HERRAMIENTA DEL ESTUDIO: espera UNA sola vez hasta que pase algo (en vez de sleep + ls + tail una y otra vez).\n   python <APP>/tools/esperar.py --log <archivo.log> [--busca \"EXIT|FIN|✓|Traceback|Error\"]   termina cuando el log tiene esa palabra\n   python <APP>/tools/esperar.py --existe <archivo>                                          termina cuando el archivo existe (y"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe voz/master.wav --max 480"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe voz/master.wav (110.2 MB, 175 s)"
-  },
-  {
-   "k": "tool",
-   "t": "tail -12 voz/voz.log; ffprobe -v error -show_entries format=duration -of csv=p=0 voz/master.wav"
-  },
-  {
-   "k": "res",
-   "t": "voz: uso el clon guardado en Fish\nvoz: 8 bloques · 16811 caracteres\n  ✓ bloque 1: 125 s (s2.1-pro-free)\n  ✓ bloque 0: 168 s (s2.1-pro-free)\n  ✓ bloque 2: 172 s (s2.1-pro-free)\n  ✓ bloque 3: 155 s (s2.1-pro-free)\n  ✓ bloque 5: 149 s (s2.1-pro-free)\n  ✓ bloque 4: 168 s (s2.1-pro-free)\n  ✓ bloque 6: 154 s (s2.1-pro-free)\n  ✓ bloque 7: 159 s (s2.1-pro-free)\n✓ voz/master.wav 20.8 min\n1249.931224"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"1\", \"status\": \"completed\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #1 status"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"2\", \"status\": \"in_progress\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #2 status"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in en > voz/tiempos.log 2>&1 & echo \"PID:$!\""
-  },
-  {
-   "k": "res",
-   "t": "PID:5409"
-  },
-  {
-   "k": "tool",
-   "t": "# Genera avatar_ranges.json: ventanas cortas (4-6 s) en frases importantes,\n# gaps de 6-8 s para 1-2 planos de b-roll, total ~520 s (<= 560), primera en 0.\nimport json, random, subprocess, sys\n\nB = \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\"\nW = [w for w in json.load(open(f\"{B}/captions.json\", encoding=\"utf8\")) if w.get(\"text\", \"\").strip()]\nW.sort(key=lambda w: w[\"startMs\""
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 30; tail -5 voz/tiempos.log; ls -la captions.json 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "✓ captions.json: 3242 palabras en 20.8 min\n-rw-rw-rw-+ 1 sesion sesion 322326 Nov  9 00:10 captions.json"
-  },
-  {
-   "k": "tool",
-   "t": "python plan_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
-  },
   {
    "k": "res",
    "t": "Exit code 1\nventanas: 14 · avatar 1069 s (85.5 %) · reel 1073 s (tope 590)\ngap min 6.5 s · gap max 43.3 s · primera 0-4580 ms\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py\", line 59, in <module>\n    assert reel <= 585, \"reel demasiado largo\"\n           ^^^^^^^^^^^\nAssertionError: reel demasiado largo"
@@ -178,6 +106,78 @@
   {
    "k": "ai",
    "t": "Ahora preparo los pedidos de fotos (modo Ahorro: 16-18 fotos en total, el resto clips de stock). Primera tanda: 3 variantes del gancho + 6 de prueba."
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\n  \"id\": \"p001_a\",\n  \"cara\": true,\n  \"prompt\": {\n   \"type\": \"amateur phone photo taken from above, mild JPEG compression, real skin texture with pores, wrinkles, age spots, flyaway grey hairs, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The week she turned sixty-eight: ten folded tops lie in a row on o"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"2\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #2 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"3\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #3 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"4\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #4 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"5\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #5 status"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json > fotos/fotos_01.log 2>&1 & echo \"FOTOS_PID:$!\"; nohup python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > avatar/it.log 2>&1 & ech"
+  },
+  {
+   "k": "res",
+   "t": "FOTOS_PID:5994\nAVATAR_PID:5995"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 10; echo \"=== FOTOS ===\"; cat fotos/fotos_01.log; echo \"=== AVATAR ===\"; cat avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "=== FOTOS ===\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p001_c: palabras prohibidas ['out of focus'] (dan look de IA/stock)\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada"
+  },
+  {
+   "k": "tool",
+   "t": "\"an open wooden drawer at the top edge\""
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json > fotos/fotos_01.log 2>&1 & echo \"PID:$!\"; sleep 8; cat fotos/fotos_01.log"
+  },
+  {
+   "k": "res",
+   "t": "PID:7070\n00:13:35 → batch batch_6af1102f6e448190a77405d676277b87 · 4 fotos · sin referencia · low 1088x608\n00:13:36 → batch batch_6af110306b848190a775e13e8e630f0c · 5 fotos · con la cara del presentador · low 1088x608\n00:13:36 batch 76277b87: in_progress 0/4\n00:13:36 batch 8e630f0c: validating 0/0"
   }
  ],
  "maquinas": 1,
