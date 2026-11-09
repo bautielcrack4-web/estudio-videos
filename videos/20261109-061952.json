@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794207695.5600789,
+ "actualizado": 1794207758.606775,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "done",
-   "info": "20 fotos"
+   "info": "154 fotos"
   },
   {
    "k": "armado",
@@ -51,62 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2152,
-  "gpt": 0.0627,
-  "gpt_img": 22,
+  "deepseek": 0.2245,
+  "gpt": 0.3753,
+  "gpt_img": 156,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.2779
+  "total": 0.5998
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "def foto(pid, momento, subject, action, pool, cam, st, li, co, cara=False, extra=(), props=None, type_=None):\n    P = props if props is not None else pick_props(pool, extra)\n    # las escenas de tecnica que no son del presentador se encuadran sin cara: evita que aparezca \"otra Michiko\"\n    if not cara and pool != \"vintage1968\":\n        s = (subject + \" \" + action).lower()\n        if (\"her hand\" in"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/foto_base.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python escenas_a.py && python escenas_b.py && python escenas_c.py && python - <<'PY'\nimport json,re\npeds=[]\nfor f in ('pedidos_a.json','pedidos_b.json','pedidos_c.json'):\n    peds+=json.load(open(f))\njson.dump(peds,open('pedidos_full.json','w',encoding='utf8'),ensure_ascii=False,indent=1)\nPROH=[\"cinematic\",\"35mm\",\"bokeh\",\"8k\",\"highly detailed\",\"photorealistic\",\"golden hour\",\"out of focus\",\"blurry\""
-  },
-  {
-   "k": "res",
-   "t": "✓ pedidos_a.json: 43 pedidos\n✓ pedidos_b.json: 57 pedidos\n✓ pedidos_c.json: 49 pedidos\nfull 149 caras 13 (+p001+p079= 15 ) camara max 28 18.8%\nerrores 0\ntest-ok"
-  },
-  {
-   "k": "ai",
-   "t": "El lote completo pasa la compuerta (149 fotos, 0 errores). Lo lanzo."
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -af \"tools/fotos.py\" || echo \"nada corriendo\"; nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_full.json > fotos/fotos_full.log 2>&1 & echo \"PID=$!\"; sleep 4; tail -5 fotos/fotos_full.log"
-  },
-  {
-   "k": "res",
-   "t": "<persisted-output>\nOutput too large (43.4KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-one-collar-press-makes-a-plain-shirt-loo/fd4ebb58-e36a-4d9d-a8e7-e3fd08ada688/tool-results/bmz6wipc4.txt\n\nPreview (first 2KB):\n3806 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOSITORY=bautielcr"
-  },
-  {
-   "k": "tool",
-   "t": "tail -6 fotos/fotos_full.log; echo ---; ls fotos/*.png | wc -l; echo ---AVATAR---; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "06:53:32 → batch batch_6af16dec6e4881908c69e33cf5d39714 · 136 fotos · sin referencia · low 1088x608\n06:53:33 → batch batch_6af16ded1bcc81908aeea2dceb382ee0 · 13 fotos · con la cara del presentador · low 1088x608\n06:53:33 batch f5d39714: validating 0/0\n06:53:33 batch eb382ee0: validating 0/0\n---\n7\n---AVATAR---\n06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"id\": \"vapor\", \"tags\": [\"steam\"], \"q\": \"steam\", \"min\": 1.0, \"max\": 6},\n {\"id\": \"tela\", \"tags\": [\"fabric\", \"cloth\"], \"q\": \"cloth\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"papel\", \"tags\": [\"paper\"], \"q\": \"paper\", \"min\": 0.5, \"max\": 3},\n {\"id\": \"agua\", \"tags\": [\"water\"], \"q\": \"water pour\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"pajaros\", \"tags\": [\"birds\"], \"q\": \"birds\", \"min\": 2, \"max\": 9}\n]\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/sonidos.py . sfx_pedidos.json --tomas 3 > sonidos.log 2>&1 & echo \"PID=$!\""
-  },
   {
    "k": "res",
    "t": "PID=10653"
@@ -178,6 +130,54 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_full.log --busca \"FIN:\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'FIN:' (420 s):\n07:01:07 batch f5d39714: finalizing 134/136\n07:01:37 batch f5d39714: completed 134/136\n07:01:54   ✗ p098: {\"message\": \"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 3ed925d1-ec8b-456d-86d5-9e41700d684a. safety_viol\n07:01:54   ✗ p133: {\"message\": \"Your request was rejected by t"
+  },
+  {
+   "k": "ai",
+   "t": "El lote llegó: 147/149 (2 rechazadas por el filtro). Armo las hojas de 12 y las reviso."
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'PY'\nimport json,glob,os\nplan=[p['id'] for p in json.load(open('planos.json'))]\nhave={os.path.splitext(os.path.basename(f))[0] for f in glob.glob('fotos/*.png')+glob.glob('fotos/*.jpg')}\nfalt=[i for i in plan if i not in have]\nprint('planos',len(plan),'fotos',len(have),'faltan',falt)\n# ids en orden\nids=[i for i in plan if i in have]\nprint('total a revisar',len(ids))\nfor k in range(0,len"
+  },
+  {
+   "k": "res",
+   "t": "planos 156 fotos 154 faltan ['p098', 'p133']\ntotal a revisar 154\nhoja 01: p001 p002 p003 p004 p005 p006 p007 p008 p009 p010 p011 p012\nhoja 02: p013 p014 p015 p016 p017 p018 p019 p020 p021 p022 p023 p024\nhoja 03: p025 p026 p027 p028 p029 p030 p031 p032 p033 p034 p035 p036\nhoja 04: p037 p038 p039 p040 p041 p042 p043 p044 p045 p046 p047 p048\nhoja 05: p049 p050 p051 p052 p053 p054 p055 p056 p057 p058 "
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'PY'\nimport json,glob,os,subprocess\nplan=[p['id'] for p in json.load(open('planos.json'))]\nhave={os.path.splitext(os.path.basename(f))[0] for f in glob.glob('fotos/*.png')+glob.glob('fotos/*.jpg')}\nids=[i for i in plan if i in have]\nfor k in range(0,len(ids),12):\n    grp=ids[k:k+12]\n    files=[]\n    for i in grp:\n        c=glob.glob(f'fotos/{i}.*')\n        c=[x for x in c if x.lower().e"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/lote_01.jpg (12 cuadros, 4x3)\nhoja: qc/lote_02.jpg (12 cuadros, 4x3)\nhoja: qc/lote_03.jpg (12 cuadros, 4x3)\nhoja: qc/lote_04.jpg (12 cuadros, 4x3)\nhoja: qc/lote_05.jpg (12 cuadros, 4x3)\nhoja: qc/lote_06.jpg (12 cuadros, 4x3)\nhoja: qc/lote_07.jpg (12 cuadros, 4x3)\nhoja: qc/lote_08.jpg (12 cuadros, 4x3)\nhoja: qc/lote_09.jpg (12 cuadros, 4x3)\nhoja: qc/lote_10.jpg (12 cuadros, 4x3)\nhoja: qc/l"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_01.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_02.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_03.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 1001,
+    "seg": 1065,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2012,
+    "seg": 2075,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2502,
+  "total_s": 2565,
   "avatar_s": 30,
-  "sin_avatar_s": 2471,
+  "sin_avatar_s": 2534,
   "cerrado": false
  }
 }
