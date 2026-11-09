@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183110.9572055,
+ "actualizado": 1794183174.6188347,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -59,10 +59,6 @@
   "total": 0.0375
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "sleep 20; tail -5 voz/voz.log; ls -la voz/ | head"
-  },
   {
    "k": "res",
    "t": "voz: uso el clon guardado en Fish\nvoz: 8 bloques · 16811 caracteres\ntotal 21808\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 00:06 .\ndrwxrwxrwx+ 6 runner runner    4096 Nov  9 00:05 ..\n-rw-rw-rw-+ 1 sesion sesion 7468403 Nov  9 00:06 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7377729 Nov  9 00:06 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7452162 Nov  9 00:06 blk_002.wav.tmp.wav\n-rw-rw-rw-"
@@ -178,6 +174,10 @@
   {
    "k": "res",
    "t": "p001 4580 10940 | The garden is quiet this morning, so we have time. Last spring, the week, I\np002 16200 23220 | was the drawer where I kept the tops I no longer wore but could not throw away. I laid everything on\np003 28520 35280 | to my neighbor, to my daughter-in-law, to a charity box near the station, and I have not missed\np004 40760 44490 | A black turtleneck tight at the throat, a\np005 44490"
+  },
+  {
+   "k": "ai",
+   "t": "Ahora preparo los pedidos de fotos (modo Ahorro: 16-18 fotos en total, el resto clips de stock). Primera tanda: 3 variantes del gancho + 6 de prueba."
   }
  ],
  "maquinas": 1,
