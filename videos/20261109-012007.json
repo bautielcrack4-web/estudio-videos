@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794201234.5606992,
+ "actualizado": 1794201298.1732063,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "7 fotos"
+   "info": "9 fotos"
   },
   {
    "k": "armado",
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0812,
-  "gpt": 0.0157,
-  "gpt_img": 6,
+  "deepseek": 0.0827,
+  "gpt": 0.0213,
+  "gpt_img": 8,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3469
+  "total": 0.354
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\n \"title\": \"Layer a Thin Sweater Without Bulk in 3 Quiet Steps\",\n \"description\": \"Hello, please come in. On a cold morning in Kyoto, I lay three pieces on the tatami: a thin undershirt, a fine wool sweater, and one finger's width of tucked fabric. Together they weigh about two hundred and forty grams, less than the iron teapot in my hands, and they are warmer than the heavy coat I wore in 1998. W"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/meta.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_01.log --busca \"FIN:|⛔\" --max 540"
-  },
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: 04:53:09 batch 1d4b4f4b: in_progress 2/3 → hacé otra cosa útil y volvé a llamar"
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "faltan fotos 13 ['p003', 'p005', 'p009', 'p012', 'p020', 'p023', 'p029', 'p031', 'p035', 'p037', 'p039', 'p046', 'p051']\nimgs 7\n05:13:08 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:13:39 → batch batch_6af1568366e88190ae3292e8359521a0 · 11 fotos · sin referencia · low 1088x608\n05:13:40 → batch batch_6af1568447048190b2d3497813f3c202 · 2 fotos · con la cara del presentador · "
+  },
+  {
+   "k": "tool",
+   "t": "Control fotos (auto):\n- Tanda de prueba revisada en qc/hoja_fotos_test1.jpg y qc/hoja_fotos_hook.jpg con Read.\n- p002 (tres piezas + báscula 240 g): manos y objetos correctos, texto legible y bien escrito. OK.\n- p018 (báscula antes/después): etiquetas 'before'/'after' legibles, detalle narrativo correcto. OK.\n- p028 (línea de parada, cinta roja): mano midiendo 4 dedos, cuaderno y fecha visibles. O"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_02.log --busca \"FIN:|⛔\" --max 540"
   }
  ],
  "maquinas": 1,
