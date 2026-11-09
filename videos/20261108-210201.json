@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794186888.6110559,
+ "actualizado": 1794186952.3073897,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1271,
+  "deepseek": 0.1309,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1789
+  "total": 0.1827
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "cat > gates/render_auto.txt <<'EOF'\nRevisión del render de prueba (10 segmentos, qc/hoja_render.jpg):\n- Lo primero es el avatar (cuadro fijo con cartel «Esperando avatar» porque el clip todavía no había llegado). Cuando llegue A0.mp4 se re-renderiza.\n- El b-roll alterna cada ~4-9 s y el zoom/encuadre se ve estable; los clips se recortan bien a 1920x1080.\n- p001 (hero, Michiko con el cuello alto) e"
-  },
-  {
-   "k": "res",
-   "t": "PID:23439\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"4\", \"status\": \"completed\"}"
-  },
   {
    "k": "res",
    "t": "Updated task #4 status"
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: 00:14:02 estado: IN_PROGRESS → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 5995 -o pid,etime,cmd 2>/dev/null || echo \"avatar_it terminó\"; tail -4 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "    PID     ELAPSED CMD\n   5995    01:01:38 python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n0"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
   }
  ],
  "maquinas": 1,
