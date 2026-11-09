@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794207833.263571,
+ "actualizado": 1794207896.1812978,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "done",
-   "info": "154 fotos"
+   "info": "149 fotos"
   },
   {
    "k": "armado",
@@ -51,42 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2451,
+  "deepseek": 0.2559,
   "gpt": 0.3753,
   "gpt_img": 156,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.6204
+  "total": 0.6312
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "planos 156 fotos 154 faltan ['p098', 'p133']\ntotal a revisar 154\nhoja 01: p001 p002 p003 p004 p005 p006 p007 p008 p009 p010 p011 p012\nhoja 02: p013 p014 p015 p016 p017 p018 p019 p020 p021 p022 p023 p024\nhoja 03: p025 p026 p027 p028 p029 p030 p031 p032 p033 p034 p035 p036\nhoja 04: p037 p038 p039 p040 p041 p042 p043 p044 p045 p046 p047 p048\nhoja 05: p049 p050 p051 p052 p053 p054 p055 p056 p057 p058 "
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport json,glob,os,subprocess\nplan=[p['id'] for p in json.load(open('planos.json'))]\nhave={os.path.splitext(os.path.basename(f))[0] for f in glob.glob('fotos/*.png')+glob.glob('fotos/*.jpg')}\nids=[i for i in plan if i in have]\nfor k in range(0,len(ids),12):\n    grp=ids[k:k+12]\n    files=[]\n    for i in grp:\n        c=glob.glob(f'fotos/{i}.*')\n        c=[x for x in c if x.lower().e"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/lote_01.jpg (12 cuadros, 4x3)\nhoja: qc/lote_02.jpg (12 cuadros, 4x3)\nhoja: qc/lote_03.jpg (12 cuadros, 4x3)\nhoja: qc/lote_04.jpg (12 cuadros, 4x3)\nhoja: qc/lote_05.jpg (12 cuadros, 4x3)\nhoja: qc/lote_06.jpg (12 cuadros, 4x3)\nhoja: qc/lote_07.jpg (12 cuadros, 4x3)\nhoja: qc/lote_08.jpg (12 cuadros, 4x3)\nhoja: qc/lote_09.jpg (12 cuadros, 4x3)\nhoja: qc/lote_10.jpg (12 cuadros, 4x3)\nhoja: qc/l"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_01.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_02.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_03.jpg\"}"
@@ -178,6 +150,34 @@
   {
    "k": "ai",
    "t": "Revisión completa: 154 fotos buenas. Rehago en una sola ronda las 5 con cara ajena/encuadre (p002, p050, p105, p127, p134) y los 2 prompts rechazados (p098, p133)."
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Ronda unica de rehechas: encuadres sin cara + dos prompts rechazados por el filtro.\"\"\"\nfrom foto_base import foto, escribir\n\nP = []\nP.append(foto(\"p002\",\n    \"She reaches up and presses two fingertips against the band of her shirt collar at her neck, testing how it sits, her eyes lowered in concentration.\",\n    \"the weathered hands and lower neck of a 68-year-old Japanes"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_redo.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python escenas_redo.py && python - <<'PY'\nimport json,re\npeds=json.load(open('pedidos_redo.json'))\nPROH=[\"cinematic\",\"35mm\",\"bokeh\",\"8k\",\"highly detailed\",\"photorealistic\",\"golden hour\",\"out of focus\",\"blurry\",\"soft focus\",\"shallow depth of field\",\"subject isolation\",\"stock photo\",\"studio lighting\"]\nVACIO=re.compile(r\"\\b(empty room|nobody|no one|no people|unoccupied|bare room|minimalist|isolated o"
+  },
+  {
+   "k": "res",
+   "t": "✓ pedidos_redo.json: 7 pedidos\nredo 7 errores 0 camara max 1"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f fotos/p002.png fotos/p002.json fotos/p050.png fotos/p050.json fotos/p105.png fotos/p105.json fotos/p127.png fotos/p127.json fotos/p134.png fotos/p134.json\nnohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_redo.json > fotos/fotos_redo.log 2>&1 & echo \"PID=$!\"; sleep 5; tail -4 fotos/fotos_redo.log; echo ---AVATAR---; tail -2 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "PID=19740\n07:04:04 → batch batch_6af170641d4881909cb8e250375af8b3 · 7 fotos · sin referencia · low 1088x608\n07:04:04 batch 375af8b3: validating 0/0\n---AVATAR---\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_redo.log --busca \"FIN:\" --max 540"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 1139,
+    "seg": 1202,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2150,
+    "seg": 2213,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2639,
+  "total_s": 2702,
   "avatar_s": 30,
-  "sin_avatar_s": 2609,
+  "sin_avatar_s": 2672,
   "cerrado": false
  }
 }
