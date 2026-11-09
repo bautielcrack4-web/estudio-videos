@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794198301.0799444,
+ "actualizado": 1794198369.685499,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -11,13 +11,13 @@
    "k": "guion",
    "n": "Guion",
    "st": "done",
-   "info": "1.765 palabras"
+   "info": "1.670 palabras"
   },
   {
    "k": "voz",
    "n": "Voz",
    "st": "active",
-   "info": "11:07 min"
+   "info": "3 bloques"
   },
   {
    "k": "tiempos",
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0195,
+  "deepseek": 0.0237,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0195
+  "total": 0.0237
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "1\t# -*- coding: utf-8 -*-\n2\t\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/render.py <carpeta_del_video> [--limit N]\n3\tLee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\n4\t     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frame"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/repo/motor/tools/assemble.py\"}"
-  },
-  {
-   "k": "res",
-   "t": "1\t# -*- coding: utf-8 -*-\n2\t\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/assemble.py <carpeta_del_video>\n3\tUne segments/ (con los fundidos de xf.json) + voz/master.wav + SFX de cues.json -> final.mp4 (1920x1080 30fps, audio ESTÉREO AAC 192k).\n4\tcues.json = [{\"file\":\"tela.mp3\",\"t\":171100,\"gain\":0.07,\"fade\":0.4}, ...]  (archivos en <carpeta>/sfx/; t en ms; gain 0.035-0."
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Escribir y validar guion (~8000 chars)\", \"description\": \"guion.txt en inglés, ~8 min, validar --etapa guion\", \"activeForm\": \"Escribiendo el guion\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #1 created successfully: Escribir y validar guion (~8000 chars)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Voz y tiempos\", \"description\": \"voz.py en background, esperar, tiempos.py → captions.json\", \"activeForm\": \"Generando voz y tiempos\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #2 created successfully: Voz y tiempos"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Plan de avatar + planos\", \"description\": \"avatar_ranges.json (≈50%, inicio 0, ≤6s, gaps ≤15s) y planos.py\", \"activeForm\": \"Armando plan de avatar y planos\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #3 created successfully: Plan de avatar + planos"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Stock + fotos (máx 20)\", \"description\": \"stock.py para la mayoría de planos; fotos.py con gancho 3 variantes, caras y creativas; revisar hojas\", \"activeForm\": \"Pidiendo stock y fotos\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #4 created successfully: Stock + fotos (máx 20)"
-  },
   {
    "k": "tool",
    "t": "{\"subject\": \"Avatar InfiniteTalk\", \"description\": \"1 llamada, esperar clips A*.mp4\", \"activeForm\": \"Generando avatar\"}"
@@ -174,6 +130,50 @@
   {
    "k": "res",
    "t": "1\t# -*- coding: utf-8 -*-\n2\t\"\"\"Tiempos POR PALABRA de la voz (Groq whisper GRATIS si hay clave \"groq\"; si no, OpenAI whisper-1). Uso:\n3\t   python <APP>/tools/tiempos.py <carpeta_del_video> [idioma: es|en|pt…]\n4\tLee voz/master.wav y escribe captions.json = [{\"text\":\" palabra\",\"startMs\":1234,\"endMs\":1500}, …].\n5\tCosto: US$0,006 por minuto de audio (queda anotado en gasto.jsonl).\"\"\"\n6\timport json, os"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --busca \"✓ voz/master|⛔|Traceback|fallaron\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene '✓ voz/master' (135 s):\nvoz: 4 bloques · 9092 caracteres\n  ✓ bloque 1: 174 s (s2.1-pro-free)\n  ✓ bloque 2: 175 s (s2.1-pro-free)\n  ✓ bloque 0: 187 s (s2.1-pro-free)\n  ✓ bloque 3: 131 s (s2.1-pro-free)\n✓ voz/master.wav 11.1 min"
+  },
+  {
+   "k": "ai",
+   "t": "Voice is 11.1 min — too long for the ~8 min brief. I'll trim the script to ~7,400 chars (still ≥7,200 required) and regenerate."
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"import re;t=open('guion.txt').read();ps=re.split(r'\\n\\s*\\n',t);[print(len(re.sub(r'\\s+',' ',re.sub(r'\\[[^\\]]*\\]','',p)).strip()),'|',p[:70]) for p in ps]\""
+  },
+  {
+   "k": "res",
+   "t": "129 | Hello, please come in. Mind the step. [whispering] It is a cold mornin\n341 | Look at this. Three pieces, laid on the tatami. A thin white undershir\n423 | My name is Michiko. I am sixty-eight years old, and for thirty-one yea\n143 | Today I will give you three quiet steps. A smooth base, a thin knit, a\n552 | The first step is the one almost everyone gets wrong. Most women reach\n319 | She was r"
+  },
+  {
+   "k": "tool",
+   "t": "Hello, please come in. Mind the step. [whispering] It is a cold morning in Kyoto, and I want to show you something before the kettle finishes.\n\nLook at this. Three pieces, laid on the tatami. A thin white undershirt. A fine wool sweater. And one finger's width of tucked fabric. Together they weigh about two hundred and forty grams, less than the iron teapot in my hands. On a February morning, this"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 8 && rm -f voz/blk_*.wav voz/master.wav voz/lista.txt && nohup python /opt/estudio/repo/motor/tools/voz.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > voz/voz.log 2>&1 & echo \"relanzado\""
+  },
+  {
+   "k": "res",
+   "t": "relanzado"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 8; echo \"---\"; sleep 3; tail -5 voz/voz.log 2>/dev/null; ls voz/"
+  },
+  {
+   "k": "res",
+   "t": "VALIDAR /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q · etapa guion\n  ✓ guion: 8479 caracteres, 1670 palabras (hacen falta 7200-9200 para 8 min: bien)\nRESULTADO: OK\n---\nvoz: uso el clon guardado en Fish\nvoz: 4 bloques · 8616 caracteres\nblk_000.wav.tmp.wav\nblk_001.wav.tmp.wav\nblk_002.wav.tmp.wav\nmanifest.json\nvoz.log"
   },
   {
    "k": "tool",
