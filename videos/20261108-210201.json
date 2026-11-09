@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794182592.0127099,
+ "actualizado": 1794182653.220744,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,17 +51,93 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0,
+  "deepseek": 0.0082,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0
+  "total": 0.0082
  },
  "eventos": [
   {
    "k": "user",
    "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — 10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead · Kyoto Grace\n\nHacé un video"
+  },
+  {
+   "k": "ai",
+   "t": "I'll start by reading the brief and checking the current state of the working directory."
+  },
+  {
+   "k": "tool",
+   "t": "ls -la /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/ && echo \"---REFS---\" && ls -la /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/refs/ 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "total 60\ndrwxrwxrwx+ 6 runner runner 4096 Nov  9 00:03 .\ndrwxrwxrwx+ 3 runner runner 4096 Nov  9 00:03 ..\n-rw-rw-rw-+ 1 runner runner 9492 Nov  9 00:03 BRIEF.md\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 00:03 avatar\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 00:03 fotos\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 00:03 refs\ndrwxrwxrwx+ 2 runner runner 4096 Nov  9 00:03 voz\n---REFS---\ntotal 5880\ndrwxrwxrwx+"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/BRIEF.md\"}"
+  },
+  {
+   "k": "res",
+   "t": "1\t# BRIEF — 10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead · Kyoto Grace\n2\t\n3\tHacé un video terminado, sin preguntar nada y sin frenar: `/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/final.mp4` + `/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/REPORTE.md` + `/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/meta.json`. Trabajá tod"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la /opt/estudio/repo/motor/tools/ && echo \"===VOZ.TXT===\" && cat /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/refs/voz.txt && echo \"===CANAL (head)===\" && head -c 2000 /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/refs/canal.json"
+  },
+  {
+   "k": "res",
+   "t": "total 192\ndrwxr-xr-x+ 2 root root  4096 Nov  9 00:03 .\ndrwxr-xr-x+ 4 root root  4096 Nov  9 00:03 ..\n-rw-r--r--+ 1 root root  4076 Nov  9 00:03 _cfg.py\n-rw-r--r--+ 1 root root  5743 Nov  9 00:03 assemble.py\n-rw-r--r--+ 1 root root 10814 Nov  9 00:03 avatar_it.py\n-rw-r--r--+ 1 root root  3445 Nov  9 00:03 espera.py\n-rw-r--r--+ 1 root root  2762 Nov  9 00:03 esperar.py\n-rw-r--r--+ 1 root root 32701 "
+  },
+  {
+   "k": "tool",
+   "t": "sed -n '1,200p' /opt/estudio/repo/motor/tools/validar.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\r\n\"\"\"Validador automático de un video DeepSeek. Uso:\r\n   python <APP>/tools/validar.py <carpeta> --etapa guion|fotos|render|final [--min 15]\r\nSale con código 1 SÓLO con errores importantes (✗): guion fuera de largo, video roto o vacío, sin audio, desincronizado con la voz, no arranca\r\n   con el avatar, avatar congelado, huecos negros > 0,5 s, menciones de IA, sin título. Tod"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/repo/motor/tools/planos.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"PLANOS — arma los planos del b-roll y shots_timed.json. NO escribas scripts propios para esto.\n  1) python <APP>/tools/planos.py <carpeta>\n       Necesita captions.json y avatar_ranges.json (el plan de ventanas: escribilo vos ANTES).\n       → planos.json: un plano de b-roll cada ~5 s (entre las ventanas del avatar), cortado en pausas del habla, con el\n         TEXTO que "
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/repo/motor/tools/fotos.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Fotos del b-roll. Motor (Configuración → Fotos): \"openai\" = gpt-image-2.5-sunburst SIEMPRE low + Batch; referencia SOLO en las fotos del presentador;\n\"manual\" = las hace el usuario con lo que quiera (gratis).\n   python <APP>/tools/fotos.py <carpeta_del_video> <pedidos.json> > <carpeta>/fotos/fotos.log 2>&1      (en segundo plano)\npedidos.json = [{\"id\":\"b01_gancho\", \"cara"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/repo/motor/tools/stock.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Clips de stock del MODO AHORRO (Pexels, gratis). Uso:\n   python <APP>/tools/stock.py <carpeta> <pedidos.json> > <carpeta>/clips/stock.log 2>&1      (en segundo plano)\npedidos = [{\"id\":\"p003\", \"buscar\":[\"senior hands kneading dough\", \"kneading bread close up\"]}, …]\n  · id = el del plano de planos.json. \"buscar\" = 1 a 3 búsquedas EN INGLÉS, de la más precisa a la más gener"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"clips\\|split\\|fotos\\|avatar_ranges\\|def \\|plan_motion\\|xf.json\" /opt/estudio/repo/motor/tools/render.py | head -80"
+  },
+  {
+   "k": "res",
+   "t": "3:Lee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\r\n4:     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg\",\"startMs\":3200,\"endMs\":8900}, ...]  (opcional)\r\n11:Escribe plan.json (para el panel y validar.py) + segments/NNNN.mp4 + segments/xf.js"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/repo/motor/tools/voz.py; echo \"===TIEMPOS===\"; cat /opt/estudio/repo/motor/tools/tiempos.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Voz con el CLON de la voz del canal (Fish Audio). Uso (en segundo plano, con log):\n   python <APP>/tools/voz.py <carpeta_del_video> > <carpeta>/voz/voz.log 2>&1\nLee <carpeta>/guion.txt y la muestra de voz del canal en <carpeta>/refs/voz.wav (+ refs/voz.txt = lo que se dice en la muestra).\nParte el guion en bloques de ~2500 caracteres, genera 3 a la vez, rehace los que sa"
   }
  ],
  "maquinas": 1,
