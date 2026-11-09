@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205530.7911391,
+ "actualizado": 1794205593.920668,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0404,
+  "deepseek": 0.0489,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0404
+  "total": 0.0489
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "cd /opt/estudio/repo/motor/tools && sed -n '60,220p' validar.py"
-  },
-  {
-   "k": "res",
-   "t": "            if not isinstance(pj, dict) or \"nothing blurred out\" not in json.dumps(pj).lower(): malos += 1\n            elif pj.get(\"detalle_narrativo\"): creativas += 1\n        (OK if sin == 0 else A)(\"fotos: %d · %d sin su prompt al lado (no salieron de tools/fotos.py)\" % (len(fotos), sin))\n        (OK if malos == 0 else A)(\"fotos: %d con prompt incompleto\" % malos)\n        if hasta >= 2: (OK if c"
-  },
-  {
-   "k": "tool",
-   "t": "cd /opt/estudio/repo/motor/tools && head -80 render.py && echo \"=====ASSEMBLE=====\" && head -60 assemble.py && echo \"=====ESPERAR=====\" && head -50 esperar.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/render.py <carpeta_del_video> [--limit N]\nLee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\n     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg"
-  },
-  {
-   "k": "tool",
-   "t": "cd /opt/estudio/repo/motor/tools && head -50 sonidos.py && echo \"=====REVISOR=====\" && head -60 revisor.py && echo \"=====HOJA=====\" && head -30 hoja.py && echo \"=====VOZ=====\" && head -40 voz.py && echo \"=====TIEMPOS=====\" && head -30 tiempos.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"EFECTOS DE SONIDO gratis (Mixkit: licencia libre, uso comercial, sin atribución y SIN clave). Baja SÓLO los que usa este video.\n   python <APP>/tools/sonidos.py <carpeta> <pedidos.json> [--tomas 3]\npedidos.json = [{\"id\":\"agua\",\"tags\":[\"water\",\"splash\"],\"q\":\"water pour\",\"min\":0.5,\"max\":6}, …]\n   id = nombre del archivo (sfx/<id>.mp3 y alternativas <id>_2, <id>_3) · tags ="
-  },
-  {
-   "k": "ai",
-   "t": "Ahora escribo el guion completo (~20.000 caracteres)."
-  },
-  {
-   "k": "tool",
-   "t": "Hello, please come in. Sit near the window, where the light is soft. Let us take our time.\n\nBefore I say anything else, I want you to look at one small thing. Not at me. At your own collar. If you are wearing a shirt today, reach up with two fingers and feel the band that touches your neck. Is it soft and flat, like a ribbon that has given up? Or does it stand up with a small, gentle curve, as if "
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/guion.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport re\nt=open('guion.txt',encoding='utf8').read()\ncar=len(re.sub(r'\\s+',' ',re.sub(r'\\[[^\\]]*\\]|\\([^)]*\\)','',t)).strip())\nw=len(re.findall(r\"[^\\W\\d_]+(?:'[^\\W\\d_]+)?\",t))\nprint('caracteres:',car,'palabras:',w)\nPY\npython /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo --etapa guion --min 20"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\ncaracteres: 14176 palabras: 2762\nVALIDAR /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo · etapa guion\n  ✗ guion: 14176 caracteres, 2762 palabras (hacen falta 18000-23000 para 20 min: alargalo con puntos nuevos)\nRESULTADO: FALLA (1)"
-  },
   {
    "k": "tool",
    "t": "A good roll is a soft curve. A poor one is a hard crease, or no curve at all.\n\nThe stand was not always part of the shirt. In my grandmother's time, collars were often detachable, held on with a small button at the back and two at the front. A man might own one shirt and three collars, and a woman would turn a collar inside out when the first side wore thin. The stand existed so the collar could h"
@@ -178,6 +134,50 @@
   {
    "k": "res",
    "t": "PID=4562"
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && sed -n '60,140p' fotos.py"
+  },
+  {
+   "k": "res",
+   "t": "    hit = [w for w in PROHIBIDOS if w in sin_avoid.replace(\"nothing blurred out\", \"\")]\n    if hit: problemas.append(f\"{i}: palabras prohibidas {hit} (dan look de IA/stock)\")\n    if not creativa:\n        if len(str(j.get(\"moment\", \"\"))) < 70: problemas.append(f\"{i}: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\")\n        props = j.get(\"props\") or []\n        if isins"
+  },
+  {
+   "k": "tool",
+   "t": "tail -5 /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/voz.log 2>/dev/null; ls -la /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/"
+  },
+  {
+   "k": "res",
+   "t": "voz: uso el clon guardado en Fish\nvoz: 9 bloques · 19268 caracteres\ntotal 11196\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 06:25 .\ndrwxrwxrwx+ 8 runner runner    4096 Nov  9 06:25 ..\n-rw-rw-rw-+ 1 sesion sesion 3739972 Nov  9 06:25 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 3915604 Nov  9 06:25 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 3778465 Nov  9 06:25 blk_002.wav.tmp.wav\n-rw-rw-rw-"
+  },
+  {
+   "k": "ai",
+   "t": "El guion está listo. Preparo las 3 variantes del gancho y las mando ya al Batch."
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\n  \"id\": \"p001_a\",\n  \"cara\": true,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"She is pressing the collar stand of a plain white shirt with an old black iron at the exact second the steam lifts, the coll"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/pedidos_hook.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_hook.json > fotos/fotos_hook.log 2>&1 & echo \"PID=$!\""
+  },
+  {
+   "k": "res",
+   "t": "PID=4760"
+  },
+  {
+   "k": "tool",
+   "t": "tail -6 /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/voz.log; ls -la /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/ | head"
+  },
+  {
+   "k": "res",
+   "t": "voz: uso el clon guardado en Fish\nvoz: 9 bloques · 19268 caracteres\ntotal 23620\ndrwxrwxrwx+ 2 runner runner    4096 Nov  9 06:25 .\ndrwxrwxrwx+ 8 runner runner    4096 Nov  9 06:25 ..\n-rw-rw-rw-+ 1 sesion sesion 8034675 Nov  9 06:26 blk_000.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 8123796 Nov  9 06:26 blk_001.wav.tmp.wav\n-rw-rw-rw-+ 1 sesion sesion 7998186 Nov  9 06:26 blk_002.wav.tmp.wav\n-rw-rw-rw-"
   }
  ],
  "maquinas": 1,
@@ -202,14 +202,14 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 17,
+    "seg": 81,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 337,
+  "total_s": 400,
   "avatar_s": 0,
-  "sin_avatar_s": 337,
+  "sin_avatar_s": 400,
   "cerrado": false
  }
 }
