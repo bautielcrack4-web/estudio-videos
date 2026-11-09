@@ -2,8 +2,8 @@
  "vid": "20261108-193228",
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
- "estado": "trabajando",
- "actualizado": 1794218429.5103958,
+ "estado": "listo",
+ "actualizado": 1794218463.3144336,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42590033103",
  "pasos": [
@@ -212,11 +212,20 @@
     "seg": 36905,
     "pasadas": 1,
     "fin": true
+   },
+   {
+    "k": "entrega",
+    "n": "Entrega",
+    "seg": 11,
+    "pasadas": 1,
+    "fin": true
    }
   ],
-  "total_s": 41213,
+  "total_s": 41247,
   "avatar_s": 0,
-  "sin_avatar_s": 41213,
-  "cerrado": false
- }
+  "sin_avatar_s": 41247,
+  "cerrado": true
+ },
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-20261108-193228/A-2-Minute-Evening-Hand-Ritual-for-Warm-Soft-Hands.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261108-193228"
 }
