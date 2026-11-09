@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794186825.3171904,
+ "actualizado": 1794186888.6110559,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -59,10 +59,6 @@
   "total": 0.1789
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "✓ shots_timed.json: 156 planos, 156 fotos distintas (cero repetidas). Seguí con render.py.\n139\n17"
-  },
   {
    "k": "tool",
    "t": "cat > gates/render_auto.txt <<'EOF'\nRevisión del render de prueba (10 segmentos, qc/hoja_render.jpg):\n- Lo primero es el avatar (cuadro fijo con cartel «Esperando avatar» porque el clip todavía no había llegado). Cuando llegue A0.mp4 se re-renderiza.\n- El b-roll alterna cada ~4-9 s y el zoom/encuadre se ve estable; los clips se recortan bien a 1920x1080.\n- p001 (hero, Michiko con el cuello alto) e"
@@ -178,6 +174,10 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log avatar/it.log --busca \"clips cortados|COMPLETED|FAILED|TIMED_OUT|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 00:14:02 estado: IN_PROGRESS → hacé otra cosa útil y volvé a llamar"
   }
  ],
  "maquinas": 1,
