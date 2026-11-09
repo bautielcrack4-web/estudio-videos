@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794212174.8493516,
+ "actualizado": 1794212240.5499516,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "done",
-   "info": "143 segmentos"
+   "info": "187 segmentos"
   },
   {
    "k": "qc",
@@ -51,70 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3353,
+  "deepseek": 0.3451,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9771
+  "total": 0.9869
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ls segments/[0-9]*.mp4 | sed -n '1p;20p;40p;60p;80p;100p;120p;140p' | tr '\\n' ' '; echo; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_previo.jpg $(ls segments/[0-9]*.mp4 | sed -n '11p;31p;51p;71p;91p;111p;131p;143p')"
-  },
-  {
-   "k": "res",
-   "t": "segments/0000.mp4 segments/0026.mp4 segments/0058.mp4 segments/0090.mp4 segments/0123.mp4 segments/0154.mp4 segments/0188.mp4 segments/0221.mp4 \nhoja: qc/hoja_previo.jpg (8 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_previo.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "date; tail -4 avatar/it.log; python - <<'PY'\nimport json,time\nd=json.load(open('avatar/it_llamada.json'))\nprint('estado',d.get('estado'),'enviado',d.get('enviado'),'genera',d.get('genera'))\nprint('hace', round((time.time()-d['enviado'])/60,1),'min desde el envio')\nPY"
-  },
-  {
-   "k": "res",
-   "t": "Mon Nov  9 07:41:50 UTC 2026\n06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS\nestado corriendo enviado 1794206663.8 genera 1794206694.1\nhace 57.5 min desde el envio"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"4\", \"status\": \"completed\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #4 status"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la gasto.jsonl 2>/dev/null && tail -8 gasto.jsonl || echo \"sin gasto.jsonl\"; echo \"---\"; date; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "-rw-rw-rw-+ 1 sesion sesion 642 Nov  9 07:29 gasto.jsonl\n{\"t\": 1794205790.0245922, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 1410}\n{\"t\": 1794206534.872288, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 1282}\n{\"t\": 1794206964.1959314, \"tag\": \"fotos_gpt\", \"usd\": 0.01191, \"n\": 5}\n{\"t\": 1794207055.1390333, \"tag\": \"fotos_gpt\", \"usd\": 0.00303, \"n\": 1}\n{\"t\": 1794207426.7933712, \"tag\": \"fotos_gpt\", \"usd\": 0.03833, \"n\":"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la extrema/ 2>/dev/null | head; cat extrema/manifest.json 2>/dev/null | head -30; echo \"---capas---\"; cat extrema/capas.json 2>/dev/null | head -20"
-  },
   {
    "k": "res",
    "t": "total 1084580\ndrwxrwxrwx+  3 runner runner      4096 Nov  9 07:44 .\ndrwxrwxrwx+ 12 runner runner      4096 Nov  9 07:22 ..\n-rw-rw-rw-+  1 runner runner         5 Nov  9 07:21 EN_CURSO\ndrwxrwxrwx+  2 runner runner      4096 Nov  9 07:29 gen\n-rw-rw-rw-+  1 runner runner      3067 Nov  9 07:29 libre.json\n-rw-rw-rw-+  1 runner runner      1063 Nov  9 07:29 momentos.json\n-rw-rw-rw-+  1 sesion sesion   "
@@ -178,6 +122,62 @@
   {
    "k": "tool",
    "t": "sleep 75; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|assemble.py\" | head -4; echo \"---\"; ls -la final.mp4 2>/dev/null || echo \"sin final\"; tail -4 /tmp/armado_*.log 2>/dev/null | tail -8"
+  },
+  {
+   "k": "res",
+   "t": "  44834 python          /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\n---\nsin final\nclips=228 frames=38458 (1281.93s)\nhechos 228"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"5\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #5 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"6\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #6 status"
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'PY'\nimport json\nd=json.load(open('avatar/it_sync.json'))\nprint('reel_s',d.get('reel_s'),'perdidas',d.get('perdidas'))\nprint('cortes',len(d.get('cortes',[])),'maxlag',max(abs(c.get('lag_ms',0)) for c in d.get('cortes',[])))\nprint(d['cortes'][0]); print(d['cortes'][-1])\nPY\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar.jpg avatar/A0.mp4 avatar/A20.mp4 avatar/A45.mp4 avatar/A"
+  },
+  {
+   "k": "res",
+   "t": "reel_s 570.75 perdidas []\ncortes 89 maxlag 395\n{'file': 'avatar/A0.mp4', 'ms': 0.0, 'nom': 0.0, 'dur': 5.82, 'real': 0.0, 'lag_ms': 0}\n{'file': 'avatar/A88.mp4', 'ms': 1274.14, 'nom': 565.86, 'dur': 5.26, 'real': 565.465, 'lag_ms': -395}\nhoja: qc/hoja_avatar.jpg (5 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_avatar.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -y -ss 2 -i avatar/A20.mp4 -frames:v 1 qc/a20_full.jpg && ffmpeg -v error -y -ss 2 -i avatar/A45.mp4 -frames:v 1 qc/a45_full.jpg && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar_full.jpg qc/a20_full.jpg qc/a45_full.jpg"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_avatar_full.jpg (2 cuadros, 2x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_avatar_full.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
   }
  ],
  "maquinas": 1,
@@ -247,11 +247,18 @@
     "seg": 738,
     "pasadas": 2,
     "fin": true
+   },
+   {
+    "k": "render",
+    "n": "Render",
+    "seg": 66,
+    "pasadas": 1,
+    "fin": false
    }
   ],
-  "total_s": 6981,
+  "total_s": 7047,
   "avatar_s": 5356,
-  "sin_avatar_s": 1625,
+  "sin_avatar_s": 1690,
   "cerrado": false
  }
 }
