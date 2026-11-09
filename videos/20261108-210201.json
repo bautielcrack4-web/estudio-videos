@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183238.047767,
+ "actualizado": 1794183301.2285783,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0509,
+  "deepseek": 0.0602,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0509
+  "total": 0.0602
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Exit code 1\nventanas: 14 · avatar 1069 s (85.5 %) · reel 1073 s (tope 590)\ngap min 6.5 s · gap max 43.3 s · primera 0-4580 ms\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py\", line 59, in <module>\n    assert reel <= 585, \"reel demasiado largo\"\n           ^^^^^^^^^^^\nAssertionError: reel demasiado largo"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nW=[w for w in json.load(open('captions.json',encoding='utf8')) if w.get('text','').strip()]\nW.sort(key=lambda w:w['startMs'])\nprint(len(W), W[0], W[1], W[-1])\nstarts=[0]+[w['startMs'] for i,w in enumerate(W) if i and w['startMs']-W[i-1]['endMs']>=90]\nends=[w['endMs'] for i,w in enumerate(W) if i+1<len(W) and W[i+1]['startMs']-w['endMs']>=100]\nprint('starts',len(starts),'en"
-  },
-  {
-   "k": "res",
-   "t": "3242 {'text': ' Hello,', 'startMs': 0, 'endMs': 460, 'timestampMs': 0, 'confidence': 1.0} {'text': ' please', 'startMs': 460, 'endMs': 700, 'timestampMs': 460, 'confidence': 1.0} {'text': ' Goodbye.', 'startMs': 1249060, 'endMs': 1249360, 'timestampMs': 1249060, 'confidence': 1.0}\nstarts 180 ends 179 maxgap 1820\nends first [1380, 4580, 12400, 15120, 21240, 26000, 40760, 66420, 73600, 78880, 85660,"
-  },
-  {
-   "k": "tool",
-   "t": "# candidatos: cualquier borde de palabra; los que caen en pausa se prefieren\nstarts = sorted(set([0] + [w[\"startMs\"] for w in W]))\npausa_start = {w[\"startMs\"] for i, w in enumerate(W) if i and w[\"startMs\"] - W[i-1][\"endMs\"] >= 120}\nends = sorted(set([w[\"endMs\"] for w in W] + [TOTAL]))\npausa_end = {w[\"endMs\"] for i, w in enumerate(W) if i + 1 < len(W) and W[i+1][\"startMs\"] - w[\"endMs\"] >= 120}"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "    # inicio: primera palabra >= cur; si hay una pausa en los 1,5 s siguientes, mejor\n    s = cur if cur == 0 else next((x for x in starts if x >= cur), cur)\n    if s >= TOTAL - 4000:\n        break\n    ps = [x for x in pausa_start if s <= x <= s + 1500]\n    if ps:\n        s = min(ps)\n    # fin: borde de palabra mas cercano a s + 5.0 s, dentro de [4.2, 5.8]\n    target = s + rng.choice([4600, 4800, "
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/plan_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python plan_avatar.py && python /opt/estudio/repo/motor/tools/planos.py ."
-  },
-  {
-   "k": "res",
-   "t": "ventanas: 101 · avatar 511 s (40.9 %) · reel 541 s (tope 590)\ngap min 6.3 s · gap max 9.6 s · primera 0-4580 ms\n✓ avatar_ranges.json\n✓ planos.json: 156 planos de b-roll (12.3 min de b-roll, 12.7 por minuto) · 101 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nP=json.load(open('planos.json',encoding='utf8'))\nfor p in P:\n    print(p['id'], p['startMs'], p['endMs'], '|', p['texto'][:150])\n\""
-  },
-  {
-   "k": "res",
-   "t": "p001 4580 10940 | The garden is quiet this morning, so we have time. Last spring, the week, I\np002 16200 23220 | was the drawer where I kept the tops I no longer wore but could not throw away. I laid everything on\np003 28520 35280 | to my neighbor, to my daughter-in-law, to a charity box near the station, and I have not missed\np004 40760 44490 | A black turtleneck tight at the throat, a\np005 44490"
-  },
-  {
-   "k": "ai",
-   "t": "Ahora preparo los pedidos de fotos (modo Ahorro: 16-18 fotos en total, el resto clips de stock). Primera tanda: 3 variantes del gancho + 6 de prueba."
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\n  \"id\": \"p001_a\",\n  \"cara\": true,\n  \"prompt\": {\n   \"type\": \"amateur phone photo taken from above, mild JPEG compression, real skin texture with pores, wrinkles, age spots, flyaway grey hairs, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The week she turned sixty-eight: ten folded tops lie in a row on o"
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json (file state is current in your context — no need to Read it back)"
@@ -178,6 +126,58 @@
   {
    "k": "res",
    "t": "PID:7070\n00:13:35 → batch batch_6af1102f6e448190a77405d676277b87 · 4 fotos · sin referencia · low 1088x608\n00:13:36 → batch batch_6af110306b848190a775e13e8e630f0c · 5 fotos · con la cara del presentador · low 1088x608\n00:13:36 batch 76277b87: in_progress 0/4\n00:13:36 batch 8e630f0c: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "# Arma stock_01.json: clips de Pexels para todos los planos que no van con foto.\nimport json\nB = \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\"\nP = {p[\"id\"] for p in json.load(open(f\"{B}/planos.json\", encoding=\"utf8\")) if not p.get(\"split\")}\nFOTOS = {\"p001\", \"p002\", \"p013\", \"p017\", \"p027\", \"p040\", \"p066\", \"p097\", \"p106\",\n         \"p119\", \"p124\", \"p126\", \"p136\", \"p143\", \"p147\""
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/make_stock.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python make_stock.py"
+  },
+  {
+   "k": "res",
+   "t": "planos: 156 fotos: 16 stock: 140 mapeados: 140\nsin mapear: []\nsobran: []\n✓ stock_01.json"
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p clips && nohup python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/stock_01.json > clips/stock.log 2>&1 & echo \"PID:$!\"; sleep 15; tail -8 clips/stock.log"
+  },
+  {
+   "k": "res",
+   "t": "PID:7240\n00:14:11 → 140 clips por buscar"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\n  \"id\": \"p002\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The open tansu drawer is almost empty now: a few tops still folded inside, a paper bag beside it, and her hands are lifting t"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_02.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "echo \"=== FOTOS ===\"; tail -6 fotos/fotos_01.log; echo \"=== STOCK ===\"; tail -6 clips/stock.log; echo \"=== AVATAR ===\"; tail -6 avatar/it.log; echo \"=== archivos ===\"; ls fotos/*.png 2>/dev/null | wc -l; ls clips/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "=== FOTOS ===\n00:13:36 batch 76277b87: in_progress 0/4\n00:13:36 batch 8e630f0c: validating 0/0\n00:14:06 batch 76277b87: in_progress 0/4\n00:14:07 batch 8e630f0c: in_progress 0/5\n00:14:37 batch 76277b87: in_progress 0/4\n00:14:37 batch 8e630f0c: in_progress 0/5\n=== STOCK ===\n00:14:11 → 140 clips por buscar\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 9740"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"id\": \"tela\", \"tags\": [\"cloth\", \"fabric\"], \"q\": \"cloth rustle\", \"min\": 0.5, \"max\": 5},\n {\"id\": \"papel\", \"tags\": [\"paper\"], \"q\": \"paper page\", \"min\": 0.5, \"max\": 4},\n {\"id\": \"te\", \"tags\": [\"water\", \"pour\"], \"q\": \"tea pour\", \"min\": 1, \"max\": 6},\n {\"id\": \"cajon\", \"tags\": [\"drawer\", \"wood\"], \"q\": \"drawer open\", \"min\": 0.5, \"max\": 3},\n {\"id\": \"percha\", \"tags\": [\"hanger\", \"clothes\"], \"q\": \"hanger cl"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/sonidos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/sfx_pedidos.json --tomas 3 > sonidos.log 2>&1 & echo \"PID:$!\"; sleep 12; tail -12 sonidos.log"
   }
  ],
  "maquinas": 1,
