@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794204480.439047,
+ "actualizado": 1794204547.1952686,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1039,
+  "deepseek": 0.1066,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3994
+  "total": 0.4021
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "cat extrema/EN_CURSO; echo; ps aux | grep -E \"render.py|extrema\" | grep -v grep | head; kill 24733 2>/dev/null; sleep 1; rm -f extrema/EN_CURSO; rmdir extrema 2>/dev/null; ls -d extrema 2>/dev/null || echo \"extrema eliminado\""
-  },
-  {
-   "k": "res",
-   "t": "<persisted-output>\nOutput too large (41.8KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-layer-a-thin-sweater-without-bulk-in-3-q/06749636-a2dd-4485-a59a-1d30e0fca20c/tool-results/b3zx456xb.txt\n\nPreview (first 2KB):\n24354\nroot        3774  0.0  0.0  12676  5836 ?        Ss   04:21   0:00 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UT"
-  },
-  {
-   "k": "tool",
-   "t": "ls -d extrema 2>/dev/null && ls -la extrema || echo \"no extrema\"; ps -p 24354 -o pid,cmd --no-headers 2>/dev/null || echo \"pid 24354 no existe\"; ps -p 24733 -o pid,cmd --no-headers 2>/dev/null || echo \"render 24733 detenido\""
-  },
-  {
-   "k": "res",
-   "t": "no extrema\n  24354 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extrema.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q --tope 0.2 --fondo\nrender 24733 detenido"
-  },
   {
    "k": "tool",
    "t": "head -40 /opt/estudio/repo/motor/tools/extrema.py; echo \"---\"; ls -la extrema/ 2>/dev/null | head"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 29115 -o pid,etime,cmd --no-headers 2>/dev/null || echo \"assemble terminó\"; ls -la video_noaudio.mp4 audio_mix.m4a final.mp4 2>/dev/null; ls -la xf_tmp/ | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "  29115       18:22 python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\n-rw-rw-rw-+ 1 sesion sesion 172490800 Nov  9 06:08 video_noaudio.mp4\n-rw-rw-rw-+  1 sesion sesion 144380908 Nov  9 05:58 c003.mp4\n-rw-rw-rw-+  1 sesion sesion  56342580 Nov  9 05:59 c004.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 300"
   }
  ],
  "maquinas": 1,
