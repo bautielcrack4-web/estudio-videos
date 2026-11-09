@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794217340.950366,
+ "actualizado": 1794217404.017018,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -59,14 +59,6 @@
   "total": 0.9942
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "tail -6 avatar/it.log; ls avatar/A*.mp4 2>/dev/null | wc -l; echo \"---sync---\"; ls -la avatar/it_sync.json 2>/dev/null || echo \"sin sync\""
-  },
-  {
-   "k": "res",
-   "t": "06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS\n08:13:35 estado: COMPLETED\n✓ 89 clips cortados · desfase corregido (máx 395 ms)\n89\n---sync---\n-rw-rw-rw-+ 1 sesion sesion 11116 Nov  9 08:14 avatar/it_sync.json"
-  },
   {
    "k": "tool",
    "t": "sleep 20; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|assemble.py\" | head -4; echo \"---\"; ls -la final.mp4 2>/dev/null || echo \"sin final\"; tail -3 avatar/it.log"
@@ -178,6 +170,14 @@
   {
    "k": "res",
    "t": "    PID     ELAPSED %CPU %MEM COMMAND\n  49041       15:36  0.4  0.1 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\n… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "ai",
+   "t": "Request timed out"
+  },
+  {
+   "k": "end",
+   "t": "Request timed out"
   }
  ],
  "maquinas": 1,
@@ -263,9 +263,9 @@
     "fin": true
    }
   ],
-  "total_s": 12147,
+  "total_s": 12210,
   "avatar_s": 5356,
-  "sin_avatar_s": 6791,
+  "sin_avatar_s": 6854,
   "cerrado": false
  }
 }
