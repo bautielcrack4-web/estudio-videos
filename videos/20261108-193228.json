@@ -3,9 +3,9 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794185158.5722668,
+ "actualizado": 1794214910.300702,
  "creado": 1794177216.3543255,
- "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
+ "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42590033103",
  "pasos": [
   {
    "k": "guion",
@@ -59,10 +59,6 @@
   "total": 0.5393
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "{'kind': 'av', 't0': 0.0, 't1': 4.7, 'file': '/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/A0.mp4'}"
-  },
   {
    "k": "tool",
    "t": "python - <<'EOF'\nimport json\np=json.load(open('plan.json'))['segments']\nfor i,s in enumerate(p):\n    if s['kind']=='av' and (468 <= s['t0'] <= 474 or 453 <= s['t0'] <= 456):\n        print(i, s)\nEOF"
@@ -178,9 +174,49 @@
   {
    "k": "end",
    "t": "Seguí y cerré una última revisión de calidad que valió la pena.\n\n**Encontré y corregí un glitch:** los clips de avatar A26–A62 (desde ~4 min) tenían el jardín de fondo convertido en un mosaico de cuadrados de color. Como no hay segunda llamada de avatar, apliqué un desenfoque suave sólo a la franja izquierda del fondo (0–30 %), con el borde sobre el marco del shoji — se lee como profundidad de cam"
+  },
+  {
+   "k": "user",
+   "t": "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final."
   }
  ],
- "maquinas": 2,
- "extrema": "1",
- "nota": "edición extrema"
+ "maquinas": 3,
+ "extrema": "",
+ "ahorro": "",
+ "etapas": {
+  "filas": [
+   {
+    "k": "guion",
+    "n": "Guion",
+    "seg": 208,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "voz",
+    "n": "Voz",
+    "seg": 118,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "tiempos",
+    "n": "Tiempos",
+    "seg": 17,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "fotos",
+    "n": "Fotos y stock",
+    "seg": 36905,
+    "pasadas": 1,
+    "fin": true
+   }
+  ],
+  "total_s": 37694,
+  "avatar_s": 0,
+  "sin_avatar_s": 37694,
+  "cerrado": false
+ }
 }
