@@ -53,4 +53,4 @@
 - `validar.py --etapa fotos`: OK.
 - `validar.py --etapa render`: OK salvo la apertura, que fallaba sólo porque el avatar aún no había llegado; resuelto al re-renderizar.
 - `validar.py --etapa final`: **OK**.
-- Revisor final: 3 avisos de negro en 984-991 s (p121), corregidos; ver `gates/correcciones_hechas.txt`.
+- Revisor final: primera corrida, 3 avisos de negro en 984-991 s (p121), corregidos; ver `gates/correcciones_hechas.txt`. Segunda corrida: 0 fallas en 42 cuadros.
