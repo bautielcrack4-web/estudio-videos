@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794202874.0478415,
+ "actualizado": 1794202937.0047626,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,42 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0846,
+  "deepseek": 0.087,
   "gpt": 0.0213,
   "gpt_img": 8,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3559
+  "total": 0.3583
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "The face batch is slow (2/3). I'll queue the second photo batch now so it submits as soon as the lock frees."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/pedidos_02.json > fotos/fotos_02.log 2>&1 & echo \"PID fotos2: $!\"; sleep 8; tail -6 fotos/fotos_02.log; ls fotos/*.json | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "PID fotos2: 17311\n05:11:38 ya hay otro fotos.py en este video (pid 6327): espero que termine\n20"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_01.log --busca \"FIN:|⛔\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene 'FIN:' (90 s):\n04:33:33 batch 1d4b4f4b: in_progress 0/3\n04:52:38 batch 1d4b4f4b: in_progress 1/3\n04:53:09 batch 1d4b4f4b: in_progress 2/3\n05:13:14 batch 1d4b4f4b: completed 3/3\n05:13:15 ✓ batch 1d4b4f4b: 3 fotos bajadas, 0 fallidas (US$0.009)\n05:13:15 FIN: 6/6 fotos en fotos/ (42 min)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_hook.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png >/dev/null; sleep 5; tail -4 fotos/fotos_02.log; echo \"--- avatar ---\"; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "05:11:38 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:12:08 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:12:38 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:13:08 ya hay otro fotos.py en este video (pid 6327): espero que termine\n--- avatar ---\n04:29:44 estado: IN_PROGRESS\n05:10:21 estado: COMPLETED\n✓ 56 clips cortados · desfase"
-  },
   {
    "k": "ai",
    "t": "Avatar is complete (56 clips, max sync lag 200 ms). Reviewing the hook variants."
@@ -178,6 +150,34 @@
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: 05:29:15 batch 359521a0: in_progress 7/11 → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "tail -6 fotos/fotos_02.log; ls fotos/*.png | wc -l; date"
+  },
+  {
+   "k": "res",
+   "t": "05:14:41 batch 359521a0: in_progress 0/11\n05:14:41 batch 13f3c202: completed 2/2\n05:14:41 ✓ batch 13f3c202: 2 fotos bajadas, 0 fallidas (US$0.006)\n05:15:12 batch 359521a0: in_progress 0/11\n05:28:45 batch 359521a0: in_progress 6/11\n05:29:15 batch 359521a0: in_progress 7/11\n9\nMon Nov  9 05:41:15 UTC 2026"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_cara.jpg fotos/p005.png fotos/p009.png >/dev/null; echo ok"
+  },
+  {
+   "k": "res",
+   "t": "ok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_fotos_cara.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_02.log --busca \"FIN:|⛔\" --max 540"
   }
  ],
  "maquinas": 1,
