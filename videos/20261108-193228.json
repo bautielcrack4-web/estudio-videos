@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184877.3780737,
+ "actualizado": 1794184944.9280515,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1408,
+  "deepseek": 0.1415,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.533
+  "total": 0.5337
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "El desenfoque queda natural (el borde cae sobre el marco). Antes de aplicarlo a los 63 clips, verifico fps y audio de los clips."
-  },
-  {
-   "k": "tool",
-   "t": "ffprobe -v error -show_entries stream=index,codec_type,codec_name,width,height,r_frame_rate,nb_frames,sample_rate,channels -of default=noprint_wrappers=1 avatar/A60.mp4; echo \"---blur test---\"; ffprobe -v error -show_entries stream=codec_type,r_frame_rate,nb_frames -of default=noprint_wrappers=1 avatar/testcrop/A60_blur.mp4"
-  },
   {
    "k": "res",
    "t": "index=0\ncodec_name=h264\ncodec_type=video\nwidth=832\nheight=464\nr_frame_rate=25/1\nnb_frames=133\nindex=1\ncodec_name=aac\ncodec_type=audio\nsample_rate=44100\nchannels=2\nr_frame_rate=0/0\nnb_frames=230\n---blur test---\ncodec_type=video\nr_frame_rate=25/1\nnb_frames=133"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble2.log --busca \"final:|Traceback|Error\" --timeout 540; echo \"---\"; tail -4 assemble2.log"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar\n---"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble2.log --busca \"final:|Traceback|Error\" --timeout 540; echo \"---\"; tail -4 assemble2.log; ls -la final.mp4"
   }
  ],
  "maquinas": 2,
