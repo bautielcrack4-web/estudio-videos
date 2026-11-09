@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794198690.3781989,
+ "actualizado": 1794198753.4706385,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,78 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0462,
+  "deepseek": 0.056,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0462
+  "total": 0.056
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "ventanas: 56 · avatar 320.0 s = 49 % de 650 s · reel 336.8 s\nprimer startMs: 0 · hueco máximo: 7.0 s · reel<=590: True · durs: [4.8, 4.9, 5.0, 5.1, 5.3, 5.4, 5.6, 5.7, 5.8, 5.9, 6.0, 8.2]\n✓ planos.json: 55 planos de b-roll (5.5 min de b-roll, 10.0 por minuto) · 56 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
-  },
-  {
-   "k": "tool",
-   "t": "    if fin - end < 600:           # último tramo: cerrar en el fin de la voz\n        end = fin"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/build_avatar.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python build_avatar.py && python /opt/estudio/repo/motor/tools/planos.py . && python3 -c \"\nimport json\np=json.load(open('planos.json'))\nprint(len(p),'planos')\nfor x in p[:8]: print(x['id'],x['startMs'],x['endMs'],x['seg'],'|',x['texto'][:110])\n\""
-  },
-  {
-   "k": "res",
-   "t": "ventanas: 56 · avatar 317.2 s = 49 % de 650 s · reel 334.0 s\nprimer startMs: 0 · hueco máximo: 7.0 s · reel<=590: True · durs: [4.8, 4.9, 5.0, 5.1, 5.3, 5.4, 5.6, 5.7, 5.8, 5.9, 6.0]\n✓ planos.json: 56 planos de b-roll (5.6 min de b-roll, 10.1 por minuto) · 56 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n56 planos\np001 5800 "
-  },
-  {
-   "k": "ai",
-   "t": "Plan closed: 56 windows, 49% avatar, first at 0, max 6 s per window, max gap 7 s. Launching the single InfiniteTalk call in the background."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > avatar/it.log 2>&1 & echo \"PID avatar: $!\"; sleep 2; head -5 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "PID avatar: 5369"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\np=json.load(open('planos.json'))\nfor x in p: print(x['id'], x['seg'], '|', x['texto'])\n\""
-  },
-  {
-   "k": "res",
-   "t": "p001 4.9 | and I want to show you something before the kettle finishes.\np002 5.1 | a fine wool sweater, and one finger's width of tucked fabric.\np003 6.0 | my hands. On a February morning, this is warmer than the heavy coat I wore in\np004 6.0 | My name is Michiko. I am 68 years old, and for 31 years I helped women\np005 6.0 | I was the woman who stood beside the mirror for 40 minutes, watching wher"
-  },
-  {
-   "k": "ai",
-   "t": "Avatar is running. Now I'll send all 39 stock-clip requests in one batch."
-  },
-  {
-   "k": "tool",
-   "t": "[\n{\"id\":\"p004\",\"muestra\":\"an elderly woman standing among clothes in a small neighborhood shop\",\"buscar\":[\"elderly woman clothing shop\",\"woman browsing clothes racks\",\"kimono shop interior\"]},\n{\"id\":\"p006\",\"muestra\":\"hands folding a small stack of thin knits on tatami\",\"buscar\":[\"folding clothes pile hands\",\"folded sweaters stack\"]},\n{\"id\":\"p007\",\"muestra\":\"a woman pulling a thick sweater over her"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_01.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"1\", \"status\": \"completed\"}"
-  },
-  {
-   "k": "res",
-   "t": "Updated task #1 status"
-  },
-  {
-   "k": "tool",
-   "t": "{\"taskId\": \"2\", \"status\": \"completed\"}"
-  },
   {
    "k": "res",
    "t": "Updated task #2 status"
@@ -178,6 +114,70 @@
   {
    "k": "res",
    "t": "PID fotos: 6327\n04:31:00 → batch batch_6af14c841528819085a46ab65dab0471 · 3 fotos · sin referencia · low 1088x608\n04:31:01 → batch batch_6af14c84dc6c81908e9168ce1d4b4f4b · 3 fotos · con la cara del presentador · low 1088x608\n04:31:01 batch 5dab0471: validating 0/0\n04:31:01 batch 1d4b4f4b: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "[\n{\"id\":\"p003\",\"cara\":false,\"prompt\":{\n\"type\":\"amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n\"moment\":\"Her hands hold a steaming iron teapot above the three thin pieces laid on the tatami, while a heavy wool coat hangs forgotten on the wall behind.\",\n\"subject\":\"a pair of hands h"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/pedidos_02.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -6 clips/stock.log; echo \"---fotos---\"; tail -8 fotos/fotos_01.log; echo \"---avatar---\"; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "04:30:32 → 39 clips por buscar\n04:31:31 juez: 39/39 planos juzgados con visión · US$0.0059\n04:31:40 bajados 39/39\n04:31:40 FIN: 39/39 clips en clips/\n---fotos---\n04:31:00 → batch batch_6af14c841528819085a46ab65dab0471 · 3 fotos · sin referencia · low 1088x608\n04:31:01 → batch batch_6af14c84dc6c81908e9168ce1d4b4f4b · 3 fotos · con la cara del presentador · low 1088x608\n04:31:01 batch 5dab0471: vali"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json,glob,os\nrows=[]\nfor f in sorted(glob.glob('clips/p*.json')):\n    d=json.load(open(f)); j=d.get('juez')\n    rows.append((os.path.basename(f)[:-5], j[1] if j else None, j[2] if j else '', d.get('buscar','')))\nlow=[r for r in rows if r[1] is not None and r[1]<=4]\nprint('low:',len(low))\nfor r in low: print(r)\nprint('sin juez:',[r[0] for r in rows if r[1] is None])\nprint('total"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"<string>\", line 6, in <module>\nIndexError: list index out of range"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json,glob,os\nfor f in sorted(glob.glob('clips/p*.json'))[:3]:\n    print(f, json.load(open(f)))\n\""
+  },
+  {
+   "k": "res",
+   "t": "clips/p004.json {'id': 'p004', 'fuente': 'Pexels', 'buscar': 'elderly woman clothing shop', 'pexels': 8195363, 'pagina': 'https://www.pexels.com/video/man-looking-at-women-s-clothing-in-the-shop-8195363/', 'autor': 'Kampus Production', 'prev': 'https://videos.pexels.com/video-files/8195363/8195363-sd_640_360_25fps.mp4', 'juez': [7, 'elderly woman browsing clothes racks']}\nclips/p006.json {'id': 'p"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json,glob,os\nrows=[]\nfor f in sorted(glob.glob('clips/p*.json')):\n    d=json.load(open(f)); j=d.get('juez')\n    sc=j[0] if isinstance(j,list) and j else None\n    why=j[1] if isinstance(j,list) and len(j)>1 else ''\n    rows.append((os.path.basename(f)[:-5],sc,why,d.get('pagina','')))\nlow=[r for r in rows if r[1] is not None and r[1]<=5]\nprint('low/5:',len(low))\nfor r in low: pri"
+  },
+  {
+   "k": "res",
+   "t": "low/5: 4\np036 5 | hands sorting hanging clothes\np048 4 | woman in sweater, not resting flat\np053 4 | sweater but no hand tuck\np055 4 | sewing machine, not hand stitching\nsin juez: []\ntotal 39 avg 7.4"
+  },
+  {
+   "k": "ai",
+   "t": "Stock is in (avg judge 7.4). Four clips scored low — replacing them with more literal searches."
+  },
+  {
+   "k": "tool",
+   "t": "[\n{\"id\":\"p036\",\"muestra\":\"hands sorting folded sweaters in a wooden drawer\",\"buscar\":[\"hands folded sweaters drawer\",\"sorting folded clothes drawer\",\"hands opening clothes drawer\"]},\n{\"id\":\"p048\",\"muestra\":\"two thin sweaters resting flat on a chair, one after another\",\"buscar\":[\"folded sweater on chair\",\"sweater lying on chair\",\"folded knitwear stack chair\"]},\n{\"id\":\"p053\",\"muestra\":\"a hand restin"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_02.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f clips/p036.mp4 clips/p036.json clips/p048.mp4 clips/p048.json clips/p053.mp4 clips/p053.json clips/p055.mp4 clips/p055.json && python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/stock_02.json 2>&1 | tail -8"
+  },
+  {
+   "k": "res",
+   "t": "04:32:12 → 4 clips por buscar\n04:32:20 juez: 4/4 planos juzgados con visión · US$0.0006\n04:32:24 bajados 4/4\n04:32:24 FIN: 4/4 clips en clips/"
+  },
+  {
+   "k": "tool",
+   "t": "set -- $(ls clips/p*.mp4 | sort); i=1; while [ $# -gt 0 ]; do n=$((i*12)); batch=$(printf '%s\\n' \"$@\" | head -12); python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_clips_$i.jpg $batch >/dev/null 2>&1; echo \"hoja $i: $(echo \"$batch\" | tr '\\n' ' ')\"; shift 12 2>/dev/null || shift $#; i=$((i+1)); done; ls -la qc/hoja_clips_*"
   }
  ],
  "maquinas": 1,
