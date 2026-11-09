@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794206424.4626265,
+ "actualizado": 1794206487.3618386,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,82 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0756,
+  "deepseek": 0.0894,
   "gpt": 0.0094,
   "gpt_img": 3,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.085
+  "total": 0.0988
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Updated task #2 status"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --busca \"maestro|master|✓ bloque 8|FIN|Error|Traceback\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ el log tiene '✓ bloque 8' (95 s):\n  ✓ bloque 0: 179 s (s2.1-pro-free)\n  ✓ bloque 1: 185 s (s2.1-pro-free)\n  ✓ bloque 5: 155 s (s2.1-pro-free)\n  ✓ bloque 3: 175 s (s2.1-pro-free)\n  ✓ bloque 4: 171 s (s2.1-pro-free)\n  ✓ bloque 8: 57 s (s2.1-pro-free)"
-  },
-  {
-   "k": "tool",
-   "t": "tail -8 voz/voz.log; ls -la voz/master.wav 2>/dev/null || echo \"sin master\""
-  },
-  {
-   "k": "res",
-   "t": "voz: 9 bloques · 19268 caracteres\n  ✓ bloque 2: 166 s (s2.1-pro-free)\n  ✓ bloque 0: 179 s (s2.1-pro-free)\n  ✓ bloque 1: 185 s (s2.1-pro-free)\n  ✓ bloque 5: 155 s (s2.1-pro-free)\n  ✓ bloque 3: 175 s (s2.1-pro-free)\n  ✓ bloque 4: 171 s (s2.1-pro-free)\n  ✓ bloque 8: 57 s (s2.1-pro-free)\nsin master"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe voz/master.wav --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe voz/master.wav (124.4 MB, 45 s)"
-  },
-  {
-   "k": "tool",
-   "t": "ffprobe -v error -show_entries format=duration -of csv=p=0 voz/master.wav; tail -3 voz/voz.log; echo ---FOTOS---; tail -4 fotos/fotos_hook.log; ls fotos/"
-  },
-  {
-   "k": "res",
-   "t": "1410.115964\n  ✓ bloque 6: 147 s (s2.1-pro-free)\n  ✓ bloque 7: 174 s (s2.1-pro-free)\n✓ voz/master.wav 23.5 min\n---FOTOS---\n06:26:32 batch 3bbae593: in_progress 0/3\n06:28:02 batch 3bbae593: completed 3/3\n06:28:03 ✓ batch 3bbae593: 3 fotos bajadas, 0 fallidas (US$0.009)\n06:28:03 FIN: 3/3 fotos en fotos/ (2 min)\n_batches.json\nfotos_hook.log\np001_a.json\np001_a.png\np001_b.json\np001_b.png\np001_c.json\np00"
-  },
-  {
-   "k": "ai",
-   "t": "La voz salió de 23,5 min. Lanzo los tiempos y miro las 3 variantes del gancho."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo en > /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/voz/tiempos.log 2>&1 & echo \"PID=$!\""
-  },
-  {
-   "k": "res",
-   "t": "PID=5415"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_gancho.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_gancho.jpg (3 cuadros, 3x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_gancho.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe captions.json --max 540 && python - <<'PY'\nimport json\nc=json.load(open('captions.json'))\nprint('palabras:',len(c),'inicio:',c[0],'fin:',c[-1])\nPY"
-  },
   {
    "k": "res",
    "t": "✓ existe captions.json (0.4 MB, 5 s)\npalabras: 3736 inicio: {'text': ' Hello,', 'startMs': 0, 'endMs': 480, 'timestampMs': 0, 'confidence': 1.0} fin: {'text': ' now.', 'startMs': 1409758, 'endMs': 1410058, 'timestampMs': 1409758, 'confidence': 1.0}"
@@ -178,6 +110,74 @@
   {
    "k": "res",
    "t": "5722 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash-1794205370920-2z9adh.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && eval 'python gen_avatar_plan.py' < /dev/null && pwd -P >| /tmp/claude-1e94-cwd\n5742 python gen_avatar_plan.py\n6258 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash-1794205370920-2z9adh.sh 2>/dev/null || true"
+  },
+  {
+   "k": "tool",
+   "t": "pkill -f gen_avatar_plan.py; sleep 1; pgrep -af gen_avatar_plan || echo \"muertos\""
+  },
+  {
+   "k": "res",
+   "t": "Exit code 144"
+  },
+  {
+   "k": "tool",
+   "t": "pkill -9 -f gen_avatar_plan.py 2>/dev/null; sleep 1; pgrep -af gen_avatar_plan || echo \"muertos\"; cat > /tmp/test_gen.py <<'PY'\nimport json, subprocess, sys, time\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\"\nW = json.load(open(f\"{B}/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\", \"\").strip()]\nD = W[-1][\"endMs\"] + 400\nCUT = sorted({int(w[\"endMs\"]) fo"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la /tmp/test_gen.py; timeout 30 python /tmp/test_gen.py > /tmp/test_gen.out 2>&1; echo \"rc=$?\"; cat /tmp/test_gen.out"
+  },
+  {
+   "k": "res",
+   "t": "ls: cannot access '/tmp/test_gen.py': No such file or directory\nrc=2\npython: can't open file '/tmp/test_gen.py': [Errno 2] No such file or directory"
+  },
+  {
+   "k": "tool",
+   "t": "import json\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\"\nW = json.load(open(f\"{B}/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\", \"\").strip()]\nD = W[-1][\"endMs\"] + 400\nCUT = sorted({int(w[\"endMs\"]) for w in W})\nCUT.append(D); CUT = sorted(set(CUT))\nprint(\"D\", D, \"cuts\", len(CUT), flush=True)\ndef snap(t, lo, hi, tol=900):\n    cand = [c for c in CUT i"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /tmp/test_gen.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "timeout 60 python /tmp/test_gen.py; echo \"rc=$?\""
+  },
+  {
+   "k": "res",
+   "t": "D 1410458 cuts 3737\nBUCLE INFINITO\niter 501 t 11092\nrc=0"
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'PY'\nimport json\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\"\nW = json.load(open(f\"{B}/captions.json\", encoding=\"utf8\"))\nW = [w for w in W if w.get(\"text\",\"\").strip()]\nD = W[-1][\"endMs\"]+400\nCUT = sorted({int(w[\"endMs\"]) for w in W}); CUT.append(D); CUT=sorted(set(CUT))\ndef snap(t, lo, hi, tol=900):\n    cand=[c for c in CUT if lo<=c<=hi and abs(c-t)<=tol]\n   "
+  },
+  {
+   "k": "res",
+   "t": "1 t 4460 a 4466 b 4471 dur 5 split False gap 0.01\n2 t 4471 a 4477 b 4482 dur 5 split False gap 0.01\n3 t 4482 a 4493 b 4502 dur 9 split True gap 0.01\n4 t 4502 a 4508 b 4513 dur 5 split False gap 0.01\n5 t 4513 a 4520 b 4525 dur 5 split False gap 0.01\n6 t 4525 a 4532 b 4537 dur 5 split False gap 0.01\n7 t 4537 a 4544 b 4549 dur 5 split False gap 0.01\n8 t 4549 a 4559 b 4568 dur 9 split True gap 0.01\n9 "
+  },
+  {
+   "k": "ai",
+   "t": "Encontré el bug: mezclaba segundos y milisegundos en el generador. Lo corrijo."
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Genera avatar_ranges.json a partir de captions.json, cortando SIEMPRE en pausas del habla.\nPatron: 4 ventanas a pantalla completa (<=6 s) + 1 ventana en pantalla partida (7-12 s),\nhuecos de b-roll de ~7 s (1 foto) y ~10-11 s (2 fotos). Avatar <= 560 s.\n\"\"\"\nimport json, subprocess\n\nB = \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\"\nW = json.load(open"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gen_avatar_plan.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "timeout 120 python gen_avatar_plan.py"
+  },
+  {
+   "k": "res",
+   "t": "ventanas: 109 (split 22) · avatar 558.2s = 39.6% · reel 590.9s (tope 590)\nduracion: 1410.1s · b-roll 851.9s · hueco max 11.5s · min 6.6s\nfotos b-roll estimadas: 153 + 22 split = 175\nprimera: {'file': 'avatar/A0.mp4', 'frame': 'refs/avatar.png', 'startMs': 0, 'endMs': 4460, 'tipo_plan': 'full'}\nultima: {'file': 'avatar/A108.mp4', 'frame': 'refs/avatar.png', 'startMs': 1395878, 'endMs': 1403178, 'ti"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 741,
+    "seg": 804,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1230,
+  "total_s": 1293,
   "avatar_s": 0,
-  "sin_avatar_s": 1230,
+  "sin_avatar_s": 1293,
   "cerrado": false
  }
 }
