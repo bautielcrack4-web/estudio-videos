@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183491.3953712,
+ "actualizado": 1794183564.2278717,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "6 fotos"
+   "info": "7 fotos"
   },
   {
    "k": "armado",
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0642,
-  "gpt": 0.025,
-  "gpt_img": 9,
+  "deepseek": 0.0678,
+  "gpt": 0.0281,
+  "gpt_img": 10,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0892
+  "total": 0.0959
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "sleep 10; echo \"=== FOTOS ===\"; cat fotos/fotos_01.log; echo \"=== AVATAR ===\"; cat avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "=== FOTOS ===\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p001_c: palabras prohibidas ['out of focus'] (dan look de IA/stock)\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada"
-  },
-  {
-   "k": "tool",
-   "t": "\"an open wooden drawer at the top edge\""
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_01.json > fotos/fotos_01.log 2>&1 & echo \"PID:$!\"; sleep 8; cat fotos/fotos_01.log"
-  },
-  {
-   "k": "res",
-   "t": "PID:7070\n00:13:35 → batch batch_6af1102f6e448190a77405d676277b87 · 4 fotos · sin referencia · low 1088x608\n00:13:36 → batch batch_6af110306b848190a775e13e8e630f0c · 5 fotos · con la cara del presentador · low 1088x608\n00:13:36 batch 76277b87: in_progress 0/4\n00:13:36 batch 8e630f0c: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "# Arma stock_01.json: clips de Pexels para todos los planos que no van con foto.\nimport json\nB = \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in\"\nP = {p[\"id\"] for p in json.load(open(f\"{B}/planos.json\", encoding=\"utf8\")) if not p.get(\"split\")}\nFOTOS = {\"p001\", \"p002\", \"p013\", \"p017\", \"p027\", \"p040\", \"p066\", \"p097\", \"p106\",\n         \"p119\", \"p124\", \"p126\", \"p136\", \"p143\", \"p147\""
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/make_stock.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python make_stock.py"
-  },
   {
    "k": "res",
    "t": "planos: 156 fotos: 16 stock: 140 mapeados: 140\nsin mapear: []\nsobran: []\n✓ stock_01.json"
@@ -178,6 +142,42 @@
   {
    "k": "res",
    "t": "   \"detalle_narrativo\": \"A cat asleep on the stool just outside the door; a chalk price written on a small board; a paper receipt tucked into the blouse sleeve.\"\n  }\n },\n {\n  \"id\": \"p152\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out,"
+  },
+  {
+   "k": "tool",
+   "t": "   \"avoid\": \"cinematic lighting, dramatic shadows, studio look, perfect plastic skin, empty clean background, depth-of-field blur, date stamp, watermark, extra fingers, deformed hands\"\n  }\n },\n {\n  \"id\": \"p126\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutte"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_02.json has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/pedidos_02.json > fotos/fotos_02.log 2>&1 & echo \"PID:$!\"; sleep 12; cat fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "PID:9428\n00:18:19 → batch batch_6af1114b9de48190919a0966a978846c · 9 fotos · sin referencia · low 1088x608\n00:18:20 → batch batch_6af1114c8cf08190a2e9952bf7c40f6a · 1 fotos · con la cara del presentador · low 1088x608\n00:18:20 batch a978846c: in_progress 0/9\n00:18:21 batch f7c40f6a: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "echo \"=== STOCK ===\"; tail -10 clips/stock.log; ls clips/*.mp4 2>/dev/null | wc -l; echo \"=== AVATAR ===\"; tail -5 avatar/it.log; echo \"=== SFX ===\"; tail -8 sonidos.log; ls sfx/"
+  },
+  {
+   "k": "res",
+   "t": "=== STOCK ===\n00:14:11 → 140 clips por buscar\n00:17:44 bajados 140/140\n00:17:44 FIN: 140/140 clips en clips/\n140\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS\n=== SFX ===\nok tela: tela.mp3 (1 s, Cloth slide out) · tela_2.mp3 (1 s, Squishing a soggy cloth shirt)\nok papel: papel.mp3 (1 s"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"file\": \"cajon.mp3\", \"t\": 16200, \"gain\": 0.055, \"fade\": 0.25},\n {\"file\": \"tela.mp3\", \"t\": 164760, \"gain\": 0.04, \"fade\": 0.3},\n {\"file\": \"papel.mp3\", \"t\": 275080, \"gain\": 0.045, \"fade\": 0.25},\n {\"file\": \"te_2.mp3\", \"t\": 1220420, \"gain\": 0.05, \"fade\": 0.5}\n]\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/cues.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"fotos/*.png\" 16 --max 420"
   }
  ],
  "maquinas": 1,
