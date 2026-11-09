@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794203000.075298,
+ "actualizado": 1794203063.6015263,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -34,14 +34,14 @@
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "active",
-   "info": "12 fotos"
+   "st": "done",
+   "info": "20 fotos"
   },
   {
    "k": "armado",
    "n": "Armado",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "10 segmentos"
   },
   {
    "k": "qc",
@@ -51,74 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.087,
-  "gpt": 0.0213,
-  "gpt_img": 8,
+  "deepseek": 0.0917,
+  "gpt": 0.0455,
+  "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3583
+  "total": 0.3872
  },
  "eventos": [
-  {
-   "k": "ai",
-   "t": "Avatar is complete (56 clips, max sync lag 200 ms). Reviewing the hook variants."
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_fotos_hook.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "cp fotos/p001_a.png fotos/p001.png && cp fotos/p001_a.json fotos/p001.json && python3 -c \"\nimport json\nd=json.load(open('fotos/p001.json')); d['id']='p001'; json.dump(d,open('fotos/p001.json','w'),ensure_ascii=False,indent=1)\ns=json.load(open('avatar/it_sync.json')); print('cortes',len(s['cortes']),'perdidas',s['perdidas'],'lag max',max(abs(c['lag_ms']) for c in s['cortes']))\n\"; ls avatar/A0.mp4 a"
-  },
-  {
-   "k": "res",
-   "t": "cortes 56 perdidas [] lag max 200\navatar/A0.mp4\navatar/A55.mp4\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_avatar.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json,os,glob\nP=json.load(open('planos.json'))\nphotos={'p001','p002','p003','p005','p009','p012','p018','p020','p023','p028','p029','p031','p035','p037','p039','p046','p051'}\nfal=[]\nfor p in P:\n    i=p['id']\n    if i in photos:\n        if not glob.glob('fotos/%s.*'%i): fal.append(i+'(foto)')\n    elif not os.path.exists('clips/%s.mp4'%i): fal.append(i+'(clip)')\nprint('faltan',len"
-  },
-  {
-   "k": "res",
-   "t": "faltan 0 []\nplanos 56 clips 39 fotos 7"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json,glob\nP=json.load(open('planos.json'))\nphotos={'p001','p002','p003','p005','p009','p012','p018','p020','p023','p028','p029','p031','p035','p037','p039','p046','p051'}\nfal=[p['id'] for p in P if p['id'] in photos and not glob.glob('fotos/%s.png'%p['id'])]\nprint('faltan fotos',len(fal),fal)\nprint('imgs',len(glob.glob('fotos/*.png')))\n\"; tail -5 fotos/fotos_02.log"
-  },
-  {
-   "k": "res",
-   "t": "faltan fotos 13 ['p003', 'p005', 'p009', 'p012', 'p020', 'p023', 'p029', 'p031', 'p035', 'p037', 'p039', 'p046', 'p051']\nimgs 7\n05:13:08 ya hay otro fotos.py en este video (pid 6327): espero que termine\n05:13:39 → batch batch_6af1568366e88190ae3292e8359521a0 · 11 fotos · sin referencia · low 1088x608\n05:13:40 → batch batch_6af1568447048190b2d3497813f3c202 · 2 fotos · con la cara del presentador · "
-  },
-  {
-   "k": "tool",
-   "t": "Control fotos (auto):\n- Tanda de prueba revisada en qc/hoja_fotos_test1.jpg y qc/hoja_fotos_hook.jpg con Read.\n- p002 (tres piezas + báscula 240 g): manos y objetos correctos, texto legible y bien escrito. OK.\n- p018 (báscula antes/después): etiquetas 'before'/'after' legibles, detalle narrativo correcto. OK.\n- p028 (línea de parada, cinta roja): mano midiendo 4 dedos, cuaderno y fecha visibles. O"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_02.log --busca \"FIN:|⛔\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 05:15:12 batch 359521a0: in_progress 0/11 → hacé otra cosa útil y volvé a llamar"
-  },
   {
    "k": "tool",
    "t": "{\"taskId\": \"5\", \"status\": \"completed\"}"
@@ -178,6 +118,66 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_02.log --busca \"FIN:|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'FIN:' (120 s):\n05:28:45 batch 359521a0: in_progress 6/11\n05:29:15 batch 359521a0: in_progress 7/11\n05:42:49 batch 359521a0: in_progress 8/11\n05:43:19 batch 359521a0: completed 11/11\n05:43:20 ✓ batch 359521a0: 11 fotos bajadas, 0 fallidas (US$0.024)\n05:43:20 FIN: 13/13 fotos en fotos/ (30 min)"
+  },
+  {
+   "k": "ai",
+   "t": "All photos are in. Reviewing the full set."
+  },
+  {
+   "k": "tool",
+   "t": "ls fotos/*.png | sort; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_all1.jpg fotos/p001.png fotos/p002.png fotos/p003.png fotos/p005.png fotos/p009.png fotos/p012.png fotos/p018.png fotos/p020.png fotos/p023.png fotos/p028.png fotos/p029.png fotos/p031.png >/dev/null; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_all2.jpg fotos/p035.png fotos/p037.png fotos/p039.png foto"
+  },
+  {
+   "k": "res",
+   "t": "fotos/p001.png\nfotos/p001_a.png\nfotos/p001_b.png\nfotos/p001_c.png\nfotos/p002.png\nfotos/p003.png\nfotos/p005.png\nfotos/p009.png\nfotos/p012.png\nfotos/p018.png\nfotos/p020.png\nfotos/p023.png\nfotos/p028.png\nfotos/p029.png\nfotos/p031.png\nfotos/p035.png\nfotos/p037.png\nfotos/p039.png\nfotos/p046.png\nfotos/p051.png\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_fotos_all1.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_fotos_all2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/fotos/p029.png\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "All 20 photos pass review. Building the final shot timeline and running the 10-segment test render."
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/planos.py . --shots && python /opt/estudio/repo/motor/tools/render.py . --limit 10 2>&1 | tail -8"
+  },
+  {
+   "k": "res",
+   "t": "✓ shots_timed.json: 56 planos, 56 fotos distintas (cero repetidas). Seguí con render.py.\nclips=112 frames=19505 (650.17s)\nhechos 10"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg segments/0000.mp4 segments/0001.mp4 segments/0002.mp4 segments/0003.mp4 segments/0004.mp4 segments/0005.mp4 segments/0006.mp4 segments/0007.mp4 segments/0008.mp4 segments/0009.mp4 >/dev/null; echo ok"
+  },
+  {
+   "k": "res",
+   "t": "ok"
   }
  ],
  "maquinas": 1,
