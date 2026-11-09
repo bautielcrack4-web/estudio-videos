@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794207001.411554,
+ "actualizado": 1794207064.9083688,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "6 fotos"
+   "info": "7 fotos"
   },
   {
    "k": "armado",
@@ -51,62 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1335,
-  "gpt": 0.0213,
-  "gpt_img": 8,
+  "deepseek": 0.1452,
+  "gpt": 0.0243,
+  "gpt_img": 9,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1548
+  "total": 0.1695
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "ventanas: 109 (split 22) · avatar 558.2s = 39.6% · reel 590.9s (tope 590)\nduracion: 1410.1s · b-roll 851.9s · hueco max 11.5s · min 6.6s\nfotos b-roll estimadas: 153 + 22 split = 175\nprimera: {'file': 'avatar/A0.mp4', 'frame': 'refs/avatar.png', 'startMs': 0, 'endMs': 4460, 'tipo_plan': 'full'}\nultima: {'file': 'avatar/A108.mp4', 'frame': 'refs/avatar.png', 'startMs': 1395878, 'endMs': 1403178, 'ti"
-  },
-  {
-   "k": "ai",
-   "t": "La voz natural dura 23,5 min (pedido: ~20). La ajusto un 10% (atempo, sin cambiar el tono) y recalculo tiempos."
-  },
-  {
-   "k": "tool",
-   "t": "ffprobe -v error -show_entries stream=codec_name,sample_rate,channels -of default=nw=1 voz/master.wav; cp voz/master.wav voz/master_natural.wav && ffmpeg -v error -y -i voz/master_natural.wav -filter:a \"atempo=1.10\" -c:a pcm_s16le voz/master.wav && ffprobe -v error -show_entries format=duration -of csv=p=0 voz/master.wav"
-  },
-  {
-   "k": "res",
-   "t": "codec_name=pcm_s16le\nsample_rate=44100\nchannels=1\n1281.921655"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f captions.json; nohup python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo en > voz/tiempos.log 2>&1 & echo \"PID=$!\""
-  },
-  {
-   "k": "res",
-   "t": "PID=7453"
-  },
-  {
-   "k": "tool",
-   "t": "        if split:\n            dur = 9000 * k\n            gap = 13200 + (0.37 * i) % 1.2 * 1000\n            a = snap(t + gap, t + 3000, t + 15500)\n            b = snap(a + dur, a + 7200, a + 11800)"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gen_avatar_plan.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe captions.json --max 300 >/dev/null && sleep 1 && python gen_avatar_plan.py"
-  },
-  {
-   "k": "res",
-   "t": "ventanas: 89 (split 17) · avatar 544.4s = 42.5% · reel 571.1s (tope 590)\nduracion: 1281.9s · b-roll 737.5s · hueco max 14.4s · min 6.5s\nfotos b-roll estimadas: 139 + 17 split = 156\nprimera: {'file': 'avatar/A0.mp4', 'frame': 'refs/avatar.png', 'startMs': 0, 'endMs': 5520, 'tipo_plan': 'full'}\nultima: {'file': 'avatar/A88.mp4', 'frame': 'refs/avatar.png', 'startMs': 1274140, 'endMs': 1279100, 'tipo"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo"
-  },
-  {
-   "k": "res",
-   "t": "✓ planos.json: 139 planos de b-roll (12.3 min de b-roll, 11.3 por minuto) + 17 fotos de pantalla partida · 89 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
-  },
   {
    "k": "tool",
    "t": "python - <<'PY'\nimport json\nP=json.load(open('planos.json'))\nprint('total',len(P))\nfor p in P:\n    t=p['texto'].replace('\\n',' ')\n    print(f\"{p['id']} | {p['seg']:>4} | {'SPLIT' if p.get('split') else '     '} | {t[:170]}\")\nPY"
@@ -178,6 +130,54 @@
   {
    "k": "ai",
    "t": "Mientras corre el Batch, escribo el resto de las escenas (156 fotos, un prompt por plano). Voy por bloques."
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Escenas p003-p047 (sin p011 ni p021, ya pedidas) + creativas p005 y p007.\"\"\"\nfrom foto_base import foto, creativa, escribir\n\nP = []\nP.append(foto(\"p003\",\n    \"A plain white shirt lies on the tatami with its collar open toward the camera and a yellow tape measure held across the narrow band, showing how little cloth the whole lesson is about.\",\n    \"a plain white cotton s"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_a.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"2\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #2 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"3\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #3 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"4\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #4 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"5\", \"status\": \"in_progress\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #5 status"
+  },
+  {
+   "k": "tool",
+   "t": "tail -3 fotos/fotos_test.log; ls fotos/ | grep -c png; echo ---; tail -2 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "06:49:23 batch 7442cb9c: completed 5/5\n06:49:24 ✓ batch 7442cb9c: 5 fotos bajadas, 0 fallidas (US$0.012)\n06:49:24 batch d160209b: in_progress 0/1\n6\n---\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 307,
+    "seg": 371,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1318,
+    "seg": 1382,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1807,
+  "total_s": 1871,
   "avatar_s": 30,
-  "sin_avatar_s": 1777,
+  "sin_avatar_s": 1841,
   "cerrado": false
  }
 }
