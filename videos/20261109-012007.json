@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205327.239909,
+ "actualizado": 1794205390.8552604,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,74 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1224,
+  "deepseek": 0.1326,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4179
+  "total": 0.4281
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Updated task #6 status"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 29115 -o pid,etime,cmd --no-headers 2>/dev/null || echo \"assemble terminó\"; ls -la final.mp4 2>/dev/null; ls xf_tmp/ 2>/dev/null | head; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; ls extrema/ 2>/dev/null | head"
-  },
-  {
-   "k": "res",
-   "t": "  29115       09:14 python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\nc000.mp4\nc001.mp4\nc002.mp4\nc003.mp4\nc004.mp4\n  24354       15:01\ngen\nlibre.json\nmomentos.json"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 540"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 29115 -o pid,etime,cmd --no-headers 2>/dev/null || echo \"assemble terminó\"; ls -la video_noaudio.mp4 audio_mix.m4a final.mp4 2>/dev/null; ls -la xf_tmp/ | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "  29115       18:22 python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\n-rw-rw-rw-+ 1 sesion sesion 172490800 Nov  9 06:08 video_noaudio.mp4\n-rw-rw-rw-+  1 sesion sesion 144380908 Nov  9 05:58 c003.mp4\n-rw-rw-rw-+  1 sesion sesion  56342580 Nov  9 05:59 c004.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble.log --busca \"final:|FALLO|Traceback\" --max 300"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 300 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 29115 -o pid,etime --no-headers 2>/dev/null || echo \"assemble terminó\"; ls -la final.mp4 audio_mix.m4a 2>/dev/null; tail -c 500 assemble.log"
-  },
-  {
-   "k": "res",
-   "t": "  29115       23:28"
-  },
-  {
-   "k": "tool",
-   "t": "ps --ppid 29115 -o pid,etime,pcpu,cmd --no-headers 2>/dev/null; ls -la /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/*.m4a 2>/dev/null; ls -la /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/tmp* 2>/dev/null; df -h . | tail -1"
-  },
-  {
-   "k": "res",
-   "t": "  31969       14:24  235 ffmpeg -v error -y -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c000.mp4 -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c001.mp4 -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c002.mp4 -i /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/xf_tmp/c003.mp4 -i /opt/estu"
-  },
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
@@ -178,6 +118,66 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe gates/revisor_final.json --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ existe gates/revisor_final.json (0.0 MB, 120 s)"
+  },
+  {
+   "k": "tool",
+   "t": "cat gates/revisor_final.json; echo \"---\"; ls qc/f_*.jpg | wc -l; cat gates/correcciones.txt 2>/dev/null; tail -4 revisor.log"
+  },
+  {
+   "k": "res",
+   "t": "{\"t\": 1794205345.7965255, \"n\": 22, \"malas\": 0, \"costo_usd\": 0.002, \"ia\": true, \"corridas\": 1, \"final_mtime\": 1794205212.635988}---\n22\n✓ el revisor no encontró fallas.\n(22 cuadros revisados, US$0.002)"
+  },
+  {
+   "k": "ai",
+   "t": "Reviewer found no flaws. Doimg my own visual pass over the final frames."
+  },
+  {
+   "k": "tool",
+   "t": "ls qc/f_*.jpg | sort | head -25; set -- $(ls qc/f_*.jpg | sort); python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final1.jpg $(echo \"$@\" | cut -d' ' -f1-12) >/dev/null; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final2.jpg $(echo \"$@\" | cut -d' ' -f13-24) >/dev/null; echo ok"
+  },
+  {
+   "k": "res",
+   "t": "qc/f_001.jpg\nqc/f_002.jpg\nqc/f_003.jpg\nqc/f_004.jpg\nqc/f_005.jpg\nqc/f_006.jpg\nqc/f_007.jpg\nqc/f_008.jpg\nqc/f_009.jpg\nqc/f_010.jpg\nqc/f_011.jpg\nqc/f_012.jpg\nqc/f_013.jpg\nqc/f_014.jpg\nqc/f_015.jpg\nqc/f_016.jpg\nqc/f_017.jpg\nqc/f_018.jpg\nqc/f_019.jpg\nqc/f_020.jpg\nqc/f_021.jpg\nqc/f_022.jpg\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_final1.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_final2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/f_022.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "The last frame is a double-exposure glitch from cutting mid-crossfade. Inspecting the tail plan."
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\np=json.load(open('plan.json'))['segments']\nfor s in p[-6:]: print(s['t0'],s['t1'],s['kind'],s['file'][-40:])\nprint('total',p[-1]['t1'])\n\"; python3 -c \"\nimport json\ns=json.load(open('segments/xf.json')); print('xf last',s[-3:])\n\""
+  },
+  {
+   "k": "res",
+   "t": "617.942 623.742 av eater-without-bulk-in-3-q/avatar/A53.mp4\n623.742 629.742 clip eater-without-bulk-in-3-q/clips/p054.mp4\n629.742 635.542 av eater-without-bulk-in-3-q/avatar/A54.mp4\n635.542 641.542 clip eater-without-bulk-in-3-q/clips/p055.mp4\n641.542 646.942 av eater-without-bulk-in-3-q/avatar/A55.mp4\n646.942 650.182 clip eater-without-bulk-in-3-q/clips/p056.mp4\ntotal 650.182\nxf last [{'n': 180, "
   }
  ],
  "maquinas": 1,
