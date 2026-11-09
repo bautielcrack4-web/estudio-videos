@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794213865.729961,
+ "actualizado": 1794213929.617489,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -59,10 +59,6 @@
   "total": 0.9942
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Mon Nov  9 08:09:25 UTC 2026\n✓ existe avatar/A0.mp4 (2.1 MB, 315 s)"
-  },
   {
    "k": "tool",
    "t": "tail -6 avatar/it.log; ls avatar/A*.mp4 2>/dev/null | wc -l; echo \"---sync---\"; ls -la avatar/it_sync.json 2>/dev/null || echo \"sin sync\""
@@ -178,6 +174,10 @@
   {
    "k": "tool",
    "t": "ps -p 49041 -o pid,etime,%cpu,%mem,args | tail -2; python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "    PID     ELAPSED %CPU %MEM COMMAND\n  49041       15:36  0.4  0.1 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo\n… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
   }
  ],
  "maquinas": 1,
@@ -258,14 +258,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 1472,
+    "seg": 1536,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 8672,
+  "total_s": 8736,
   "avatar_s": 5356,
-  "sin_avatar_s": 3315,
+  "sin_avatar_s": 3379,
   "cerrado": false
  }
 }
