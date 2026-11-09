@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794208336.7011032,
+ "actualizado": 1794208399.991947,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2559,
+  "deepseek": 0.2591,
   "gpt": 0.3753,
   "gpt_img": 156,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.6312
+  "total": 0.6344
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_03.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_04.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/lote_05.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +158,26 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_redo.log --busca \"FIN:\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 07:04:34 batch 375af8b3: in_progress 0/7 → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "tail -3 fotos/fotos_redo.log; echo ---AVATAR---; tail -4 avatar/it.log; echo ---; ls -la avatar/ | head -20"
+  },
+  {
+   "k": "res",
+   "t": "07:04:04 → batch batch_6af170641d4881909cb8e250375af8b3 · 7 fotos · sin referencia · low 1088x608\n07:04:04 batch 375af8b3: validating 0/0\n07:04:34 batch 375af8b3: in_progress 0/7\n---AVATAR---\n06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS\n---\ntotal 32\ndrwxrwxrwx+  3 runner runner 4096 Nov  9 06:44 .\ndr"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo --etapa fotos --min 20"
+  },
+  {
+   "k": "res",
+   "t": "VALIDAR /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo · etapa fotos\n  ✓ guion: 19176 caracteres, 3740 palabras (hacen falta 18000-23000 para 20 min: bien)\n  ✓ fotos: 149 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\nRESULTADO: OK"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 1643,
+    "seg": 1706,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2653,
+    "seg": 2717,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3143,
+  "total_s": 3206,
   "avatar_s": 30,
-  "sin_avatar_s": 3112,
+  "sin_avatar_s": 3176,
   "cerrado": false
  }
 }
