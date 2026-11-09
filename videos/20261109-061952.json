@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794210638.1003754,
+ "actualizado": 1794210701.3939543,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3161,
+  "deepseek": 0.3219,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.7079
+  "total": 0.7137
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/gates/render_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "tail -3 avatar/it.log; echo \"---previo---\"; tail -2 render_test.log 2>/dev/null; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py --previo\" | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS\n---previo---\nclips=228 frames=38458 (1281.93s)\nhechos 10\n0"
-  },
-  {
-   "k": "tool",
-   "t": "ls segments/*.mp4 | wc -l; ls -lt segments/*.mp4 | head -3; echo \"---\"; ls -la segments/ | tail -5; echo \"---logs---\"; ls -lt *.log | head -8"
-  },
-  {
-   "k": "res",
-   "t": "24\n-rw-rw-rw-+ 1 sesion sesion  524336 Nov  9 07:22 segments/_t0031.mp4\n-rw-rw-rw-+ 1 sesion sesion  524336 Nov  9 07:22 segments/_t0030.mp4\n-rw-rw-rw-+ 1 sesion sesion  262192 Nov  9 07:22 segments/_t0032.mp4\n---\n-rw-rw-rw-+  1 sesion sesion 1048624 Nov  9 07:22 _t0028.mp4\n-rw-rw-rw-+  1 sesion sesion  524336 Nov  9 07:22 _t0030.mp4\n-rw-rw-rw-+  1 sesion sesion  524336 Nov  9 07:22 _t0031.mp4\n-rw"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo --previo > render_previo.log 2>&1 & echo \"PID=$!\"; sleep 5; tail -4 render_previo.log"
-  },
-  {
-   "k": "res",
-   "t": "PID=24305"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
-  },
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"4\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #4 status"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la gasto.jsonl 2>/dev/null && tail -8 gasto.jsonl || echo \"sin gasto.jsonl\"; echo \"---\"; date; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion 642 Nov  9 07:29 gasto.jsonl\n{\"t\": 1794205790.0245922, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 1410}\n{\"t\": 1794206534.872288, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 1282}\n{\"t\": 1794206964.1959314, \"tag\": \"fotos_gpt\", \"usd\": 0.01191, \"n\": 5}\n{\"t\": 1794207055.1390333, \"tag\": \"fotos_gpt\", \"usd\": 0.00303, \"n\": 1}\n{\"t\": 1794207426.7933712, \"tag\": \"fotos_gpt\", \"usd\": 0.03833, \"n\":"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la extrema/ 2>/dev/null | head; cat extrema/manifest.json 2>/dev/null | head -30; echo \"---capas---\"; cat extrema/capas.json 2>/dev/null | head -20"
+  },
+  {
+   "k": "res",
+   "t": "total 1084580\ndrwxrwxrwx+  3 runner runner      4096 Nov  9 07:44 .\ndrwxrwxrwx+ 12 runner runner      4096 Nov  9 07:22 ..\n-rw-rw-rw-+  1 runner runner         5 Nov  9 07:21 EN_CURSO\ndrwxrwxrwx+  2 runner runner      4096 Nov  9 07:29 gen\n-rw-rw-rw-+  1 runner runner      3067 Nov  9 07:29 libre.json\n-rw-rw-rw-+  1 runner runner      1063 Nov  9 07:29 momentos.json\n-rw-rw-rw-+  1 sesion sesion   "
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
   }
  ],
  "maquinas": 1,
@@ -223,7 +223,7 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 3944,
+    "seg": 4007,
     "pasadas": 1,
     "fin": false
    },
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 1733,
+    "seg": 1796,
     "pasadas": 1,
     "fin": false
    },
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 5444,
+  "total_s": 5507,
   "avatar_s": 30,
-  "sin_avatar_s": 5414,
+  "sin_avatar_s": 5477,
   "cerrado": false
  }
 }
