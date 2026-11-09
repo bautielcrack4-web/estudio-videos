@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794191047.9433084,
+ "actualizado": 1794191114.683655,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1936,
+  "deepseek": 0.1952,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4954
+  "total": 0.497
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "<retrieval_status>timeout</retrieval_status>\n\n<task_id>bpaw6iq4s</task_id>\n\n<task_type>local_bash</task_type>\n\n<status>running</status>"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la video_noaudio.mp4 audio_mix.m4a final.mp4 2>/dev/null; ps -o pid,etime,cmd -C ffmpeg | head -2 | cut -c1-140"
-  },
   {
    "k": "res",
    "t": "-rw-rw-rw-+ 1 sesion sesion 448790576 Nov  9 02:01 video_noaudio.mp4\n    PID     ELAPSED CMD\n  60522       16:44 ffmpeg -v error -y -i ./xf_tmp/c000.mp4 -i ./xf_tmp/c001.mp4 -i ./xf_tmp/c002.mp4 -i ./xf_tmp/c003.mp4 -i ./xf_tmp/c004."
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "{\"task_id\": \"bgo02ox6x\", \"block\": true, \"timeout\": 300000}"
+  },
+  {
+   "k": "res",
+   "t": "<retrieval_status>success</retrieval_status>\n\n<task_id>bgo02ox6x</task_id>\n\n<task_type>local_bash</task_type>\n\n<status>completed</status>\n\n<exit_code>0</exit_code>\n\n<output>\nclips=257 frames=37498 (1249.93s)\nhechos 257\n</output>"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in > assemble2.log 2>&1 & echo \"PID:$!\"; sleep 5; echo started"
   }
  ],
  "maquinas": 1,
