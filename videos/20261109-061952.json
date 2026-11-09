@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794207064.9083688,
+ "actualizado": 1794207127.772878,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1452,
+  "deepseek": 0.1664,
   "gpt": 0.0243,
   "gpt_img": 9,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1695
+  "total": 0.1907
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python - <<'PY'\nimport json\nP=json.load(open('planos.json'))\nprint('total',len(P))\nfor p in P:\n    t=p['texto'].replace('\\n',' ')\n    print(f\"{p['id']} | {p['seg']:>4} | {'SPLIT' if p.get('split') else '     '} | {t[:170]}\")\nPY"
-  },
-  {
-   "k": "res",
-   "t": "total 156\np001 |  7.1 |       | our time. Before I say anything else, I want you to look at one small thing,\np002 |  6.8 |       | fingers and feel the band that touches your neck. Is it soft and flat, like a ribbon that has given\np003 |  5.6 |       | it belongs? This whole video is about that narrow band of cloth.\np004 |  3.9 |       | One press of an iron made in the right place can make a plai"
-  },
-  {
-   "k": "tool",
-   "t": "cd /opt/estudio/repo/motor/tools && grep -n \"chunk\\|100\\|50\\|lote\\|batch\" fotos.py | head -40"
-  },
-  {
-   "k": "res",
-   "t": "10:Guarda cada prompt al lado de su foto (fotos/<id>.json), manda los batches, espera (consulta cada 30 s) y baja fotos/<id>.png.\n11:Si se corta o fallan algunas, volver a correrlo con el mismo pedidos.json: sólo pide las que faltan y retoma los batches en vuelo.\n25:ST = O + \"/_batches.json\"\n79:    problemas.append(\"lote: más del 30 % de las fotos con la MISMA cámara — variá (manos a 40 cm, plano "
-  },
-  {
-   "k": "ai",
-   "t": "El plan de planos está cerrado (89 ventanas, 544 s de avatar). Lanzo el avatar en segundo plano y preparo las 6 fotos de prueba."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/avatar_it.py /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo > /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/avatar/it.log 2>&1 & echo \"PID=$!\""
-  },
   {
    "k": "res",
    "t": "PID=7852"
@@ -178,6 +154,30 @@
   {
    "k": "res",
    "t": "06:49:23 batch 7442cb9c: completed 5/5\n06:49:24 ✓ batch 7442cb9c: 5 fotos bajadas, 0 fallidas (US$0.012)\n06:49:24 batch d160209b: in_progress 0/1\n6\n---\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS"
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Escenas p048-p100 (sin p050 ni p079, ya pedidas) + split s01-s06.\"\"\"\nfrom foto_base import foto, escribir\n\nP = []\nP.append(foto(\"p048\",\n    \"The iron stands upright on the board heating for a full two minutes, a small kitchen clock on the table, her hand hovering to test the warmth.\",\n    \"a black electric iron standing upright on a wooden board, a small round kitchen cl"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_b.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Escenas p101-p139 + split s07-s17, con creativas p106, p123 y p131.\"\"\"\nfrom foto_base import foto, creativa, escribir\n\nP = []\nP.append(foto(\"p101\",\n    \"A small sewing kit lies open on the table, a needle threaded with strong white thread, a button and a pair of scissors, the ten-minute job ready to begin.\",\n    \"an open sewing tin on a wooden table, a threaded needle, a"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_c.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python escenas_a.py && python escenas_b.py && python escenas_c.py && python - <<'PY'\nimport json\nplan=[p['id'] for p in json.load(open('planos.json'))]\nped=[]\nfor f in ('pedidos_a.json','pedidos_b.json','pedidos_c.json'):\n    ped += [p['id'] for p in json.load(open(f))]\ndone={'p001','p002','p011','p021','p050','p079','p105'}\nfaltan=[i for i in plan if i not in set(ped)|done]\nsobran=[i for i in ped"
+  },
+  {
+   "k": "res",
+   "t": "✓ pedidos_a.json: 43 pedidos\n✓ pedidos_b.json: 57 pedidos\n✓ pedidos_c.json: 49 pedidos\nplanos 156 pedidos 149 faltan 0 [] sobran []\nduplicados 0"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 371,
+    "seg": 434,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1382,
+    "seg": 1444,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1871,
+  "total_s": 1934,
   "avatar_s": 30,
-  "sin_avatar_s": 1841,
+  "sin_avatar_s": 1903,
   "cerrado": false
  }
 }
