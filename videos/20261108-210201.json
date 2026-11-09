@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794189608.6283872,
+ "actualizado": 1794189672.4831479,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1681,
+  "deepseek": 0.1696,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4699
+  "total": 0.4714
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "832,464\n832,464"
-  },
-  {
-   "k": "tool",
-   "t": "ffmpeg -v error -y -ss 1.0 -i avatar/A75.mp4 -vf \"crop=640:360:192:52,scale=960:540\" -frames:v 1 qc/crop1.jpg\nffmpeg -v error -y -ss 1.0 -i avatar/A75.mp4 -vf \"crop=608:342:224:61,scale=960:540\" -frames:v 1 qc/crop2.jpg\nffmpeg -v error -y -ss 1.0 -i avatar/A100.mp4 -vf \"crop=608:342:224:61,scale=960:540\" -frames:v 1 qc/crop3.jpg\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_crops.jpg qc/cro"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_crops.jpg (3 cuadros, 3x1)"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_crops.jpg\"}"
@@ -178,6 +166,18 @@
   {
    "k": "tool",
    "t": "{\"task_id\": \"bpaw6iq4s\", \"block\": true, \"timeout\": 600000}"
+  },
+  {
+   "k": "res",
+   "t": "<retrieval_status>timeout</retrieval_status>\n\n<task_id>bpaw6iq4s</task_id>\n\n<task_type>local_bash</task_type>\n\n<status>running</status>"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la video_noaudio.mp4 audio_mix.m4a final.mp4 2>/dev/null; ps -o pid,etime,cmd -C ffmpeg | head -2 | cut -c1-140"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion 448790576 Nov  9 02:01 video_noaudio.mp4\n    PID     ELAPSED CMD\n  60522       16:44 ffmpeg -v error -y -i ./xf_tmp/c000.mp4 -i ./xf_tmp/c001.mp4 -i ./xf_tmp/c002.mp4 -i ./xf_tmp/c003.mp4 -i ./xf_tmp/c004."
   }
  ],
  "maquinas": 1,
