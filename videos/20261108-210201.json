@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184153.1859639,
+ "actualizado": 1794184219.8509543,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1028,
+  "deepseek": 0.1041,
   "gpt": 0.0488,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1516
+  "total": 0.1529
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "hoja: qc/sh_G.jpg (12 cuadros, 4x3)\nhoja: qc/sh_H.jpg (12 cuadros, 4x3)\nhoja: qc/sh_I.jpg (12 cuadros, 4x3)\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_G.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_H.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_I.jpg\"}"
@@ -178,6 +158,26 @@
   {
    "k": "tool",
    "t": "sleep 25; tail -4 clips/stock_04.log; python /opt/estudio/repo/motor/tools/hoja.py qc/sh_fix4.jpg clips/p025.mp4 clips/p029.mp4 clips/p033.mp4 clips/p041.mp4 clips/p046.mp4 clips/p048.mp4 clips/p050.mp4 clips/p054.mp4 clips/p058.mp4 clips/p079.mp4 clips/p080.mp4 clips/p090.mp4 && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "00:28:36 → 16 clips por buscar\nno existe: clips/p090.mp4\nhoja: qc/sh_fix4.jpg (11 cuadros, 4x3)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "cat clips/stock_04.log; echo \"---\"; ls clips/*.mp4 | wc -l; ps -p 21125 -o pid,etime,cmd 2>/dev/null || echo \"proceso terminado\""
+  },
+  {
+   "k": "res",
+   "t": "00:28:36 → 16 clips por buscar\n---\n138\n    PID     ELAPSED CMD\n  21125       00:54 python /opt/estudio/repo/motor/tools/stock.py /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/stock_04.json"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 45; tail -12 clips/stock_04.log; ls clips/*.mp4 | wc -l; echo \"=== FOTOS ===\"; tail -3 fotos/fotos_03.log; ls fotos/p022.png 2>/dev/null && echo p022_lista; echo \"=== AVATAR ===\"; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "00:28:36 → 16 clips por buscar\n00:29:32 bajados 16/16\n00:29:32 FIN: 16/16 clips en clips/\n139\n=== FOTOS ===\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0\n00:27:49 batch d777ee8e: in_progress 0/1\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-"
   }
  ],
  "maquinas": 1,
