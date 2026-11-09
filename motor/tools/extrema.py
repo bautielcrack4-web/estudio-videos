@@ -544,7 +544,7 @@ def renderizar(B, X, fotos, partes, momentos, caja):
         r = subprocess.run(["npm", "i", "--no-audit", "--no-fund", "--loglevel=error"], cwd=T, capture_output=True, text=True, timeout=900)
         if r.returncode: log("npm falló, queda el b-roll normal:", r.stderr[-400:]); return
     else:
-        shutil.copytree(PKG + "/src", T + "/src", dirs_exist_ok=True, ignore=shutil.ignore_patterns("gen")); shutil.copy2(PKG + "/render.mjs", T + "/render.mjs")
+        shutil.copytree(PKG + "/src", T + "/src", dirs_exist_ok=True, ignore=shutil.ignore_patterns("gen"), copy_function=shutil.copyfile); shutil.copyfile(PKG + "/render.mjs", T + "/render.mjs")
     G = T + "/src/gen"; shutil.rmtree(G, ignore_errors=True); os.makedirs(G)
     pub = T + "/public"; os.makedirs(pub + "/fotos", exist_ok=True)
     from PIL import Image

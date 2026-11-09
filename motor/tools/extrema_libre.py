@@ -47,8 +47,8 @@ def preparar(T, PKG, log):
         r = subprocess.run(["npm", "i", "--no-audit", "--no-fund", "--loglevel=error"], cwd=T, capture_output=True, text=True, timeout=900)
         if r.returncode: log("npm falló, queda el b-roll normal:", r.stderr[-400:]); return False
     else:
-        shutil.copytree(PKG + "/src", T + "/src", dirs_exist_ok=True, ignore=shutil.ignore_patterns("gen"))
-        for f in ("render.mjs", "smoke.mjs"): shutil.copy2(PKG + "/" + f, T + "/" + f)
+        shutil.copytree(PKG + "/src", T + "/src", dirs_exist_ok=True, ignore=shutil.ignore_patterns("gen"), copy_function=shutil.copyfile)
+        for f in ("render.mjs", "smoke.mjs"): shutil.copyfile(PKG + "/" + f, T + "/" + f)
     shutil.rmtree(T + "/src/gen", ignore_errors=True); os.makedirs(T + "/src/gen"); shutil.rmtree(T + "/public", ignore_errors=True); os.makedirs(T + "/public/fotos"); os.makedirs(T + "/public/clips")
     subprocess.run(["chmod", "-R", "a+rwX", T], check=True)      # lo usa el usuario sin claves; el dueño nunca ejecuta lo que quede acá
     return True
@@ -147,7 +147,7 @@ def componer(B, X, T, W, AV, FT, fotos, clips, cara, caja, total, nmax, ia, log)
 
     with cf.ThreadPoolExecutor(4) as ex: res = [r for r in ex.map(lambda x: crea(*x), enumerate(E)) if r]
     os.makedirs(X + "/gen", exist_ok=True)
-    for g in res: shutil.copy2(T + "/src/gen/%s.tsx" % g["id"], X + "/gen/%s.tsx" % g["id"])
+    for g in res: shutil.copyfile(T + "/src/gen/%s.tsx" % g["id"], X + "/gen/%s.tsx" % g["id"])
     json.dump(res, open(X + "/libre.json", "w", encoding="utf8"), ensure_ascii=False, indent=1)     # otra máquina las reusa: no se paga dos veces
     return res
 
@@ -177,7 +177,7 @@ def renderizar(B, X, T, G, fotos, clips, cara, AV, log):
         if usa(i):
             im = Image.open(p).convert("RGB"); im.thumbnail((1920, 1080)); im.save(pub + "/fotos/" + i + ".jpg", quality=86)
     for i in clips:
-        if usa(i): shutil.copy2(B + "/clips/" + i + ".mp4", pub + "/clips/" + i + ".mp4")
+        if usa(i): shutil.copyfile(B + "/clips/" + i + ".mp4", pub + "/clips/" + i + ".mp4")
     open(T + "/src/gen/manifest.ts", "w", encoding="utf8").write("".join("import c%d from './%s';\n" % (k, g["id"]) for k, g in enumerate(G)) +
         "export const comps = [%s];\n" % ",".join("{id:'%s',C:c%d,frames:%d}" % (g["id"], k, g["frames"]) for k, g in enumerate(G)))
     json.dump([g["id"] for g in G if g["tipo"] == "overlay"], open(T + "/src/gen/capas.json", "w"))
@@ -229,7 +229,7 @@ def correr(B, X, W, AV, FT, fotos, PKG, caja, nmax, ia, log, gasto):
     try: G = json.load(open(X + "/libre.json", encoding="utf8"))
     except Exception: G = None
     if G and all(os.path.exists(X + "/gen/%s.tsx" % g["id"]) for g in G):
-        for g in G: shutil.copy2(X + "/gen/%s.tsx" % g["id"], T + "/src/gen/%s.tsx" % g["id"])
+        for g in G: shutil.copyfile(X + "/gen/%s.tsx" % g["id"], T + "/src/gen/%s.tsx" % g["id"])
         log("reuso las %d piezas ya programadas" % len(G))
     else:
         G = componer(B, X, T, W, AV, FT, fotos, clips, cara, caja, total, nmax, ia, log)

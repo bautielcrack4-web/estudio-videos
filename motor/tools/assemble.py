@@ -2,11 +2,18 @@
 """HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/assemble.py <carpeta_del_video>
 Une segments/ (con los fundidos de xf.json) + voz/master.wav + SFX de cues.json -> final.mp4 (1920x1080 30fps, audio ESTÉREO AAC 192k).
 cues.json = [{"file":"tela.mp3","t":171100,"gain":0.07,"fade":0.4}, ...]  (archivos en <carpeta>/sfx/; t en ms; gain 0.035-0.08 = -29 a -22 dB)."""
-import json, os, re, subprocess, sys
+import atexit, fcntl, hashlib, json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import etapas
 
 B = (sys.argv[1] if len(sys.argv) > 1 else os.getcwd()).replace("\\", "/").rstrip("/")
 SFXDIR = B + "/sfx"
 VOZ = B + "/voz/master.wav"
+FINAL = B + "/final.mp4"
+EST = B + "/gates/armado.json"
+os.makedirs(B + "/gates", exist_ok=True)
+_LOCK = open(B + "/gates/.armado.lock", "a"); fcntl.flock(_LOCK, fcntl.LOCK_EX)     # de a uno: el segundo que entra encuentra todo hecho
+etapas.marca(B, "armado", "ini"); atexit.register(lambda: etapas.marca(B, "armado", "fin"))
 
 # (archivo, t_ms, ganancia, fade_out_s)   -18 a -24 dB bajo la voz
 # los cues salen de cues.json (cada video los suyos); sin archivo = sin SFX
@@ -65,20 +72,56 @@ def xfade_chain(files, ns, ds, out, crf, entrega=False, capas=()):
     return run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", ";".join(fc), "-map", prev,
          "-c:v", "libx264", "-crf", str(crf), "-preset", "veryfast" if crf < 20 else "medium", "-pix_fmt", "yuv420p", "-r", "30", "-an"] + (ENTREGA if entrega else []) + [out], fatal=not capas).returncode == 0
 
+def _jl(p, d=None):
+    try: return json.load(open(p, encoding="utf-8"))
+    except Exception: return d
+
+def firma_audio():
+    h = [open(VOZ, "rb").read(1 << 16), os.path.getsize(VOZ), repr(CUES)] + [(c[0], os.path.getsize(SFXDIR + "/" + c[0])) for c in CUES]
+    return hashlib.sha1(repr(h).encode("utf8", "ignore")).hexdigest()
+
+def compuerta(est):
+    """Un final ya revisado no se rearma por iniciativa propia: si pasó, queda; si marcó fallas, se corrige UNA vez."""
+    if os.environ.get("ARMADO_EXTREMA") or not os.path.exists(FINAL): return
+    rev = _jl(B + "/gates/revisor_final.json") or {}
+    if os.path.exists(B + "/gates/pedido_usuario"):       # lo pidió el usuario desde el panel: ahí sí
+        os.remove(B + "/gates/pedido_usuario"); est["correcciones"] = 0
+    elif est.get("correcciones", 0) >= 1:                 # vale también si el final cambió desde la revisión: la pasada ya se hizo
+        print("⛔ ya se hizo la pasada de correcciones (máximo 1): no se rearma. Anotá lo que falte en REPORTE.md y terminá."); sys.exit(0)
+    elif abs(os.path.getmtime(FINAL) - float(rev.get("final_mtime") or 0)) > 2: return
+    elif not rev.get("malas"):
+        print("✓ este final ya pasó el control: no se rearma. Seguí con meta.json y REPORTE.md y terminá."); sys.exit(0)
+    est["correcciones"] = est.get("correcciones", 0) + 1
+
+FIRMA, ESTADO = None, _jl(EST, {}) or {}
 if XF and len(XF) == len(segs):
-    TMP = B + "/xf_tmp"; os.makedirs(TMP, exist_ok=True)
-    G = 25; chunks, cn, cd = [], [], []
-    for c in range(0, len(segs), G):
-        idx = list(range(c, min(c + G, len(segs))))
-        out = "%s/c%03d.mp4" % (TMP, c // G)
-        xfade_chain([B + "/segments/" + segs[i] for i in idx], [XF[i]["n"] for i in idx], [XF[i]["d"] for i in idx], out, 14)
-        chunks.append(out); cn.append(sum(XF[i]["n"] for i in idx)); cd.append(XF[idx[-1]]["d"])
-        print("tramo", len(chunks), "listo")
+    import tramos
     CAPAS = leer_capas()
     if CAPAS: print("capas de edición extrema:", len(CAPAS))
-    if not CAPAS or not xfade_chain(chunks, cn, cd, video, 20, entrega=True, capas=CAPAS):     # si las capas fallan, el video sale igual sin ellas
-        if CAPAS: print("las capas fallaron: va sin ellas")
-        xfade_chain(chunks, cn, cd, video, 20, entrega=True)
+    P = None
+    try: P = tramos.planificar(B, segs, XF, CAPAS, VF_ENTREGA, ENTREGA)
+    except Exception as e: print("no pude planificar los tramos (%s): va el armado completo" % type(e).__name__)
+    if P:
+        FIRMA = hashlib.sha1((P.firma + firma_audio()).encode()).hexdigest()
+        if os.path.exists(FINAL) and ESTADO.get("firma") == FIRMA:
+            print("✓ sin cambios: final.mp4 ya está al día."); sys.exit(0)
+    compuerta(ESTADO)
+    hecho = False
+    if P:
+        try: tramos.armar(P, video); hecho = True
+        except Exception as e: print("el armado por tramos falló (%s): va el armado completo" % str(e)[:300], flush=True)
+    if not hecho:
+        TMP = B + "/xf_tmp"; os.makedirs(TMP, exist_ok=True)
+        G = 25; chunks, cn, cd = [], [], []
+        for c in range(0, len(segs), G):
+            idx = list(range(c, min(c + G, len(segs))))
+            out = "%s/c%03d.mp4" % (TMP, c // G)
+            xfade_chain([B + "/segments/" + segs[i] for i in idx], [XF[i]["n"] for i in idx], [XF[i]["d"] for i in idx], out, 14)
+            chunks.append(out); cn.append(sum(XF[i]["n"] for i in idx)); cd.append(XF[idx[-1]]["d"])
+            print("tramo", len(chunks), "listo")
+        if not CAPAS or not xfade_chain(chunks, cn, cd, video, 20, entrega=True, capas=CAPAS):     # si las capas fallan, el video sale igual sin ellas
+            if CAPAS: print("las capas fallaron: va sin ellas")
+            xfade_chain(chunks, cn, cd, video, 20, entrega=True)
 else:
     print("sin xf.json: corte seco")
     lst = B + "/concat.txt"
@@ -113,9 +156,14 @@ else:
     run(["ffmpeg", "-v", "error", "-y"] + inputs + ["-filter_complex", fc.strip(";"),
          "-map", "[out]", "-ac", "2", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", audio])
 
-final = B + "/final.mp4"
+final = FINAL
+_tmp = B + "/final.tmp.mp4"                # se escribe al lado y se reemplaza de una: si algo corta el armado, el final anterior sigue sano
 run(["ffmpeg", "-v", "error", "-y", "-i", video, "-i", audio,
      "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "copy",
-     "-movflags", "+faststart", final])
+     "-movflags", "+faststart", _tmp])
+os.replace(_tmp, final)
+if FIRMA:
+    ESTADO["firma"] = FIRMA; os.makedirs(B + "/gates", exist_ok=True)
+    json.dump(ESTADO, open(EST, "w", encoding="utf-8"))
 d = run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", final]).stdout.strip()
 print("final:", final, d, "s")

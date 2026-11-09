@@ -11,8 +11,8 @@ Las claves ya están configuradas: las herramientas las leen solas. **Nunca las 
    ⛔ **CERO FOTOS REPETIDAS:** un plano = una foto distinta. El validador lo frena con ✗.
 5. **Avatar**: con el plan cerrado, `avatar_it.py` en segundo plano (1 sola llamada, §3).
 6. **Sonido** (§5b) mientras llega el avatar: `sonidos.py` + `cues.json`.
-7. **Render de prueba** (`render.py --limit 10`) → hoja → mirala. Después `render.py` completo + `assemble.py`.
-8. **Final**: corré el **revisor** (`revisor.py`, §6), aplicá lo que marque, validá `--etapa final`, `meta.json`, `REPORTE.md`. Listo: el usuario lo descarga desde el panel.
+7. **Render de prueba** (`render.py --limit 10`) → hoja → mirala. El render completo y el armado **los hace el motor solo**: los planos sin avatar mientras se espera y, cuando llega el avatar, sus segmentos y `final.mp4`. Vos esperá con `esperar.py --existe final.mp4` y usá ese tiempo para `meta.json` y `REPORTE.md`. Sólo si `final.mp4` no aparece a los 40 min de haber llegado el avatar, corré vos `render.py` + `assemble.py`.
+8. **Final**: corré el **revisor** (`revisor.py`, §6) una vez y validá `--etapa final`. Si no marcó nada, terminaste: no hagas otra revisión ni otro armado. Si marcó algo, hacé **una sola pasada** con lo marcado y nada más. Listo: el usuario lo descarga desde el panel.
 
 Reglas anti-vueltas:
 - **Esperar = SÓLO `python {APP}/tools/esperar.py`** (hasta 9 min de una: `--log render.log`, `--cuenta "fotos/*.png" 120`, `--existe final.mp4`; llamala con timeout 600000). **Prohibido `sleep` en bucle** y mirar con `ls`/`tail` cada minuto.
@@ -133,7 +133,7 @@ python {APP}/tools/sonidos.py <carpeta> <carpeta>/sfx_pedidos.json --tomas 3 > <
 ## 6. Control de calidad (no frena)
 - `python {APP}/tools/validar.py <carpeta> --etapa guion|fotos|render|final --min <minutos>`. Sólo frena con ✗ (guion fuera de largo, video roto, sin audio, desincronizado, no arranca con el avatar, avatar congelado, hueco negro > 0,5 s, fotos repetidas, menciones de IA, sin título).
 - En fotos/render/final mirá la hoja con Read y escribí en `gates/<etapa>_auto.txt` qué miraste y qué arreglaste. Después SEGUÍ.
-- **Revisor final:** con `final.mp4` listo, `python {APP}/tools/revisor.py <carpeta>`. Deja los cuadros en `qc/f_*.jpg`, mide los huecos negros y mira con visión si hay fallas claras (cara deforme, glitch del avatar, marca de agua, foto repetida). Lo que encuentra queda en `gates/correcciones.txt`: aplicalo, anotalo en `gates/correcciones_hechas.txt`, volvé a armar y corrélo una vez más. Máximo 2 revisiones. Si algo de eso no se puede arreglar, anotalo en REPORTE.md y SEGUÍ.
+- **Revisor final:** con `final.mp4` listo, `python {APP}/tools/revisor.py <carpeta>`. Deja los cuadros en `qc/f_*.jpg`, mide los huecos negros y mira con visión si hay fallas claras (cara deforme, glitch del avatar, marca de agua, foto repetida). Lo que encuentra queda en `gates/correcciones.txt`: arreglá SÓLO esos planos, anotalo en `gates/correcciones_hechas.txt` y corré `render.py` + `assemble.py` (rehacen únicamente lo que cambió, tarda minutos). Es **una sola pasada y una sola revisión con IA**: `assemble.py` se niega a una segunda. Si algo no se puede arreglar, anotalo en REPORTE.md y TERMINÁ.
 - Si el usuario te escribe correcciones en el chat, aplicalas antes del armado final.
 - `REPORTE.md`: qué se hizo, gasto, problemas y qué falta.
 
