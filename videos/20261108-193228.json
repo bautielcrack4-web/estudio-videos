@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184045.7775111,
+ "actualizado": 1794184109.0525625,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,42 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0888,
+  "deepseek": 0.109,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.481
+  "total": 0.5012
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gates/correcciones.txt --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -12 revisor.log; echo \"---\"; cat gates/correcciones.txt 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\n… sigue esperando tras 540 s · log: (21 cuadros revisados, US$0.001) · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar\n---\n✓ el revisor no encontró fallas.\n(21 cuadros revisados, US$0.001)\n---"
-  },
-  {
-   "k": "ai",
-   "t": "El revisor no encontró fallas. Reviso los cuadros finales y cierro los gates."
-  },
-  {
-   "k": "tool",
-   "t": "ls qc/ | head -30; echo \"---\"; ls qc/f_*.jpg | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "f_001.jpg\nf_002.jpg\nf_003.jpg\nf_004.jpg\nf_005.jpg\nf_006.jpg\nf_007.jpg\nf_008.jpg\nf_009.jpg\nf_010.jpg\nf_011.jpg\nf_012.jpg\nf_013.jpg\nf_014.jpg\nf_015.jpg\nf_016.jpg\nf_017.jpg\nf_018.jpg\nf_019.jpg\nf_020.jpg\nf_021.jpg\nfinal_info.json\nhoja_A.jpg\nhoja_B.jpg\nhoja_C.jpg\nhoja_D.jpg\nhoja_E.jpg\nhoja_F.jpg\nhoja_avatar.jpg\nhoja_fotos.jpg\n---\n21"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final1.jpg qc/f_001.jpg qc/f_002.jpg qc/f_003.jpg qc/f_004.jpg qc/f_005.jpg qc/f_006.jpg qc/f_007.jpg qc/f_008.jpg qc/f_009.jpg qc/f_010.jpg qc/f_011.jpg && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final2.jpg qc/f_012.jpg qc/f_013.jpg qc/f_014.jpg qc/f_015.jpg qc/f_016.jpg qc/f_017.jpg qc/f_018.jpg qc/f_019.jpg qc/f_020.jpg qc/f_021."
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_final1.jpg (11 cuadros, 4x3)\nhoja: qc/hoja_final2.jpg (10 cuadros, 4x3)"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_final1.jpg\"}"
@@ -178,6 +150,34 @@
   {
    "k": "end",
    "t": "Video terminado de punta a punta. \n\n**Entregables en `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/`:**\n- `final.mp4` — 10:04, 1920x1080, 30 fps, H.264 CRF 20, AAC 48 kHz estéreo (audio sano: −17.7 dB medio)\n- `REPORTE.md` — qué se hizo, gasto, problemas, mejoras\n- `meta.json` — título + descripción de YouTube en 3 párrafos, voz de Michiko, sin links ni hashtags\n\n**Cómo quedó"
+  },
+  {
+   "k": "user",
+   "t": "Seguí con el video."
+  },
+  {
+   "k": "tool",
+   "t": "ls -la gates/; echo \"---\"; ls -la final.mp4 meta.json REPORTE.md; echo \"---\"; python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa final --min 10 2>&1 | tail -6"
+  },
+  {
+   "k": "res",
+   "t": "total 36\ndrwxrwxrwx+  2 sesion sesion 4096 Nov  9 00:26 .\ndrwxrwxrwx+ 11 runner runner 4096 Nov  9 00:26 ..\n-rw-rw-rw-+  1 sesion sesion  158 Nov  9 00:26 correcciones_hechas.txt\n-rw-rw-rw-+  1 sesion sesion  932 Nov  9 00:26 final_auto.txt\n-rw-rw-rw-+  1 sesion sesion 1911 Nov  8 22:55 fotos_auto.txt\n-rw-rw-rw-+  1 sesion sesion  767 Nov  8 22:56 render_auto.txt\n-rw-rw-rw-+  1 sesion sesion  129 "
+  },
+  {
+   "k": "ai",
+   "t": "El video ya está completo y validado. Agrego la nota de control de guion, que era la única que faltaba del checklist."
+  },
+  {
+   "k": "tool",
+   "t": "CONTROL GUION\n\nvalidar.py --etapa guion → OK (1.641 palabras, rango esperado para 10 min).\nRevisado a mano:\n- Gancho 0-45 s con número (dos minutos) y objeto concreto (palangana, paño, toalla).\n- Credencial de Michiko (68 años, Kyoto, tienda de ropa de barrio).\n- Prueba interactiva alrededor del minuto 2 (luz, dorso de la mano, presionar la piel, frotar palmas).\n- Cuatro puntos, cada uno con probl"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gates/guion_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "timeout 300 ffmpeg -v error -i final.mp4 -f null - 2>&1 | head -5; echo \"decode-exit: $?\"; ffmpeg -v error -y -sseof -1 -i final.mp4 -frames:v 1 qc/frame_end.jpg && echo frame-ok"
   }
  ],
  "maquinas": 2,
