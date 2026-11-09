@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794188457.135869,
+ "actualizado": 1794188521.2578142,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,18 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1617,
+  "deepseek": 0.1632,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4635
+  "total": 0.465
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/hoja_avatar.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +174,10 @@
   {
    "k": "res",
    "t": "Command running in background with ID: bpaw6iq4s. Output is being written to: /tmp/claude-1002/-opt-estudio-datos-videos-10-tops-i-gave-away-at-68-what-i-wear-in/a2b588b1-04ed-4775-a95e-3a7b27e56aa9/tasks/bpaw6iq4s.output. You will be notified when it completes. To check interim output, use Read on that file path."
+  },
+  {
+   "k": "tool",
+   "t": "{\"task_id\": \"bpaw6iq4s\", \"block\": true, \"timeout\": 600000}"
   }
  ],
  "maquinas": 1,
