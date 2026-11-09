@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794209543.7207682,
+ "actualizado": 1794209606.9810195,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,18 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3059,
+  "deepseek": 0.3084,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.6977
+  "total": 0.7002
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"segments/*.mp4\" 10 --max 300; tail -5 render_test.log; ls segments/*.mp4 | wc -l"
-  },
   {
    "k": "res",
    "t": "✓ hay 10 archivos (0 s)\n10"
@@ -178,6 +174,10 @@
   {
    "k": "res",
    "t": "def absp(f): return f if (\":\" in f or f.startswith(\"/\")) else B + \"/\" + f\n# un mismo clip puede ir en pedazos (intro partida en tramos ≤ 6 s con fotos entre medio):\n# cada pedazo arranca en (startMs - clipStartMs) dentro del clip, así el lipsync sigue a la voz.\n# clipStartMs = dónde empieza ese clip en la voz; si no se da, el startMs más chico de ese archivo.\nOFF = {}\nSPL = {}   # (archivo, startM"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
   }
  ],
  "maquinas": 1,
@@ -223,7 +223,7 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 2850,
+    "seg": 2913,
     "pasadas": 1,
     "fin": false
    },
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 639,
+    "seg": 702,
     "pasadas": 1,
     "fin": false
    },
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 4350,
+  "total_s": 4413,
   "avatar_s": 30,
-  "sin_avatar_s": 4319,
+  "sin_avatar_s": 4383,
   "cerrado": false
  }
 }
