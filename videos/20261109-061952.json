@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794207127.772878,
+ "actualizado": 1794207190.7122567,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,133 +51,133 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1664,
+  "deepseek": 0.1862,
   "gpt": 0.0243,
   "gpt_img": 9,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1907
+  "total": 0.2105
  },
  "eventos": [
   {
+   "k": "tool",
+   "t": "    \"a 68-year-old woman in a white shirt with both arms raised above her head, framed from the chin down, the collar visible at her neck, the tatami room behind\",\n    \"her arms are caught halfway up, her chin lowered toward her own collar, the fabric moving with her\",\n    \"room\", 1, 0, 0, 2))"
+  },
+  {
    "k": "res",
-   "t": "PID=7852"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_b.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "cp fotos/p001_c.png fotos/p001.png && python - <<'PY'\nimport json\nd=json.load(open('fotos/p001_c.json',encoding='utf8'))\nd['id']='p001'\njson.dump(d,open('fotos/p001.json','w',encoding='utf8'),ensure_ascii=False,indent=1)\nPY\nrm -f fotos/p001_a.png fotos/p001_a.json fotos/p001_b.png fotos/p001_b.json fotos/p001_c.png fotos/p001_c.json\nls fotos/"
+   "t": "    \"the side of an older woman's jaw and neck with a white collar, a narrow strip of shadow between them, her grey hair swept back, the face partly out of frame\",\n    \"her head is caught slightly turned, one finger near the gap between collar and skin\",\n    \"room\", 9, 0, 0, 2))"
   },
   {
    "k": "res",
-   "t": "_batches.json\nfotos_hook.log\np001.json\np001.png"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_b.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Base comun de prompts: frase de estilo, pools de objetos, camaras, luces y armado.\"\"\"\nimport json\n\nTYPE = (\"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n        \"slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\")\nTYPE_MAYOR = (\"amateur phone photo, mild JPEG compression"
+   "t": "    \"a 68-year-old woman pulling a white shirt over her head, seen from behind and the side, shoulders lifted, the collar crooked, the tatami room behind\",\n    \"her arms are caught mid-motion in the sleeves, the shirt still settling, the collar visibly off-centre\",\n    \"room\", 9, 0, 1, 0))"
   },
   {
    "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/foto_base.py (file state is current in your context — no need to Read it back)"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_c.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"6 fotos de prueba, variadas.\"\"\"\nfrom foto_base import foto, creativa, escribir\n\nP = []\nP.append(foto(\n    \"p002\",\n    \"She reaches up and presses two fingertips against the band of her shirt collar at her neck, testing how it sits, her eyes lowered in concentration.\",\n    \"the weathered hands and lower neck of a 68-year-old Japanese woman, short clean nails, a thin gold "
+   "t": "grep -n -A4 'foto(\"p035\"\\|foto(\"p037\"' escenas_b.py"
   },
   {
    "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_test.py (file state is current in your context — no need to Read it back)"
+   "t": "(Bash completed with no output)"
   },
   {
    "k": "tool",
-   "t": "python escenas_test.py && python /opt/estudio/repo/motor/tools/fotos.py . pedidos_test.json 2>&1 | head -20"
+   "t": "grep -n \"p035\\|p037\\|p074\\|p076\" escenas_b.py"
   },
   {
    "k": "res",
-   "t": "✓ pedidos_test.json: 6 pedidos\n06:44:46 → batch batch_6af16bdeb0dc81908fc285907442cb9c · 5 fotos · sin referencia · low 1088x608\n06:44:47 → batch batch_6af16bdf6c248190919d8460d160209b · 1 fotos · con la cara del presentador · low 1088x608\n06:44:47 batch 7442cb9c: validating 0/0\n06:44:47 batch d160209b: validating 0/0\n06:45:17 batch 7442cb9c: in_progress 0/5\n06:45:17 batch d160209b: in_progress 0/"
+   "t": "131:P.append(foto(\"p074\",\n141:P.append(foto(\"p076\","
   },
   {
    "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_test.json > fotos/fotos_test.log 2>&1 & echo \"PID=$!\"; sleep 2; tail -4 fotos/fotos_test.log; echo ---AVATAR---; tail -6 avatar/it.log"
+   "t": "grep -n -A5 'foto(\"p035\"\\|foto(\"p037\"' escenas_a.py"
   },
   {
    "k": "res",
-   "t": "PID=9453\n06:49:23 batch 7442cb9c: completed 5/5\n06:49:24 ✓ batch 7442cb9c: 5 fotos bajadas, 0 fallidas (US$0.012)\n06:49:24 batch d160209b: in_progress 0/1\n---AVATAR---\n06:44:13 InfiniteTalk: 89 ventanas · reel 571.1 s · 1 llamada\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS"
-  },
-  {
-   "k": "ai",
-   "t": "Mientras corre el Batch, escribo el resto de las escenas (156 fotos, un prompt por plano). Voy por bloques."
+   "t": "162:P.append(foto(\"p035\",\n163-    \"She turns her head slowly to the side, watching whether the collar travels with her neck or stands still like a stiff band.\",\n164-    \"Michiko's neck and shoulder in profile, her head turned to one side, the white collar around her neck, grey hair at the temple\",\n165-    \"her head is caught mid-turn, the collar close against the skin, her eyes looking down along "
   },
   {
    "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Escenas p003-p047 (sin p011 ni p021, ya pedidas) + creativas p005 y p007.\"\"\"\nfrom foto_base import foto, creativa, escribir\n\nP = []\nP.append(foto(\"p003\",\n    \"A plain white shirt lies on the tatami with its collar open toward the camera and a yellow tape measure held across the narrow band, showing how little cloth the whole lesson is about.\",\n    \"a plain white cotton s"
+   "t": "    \"the neck and shoulder of a 68-year-old woman in profile, her head turned to one side, the white collar around her neck, grey hair at the temple\",\n    \"her head is caught mid-turn, the collar close against the skin, the line of her shoulder leading out of frame\",\n    \"room\", 9, 0, 0, 0))"
   },
   {
    "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_a.py (file state is current in your context — no need to Read it back)"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_a.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "{\"taskId\": \"2\", \"status\": \"completed\"}"
+   "t": "    \"the upper body of a 68-year-old woman standing stiffly with raised shoulders, a white shirt buttoned high, a tight collar, her hands at her sides, framed from the chest up without her face\",\n    \"her shoulders are caught lifted toward her ears, her chin tucked, the collar pressing under her jaw\",\n    \"room\", 1, 0, 1, 2))"
   },
   {
    "k": "res",
-   "t": "Updated task #2 status"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_a.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "{\"taskId\": \"3\", \"status\": \"completed\"}"
+   "t": "python escenas_a.py && python escenas_b.py && python escenas_c.py && python - <<'PY'\nimport json,re\npeds=[]\nfor f in ('pedidos_a.json','pedidos_b.json','pedidos_c.json'):\n    peds+=json.load(open(f))\nPROH=[\"cinematic\",\"35mm\",\"bokeh\",\"8k\",\"highly detailed\",\"photorealistic\",\"golden hour\",\"out of focus\",\"blurry\",\"soft focus\",\"shallow depth of field\",\"subject isolation\",\"stock photo\",\"studio lighting\""
   },
   {
    "k": "res",
-   "t": "Updated task #3 status"
+   "t": "✓ pedidos_a.json: 43 pedidos\n✓ pedidos_b.json: 57 pedidos\n✓ pedidos_c.json: 49 pedidos\npedidos 149 caras en lote 15 (+p001+p079 = 17 )\ncamara mas usada 28 18.8 %\nerrores 1\n - p015: vacio 'no one'"
   },
   {
    "k": "tool",
-   "t": "{\"taskId\": \"4\", \"status\": \"in_progress\"}"
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos.jpg fotos/p001.png fotos/p002.png fotos/p011.png fotos/p021.png fotos/p050.png fotos/p079.png fotos/p105.png"
   },
   {
    "k": "res",
-   "t": "Updated task #4 status"
+   "t": "hoja: qc/hoja_fotos.jpg (7 cuadros, 4x2)"
   },
   {
    "k": "tool",
-   "t": "{\"taskId\": \"5\", \"status\": \"in_progress\"}"
+   "t": "python - <<'PY'\nimport json\nfor f in ('pedidos_a.json','pedidos_b.json','pedidos_c.json'):\n    for p in json.load(open(f)):\n        if p.get('cara'): print(f,p['id'])\nPY"
   },
   {
    "k": "res",
-   "t": "Updated task #5 status"
+   "t": "pedidos_a.json p006\npedidos_a.json p016\npedidos_a.json p027\npedidos_a.json p028\npedidos_a.json p029\npedidos_a.json p034\npedidos_b.json p073\npedidos_c.json p126\npedidos_c.json p127\npedidos_c.json p132\npedidos_c.json p134\npedidos_c.json p135\npedidos_c.json p136\npedidos_c.json p138\npedidos_c.json p139"
   },
   {
    "k": "tool",
-   "t": "tail -3 fotos/fotos_test.log; ls fotos/ | grep -c png; echo ---; tail -2 avatar/it.log"
+   "t": "    \"Close on the inside of the collar stand, the hidden part almost never seen, as her thumb presses it flat against the board before the leaf is folded down.\","
   },
   {
    "k": "res",
-   "t": "06:49:23 batch 7442cb9c: completed 5/5\n06:49:24 ✓ batch 7442cb9c: 5 fotos bajadas, 0 fallidas (US$0.012)\n06:49:24 batch d160209b: in_progress 0/1\n6\n---\n06:44:24 RUN 0aec2e7c-0464-442a-a292-af0947397299-u2\n06:44:54 estado: IN_PROGRESS"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_a.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Escenas p048-p100 (sin p050 ni p079, ya pedidas) + split s01-s06.\"\"\"\nfrom foto_base import foto, escribir\n\nP = []\nP.append(foto(\"p048\",\n    \"The iron stands upright on the board heating for a full two minutes, a small kitchen clock on the table, her hand hovering to test the warmth.\",\n    \"a black electric iron standing upright on a wooden board, a small round kitchen cl"
+   "t": "    \"the hands and lap of a woman seated beside a tea tray on the tatami, one hand open toward the empty cushion, the garden quiet behind\",\n    \"her open hand is caught patting the cushion beside her, her body turned slightly toward the viewer\",\n    \"tea\", 1, 0, 0, 0))"
   },
   {
    "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_b.py (file state is current in your context — no need to Read it back)"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_c.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Escenas p101-p139 + split s07-s17, con creativas p106, p123 y p131.\"\"\"\nfrom foto_base import foto, creativa, escribir\n\nP = []\nP.append(foto(\"p101\",\n    \"A small sewing kit lies open on the table, a needle threaded with strong white thread, a button and a pair of scissors, the ten-minute job ready to begin.\",\n    \"an open sewing tin on a wooden table, a threaded needle, a"
+   "t": "    \"a side view of a woman's throat and jaw with two fingers sliding along the white collar roll, the daylight on her skin\",\n    \"her two fingers are caught at the end of the roll, pressing gently, her chin slightly lowered\",\n    \"room\", 9, 0, 0, 0))"
   },
   {
    "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_c.py (file state is current in your context — no need to Read it back)"
+   "t": "The file /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/escenas_c.py has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "python escenas_a.py && python escenas_b.py && python escenas_c.py && python - <<'PY'\nimport json\nplan=[p['id'] for p in json.load(open('planos.json'))]\nped=[]\nfor f in ('pedidos_a.json','pedidos_b.json','pedidos_c.json'):\n    ped += [p['id'] for p in json.load(open(f))]\ndone={'p001','p002','p011','p021','p050','p079','p105'}\nfaltan=[i for i in plan if i not in set(ped)|done]\nsobran=[i for i in ped"
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/qc/hoja_fotos.jpg\"}"
   },
   {
    "k": "res",
-   "t": "✓ pedidos_a.json: 43 pedidos\n✓ pedidos_b.json: 57 pedidos\n✓ pedidos_c.json: 49 pedidos\nplanos 156 pedidos 149 faltan 0 [] sobran []\nduplicados 0"
+   "t": "[imagen]"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 434,
+    "seg": 497,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1444,
+    "seg": 1507,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1934,
+  "total_s": 1997,
   "avatar_s": 30,
-  "sin_avatar_s": 1903,
+  "sin_avatar_s": 1966,
   "cerrado": false
  }
 }
