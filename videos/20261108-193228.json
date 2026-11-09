@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184368.4833071,
+ "actualizado": 1794184433.534311,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,70 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1362,
+  "deepseek": 0.1408,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5284
+  "total": 0.533
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/f_011.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/f_012.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "El glitch es de fondo (jardín) desde ~A26 y solo se nota a pantalla completa; en pantalla partida queda oculto. Pruebo un recorte limpio en un clip para evaluar si conviene."
-  },
-  {
-   "k": "tool",
-   "t": "ffprobe -v error -show_entries stream=width,height,codec_name,nb_frames -select_streams v -of default=noprint_wrappers=1 avatar/A60.mp4; mkdir -p avatar/testcrop; ffmpeg -v error -y -i avatar/A60.mp4 -vf \"crop=iw*0.70:ih:iw*0.30:0,scale=1920:1080:flags=lanczos\" -c:v libx264 -crf 18 -pix_fmt yuv420p -an avatar/testcrop/A60_crop.mp4 && ffmpeg -v error -y -ss 1.5 -i avatar/testcrop/A60_crop.mp4 -fram"
-  },
-  {
-   "k": "res",
-   "t": "codec_name=h264\nwidth=832\nheight=464\nnb_frames=133\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/crop_test.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "El recorte deforma o corta las manos. Pruebo una alternativa: desenfocar solo el jardín del fondo en todos los clips, con el borde sobre el marco de madera."
-  },
-  {
-   "k": "tool",
-   "t": "ffmpeg -v error -y -i avatar/A60.mp4 -filter_complex \"[0:v]split[a][b];[b]crop=iw*0.30:ih:0:0,gblur=sigma=10[bb];[a][bb]overlay=0:0\" -c:v libx264 -crf 18 -pix_fmt yuv420p -an avatar/testcrop/A60_blur.mp4 && ffmpeg -v error -y -ss 1.5 -i avatar/testcrop/A60_blur.mp4 -frames:v 1 qc/blur_test.jpg && echo ok"
-  },
-  {
-   "k": "res",
-   "t": "ok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/blur_test.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
   {
    "k": "ai",
    "t": "El desenfoque queda natural (el borde cae sobre el marco). Antes de aplicarlo a los 63 clips, verifico fps y audio de los clips."
@@ -178,6 +122,62 @@
   {
    "k": "res",
    "t": "✓ el log tiene 'hechos 123' (40 s):\nclips=123 frames=18120 (604.00s)\nhechos 123\n---\nclips=123 frames=18120 (604.00s)\nhechos 123"
+  },
+  {
+   "k": "tool",
+   "t": "python -c \"\nimport json\np=json.load(open('plan.json'))\nprint(type(p), len(p))\nprint(p[0] if isinstance(p,list) else list(p)[:5])\n\" 2>/dev/null | head -5; ls segments/ | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "<class 'dict'> 2\n['voice_dur', 'segments']\n247"
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'EOF'\nimport json\np=json.load(open('plan.json'))\nsegs=p['segments']\nfor s in segs:\n    t=s if isinstance(s,dict) else {}\n    print(t) if False else None\nprint(segs[0])\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "{'kind': 'av', 't0': 0.0, 't1': 4.7, 'file': '/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/A0.mp4'}"
+  },
+  {
+   "k": "tool",
+   "t": "python - <<'EOF'\nimport json\np=json.load(open('plan.json'))['segments']\nfor i,s in enumerate(p):\n    if s['kind']=='av' and (468 <= s['t0'] <= 474 or 453 <= s['t0'] <= 456):\n        print(i, s)\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "92 {'kind': 'av', 't0': 453.52, 't1': 464.7, 'file': '/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/A47.mp4', 'split': True}\n94 {'kind': 'av', 't0': 468.0, 't1': 473.0, 'file': '/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/A48.mp4'}"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fix.jpg segments/0092.mp4 segments/0094.mp4 segments/0118.mp4 segments/0070.mp4 && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fix.jpg (4 cuadros, 4x1)\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fix.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "El fondo glitcheado ahora se ve como un desenfoque natural. Reensamblo."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble2.log 2>&1 & echo \"pid: $!\"; sleep 5; tail -2 assemble2.log"
+  },
+  {
+   "k": "res",
+   "t": "pid: 42641"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble2.log --busca \"final:|Traceback|Error\" --timeout 540; echo \"---\"; tail -4 assemble2.log"
   }
  ],
  "maquinas": 2,
