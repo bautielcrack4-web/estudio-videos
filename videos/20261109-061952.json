@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794212102.5022264,
+ "actualizado": 1794212174.8493516,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.3314,
+  "deepseek": 0.3353,
   "gpt": 0.3918,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9732
+  "total": 0.9771
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "0.0 5.52 5.52 av None /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/avatar/espera/904497b045.jpg \n5.52 12.58 7.06 foto None /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/fotos/p001.png \n12.58 18.02 5.44 av None /opt/estudio/datos/videos/one-collar-press-makes-a-plain-shirt-loo/avatar/espera/904497b045.jpg \n18.02 24.82 6.8 foto None /opt/estudio/datos/video"
-  },
-  {
-   "k": "tool",
-   "t": "sed -n '126,175p' /opt/estudio/repo/motor/tools/render.py"
-  },
-  {
-   "k": "res",
-   "t": "def absp(f): return f if (\":\" in f or f.startswith(\"/\")) else B + \"/\" + f\n# un mismo clip puede ir en pedazos (intro partida en tramos ≤ 6 s con fotos entre medio):\n# cada pedazo arranca en (startMs - clipStartMs) dentro del clip, así el lipsync sigue a la voz.\n# clipStartMs = dónde empieza ese clip en la voz; si no se da, el startMs más chico de ese archivo.\nOFF = {}\nSPL = {}   # (archivo, startM"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe avatar/A0.mp4 --max 540"
-  },
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 20; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|assemble.py\" | head -4; echo \"---\"; ls -la final.mp4 2>/dev/null || echo \"sin final\"; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "---\nsin final\n06:44:54 estado: IN_PROGRESS\n08:13:35 estado: COMPLETED\n✓ 89 clips cortados · desfase corregido (máx 395 ms)"
+  },
+  {
+   "k": "tool",
+   "t": "sed -n '448,500p' /opt/estudio/repo/motor/nube.py"
+  },
+  {
+   "k": "res",
+   "t": "AUTO = {\"p\": None, \"previo\": False, \"armado\": False, \"fallos\": 0}\nAUTO_LOG = os.path.join(\"/tmp\", \"armado_\" + VID + \".log\")\n\n\ndef como_sesion(script, **extra):\n    \"\"\"Mismo usuario aislado y misma lista blanca de entorno que la sesión: lo que toca material generado nunca corre con acceso a las claves.\"\"\"\n    u = E.get(\"ESTUDIO_USUARIO_SESION\")\n    if not u: return [\"bash\", \"-c\", \"umask 002; \" + sc"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 75; ps -eo pid,comm,args | awk '$2 ~ /^python/ {print}' | grep -E \"render.py|assemble.py\" | head -4; echo \"---\"; ls -la final.mp4 2>/dev/null || echo \"sin final\"; tail -4 /tmp/armado_*.log 2>/dev/null | tail -8"
   }
  ],
  "maquinas": 1,
@@ -249,9 +249,9 @@
     "fin": true
    }
   ],
-  "total_s": 6909,
+  "total_s": 6981,
   "avatar_s": 5356,
-  "sin_avatar_s": 1552,
+  "sin_avatar_s": 1625,
   "cerrado": false
  }
 }
