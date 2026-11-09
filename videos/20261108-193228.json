@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794183982.4171062,
+ "actualizado": 1794184045.7775111,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,78 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0832,
+  "deepseek": 0.0888,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4754
+  "total": 0.481
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "assemble pid: 28947"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -6 assemble.log; ls -la final.mp4 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n… sigue esperando tras 540 s · log: (vacío) · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar\n---"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 28947 -o pid,etime,stat,cmd --no-headers || echo \"no process\"; ls -la assemble.log; wc -c assemble.log; ls -la segments/ | tail -3; ls qc/ | head"
-  },
-  {
-   "k": "res",
-   "t": "  28947       09:17 S    python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-\n-rw-rw-rw-+ 1 sesion sesion 0 Nov  9 00:06 assemble.log\n0 assemble.log\n-rw-rw-rw-+  1 sesion sesion 1957735 Nov  9 00:05 0122.mp4\n-rw-rw-rw-+  1 sesion sesion     113 Nov  9 00:05 0122.mp4.src\n-rw-rw-rw-+  1 sesion sesion    2571 Nov  9 00:04 xf.json\nhoja_A.j"
-  },
-  {
-   "k": "tool",
-   "t": "ps --ppid 28947 -o pid,etime,stat,cmd --no-headers; echo \"---\"; ps aux | grep -E \"ffmpeg|assemble\" | grep -v grep | head -8"
-  },
-  {
-   "k": "res",
-   "t": "<persisted-output>\nOutput too large (36.7KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-a-2-minute-evening-hand-ritual-for-warm-/68a4ddb7-104b-4c46-864f-133623abac44/tool-results/blgn2neaz.txt\n\nPreview (first 2KB):\n  31407       05:47 Sl   ffmpeg -v error -y -i /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/xf_tmp/c000.mp4 -i /opt/estudio"
-  },
-  {
-   "k": "ai",
-   "t": "El ffmpeg está en la pasada de fundidos (5 bloques). Espero."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -8 assemble.log; ls -la final.mp4 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 (357.0 MB, 70 s)\n---\nsegmentos: 123\ntramo 1 listo\ntramo 2 listo\ntramo 3 listo\ntramo 4 listo\ntramo 5 listo\nfinal: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 604.000000 s\n-rw-rw-rw-+ 1 sesion sesion 356990146 Nov  9 00:16 final.mp4"
-  },
-  {
-   "k": "ai",
-   "t": "Video final ensamblado (10:04). Valido la etapa final."
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa final --min 10 2>&1 | tail -25"
-  },
-  {
-   "k": "res",
-   "t": "  ✓ fotos: 0 con prompt incompleto\n  ✓ fotos: 6 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  ✓ render: movimiento al azar (plan_motion de tools/render.py)\n  ✓ render: escala 3840x2160 antes de zoompan (anti-temblequeo)\n  ✓ render: segments/xf.json (fundidos avatar 0,6 s / foto 0,3 s)\n  ✓ plan.json: 0 huecos sin imagen\n  ✓ fotos repetidas: ninguna (cada plano con su foto)\n"
-  },
-  {
-   "k": "ai",
-   "t": "OK final. Corro el revisor."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor.log 2>&1 & echo \"revisor pid: $!\"; sleep 8; tail -5 revisor.log"
-  },
-  {
-   "k": "res",
-   "t": "revisor pid: 32323"
-  },
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gates/correcciones.txt --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -12 revisor.log; echo \"---\"; cat gates/correcciones.txt 2>/dev/null"
@@ -178,6 +114,70 @@
   {
    "k": "ai",
    "t": "La pantalla partida funciona (avatar + foto, alternando lado). Escribo las notas de control final."
+  },
+  {
+   "k": "tool",
+   "t": "CONTROL FINAL\n\nMiré los 21 cuadros de qc/f_001..f_021 (hojas qc/hoja_final1.jpg y qc/hoja_final2.jpg) y dos cuadros extra\ndentro de las pantallas partidas (qc/frame_85.jpg a 85 s y qc/frame_296.jpg a 296 s).\n\nQué se ve:\n- Apertura: el avatar hablando desde el segundo 0, sin foto ni título antes.\n- Alternancia avatar/foto en todo el video, con la primera foto fuerte (p001, manos en el agua) después"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/gates/final_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "cat > gates/correcciones_hechas.txt <<'EOF'\nEl revisor no generó gates/correcciones.txt: no encontró fallas en los 21 cuadros revisados.\nNo hubo correcciones que aplicar. Revisión visual propia: OK.\nEOF\npython /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa final --min 10 2>&1 | tail -8; echo \"---SPECS---\"; ffprobe -v error -show_"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ final: 1920x1080\n  ✓ final: fps 30/1\n  ✓ final 604.00 s vs voz 603.84 s\n  ✓ meta.json con title\n  ✓ meta.json con title y description (>200 caracteres)\n  ✓ REPORTE.md\n  ✓ sonido: cues.json con sus archivos\nRESULTADO: OK\n---SPECS---\ncodec_name=h264\nwidth=1920\nheight=1080\nr_frame_rate=30/1\ncodec_name=aac\nsample_rate=48000\nchannels=2\nr_frame_rate=0/0\nduration=604.000000\nsize=356990146"
+  },
+  {
+   "k": "ai",
+   "t": "Todo validado OK. Actualizo el REPORTE con el estado final."
+  },
+  {
+   "k": "tool",
+   "t": "# REPORTE — A 2-Minute Evening Hand Ritual for Warm, Soft Hands · Kyoto Grace\n\n## Estado final\n**Video terminado.** `final.mp4` de 604,00 s (10:04), 1920x1080, 30 fps, H.264 CRF 20, AAC 192k estéreo 48 kHz.\n`validar.py --etapa final` = OK. Revisor final: 21 cuadros, sin fallas.\n\n## Qué se hizo\n- **Guion** (inglés, 1.641 palabras): gancho con el número \"dos minutos\" y el objeto concreto (palangana,"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/REPORTE.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "ai",
+   "t": "Verificación final de entregables y audio."
+  },
+  {
+   "k": "tool",
+   "t": "ls -la final.mp4 meta.json REPORTE.md; echo \"---AUDIO---\"; ffmpeg -v error -i final.mp4 -map 0:a -af volumedetect -f null - 2>&1 | grep -E \"mean_volume|max_volume\"; echo \"---PRIMER CUADRO---\"; ffmpeg -v error -y -ss 0.5 -i final.mp4 -frames:v 1 qc/frame_00.jpg && echo ok"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion      3767 Nov  9 00:26 REPORTE.md\n-rw-rw-rw-+ 1 sesion sesion 356990146 Nov  9 00:16 final.mp4\n-rw-rw-rw-+ 1 sesion sesion       714 Nov  8 22:56 meta.json\n---AUDIO---\n---PRIMER CUADRO---\nok"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -hide_banner -i final.mp4 -map 0:a -af volumedetect -f null - 2>&1 | grep -E \"mean_volume|max_volume|Audio:\" | head -5"
+  },
+  {
+   "k": "res",
+   "t": "  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 189 kb/s (default)\n  Stream #0:0(und): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)\n[Parsed_volumedetect_0 @ 0x72491c002000] mean_volume: -17.7 dB\n[Parsed_volumedetect_0 @ 0x72491c002000] max_volume: -0.4 dB"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/frame_00.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "Video terminado de punta a punta. \n\n**Entregables en `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/`:**\n- `final.mp4` — 10:04, 1920x1080, 30 fps, H.264 CRF 20, AAC 48 kHz estéreo (audio sano: −17.7 dB medio)\n- `REPORTE.md` — qué se hizo, gasto, problemas, mejoras\n- `meta.json` — título + descripción de YouTube en 3 párrafos, voz de Michiko, sin links ni hashtags\n\n**Cómo quedó"
+  },
+  {
+   "k": "end",
+   "t": "Video terminado de punta a punta. \n\n**Entregables en `/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/`:**\n- `final.mp4` — 10:04, 1920x1080, 30 fps, H.264 CRF 20, AAC 48 kHz estéreo (audio sano: −17.7 dB medio)\n- `REPORTE.md` — qué se hizo, gasto, problemas, mejoras\n- `meta.json` — título + descripción de YouTube en 3 párrafos, voz de Michiko, sin links ni hashtags\n\n**Cómo quedó"
   }
  ],
  "maquinas": 2,
