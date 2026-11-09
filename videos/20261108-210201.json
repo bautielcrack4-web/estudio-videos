@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794192263.1979458,
+ "actualizado": 1794192327.0918918,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.2253,
+  "deepseek": 0.2305,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5271
+  "total": 0.5323
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "PID:74479\nstarted"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/rev_A.jpg $(ls qc/f_*.jpg | head -12) && python /opt/estudio/repo/motor/tools/hoja.py qc/rev_B.jpg $(ls qc/f_*.jpg | sed -n '13,24p') && python /opt/estudio/repo/motor/tools/hoja.py qc/rev_C.jpg $(ls qc/f_*.jpg | sed -n '25,36p') && python /opt/estudio/repo/motor/tools/hoja.py qc/rev_D.jpg $(ls qc/f_*.jpg | sed -n '37,42p') && echo ok"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/rev_A.jpg (12 cuadros, 4x3)\nhoja: qc/rev_B.jpg (12 cuadros, 4x3)\nhoja: qc/rev_C.jpg (12 cuadros, 4x3)\nhoja: qc/rev_D.jpg (6 cuadros, 4x2)\nok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_A.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/rev_B.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -174,6 +150,30 @@
   {
    "k": "res",
    "t": "    PID     ELAPSED\n  74479       10:30\n-rw-rw-rw-+ 1 sesion sesion 716155025 Nov  9 02:10 final.mp4\n-rw-rw-rw-+ 1 sesion sesion 685693861 Nov  9 02:09 video_noaudio.mp4\n    PID     ELAPSED CMD\n  78715       01:16 ffmpeg -v error -y -i /opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/segments/01"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log assemble2.log --busca \"final:\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: (vacío) → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "ps -o pid,etime -p 74479 2>/dev/null || echo \"assemble terminado\"; ls -la video_noaudio.mp4 2>/dev/null; ps -o pid,etime,cmd -C ffmpeg | head -1 | cut -c1-100"
+  },
+  {
+   "k": "res",
+   "t": "    PID     ELAPSED\n  74479       19:39\n-rw-rw-rw-+ 1 sesion sesion 165150768 Nov  9 02:44 video_noaudio.mp4\n    PID     ELAPSED CMD"
+  },
+  {
+   "k": "tool",
+   "t": "ps aux | grep -E \"[f]fmpeg|[a]ssemble\" | cut -c1-160; echo \"---\"; ls -la video_noaudio.mp4 audio_mix.m4a final.mp4 2>/dev/null; echo \"---\"; cat assemble2.log 2>/dev/null | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "root        3831  0.0  0.0  12672  5892 ?        Ss   00:03   0:00 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL\nsesion      3833  0.6  2.5 74363808 410820 ?     Sl   00:03   1:06 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --disallow\nsesion     74479  0.0  0.0  18208 11828 ?        S    02:25   0:00 python /opt"
   },
   {
    "k": "tool",
