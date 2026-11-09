@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794185008.2706118,
+ "actualizado": 1794185071.3101482,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1415,
+  "deepseek": 0.1442,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5337
+  "total": 0.5364
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "index=0\ncodec_name=h264\ncodec_type=video\nwidth=832\nheight=464\nr_frame_rate=25/1\nnb_frames=133\nindex=1\ncodec_name=aac\ncodec_type=audio\nsample_rate=44100\nchannels=2\nr_frame_rate=0/0\nnb_frames=230\n---blur test---\ncodec_type=video\nr_frame_rate=25/1\nnb_frames=133"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"avatar\\|-an\\|audio\" /opt/estudio/repo/motor/tools/render.py | head -30"
-  },
-  {
-   "k": "res",
-   "t": "3:Lee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\r\n4:     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg\",\"startMs\":3200,\"endMs\":8900}, ...]  (opcional)\r\n7:        PANTALLA PARTIDA: agregá \"foto\":\"<id>\" y \"lado\":\"izq\"|\"der\" → el avatar ocup"
-  },
-  {
-   "k": "tool",
-   "t": "ffmpeg -v error -y -ss 1.5 -i avatar/A25.mp4 -frames:v 1 qc/chk_A25.jpg && echo ok"
-  },
-  {
-   "k": "res",
-   "t": "ok"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/chk_A25.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "ai",
-   "t": "A25 está limpio; el glitch arranca en A26. Aplico el desenfoque de fondo sólo a A26–A62 (el cambio cae entre ventanas, detrás de una foto), con copia de los originales."
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p avatar/orig_blur; ok=0; for i in $(seq 26 62); do f=avatar/A$i.mp4; cp \"$f\" avatar/orig_blur/; ffmpeg -v error -y -i \"$f\" -filter_complex \"[0:v]split[a][b];[b]crop=iw*0.30:ih:0:0,gblur=sigma=10[bb];[a][bb]overlay=0:0\" -c:v libx264 -crf 18 -pix_fmt yuv420p -r 25 -c:a copy \"avatar/A$i.tmp.mp4\" && mv \"avatar/A$i.tmp.mp4\" \"$f\" && ok=$((ok+1)); done; echo \"procesados: $ok\"; ffprobe -v error -s"
-  },
   {
    "k": "res",
    "t": "procesados: 37\ncodec_type=video\nwidth=832\nheight=464\nr_frame_rate=25/1\nnb_frames=133\ncodec_type=audio\nr_frame_rate=0/0\nnb_frames=230"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble2.log --busca \"final:|Traceback|Error\" --timeout 540; echo \"---\"; tail -4 assemble2.log; ls -la final.mp4"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene 'final:' (80 s):\ntramo 1 listo\ntramo 2 listo\ntramo 3 listo\ntramo 4 listo\ntramo 5 listo\nfinal: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 604.000000 s\n---\ntramo 3 listo\ntramo 4 listo\ntramo 5 listo\nfinal: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 604.000000 s\n-rw-rw-rw-+ 1 sesion sesion 326744330 Nov  9 00:43 final.m"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- --etapa final --min 10 2>&1 | tail -6; for t in 470 500 603.5; do ffmpeg -v error -y -ss $t -i final.mp4 -frames:v 1 qc/fix_$t.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fix2.jpg qc/fix_470.jpg qc/fix_500.jpg qc/fix_603.5.jpg"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ final 604.00 s vs voz 603.84 s\n  ✓ meta.json con title\n  ✓ meta.json con title y description (>200 caracteres)\n  ✓ REPORTE.md\n  ✓ sonido: cues.json con sus archivos\nRESULTADO: OK\nhoja: qc/hoja_fix2.jpg (3 cuadros, 3x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/qc/hoja_fix2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "Glitch eliminado. Corro la segunda (y última) revisión."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor2.log 2>&1 & echo \"pid: $!\"; sleep 8; tail -3 revisor2.log"
+  },
+  {
+   "k": "res",
+   "t": "pid: 46096"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/revisor2.log --busca \"✓ el revisor|correcciones|Traceback|Error\" --timeout 540; echo \"---\"; tail -6 revisor2.log; ls -la gates/correcciones.txt 2>/dev/null"
   }
  ],
  "maquinas": 2,
