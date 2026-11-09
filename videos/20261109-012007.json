@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794203127.7047744,
+ "actualizado": 1794203193.5093622,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "12 segmentos"
+   "info": "34 segmentos"
   },
   {
    "k": "qc",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0994,
+  "deepseek": 0.1011,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3949
+  "total": 0.3966
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/hoja_fotos_all2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/fotos/p029.png\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +162,22 @@
   {
    "k": "res",
    "t": "  24930       00:22 python /opt/estudio/repo/motor/tools/render.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q\n-rw-rw-rw-+ 1 sesion sesion 0 Nov  9 05:45 render.log\n  24354       01:03"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la plan.json segments/xf.json 2>/dev/null; python /opt/estudio/repo/motor/tools/validar.py . --etapa render --min 8 2>&1 | tail -30"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion 17609 Nov  9 05:45 plan.json\n-rw-rw-rw-+ 1 sesion sesion  2350 Nov  9 05:45 segments/xf.json\nVALIDAR /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q · etapa render\n  ✓ guion: 8479 caracteres, 1670 palabras (hacen falta 7200-9200 para 8 min: bien)\n  ✓ fotos: 20 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto"
+  },
+  {
+   "k": "ai",
+   "t": "Render-stage validation is fully green. Waiting for the render to finish."
+  },
+  {
+   "k": "tool",
+   "t": "cat >> gates/fotos_auto.txt <<'EOF'\n- Revisión final de las 20 fotos (hojas qc/hoja_fotos_all1.jpg y all2.jpg): caras coherentes con el avatar, manos correctas,\n  detalles narrativos legibles. Sin repeticiones. No hubo que rehacer ninguna.\n- p029 muestra a una mujer joven de espaldas en el espejo (demostración, no es la presentadora): se acepta como recurso de b-roll.\nEOF\npython /opt/estudio/repo/"
   }
  ],
  "maquinas": 1,
