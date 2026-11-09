@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205518.7441232,
+ "actualizado": 1794205582.4186704,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,42 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.147,
+  "deepseek": 0.1506,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4425
+  "total": 0.4461
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "cat gasto.jsonl 2>/dev/null | tail -20; echo \"---\"; tail -5 revisor.log"
-  },
-  {
-   "k": "res",
-   "t": "{\"t\": 1794198471.4695747, \"tag\": \"whisper\", \"usd\": 0.0, \"seg\": 649}\n{\"t\": 1794198691.165456, \"tag\": \"juez_stock\", \"usd\": 0.00593, \"llamadas\": 39}\n{\"t\": 1794198740.2591093, \"tag\": \"juez_stock\", \"usd\": 0.0006, \"llamadas\": 4}\n{\"t\": 1794198813.7510467, \"tag\": \"fotos_gpt\", \"usd\": 0.00699, \"n\": 3}\n{\"t\": 1794198819.1731887, \"tag\": \"juez_stock\", \"usd\": 0.00214, \"llamadas\": 14}\n{\"t\": 1794198863.5553687, \"t"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe gates/revisor_final.json --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe gates/revisor_final.json (0.0 MB, 120 s)"
-  },
-  {
-   "k": "tool",
-   "t": "cat gates/revisor_final.json; echo \"---\"; ls qc/f_*.jpg | wc -l; cat gates/correcciones.txt 2>/dev/null; tail -4 revisor.log"
-  },
-  {
-   "k": "res",
-   "t": "{\"t\": 1794205345.7965255, \"n\": 22, \"malas\": 0, \"costo_usd\": 0.002, \"ia\": true, \"corridas\": 1, \"final_mtime\": 1794205212.635988}---\n22\n✓ el revisor no encontró fallas.\n(22 cuadros revisados, US$0.002)"
-  },
-  {
-   "k": "ai",
-   "t": "Reviewer found no flaws. Doimg my own visual pass over the final frames."
-  },
   {
    "k": "tool",
    "t": "ls qc/f_*.jpg | sort | head -25; set -- $(ls qc/f_*.jpg | sort); python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final1.jpg $(echo \"$@\" | cut -d' ' -f1-12) >/dev/null; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final2.jpg $(echo \"$@\" | cut -d' ' -f13-24) >/dev/null; echo ok"
@@ -178,6 +150,34 @@
   {
    "k": "tool",
    "t": "ffmpeg -v error -i final.mp4 -af volumedetect -f null - 2>&1 | grep -E \"mean_volume|max_volume\" || true; echo \"---\"; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; ls extrema/manifest.json extrema/capas.json 2>/dev/null || echo \"sin manifest extrema\"; ls -la final.mp4 REPORTE.md meta.json"
+  },
+  {
+   "k": "res",
+   "t": "---\n  24354       41:09\nsin manifest extrema\n-rw-rw-rw-+ 1 sesion sesion      3317 Nov  9 06:23 REPORTE.md\n-rw-rw-rw-+ 1 sesion sesion 395289470 Nov  9 06:20 final.mp4\n-rw-rw-rw-+ 1 sesion sesion      1211 Nov  9 04:44 meta.json"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"6\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #6 status"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"7\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #7 status"
+  },
+  {
+   "k": "ai",
+   "t": "Video terminado y validado. Resumen:\n\n## Entrega\n- **`final.mp4`** — 1920×1080, 30 fps, **649,5 s (10,8 min)**, H.264 CRF 20 bt709 + AAC 192k estéreo 48 kHz, 395 MB.\n- **`meta.json`** — título + descripción de YouTube en 3 párrafos, voz de Michiko, sin links ni hashtags.\n- **`REPORTE.md`** — duración, fotos, repedidas, gasto, problemas y mejoras.\n- **`validar.py --etapa final` → RESULTADO: OK** (t"
+  },
+  {
+   "k": "end",
+   "t": "Video terminado y validado. Resumen:\n\n## Entrega\n- **`final.mp4`** — 1920×1080, 30 fps, **649,5 s (10,8 min)**, H.264 CRF 20 bt709 + AAC 192k estéreo 48 kHz, 395 MB.\n- **`meta.json`** — título + descripción de YouTube en 3 párrafos, voz de Michiko, sin links ni hashtags.\n- **`REPORTE.md`** — duración, fotos, repedidas, gasto, problemas y mejoras.\n- **`validar.py --etapa final` → RESULTADO: OK** (t"
   }
  ],
  "maquinas": 1,
