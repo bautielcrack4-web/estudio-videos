@@ -3,7 +3,7 @@
  "titulo": "10 Tops I Gave Away at 68 — What I Wear in Kyoto Instead",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794184538.4363685,
+ "actualizado": 1794184605.6584659,
  "creado": 1794182592.0044541,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42538004167",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "20 segmentos"
+   "info": "44 segmentos"
   },
   {
    "k": "qc",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1124,
+  "deepseek": 0.1131,
   "gpt": 0.0518,
   "gpt_img": 20,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1642
+  "total": 0.1649
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in/qc/sh_fix3.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'PY'\nimport json, os\nB='/opt/estudio/datos/videos/10-tops-i-gave-away-at-68-what-i-wear-in'\nQ={\n \"p025\": [\"clothes on wooden hangers\", \"cardigan hanging chair\"],\n \"p029\": [\"tatami room window light\", \"garden leaves gentle wind\"],\n \"p033\": [\"folded shirts on shelf\", \"shirt hem fabric close\"],\n \"p041\": [\"silk scarf folded\", \"teacup steam close up\"],\n \"p046\": [\"folded clothes on chair\", \""
-  },
   {
    "k": "res",
    "t": "16 clips a repedir (ronda segura)\nPID:21125\n00:28:36 → 16 clips por buscar\n=== FOTOS p022 ===\n00:27:19 → batch batch_6af113674f28819090ff3b87d777ee8e · 1 fotos · con la cara del presentador · low 1088x608\n00:27:19 batch d777ee8e: validating 0/0\n00:27:49 batch d777ee8e: in_progress 0/1\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "cat > gates/render_auto.txt <<'EOF'\nRevisión del render de prueba (10 segmentos, qc/hoja_render.jpg):\n- Lo primero es el avatar (cuadro fijo con cartel «Esperando avatar» porque el clip todavía no había llegado). Cuando llegue A0.mp4 se re-renderiza.\n- El b-roll alterna cada ~4-9 s y el zoom/encuadre se ve estable; los clips se recortan bien a 1920x1080.\n- p001 (hero, Michiko con el cuello alto) e"
+  },
+  {
+   "k": "res",
+   "t": "PID:23439\n=== AVATAR ===\n00:13:23 InfiniteTalk: 101 ventanas · reel 541.3 s · 1 llamada\n00:13:32 RUN 974070c5-450b-46b3-a7f1-cf7deed584ad-u1\n00:14:02 estado: IN_PROGRESS"
+  },
+  {
+   "k": "tool",
+   "t": "{\"taskId\": \"4\", \"status\": \"completed\"}"
+  },
+  {
+   "k": "res",
+   "t": "Updated task #4 status"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log render.log --busca \"hechos\" --max 540"
   }
  ],
  "maquinas": 1,
