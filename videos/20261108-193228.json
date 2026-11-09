@@ -3,7 +3,7 @@
  "titulo": "A 2-Minute Evening Hand Ritual for Warm, Soft Hands",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794182777.2490547,
+ "actualizado": 1794182840.7158785,
  "creado": 1794177216.3543255,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42530981690",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0762,
+  "deepseek": 0.0767,
   "gpt": 0.1422,
   "gpt_img": 68,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4684
+  "total": 0.4689
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/REPORTE.md (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --cuenta \"/opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/*.mp4\" 63 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/avatar/it.log --busca \"COMPLETED|FAILED|✓ avatar|Traceback|Error\" --timeout 540; echo \"---\"; tail -3 avatar/it.log; ps -p 4890 -o etime= --no-headers"
-  },
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: 23:20:55 estado: IN_PROGRESS · archivos: 0/63 → hacé otra cosa útil y volvé a llamar\n---\n22:42:46 RUN cb681a3e-7eff-4782-b1a7-b9f34726a089-u2\n22:43:17 estado: IN_QUEUE\n23:20:55 estado: IN_PROGRESS\n      41:20"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm- > /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log 2>&1 & echo \"assemble pid: $!\"; sleep 10; tail -4 assemble.log"
+  },
+  {
+   "k": "res",
+   "t": "assemble pid: 28947"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/final.mp4 --log /opt/estudio/datos/videos/a-2-minute-evening-hand-ritual-for-warm-/assemble.log --busca \"Traceback|Error\" --timeout 540; echo \"---\"; tail -6 assemble.log; ls -la final.mp4 2>/dev/null"
   }
  ],
  "maquinas": 2,
