@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205390.8552604,
+ "actualizado": 1794205454.3892903,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -40,73 +40,25 @@
   {
    "k": "armado",
    "n": "Armado",
-   "st": "active",
+   "st": "done",
    "info": "final.mp4 · 10.8 min"
   },
   {
    "k": "qc",
    "n": "QC",
-   "st": "pending",
-   "info": ""
+   "st": "done",
+   "info": "REPORTE.md"
   }
  ],
  "costo": {
-  "deepseek": 0.1326,
+  "deepseek": 0.147,
   "gpt": 0.0455,
   "gpt_img": 19,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.4281
+  "total": 0.4425
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --existe final.mp4 --max 540"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe final.mp4 (395.5 MB, 365 s)"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 29115 -o pid,etime --no-headers 2>/dev/null || echo \"assemble terminó\"; tail -6 assemble.log; echo \"---\"; python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 8 2>&1 | tail -30"
-  },
-  {
-   "k": "res",
-   "t": "assemble terminó\ntramo 1 listo\ntramo 2 listo\ntramo 3 listo\ntramo 4 listo\ntramo 5 listo\nfinal: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/final.mp4 650.166016 s\n---\nVALIDAR /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q · etapa final\n  ✓ guion: 8479 caracteres, 1670 palabras (hacen falta 7200-9200 para 8 min: bien)\n  ✓ fotos: 20 · 0 sin su prompt al lado "
-  },
-  {
-   "k": "ai",
-   "t": "Final validation catches a 0.73 s video/voice length mismatch. Trimming the tail to the voice duration."
-  },
-  {
-   "k": "tool",
-   "t": "ffmpeg -v error -y -i final.mp4 -t 649.40 -map 0 -c copy -movflags +faststart final_trim.mp4 && ffprobe -v error -show_entries format=duration -of csv=p=0 final_trim.mp4"
-  },
-  {
-   "k": "res",
-   "t": "649.466667"
-  },
-  {
-   "k": "tool",
-   "t": "mv final_trim.mp4 final.mp4; python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 8 2>&1 | tail -8"
-  },
-  {
-   "k": "res",
-   "t": "  ✓ duración real: 10.8 min (pedidos: 8)\n  ✓ meta.json con title\n  ✓ meta.json con title y description (>200 caracteres)\n  ✓ sonido: cues.json con sus archivos\n  !  REPORTE.md\n  !  falta tu revisión visual del final (cuadros cada 30 s en qc/): escribí gates/final_auto.txt.\n  !  falta el revisor final: python tools/revisor.py <carpeta> (no frena, pero mira cosas que vos no ves).\nRESULTADO: OK"
-  },
-  {
-   "k": "ai",
-   "t": "Final validation passes. Running the final reviewer."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q > revisor.log 2>&1 & echo \"PID revisor: $!\"; sleep 3; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; ls extrema/ 2>/dev/null | head"
-  },
-  {
-   "k": "res",
-   "t": "PID revisor: 36478\n  24354       36:00\ngen\nlibre.json\nmomentos.json\nrender.json\nxm01.mp4\nxm02.mov\nxm03.mov\nxm04.mov"
-  },
   {
    "k": "tool",
    "t": "cat gasto.jsonl 2>/dev/null | tail -20; echo \"---\"; tail -5 revisor.log"
@@ -178,6 +130,54 @@
   {
    "k": "res",
    "t": "617.942 623.742 av eater-without-bulk-in-3-q/avatar/A53.mp4\n623.742 629.742 clip eater-without-bulk-in-3-q/clips/p054.mp4\n629.742 635.542 av eater-without-bulk-in-3-q/avatar/A54.mp4\n635.542 641.542 clip eater-without-bulk-in-3-q/clips/p055.mp4\n641.542 646.942 av eater-without-bulk-in-3-q/avatar/A55.mp4\n646.942 650.182 clip eater-without-bulk-in-3-q/clips/p056.mp4\ntotal 650.182\nxf last [{'n': 180, "
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json;print(json.load(open('clips/p056.json')))\n\"; ffmpeg -v error -y -ss 2 -i clips/p056.mp4 -frames:v 1 qc/p056_frame.jpg; ffmpeg -v error -y -ss 648.8 -i final.mp4 -frames:v 1 qc/final_tail.jpg; echo ok"
+  },
+  {
+   "k": "res",
+   "t": "{'id': 'p056', 'fuente': 'Pexels', 'buscar': 'pouring tea japanese room', 'pexels': 8507717, 'pagina': 'https://www.pexels.com/video/a-person-pouring-tea-in-the-cup-8507717/', 'autor': 'Ivan S', 'prev': 'https://videos.pexels.com/video-files/8507717/8507717-sd_640_360_25fps.mp4', 'juez': [8, 'hands pouring tea into cup']}\nok"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/qc/final_tail.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "The ghosted frame is a sampled mid-crossfade (normal), and the actual tail is clean. Writing the final QC gate and report."
+  },
+  {
+   "k": "tool",
+   "t": "Control final (auto):\n- final.mp4: 1920x1080, 30 fps, 649,47 s, audio AAC estéreo. Validar --etapa final: OK.\n- Revisor: 22 cuadros cada 30 s, 0 fallas, US$0,002. gates/revisor_final.json = {\"malas\":0}.\n- Revisé las hojas qc/hoja_final1.jpg y qc/hoja_final2.jpg con Read: alternancia avatar/b-roll correcta, avatar nítido y\n  en sync, sin caras deformes, sin marcas de agua ni texto de otro idioma. E"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/gates/final_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "# REPORTE — Layer a Thin Sweater Without Bulk in 3 Quiet Steps\n\n## Entrega\n- `final.mp4`: 1920x1080, 30 fps, **649,5 s (10,8 min)**, H.264 CRF 20 bt709, AAC 192k estéreo 48 kHz.\n- `meta.json`: título + descripción de YouTube en 3 párrafos (voz de Michiko, sin links ni hashtags).\n- `guion.txt`: 8.479 caracteres, 1.670 palabras (rango pedido 7.200-9.200 para 8 min).\n- `captions.json`: 1.657 palabras"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q/REPORTE.md (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 8 2>&1 | tail -12; echo \"---\"; ffprobe -v error -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels:format=duration,size -of default=nw=1 final.mp4 | head -20"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ sin carteles de espera\n  ✓ avatar: todos los tramos son clips reales\n  ✓ avatar: desfase medido y corregido por avatar_it.py (máx 200 ms)\n  ✓ final: 1920x1080\n  ✓ final: fps 30/1\n  ✓ final 649.47 s vs voz 649.44 s\n  ✓ duración real: 10.8 min (pedidos: 8)\n  ✓ meta.json con title\n  ✓ meta.json con title y description (>200 caracteres)\n  ✓ REPORTE.md\n  ✓ sonido: cues.json con sus archivos\nRESULTA"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -i final.mp4 -af volumedetect -f null - 2>&1 | grep -E \"mean_volume|max_volume\" || true; echo \"---\"; ps -p 24354 -o pid,etime --no-headers 2>/dev/null || echo \"extrema terminó\"; ls extrema/manifest.json extrema/capas.json 2>/dev/null || echo \"sin manifest extrema\"; ls -la final.mp4 REPORTE.md meta.json"
   }
  ],
  "maquinas": 1,
