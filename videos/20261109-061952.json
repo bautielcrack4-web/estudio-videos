@@ -3,7 +3,7 @@
  "titulo": "One Collar Press Makes a Plain Shirt Look Tailored",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794205405.340833,
+ "actualizado": 1794205468.0337043,
  "creado": 1794205367.7569036,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42572369812",
  "pasos": [
@@ -51,12 +51,12 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0124,
+  "deepseek": 0.0196,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0124
+  "total": 0.0196
  },
  "eventos": [
   {
@@ -110,6 +110,26 @@
   {
    "k": "res",
    "t": "            if not isinstance(pj, dict) or \"nothing blurred out\" not in json.dumps(pj).lower(): malos += 1\n            elif pj.get(\"detalle_narrativo\"): creativas += 1\n        (OK if sin == 0 else A)(\"fotos: %d · %d sin su prompt al lado (no salieron de tools/fotos.py)\" % (len(fotos), sin))\n        (OK if malos == 0 else A)(\"fotos: %d con prompt incompleto\" % malos)\n        if hasta >= 2: (OK if c"
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && head -80 render.py && echo \"=====ASSEMBLE=====\" && head -60 assemble.py && echo \"=====ESPERAR=====\" && head -50 esperar.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"HERRAMIENTA DEL ESTUDIO (no la copies ni la edites): python <APP>/tools/render.py <carpeta_del_video> [--limit N]\nLee <carpeta>/shots_timed.json  = [{\"id\":\"b01_gancho\",\"startMs\":0,\"endMs\":3200}, ...]  (id = nombre sin extensión de una foto o clip en fotos/, clips/ o avatar/frames/)\n     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg"
+  },
+  {
+   "k": "tool",
+   "t": "cd /opt/estudio/repo/motor/tools && head -50 sonidos.py && echo \"=====REVISOR=====\" && head -60 revisor.py && echo \"=====HOJA=====\" && head -30 hoja.py && echo \"=====VOZ=====\" && head -40 voz.py && echo \"=====TIEMPOS=====\" && head -30 tiempos.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"EFECTOS DE SONIDO gratis (Mixkit: licencia libre, uso comercial, sin atribución y SIN clave). Baja SÓLO los que usa este video.\n   python <APP>/tools/sonidos.py <carpeta> <pedidos.json> [--tomas 3]\npedidos.json = [{\"id\":\"agua\",\"tags\":[\"water\",\"splash\"],\"q\":\"water pour\",\"min\":0.5,\"max\":6}, …]\n   id = nombre del archivo (sfx/<id>.mp3 y alternativas <id>_2, <id>_3) · tags ="
+  },
+  {
+   "k": "ai",
+   "t": "Ahora escribo el guion completo (~20.000 caracteres)."
   }
  ],
  "maquinas": 1,
@@ -127,14 +147,14 @@
    {
     "k": "guion",
     "n": "Guion",
-    "seg": 38,
+    "seg": 100,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 211,
+  "total_s": 274,
   "avatar_s": 0,
-  "sin_avatar_s": 211,
+  "sin_avatar_s": 274,
   "cerrado": false
  }
 }
