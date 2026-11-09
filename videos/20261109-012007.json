@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794202306.2763758,
+ "actualizado": 1794202369.4272163,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.084,
+  "deepseek": 0.0846,
   "gpt": 0.0213,
   "gpt_img": 8,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3553
+  "total": 0.3559
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 04:53:09 batch 1d4b4f4b: in_progress 2/3 → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la fotos/*.png; echo \"---\"; tail -3 fotos/fotos_01.log"
-  },
   {
    "k": "res",
    "t": "-rw-rw-rw-+ 1 sesion sesion 1148458 Nov  9 04:33 fotos/p002.png\n-rw-rw-rw-+ 1 sesion sesion 1213007 Nov  9 04:33 fotos/p018.png\n-rw-rw-rw-+ 1 sesion sesion 1296842 Nov  9 04:33 fotos/p028.png\n---\n04:33:33 batch 1d4b4f4b: in_progress 0/3\n04:52:38 batch 1d4b4f4b: in_progress 1/3\n04:53:09 batch 1d4b4f4b: in_progress 2/3"
@@ -174,6 +166,14 @@
   {
    "k": "res",
    "t": "56\nmal: [] total 0"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_02.log --busca \"FIN:|⛔\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 05:29:15 batch 359521a0: in_progress 7/11 → hacé otra cosa útil y volvé a llamar"
   },
   {
    "k": "tool",
