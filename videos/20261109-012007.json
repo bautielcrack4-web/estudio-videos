@@ -3,7 +3,7 @@
  "titulo": "Layer a Thin Sweater Without Bulk in 3 Quiet Steps",
  "canal": "kyoto-grace",
  "estado": "trabajando",
- "actualizado": 1794198432.609248,
+ "actualizado": 1794198495.6979973,
  "creado": 1794198075.7071617,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42561247260",
  "pasos": [
@@ -16,14 +16,14 @@
   {
    "k": "voz",
    "n": "Voz",
-   "st": "active",
-   "info": "4 bloques"
+   "st": "done",
+   "info": "10:49 min"
   },
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "por palabra"
   },
   {
    "k": "avatar",
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0237,
+  "deepseek": 0.0242,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0237
+  "total": 0.0242
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Avatar InfiniteTalk\", \"description\": \"1 llamada, esperar clips A*.mp4\", \"activeForm\": \"Generando avatar\"}"
-  },
-  {
-   "k": "res",
-   "t": "Task #5 created successfully: Avatar InfiniteTalk"
-  },
-  {
-   "k": "tool",
-   "t": "{\"subject\": \"Sonido, render y assemble\", \"description\": \"sonidos.py+cues.json, shots, render test+full, assemble\", \"activeForm\": \"Armando el video\"}"
-  },
   {
    "k": "res",
    "t": "Task #6 created successfully: Sonido, render y assemble"
@@ -178,6 +166,18 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --busca \"✓ voz/master|⛔|Traceback|fallaron\" --max 540"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene '✓ voz/master' (130 s):\nvoz: 4 bloques · 8616 caracteres\n  ✓ bloque 0: 170 s (s2.1-pro-free)\n  ✓ bloque 2: 174 s (s2.1-pro-free)\n  ✓ bloque 1: 174 s (s2.1-pro-free)\n  ✓ bloque 3: 132 s (s2.1-pro-free)\n✓ voz/master.wav 10.8 min"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/tiempos.py /opt/estudio/datos/videos/layer-a-thin-sweater-without-bulk-in-3-q en 2>&1 | tail -5 && python3 -c \"import json;w=json.load(open('captions.json'));print(len(w),'words',round(w[-1]['endMs']/1000,1),'s')\""
+  },
+  {
+   "k": "res",
+   "t": "✓ captions.json: 1657 palabras en 10.8 min\n1657 words 649.8 s"
   }
  ],
  "maquinas": 1,
