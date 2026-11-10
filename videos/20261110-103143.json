@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794318682.8653817,
+ "actualizado": 1794318745.7740257,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,54 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.045,
+  "deepseek": 0.0476,
   "gpt": 0.0508,
   "gpt_img": 22,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0958
+  "total": 0.0984
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_fotos_test2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/render.py --help 2>&1 | head -20; python /opt/estudio/repo/motor/tools/planos.py --help 2>&1 | head -20"
-  },
-  {
-   "k": "res",
-   "t": "Traceback (most recent call last):\n  File \"/opt/estudio/repo/motor/tools/render.py\", line 32, in <module>\n    shots = json.load(open(B + \"/shots_timed.json\", encoding=\"utf-8\"))\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/shots_timed.json'\n⛔ falta cap"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"sys.argv\\|SHOT\\|def \\|png\\|jpg\" /opt/estudio/repo/motor/tools/render.py | head -50; grep -n \"sys.argv\\|vacio\\|falta\" /opt/estudio/repo/motor/tools/planos.py | head -20"
-  },
-  {
-   "k": "res",
-   "t": "4:     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg\",\"startMs\":3200,\"endMs\":8900}, ...]  (opcional)\n19:B = (sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith(\"--\") else os.getcwd()).replace(\"\\\\\", \"/\").rstrip(\"/\")\n20:PREVIO = \"--previo\" in sys.argv       # mientras se espera el avatar: sólo los planos que no dependen de él\n21:if \"--limit\" not i"
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 40,70p /opt/estudio/repo/motor/tools/render.py; sed -n 85,100p /opt/estudio/repo/motor/tools/planos.py"
-  },
-  {
-   "k": "res",
-   "t": "    try:\n        import espera\n        return espera.cartel(origen, texto, espera.ruta(B, tipo, clave))\n    except Exception as e:\n        print(\"cartel de espera no disponible:\", e)\n        return origen\n\ndef img_for(sid):\n    for d in (\"fotos\", \"clips\", \"avatar/frames\", \"avatar\"):\n        for ext in (\".jpg\", \".jpeg\", \".png\", \".webp\", \".mp4\"):\n            p = \"%s/%s/%s%s\" % (B, d, sid, ext)\n     "
-  },
-  {
-   "k": "tool",
-   "t": "cp fotos/p001_a.png fotos/p001.png && cp fotos/p001_a.json fotos/p001.json && rm -f fotos/p089.png fotos/p089.json fotos/p097.png fotos/p097.json fotos/p108.png fotos/p108.json"
-  },
   {
    "k": "res",
    "t": "(Bash completed with no output)"
@@ -178,6 +138,46 @@
   {
    "k": "tool",
    "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p002','p039','p075','p093'):\n        x['cara']=False\n        x['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ('p001_a','p001_b','p001_c')]\njson.dump(out,open('"
+  },
+  {
+   "k": "res",
+   "t": "114 13\n13:51:16 → batch batch_6af32154752081909e00d70a8c628d9a · 11 fotos · con la cara del presentador · low 1088x608\n13:51:16 batch 6beec17e: in_progress 0/85\n13:51:16 batch 8c628d9a: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/avatar_it.py . > avatar/it.log 2>&1 &\necho started; sleep 5; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "started\n13:51:29 InfiniteTalk: 20 ventanas · reel 109.0 s · 1 llamada"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/escenas.py . construir --fondo > escenas/escenas.log 2>&1 &\necho ok; sleep 3; tail -3 escenas/escenas.log"
+  },
+  {
+   "k": "res",
+   "t": "ok"
+  },
+  {
+   "k": "tool",
+   "t": "## Control de fotos (prueba de 21 + escena firma p019)\n\nRevisadas con Read en qc/hoja_fotos_test.jpg y qc/hoja_fotos_test2.jpg.\n\n- p001_a / p001_b / p001_c (3 variantes del gancho, índice de cajas+tarjetas): las tres muestran las tarjetas a mano, Sal señalando y las cajas en fila, con texto legible y bien escrito. **Elegida p001_a** (copiada a fotos/p001.png + p001.json): es la más limpia y la más"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "{\n \"title\": \"I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65\",\n \"description\": \"I'm Sal. I've been fitting shoes on the same wooden stool in my family's store in South Philadelphia since I was twelve, and my father opened the door in 1951. In forty-two years on that bench I've watched feet change after sixty-five, and I've watched a lot of good people walk out of a store wit"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/meta.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 240; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log; tail -2 avatar/it.log; cat escenas/escenas.log"
   }
  ],
  "maquinas": 1,
@@ -214,16 +214,30 @@
     "fin": true
    },
    {
+    "k": "avatar_cola",
+    "n": "Avatar en cola",
+    "seg": 30,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "avatar_gen",
+    "n": "Avatar generando",
+    "seg": 20,
+    "pasadas": 1,
+    "fin": false
+   },
+   {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 598,
+    "seg": 661,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1145,
-  "avatar_s": 0,
-  "sin_avatar_s": 1145,
+  "total_s": 1208,
+  "avatar_s": 30,
+  "sin_avatar_s": 1177,
   "cerrado": false
  }
 }
