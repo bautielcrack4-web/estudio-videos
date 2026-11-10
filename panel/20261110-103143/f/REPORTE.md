@@ -38,3 +38,9 @@ El fondo de la zapatería familiar en South Philadelphia — el banco de madera 
 ## Verificación post-sesión (tras la reconexión)
 - `final.mp4` intacto: 654,04 s, 344 MB. `validar.py --etapa final` → **OK**. `revisor.py` ya corrido: 0 fallas, y `gates/correcciones.txt` no existe porque no hubo nada que corregir.
 - Escena firma comprobada dentro de `final.mp4` (99-108 s): viaje de cámara del file box a la tarjeta, pool de luz que baja a "9E — wide, high instep" y push final sobre las dos líneas. Para este video **la escena sí trae rótulos en pantalla** (las palabras de la frase, una por capa). No se tocó a mano porque la escena y el armado los hace el motor y no frenan el video.
+
+## Edición extrema integrada (pasada final)
+- El motor generó 7 piezas (`xm01`-`xm07`); entraron en el armado **4 capas** (`extrema/capas.json`): xm01 (0-23 s, tarjetas de los 4 zapatos apareciendo junto a Sal), xm03 (92-116 s, la ficha del dato con la tarjeta de Rossi), xm05 (169-188 s, "2. Wide toe box") y xm06 (555-579 s, aritmética del cierre) — más **1 pieza a pantalla completa** (`extrema/manifest.json`): xm02 (23-41 s, la memoria de la tienda en sepia, "1951" sobre la caja).
+- `final.mp4` regenerado con `tramos` + capas: 654,04 s, 1920×1080, 30 fps, 384 MB. `validar.py --etapa final` → **OK**.
+- El armado por tramos fallo al pegar (`./tramos/` duplicado en el concat); el motor cayo al armado completo y **las capas de edición extrema quedaron metidas igual** (verificado en cuadros de 10-560 s).
+- Revisor: ya se había corrido la única revisión con IA; esta vez sólo midió huecos negros → ninguno.
