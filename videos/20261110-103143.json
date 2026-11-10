@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794321109.7817543,
+ "actualizado": 1794321175.5830882,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "62 segmentos"
+   "info": "95 segmentos"
   },
   {
    "k": "qc",
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0615,
+  "deepseek": 0.0647,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5769
+  "total": 0.5801
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "rm -f fotos/p061.png fotos/p061.json && python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nx=[x for x in p if x['id']=='p061'][0]\nx['cara']=False\nx['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump([x],open('fix2.json','w'),ensure_ascii=False,indent=1)\nEOF\ntail -1 fotos/fotos_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "14:19:39 batch 77c33c18: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 200; tail -2 fotos/fotos_fix.log; ls fotos/p020.png fotos/p055.png 2>&1"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n14:19:39 batch 77c33c18: validating 0/0\n14:21:09 batch 77c33c18: in_progress 0/2\nls: cannot access 'fotos/p020.png': No such file or directory\nls: cannot access 'fotos/p055.png': No such file or directory"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 290; tail -2 fotos/fotos_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "14:21:09 batch 77c33c18: in_progress 0/2\n14:27:41 batch 77c33c18: finalizing 2/2"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 60; tail -2 fotos/fotos_fix.log; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "14:28:12 ✓ batch 77c33c18: 2 fotos bajadas, 0 fallidas (US$0.005)\n14:28:12 FIN: 2/2 fotos en fotos/ (9 min)\n13:52:05 estado: IN_PROGRESS\n14:10:08 estado: COMPLETED\n✓ 20 clips cortados · desfase corregido (máx 0 ms)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/h_fix.jpg fotos/p020.png fotos/p055.png | tail -1"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/h_fix.jpg (2 cuadros, 2x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_fix.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "ls fotos/*.png | wc -l; python /opt/estudio/repo/motor/tools/planos.py . --shots 2>&1 | tail -3"
-  },
   {
    "k": "res",
    "t": "115\n⛔ faltan 1 fotos o clips (p061). Esperalas con esperar.py o repedilas."
@@ -178,6 +126,58 @@
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/sonidos.py . sfx_pedidos.json --tomas 3 > sonidos.log 2>&1; tail -5 sonidos.log; cat sfx/_sfx_fuentes.json 2>/dev/null | head -40"
+  },
+  {
+   "k": "res",
+   "t": "ok campanilla: campanilla.mp3 (2 s, Cartoon door melodic bell) · campanilla_2.mp3 (2 s, Modern classic door bell sound) · campanilla_3.mp3 (3 s, Discrete door bell announcement)\nok carton: carton.mp3 (1 s, Modern click box check) · carton_2.mp3 (1 s, Metal tools box browsing) · carton_3.mp3 (1 s, Box to bag punches)\nok papel: papel.mp3 (1 s, Paper slide) · papel_2.mp3 (1 s, Paper quick movement) ·"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json,wave\nc=json.load(open('captions.json'))\ndef t(word, nth=0):\n    k=0\n    for w in c:\n        if word in w['text']:\n            if k==nth: return w['startMs']\n            k+=1\n    return None\nfor w in [\"bell\",\"picture\",\"file\",\"underneath\",\"box\",\"towel\",\"clock\",\"window\",\"bent\",\"thumb\",\"folds\",\"cup\"]:\n    print(w,t(w))\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "bell 37160\npicture 195909\nfile 93780\nunderneath 101380\nbox 8420\ntowel 269349\nclock 374698\nwindow 34280\nbent 46820\nthumb 181929\nfolds 268369\ncup None"
+  },
+  {
+   "k": "tool",
+   "t": "cat > cues.json <<'EOF'\n[\n {\"file\":\"campanilla_3.mp3\",\"t\":36700,\"gain\":0.045,\"fade\":0.4},\n {\"file\":\"cuero.mp3\",\"t\":46800,\"gain\":0.05,\"fade\":0.3},\n {\"file\":\"papel.mp3\",\"t\":93780,\"gain\":0.045,\"fade\":0.3},\n {\"file\":\"papel_2.mp3\",\"t\":101380,\"gain\":0.04,\"fade\":0.3},\n {\"file\":\"carton.mp3\",\"t\":200000,\"gain\":0.04,\"fade\":0.3},\n {\"file\":\"cuero_2.mp3\",\"t\":269349,\"gain\":0.045,\"fade\":0.3},\n {\"file\":\"papel_3.mp"
+  },
+  {
+   "k": "res",
+   "t": "14:31:04 ✓ batch da4a4e7f: 1 fotos bajadas, 0 fallidas (US$0.002)\n14:31:04 FIN: 1/1 fotos en fotos/ (1 min)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/h_061.jpg fotos/p061.png | tail -1; tail -2 render.log"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/h_061.jpg (1 cuadros, 1x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_061.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 5; grep -c \"fotos/.*\" shots_timed.json; ps aux | grep -c \"render.py\""
+  },
+  {
+   "k": "res",
+   "t": "0\n9"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 200; tail -3 render.log; ls segments/*.mp4 2>/dev/null | wc -l"
   }
  ],
  "maquinas": 1,
@@ -237,14 +237,14 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 158,
+    "seg": 289,
     "pasadas": 2,
     "fin": false
    }
   ],
-  "total_s": 3572,
+  "total_s": 3638,
   "avatar_s": 1118,
-  "sin_avatar_s": 2454,
+  "sin_avatar_s": 2520,
   "cerrado": false
  }
 }
