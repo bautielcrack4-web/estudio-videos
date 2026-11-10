@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794326680.9665205,
+ "actualizado": 1794326748.7678099,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1023,
+  "deepseek": 0.1028,
   "gpt": 0.3569,
   "gpt_img": 152,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.7092
+  "total": 0.7097
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "15:44:46 batch 240fdd4b: in_progress 0/10\n15:44:46 batch 34284dae: in_progress 0/11\n103"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_07.log --cuenta \"fotos/*.png\" 124 2>&1 | tail -2"
-  },
   {
    "k": "res",
    "t": "… sigue esperando tras 540 s · log: 15:53:51 batch 34284dae: in_progress 0/11 · archivos: 103/124 → hacé otra cosa útil y volvé a llamar"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 280; tail -2 fotos/fotos_08.log; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "16:05:05 batch d7ff1456: in_progress 0/10\n16:05:05 batch e0b1f454: in_progress 0/1\n81"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 300; tail -2 fotos/fotos_08.log; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 3903,
+    "seg": 3970,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 4750,
+  "total_s": 4818,
   "avatar_s": 816,
-  "sin_avatar_s": 3934,
+  "sin_avatar_s": 4002,
   "cerrado": false
  }
 }
