@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322773.8494287,
+ "actualizado": 1794322836.7923691,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -22,20 +22,20 @@
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "active",
+   "st": "done",
    "info": "por palabra"
   },
   {
    "k": "avatar",
    "n": "Avatar",
-   "st": "pending",
+   "st": "skip",
    "info": ""
   },
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "4 fotos"
   },
   {
    "k": "armado",
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.032,
-  "gpt": 0.0,
-  "gpt_img": 0,
+  "deepseek": 0.0324,
+  "gpt": 0.009,
+  "gpt_img": 4,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.032
+  "total": 0.0414
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\np = \"escenas/pedidos_escenas.json\"\nd = json.load(open(p))\nfor x in d:\n    pr = x[\"prompt\"]\n    pr[\"camera\"] = pr[\"camera\"].replace(\" is slightly out of focus to allow\", \" stays visible so the push-in follows the floor grain and\").replace(\"slightly out of focus\", \"in focus\")\n    pr[\"camera\"] = pr[\"camera\"].replace(\", and the background\", \", and the background\")\njson.du"
-  },
-  {
-   "k": "res",
-   "t": "['Overhead shot, whiteboard centered with clear empty floor space on all sides; the four corners of the board are left unobstructed so the image can be cut into four panels along the gaps between the listed items.', 'Side view, close-up on the foot, with the chair leg in the background; the foot is the main subject, and the background stays visible so the push-in follows the floor grain and a smoo"
-  },
   {
    "k": "tool",
    "t": "import json\np = json.load(open(\"planos.json\"))\nfields = [\"id\", \"startMs\", \"endMs\", \"text\", \"tipo\", \"av\"]\nfor x in p:\n    print(x.get(\"id\"), x.get(\"startMs\"), x.get(\"endMs\"), \"|\", x.get(\"text\", \"\")[:200], \"|\", {k: x[k] for k in x if k in (\"tipo\", \"av\", \"foto\", \"escena\", \"partida\")})\n"
@@ -178,6 +170,14 @@
   {
    "k": "res",
    "t": "Exit code 2\n14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n14:59:07 batch adf97efe: in_progress 0/4"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\ns = open(\"armar_pedidos.py\").read()\ns = s.replace('lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p019\", \"p049\", \"p069\", \"p097\"]',\n              'lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p019\", \"p011\", \"p009\", \"p020\"]')\nopen(\"armar_pedidos.py\", \"w\").write(s)\nEOF\npython armar_pedidos.py && nohup python /opt/estudio/repo/motor/tools/fotos.py "
+  },
+  {
+   "k": "res",
+   "t": "lote1 10 definidas 23\n14:59:36 ya hay otro fotos.py en este video (pid 5611): espero que termine"
   }
  ],
  "maquinas": 1,
@@ -212,11 +212,18 @@
     "seg": 37,
     "pasadas": 1,
     "fin": true
+   },
+   {
+    "k": "fotos",
+    "n": "Fotos y stock",
+    "seg": 58,
+    "pasadas": 1,
+    "fin": false
    }
   ],
-  "total_s": 843,
+  "total_s": 906,
   "avatar_s": 0,
-  "sin_avatar_s": 843,
+  "sin_avatar_s": 906,
   "cerrado": false
  }
 }
