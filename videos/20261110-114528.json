@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794339894.049853,
+ "actualizado": 1794339959.9746022,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "done",
-   "info": "155 segmentos"
+   "info": "152 segmentos"
   },
   {
    "k": "qc",
@@ -51,18 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.16,
+  "deepseek": 0.1607,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9028
+  "total": 0.9035
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "sleep 420; tail -4 render.log; ls segments/*.mp4 2>/dev/null | grep -v src | wc -l"
-  },
   {
    "k": "res",
    "t": "extrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\n156"
@@ -178,6 +174,10 @@
   {
    "k": "res",
    "t": "Error opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n014c2460fe2e4bc4ccca.mp4\n09750f774a2c266aa10d.mp4\n0dd8c4be6c1138e9a7af.mp4\n1872292dc930f99bf369.mp4\n2246ec2969bdefd1328b.mp4\n2d20e149ad0c09a00ff2.mp4\n561f75afc12f33445a62.mp4\n7132f471c868dcbc4694.mp4\n730a1298b2f1ba594e35.mp4\n7f5b0ead54423ca915db.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 300; tail -2 assemble.log; ls -la final.mp4 2>/dev/null; pgrep -f \"[a]ssemble.py\" | head -2"
   }
  ],
  "maquinas": 1,
@@ -237,28 +237,28 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 3079,
+    "seg": 3145,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 2779,
+    "seg": 2792,
     "pasadas": 3,
-    "fin": false
+    "fin": true
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 3895,
+    "seg": 4026,
     "pasadas": 2,
     "fin": false
    }
   ],
-  "total_s": 17963,
+  "total_s": 18029,
   "avatar_s": 816,
-  "sin_avatar_s": 17148,
+  "sin_avatar_s": 17213,
   "cerrado": false
  }
 }
