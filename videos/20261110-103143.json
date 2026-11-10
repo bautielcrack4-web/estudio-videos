@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794321373.4386022,
+ "actualizado": 1794321438.730084,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,70 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0656,
+  "deepseek": 0.0689,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.581
+  "total": 0.5843
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "14:29:20 ✓ nada que pedir: 1/1 fotos listas\nextrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 10"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f fotos/p061.png fotos/p061.json && sleep 2 && nohup python /opt/estudio/repo/motor/tools/fotos.py . fix2.json > fotos/fotos_fix2.log 2>&1 & sleep 10; cat fotos/fotos_fix2.log"
-  },
-  {
-   "k": "res",
-   "t": "14:30:32 → batch batch_6af32a88985c81909e867824da4a4e7f · 1 fotos · sin referencia · low 1088x608\n14:30:32 batch da4a4e7f: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg segments/*.mp4 2>&1 | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_render.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "echo \"render test: 10 segmentos mirados en qc/hoja_render.jpg. Arranca en avatar (cuadro 1 = Sal hablando), luego p001 (indice de 4 cajas con tarjetas), p002, p003, p004, p005, p006, p007 (campanilla), p008, p009 (zapato doblado), p010. Movimiento y encuadres ok, sin caras rotas, sin cartel de espera. Nota: p001 elegida a; p003 saco 4 cajas con etiquetas 1-4 distintas de las tarjetas de p001 (buen"
-  },
-  {
-   "k": "res",
-   "t": "total 90312\ndrwxrwxrwx+  2 sesion sesion     4096 Nov 10 14:31 .\ndrwxrwxrwx+ 11 runner runner     4096 Nov 10 14:29 .."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py . > render.log 2>&1 &\necho started; sleep 30; tail -3 render.log"
-  },
-  {
-   "k": "res",
-   "t": "started"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"id\":\"campanilla\",\"tags\":[\"bell\",\"door\",\"shop\"],\"q\":\"door bell\",\"min\":0.3,\"max\":3},\n {\"id\":\"carton\",\"tags\":[\"cardboard\",\"box\",\"paper\"],\"q\":\"cardboard box\",\"min\":0.4,\"max\":2.5},\n {\"id\":\"papel\",\"tags\":[\"paper\",\"page\",\"folding\"],\"q\":\"paper\",\"min\":0.3,\"max\":2},\n {\"id\":\"cuero\",\"tags\":[\"leather\",\"fabric\",\"rub\"],\"q\":\"leather\",\"min\":0.4,\"max\":2.5}\n]\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/sonidos.py . sfx_pedidos.json --tomas 3 > sonidos.log 2>&1; tail -5 sonidos.log; cat sfx/_sfx_fuentes.json 2>/dev/null | head -40"
-  },
   {
    "k": "res",
    "t": "ok campanilla: campanilla.mp3 (2 s, Cartoon door melodic bell) · campanilla_2.mp3 (2 s, Modern classic door bell sound) · campanilla_3.mp3 (3 s, Discrete door bell announcement)\nok carton: carton.mp3 (1 s, Modern click box check) · carton_2.mp3 (1 s, Metal tools box browsing) · carton_3.mp3 (1 s, Box to bag punches)\nok papel: papel.mp3 (1 s, Paper slide) · papel_2.mp3 (1 s, Paper quick movement) ·"
@@ -178,6 +122,62 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/render.py . > render.log 2>&1 &\nsleep 45; tail -5 render.log; ls segments/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "138"
+  },
+  {
+   "k": "tool",
+   "t": "ps aux | grep -E \"render.py|assemble.py\" | grep -v grep | head; ls -la render.log"
+  },
+  {
+   "k": "res",
+   "t": "<persisted-output>\nOutput too large (54.2KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-i-ve-fitted-shoes-for-42-years-these-are/cf8ace5b-4ae8-4ece-a2e8-59d7435f0794/tool-results/bqyzru5cb.txt\n\nPreview (first 2KB):\nroot        3580  0.0  0.0  12692  5808 ?        Ss   13:33   0:00 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GI"
+  },
+  {
+   "k": "tool",
+   "t": "ps -eo pid,etime,cmd | grep \"tools/render.py\" | grep -v grep"
+  },
+  {
+   "k": "res",
+   "t": "<persisted-output>\nOutput too large (53.7KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-i-ve-fitted-shoes-for-42-years-these-are/cf8ace5b-4ae8-4ece-a2e8-59d7435f0794/tool-results/bthpem3gc.txt\n\nPreview (first 2KB):\n   3580    01:03:24 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOS"
+  },
+  {
+   "k": "tool",
+   "t": "pgrep -af \"python.*render.py\" | cut -c1-100; pgrep -af \"python.*assemble.py\" | cut -c1-100"
+  },
+  {
+   "k": "res",
+   "t": "3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=h\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --disallowed\n18494 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/node/20.20.2/x64/bin:/opt/hostedtoolc\n18496 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/est"
+  },
+  {
+   "k": "tool",
+   "t": "kill 28327; sleep 2; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-80; ls render*.log; tail -2 render.log"
+  },
+  {
+   "k": "res",
+   "t": "3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n21509 python /opt/estudio/repo/motor/tools/render.py .\n29666 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash\nrender.log\nrender_test.log"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --log render.log --cuenta \"segments/*.mp4\" 135 2>&1 | tail -3"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 137 archivos (0 s)"
+  },
+  {
+   "k": "tool",
+   "t": "cat render.log | head -30"
+  },
+  {
+   "k": "res",
+   "t": "(Bash completed with no output)"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 150; ls -la render.log; wc -c render.log; ls segments/*.mp4 | wc -l; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-60"
   }
  ],
  "maquinas": 1,
@@ -237,21 +237,21 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 575,
+    "seg": 706,
     "pasadas": 3,
     "fin": false
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 118,
+    "seg": 184,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3835,
+  "total_s": 3901,
   "avatar_s": 1118,
-  "sin_avatar_s": 2718,
+  "sin_avatar_s": 2783,
   "cerrado": false
  }
 }
