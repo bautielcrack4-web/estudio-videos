@@ -607,6 +607,9 @@ def renderizar(B, X, fotos, partes, momentos, caja):
         dur = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], capture_output=True, text=True).stdout.strip()
         if not dur or abs(float(dur) * FPS - part["frames"]) > 6: log(mid, "duración rara (%s s): queda el b-roll" % dur); continue
         man.append({"mp4": "extrema/" + mid + ".mp4", "startMs": m["startMs"], "endMs": m["endMs"], "texto": m["texto"][:120]})
+    # las escenas firma (escenas.py) ya están en el manifest: se conservan, y una pieza propia que caiga sobre una de ellas no entra
+    firma = [m for m in (jl(X + "/manifest.json", []) or []) if str(m.get("mp4", "")).startswith("extrema/es")]
+    man = sorted(firma + [m for m in man if not any(m["startMs"] < f["endMs"] and m["endMs"] > f["startMs"] for f in firma)], key=lambda m: m["startMs"])
     json.dump(man, open(X + "/manifest.tmp", "w", encoding="utf8"), ensure_ascii=False, indent=1)
     os.replace(X + "/manifest.tmp", X + "/manifest.json")      # render.py puede estar leyéndolo: nunca a medio escribir
     shutil.rmtree(pub, ignore_errors=True)
