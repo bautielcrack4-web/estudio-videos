@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794326033.7665255,
+ "actualizado": 1794326097.7717586,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0932,
+  "deepseek": 0.095,
   "gpt": 0.2995,
   "gpt_img": 131,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6427
+  "total": 0.6445
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 15:27:56 batch d0d46200: in_progress 0/38 · archivos: 77/115 → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nfor i in [\"p021\",\"p022\",\"p023\",\"p024\",\"p030\",\"p031\",\"p034\",\"p040\",\"p042\",\"p056\",\"p059\",\"p060\",\"p062\",\"p063\",\"p064\",\"p074\",\"p075\",\"p089\",\"p090\",\"p091\",\"p092\"]:\n    F.pop(i, None)\njson.dump(F, open(\"pedidos/_todos.json\",\"w\"), ensure_ascii=False, indent=1)\nprint(len(F))\nEOF\nrm -f fotos/p021.* fotos/p022.* fotos/p023.* fotos/p024"
-  },
-  {
-   "k": "res",
-   "t": "100\n15:27:56 batch d0d46200: in_progress 0/38\n15:36:13 ya hay otro fotos.py en este video (pid 17978): espero que termine\n15:36:43 ya hay otro fotos.py en este video (pid 17978): espero que termine"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_04.log --cuenta \"fotos/*.png\" 108 2>&1 | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "15:41:02 ✓ batch d0d46200: 38 fotos bajadas, 0 fallidas (US$0.084)\n15:41:02 FIN: 38/42 fotos en fotos/ (14 min) · faltan ['p089', 'p090', 'p091', 'p092'] → corregí esos prompts (si los rechazó el filtro) y volvé a correr"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF0 = json.load(open(\"pedidos/_todos.json\"))\nAV = (\"a 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brown eyes, freckles and sun \"\n      \"spots on her cheeks, a bright open smile, wearing a navy blue zip-up track jacket with white stripes down the \"\n      \"sleeves over a white crew-neck t-shirt, a dark sports watch on her left wrist\""
-  },
   {
    "k": "res",
    "t": "21\n15:41:13 ✓ nada que pedir: 21/21 fotos listas"
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_07.log --cuenta \"fotos/*.png\" 124 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 15:53:51 batch 34284dae: in_progress 0/11 · archivos: 103/124 → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "{\n  \"title\": \"My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs\",\n  \"description\": \"My grandmother walked every day until she was ninety-eight. Every single day, rain or snow, and every one of those mornings started the same way: a wooden kitchen chair, a small silver radio, and a five-minute radio taiso warm-up we did together. Her name was Fumiko, and"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/meta.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -2 fotos/fotos_07.log; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "15:53:50 batch 240fdd4b: in_progress 0/10\n15:53:51 batch 34284dae: in_progress 0/11\n103"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_07.log --cuenta \"fotos/*.png\" 124 2>&1 | tail -2"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 3255,
+    "seg": 3319,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 4103,
+  "total_s": 4167,
   "avatar_s": 816,
-  "sin_avatar_s": 3287,
+  "sin_avatar_s": 3351,
   "cerrado": false
  }
 }
