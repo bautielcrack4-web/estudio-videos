@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794330253.2415981,
+ "actualizado": 1794330317.256456,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,42 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1236,
+  "deepseek": 0.1254,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.639
+  "total": 0.6408
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 10 2>&1 | tail -6; grep -c \"✗\" <(python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 10 2>&1)"
-  },
-  {
-   "k": "res",
-   "t": "  ✓ sonido: cues.json con sus archivos\n  !  fotos: 3 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  !  dinámico: avatar a pantalla completa ≤ 6 s por vez (1 tramos más largos, ej. 7.0 s en 0 s → partilo o usá pantalla partida)\n  !  ritmo del avatar: avatar 103 s = 16 % del video (ideal ~50 %: más avatar = menos fotos)\n  !  ritmo del avatar: nunca más de 15 s sin avatar (14 "
-  },
-  {
-   "k": "tool",
-   "t": "for t in 10 15 25 100 175 560; do ffmpeg -v error -ss $t -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/xf_$t.jpg -y; done; ffmpeg -v error -ss 35 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/xf_35.jpg -y; python /opt/estudio/repo/motor/tools/hoja.py qc/h_extrema.jpg qc/xf_10.jpg qc/xf_15.jpg qc/xf_25.jpg qc/xf_35.jpg qc/xf_100.jpg qc/xf_175.jpg qc/xf_560.jpg | tail -1"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/h_extrema.jpg (7 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_extrema.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/revisor.py . > revisor2.log 2>&1; tail -3 revisor2.log; cat gates/correcciones.txt 2>/dev/null | head -5"
-  },
   {
    "k": "res",
    "t": "ya van 1 revisiones con IA en este video: no gasto más.\n✓ sin huecos negros (esta vez sin revisión con IA).\n(22 cuadros revisados, US$0.000)"
@@ -178,6 +150,34 @@
   {
    "k": "tool",
    "t": "rm -f extrema/EN_CURSO; ARMADO_EXTREMA=1 nohup python /opt/estudio/repo/motor/tools/assemble.py . > assemble2.log 2>&1 & sleep 60; tail -3 assemble2.log"
+  },
+  {
+   "k": "res",
+   "t": "segmentos: 134\ncapas de edición extrema: 4\n✓ sin cambios: final.mp4 ya está al día."
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -ss 560 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/chk560.jpg -y && python /opt/estudio/repo/motor/tools/hoja.py qc/h_chk.jpg qc/chk560.jpg | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/h_chk.jpg (1 cuadros, 1x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_chk.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "ai",
+   "t": "La Edición extrema ya estaba dentro de `final.mp4`: el motor no tiene piezas nuevas y el armado confirma \"sin cambios\", así que el video queda como está."
+  },
+  {
+   "k": "end",
+   "t": "La Edición extrema ya estaba dentro de `final.mp4`: el motor no tiene piezas nuevas y el armado confirma \"sin cambios\", así que el video queda como está."
   }
  ],
  "maquinas": 3,
