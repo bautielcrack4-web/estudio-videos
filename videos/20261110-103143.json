@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794318554.7050893,
+ "actualizado": 1794318617.8705366,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "6 fotos"
+   "info": "23 fotos"
   },
   {
    "k": "armado",
@@ -51,86 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0371,
-  "gpt": 0.0173,
-  "gpt_img": 6,
+  "deepseek": 0.0413,
+  "gpt": 0.0508,
+  "gpt_img": 22,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0544
+  "total": 0.0921
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/ctx.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "for s in \"my father opened\" \"forty-two years I've been\" \"here's the part nobody\" \"now the four\" \"number one\" \"number two\" \"number three\" \"number four\" \"now the three traps\" \"first trap\" \"second trap\" \"third trap\" \"do something today\" \"part I owe you\" \"walking shoe\" \"dress shoe\" \"house shoe\" \"winter shoe\" \"take those four jobs\" \"stayed with me this far\" \"hit that like\" \"here's my question\" \"picture"
-  },
-  {
-   "k": "res",
-   "t": "== my father opened\n...hoe and what to look at in each one so you don't get taken. My father opened that store in 1951. One window, one bench. One brass bell o...  [30660-32400]\n== forty-two years I've been\n== here's the part nobody\n... first time. That look. That's why I still unlock the door. Here's the part nobody tells you. Your feet change after 65. The arch can flatten ...  [79700-81420]\n== "
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":7000},\n {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":79500,\"endMs\":85500},\n {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":117800,\"endMs\":122800},\n {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":128900,\"endMs\":133900},\n {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":169500"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/avatar_ranges.json has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -10 && python3 -c \"\nimport json;d=json.load(open('planos.json'));print(len(d));[print(p['id'],p['startMs'],p['endMs'],p['texto'][:90]) for p in d]\""
-  },
-  {
-   "k": "res",
-   "t": "✓ planos.json: 116 planos de b-roll (9.2 min de b-roll, 12.6 por minuto) · 20 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n⚠ 1 huecos de menos de 2.8 s entre ventanas: si podés, dejá ≥ 3 s (una foto tan corta casi no se ve).\n116\np001 7000 11833 me, four shoe boxes on the shelf, each with a card in front in my handwriting,\np"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/escenas.py . ficha 2>&1 | tail -20 && python3 -c \"\nimport json;d=json.load(open('escenas/ficha.json'));print(json.dumps(d,indent=1,ensure_ascii=False)[:3000])\""
-  },
-  {
-   "k": "res",
-   "t": "✓ escenas/ficha.json: 1 escenas firma · tesis: After sixty-five, a shoe is a tool with four jobs, and you can check it with your own hands — bend it, press it, measure it — before you ever trust the label.\n  es01 · planos p019+p020 · 9.2s · d) One continuous camera travel and push to a real thing: the camera starts on the open file box and pushes do\n→ Pedí esas 1 fotos TAL CUAL (ya pasan la compue"
-  },
-  {
-   "k": "tool",
-   "t": "cat escenas/pedidos_escenas.json | head -40"
-  },
-  {
-   "k": "res",
-   "t": "[\n {\n  \"id\": \"p019\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"overhead amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"Sal's hand has just set down the pen after adding the second size to Mr. Rossi's card, and the card sits on top of the open file box, the ink still dark and fresh.\""
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nd=json.load(open('escenas/pedidos_escenas.json'))\nfor p in d:\n    p['prompt']['avoid']=\"cinematic lighting, dramatic shadows, studio look, perfect plastic skin, depth-of-field blur, date stamp, watermark, misspelled words\"\njson.dump(d,open('escenas/pedidos_escenas.json','w'),ensure_ascii=False,indent=1)\nprint('ok')\nEOF\nmkdir -p fotos && cp escenas/pedidos_escenas.json"
-  },
-  {
-   "k": "res",
-   "t": "ok\n13:40:53 → batch batch_6af31ee5d0e88190928789818c30d054 · 1 fotos · sin referencia · low 1088x608\n13:40:54 batch 8c30d054: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "import json\n\nTYPE = \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\"\nTYPE_NOFACE = \"amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\"\nAV"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gen_pedidos.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "sed -i 's/reflec tions/reflections/' gen_pedidos.py && python3 gen_pedidos.py && python3 - <<'EOF'\n# dry-run gate check by importing fotos' logic quickly: just run fotos.py with a nonexistent path? Simpler: check campos here\nimport json,re\np=json.load(open('pedidos_01.json'))\nPROHIBIDOS = [\"cinematic\", \"35mm\", \"bokeh\", \"8k\", \"highly detailed\", \"photorealistic\", \"golden hour\", \"out of focus\", \"blur"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\n  File \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gen_pedidos.py\", line 82\n    P.append(p(\"p007\", \"The brass bell over the door, hanging still between customers, at the moment Sal remembers his father's rule that a customer should hear they arrived\",\n            ^\nSyntaxError: '(' was never closed"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n 'P.append(p(\"p007\"' -A 8 gen_pedidos.py"
-  },
   {
    "k": "res",
    "t": "82:P.append(p(\"p007\", \"The brass bell over the door, hanging still between customers, at the moment Sal remembers his father's rule that a customer should hear they arrived\",\n83-  \"A brass bell hanging from a bracket above the shop door\",\n84-  \"The door below is just closing, the glass still swinging, and the bell is about to ring.\",\n85-  [\"tarnished brass bell\", \"leather strap\", \"metal bracket sc"
@@ -178,6 +106,78 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 22 2>&1 | tail -3; ls fotos/ | head; cat fotos/fotos_escenas.log | tail -2; tail -2 fotos/fotos_test.log"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 22 archivos (390 s)\n_batches.json\nfotos_escenas.log\nfotos_test.log\np001_a.json\np001_a.png\np001_b.json\np001_b.png\np001_c.json\np001_c.png\np006.json\n13:41:24 ✓ batch 8c30d054: 1 fotos bajadas, 0 fallidas (US$0.003)\n13:41:24 FIN: 1/1 fotos en fotos/ (1 min)\n13:49:43 ✓ batch 1b8448d2: 16 fotos bajadas, 0 fallidas (US$0.033)\n13:49:43 FIN: 21/21 fotos en fotos/ (7 min)"
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p qc && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_test.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png fotos/p019.png fotos/p006.png fotos/p009.png fotos/p017.png fotos/p025.png fotos/p032.png fotos/p041.png fotos/p044.png fotos/p048.png 2>&1 | tail -2 && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_test2.jpg fotos/p057.png fotos/p061.png fotos/p066.png"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fotos_test.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_test2.jpg (10 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_fotos_test.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_fotos_test2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/render.py --help 2>&1 | head -20; python /opt/estudio/repo/motor/tools/planos.py --help 2>&1 | head -20"
+  },
+  {
+   "k": "res",
+   "t": "Traceback (most recent call last):\n  File \"/opt/estudio/repo/motor/tools/render.py\", line 32, in <module>\n    shots = json.load(open(B + \"/shots_timed.json\", encoding=\"utf-8\"))\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/shots_timed.json'\n⛔ falta cap"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"sys.argv\\|SHOT\\|def \\|png\\|jpg\" /opt/estudio/repo/motor/tools/render.py | head -50; grep -n \"sys.argv\\|vacio\\|falta\" /opt/estudio/repo/motor/tools/planos.py | head -20"
+  },
+  {
+   "k": "res",
+   "t": "4:     <carpeta>/avatar_ranges.json = [{\"file\":\"avatar/A1.mp4\",\"frame\":\"avatar/frames/a1.jpg\",\"startMs\":3200,\"endMs\":8900}, ...]  (opcional)\n19:B = (sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith(\"--\") else os.getcwd()).replace(\"\\\\\", \"/\").rstrip(\"/\")\n20:PREVIO = \"--previo\" in sys.argv       # mientras se espera el avatar: sólo los planos que no dependen de él\n21:if \"--limit\" not i"
+  },
+  {
+   "k": "tool",
+   "t": "sed -n 40,70p /opt/estudio/repo/motor/tools/render.py; sed -n 85,100p /opt/estudio/repo/motor/tools/planos.py"
+  },
+  {
+   "k": "res",
+   "t": "    try:\n        import espera\n        return espera.cartel(origen, texto, espera.ruta(B, tipo, clave))\n    except Exception as e:\n        print(\"cartel de espera no disponible:\", e)\n        return origen\n\ndef img_for(sid):\n    for d in (\"fotos\", \"clips\", \"avatar/frames\", \"avatar\"):\n        for ext in (\".jpg\", \".jpeg\", \".png\", \".webp\", \".mp4\"):\n            p = \"%s/%s/%s%s\" % (B, d, sid, ext)\n     "
+  },
+  {
+   "k": "tool",
+   "t": "cp fotos/p001_a.png fotos/p001.png && cp fotos/p001_a.json fotos/p001.json && rm -f fotos/p089.png fotos/p089.json fotos/p097.png fotos/p097.json fotos/p108.png fotos/p108.json"
+  },
+  {
+   "k": "res",
+   "t": "(Bash completed with no output)"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nreps={\n'\"A winter boot pressing down hard on a patch of ice at the store door\"':'\"A black rubber winter boot pressing down hard on a slick patch of ice on the step outside the shop door, the deep tread biting into the ice\"',\n'\"A foot in a brown shoe stepping forward on the floorboards of the shop\"':'\"A customer\\'s foot in a new brown shoe stepp"
+  },
+  {
+   "k": "res",
+   "t": "117 pedidos 31 con cara\n[This command modified 1 file you've previously read: gen_pedidos.py. Call Read before editing.]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p001_a','p001_b','p001_c'):\n        x['prompt']['avoid']=x['prompt']['avoid'].replace(', text, letters','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ('p001_a','p001_b','p001_c')]\njson.dump(out,open('pedidos_02.json','w'),ensure_ascii=Fal"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 470,
+    "seg": 533,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1017,
+  "total_s": 1080,
   "avatar_s": 0,
-  "sin_avatar_s": 1017,
+  "sin_avatar_s": 1080,
   "cerrado": false
  }
 }
