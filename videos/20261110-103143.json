@@ -2,10 +2,10 @@
  "vid": "20261110-103143",
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
- "estado": "listo",
- "actualizado": 1794322391.4090483,
+ "estado": "trabajando",
+ "actualizado": 1794322917.2470553,
  "creado": 1794317612.3583608,
- "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
+ "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42839400627",
  "pasos": [
   {
    "k": "guion",
@@ -59,10 +59,6 @@
   "total": 0.5934
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "ls -lt segments/*.mp4 | head -3; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-80; ls -la render.log final.mp4 2>&1"
-  },
   {
    "k": "res",
    "t": "Exit code 2\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 14:40 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 14:40 segments/0133.mp4\n-rw-rw-rw-+ 1 sesion sesion  1200038 Nov 10 14:40 segments/0132.mp4\n3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n35122 /bin/bash -c sou"
@@ -178,10 +174,14 @@
   {
    "k": "end",
    "t": "Listo. El video está terminado de punta a punta, sin frenadas.\n\n**Entregados en la carpeta:**\n- `final.mp4` — 10,9 min (654 s), 1920×1080, 30 fps, H.264 + AAC listo para YouTube.\n- `REPORTE.md` con mundo, escenas firma, fotos de DATO, repedidas y gasto (~US$0,27 de imágenes).\n- `meta.json` con el título exacto y la descripción de 3 párrafos en la voz de Sal.\n\n**Control final:** `validar.py --etapa"
+  },
+  {
+   "k": "user",
+   "t": "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final."
   }
  ],
- "maquinas": 1,
- "extrema": "",
+ "maquinas": 2,
+ "extrema": "1",
  "ahorro": "",
  "etapas": {
   "filas": [
