@@ -11,7 +11,7 @@ Las claves ya están configuradas: las herramientas las leen solas. **Nunca las 
    ⛔ **CERO FOTOS REPETIDAS:** un plano = una foto distinta. El validador lo frena con ✗.
 5. **Avatar**: con el plan cerrado, `avatar_it.py` en segundo plano (1 sola llamada, §3).
 6. **Sonido** (§5b) mientras llega el avatar: `sonidos.py` + `cues.json`.
-7. **Render de prueba** (`render.py --limit 10`) → hoja → mirala. El render completo y el armado **los hace el motor solo**: los planos sin avatar mientras se espera y, cuando llega el avatar, sus segmentos y `final.mp4`. Vos esperá con `esperar.py --existe final.mp4` y usá ese tiempo para `meta.json` y `REPORTE.md`. Sólo si `final.mp4` no aparece a los 40 min de haber llegado el avatar, corré vos `render.py` + `assemble.py`.
+7. **Render de prueba** (`render.py --limit 10`) → hoja → mirala. El render completo y el armado **los hace el motor solo**: los planos sin avatar mientras se espera y, cuando llega el avatar, sus segmentos y `final.mp4`. Vos esperá con `esperar.py --existe final.mp4` y usá ese tiempo para `meta.json` y `REPORTE.md`. Sólo si `final.mp4` no aparece a los 40 min de haber llegado el avatar, corré vos `fondo_avatar.py` + `render.py` + `assemble.py`. `fondo_avatar.py` repara gratis el fondo del avatar si se rompió en el reel (el resultado queda en `gates/fondo_avatar.json`; los clips originales, en `avatar/sin_fondo/`).
 8. **Final**: corré el **revisor** (`revisor.py`, §6) una vez y validá `--etapa final`. Si no marcó nada, terminaste: no hagas otra revisión ni otro armado. Si marcó algo, hacé **una sola pasada** con lo marcado y nada más. Listo: el usuario lo descarga desde el panel.
 
 Reglas anti-vueltas:

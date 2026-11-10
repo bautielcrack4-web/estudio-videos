@@ -485,7 +485,7 @@ def auto_tick():
             except (OSError, KeyError, TypeError): return False
         llego = bool(R) and all(listo(r) for r in R)
         if llego and not AUTO["armado"] and not os.path.exists(os.path.join(cwd, "final.mp4")):
-            AUTO["armado"] = True; auto_lanzar(linea("render.py", cwd), linea("assemble.py", cwd)); log("armado: llegó el avatar, arranca solo")
+            AUTO["armado"] = True; auto_lanzar(linea("fondo_avatar.py", cwd), linea("render.py", cwd), linea("assemble.py", cwd)); log("armado: llegó el avatar, arranca solo")
         elif not llego and not AUTO["previo"]:
             AUTO["previo"] = True; auto_lanzar(linea("render.py", cwd, "--previo", 5)); log("render: arrancan los planos sin avatar mientras se espera")
     except Exception as e: log("armado automático:", type(e).__name__)
@@ -499,6 +499,39 @@ def control_cerrado(cwd):
     if abs(os.path.getmtime(fin) - float(q.get("final_mtime") or 0)) > 2: return False
     if not r.get("malas") or J("armado.json").get("correcciones", 0) >= 1: return True
     return time.time() - float(r.get("t") or 0) > 20 * 60          # marcó algo y a los 20 min no hubo pasada: sale como está
+
+
+def correr_con_tope(script, tope):
+    """Acá la sesión ya terminó: si se pasa del tope se corta todo lo que corre como su usuario."""
+    p = subprocess.Popen(como_sesion(script, ARMADO_EXTREMA="1"), stdout=open(AUTO_LOG, "a"), stderr=subprocess.STDOUT, start_new_session=True)
+    try: return p.wait(timeout=max(5, tope))
+    except subprocess.TimeoutExpired:
+        if E.get("ESTUDIO_USUARIO_SESION"): subprocess.run(["sudo", "-n", "pkill", "-9", "-u", E["ESTUDIO_USUARIO_SESION"]], capture_output=True)
+        try: os.killpg(p.pid, 9)
+        except OSError: pass
+        p.wait(); return -9
+
+
+def sin_saldo_con_final(cwd):
+    """True si DeepSeek lleva 3 min sin saldo y el video ya está armado y quieto: esperar crédito no le suma nada al video."""
+    if not (server.jload(_cfg.ALERTAS, {}) or {}).get("DeepSeek"): st.pop("sin_saldo", None); return False
+    st["sin_saldo"] = st.get("sin_saldo") or time.time()
+    fin = os.path.join(cwd, "final.mp4")
+    if time.time() - st["sin_saldo"] < 180 or AUTO["p"] or not os.path.exists(fin) or time.time() - os.path.getmtime(fin) < 60: return False
+    return subprocess.run(["pgrep", "-f", r"tools/(assemble|render)\.py"], capture_output=True).returncode != 0
+
+
+def cerrar_sin_ia(cwd):
+    """Lo que no necesita IA igual se hace (huecos negros) y el REPORTE dice la verdad."""
+    log("DeepSeek sin saldo con el video armado: se entrega sin revisión con IA")
+    publicar("trabajando", {"nota": "DeepSeek sin saldo: entrego el video sin revisión con IA"})
+    try: correr_con_tope(linea("revisor.py", cwd), 5 * 60)
+    except Exception as e: log("revisor sin IA:", type(e).__name__)
+    try:
+        with open(os.path.join(cwd, "REPORTE.md"), "a", encoding="utf8") as f:
+            f.write("\n\n## Cierre automático\nDeepSeek se quedó sin saldo con el video ya armado: salió sin la revisión final con IA. Conviene mirarlo antes de publicar.\n")
+    except OSError as e: log("reporte:", type(e).__name__)
+    st["cerrado_sin_ia"] = True; server.jsave(ST, st)
 
 
 relanzar, ult = False, 0
@@ -522,6 +555,8 @@ while True:
     if time.time() - T0 > LIMITE:
         server.stop(st["rid"]); relanzar = True; log("límite de tiempo: sigue en otra máquina"); break
     if vivo:
+        if not meta.get("cola") and sin_saldo_con_final(server.video(st["rid"])["cwd"]):
+            server.stop(st["rid"]); time.sleep(3); cerrar_sin_ia(server.video(st["rid"])["cwd"]); break
         if not meta.get("cola") and control_cerrado(server.video(st["rid"])["cwd"]):
             st["cierre"] = st.get("cierre") or time.time()
             if time.time() - st["cierre"] > 90: server.stop(st["rid"]); log("control pasado: se cierra la sesión")
@@ -546,17 +581,6 @@ if relanzar:
 # ── 3b) EDICIÓN EXTREMA: se hace de fondo mientras llega el avatar. Después del final nunca se lanza de cero ni se rearma todo:
 #        si quedaron piezas que no entraron, se aplican SÓLO sus tramos con un tope duro. Si no alcanza, el video sale sin ellas.
 TOPE_XM_TARDE = 12 * 60
-
-
-def correr_con_tope(script, tope):
-    """Acá la sesión ya terminó: si se pasa del tope se corta todo lo que corre como su usuario."""
-    p = subprocess.Popen(como_sesion(script, ARMADO_EXTREMA="1"), stdout=open(AUTO_LOG, "a"), stderr=subprocess.STDOUT, start_new_session=True)
-    try: return p.wait(timeout=max(5, tope))
-    except subprocess.TimeoutExpired:
-        if E.get("ESTUDIO_USUARIO_SESION"): subprocess.run(["sudo", "-n", "pkill", "-9", "-u", E["ESTUDIO_USUARIO_SESION"]], capture_output=True)
-        try: os.killpg(p.pid, 9)
-        except OSError: pass
-        p.wait(); return -9
 
 
 def extrema_tarde():
@@ -588,6 +612,10 @@ def extrema_tarde():
 
 
 if XM_ON and st.get("xm_fondo") and not st.get("extrema"):
+    if xm["p"] and xm["p"].poll() is None:      # los componentes ya están pagos: se esperan antes de cortarlos, con tope para que el video nunca se trabe
+        publicar("trabajando", {"nota": "edición extrema"}); _x0 = time.time(); log("extrema: el video está listo, espero los componentes (máx. 20 min)")
+        while xm["p"].poll() is None and time.time() - _x0 < 20 * 60 and time.time() - T0 < LIMITE - 25 * 60: time.sleep(10)
+        log("extrema: terminaron tras %d s" % (time.time() - _x0) if xm["p"].poll() is not None else "extrema: no llegaron en el tope de espera")
     xm_fin()
 if XM_ON and not st.get("extrema"):
     try: extrema_tarde()
