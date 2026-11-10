@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794319699.6350236,
+ "actualizado": 1794319762.9475963,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0493,
+  "deepseek": 0.0497,
   "gpt": 0.0812,
   "gpt_img": 33,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1305
+  "total": 0.1309
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "cara: p061\ncara: p099\ncara: p001_a\ncara: p001_c\ncara: p001_a\ncara: p001_b"
-  },
-  {
-   "k": "tool",
-   "t": "cat fotos/_batches.json | python3 -c \"import json,sys;d=json.load(sys.stdin);[print(b['id'],len(b['names']),b.get('bajado'),b['names'][:3]) for b in d['batches']]\""
-  },
   {
    "k": "res",
    "t": "batch_6af31ee5d0e88190928789818c30d054 1 True ['p019']\nbatch_6af31f69c6e88190ab0984161b8448d2 16 True ['p006', 'p009', 'p017']\nbatch_6af31f6a68848190a4f922152bcc1dde 5 True ['p001_a', 'p001_b', 'p001_c']"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 290; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "31\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n13:59:53 batch 6beec17e: in_progress 78/85"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 295; ls fotos/*.png | wc -l; tail -1 fotos/fotos_02.log"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 974,
+    "seg": 1037,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1615,
+    "seg": 1678,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2162,
+  "total_s": 2225,
   "avatar_s": 30,
-  "sin_avatar_s": 2131,
+  "sin_avatar_s": 2195,
   "cerrado": false
  }
 }
