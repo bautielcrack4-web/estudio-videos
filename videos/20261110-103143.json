@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794319445.1645944,
+ "actualizado": 1794319508.8605242,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0489,
+  "deepseek": 0.0493,
   "gpt": 0.0812,
   "gpt_img": 33,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1301
+  "total": 0.1305
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "117 pedidos 31 con cara\n114 28\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 32 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json,glob\nfrom collections import Counter\nc=Counter()\nfor f in glob.glob('fotos/p*.json'):\n    try: d=json.load(open(f))\n    except: continue\n    if isinstance(d,dict) and d.get('cara'): c[d['id']]+=1; print('cara:',d['id'])\nEOF"
-  },
   {
    "k": "res",
    "t": "cara: p061\ncara: p099\ncara: p001_a\ncara: p001_c\ncara: p001_a\ncara: p001_b"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 280; ls fotos/*.png | wc -l; tail -3 fotos/fotos_02.log; tail -2 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "31\n13:59:21 batch 8c628d9a: completed 11/11\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n13:59:53 batch 6beec17e: in_progress 78/85\n13:51:35 RUN 66771b4e-87ce-479f-842b-cf0e1e74ae43-u2\n13:52:05 estado: IN_PROGRESS"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 290; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 720,
+    "seg": 783,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1360,
+    "seg": 1424,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1907,
+  "total_s": 1971,
   "avatar_s": 30,
-  "sin_avatar_s": 1877,
+  "sin_avatar_s": 1940,
   "cerrado": false
  }
 }
