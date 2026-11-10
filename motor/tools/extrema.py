@@ -596,10 +596,13 @@ def renderizar(B, X, fotos, partes, momentos, caja):
     os.makedirs(X, exist_ok=True)      # el panel muestra cada pieza en su lugar apenas termina de renderizarse
     json.dump([{"id": "xm%02d" % (k + 1), "startMs": momentos[k]["startMs"], "endMs": momentos[k]["endMs"], "texto": momentos[k]["texto"][:120]} for k in sorted(partes)], open(X + "/momentos.json", "w", encoding="utf8"), ensure_ascii=False)
     t0 = time.time()
-    try:
-        r = subprocess.run(["node", "render.mjs", pub, X, ",".join(ids)], cwd=T, capture_output=True, text=True, timeout=3600)
-        print(r.stdout[-1500:], r.stderr[-800:])
-    except subprocess.TimeoutExpired: log("el render tardó demasiado: van las piezas que llegaron")
+    def _local(faltan):
+        try:
+            r = subprocess.run(["node", "render.mjs", pub, X, ",".join(faltan)], cwd=T, capture_output=True, text=True, timeout=3600)
+            print(r.stdout[-1500:], r.stderr[-800:])
+        except subprocess.TimeoutExpired: log("el render tardó demasiado: van las piezas que llegaron")
+    import granja
+    granja.render(T, pub, X, ids, log, _local)      # una máquina de GitHub por pieza; lo que no vuelva, acá
     res = jl(X + "/render.json", {}) or {}
     for k, part in sorted(partes.items()):
         mid = "xm%02d" % (k + 1); f = X + "/" + mid + ".mp4"; m = momentos[k]

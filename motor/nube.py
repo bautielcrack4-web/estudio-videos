@@ -368,6 +368,11 @@ def mensajes_nuevos():
     return [str(x.get("texto") if isinstance(x, dict) else x) for x in m[n:]]
 
 
+XM_ON = str(E.get("EXTREMA") or "").lower() in ("1", "true", "si", "sí")
+if XM_ON and st.get("extrema") and not st.get("xm_ok") and not st.get("xm_reintento"):     # la extrema no llegó a entrar al video: se intenta UNA vez más en esta pasada
+    st["extrema"] = False; st["xm_reintento"] = True; server.jsave(ST, st)
+SOLO_XM = False
+
 # ── 3) arrancar o retomar la sesión
 if not st.get("rid"):
     st["creado"] = time.time()
@@ -384,13 +389,22 @@ if not st.get("rid"):
     log("video lanzado")
 else:
     st["maquinas"] = st.get("maquinas", 1) + 1; st["seguir"] = 0
+    try:
+        _v0 = server.video(st["rid"]); _n0 = st.get("msj", 0)
+        _otros = [m for m in mensajes_nuevos() if not m.strip().lower().startswith("/extrema")]
+        _hecho = bool(_v0["pipeline"]["complete"] and _v0["files"].get("final") and os.path.exists(os.path.join(_v0["cwd"], _v0["files"]["final"])))
+        SOLO_XM = bool(XM_ON and not st.get("extrema") and _hecho and not _otros)
+        if not SOLO_XM: st["msj"] = _n0             # los mensajes los lee la sesión, como siempre
+    except Exception as _e: SOLO_XM = False; log("no pude ver si era una pasada de edición extrema:", type(_e).__name__)
     try:                                           # el usuario pudo haber subido el tope desde el panel: solo se sube, nunca se baja
         _mf = os.path.join(server.rdir(st["rid"]), "meta.json"); _m = server.jload(_mf, {})
         if float(E.get("TOPE") or 0) > float(_m.get("cap") or 0): _m["cap"] = float(E["TOPE"]); server.jsave(_mf, _m)
     except ValueError: pass
-    server.launch(st["rid"], "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: "
-                             "mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final.")
-    log("video retomado, máquina", st["maquinas"])
+    if SOLO_XM: log("video ya terminado: pasada sólo de edición extrema, la sesión no se despierta")
+    else:
+        server.launch(st["rid"], "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: "
+                                 "mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final.")
+        log("video retomado, máquina", st["maquinas"])
 server.jsave(ST, st)
 publicar("trabajando")
 
@@ -404,11 +418,8 @@ def _caida(t, e, tb):
 
 sys.excepthook = _caida
 
-XM_ON = str(E.get("EXTREMA") or "").lower() in ("1", "true", "si", "sí")
 XM_TOPE = str(min(float(E.get("TOPE_EXTREMA") or 0.20), 0.20))
 XM_LOG = os.path.join("/tmp", "extrema_" + VID + ".log")
-if XM_ON and st.get("extrema") and not st.get("xm_ok") and not st.get("xm_reintento"):     # la extrema no llegó a entrar al video: se intenta UNA vez más en esta pasada
-    st["extrema"] = False; st["xm_reintento"] = True; server.jsave(ST, st)
 
 
 def xm_lista(cwd):
@@ -535,6 +546,15 @@ def cerrar_sin_ia(cwd):
     except OSError as e: log("reporte:", type(e).__name__)
     st["cerrado_sin_ia"] = True; server.jsave(ST, st)
 
+
+def _granja_servicio():
+    try: import granja
+    except Exception as e: log("granja: no disponible (", type(e).__name__, ")"); return
+    while True:
+        time.sleep(10)
+        try: granja.atender(_cfg.DATOS, lambda *a: log(*a))
+        except Exception as e: log("granja:", type(e).__name__)
+threading.Thread(target=_granja_servicio, daemon=True).start()
 
 relanzar, ult = False, 0
 while True:

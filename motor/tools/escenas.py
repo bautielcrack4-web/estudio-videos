@@ -480,10 +480,13 @@ def renderizar(B, listas):
         open(f"{G}/{E0['id']}.tsx", "w", encoding="utf8").write("import React from 'react';\nimport {Escena} from '../escena/Escena';\nconst P: any = %s;\nexport default function Component() { return <Escena p={P} />; }\n" % json.dumps(props, ensure_ascii=False))
     open(G + "/manifest.ts", "w", encoding="utf8").write("".join("import c%d from './%s';\n" % (i, x) for i, (x, _) in enumerate(ids)) + "export const comps = [%s];\n" % ",".join("{id:'%s',C:c%d,frames:%d}" % (x, i, f) for i, (x, f) in enumerate(ids)))
     t0 = time.time()
-    try:
-        r = subprocess.run(["node", "render.mjs", pub, X, ",".join(x for x, _ in ids)], cwd=T, capture_output=True, text=True, timeout=3600)
-        print(r.stdout[-1200:], r.stderr[-600:])
-    except subprocess.TimeoutExpired: log("el render tardó demasiado: van las piezas que llegaron")
+    def _local(faltan):
+        try:
+            r = subprocess.run(["node", "render.mjs", pub, X, ",".join(faltan)], cwd=T, capture_output=True, text=True, timeout=3600)
+            print(r.stdout[-1200:], r.stderr[-600:])
+        except subprocess.TimeoutExpired: log("el render tardó demasiado: van las piezas que llegaron")
+    import granja
+    granja.render(T, pub, X, [x for x, _ in ids], log, _local)      # una máquina de GitHub por escena; lo que no vuelva, acá
     res = jl(X + "/render.json", {}) or {}
     man = [m for m in (jl(X + "/manifest.json", []) or []) if not str(m.get("mp4", "")).startswith("extrema/es")]
     for (E0, props, im), (mid, fr) in zip(listas, ids):
