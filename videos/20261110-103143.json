@@ -3,15 +3,15 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794317657.309907,
+ "actualizado": 1794317720.4143686,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
   {
    "k": "guion",
    "n": "Guion",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "1.985 palabras"
   },
   {
    "k": "voz",
@@ -51,12 +51,12 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0055,
+  "deepseek": 0.0155,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0055
+  "total": 0.0155
  },
  "eventos": [
   {
@@ -94,6 +94,78 @@
   {
    "k": "res",
    "t": "{\n \"nombre\": \"Sal's Fitting Bench\",\n \"idioma\": \"en\",\n \"presentador\": \"A 70-year-old Italian-American man, mostly bald with short grey hair on the sides, bushy grey eyebrows, a broad nose, a warm closed-mouth smile, olive skin with age spots, thin rectangular reading glasses worn low on his nose, wearing a white long-sleeved shirt with the collar open under a navy cable-knit sweater vest, a metal s"
+  },
+  {
+   "k": "tool",
+   "t": "Forty-two years on that stool. I want you to picture it for a second. The same wooden stool, worn smooth in the middle where four generations of Pizzuti backsides have sat. Behind me, four shoe boxes on the shelf. Each one has a card in front of it, in my handwriting, because I never trusted a label I didn't write myself. By the end of this video, those four cards are the only four kinds of shoe I"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -20"
+  },
+  {
+   "k": "res",
+   "t": "14397 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✗ guion: 14374 caracteres, 2922 palabras (hacen falta 9000-11500 para 10 min: recortalo)\nRESULTADO: FALLA (1)"
+  },
+  {
+   "k": "tool",
+   "t": "Forty-two years on that stool. Picture it. The same wooden stool, worn smooth in the middle. Behind me, four shoe boxes on the shelf, each with a card in front in my handwriting, because I never trusted a label I didn't write myself. By the end, those four cards are the only four kinds of shoe I'd tell you to buy after sixty-five. Not four brands. I don't do brands. Four kinds of shoe, and what to"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "15211 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✗ guion: 15187 caracteres, 3078 palabras (hacen falta 9000-11500 para 10 min: recortalo)\nRESULTADO: FALLA (1)"
+  },
+  {
+   "k": "tool",
+   "t": "Forty-two years on that stool. Picture it. The same wooden stool, worn smooth in the middle. Behind me, four shoe boxes on the shelf, each with a card in front in my handwriting, because I never trusted a label I didn't write myself. By the end, those four cards are the only four kinds of shoe I'd tell you to buy after sixty-five. Not four brands. I don't do brands. Four kinds of shoe, and what to"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "14158 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✗ guion: 14135 caracteres, 2861 palabras (hacen falta 9000-11500 para 10 min: recortalo)\nRESULTADO: FALLA (1)"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport re\np='/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt'\nt=open(p).read()\nparas=[x.strip() for x in t.split('\\n\\n')]\nfor i,x in enumerate(paras): print(i,len(x),x[:60])\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "0 444 Forty-two years on that stool. Picture it. The same wooden s\n1 389 My father opened this store in nineteen fifty-one. One windo\n2 376 For forty-two years I've been on the customer side of that b\n3 541 Here's the part nobody tells you. Your feet change after six\n4 217 Now the four. I'll tell you the order I'd put them in. And I\n5 762 Number one. A shoe with a removable insole. Take the insole"
+  },
+  {
+   "k": "tool",
+   "t": "Forty-two years on that stool. Picture it. The same wooden stool, worn smooth in the middle. Behind me, four shoe boxes on the shelf, each with a card in front in my handwriting, because I never trusted a label I didn't write myself. By the end, those four cards are the only four kinds of shoe I'd tell you to buy after sixty-five. Not four brands. I don't do brands. Four kinds of shoe, and what to"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "9866 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✓ guion: 9843 caracteres, 1993 palabras (hacen falta 9000-11500 para 10 min: bien)\nRESULTADO: OK"
   }
  ],
  "maquinas": 1,
@@ -111,14 +183,21 @@
    {
     "k": "guion",
     "n": "Guion",
-    "seg": 45,
+    "seg": 104,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "voz",
+    "n": "Voz",
+    "seg": 4,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 119,
+  "total_s": 182,
   "avatar_s": 0,
-  "sin_avatar_s": 119,
+  "sin_avatar_s": 182,
   "cerrado": false
  }
 }
