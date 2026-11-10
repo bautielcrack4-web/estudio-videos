@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322901.1190686,
+ "actualizado": 1794322964.6567943,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "8 fotos"
+   "info": "9 fotos"
   },
   {
    "k": "armado",
@@ -51,106 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0324,
-  "gpt": 0.009,
-  "gpt_img": 4,
+  "deepseek": 0.0482,
+  "gpt": 0.0254,
+  "gpt_img": 9,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0414
+  "total": 0.0736
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "import json\np = json.load(open(\"planos.json\"))\nfields = [\"id\", \"startMs\", \"endMs\", \"text\", \"tipo\", \"av\"]\nfor x in p:\n    print(x.get(\"id\"), x.get(\"startMs\"), x.get(\"endMs\"), \"|\", x.get(\"text\", \"\")[:200], \"|\", {k: x[k] for k in x if k in (\"tipo\", \"av\", \"foto\", \"escena\", \"partida\")})\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/ver_planos.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python ver_planos.py 2>&1 | head -70"
-  },
-  {
-   "k": "res",
-   "t": "p001 6000 11000 |  | {}\np002 11000 15325 |  | {}\np003 15325 19987 |  | {}\np004 19987 24680 |  | {}\np005 24680 29312 |  | {}\np006 29312 33975 |  | {}\np007 33975 38637 |  | {}\np008 38637 42600 |  | {}\np009 42600 47962 |  | {}\np010 47962 52625 |  | {}\np011 52625 57287 |  | {}\np012 57287 62760 |  | {}\np013 62760 65860 |  | {}\np014 65860 71275 |  | {}\np015 71275 76340 |  | {}\np016 76340 80600 |  | {}\np"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\np=json.load(open('planos.json'))\nprint(json.dumps(p[0], ensure_ascii=False, indent=1)[:1500])\nprint('KEYS', sorted(p[0].keys()))\n\""
-  },
-  {
-   "k": "res",
-   "t": "{\n \"id\": \"p001\",\n \"startMs\": 6000,\n \"endMs\": 11000,\n \"seg\": 5.0,\n \"texto\": \"snow and those grey mornings when nobody wants to leave the house.\"\n}\nKEYS ['endMs', 'id', 'seg', 'startMs', 'texto']"
-  },
-  {
-   "k": "tool",
-   "t": "sed -i 's/x.get(\"text\", \"\")\\[:200\\]/x.get(\"texto\", \"\")[:170]/; s/{k: x\\[k\\] for k in x if k in (\"tipo\", \"av\", \"foto\", \"escena\", \"partida\")}/x.get(\"seg\")/' ver_planos.py && python ver_planos.py 2>&1 | head -140"
-  },
-  {
-   "k": "res",
-   "t": "p001 6000 11000 | snow and those grey mornings when nobody wants to leave the house. | 5.0\np002 11000 15325 | And every one of those mornings started the same way, a wooden kitchen | 4.3\np003 15325 19987 | chair, a small silver radio and a five-minute radio Taiso | 4.7\np004 19987 24680 | warm-up we did together. Her name was Fumiko. | 4.7\np005 24680 29312 | She lived in a small town north of Senda"
-  },
-  {
-   "k": "tool",
-   "t": "cat fotos/fotos_escenas.log | tail -5; ls fotos/"
-  },
-  {
-   "k": "res",
-   "t": "14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n_batches.json\n_fotos.lock\nfotos_escenas.log\np027.json\np076.json\np106.json\np118.json"
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\nimport json\n\nT = (\"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n     \"slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\")\nTA = (\"overhead amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n      \"slightly crooked framin"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "cat fotos/fotos_escenas.log | tail -4; ls fotos/*.png 2>/dev/null | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n0"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport re, json, subprocess\n# quick timings for the new shots\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", [])\ndef find(q, start=0):\n    ql=q.lower().split()\n    for i in range(len(W)-len(ql)+1):\n        if W[i][\"startMs\"] < start*1000: continue\n        if all(W[i+k][\"text\"].strip().lower().strip(\".,!?\\\"'()\")==qk for k,qk in enumerate(ql))"
-  },
-  {
-   "k": "res",
-   "t": "first one (167.32, 168.12)\narms up (142.74, 143.58)\non my whiteboard (169.2, 170.6)\none, arms None\nten times (172.42, 173.54)\nboth arms rise (174.24, 175.28)\nwhy does arms up matter (192.418, 194.498)\nmy grandmother did this one first (209.818, 212.778)\nhands on her knees (214.498, 215.758)\nshe used to count (218.158, 218.938)\nichi (220.358, 221.338)\nshe never once missed (222.798, 224.038)\ncount "
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", [])\ntxt = \" \".join(w[\"text\"].strip() for w in W)\nprint(len(txt))\nprint(txt[:600])\nprint(\"...\")\nprint(txt[1900:2600])\nEOF"
-  },
-  {
-   "k": "res",
-   "t": "9719\nMy grandmother walked every day until she was 98, every single day, rain, snow and those grey mornings when nobody wants to leave the house. And every one of those mornings started the same way, a wooden kitchen chair, a small silver radio and a five-minute radio Taiso warm-up we did together. Her name was Fumiko. She lived in a small town north of Sendai, in a wooden house with a narrow gard"
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\nimport json, os\n\nT = (\"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n     \"slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\")\nTR = T + \", wrinkles, age spots, flyaway grey hairs\"\nAV = (\"a 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brow"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "cat fotos/fotos_escenas.log | tail -3; ls fotos/"
-  },
-  {
-   "k": "res",
-   "t": "14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n_batches.json\n_fotos.lock\nfotos_escenas.log\np027.json\np076.json\np106.json\np118.json"
-  },
-  {
-   "k": "tool",
-   "t": "python armar_pedidos.py && nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote01.json > fotos/fotos_01.log 2>&1 &\nsleep 20; cat fotos/fotos_01.log"
-  },
   {
    "k": "res",
    "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 252, in <module>\n    json.dump([F[k] for k in lote1], open(\"pedidos/lote01.json\", \"w\"), ensure_ascii=False, indent=1)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 2"
@@ -178,6 +86,98 @@
   {
    "k": "res",
    "t": "lote1 10 definidas 23\n14:59:36 ya hay otro fotos.py en este video (pid 5611): espero que termine"
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\n# Segundo bloque de pedidos (p022..p130). Se ejecuta importando las definiciones del original.\nimport runpy, json, sys\nG = runpy.run_path(\"armar_pedidos.py\")\nF, RM, AV, TR, AVOID, AVOIDT = G[\"F\"], G[\"RM\"], G[\"AV\"], G[\"TR\"], G[\"AVOID\"], G[\"AVOIDT\"]\nf, yoko, raw = G[\"f\"], G[\"yoko\"], G[\"raw\"]\n\n# ═══════════════ BLOQUE 2 — el índice de los cinco ═══════════════\nyoko(\"p022\",\n   "
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\ns=open(\"pedido_parte2.py\").read()\ns=s.replace('yoko(\"p027s\",  # unused placeholder id guard (not ordered)\\n     \"x\", \"x\", \"x\", [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"],\\n     \"x\", \"x\", \"x\")\\ndel F[\"p027s\"]\\nyoko(\"p028b0\", \"x\", \"x\", \"x\", [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"], \"x\", \"x\", \"x\"); del F[\"p028b0\"]\\n','')\nopen(\"pedido_parte2.py\",\"w\").write(s)\nEOF\ngrep -n \"p027s\\|p028b0\" pedido_parte2.py; "
+  },
+  {
+   "k": "res",
+   "t": "lote1 10 definidas 23\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 179, in <module>\n    f(\"p044\", False,\nTypeError: f() missing 2 required positional arguments: 'color' and 'det'\n_batches.json\n_fotos.lock\nfotos_01.log\nfotos_escenas.log\np001_a.json\np001_a.png\np001_b.json\np001_b.png\np001_c.json\np004.json\np009.js"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\ns=open(\"pedido_parte2.py\").read()\nold='''  \"Six, seven, eight, nine, ten. Good.\",\n  \"A hand closing a little book of numbers after the last count, on the floor beside the chair.\",\n  \"The hand places the book on the floor, the page showing the number ten.\",\n  [\"small notebook with written numbers\", \"the hand\", \"chair leg\", \"a mug\", \"a slipper\", \"floor grain\"],'''\nnew='''  \"Six, se"
+  },
+  {
+   "k": "res",
+   "t": "lote1 10 definidas 23\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 179, in <module>\n    f(\"p044\", False,\nTypeError: f() missing 2 required positional arguments: 'color' and 'det'"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", \"offset\": 170, \"limit\": 80}"
+  },
+  {
+   "k": "res",
+   "t": "170\t  \"Counting out loud together: one, two, three, slowly.\",\n171\t  \"The wall calendar in her handwriting with the counting for the first morning written in the margin in black, a red pencil mark at the third.\",\n172\t  \"Nobody in frame; the calendar hangs, a red pencil tucked into its spiral.\",\n173\t  [\"wall calendar with big numbers\", \"handwritten margin note in black ballpoint\", \"red pencil in the"
+  },
+  {
+   "k": "tool",
+   "t": "  [\"small notebook with written numbers\", \"a hand turning its cover\", \"chair leg\", \"a mug\", \"a slipper\", \"floor grain\"],\n  RM, \"Morning light from the side\",\n  \"overhead at the hand, the book at an angle\","
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python pedido_parte2.py 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "lote1 10 definidas 23\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 302, in <module>\n    f(\"p058\", False,\nTypeError: f() missing 2 required positional arguments: 'color' and 'det'"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", \"offset\": 296, \"limit\": 20}"
+  },
+  {
+   "k": "res",
+   "t": "296\t  [\"wooden ruler with centimetre marks\", \"pale cloth draped over the chair\", \"carpenter's pencil\", \"chair\", \"a mug\", \"floor\"],\n297\t  RM, \"Morning light\",\n298\t  \"close at the ruler, slightly from above, the numbers legible\",\n299\t  \"honey wood, pale cloth, graphite\",\n300\t  \"The cloth has a small tear repaired with dark thread; the ruler's zero edge is worn round.\",\n301\t  AVOIDT)\n302\tf(\"p058\", Fa"
+  },
+  {
+   "k": "tool",
+   "t": "  [\"hand with five fingers up\", \"wall calendar\", \"red pencil\", \"shelf edge\", \"a mug\", \"a morning shadow\"],\n  \"the wall beside the window\", \"Morning light across the wall\",\n  \"close against the wall calendar, from the side\","
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python pedido_parte2.py 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "Traceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 920, in <module>\n    todo = json.load(open(\"pedidos/_todos.json\")) if os.path.exists(\"pedidos/_todos.json\") else {}\n                                                     ^^\nNameError: name 'os' is not defined"
+  },
+  {
+   "k": "tool",
+   "t": "sed -i 's/^import runpy, json, sys$/import runpy, json, sys, os/' pedido_parte2.py && python pedido_parte2.py 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "lote1 10 definidas 23\nplanos listos: 122 de 131 | faltan: ['p001', 'p027', 'p028', 'p076', 'p083', 'p106', 'p118', 'p130', 's01']"
+  },
+  {
+   "k": "tool",
+   "t": "tail -5 fotos/fotos_01.log; ps aux | grep -c \"fotos.py\""
+  },
+  {
+   "k": "res",
+   "t": "15:01:09 batch d5b613ce: in_progress 0/5\n15:01:09 batch 08bd8103: in_progress 0/5\n15:01:39 batch d5b613ce: in_progress 0/5\n15:01:39 batch 08bd8103: completed 5/5\n15:01:41 ✓ batch 08bd8103: 5 fotos bajadas, 0 fallidas (US$0.016)\n7"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 60; tail -3 fotos/fotos_01.log; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 123,
+    "seg": 186,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 970,
+  "total_s": 1034,
   "avatar_s": 0,
-  "sin_avatar_s": 970,
+  "sin_avatar_s": 1034,
   "cerrado": false
  }
 }
