@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794328845.2673388,
+ "actualizado": 1794329158.5070388,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1071,
+  "deepseek": 0.1095,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6225
+  "total": 0.6249
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "extrema: esperando las piezas (máx. 10 min)\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"def armar\\|merge\\|script\\|filter_complex\" /opt/estudio/repo/motor/tools/extrema.py | head -20"
-  },
-  {
-   "k": "res",
-   "t": "297:def armar(m, s, W, fichas, look):\r\n331:        if a[\"b\"] - a[\"a\"] < 22: err.append(\"act %d (%s) lasts %d frames: minimum 22, merge it\" % (k, a[\"op\"], a[\"b\"] - a[\"a\"]))"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"EN_CURSO\\|render.json\\|manifest.json\\|capas.json\\|def main\\|^if __name__\\|argv\" /opt/estudio/repo/motor/tools/extrema.py | head -30"
-  },
-  {
-   "k": "res",
-   "t": "4:Deja extrema/manifest.json (escenas completas: render.py las mete en la línea, nunca sobre el avatar) y extrema/capas.json (capas con\r\n368:def main():\r\n369:    a = sys.argv[1:]\r\n603:    res = jl(X + \"/render.json\", {}) or {}\r\n611:    firma = [m for m in (jl(X + \"/manifest.json\", []) or []) if str(m.get(\"mp4\", \"\")).startswith(\"extrema/es\")]\r\n614:    os.replace(X + \"/manifest.tmp\", X + \"/manifest."
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 595,640p /opt/estudio/repo/motor/tools/extrema.py"
-  },
-  {
-   "k": "res",
-   "t": "        \"export const comps = [%s];\\n\" % \",\".join(\"{id:'%s',C:c%d,frames:%d}\" % (x, i, partes[int(x[2:]) - 1][\"frames\"]) for i, x in enumerate(ids)))\r\n    os.makedirs(X, exist_ok=True)      # el panel muestra cada pieza en su lugar apenas termina de renderizarse\r\n    json.dump([{\"id\": \"xm%02d\" % (k + 1), \"startMs\": momentos[k][\"startMs\"], \"endMs\": momentos[k][\"endMs\"], \"texto\": momentos[k][\"texto\""
-  },
-  {
-   "k": "tool",
-   "t": "sleep 290; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json; ps -o etime -p 4842 | tail -1"
-  },
   {
    "k": "res",
    "t": "ls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extrema/EN_CURSO\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 516\n },\n \"xm02\": {\n  \"ok\": true,\n  \"s\": 694\n },\n \"xm03\": {\n  \"ok\": true,\n  \"s\": 218\n }\n}      28:44"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "sleep 120; tail -4 assemble.log; ls -la final.mp4; pgrep -af \"python.*assemble.py\" | cut -c1-70"
+  },
+  {
+   "k": "res",
+   "t": "[in#0 @ 0x5d09548d1c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\n3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LA\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously\n244"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"tramos/\\|def pegar\\|cwd\\|rmtree\" /opt/estudio/repo/motor/tools/tramos.py | head -20"
+  },
+  {
+   "k": "res",
+   "t": "(Bash completed with no output)"
+  },
+  {
+   "k": "tool",
+   "t": "grep -rn \"lista.txt\" /opt/estudio/repo/motor/tools/*.py | head; ls /opt/estudio/repo/motor/tools/ | grep -i tramo"
+  },
+  {
+   "k": "res",
+   "t": "/opt/estudio/repo/motor/tools/voz.py:111:lista = O + \"/lista.txt\"\n/opt/estudio/repo/motor/tools/tramos.py:127:    lst = p.dir + \"/lista.txt\"\n/opt/estudio/repo/motor/tools/tramos.py:135:    vivos = {os.path.basename(t.mp4) for t in p.tramos} | {\"lista.txt\"}\n/opt/estudio/repo/motor/tools/avatar_it.py:58:open(f\"{O}/lista.txt\", \"w\").write(\"\".join(f\"file '{p}'\\n\" for p in parts))\r\n/opt/estudio/repo/mot"
+  },
+  {
+   "k": "tool",
+   "t": "sed -n 100,160p /opt/estudio/repo/motor/tools/tramos.py"
+  },
+  {
+   "k": "res",
+   "t": "        r = subprocess.run(comando(p, t, tmp, con), capture_output=True, text=True, errors=\"replace\")\n        if r.returncode == 0 and len(paquetes(tmp)) == t.Z - t.A:\n            os.replace(tmp, t.mp4)\n            return con or not t.capas\n        print(\"tramo %d: falló%s · %s\" % (t.A // PASO, \" con capas\" if con and t.capas else \"\", r.stderr[-400:].strip()), flush=True)\n    raise RuntimeError(\"t"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 240; tail -3 assemble.log; ls -la final.mp4; ls tramos/ 2>/dev/null | head -3"
   }
  ],
  "maquinas": 3,
