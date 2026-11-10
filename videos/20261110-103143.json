@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794329420.7794733,
+ "actualizado": 1794329485.5441313,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1101,
+  "deepseek": 0.1107,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6255
+  "total": 0.6261
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "ls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extrema/EN_CURSO\n{\"xm01\":{\"ok\":true,\"s\":516},\"xm02\":{\"ok\":true,\"s\":694},\"xm03\":{\"ok\":true,\"s\":218},\"xm04\":{\"ok\":true,\"s\":211},\"xm05\":{\"ok\":true,\"s\":220}}\n      33:37\nextrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\nextrema: 1 piezas en la línea\nclips"
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -af \"python /opt/estudio/repo/motor/tools/assemble.py\" | cut -c1-80; ps -eo pid,etime,cmd --sort=start_time | grep -E \"assemble.py|tramos\" | grep -v grep | cut -c1-100 | tail -3; ls -lt segments/*.mp4 | head -2"
-  },
   {
    "k": "res",
    "t": "3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n20843 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash\n   3701       34:31 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITH\n   3703       34:31 /opt/hostedtoolcache/node/20.20.2/x6"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 280; tail -2 assemble.log; ls -la final.mp4; pgrep -af \"python.*assemble.py\" | grep -c assemble"
+  },
+  {
+   "k": "res",
+   "t": "Error opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\n5"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 290; tail -2 assemble.log; ls -la final.mp4 video_noaudio.mp4 2>/dev/null; ls -lt xf_tmp 2>/dev/null | head -3"
   }
  ],
  "maquinas": 3,
