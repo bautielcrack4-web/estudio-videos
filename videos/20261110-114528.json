@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794327644.9014971,
+ "actualizado": 1794327708.3020966,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.104,
+  "deepseek": 0.1084,
   "gpt": 0.3826,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.7366
+  "total": 0.741
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_07.log --cuenta \"fotos/*.png\" 124 2>&1 | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "15:55:22 ✓ batch 240fdd4b: 10 fotos bajadas, 0 fallidas (US$0.022)\n15:55:22 batch 34284dae: in_progress 0/11"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_07.log --cuenta \"fotos/*.png\" 114 2>&1 | tail -1; tail -2 fotos/fotos_07.log"
-  },
-  {
-   "k": "res",
-   "t": "15:55:22 batch 34284dae: in_progress 0/11\n15:55:22 ✓ batch 240fdd4b: 10 fotos bajadas, 0 fallidas (US$0.022)\n15:55:22 batch 34284dae: in_progress 0/11"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 240; tail -2 fotos/fotos_07.log; ls fotos/*.png | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "15:56:54 ✓ batch 34284dae: 11 fotos bajadas, 0 fallidas (US$0.035)\n15:56:54 FIN: 21/21 fotos en fotos/ (15 min)\n124"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote08.json > fotos/fotos_08.log 2>&1 &\nsleep 8; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_i.jpg fotos/p021.png fotos/p022.png fotos/p023.png fotos/p024.png fotos/p030.png fotos/p031.png fotos/p034.png fotos/p040.png fotos/p042.png fotos/p056.png fotos/p059.png fotos/p060.png 2>&1|tail -1; python /opt/estudio/repo/motor"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos_i.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_j.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_i.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_j.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f fotos/p002.* fotos/p005.* fotos/p006.* fotos/p008.* fotos/p017.* fotos/p029.* fotos/p036.* fotos/p047.* fotos/p049.* fotos/p053.* fotos/p058.* fotos/p061.* fotos/p063.* fotos/p072.* fotos/p073.* fotos/p077.* fotos/p078.* fotos/p080.* fotos/p083.* fotos/p088.* fotos/p095.* fotos/p096.* fotos/p100.* fotos/p102.* fotos/p112.* fotos/p114.* fotos/p117.* fotos/p122.* fotos/p125.* fotos/p126.* foto"
-  },
   {
    "k": "res",
    "t": "⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 17 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false\n91"
@@ -178,6 +126,58 @@
   {
    "k": "res",
    "t": "16:19:14 FIN: 11/11 fotos en fotos/ (19 min)\n92"
+  },
+  {
+   "k": "tool",
+   "t": "tail -2 fotos/fotos_08.log; ls fotos/*.png | wc -l; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_k.jpg fotos/p002.png fotos/p005.png fotos/p006.png fotos/p008.png fotos/p017.png fotos/p022.png fotos/p024.png fotos/p029.png fotos/p034.png fotos/p036.png fotos/p040.png fotos/p047.png 2>&1|tail -1"
+  },
+  {
+   "k": "res",
+   "t": "16:19:14 ✓ batch d7ff1456: 10 fotos bajadas, 0 fallidas (US$0.022)\n16:19:14 FIN: 11/11 fotos en fotos/ (19 min)\n92\nhoja: qc/hoja_fotos_k.jpg (6 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -3 fotos/fotos_09.log; python3 -c \"\nimport json\nF=json.load(open('pedidos/_todos.json'))\nprint('p025' in F, 'p016' in F)\n\"; ls fotos/p016.png fotos/p025.png 2>&1"
+  },
+  {
+   "k": "res",
+   "t": "16:19:30 → batch batch_6af34412aadc8190bca644a644caad5f · 5 fotos · con la cara del presentador · low 1088x608\n16:19:30 batch 44caad5f: validating 0/0\n16:20:00 batch 44caad5f: in_progress 0/5\nTrue True\nfotos/p016.png\nfotos/p025.png"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_k.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json, os\np = json.load(open(\"planos.json\"))\nmiss = [x[\"id\"] for x in p if not (os.path.exists(\"fotos/%s.png\" % x[\"id\"]) or os.path.exists(\"fotos/%s.jpg\" % x[\"id\"]))]\nprint(len(p), len(miss), miss)\nfor x in p:\n    if x[\"id\"] in miss: print(x[\"id\"], x[\"startMs\"], x[\"endMs\"], \"|\", x[\"texto\"][:120])\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "134 43 ['p010', 'p022', 'p024', 'p026', 'p028', 'p029', 'p034', 'p036', 'p040', 'p063', 'p066', 'p067', 'p072', 'p073', 'p074', 'p075', 'p077', 'p078', 'p080', 'p083', 'p088', 'p089', 'p090', 'p091', 'p092', 'p095', 'p096', 'p100', 'p102', 'p112', 'p114', 'p117', 'p122', 'p125', 'p126', 'p127', 'p128', 'p129', 'p130', 'p131', 'p132', 'p133', 's01']\np010 50140 55840 | She never ran, she never hurri"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nids = ['p010','p022','p024','p026','p028','p029','p034','p036','p040','p063','p066','p067','p072','p073','p074','p075','p077','p078','p080','p083','p088','p089','p090','p091','p092','p095','p096','p100','p102','p112','p114','p117','p122','p125','p126','p127','p128','p129','p130','p131','p132','p133']\nprint(\"faltan de _todos:\""
+  },
+  {
+   "k": "res",
+   "t": "faltan de _todos: ['p010', 'p022', 'p024', 'p026', 'p028', 'p029', 'p034', 'p036', 'p040', 'p063', 'p074', 'p075', 'p083', 'p089', 'p090', 'p091', 'p092', 'p130', 'p131', 'p132', 'p133']\np083 cara: None"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nbase = F[\"p084\"][\"prompt\"]\nT = base[\"type\"].replace(\", wrinkles, age spots, flyaway grey hairs\", \"\")\nnew = dict(base)\nnew[\"subject\"] = \"A hand holding an old photograph of an elderly woman against the bright balcony window light, a red pencil tucked between two fingers.\"\nnew[\"action\"] = \"The old photo is held up toward the wi"
+  },
+  {
+   "k": "res",
+   "t": "ok"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 150; tail -2 fotos/fotos_09.log; tail -1 fotos/fotos_08.log"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 4867,
+    "seg": 4930,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 5714,
+  "total_s": 5777,
   "avatar_s": 816,
-  "sin_avatar_s": 4898,
+  "sin_avatar_s": 4962,
   "cerrado": false
  }
 }
