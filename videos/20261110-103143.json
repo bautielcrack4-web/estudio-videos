@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794328455.4344788,
+ "actualizado": 1794328521.514481,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1059,
+  "deepseek": 0.1065,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6213
+  "total": 0.6219
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Exit code 2\n1\n3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SE\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --\n4842 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extr\nls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extr"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 280; python3 -c \"import json;d=json.load(open('extrema/render.json'));print(d)\"; ls -la extrema/*.m* final.mp4 | head; ls extrema/gen | head -3; ls extrema/gen/*.tsx | wc -l"
-  },
   {
    "k": "res",
    "t": "{'xm01': {'ok': True, 's': 516}}\n-rwxrwxrw-+ 1 runner runner  38713774 Nov 10 13:55 extrema/es01.mp4\n-rw-rwxrw-+ 1 runner runner 532926806 Nov 10 15:53 extrema/xm01.mov\n-rw-rwxrw-+ 1 runner runner  18662619 Nov 10 15:21 extrema/xm02.mp4\n-rw-rwxrw-+ 1 runner runner 316145700 Nov 10 15:24 extrema/xm03.mov\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\nxm01.tsx\nxm02.tsx\nxm03.tsx\n7"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "ARMADO_EXTREMA=1 nohup python /opt/estudio/repo/motor/tools/assemble.py . > assemble.log 2>&1 &\nsleep 90; cat assemble.log | tail -10"
+  },
+  {
+   "k": "res",
+   "t": "segmentos: 134\ncapas de edición extrema: 4\ntramos: 7 de 22 por codificar · 4 a la vez"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 290; tail -5 assemble.log; ls -la final.mp4"
   }
  ],
  "maquinas": 3,
