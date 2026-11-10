@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794324406.8830278,
+ "actualizado": 1794324471.2297149,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "76 fotos"
+   "info": "77 fotos"
   },
   {
    "k": "armado",
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0799,
-  "gpt": 0.2128,
-  "gpt_img": 92,
+  "deepseek": 0.0816,
+  "gpt": 0.2159,
+  "gpt_img": 93,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5427
+  "total": 0.5475
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "ps -eo pid,etime,cmd | grep \"[f]otos.py\" | cut -c1-100; ls fotos/*.png | head -80 | xargs -n1 basename | tr '\\n' ' '"
-  },
-  {
-   "k": "res",
-   "t": "   3872       26:37 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITH\n   3874       26:37 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissio\n  11374       02:25 python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote03.json\n  12652       01:45 python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote05.json\np001.png p001_b.png p0"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\njson.dump([F[i] for i in [\"p044\",\"p059\",\"p060\",\"p062\",\"p063\",\"p064\",\"p074\",\"p075\",\"p089\",\"p090\",\"p091\",\"p092\"]], open(\"pedidos/lote05.json\",\"w\"), ensure_ascii=False, indent=1)\nEOF\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_e.jpg fotos/p044.png fotos/p045.png fotos/p046.png fotos/p047.png fotos/p048.png fotos/p"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos_e.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_e.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +158,26 @@
   {
    "k": "res",
    "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote05.json > fotos/fotos_05.log 2>&1 &\nsleep 8; nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote04.json > fotos/fotos_04.log 2>&1 &\nsleep 12; tail -2 fotos/fotos_05.log; tail -2 fotos/fotos_04.log"
+  },
+  {
+   "k": "res",
+   "t": "15:26:48 → batch batch_6af337b892bc8190a995efe6eb53484e · 1 fotos · con la cara del presentador · low 1088x608\n15:26:48 batch eb53484e: validating 0/0\n15:26:55 ya hay otro fotos.py en este video (pid 17594): espero que termine"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nneed = {\"p066\",\"p067\",\"p072\",\"p073\",\"p077\",\"p078\",\"p080\",\"p083\",\"p088\",\"p095\",\"p096\",\"p100\",\"p102\",\"p112\",\"p114\",\"p126\",\"p127\",\"p128\",\"p129\",\"p117\",\"p122\",\"p125\"}\nm = [i for i in need if i in F]\njson.dump([F[i] for i in m], open(\"pedidos/lote06.json\",\"w\"), ensure_ascii=False, indent=1)\nprint(len(m), sorted(m))\nEOF\nsleep 30; t"
+  },
+  {
+   "k": "res",
+   "t": "21 ['p066', 'p067', 'p072', 'p073', 'p077', 'p078', 'p080', 'p088', 'p095', 'p096', 'p100', 'p102', 'p112', 'p114', 'p117', 'p122', 'p125', 'p126', 'p127', 'p128', 'p129']\n15:27:19 ✓ batch eb53484e: 1 fotos bajadas, 0 fallidas (US$0.003)\n15:27:19 FIN: 12/12 fotos en fotos/ (1 min)\n15:27:26 → batch batch_6af337ddfaf8819089d053fcd0d46200 · 38 fotos · sin referencia · low 1088x608\n15:27:26 batch d0d4"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote06.json > fotos/fotos_06.log 2>&1 &\nsleep 10; tail -1 fotos/fotos_06.log; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_f.jpg fotos/p056.png fotos/p057.png fotos/p058.png fotos/p061.png fotos/p065.png fotos/p068.png fotos/p069.png fotos/p070.png fotos/p071.png fotos/p074.png fotos/p075.png fotos/p076.png 2>&1|tail -1"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1629,
+    "seg": 1693,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2476,
+  "total_s": 2540,
   "avatar_s": 816,
-  "sin_avatar_s": 1660,
+  "sin_avatar_s": 1725,
   "cerrado": false
  }
 }
