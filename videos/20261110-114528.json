@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794327771.8202558,
+ "actualizado": 1794327843.5811763,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1084,
+  "deepseek": 0.109,
   "gpt": 0.3826,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.741
+  "total": 0.7416
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 17 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false\n91"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nL = json.load(open(\"pedidos/lote08.json\"))\nkeep = {\"p010\",\"p022\",\"p034\",\"p040\",\"p049\",\"p053\",\"p080\",\"p083\"}  # p010/p083 sin cara igual\nout=[]\nfor x in L:\n    if x[\"id\"] in keep or not x.get(\"cara\"):\n        out.append(x); continue\n    p=x[\"prompt\"]\n    p[\"type\"]=p[\"type\"].replace(\", wrinkles, age spots, flyaway grey hairs\",\"\")\n    p.pop(\"person\",None); p.pop(\"clothin"
-  },
   {
    "k": "res",
    "t": "1 11\n16:00:02 batch d7ff1456: validating 0/0\n16:00:02 batch e0b1f454: validating 0/0"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 150; tail -2 fotos/fotos_09.log; tail -1 fotos/fotos_08.log"
+  },
+  {
+   "k": "res",
+   "t": "16:19:30 batch 44caad5f: validating 0/0\n16:20:00 batch 44caad5f: in_progress 0/5\n16:19:14 FIN: 11/11 fotos en fotos/ (19 min)"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 240; tail -2 fotos/fotos_09.log; ls fotos/p074.png fotos/p091.png 2>&1"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 4994,
+    "seg": 5065,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 5841,
+  "total_s": 5913,
   "avatar_s": 816,
-  "sin_avatar_s": 5025,
+  "sin_avatar_s": 5097,
   "cerrado": false
  }
 }
