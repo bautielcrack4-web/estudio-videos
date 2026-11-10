@@ -391,7 +391,9 @@ else:
     st["maquinas"] = st.get("maquinas", 1) + 1; st["seguir"] = 0
     try:
         _v0 = server.video(st["rid"]); _n0 = st.get("msj", 0)
-        _otros = [m for m in mensajes_nuevos() if not m.strip().lower().startswith("/extrema")]
+        _msj = mensajes_nuevos()
+        _otros = [m for m in _msj if not m.strip().lower().startswith("/extrema")]
+        if XM_ON and len(_otros) < len(_msj): st["extrema"] = False; log("pedido explícito: otra pasada de edición extrema")   # el mensaje "/extrema" la vuelve a intentar sin despertar a la sesión
         _hecho = bool(_v0["pipeline"]["complete"] and _v0["files"].get("final") and os.path.exists(os.path.join(_v0["cwd"], _v0["files"]["final"])))
         SOLO_XM = bool(XM_ON and not st.get("extrema") and _hecho and not _otros)
         if not SOLO_XM: st["msj"] = _n0             # los mensajes los lee la sesión, como siempre

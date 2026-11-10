@@ -17,8 +17,9 @@ Reglas:
   · lo que no vuelva a tiempo se renderiza acá con `local`. Una pieza que ya está hecha no se vuelve a hacer."""
 import hashlib, json, os, shutil, subprocess, tarfile, time
 
+_REPARTIDO = {}
 MAX_PARALELO = 20          # una cuenta gratis de GitHub corre 20 trabajos a la vez
-TOPE_S = 35 * 60           # lo que se espera a las máquinas; lo que falte va por el camino local
+TOPE_S = 25 * 60           # lo que se espera a las máquinas; lo que falte va por el camino local
 
 
 def _jl(p, d=None):
@@ -71,6 +72,7 @@ def repartir(T, pub, X, ids, log, tope=TOPE_S):
         r = _gh("workflow", "run", "piezas.yml", "--repo", repo, "--ref", os.environ.get("GITHUB_REF_NAME") or "main", "-f", "tag=" + tag, "-f", "ids=" + json.dumps(ids))
         if r.returncode: log("granja: no pude abrir las máquinas (%s)" % r.stderr.strip()[-160:]); return hechas
         log("granja: %d piezas, una máquina cada una (paquete %.1f MB)" % (len(ids), os.path.getsize(paq) / 1e6))
+        _REPARTIDO[X] = True
         vistas = set()
         while time.time() - t0 < tope and len(vistas) < len(ids):
             time.sleep(15)
@@ -103,12 +105,16 @@ def render(T, pub, X, ids, log, local):
     os.makedirs(X, exist_ok=True)
     ya = set(_hechas(X, ids, T)); falta = [i for i in ids if i not in ya]
     if ya: log("granja: %d piezas ya estaban hechas" % len(ya))
-    if len(falta) >= 2 and os.environ.get("GITHUB_ACTIONS"):
+    if falta and os.environ.get("GITHUB_ACTIONS"):
         try:
             if puede_repartir(): repartir(T, pub, X, falta, log)
             elif os.environ.get("ESTUDIO_PUENTE"): _pedir(T, pub, X, falta, log)
         except Exception as e: log("granja: falló el reparto (%s), sigue acá" % type(e).__name__)
-        ya = set(_hechas(X, ids, T)); falta = [i for i in ids if i not in ya]
+        ya = set(_hechas(X, ids, T)); res = _jl(X + "/render.json", {}) or {}
+        vistas = [i for i in ids if i not in ya and i in res]          # volvieron con error: no se insiste
+        if _REPARTIDO.get(X): vistas = [i for i in ids if i not in ya]  # se repartió: lo que no volvió a tiempo tampoco se hace acá
+        if vistas: log("granja: %s no salieron y quedan afuera" % ", ".join(vistas))
+        falta = [i for i in ids if i not in ya and i not in vistas]
     if falta:
         previo = _jl(X + "/render.json", {}) or {}       # el render local reescribe render.json: se conserva lo que ya volvió
         local(falta)
@@ -130,6 +136,7 @@ def _pedir(T, pub, X, ids, log, tope=TOPE_S + 5 * 60):
     while time.time() - t0 < tope:
         time.sleep(10)
         e = (_jl(f, {}) or {}).get("estado")
+        if e in ("hecho", "tomado"): _REPARTIDO[X] = True
         if e in ("hecho", "fallo"): break
         if e == "pendiente" and time.time() - t0 > 180: break       # nadie lo tomó: no hay motor atendiendo, sigue acá
     try: os.remove(f)
