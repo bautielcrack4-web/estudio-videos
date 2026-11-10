@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794323811.9838886,
+ "actualizado": 1794323878.5510678,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "46 fotos"
+   "info": "33 fotos"
   },
   {
    "k": "armado",
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0682,
+  "deepseek": 0.0708,
   "gpt": 0.1158,
   "gpt_img": 49,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.184
+  "total": 0.1866
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "tail -6 escenas/escenas.log; echo ---; tail -2 fotos/fotos_02.log; tail -2 fotos/fotos_03.log"
-  },
-  {
-   "k": "res",
-   "t": "15:05:50 escenas: es01 lista · paneles · cámara 1 viajes\n15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes\n15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\n---\n15:05:47 batch 18e74a0a: validating 0/0\n15:06:18 batch 18e74a0a: in_progress 0/33\n15:06:04 ya hay otro fotos.py en este video (pid 8192): espero que termine\n15:06:34 ya"
-  },
-  {
-   "k": "tool",
-   "t": "cat escenas/escenas.log | grep -v \"^$\" | tail -12; ls extrema/ 2>/dev/null; python3 -c \"\nimport json;m=json.load(open('extrema/manifest.json'));print(json.dumps(m)[:800])\n\" 2>&1"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\n15:05:50 escenas: es01 lista · paneles · cámara 1 viajes\n15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes\n15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\nTraceback (most recent call last):\n  File \"<string>\", line 2, in <module>\nFileNotFoundError: [Errno 2] No such file or directory: 'extrema/manifest.jso"
-  },
-  {
-   "k": "tool",
-   "t": "ps aux | grep -E \"escenas.py\" | grep -v grep | head -3; ls -la escenas/ extrema/"
-  },
-  {
-   "k": "res",
-   "t": "<persisted-output>\nOutput too large (52.9KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-my-grandmother-walked-every-day-until-98/3da76201-7f6d-4e0f-aca2-60272869422e/tool-results/bbsvehvbr.txt\n\nPreview (first 2KB):\nroot        3872  0.0  0.0  12696  5968 ?        Ss   14:52   0:00 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GI"
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -af \"escenas.py\" | head; ls escenas/"
-  },
-  {
-   "k": "res",
-   "t": "<persisted-output>\nOutput too large (52.2KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-my-grandmother-walked-every-day-until-98/3da76201-7f6d-4e0f-aca2-60272869422e/tool-results/bf29yo1tq.txt\n\nPreview (first 2KB):\n3872 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOSITORY=bautielcr"
-  },
-  {
-   "k": "tool",
-   "t": "ps -eo pid,cmd | grep \"[e]scenas.py\" | cut -c1-150; ls escenas/ extrema/ 2>&1"
-  },
   {
    "k": "res",
    "t": "   3872 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOSITORY=bautielcrac\n   3874 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --disallowedTools Task,Agent,WebFetch,WebSearch,NotebookEdi\n   8116 python /opt/estudio/repo/motor/tools/escenas.py . construir --fondo\nescenas/:\n_m\n_punteria"
@@ -178,6 +142,42 @@
   {
    "k": "res",
    "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nids = [\"p010\",\"p021\",\"p022\",\"p023\",\"p024\",\"p026\",\"p029\",\"p030\",\"p031\",\"p034\",\"p036\",\"p040\",\"p042\"]\nfor i in ids: F.pop(i, None)\njson.dump(F, open(\"pedidos/_todos.json\",\"w\"), ensure_ascii=False, indent=1)\njson.dump([F[i] for i in [\"p056\",\"p059\",\"p060\",\"p062\",\"p063\",\"p064\",\"p074\",\"p075\",\"p089\",\"p091\",\"p092\"]], open(\"pedidos/lot"
+  },
+  {
+   "k": "res",
+   "t": "112\n33"
+  },
+  {
+   "k": "tool",
+   "t": "ls fotos/p0*.png | wc -l; ls fotos/ | grep -v \"^p0\" | head"
+  },
+  {
+   "k": "res",
+   "t": "31\n_batches.json\n_fotos.lock\nfotos_01.log\nfotos_02.log\nfotos_03.log\nfotos_escenas.log\nfotos_fix.log\np106.json\np106.png\np118.json"
+  },
+  {
+   "k": "tool",
+   "t": "tail -3 fotos/fotos_03.log; nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote05.json > fotos/fotos_05.log 2>&1 &\nsleep 10; tail -2 fotos/fotos_05.log"
+  },
+  {
+   "k": "res",
+   "t": "15:16:21 ya hay otro fotos.py en este video (pid 8355): espero que termine\n15:16:51 ya hay otro fotos.py en este video (pid 8355): espero que termine\n15:17:01 ya hay otro fotos.py en este video (pid 8355): espero que termine"
+  },
+  {
+   "k": "tool",
+   "t": "tail -3 escenas/escenas.log; ls extrema/; ps -eo pid,etime,cmd | grep \"[e]scenas.py\" | cut -c1-60"
+  },
+  {
+   "k": "res",
+   "t": "15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes\n15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\nes01.mp4\nes02.mp4\nrender.json\n   3872       25:04 sudo -n -H -u sesion -- env -i ESTUDIO_D\n   3874       25:04 /opt/hostedtoolcache/node/20.20.2/x64/bi\n   8116       11:52 python /opt/estudio/repo/motor/tools/esc"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_03.log --cuenta \"fotos/*.png\" 116 2>&1 | tail -3; tail -2 escenas/escenas.log"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 571,
+    "seg": 637,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1034,
+    "seg": 1100,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1881,
+  "total_s": 1948,
   "avatar_s": 30,
-  "sin_avatar_s": 1851,
+  "sin_avatar_s": 1917,
   "cerrado": false
  }
 }
