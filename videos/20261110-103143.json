@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794318040.7821,
+ "actualizado": 1794318109.5045762,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -22,20 +22,20 @@
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "active",
+   "st": "done",
    "info": "por palabra"
   },
   {
    "k": "avatar",
    "n": "Avatar",
-   "st": "pending",
+   "st": "skip",
    "info": ""
   },
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "1 fotos"
   },
   {
    "k": "armado",
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0214,
-  "gpt": 0.0,
-  "gpt_img": 0,
+  "deepseek": 0.0222,
+  "gpt": 0.0025,
+  "gpt_img": 1,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0214
+  "total": 0.0247
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "14158 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✗ guion: 14135 caracteres, 2861 palabras (hacen falta 9000-11500 para 10 min: recortalo)\nRESULTADO: FALLA (1)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport re\np='/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt'\nt=open(p).read()\nparas=[x.strip() for x in t.split('\\n\\n')]\nfor i,x in enumerate(paras): print(i,len(x),x[:60])\nEOF"
-  },
-  {
-   "k": "res",
-   "t": "0 444 Forty-two years on that stool. Picture it. The same wooden s\n1 389 My father opened this store in nineteen fifty-one. One windo\n2 376 For forty-two years I've been on the customer side of that b\n3 541 Here's the part nobody tells you. Your feet change after six\n4 217 Now the four. I'll tell you the order I'd put them in. And I\n5 762 Number one. A shoe with a removable insole. Take the insole"
-  },
-  {
-   "k": "tool",
-   "t": "Forty-two years on that stool. Picture it. The same wooden stool, worn smooth in the middle. Behind me, four shoe boxes on the shelf, each with a card in front in my handwriting, because I never trusted a label I didn't write myself. By the end, those four cards are the only four kinds of shoe I'd tell you to buy after sixty-five. Not four brands. I don't do brands. Four kinds of shoe, and what to"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
   {
    "k": "tool",
    "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -5"
@@ -178,6 +158,26 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/escenas.py . ficha 2>&1 | tail -20 && python3 -c \"\nimport json;d=json.load(open('escenas/ficha.json'));print(json.dumps(d,indent=1,ensure_ascii=False)[:3000])\""
+  },
+  {
+   "k": "res",
+   "t": "✓ escenas/ficha.json: 1 escenas firma · tesis: After sixty-five, a shoe is a tool with four jobs, and you can check it with your own hands — bend it, press it, measure it — before you ever trust the label.\n  es01 · planos p019+p020 · 9.2s · d) One continuous camera travel and push to a real thing: the camera starts on the open file box and pushes do\n→ Pedí esas 1 fotos TAL CUAL (ya pasan la compue"
+  },
+  {
+   "k": "tool",
+   "t": "cat escenas/pedidos_escenas.json | head -40"
+  },
+  {
+   "k": "res",
+   "t": "[\n {\n  \"id\": \"p019\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"overhead amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"Sal's hand has just set down the pen after adding the second size to Mr. Rossi's card, and the card sits on top of the open file box, the ink still dark and fresh.\""
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nd=json.load(open('escenas/pedidos_escenas.json'))\nfor p in d:\n    p['prompt']['avoid']=\"cinematic lighting, dramatic shadows, studio look, perfect plastic skin, depth-of-field blur, date stamp, watermark, misspelled words\"\njson.dump(d,open('escenas/pedidos_escenas.json','w'),ensure_ascii=False,indent=1)\nprint('ok')\nEOF\nmkdir -p fotos && cp escenas/pedidos_escenas.json"
+  },
+  {
+   "k": "res",
+   "t": "ok\n13:40:53 → batch batch_6af31ee5d0e88190928789818c30d054 · 1 fotos · sin referencia · low 1088x608\n13:40:54 batch 8c30d054: validating 0/0"
   }
  ],
  "maquinas": 1,
@@ -212,11 +212,18 @@
     "seg": 148,
     "pasadas": 1,
     "fin": true
+   },
+   {
+    "k": "fotos",
+    "n": "Fotos y stock",
+    "seg": 25,
+    "pasadas": 1,
+    "fin": false
    }
   ],
-  "total_s": 503,
+  "total_s": 572,
   "avatar_s": 0,
-  "sin_avatar_s": 503,
+  "sin_avatar_s": 572,
   "cerrado": false
  }
 }
