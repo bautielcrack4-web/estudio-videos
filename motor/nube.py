@@ -407,6 +407,8 @@ sys.excepthook = _caida
 XM_ON = str(E.get("EXTREMA") or "").lower() in ("1", "true", "si", "sí")
 XM_TOPE = str(min(float(E.get("TOPE_EXTREMA") or 0.20), 0.20))
 XM_LOG = os.path.join("/tmp", "extrema_" + VID + ".log")
+if XM_ON and st.get("extrema") and not st.get("xm_ok") and not st.get("xm_reintento"):     # la extrema no llegó a entrar al video: se intenta UNA vez más en esta pasada
+    st["extrema"] = False; st["xm_reintento"] = True; server.jsave(ST, st)
 
 
 def xm_lista(cwd):
@@ -580,7 +582,7 @@ if relanzar:
 
 # ── 3b) EDICIÓN EXTREMA: se hace de fondo mientras llega el avatar. Después del final nunca se lanza de cero ni se rearma todo:
 #        si quedaron piezas que no entraron, se aplican SÓLO sus tramos con un tope duro. Si no alcanza, el video sale sin ellas.
-TOPE_XM_TARDE = 12 * 60
+TOPE_XM_TARDE = 25 * 60
 
 
 def extrema_tarde():
@@ -588,7 +590,7 @@ def extrema_tarde():
     _fin = os.path.join(_cwd, _v["files"]["final"]) if _v["files"].get("final") else None
     _man = (server.jload(os.path.join(_cwd, "extrema", "manifest.json"), []) or []) + (server.jload(os.path.join(_cwd, "extrema", "capas.json"), []) or [])
     if not _fin or not os.path.exists(_fin) or not _man: log("extrema: no hay piezas para agregar, va sin edición extrema"); return
-    if time.time() - T0 > LIMITE - 20 * 60: log("extrema: no alcanza el tiempo de esta máquina, va sin edición extrema"); return
+    if time.time() - T0 > LIMITE - 32 * 60: log("extrema: no alcanza el tiempo de esta máquina, va sin edición extrema"); return
     publicar("trabajando", {"nota": "edición extrema"})
     _bk = _fin + ".sin_extrema.mp4"
     try: os.link(_fin, _bk)
@@ -606,15 +608,15 @@ def extrema_tarde():
         else: log("extrema: no llegó dentro del tope (", r1, r2, "), vuelve el final sin ellas")
     finally:
         try:
-            if _ok: os.remove(_bk)
+            if _ok: os.remove(_bk); st["xm_ok"] = True
             else: os.replace(_bk, _fin)
         except OSError as e: log("extrema: limpieza:", type(e).__name__)
 
 
 if XM_ON and st.get("xm_fondo") and not st.get("extrema"):
     if xm["p"] and xm["p"].poll() is None:      # los componentes ya están pagos: se esperan antes de cortarlos, con tope para que el video nunca se trabe
-        publicar("trabajando", {"nota": "edición extrema"}); _x0 = time.time(); log("extrema: el video está listo, espero los componentes (máx. 20 min)")
-        while xm["p"].poll() is None and time.time() - _x0 < 20 * 60 and time.time() - T0 < LIMITE - 25 * 60: time.sleep(10)
+        publicar("trabajando", {"nota": "edición extrema"}); _x0 = time.time(); log("extrema: el video está listo, espero los componentes (máx. 45 min)")
+        while xm["p"].poll() is None and time.time() - _x0 < 45 * 60 and time.time() - T0 < LIMITE - 40 * 60: time.sleep(10)
         log("extrema: terminaron tras %d s" % (time.time() - _x0) if xm["p"].poll() is not None else "extrema: no llegaron en el tope de espera")
     xm_fin()
 if XM_ON and not st.get("extrema"):
