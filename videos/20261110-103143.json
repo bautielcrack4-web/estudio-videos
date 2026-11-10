@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794320277.4985757,
+ "actualizado": 1794320341.1590514,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0501,
+  "deepseek": 0.0506,
   "gpt": 0.2588,
   "gpt_img": 118,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5589
+  "total": 0.5594
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "28\n['p002', 'p005', 'p011', 'p015', 'p018', 'p022', 'p031', 'p036', 'p039', 'p040', 'p042', 'p051', 'p061', 'p072', 'p074', 'p075', 'p082', 'p083', 'p093', 'p094', 'p095', 'p099', 'p101', 'p108', 'p109', 'p112', 'p115', 'p116']\nfotos/p001.json\nfotos/p001.png\nfotos/p001_a.json\nfotos/p001_a.png\nfotos/p001_b.json\nfotos/p001_b.png\nfotos/p001_c.json\nfotos/p001_c.png"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json,glob\nfrom collections import Counter\nc=Counter()\nfor f in glob.glob('fotos/p*.json'):\n    try: d=json.load(open(f))\n    except Exception as e: print('ERR',f,e); continue\n    if isinstance(d,dict) and d.get('cara'): c[d['id']]+=1\nprint(len(c),c)\nEOF\npython3 -c \"\nimport json\np=json.load(open('pedidos_02.json'))\nids={x['id'] for x in p}\nimport glob\nextra=[f for f in glob"
-  },
-  {
-   "k": "res",
-   "t": "5 Counter({'p001_a': 2, 'p061': 1, 'p099': 1, 'p001_c': 1, 'p001_b': 1})\n['fotos/p019.json', 'fotos/p001_c.json', 'fotos/_batches.json', 'fotos/p001_a.json', 'fotos/p001_b.json']"
-  },
   {
    "k": "tool",
    "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p036','p040','p042','p051','p074','p083','p094','p095','p101','p108','p112'):\n        x['cara']=False\n        x['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ("
@@ -178,6 +166,18 @@
   {
    "k": "tool",
    "t": "sleep 295; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "116\n14:15:39 ✓ batch 6beec17e: 85 fotos bajadas, 0 fallidas (US$0.178)\n14:15:39 FIN: 114/114 fotos en fotos/ (24 min)"
+  },
+  {
+   "k": "tool",
+   "t": "for f in p039 p040 p042 p051 p074 p075 p083 p093 p094 p095 p101 p108 p112; do echo $f; done > /dev/null; python /opt/estudio/repo/motor/tools/hoja.py qc/h_a.jpg fotos/p002.png fotos/p005.png fotos/p011.png fotos/p015.png fotos/p018.png fotos/p022.png fotos/p031.png fotos/p036.png fotos/p039.png fotos/p040.png fotos/p042.png fotos/p051.png | tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/h_a.jpg (12 cuadros, 4x3)\nhoja: qc/h_b.jpg (12 cuadros, 4x3)"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2193,
+    "seg": 2256,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2739,
+  "total_s": 2803,
   "avatar_s": 1118,
-  "sin_avatar_s": 1622,
+  "sin_avatar_s": 1686,
   "cerrado": false
  }
 }
