@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794321308.0363646,
+ "actualizado": 1794321373.4386022,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0647,
+  "deepseek": 0.0656,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5801
+  "total": 0.581
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "115\n⛔ faltan 1 fotos o clips (p061). Esperalas con esperar.py o repedilas."
-  },
-  {
-   "k": "tool",
-   "t": "cp fotos/p009.png fotos/p061.png && cp fotos/p009.json fotos/p061.json && python /opt/estudio/repo/motor/tools/planos.py . --shots 2>&1 | tail -3"
-  },
-  {
-   "k": "res",
-   "t": "✓ shots_timed.json: 116 planos, 116 fotos distintas (cero repetidas). Seguí con render.py."
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . fix2.json > fotos/fotos_fix2.log 2>&1 &\nsleep 5; cat fotos/fotos_fix2.log; nohup python /opt/estudio/repo/motor/tools/render.py . --limit 10 > render_test.log 2>&1 &\nsleep 60; tail -3 render_test.log"
-  },
   {
    "k": "res",
    "t": "14:29:20 ✓ nada que pedir: 1/1 fotos listas\nextrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 10"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 200; tail -3 render.log; ls segments/*.mp4 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "137"
+  },
+  {
+   "k": "tool",
+   "t": "cat render.log | head -20; ls segments | head -3"
+  },
+  {
+   "k": "res",
+   "t": "0000.mp4\n0000.mp4.src\n0001.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py . > render.log 2>&1 &\nsleep 45; tail -5 render.log; ls segments/*.mp4 2>/dev/null | wc -l"
   }
  ],
  "maquinas": 1,
@@ -237,21 +237,21 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 501,
-    "pasadas": 2,
+    "seg": 575,
+    "pasadas": 3,
     "fin": false
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 53,
+    "seg": 118,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3770,
+  "total_s": 3835,
   "avatar_s": 1118,
-  "sin_avatar_s": 2653,
+  "sin_avatar_s": 2718,
   "cerrado": false
  }
 }
