@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794325390.9041057,
+ "actualizado": 1794325696.3455682,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0899,
+  "deepseek": 0.091,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6053
+  "total": 0.6064
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "extrema/es01.mp4\n[{\"mp4\": \"extrema/es01.mp4\", \"startMs\": 99342, \"endMs\": 108571, \"texto\": \"says 9D. underneath, in my own hand, 9E. Wide, high instep. Same man. Eleven years between those two lines.\"}]\nhoja: qc/h_escena.jpg (1 cuadros, 1x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_escena.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "ffmpeg -v error -ss 100.6 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/f_escena2.jpg -y && ffmpeg -v error -ss 108.2 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/f_escena3.jpg -y && python /opt/estudio/repo/motor/tools/hoja.py qc/h_escena2.jpg qc/f_escena2.jpg qc/f_escena3.jpg | tail -1"
-  },
   {
    "k": "res",
    "t": "hoja: qc/h_escena2.jpg (2 cuadros, 2x1)"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/render.py . > render2.log 2>&1 &\nsleep 90; cat render2.log; ls -lt segments/*.mp4 | head -2"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion   786480 Nov 10  2026 segments/_t0038.mp4\n-rw-rw-rw-+ 1 sesion sesion   262192 Nov 10 15:44 segments/_t0040.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "pgrep -af \"python /opt/estudio/repo/motor/tools/(render|assemble|extrema).py\" | cut -c1-90; ls -la render2.log"
+  },
+  {
+   "k": "res",
+   "t": "3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SE\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --\n4016 python /opt/estudio/repo/motor/tools/render.py .\n4842 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extr\n-rw-rw-rw-+ 1 sesion sesion 0 Nov 10 15:42 render2.log"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 280; cat render2.log; ls -lt segments/*.mp4 | head -2; ls -la extrema/render.json"
   }
  ],
  "maquinas": 3,
@@ -265,9 +265,9 @@
    {
     "k": "correcciones",
     "n": "Correcciones",
-    "seg": 0,
+    "seg": 592,
     "pasadas": 2,
-    "fin": false
+    "fin": true
    },
    {
     "k": "entrega",
