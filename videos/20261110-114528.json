@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794336499.8776855,
+ "actualizado": 1794336562.9377966,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1372,
+  "deepseek": 0.1384,
   "gpt": 0.4905,
   "gpt_img": 208,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8777
+  "total": 0.8789
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "3"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 3; pgrep -f \"python.*tools/fotos.py\"; ps -p $(pgrep -f \"python.*tools/fotos.py\" | tr '\\n' ',' | sed 's/,$//') -o pid,args= 2>/dev/null | cut -c1-70"
-  },
-  {
-   "k": "res",
-   "t": "3872\n3874\n40063\n    PID \n   3872 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos\n   3874 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerou\n  40063 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/s\n  40085 ps -p 3872,3874,40063,40085,40087 -o pid,args="
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote06.json > fotos/fotos_06b.log 2>&1 &\nsleep 20; tail -2 fotos/fotos_06b.log"
-  },
   {
    "k": "res",
    "t": "17:52:30 batch 40d7e923: validating 0/0\n17:52:30 batch eb8ff9fe: validating 0/0"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 120; cat /tmp/claude-1002/-opt-estudio-datos-videos-my-grandmother-walked-every-day-until-98/3da76201-7f6d-4e0f-aca2-60272869422e/tasks/b7wpojxtt.output 2>/dev/null | tail -15"
+  },
+  {
+   "k": "res",
+   "t": "(Bash completed with no output)"
+  },
+  {
+   "k": "tool",
+   "t": "ls fotos/s01.png 2>&1; tail -2 fotos/fotos_s01.log"
+  },
+  {
+   "k": "res",
+   "t": "ls: cannot access 'fotos/s01.png': No such file or directory\n18:31:01 batch ec2a26f0: validating 0/0\n18:31:31 batch ec2a26f0: in_progress 0/1"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 300; ls fotos/s01.png 2>&1; tail -1 fotos/fotos_s01.log"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 13722,
+    "seg": 13785,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 14569,
+  "total_s": 14632,
   "avatar_s": 816,
-  "sin_avatar_s": 13753,
+  "sin_avatar_s": 13816,
   "cerrado": false
  }
 }
