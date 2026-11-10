@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794317846.6532834,
+ "actualizado": 1794317910.1936784,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -17,7 +17,7 @@
    "k": "voz",
    "n": "Voz",
    "st": "active",
-   "info": "8 bloques"
+   "info": "11:00 min"
   },
   {
    "k": "tiempos",
@@ -202,14 +202,21 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 130,
+    "seg": 153,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "tiempos",
+    "n": "Tiempos",
+    "seg": 40,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 309,
+  "total_s": 372,
   "avatar_s": 0,
-  "sin_avatar_s": 309,
+  "sin_avatar_s": 372,
   "cerrado": false
  }
 }
