@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794327098.2929082,
+ "actualizado": 1794327164.879824,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1005,
+  "deepseek": 0.1011,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6159
+  "total": 0.6165
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n4842 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 329\n },\n \"xm02\": {\n  \"ok\": true,\n  \"s\": 712\n }\n}-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 340,420p /opt/estudio/repo/motor/tools/render.py"
-  },
   {
    "k": "res",
    "t": "    return M\n\n\ndef guardar_qc(M):\n    json.dump(QC, open(QCF, \"w\", encoding=\"utf-8\"))\n    json.dump([{\"i\": i, \"file\": os.path.relpath(plan[i][0], B).replace(\"\\\\\", \"/\"), \"t0\": round(T0S[i] / 1000, 2), \"stock\": \"/clips/\" in plan[i][0]} for i in M], open(SEG + \"/_malos.json\", \"w\", encoding=\"utf-8\"), ensure_ascii=False)\n\n\nif \"--limit\" not in sys.argv:         # un clip negro o roto se cambia acá, ante"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 290; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json; ps -o etime -p 4842 | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "ls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extrema/EN_CURSO\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 516\n },\n \"xm02\": {\n  \"ok\": true,\n  \"s\": 694\n },\n \"xm03\": {\n  \"ok\": true,\n  \"s\": 218\n }\n}      28:44"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 290; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json | tr -d '\\n '; echo; ps -o etime -p 4842 | tail -1; cat render4.log"
   }
  ],
  "maquinas": 3,
