@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794338392.6995757,
+ "actualizado": 1794338456.4983897,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1542,
+  "deepseek": 0.1555,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.897
+  "total": 0.8983
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "extrema: pisa al avatar, va b-roll -> extrema/es03.mp4\nextrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 10\n0000.mp4\n0000.mp4.src\n0001.mp4\n0001.mp4.src\n0002.mp4\n0002.mp4.src\n0003.mp4\n0003.mp4.src\n0004.mp4\n0004.mp4.src"
-  },
-  {
-   "k": "tool",
-   "t": "head -20 render_test.log; ls segments/ | wc -l; ls segments/000[0-9].mp4 | head -3 | xargs -I{} ffmpeg -y -loglevel error -ss 1 -i {} -frames:v 1 -vf scale=480:-1 qc/r_{}.jpg 2>/dev/null; ls qc/r_*.jpg"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\nextrema: pisa al avatar, va b-roll -> extrema/es03.mp4\nextrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 10\n171\nls: cannot access 'qc/r_*.jpg': No such file or directory"
-  },
-  {
-   "k": "tool",
-   "t": "ls segments/ | grep -v src | head -12; python3 -c \"\nimport json;pl=json.load(open('plan.json'));print(type(pl), len(pl) if hasattr(pl,'__len__') else '');print(json.dumps(pl if isinstance(pl,list) else list(pl)[:3])[:500])\""
-  },
   {
    "k": "res",
    "t": "0000.mp4\n0001.mp4\n0002.mp4\n0003.mp4\n0004.mp4\n0005.mp4\n0006.mp4\n0007.mp4\n0008.mp4\n0009.mp4\n0010.mp4\n0011.mp4\n<class 'dict'> 2\n[\"voice_dur\", \"segments\"]"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 120; tail -5 assemble.log; ls -la final.mp4 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2"
+  },
+  {
+   "k": "tool",
+   "t": "cat assemble.log | tail -10; pgrep -f \"[a]ssemble.py\"; pgrep -f \"[r]ender.py\""
+  },
+  {
+   "k": "res",
+   "t": "3872\n3874\n48245\n48248\n58109\n67070\n3872\n3874\n48245\n48248"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 200; tail -5 assemble.log; ls -la final.mp4 2>/dev/null; ps -p 48245,48248,67006 -o pid,etime,args= 2>/dev/null | cut -c1-80"
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 1578,
+    "seg": 1642,
     "pasadas": 1,
     "fin": false
    },
@@ -251,14 +251,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 1166,
+    "seg": 1230,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 16462,
+  "total_s": 16526,
   "avatar_s": 816,
-  "sin_avatar_s": 15646,
+  "sin_avatar_s": 15710,
   "cerrado": false
  }
 }
