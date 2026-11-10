@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794337011.8692024,
+ "actualizado": 1794337077.4786723,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "83 segmentos"
+   "info": "102 segmentos"
   },
   {
    "k": "qc",
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1434,
+  "deepseek": 0.1469,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8862
+  "total": 0.8897
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py . --shots 2>&1 | tail -3; python /opt/estudio/repo/motor/tools/validar.py . --etapa fotos --min 10 2>&1 | tail -20"
-  },
-  {
-   "k": "res",
-   "t": "⛔ faltan 1 fotos o clips (s01). Esperalas con esperar.py o repedilas.\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa fotos\n  ✓ guion: 9968 caracteres, 1865 palabras (hacen falta 9000-11500 para 10 min: bien)\n  ✓ fotos: 134 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\nRESULTADO: OK"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json, shutil\nF = json.load(open(\"pedidos/_todos.json\"))\nprompt = F[\"p063\"][\"prompt\"]\np = dict(prompt)\np[\"subject\"] = \"A wooden kitchen chair turned to the balcony window, the deep dent in its cream cushion and a pair of slippers left in front of it, the morning light across the seat.\"\np[\"action\"] = \"Nobody; the chair is turned slightly toward the window, cushion dented fro"
-  },
-  {
-   "k": "res",
-   "t": "            ^^^^^\nAttributeError: 'str' object has no attribute 'get'"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\np = dict(F[\"p063\"][\"prompt\"])\np[\"subject\"] = \"A wooden kitchen chair turned to the balcony window, the deep dent in its cream cushion and a pair of slippers left in front of it, the morning light across the seat.\"\np[\"action\"] = \"Nobody; the chair is turned slightly toward the window, cushion dented from use, the slippers step"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n18:31:01 batch ec2a26f0: validating 0/0\n18:31:31 batch ec2a26f0: in_progress 0/1\nls: cannot access 'fotos/s01.png': No such file or directory"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 200; tail -2 fotos/fotos_s01.log; ls fotos/s01.png 2>&1"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n18:31:01 batch ec2a26f0: validating 0/0\n18:31:31 batch ec2a26f0: in_progress 0/1\nls: cannot access 'fotos/s01.png': No such file or directory"
-  },
-  {
-   "k": "tool",
-   "t": "while [ ! -f fotos/s01.png ]; do sleep 30; done; tail -2 fotos/fotos_s01.log; python /opt/estudio/repo/motor/tools/planos.py . --shots 2>&1 | tail -2; python /opt/estudio/repo/motor/tools/validar.py . --etapa fotos --min 10 2>&1 | tail -12"
-  },
-  {
-   "k": "res",
-   "t": "Command running in background with ID: b7wpojxtt. Output is being written to: /tmp/claude-1002/-opt-estudio-datos-videos-my-grandmother-walked-every-day-until-98/3da76201-7f6d-4e0f-aca2-60272869422e/tasks/b7wpojxtt.output. You will be notified when it completes. To check interim output, use Read on that file path."
-  },
   {
    "k": "tool",
    "t": "sleep 120; cat /tmp/claude-1002/-opt-estudio-datos-videos-my-grandmother-walked-every-day-until-98/3da76201-7f6d-4e0f-aca2-60272869422e/tasks/b7wpojxtt.output 2>/dev/null | tail -15"
@@ -178,6 +134,50 @@
   {
    "k": "tool",
    "t": "sleep 60; tail -8 render_test.log; ls segments/ | head"
+  },
+  {
+   "k": "res",
+   "t": "extrema: pisa al avatar, va b-roll -> extrema/es03.mp4\nextrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 10\n0000.mp4\n0000.mp4.src\n0001.mp4\n0001.mp4.src\n0002.mp4\n0002.mp4.src\n0003.mp4\n0003.mp4.src\n0004.mp4\n0004.mp4.src"
+  },
+  {
+   "k": "tool",
+   "t": "head -20 render_test.log; ls segments/ | wc -l; ls segments/000[0-9].mp4 | head -3 | xargs -I{} ffmpeg -y -loglevel error -ss 1 -i {} -frames:v 1 -vf scale=480:-1 qc/r_{}.jpg 2>/dev/null; ls qc/r_*.jpg"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\nextrema: pisa al avatar, va b-roll -> extrema/es03.mp4\nextrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 10\n171\nls: cannot access 'qc/r_*.jpg': No such file or directory"
+  },
+  {
+   "k": "tool",
+   "t": "ls segments/ | grep -v src | head -12; python3 -c \"\nimport json;pl=json.load(open('plan.json'));print(type(pl), len(pl) if hasattr(pl,'__len__') else '');print(json.dumps(pl if isinstance(pl,list) else list(pl)[:3])[:500])\""
+  },
+  {
+   "k": "res",
+   "t": "0000.mp4\n0001.mp4\n0002.mp4\n0003.mp4\n0004.mp4\n0005.mp4\n0006.mp4\n0007.mp4\n0008.mp4\n0009.mp4\n0010.mp4\n0011.mp4\n<class 'dict'> 2\n[\"voice_dur\", \"segments\"]"
+  },
+  {
+   "k": "tool",
+   "t": "for i in 0000 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011; do ffmpeg -y -loglevel error -ss 1 -i segments/$i.mp4 -frames:v 1 -vf scale=480:-1 qc/r_$i.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg qc/r_0000.jpg qc/r_0001.jpg qc/r_0002.jpg qc/r_0003.jpg qc/r_0004.jpg qc/r_0005.jpg qc/r_0006.jpg qc/r_0007.jpg qc/r_0008.jpg qc/r_0009.jpg qc/r_0010.jpg qc/r_0011."
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_render.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_render.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "# Control de render (prueba de 10 planos)\n\nMiré qc/hoja_render.jpg (12 cuadros del render de prueba, 1 s dentro de cada segmento).\n- 0000: avatar (A0) hablando desde el segundo 0, la primera cosa que se ve. Bien.\n- 0001: p001 (Yoko a mitad de levantarse). Fotograma de entrada del zoom, algo suave: el movimiento llega en el zoom lento.\n- 0002: radio, 0003: silla con radio, 0004: fotos en sobre, 000"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/gates/render_auto.txt (file state is current in your context — no need to Read it back)"
   }
  ],
  "maquinas": 1,
@@ -237,21 +237,21 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 197,
+    "seg": 263,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 258,
+    "seg": 324,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 15081,
+  "total_s": 15147,
   "avatar_s": 816,
-  "sin_avatar_s": 14265,
+  "sin_avatar_s": 14331,
   "cerrado": false
  }
 }
