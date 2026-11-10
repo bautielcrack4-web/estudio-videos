@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794322289.8898351,
+ "actualizado": 1794322353.1141305,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0768,
+  "deepseek": 0.078,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5922
+  "total": 0.5934
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "sleep 150; ls -la render.log; wc -c render.log; ls segments/*.mp4 | wc -l; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-60"
-  },
-  {
-   "k": "res",
-   "t": "-rw-rw-rw-+ 1 sesion sesion 0 Nov 10 14:36 render.log\n0 render.log\n139\n3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudi\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --d\n21509 python /opt/estudio/repo/motor/tools/render.py .\n29964 /bin/bash -c source /opt/estudio/datos/brain/shell-sna"
-  },
-  {
-   "k": "tool",
-   "t": "for i in $(seq 1 18); do ls segments/*.mp4 | wc -l; sleep 30; done 2>&1 | tail -3; ls segments/*.mp4 | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "135\n135\n135\n135"
-  },
   {
    "k": "tool",
    "t": "ls -lt segments/*.mp4 | head -3; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-80; ls -la render.log final.mp4 2>&1"
@@ -178,6 +162,22 @@
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/REPORTE.md (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 10 2>&1 | tail -6"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ sonido: cues.json con sus archivos\n  !  fotos: 3 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  !  dinámico: avatar a pantalla completa ≤ 6 s por vez (1 tramos más largos, ej. 7.0 s en 0 s → partilo o usá pantalla partida)\n  !  ritmo del avatar: avatar 103 s = 16 % del video (ideal ~50 %: más avatar = menos fotos)\n  !  ritmo del avatar: nunca más de 15 s sin avatar (14 "
+  },
+  {
+   "k": "ai",
+   "t": "Listo. El video está terminado de punta a punta, sin frenadas.\n\n**Entregados en la carpeta:**\n- `final.mp4` — 10,9 min (654 s), 1920×1080, 30 fps, H.264 + AAC listo para YouTube.\n- `REPORTE.md` con mundo, escenas firma, fotos de DATO, repedidas y gasto (~US$0,27 de imágenes).\n- `meta.json` con el título exacto y la descripción de 3 párrafos en la voz de Sal.\n\n**Control final:** `validar.py --etapa"
+  },
+  {
+   "k": "end",
+   "t": "Listo. El video está terminado de punta a punta, sin frenadas.\n\n**Entregados en la carpeta:**\n- `final.mp4` — 10,9 min (654 s), 1920×1080, 30 fps, H.264 + AAC listo para YouTube.\n- `REPORTE.md` con mundo, escenas firma, fotos de DATO, repedidas y gasto (~US$0,27 de imágenes).\n- `meta.json` con el título exacto y la descripción de 3 párrafos en la voz de Sal.\n\n**Control final:** `validar.py --etapa"
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 1736,
+    "seg": 1800,
     "pasadas": 3,
     "fin": false
    },
@@ -256,9 +256,9 @@
     "fin": true
    }
   ],
-  "total_s": 4752,
+  "total_s": 4815,
   "avatar_s": 1118,
-  "sin_avatar_s": 3634,
+  "sin_avatar_s": 3698,
   "cerrado": false
  }
 }
