@@ -2,8 +2,8 @@
  "vid": "20261110-103143",
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
- "estado": "trabajando",
- "actualizado": 1794322353.1141305,
+ "estado": "listo",
+ "actualizado": 1794322391.4090483,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -237,7 +237,7 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 1800,
+    "seg": 1838,
     "pasadas": 3,
     "fin": false
    },
@@ -254,11 +254,20 @@
     "seg": 57,
     "pasadas": 1,
     "fin": true
+   },
+   {
+    "k": "entrega",
+    "n": "Entrega",
+    "seg": 14,
+    "pasadas": 1,
+    "fin": true
    }
   ],
-  "total_s": 4815,
+  "total_s": 4853,
   "avatar_s": 1118,
-  "sin_avatar_s": 3698,
-  "cerrado": false
- }
+  "sin_avatar_s": 3736,
+  "cerrado": true
+ },
+ "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-20261110-103143/I-ve-Fitted-Shoes-for-42-Years-These-Are-the-Only-4-I-d-Buy-After-65.mp4",
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261110-103143"
 }
