@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794324341.0336235,
+ "actualizado": 1794324406.8830278,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,90 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0751,
+  "deepseek": 0.0799,
   "gpt": 0.2128,
   "gpt_img": 92,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5379
+  "total": 0.5427
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos_b.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_c.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_d.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_b.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_c.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_d.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nids = [\"p010\",\"p021\",\"p022\",\"p023\",\"p024\",\"p026\",\"p029\",\"p030\",\"p031\",\"p034\",\"p036\",\"p040\",\"p042\"]\nfor i in ids: F.pop(i, None)\njson.dump(F, open(\"pedidos/_todos.json\",\"w\"), ensure_ascii=False, indent=1)\njson.dump([F[i] for i in [\"p056\",\"p059\",\"p060\",\"p062\",\"p063\",\"p064\",\"p074\",\"p075\",\"p089\",\"p091\",\"p092\"]], open(\"pedidos/lot"
-  },
-  {
-   "k": "res",
-   "t": "112\n33"
-  },
-  {
-   "k": "tool",
-   "t": "ls fotos/p0*.png | wc -l; ls fotos/ | grep -v \"^p0\" | head"
-  },
-  {
-   "k": "res",
-   "t": "31\n_batches.json\n_fotos.lock\nfotos_01.log\nfotos_02.log\nfotos_03.log\nfotos_escenas.log\nfotos_fix.log\np106.json\np106.png\np118.json"
-  },
-  {
-   "k": "tool",
-   "t": "tail -3 fotos/fotos_03.log; nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote05.json > fotos/fotos_05.log 2>&1 &\nsleep 10; tail -2 fotos/fotos_05.log"
-  },
-  {
-   "k": "res",
-   "t": "15:16:21 ya hay otro fotos.py en este video (pid 8355): espero que termine\n15:16:51 ya hay otro fotos.py en este video (pid 8355): espero que termine\n15:17:01 ya hay otro fotos.py en este video (pid 8355): espero que termine"
-  },
-  {
-   "k": "tool",
-   "t": "tail -3 escenas/escenas.log; ls extrema/; ps -eo pid,etime,cmd | grep \"[e]scenas.py\" | cut -c1-60"
-  },
-  {
-   "k": "res",
-   "t": "15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes\n15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\nes01.mp4\nes02.mp4\nrender.json\n   3872       25:04 sudo -n -H -u sesion -- env -i ESTUDIO_D\n   3874       25:04 /opt/hostedtoolcache/node/20.20.2/x64/bi\n   8116       11:52 python /opt/estudio/repo/motor/tools/esc"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_03.log --cuenta \"fotos/*.png\" 116 2>&1 | tail -3; tail -2 escenas/escenas.log"
-  },
-  {
-   "k": "res",
-   "t": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
-  },
-  {
-   "k": "tool",
-   "t": "ls fotos/*.png | wc -l; tail -2 fotos/fotos_03.log; tail -1 fotos/fotos_04.log 2>/dev/null; tail -1 fotos/fotos_05.log"
-  },
-  {
-   "k": "res",
-   "t": "73\n15:18:40 ✓ batch 2406b9a7: 40 fotos bajadas, 0 fallidas (US$0.088)\n15:18:40 FIN: 40/40 fotos en fotos/ (7 min)\n15:18:31 ya hay otro fotos.py en este video (pid 8355): espero que termine"
-  },
   {
    "k": "tool",
    "t": "ps -eo pid,etime,cmd | grep \"[f]otos.py\" | cut -c1-100; ls fotos/*.png | head -80 | xargs -n1 basename | tr '\\n' ' '"
@@ -178,6 +102,82 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_03.log --cuenta \"fotos/*.png\" 100 2>&1 | tail -2; python /opt/estudio/repo/motor/tools/esperar.py --log escenas/escenas.log --existe extrema/manifest.json 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "15:18:40 ✓ batch 2406b9a7: 40 fotos bajadas, 0 fallidas (US$0.088)\n15:18:40 FIN: 40/40 fotos en fotos/ (7 min)\n✓ existe extrema/manifest.json (0.0 MB, 420 s)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -4 escenas/escenas.log; python3 -c \"\nimport json; m=json.load(open('extrema/manifest.json'))\nprint(type(m), list(m)[:8] if isinstance(m,dict) else len(m))\nprint(json.dumps(m)[:600])\n\"; ls -la extrema/"
+  },
+  {
+   "k": "res",
+   "t": "es04 {\"ok\":true,\"s\":340}\n \n15:26:00 escenas: 4 escenas en la línea en 1133 s\n15:26:00 escenas: gasto US$0.0077 en 49 llamadas\n<class 'list'> 4\n[{\"mp4\": \"extrema/es01.mp4\", \"startMs\": 143800, \"endMs\": 152900, \"texto\": \"Number two, shoulder rolls. Number three, seated marching. Number four, ankle circles. Number five, deep breathing with \"}, {\"mp4\": \"extrema/es02.mp4\", \"startMs\": 407175, \"endMs\": 41"
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p qc/esc && for n in 01 02 03 04; do for t in 1 4 7; do ffmpeg -y -loglevel error -ss $t -i extrema/es$n.mp4 -frames:v 1 -vf scale=640:-1 qc/esc/es${n}_$t.jpg; done; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_escenas_render.jpg qc/esc/*.jpg 2>&1|tail -1"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_escenas_render.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_escenas_render.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "tail -2 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l; tail -2 fotos/fotos_03.log; ps -eo pid,etime,cmd | grep \"[f]otos.py\" | cut -c1-90; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "15:20:22 estado: COMPLETED\n✓ 21 clips cortados · desfase corregido (máx 0 ms) · ⛔ el reel salió corto: sin clip ['avatar/A24.mp4', 'avatar/A26.mp4'] → sacalas de avatar_ranges.json (van con foto)\n21\n15:18:40 ✓ batch 2406b9a7: 40 fotos bajadas, 0 fallidas (US$0.088)\n15:18:40 FIN: 40/40 fotos en fotos/ (7 min)\n   3872       34:21 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C."
+  },
+  {
+   "k": "tool",
+   "t": "grep -v \"^$\" avatar/it.log | tail -25"
+  },
+  {
+   "k": "res",
+   "t": "15:06:44 InfiniteTalk: 23 ventanas · reel 126.2 s · 1 llamada\n15:06:51 RUN dbc63fbb-6ef3-4999-92d3-f500514cc0d1-u2\n15:07:21 estado: IN_PROGRESS\n15:20:22 estado: COMPLETED\n✓ 21 clips cortados · desfase corregido (máx 0 ms) · ⛔ el reel salió corto: sin clip ['avatar/A24.mp4', 'avatar/A26.mp4'] → sacalas de avatar_ranges.json (van con foto)"
+  },
+  {
+   "k": "tool",
+   "t": "ls avatar/; ls avatar/A*.mp4 | head -30 2>/dev/null; find . -name \"A2[0-9].mp4\" | head"
+  },
+  {
+   "k": "res",
+   "t": "A0.mp4\nA1.mp4\nA10.mp4\nA11.mp4\nA12.mp4\nA13.mp4\nA14.mp4\nA15.mp4\nA16.mp4\nA18.mp4\nA2.mp4\nA20.mp4\nA22.mp4\nA23.mp4\nA3.mp4\nA4.mp4\nA5.mp4\nA6.mp4\nA7.mp4\nA8.mp4\nA9.mp4\nit\nit.log\nit_llamada.json\nit_sync.json\navatar/A0.mp4\navatar/A1.mp4\navatar/A10.mp4\navatar/A11.mp4\navatar/A12.mp4\navatar/A13.mp4\navatar/A14.mp4\navatar/A15.mp4\navatar/A16.mp4\navatar/A18.mp4\navatar/A2.mp4\navatar/A20.mp4\navatar/A22.mp4\navatar/A23."
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json, subprocess\nR = json.load(open(\"avatar_ranges.json\"))\nout=[]\nfor r in R:\n    if r[\"file\"] in (\"avatar/A24.mp4\",\"avatar/A26.mp4\"): continue\n    dur = float(subprocess.check_output([\"ffprobe\",\"-v\",\"error\",\"-show_entries\",\"format=duration\",\"-of\",\"csv=p=0\", r[\"file\"]]))\n    want=(r[\"endMs\"]-r[\"startMs\"])/1000\n    print(r[\"file\"], \"wanted %.1f have %.2f\" % (want,dur))\n    "
+  },
+  {
+   "k": "res",
+   "t": "avatar/A0.mp4 wanted 6.0 have 6.32\navatar/A1.mp4 wanted 5.4 have 5.76\navatar/A2.mp4 wanted 5.0 have 5.32\navatar/A3.mp4 wanted 5.0 have 5.36\navatar/A4.mp4 wanted 5.2 have 5.52\navatar/A5.mp4 wanted 5.0 have 5.36\navatar/A6.mp4 wanted 5.1 have 5.40\navatar/A7.mp4 wanted 5.0 have 5.32\navatar/A8.mp4 wanted 5.3 have 5.64\navatar/A9.mp4 wanted 5.0 have 5.36\navatar/A10.mp4 wanted 5.0 have 5.32\navatar/A11.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -2; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar.jpg avatar/A0.mp4 avatar/A4.mp4 avatar/A8.mp4 avatar/A14.mp4 2>&1 | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "✓ planos.json: 133 planos de b-roll (10.5 min de b-roll, 12.6 por minuto) + 1 fotos de pantalla partida · 21 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\nhoja: qc/hoja_avatar.jpg (4 cuadros, 4x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_avatar.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1563,
+    "seg": 1629,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2410,
+  "total_s": 2476,
   "avatar_s": 816,
-  "sin_avatar_s": 1594,
+  "sin_avatar_s": 1660,
   "cerrado": false
  }
 }
