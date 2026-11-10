@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794317612.7532382,
+ "actualizado": 1794317657.309907,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,17 +51,49 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0,
+  "deepseek": 0.0055,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0
+  "total": 0.0055
  },
  "eventos": [
   {
    "k": "user",
    "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65 · Sal's Fittin"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/ && ls /opt/estudio/repo/motor/tools/"
+  },
+  {
+   "k": "res",
+   "t": "total 60\ndrwxrwxrwx+ 6 runner runner  4096 Nov 10 13:33 .\ndrwxrwxrwx+ 3 runner runner  4096 Nov 10 13:33 ..\n-rw-rw-rw-+ 1 runner runner 11538 Nov 10 13:33 BRIEF.md\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 avatar\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 fotos\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 refs\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 voz\n_cfg.py\nassemble.py\navatar"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la refs/ && python /opt/estudio/repo/motor/tools/mundo.py . \"I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65\" \"A 70-year-old shoe fitter in South Philadelphia gives the only 4 kinds of shoes he'd buy after 65, the 3 traps, and how to measure your foot\" 2>&1 | tail -20"
+  },
+  {
+   "k": "res",
+   "t": "total 4788\ndrwxrwxrwx+ 2 runner runner    4096 Nov 10 13:33 .\ndrwxrwxrwx+ 6 runner runner    4096 Nov 10 13:33 ..\n-rw-rw-rw-+ 1 runner runner 2274664 Nov 10 13:33 avatar.png\n-rw-rw-rw-+ 1 runner runner    2063 Nov 10 13:33 canal.json\n-rw-rw-rw-+ 1 runner runner   45317 Nov 10 13:33 cara.png\n-rw-rw-rw-+ 1 runner runner     381 Nov 10 13:33 voz.txt\n-rw-rw-rw-+ 1 runner runner 2549058 Nov 10 13:33 vo"
+  },
+  {
+   "k": "tool",
+   "t": "cat mundo.json | python3 -c \"import json,sys; d=json.load(sys.stdin); print(json.dumps(d,indent=1,ensure_ascii=False))\" | head -200"
+  },
+  {
+   "k": "res",
+   "t": "{\n \"1_la_habitacion\": \"The back of the store: a wooden fitting stool worn smooth in the center, a metal Brannock device on the floor, shelves of leather shoes in boxes with handwritten labels, a tall mirror with a crack in one corner, a counter with a cash register and a stack of index cards, a wall calendar from the local pharmacy, a brass shoehorn hanging by the door, the smell of leather and po"
+  },
+  {
+   "k": "tool",
+   "t": "cat /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/refs/canal.json; echo ---; cat /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/refs/voz.txt; echo ---; python /opt/estudio/repo/motor/tools/validar.py --help 2>&1 | head -30"
+  },
+  {
+   "k": "res",
+   "t": "{\n \"nombre\": \"Sal's Fitting Bench\",\n \"idioma\": \"en\",\n \"presentador\": \"A 70-year-old Italian-American man, mostly bald with short grey hair on the sides, bushy grey eyebrows, a broad nose, a warm closed-mouth smile, olive skin with age spots, thin rectangular reading glasses worn low on his nose, wearing a white long-sleeved shirt with the collar open under a navy cable-knit sweater vest, a metal s"
   }
  ],
  "maquinas": 1,
@@ -79,14 +111,14 @@
    {
     "k": "guion",
     "n": "Guion",
-    "seg": 0,
+    "seg": 45,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 75,
+  "total_s": 119,
   "avatar_s": 0,
-  "sin_avatar_s": 75,
+  "sin_avatar_s": 119,
   "cerrado": false
  }
 }
