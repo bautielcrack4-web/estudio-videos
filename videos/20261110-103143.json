@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794318937.1201503,
+ "actualizado": 1794319000.8944268,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0476,
+  "deepseek": 0.048,
   "gpt": 0.0508,
   "gpt_img": 22,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0984
+  "total": 0.0988
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "(Bash completed with no output)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nreps={\n'\"A winter boot pressing down hard on a patch of ice at the store door\"':'\"A black rubber winter boot pressing down hard on a slick patch of ice on the step outside the shop door, the deep tread biting into the ice\"',\n'\"A foot in a brown shoe stepping forward on the floorboards of the shop\"':'\"A customer\\'s foot in a new brown shoe stepp"
-  },
   {
    "k": "res",
    "t": "117 pedidos 31 con cara\n[This command modified 1 file you've previously read: gen_pedidos.py. Call Read before editing.]"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 240; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log; tail -2 avatar/it.log; cat escenas/escenas.log"
+  },
+  {
+   "k": "res",
+   "t": "20\n13:55:49 batch 6beec17e: in_progress 0/85\n13:55:49 batch 8c628d9a: in_progress 0/11\n13:51:35 RUN 66771b4e-87ce-479f-842b-cf0e1e74ae43-u2\n13:52:05 estado: IN_PROGRESS\n13:51:59 escenas: es01 lista · 0 capas · cámara 4 viajes\nDownloading Chrome Headless Shell https://www.remotion.dev/chrome-headless-shell\nCustomize this behavior by adding a onBrowserDownload function to openBrowser().\nDownloading "
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 131 --log fotos/fotos_02.log 2>&1 | tail -5; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 212,
+    "seg": 275,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 852,
+    "seg": 916,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1399,
+  "total_s": 1463,
   "avatar_s": 30,
-  "sin_avatar_s": 1369,
+  "sin_avatar_s": 1432,
   "cerrado": false
  }
 }
