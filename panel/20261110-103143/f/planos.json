@@ -1,0 +1,814 @@
+[
+ {
+  "id": "p001",
+  "startMs": 7000,
+  "endMs": 11833,
+  "seg": 4.8,
+  "texto": "me, four shoe boxes on the shelf, each with a card in front in my handwriting,"
+ },
+ {
+  "id": "p002",
+  "startMs": 11833,
+  "endMs": 16780,
+  "seg": 4.9,
+  "texto": "because I never trusted a label I didn't write myself."
+ },
+ {
+  "id": "p003",
+  "startMs": 16780,
+  "endMs": 21500,
+  "seg": 4.7,
+  "texto": "By the end, those four cards are the only four kinds of shoe I tell you to buy after"
+ },
+ {
+  "id": "p004",
+  "startMs": 21500,
+  "endMs": 25800,
+  "seg": 4.3,
+  "texto": "65. Not four brands. I don't do brands."
+ },
+ {
+  "id": "p005",
+  "startMs": 25800,
+  "endMs": 30660,
+  "seg": 4.9,
+  "texto": "Four kinds of shoe and what to look at in each one so you don't get taken."
+ },
+ {
+  "id": "p006",
+  "startMs": 30660,
+  "endMs": 36560,
+  "seg": 5.9,
+  "texto": "My father opened that store in 1951. One window, one bench."
+ },
+ {
+  "id": "p007",
+  "startMs": 36560,
+  "endMs": 40833,
+  "seg": 4.3,
+  "texto": "One brass bell on the door because he said a customer should hear that they"
+ },
+ {
+  "id": "p008",
+  "startMs": 40833,
+  "endMs": 46520,
+  "seg": 5.7,
+  "texto": "arrived. I was 12 when he handed me my first shoe and said, Sal, bend it."
+ },
+ {
+  "id": "p009",
+  "startMs": 46520,
+  "endMs": 50400,
+  "seg": 3.9,
+  "texto": "So I bent it, folded right in half, like a taco."
+ },
+ {
+  "id": "p010",
+  "startMs": 50400,
+  "endMs": 55080,
+  "seg": 4.7,
+  "texto": "He says, would you walk to church on that? I said, no. He said, good."
+ },
+ {
+  "id": "p011",
+  "startMs": 55080,
+  "endMs": 60166,
+  "seg": 5.1,
+  "texto": "Now you know more than half my customers. For 42 years I've been on the customer side"
+ },
+ {
+  "id": "p012",
+  "startMs": 60166,
+  "endMs": 65820,
+  "seg": 5.7,
+  "texto": "of that bench, and I've fitted feet on men and women from 17 to 94."
+ },
+ {
+  "id": "p013",
+  "startMs": 65820,
+  "endMs": 69833,
+  "seg": 4.0,
+  "texto": "I've seen feet measured wrong at 9 in the morning, in socks the"
+ },
+ {
+  "id": "p014",
+  "startMs": 69833,
+  "endMs": 74666,
+  "seg": 4.8,
+  "texto": "thickness of a coin. And I've seen the look on the face when the right shoe goes"
+ },
+ {
+  "id": "p015",
+  "startMs": 74666,
+  "endMs": 79500,
+  "seg": 4.8,
+  "texto": "on for the first time. That look. That's why I still unlock the door."
+ },
+ {
+  "id": "p016",
+  "startMs": 85500,
+  "endMs": 90114,
+  "seg": 4.6,
+  "texto": "The toes can spread. The size you wore at 50 is not always"
+ },
+ {
+  "id": "p017",
+  "startMs": 90114,
+  "endMs": 95380,
+  "seg": 5.3,
+  "texto": "the size you are at 70. I have an index card in that file box back there."
+ },
+ {
+  "id": "p018",
+  "startMs": 95380,
+  "endMs": 99342,
+  "seg": 4.0,
+  "texto": "Mr. Rossi. And that's not his real name, but the card is real. It"
+ },
+ {
+  "id": "p019",
+  "startMs": 99342,
+  "endMs": 104380,
+  "seg": 5.0,
+  "texto": "says 9D. underneath, in my own hand, 9E"
+ },
+ {
+  "id": "p020",
+  "startMs": 104380,
+  "endMs": 108571,
+  "seg": 4.2,
+  "texto": "Wide, high instep Same man Eleven years between"
+ },
+ {
+  "id": "p021",
+  "startMs": 108571,
+  "endMs": 113185,
+  "seg": 4.6,
+  "texto": "those two lines His feet didn't grow They spread When feet spread,"
+ },
+ {
+  "id": "p022",
+  "startMs": 113185,
+  "endMs": 117800,
+  "seg": 4.6,
+  "texto": "a shoe that fits you in width keeps you standing up straight Now the"
+ },
+ {
+  "id": "p023",
+  "startMs": 122800,
+  "endMs": 128900,
+  "seg": 6.1,
+  "texto": "the next time you're in a store you see what I see when I'm on that stool Number"
+ },
+ {
+  "id": "p024",
+  "startMs": 133900,
+  "endMs": 138300,
+  "seg": 4.4,
+  "texto": "underneath. A good shoe has a solid board in there."
+ },
+ {
+  "id": "p025",
+  "startMs": 138300,
+  "endMs": 144580,
+  "seg": 6.3,
+  "texto": "A bad shoe has a soft cardboard pad that tells you the whole bottom is cardboard and foam."
+ },
+ {
+  "id": "p026",
+  "startMs": 144580,
+  "endMs": 149157,
+  "seg": 4.6,
+  "texto": "If you use a doctor's insole, that shoe has to have a removable one so you"
+ },
+ {
+  "id": "p027",
+  "startMs": 149157,
+  "endMs": 154242,
+  "seg": 5.1,
+  "texto": "can put yours in. I had a woman, Mrs. Bellini, in the winter of 2011,"
+ },
+ {
+  "id": "p028",
+  "startMs": 154242,
+  "endMs": 158540,
+  "seg": 4.3,
+  "texto": "came in with shoes two sizes too big."
+ },
+ {
+  "id": "p029",
+  "startMs": 158540,
+  "endMs": 165309,
+  "seg": 6.8,
+  "texto": "I took the thick felt insole out, put a firm one in, and she said, Sal, I can feel the floor again."
+ },
+ {
+  "id": "p030",
+  "startMs": 165309,
+  "endMs": 169500,
+  "seg": 4.2,
+  "texto": "She didn't get a new foot. She got a shoe where she could feel the floor. Number"
+ },
+ {
+  "id": "p031",
+  "startMs": 174500,
+  "endMs": 179169,
+  "seg": 4.7,
+  "texto": "A wide shoe can still pinch the toes if it's cut close in front."
+ },
+ {
+  "id": "p032",
+  "startMs": 179169,
+  "endMs": 184229,
+  "seg": 5.1,
+  "texto": "Stand in the shoe with your weight on it and press your thumb down in front of your big toe."
+ },
+ {
+  "id": "p033",
+  "startMs": 184229,
+  "endMs": 188169,
+  "seg": 3.9,
+  "texto": "You should feel a little room about the width of your thumb."
+ },
+ {
+  "id": "p034",
+  "startMs": 188169,
+  "endMs": 193569,
+  "seg": 5.4,
+  "texto": "If your toes touch the end, that shoe is too short, no matter what the box says."
+ },
+ {
+  "id": "p035",
+  "startMs": 193569,
+  "endMs": 197329,
+  "seg": 3.8,
+  "texto": "By the time I was six, my father had a picture of me doing it."
+ },
+ {
+  "id": "p036",
+  "startMs": 197329,
+  "endMs": 202400,
+  "seg": 5.1,
+  "texto": "A little boy, sitting on that stool, thumb in a shoe, like it was a piano. Number"
+ },
+ {
+  "id": "p037",
+  "startMs": 207400,
+  "endMs": 211950,
+  "seg": 4.5,
+  "texto": "at the bottom, and seated flat on the ground. My father called a shoe with"
+ },
+ {
+  "id": "p038",
+  "startMs": 211950,
+  "endMs": 216500,
+  "seg": 4.5,
+  "texto": "a high heel, a chair with a nervous foot. I had a fellow, Mr. Duffy,"
+ },
+ {
+  "id": "p039",
+  "startMs": 216500,
+  "endMs": 221050,
+  "seg": 4.5,
+  "texto": "came in the spring of 2017 with walking shoes that looked carved from"
+ },
+ {
+  "id": "p040",
+  "startMs": 221050,
+  "endMs": 225369,
+  "seg": 4.3,
+  "texto": "a bar of soap. High heel, soft in the middle."
+ },
+ {
+  "id": "p041",
+  "startMs": 225369,
+  "endMs": 230129,
+  "seg": 4.8,
+  "texto": "He said his balance was fine. Three months later, he came back with a cane."
+ },
+ {
+  "id": "p042",
+  "startMs": 230129,
+  "endMs": 234700,
+  "seg": 4.6,
+  "texto": "I'm not saying it was the shoes. I'm saying the shoes weren't helping him. Number"
+ },
+ {
+  "id": "p043",
+  "startMs": 239700,
+  "endMs": 244225,
+  "seg": 4.5,
+  "texto": "heel. Grip it with two fingers and press. It should be stiff,"
+ },
+ {
+  "id": "p044",
+  "startMs": 244225,
+  "endMs": 248750,
+  "seg": 4.5,
+  "texto": "like a good book spine. If it collapses under your thumb, like a sock"
+ },
+ {
+  "id": "p045",
+  "startMs": 248750,
+  "endMs": 253275,
+  "seg": 4.5,
+  "texto": "with a dream, your heel slides around all day, and a sliding heel means"
+ },
+ {
+  "id": "p046",
+  "startMs": 253275,
+  "endMs": 257800,
+  "seg": 4.5,
+  "texto": "a tired foot. That's my rhyme, by the way, the only one I've got. Now"
+ },
+ {
+  "id": "p047",
+  "startMs": 262800,
+  "endMs": 263700,
+  "seg": 0.9,
+  "texto": "the shelf. The first"
+ },
+ {
+  "id": "p048",
+  "startMs": 268700,
+  "endMs": 273372,
+  "seg": 4.7,
+  "texto": "a paper towel, put it back. A shoe should bend at the ball in the front"
+ },
+ {
+  "id": "p049",
+  "startMs": 273372,
+  "endMs": 278045,
+  "seg": 4.7,
+  "texto": "third, where your foot bends, not in the middle. A shoe that folds in"
+ },
+ {
+  "id": "p050",
+  "startMs": 278045,
+  "endMs": 282718,
+  "seg": 4.7,
+  "texto": "the middle gives your arch nothing to push against. On the shelf it feels like a"
+ },
+ {
+  "id": "p051",
+  "startMs": 282718,
+  "endMs": 287969,
+  "seg": 5.3,
+  "texto": "slipper. Ten blocks later your feet are telling you the shoe wasn't doing any work."
+ },
+ {
+  "id": "p052",
+  "startMs": 287969,
+  "endMs": 292063,
+  "seg": 4.1,
+  "texto": "So bend it, then twist it. Twist it like you're wringing a towel. If"
+ },
+ {
+  "id": "p053",
+  "startMs": 292063,
+  "endMs": 296309,
+  "seg": 4.2,
+  "texto": "it twists easy, all the way. It's got no spine."
+ },
+ {
+  "id": "p054",
+  "startMs": 296309,
+  "endMs": 301329,
+  "seg": 5.0,
+  "texto": "Go for a firmer one, and your arch will thank you on the way home."
+ },
+ {
+  "id": "p055",
+  "startMs": 301329,
+  "endMs": 306081,
+  "seg": 4.8,
+  "texto": "The second trap is the open heel, the high heel, whatever"
+ },
+ {
+  "id": "p056",
+  "startMs": 306081,
+  "endMs": 310754,
+  "seg": 4.7,
+  "texto": "they're calling it this year. On carpet it's fine, on a sidewalk with"
+ },
+ {
+  "id": "p057",
+  "startMs": 310754,
+  "endMs": 315427,
+  "seg": 4.7,
+  "texto": "a crack in it, it's not fine. If you've had a fall, ask your doctor"
+ },
+ {
+  "id": "p058",
+  "startMs": 315427,
+  "endMs": 320100,
+  "seg": 4.7,
+  "texto": "before you do anything I say, and think twice about that heel. The third"
+ },
+ {
+  "id": "p059",
+  "startMs": 325100,
+  "endMs": 329616,
+  "seg": 4.5,
+  "texto": "suggestion, not a law. It was decided by a company in an office."
+ },
+ {
+  "id": "p060",
+  "startMs": 329616,
+  "endMs": 334133,
+  "seg": 4.5,
+  "texto": "For an average foot, they have never met. Take the shoe off the wall, sit"
+ },
+ {
+  "id": "p061",
+  "startMs": 334133,
+  "endMs": 338650,
+  "seg": 4.5,
+  "texto": "down, put it on the way I'd put it on you, with a shoe horn, and"
+ },
+ {
+  "id": "p062",
+  "startMs": 338650,
+  "endMs": 343166,
+  "seg": 4.5,
+  "texto": "stand up. Walk five steps, then do it again, with a half"
+ },
+ {
+  "id": "p063",
+  "startMs": 343166,
+  "endMs": 347683,
+  "seg": 4.5,
+  "texto": "size down and a half size up. Seven out of ten times, the one"
+ },
+ {
+  "id": "p064",
+  "startMs": 347683,
+  "endMs": 352200,
+  "seg": 4.5,
+  "texto": "you first picked isn't the one you buy. Now, I'd like you to do"
+ },
+ {
+  "id": "p065",
+  "startMs": 357200,
+  "endMs": 361758,
+  "seg": 4.6,
+  "texto": "floor against a wall and stand on it with your heel against the wall."
+ },
+ {
+  "id": "p066",
+  "startMs": 361758,
+  "endMs": 366738,
+  "seg": 5.0,
+  "texto": "Mark the end of your longest toe. Take a ruler and measure. That's your length."
+ },
+ {
+  "id": "p067",
+  "startMs": 366738,
+  "endMs": 371298,
+  "seg": 4.6,
+  "texto": "Then measure across the widest part, the ball. That's your width."
+ },
+ {
+  "id": "p068",
+  "startMs": 371298,
+  "endMs": 375450,
+  "seg": 4.2,
+  "texto": "Write it on a card and put it in your wallet. And do it at 4 o'clock in the afternoon."
+ },
+ {
+  "id": "p069",
+  "startMs": 375450,
+  "endMs": 380012,
+  "seg": 4.6,
+  "texto": "not at 9 in the morning. Your feet are bigger at 4 o'clock than at"
+ },
+ {
+  "id": "p070",
+  "startMs": 380012,
+  "endMs": 384575,
+  "seg": 4.6,
+  "texto": "9. Buy the shoe at 4 for the afternoon foot, the one that walks"
+ },
+ {
+  "id": "p071",
+  "startMs": 384575,
+  "endMs": 389137,
+  "seg": 4.6,
+  "texto": "home on the sidewalk. I have two marks on the wall by the door for my own"
+ },
+ {
+  "id": "p072",
+  "startMs": 389137,
+  "endMs": 393700,
+  "seg": 4.6,
+  "texto": "feet, and they're a half size apart, and they're both me. And now the part"
+ },
+ {
+  "id": "p073",
+  "startMs": 398700,
+  "endMs": 403850,
+  "seg": 5.2,
+  "texto": "a Sunday, padding around the house, getting through a winter. Those are four different"
+ },
+ {
+  "id": "p074",
+  "startMs": 403850,
+  "endMs": 409000,
+  "seg": 5.2,
+  "texto": "jobs and a shoe that's good at all four isn't very good at any of them. The walking"
+ },
+ {
+  "id": "p075",
+  "startMs": 414000,
+  "endMs": 419225,
+  "seg": 5.2,
+  "texto": "A low heel. A firm back. Then look at the outsole. The rubber on the bottom."
+ },
+ {
+  "id": "p076",
+  "startMs": 419225,
+  "endMs": 424450,
+  "seg": 5.2,
+  "texto": "In a place with rain you want a pattern cut into it. My father called"
+ },
+ {
+  "id": "p077",
+  "startMs": 424450,
+  "endMs": 429675,
+  "seg": 5.2,
+  "texto": "a smooth sole a skating rink with a shoe on it. A walking shoe should feel like"
+ },
+ {
+  "id": "p078",
+  "startMs": 429675,
+  "endMs": 434900,
+  "seg": 5.2,
+  "texto": "a hand under the arch, not a cloud. Clouds don't stay clouds for long. The dress"
+ },
+ {
+  "id": "p079",
+  "startMs": 439900,
+  "endMs": 444400,
+  "seg": 4.5,
+  "texto": "Most people buy these too small. The dress shoe should be a half size bigger"
+ },
+ {
+  "id": "p080",
+  "startMs": 444400,
+  "endMs": 448898,
+  "seg": 4.5,
+  "texto": "than your walking shoe, because there's less give in the leather."
+ },
+ {
+  "id": "p081",
+  "startMs": 448898,
+  "endMs": 453400,
+  "seg": 4.5,
+  "texto": "Pick a wide toe box, even in a dress shoe, because that's exactly where they cut"
+ },
+ {
+  "id": "p082",
+  "startMs": 453400,
+  "endMs": 457900,
+  "seg": 4.5,
+  "texto": "the most corners. My father would shine his shoes on a Saturday night, and"
+ },
+ {
+  "id": "p083",
+  "startMs": 457900,
+  "endMs": 462400,
+  "seg": 4.5,
+  "texto": "say, Sal, a man who doesn't shine his shoes doesn't trust the morning. The house"
+ },
+ {
+  "id": "p084",
+  "startMs": 467400,
+  "endMs": 472260,
+  "seg": 4.9,
+  "texto": "or a soft leather skin, so your foot is walking on the floor, and"
+ },
+ {
+  "id": "p085",
+  "startMs": 472260,
+  "endMs": 477120,
+  "seg": 4.9,
+  "texto": "the slipper is just along for the ride. I've had people sit on this stool and"
+ },
+ {
+  "id": "p086",
+  "startMs": 477120,
+  "endMs": 481980,
+  "seg": 4.9,
+  "texto": "tell me they can't stand on the bathroom tile in the morning. The first question I"
+ },
+ {
+  "id": "p087",
+  "startMs": 481980,
+  "endMs": 486840,
+  "seg": 4.9,
+  "texto": "ask isn't about the tile. It's about the slipper. a good house shoe is"
+ },
+ {
+  "id": "p088",
+  "startMs": 486840,
+  "endMs": 491700,
+  "seg": 4.9,
+  "texto": "a shoe with a sole low wide and a back to it. The winter"
+ },
+ {
+  "id": "p089",
+  "startMs": 496700,
+  "endMs": 502568,
+  "seg": 5.9,
+  "texto": "In a winter shoe, the sole has to hold onto ice, not just wet pavement."
+ },
+ {
+  "id": "p090",
+  "startMs": 502568,
+  "endMs": 506642,
+  "seg": 4.1,
+  "texto": "Look at the tread first, a deep pattern. Winter shoes are often"
+ },
+ {
+  "id": "p091",
+  "startMs": 506642,
+  "endMs": 511428,
+  "seg": 4.8,
+  "texto": "cut short because the maker adds insulation and eats the length."
+ },
+ {
+  "id": "p092",
+  "startMs": 511428,
+  "endMs": 517448,
+  "seg": 6.0,
+  "texto": "So take the winter shoe a half size larger and try it on with a thick sock you'll wear in the winter."
+ },
+ {
+  "id": "p093",
+  "startMs": 517448,
+  "endMs": 521557,
+  "seg": 4.1,
+  "texto": "Mr. Coyle, his first winter after his wife passed,"
+ },
+ {
+  "id": "p094",
+  "startMs": 521557,
+  "endMs": 526528,
+  "seg": 5.0,
+  "texto": "came in alone and bought the wrong size, and I fitted him three times that afternoon."
+ },
+ {
+  "id": "p095",
+  "startMs": 526528,
+  "endMs": 531500,
+  "seg": 5.0,
+  "texto": "He said, thank you, Sal. I feel like I can walk to her grave now. Take"
+ },
+ {
+  "id": "p096",
+  "startMs": 536500,
+  "endMs": 540866,
+  "seg": 4.4,
+  "texto": "your time. Put the shoe on. walk, take it off, put on"
+ },
+ {
+  "id": "p097",
+  "startMs": 540866,
+  "endMs": 545233,
+  "seg": 4.4,
+  "texto": "the next your foot is not a child it's not going to learn it's going"
+ },
+ {
+  "id": "p098",
+  "startMs": 545233,
+  "endMs": 549600,
+  "seg": 4.4,
+  "texto": "to ask the same thing every day and you're the one who answers if you've stayed"
+ },
+ {
+  "id": "p099",
+  "startMs": 554600,
+  "endMs": 559580,
+  "seg": 5.0,
+  "texto": "on one stool I've fitted feet with a boy on my knee and I've fitted"
+ },
+ {
+  "id": "p100",
+  "startMs": 559580,
+  "endMs": 564560,
+  "seg": 5.0,
+  "texto": "those boys' sons I've done it all with the same three things a metal shoehorn a"
+ },
+ {
+  "id": "p101",
+  "startMs": 564560,
+  "endMs": 569540,
+  "seg": 5.0,
+  "texto": "little notebook in my pocket and my thumb right where the toe meets the shoe"
+ },
+ {
+  "id": "p102",
+  "startMs": 569540,
+  "endMs": 574520,
+  "seg": 5.0,
+  "texto": "to feel for room. The thumb doesn't lie. The box lies all the time."
+ },
+ {
+  "id": "p103",
+  "startMs": 574520,
+  "endMs": 579968,
+  "seg": 5.4,
+  "texto": "Your thumb is the truth. Bend the shoe. Go on. Bend it."
+ },
+ {
+  "id": "p104",
+  "startMs": 579968,
+  "endMs": 584480,
+  "seg": 4.5,
+  "texto": "Your thumb is better than the label. Older shoes need care and care is cheaper"
+ },
+ {
+  "id": "p105",
+  "startMs": 584480,
+  "endMs": 589460,
+  "seg": 5.0,
+  "texto": "than a new pair. A leather shoe wants polish and a brush in ten minutes on"
+ },
+ {
+  "id": "p106",
+  "startMs": 589460,
+  "endMs": 594440,
+  "seg": 5.0,
+  "texto": "a Saturday. Stuff the toe with newspaper for the season and keep them"
+ },
+ {
+  "id": "p107",
+  "startMs": 594440,
+  "endMs": 599420,
+  "seg": 5.0,
+  "texto": "off the radiator. Let them breathe. My father kept a brush by the register like"
+ },
+ {
+  "id": "p108",
+  "startMs": 599420,
+  "endMs": 604400,
+  "seg": 5.0,
+  "texto": "other men keep a pen. Now, if you like sitting here with me, hit"
+ },
+ {
+  "id": "p109",
+  "startMs": 609400,
+  "endMs": 615048,
+  "seg": 5.6,
+  "texto": "If I say something worth keeping, I wanted to find the next person who needs it,"
+ },
+ {
+  "id": "p110",
+  "startMs": 615048,
+  "endMs": 619733,
+  "seg": 4.7,
+  "texto": "and subscribe, because every week I'll have another one. The next one's about the"
+ },
+ {
+  "id": "p111",
+  "startMs": 619733,
+  "endMs": 624900,
+  "seg": 5.2,
+  "texto": "shelf, and how to keep a pair alive a winter longer than it wants to go. So here's"
+ },
+ {
+  "id": "p112",
+  "startMs": 629900,
+  "endMs": 634768,
+  "seg": 4.9,
+  "texto": "or the traps. I check the heel counter first myself."
+ },
+ {
+  "id": "p113",
+  "startMs": 634768,
+  "endMs": 639791,
+  "seg": 5.0,
+  "texto": "Press it with two fingers and tell me what happened. And then measure your feet at four in the afternoon"
+ },
+ {
+  "id": "p114",
+  "startMs": 639791,
+  "endMs": 644508,
+  "seg": 4.7,
+  "texto": "and tell me what the ruler says. My father used to say,"
+ },
+ {
+  "id": "p115",
+  "startMs": 644508,
+  "endMs": 648988,
+  "seg": 4.5,
+  "texto": "every man walks on his own two feet, but nobody ever asked him how they feel."
+ },
+ {
+  "id": "p116",
+  "startMs": 648988,
+  "endMs": 654628,
+  "seg": 5.6,
+  "texto": "I'm asking now, how do they feel? Thank you for sitting with me on that stool. Thank you."
+ }
+]
