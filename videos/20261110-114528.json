@@ -1,0 +1,92 @@
+{
+ "vid": "20261110-114528",
+ "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
+ "canal": "yokos-morning-legs",
+ "estado": "trabajando",
+ "actualizado": 1794322329.5506244,
+ "creado": 1794322328.7042422,
+ "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
+ "pasos": [
+  {
+   "k": "guion",
+   "n": "Guion",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "voz",
+   "n": "Voz",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "tiempos",
+   "n": "Tiempos",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "avatar",
+   "n": "Avatar",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "fotos",
+   "n": "Fotos",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "armado",
+   "n": "Armado",
+   "st": "pending",
+   "info": ""
+  },
+  {
+   "k": "qc",
+   "n": "QC",
+   "st": "pending",
+   "info": ""
+  }
+ ],
+ "costo": {
+  "deepseek": 0.0,
+  "gpt": 0.0,
+  "gpt_img": 0,
+  "whisper": 0.0,
+  "avatar": 0.0,
+  "total": 0.0
+ },
+ "eventos": [
+  {
+   "k": "user",
+   "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for "
+  }
+ ],
+ "maquinas": 1,
+ "extrema": "1",
+ "ahorro": "",
+ "etapas": {
+  "filas": [
+   {
+    "k": "maquina",
+    "n": "Preparar la máquina",
+    "seg": 398,
+    "pasadas": 1,
+    "fin": true
+   },
+   {
+    "k": "guion",
+    "n": "Guion",
+    "seg": 1,
+    "pasadas": 1,
+    "fin": false
+   }
+  ],
+  "total_s": 399,
+  "avatar_s": 0,
+  "sin_avatar_s": 399,
+  "cerrado": false
+ }
+}
