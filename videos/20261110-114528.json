@@ -3,21 +3,21 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322385.9838893,
+ "actualizado": 1794322449.54987,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
   {
    "k": "guion",
    "n": "Guion",
-   "st": "active",
-   "info": "1.546 palabras"
+   "st": "done",
+   "info": "1.858 palabras"
   },
   {
    "k": "voz",
    "n": "Voz",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "3 bloques"
   },
   {
    "k": "tiempos",
@@ -51,54 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0092,
+  "deepseek": 0.0116,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0092
+  "total": 0.0116
  },
  "eventos": [
-  {
-   "k": "user",
-   "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for "
-  },
-  {
-   "k": "ai",
-   "t": "I'll start by reading the brief and the channel references, then run `mundo.py` before writing anything."
-  },
-  {
-   "k": "tool",
-   "t": "ls -la /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/ && ls -la /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/refs/ 2>/dev/null; ls /opt/estudio/repo/motor/tools/"
-  },
-  {
-   "k": "res",
-   "t": "total 64\ndrwxrwxrwx+ 6 runner runner  4096 Nov 10 14:52 .\ndrwxrwxrwx+ 3 runner runner  4096 Nov 10 14:52 ..\n-rw-rw-rw-+ 1 runner runner 14061 Nov 10 14:52 BRIEF.md\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 14:52 avatar\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 14:52 fotos\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 14:52 refs\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 14:52 voz\ntotal 4560\ndrwxrwxrwx+ 2 r"
-  },
-  {
-   "k": "tool",
-   "t": "cat refs/canal.json && echo \"---\" && cat refs/voz.txt"
-  },
-  {
-   "k": "res",
-   "t": "{\n \"nombre\": \"Yoko's Morning Legs\",\n \"idioma\": \"en\",\n \"presentador\": \"A 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brown eyes, freckles and sun spots on her cheeks, a bright open smile, wearing a navy blue zip-up track jacket with white stripes down the sleeves over a white crew-neck t-shirt, a dark sports watch on her left wrist\",\n \"escena\": \"a bright small "
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/mundo.py . \"My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs\" \"Her grandmother who walked every day until 98; the 5 radio taiso movements done while sitting on a wooden kitchen chair; how many repetitions of each; what you notice after two weeks.\" 2>&1 | tail -20"
-  },
-  {
-   "k": "res",
-   "t": "✓ mundo.json\nEL CUARTO: A bright small living room in a Japanese apartment. Morning light comes through white curtains and a sliding glass door to a narrow balcony. A wooden kitchen chair stands on a light wood floor, and a rolled purple exercise mat leans against the wall by the door. On a wooden shelf: a small silver radio, a few books, a wicker basket, a vase of pink flowers. A leafy plant sits"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/mundo.json\"}"
-  },
-  {
-   "k": "res",
-   "t": "1\t{\n2\t \"1_la_habitacion\": \"A bright small living room in a Japanese apartment. Morning light comes through white curtains and a sliding glass door to a narrow balcony. A wooden kitchen chair stands on a light wood floor, and a rolled purple exercise mat leans against the wall by the door. On a wooden shelf: a small silver radio, a few books, a wicker basket, a vase of pink flowers. A leafy plant s"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/refs/avatar.png\"}"
@@ -146,6 +106,78 @@
   {
    "k": "res",
    "t": "8373 guion.txt\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa guion\n  ✗ guion: 8316 caracteres, 1552 palabras (hacen falta 9000-11500 para 10 min: alargalo con puntos nuevos)\nRESULTADO: FALLA (1)"
+  },
+  {
+   "k": "tool",
+   "t": "You don't need a gym. You don't need a mat. A kitchen chair is perfect. Strong chair, no wheels, sit on the front half of the seat. Feet flat, as wide as your hips. Back straight, like a string pulls the top of your head. Good.\n\nOne small test before we start. It takes ten seconds, and I do it every morning. Stand up from your chair once, slowly, without using your hands, and sit down again. That "
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "On the first morning with my Tuesday class, I had twelve women in my living room. The oldest was Mrs. Sato, seventy-nine, and she brought her own cushion. She could not lift her arms past her ears that first day, because of a bad shoulder from years of carrying laundry up the stairs. In the third week, she lifted them all the way, and she laughed and almost fell back in her chair. Nobody is fast a"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "And a small thing you will notice: your hands go down. When the shoulders loosen, the hands hang beside the chair instead of climbing up to the ears. Stand in front of a mirror if you have one. That is the whole test — where are my hands?\n\nWhy it matters: the neck, the tops of the shoulders, the inside of the shoulder blades."
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "A kitchen chair. Five minutes. Before your tea gets cold.\n\nIf you forget everything I said today, keep two words: slow, and together. Slow is strong, because a slow movement lets the body answer you. Together is kind, because you do not have to do all five on the first morning. One is enough. One movement, ten times, in your nightgown, before the tea. Then tomorrow, two. The chair is not going any"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "wc -c guion.txt; python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -30"
+  },
+  {
+   "k": "res",
+   "t": "10032 guion.txt\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa guion\n  ✓ guion: 9968 caracteres, 1865 palabras (hacen falta 9000-11500 para 10 min: bien)\nRESULTADO: OK"
+  },
+  {
+   "k": "ai",
+   "t": "Guion OK (9.968 caracteres). Lanzo la voz en segundo plano y en paralelo planifico el gancho y las imágenes."
+  },
+  {
+   "k": "tool",
+   "t": "mkdir -p gates qc sfx segments clips extrema escenas && nohup python /opt/estudio/repo/motor/tools/voz.py . > voz/voz.log 2>&1 & \necho \"voz pid $!\""
+  },
+  {
+   "k": "res",
+   "t": "voz pid 4490"
+  },
+  {
+   "k": "tool",
+   "t": "[\n  {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":6000},\n  {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":85000,\"endMs\":90000},\n  {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":150000,\"endMs\":155000},\n  {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":160000,\"endMs\":166000},\n  {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":6"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/avatar_ranges.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "cat voz/voz.log 2>/dev/null | tail -20; ls -la voz/"
+  },
+  {
+   "k": "res",
+   "t": "total 16\ndrwxrwxrwx+  2 runner runner 4096 Nov 10 14:53 .\ndrwxrwxrwx+ 13 runner runner 4096 Nov 10 14:53 ..\n-rw-rw-rw-+  1 sesion sesion    0 Nov 10 14:53 voz.log"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -10"
   }
  ],
  "maquinas": 1,
@@ -170,14 +202,14 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 3,
+    "seg": 66,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 455,
+  "total_s": 519,
   "avatar_s": 0,
-  "sin_avatar_s": 455,
+  "sin_avatar_s": 519,
   "cerrado": false
  }
 }
