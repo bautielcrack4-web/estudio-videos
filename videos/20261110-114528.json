@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794338262.1501136,
+ "actualizado": 1794338329.039339,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1536,
+  "deepseek": 0.1542,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8964
+  "total": 0.897
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "started"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 60; tail -8 render_test.log; ls segments/ | head"
-  },
   {
    "k": "res",
    "t": "extrema: pisa al avatar, va b-roll -> extrema/es03.mp4\nextrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 10\n0000.mp4\n0000.mp4.src\n0001.mp4\n0001.mp4.src\n0002.mp4\n0002.mp4.src\n0003.mp4\n0003.mp4.src\n0004.mp4\n0004.mp4.src"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py . > assemble.log 2>&1 &\necho started; sleep 90; tail -5 assemble.log"
+  },
+  {
+   "k": "res",
+   "t": "started"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 120; tail -5 assemble.log; ls -la final.mp4 2>/dev/null"
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 1447,
+    "seg": 1514,
     "pasadas": 1,
     "fin": false
    },
@@ -251,14 +251,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 1035,
+    "seg": 1102,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 16331,
+  "total_s": 16398,
   "avatar_s": 816,
-  "sin_avatar_s": 15516,
+  "sin_avatar_s": 15582,
   "cerrado": false
  }
 }
