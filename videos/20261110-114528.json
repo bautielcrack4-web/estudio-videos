@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794337797.4243965,
+ "actualizado": 1794337864.3194528,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "done",
-   "info": "156 segmentos"
+   "info": "153 segmentos"
   },
   {
    "k": "qc",
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1511,
+  "deepseek": 0.1517,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8939
+  "total": 0.8945
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "the 9800\nradio 17140\nchair 15360\nwooden 14680\nmorning 82100\nten 172420\ncounting 720993\nscreen 30260\ndoor 30540\nair None\nask 632753\nyour 105140\none 11540\nwe 20600"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"id\": \"madera\", \"tags\": [\"wood\", \"knock\", \"chair\"], \"q\": \"wooden chair creak\", \"min\": 0.4, \"max\": 3},\n {\"id\": \"radio\", \"tags\": [\"radio\", \"static\"], \"q\": \"old radio tuning\", \"min\": 1, \"max\": 5},\n {\"id\": \"pajaros\", \"tags\": [\"birds\"], \"q\": \"morning birds\", \"min\": 2, \"max\": 7},\n {\"id\": \"pasos\", \"tags\": [\"steps\", \"footsteps\"], \"q\": \"footsteps indoor\", \"min\": 1, \"max\": 5},\n {\"id\": \"papel\", \"tags\": ["
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 420; tail -4 render.log; ls segments/*.mp4 2>/dev/null | grep -v src | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "extrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\n156"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 420; tail -4 render.log; ls segments/*.mp4 2>/dev/null | grep -v src | wc -l"
   }
  ],
  "maquinas": 1,
@@ -237,28 +237,28 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 983,
+    "seg": 1049,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 1183,
+    "seg": 1250,
     "pasadas": 2,
     "fin": false
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 570,
+    "seg": 637,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 15866,
+  "total_s": 15933,
   "avatar_s": 816,
-  "sin_avatar_s": 15051,
+  "sin_avatar_s": 15118,
   "cerrado": false
  }
 }
