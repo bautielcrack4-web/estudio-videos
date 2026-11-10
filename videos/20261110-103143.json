@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794330122.2340708,
+ "actualizado": 1794330188.928794,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1156,
+  "deepseek": 0.1169,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.631
+  "total": 0.6323
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "el armado por tramos falló (pegado: [concat @ 0x5d09548d1f00] Impossible to open './tramos/./tramos/174568aa4cdfba0812c8.mp4'\n[in#0 @ 0x5d09548d1c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 120; tail -4 assemble.log; ls -la final.mp4; pgrep -af \"python.*assemble.py\" | cut -c1-70"
-  },
-  {
-   "k": "res",
-   "t": "[in#0 @ 0x5d09548d1c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\n3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LA\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously\n244"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"tramos/\\|def pegar\\|cwd\\|rmtree\" /opt/estudio/repo/motor/tools/tramos.py | head -20"
-  },
-  {
-   "k": "res",
-   "t": "(Bash completed with no output)"
-  },
   {
    "k": "tool",
    "t": "grep -rn \"lista.txt\" /opt/estudio/repo/motor/tools/*.py | head; ls /opt/estudio/repo/motor/tools/ | grep -i tramo"
@@ -178,6 +158,26 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/revisor.py . > revisor2.log 2>&1; tail -3 revisor2.log; cat gates/correcciones.txt 2>/dev/null | head -5"
+  },
+  {
+   "k": "res",
+   "t": "ya van 1 revisiones con IA en este video: no gasto más.\n✓ sin huecos negros (esta vez sin revisión con IA).\n(22 cuadros revisados, US$0.000)"
+  },
+  {
+   "k": "tool",
+   "t": "cat >> REPORTE.md <<'EOF'\n\n## Edición extrema integrada (pasada final)\n- El motor generó 7 piezas (`xm01`-`xm07`); entraron en el armado **4 capas** (`extrema/capas.json`): xm01 (0-23 s, tarjetas de los 4 zapatos apareciendo junto a Sal), xm03 (92-116 s, la ficha del dato con la tarjeta de Rossi), xm05 (169-188 s, \"2. Wide toe box\") y xm06 (555-579 s, aritmética del cierre) — más **1 pieza a panta"
+  },
+  {
+   "k": "res",
+   "t": "RESULTADO: OK"
+  },
+  {
+   "k": "ai",
+   "t": "La Edición extrema ya está dentro del video: el motor metió 4 capas sobre las fotos y 1 pieza a pantalla completa (la memoria de 1951), regeneré `final.mp4` con ese material y `validar.py --etapa final` da **OK** (654 s, 384 MB)."
+  },
+  {
+   "k": "end",
+   "t": "La Edición extrema ya está dentro del video: el motor metió 4 capas sobre las fotos y 1 pieza a pantalla completa (la memoria de 1951), regeneré `final.mp4` con ese material y `validar.py --etapa final` da **OK** (654 s, 384 MB)."
   }
  ],
  "maquinas": 3,
@@ -265,9 +265,9 @@
    {
     "k": "correcciones",
     "n": "Correcciones",
-    "seg": 0,
+    "seg": 3331,
     "pasadas": 7,
-    "fin": false
+    "fin": true
    },
    {
     "k": "entrega",
