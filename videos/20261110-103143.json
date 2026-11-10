@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794328781.6586099,
+ "actualizado": 1794328845.2673388,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1065,
+  "deepseek": 0.1071,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6219
+  "total": 0.6225
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "{'xm01': {'ok': True, 's': 516}}\n-rwxrwxrw-+ 1 runner runner  38713774 Nov 10 13:55 extrema/es01.mp4\n-rw-rwxrw-+ 1 runner runner 532926806 Nov 10 15:53 extrema/xm01.mov\n-rw-rwxrw-+ 1 runner runner  18662619 Nov 10 15:21 extrema/xm02.mp4\n-rw-rwxrw-+ 1 runner runner 316145700 Nov 10 15:24 extrema/xm03.mov\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\nxm01.tsx\nxm02.tsx\nxm03.tsx\n7"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/render.py . > render4.log 2>&1 &\nsleep 120; cat render4.log; ls -lt segments/*.mp4 | head -2"
-  },
   {
    "k": "res",
    "t": "extrema: esperando las piezas (máx. 10 min)\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 290; tail -5 assemble.log; ls -la final.mp4"
+  },
+  {
+   "k": "res",
+   "t": "el armado por tramos falló (pegado: [concat @ 0x5d09548d1f00] Impossible to open './tramos/./tramos/174568aa4cdfba0812c8.mp4'\n[in#0 @ 0x5d09548d1c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 120; tail -4 assemble.log; ls -la final.mp4; pgrep -af \"python.*assemble.py\" | cut -c1-70"
   }
  ],
  "maquinas": 3,
