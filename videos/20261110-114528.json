@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794323028.686216,
+ "actualizado": 1794323095.7653995,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "11 fotos"
+   "info": "13 fotos"
   },
   {
    "k": "armado",
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0514,
-  "gpt": 0.0367,
-  "gpt_img": 14,
+  "deepseek": 0.0542,
+  "gpt": 0.0416,
+  "gpt_img": 16,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0881
+  "total": 0.0958
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", \"offset\": 170, \"limit\": 80}"
-  },
-  {
-   "k": "res",
-   "t": "170\t  \"Counting out loud together: one, two, three, slowly.\",\n171\t  \"The wall calendar in her handwriting with the counting for the first morning written in the margin in black, a red pencil mark at the third.\",\n172\t  \"Nobody in frame; the calendar hangs, a red pencil tucked into its spiral.\",\n173\t  [\"wall calendar with big numbers\", \"handwritten margin note in black ballpoint\", \"red pencil in the"
-  },
-  {
-   "k": "tool",
-   "t": "  [\"small notebook with written numbers\", \"a hand turning its cover\", \"chair leg\", \"a mug\", \"a slipper\", \"floor grain\"],\n  RM, \"Morning light from the side\",\n  \"overhead at the hand, the book at an angle\","
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python pedido_parte2.py 2>&1 | tail -5"
-  },
-  {
-   "k": "res",
-   "t": "lote1 10 definidas 23\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 302, in <module>\n    f(\"p058\", False,\nTypeError: f() missing 2 required positional arguments: 'color' and 'det'"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", \"offset\": 296, \"limit\": 20}"
-  },
-  {
-   "k": "res",
-   "t": "296\t  [\"wooden ruler with centimetre marks\", \"pale cloth draped over the chair\", \"carpenter's pencil\", \"chair\", \"a mug\", \"floor\"],\n297\t  RM, \"Morning light\",\n298\t  \"close at the ruler, slightly from above, the numbers legible\",\n299\t  \"honey wood, pale cloth, graphite\",\n300\t  \"The cloth has a small tear repaired with dark thread; the ruler's zero edge is worn round.\",\n301\t  AVOIDT)\n302\tf(\"p058\", Fa"
-  },
-  {
-   "k": "tool",
-   "t": "  [\"hand with five fingers up\", \"wall calendar\", \"red pencil\", \"shelf edge\", \"a mug\", \"a morning shadow\"],\n  \"the wall beside the window\", \"Morning light across the wall\",\n  \"close against the wall calendar, from the side\","
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python pedido_parte2.py 2>&1 | tail -5"
-  },
   {
    "k": "res",
    "t": "Traceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 920, in <module>\n    todo = json.load(open(\"pedidos/_todos.json\")) if os.path.exists(\"pedidos/_todos.json\") else {}\n                                                     ^^\nNameError: name 'os' is not defined"
@@ -178,6 +134,50 @@
   {
    "k": "res",
    "t": "_batches.json\nfotos_01.log\nfotos_escenas.log\np001.json\np001.png\np001_b.json\np001_b.png\np004.json\np004.png\np009.json\np009.png\np011.json\np011.png\np012.json\np012.png\np016.json\np016.png\np019.json\np019.png\np020.json\np020.png\np076.json\np076.png\np106.json\np106.png"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/fix_escenas.json > fotos/fotos_fix.log 2>&1 &\necho started; sleep 5; tail -2 fotos/fotos_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "started\n15:03:49 → batch batch_6af3325573508190b2218d87fab51268 · 2 fotos · sin referencia · low 1088x608\n15:03:49 batch fab51268: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nfor k in (\"p001_a\", \"p001_b\", \"p001_c\"):\n    F.pop(k, None)\nhave = {\"p027\", \"p076\", \"p106\", \"p118\", \"p001\"}\nids = []\nfor x in json.load(open(\"planos.json\")):\n    i = x[\"id\"]\n    if i in F and i not in have and not i.startswith(\"s0\"):\n        ids.append(i)\nprint(len(ids), ids)\nlotes = [ids[:40], ids[40:80]]\nfor n, L in e"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedidos/lote02.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python pedidos/lote02.py 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "122 ['p002', 'p003', 'p004', 'p005', 'p006', 'p007', 'p008', 'p009', 'p010', 'p011', 'p012', 'p013', 'p014', 'p015', 'p016', 'p017', 'p018', 'p019', 'p020', 'p021', 'p022', 'p023', 'p024', 'p025', 'p026', 'p029', 'p030', 'p031', 'p032', 'p033', 'p034', 'p035', 'p036', 'p037', 'p038', 'p039', 'p040', 'p041', 'p042', 'p043', 'p044', 'p045', 'p046', 'p047', 'p048', 'p049', 'p050', 'p051', 'p052', 'p0"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nA = json.load(open(\"pedidos/lote02.json\"))\nB = json.load(open(\"pedidos/lote03.json\"))\nFA = json.load(open(\"pedidos/_todos.json\"))\nids = [x[\"id\"] for x in json.load(open(\"planos.json\"))]\nrest = [i for i in ids if i in FA and i not in {x[\"id\"] for x in A+B} and not i.startswith(\"s0\")]\nprint(len(rest), rest)\njson.dump(rest, open(\"pedidos/rest_ids.json\",\"w\"))\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "42 ['p086', 'p087', 'p088', 'p089', 'p090', 'p091', 'p092', 'p093', 'p094', 'p095', 'p096', 'p097', 'p098', 'p099', 'p100', 'p101', 'p102', 'p103', 'p104', 'p105', 'p107', 'p108', 'p109', 'p110', 'p111', 'p112', 'p113', 'p114', 'p115', 'p116', 'p117', 'p119', 'p120', 'p121', 'p122', 'p123', 'p124', 'p125', 'p126', 'p127', 'p128', 'p129']"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nrest = json.load(open(\"pedidos/rest_ids.json\"))\njson.dump([F[i] for i in rest], open(\"pedidos/lote04.json\",\"w\"), ensure_ascii=False, indent=1)\nprint(\"lote04\", len(rest))\nEOF\nsleep 45; tail -2 fotos/fotos_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "lote04 42\n15:03:49 batch fab51268: validating 0/0\n15:04:19 batch fab51268: in_progress 0/2"
+  },
+  {
+   "k": "tool",
+   "t": "while pgrep -f \"fotos.py \\. pedidos/fix_escenas.json\" > /dev/null; do python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_fix.log --existe fotos/p027.png 2>/dev/null | tail -1; sleep 20; done; tail -3 fotos/fotos_fix.log; ls fotos/p027.png fotos/p118.png 2>&1"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 250,
+    "seg": 317,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1098,
+  "total_s": 1165,
   "avatar_s": 0,
-  "sin_avatar_s": 1098,
+  "sin_avatar_s": 1165,
   "cerrado": false
  }
 }
