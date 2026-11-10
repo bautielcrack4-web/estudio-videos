@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794322221.3417623,
+ "actualizado": 1794322289.8898351,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -40,61 +40,25 @@
   {
    "k": "armado",
    "n": "Armado",
-   "st": "active",
+   "st": "done",
    "info": "final.mp4 · 10.9 min"
   },
   {
    "k": "qc",
    "n": "QC",
-   "st": "pending",
-   "info": ""
+   "st": "done",
+   "info": "REPORTE.md"
   }
  ],
  "costo": {
-  "deepseek": 0.0741,
+  "deepseek": 0.0768,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5895
+  "total": 0.5922
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "<persisted-output>\nOutput too large (53.7KB). Full output saved to: /opt/estudio/datos/brain/projects/-opt-estudio-datos-videos-i-ve-fitted-shoes-for-42-years-these-are/cf8ace5b-4ae8-4ece-a2e8-59d7435f0794/tool-results/bthpem3gc.txt\n\nPreview (first 2KB):\n   3580    01:03:24 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOS"
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -af \"python.*render.py\" | cut -c1-100; pgrep -af \"python.*assemble.py\" | cut -c1-100"
-  },
-  {
-   "k": "res",
-   "t": "3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=h\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --disallowed\n18494 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/node/20.20.2/x64/bin:/opt/hostedtoolc\n18496 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/est"
-  },
-  {
-   "k": "tool",
-   "t": "kill 28327; sleep 2; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-80; ls render*.log; tail -2 render.log"
-  },
-  {
-   "k": "res",
-   "t": "3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n21509 python /opt/estudio/repo/motor/tools/render.py .\n29666 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash\nrender.log\nrender_test.log"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --log render.log --cuenta \"segments/*.mp4\" 135 2>&1 | tail -3"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 137 archivos (0 s)"
-  },
-  {
-   "k": "tool",
-   "t": "cat render.log | head -30"
-  },
-  {
-   "k": "res",
-   "t": "(Bash completed with no output)"
-  },
   {
    "k": "tool",
    "t": "sleep 150; ls -la render.log; wc -c render.log; ls segments/*.mp4 | wc -l; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-60"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "cat > gates/final_auto.txt <<'EOF'\nMiré 24 cuadros del final (uno cada ~25-30 s) en qc/hoja_final1.jpg y qc/hoja_final2.jpg.\n- Arranca con el avatar (Sal) desde el segundo 0, sigue con el índice de 4 cajas (1 D'Orford 2 Loafer 3 Derby 4 Boot), el gancho, la memoria del padre (foto 1951, campanilla), el file box de tarjetas, el Brannock, la tarjeta de Rossi, el zapato doblado de 1959, la suela, la "
+  },
+  {
+   "k": "res",
+   "t": "✓ el revisor no encontró fallas.\n(22 cuadros revisados, US$0.001)"
+  },
+  {
+   "k": "tool",
+   "t": "grep -h \"gasto\\|US\\$\" fotos/fotos_test.log fotos/fotos_02.log fotos/fotos_fix.log fotos/fotos_fix2.log fotos/fotos_escenas.log escenas/escenas.log revisor.log 2>/dev/null | grep \"US\\$\" | tail -10; ls gates/"
+  },
+  {
+   "k": "res",
+   "t": "armado.json\netapas.jsonl\nfinal_auto.txt\nfondo_avatar.json\nfotos_auto.txt\nguion_auto.txt\nqc_ok.json\nrender_auto.txt\nrevisor_final.json"
+  },
+  {
+   "k": "tool",
+   "t": "grep -h \"US\\$\" fotos/*.log escenas/escenas.log revisor.log 2>/dev/null | tail -8; cat gates/revisor_final.json | head -c 600"
+  },
+  {
+   "k": "res",
+   "t": "{\"t\": 1794322265.581613, \"n\": 22, \"malas\": 0, \"costo_usd\": 0.0008, \"ia\": true, \"corridas\": 1, \"final_mtime\": 1794322182.3649168}"
+  },
+  {
+   "k": "tool",
+   "t": "grep -h \"US\" fotos/fotos_test.log fotos/fotos_02.log fotos/fotos_fix.log fotos/fotos_fix2.log fotos/fotos_escenas.log escenas/escenas.log 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "13:48:10 ✓ batch 2bcc1dde: 5 fotos bajadas, 0 fallidas (US$0.015)\n13:49:43 ✓ batch 1b8448d2: 16 fotos bajadas, 0 fallidas (US$0.033)\n14:31:04 ✓ batch da4a4e7f: 1 fotos bajadas, 0 fallidas (US$0.002)\n13:41:24 ✓ batch 8c30d054: 1 fotos bajadas, 0 fallidas (US$0.003)\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n14:15:39 ✓ batch 6beec17e: 85 fotos bajadas, 0 fallidas (US$0.178)\n1"
+  },
+  {
+   "k": "tool",
+   "t": "# REPORTE — I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65\n\n## Resultado\n- **final.mp4**: 654,0 s (10,9 min), 1920x1080, 30 fps, H.264 CRF 20 bt709 + AAC 192k 48 kHz estéreo. 344 MB.\n- **meta.json**: título exacto + descripción en la voz de Sal, 3 párrafos, sin links ni hashtags.\n- **validar.py --etapa final: OK** (0 ✗). **revisor.py: 22 cuadros, 0 fallas.**\n\n## mundo.json "
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/REPORTE.md (file state is current in your context — no need to Read it back)"
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 1668,
+    "seg": 1736,
     "pasadas": 3,
     "fin": false
    },
@@ -251,14 +251,14 @@
    {
     "k": "revisor",
     "n": "Revisor",
-    "seg": 13,
+    "seg": 57,
     "pasadas": 1,
-    "fin": false
+    "fin": true
    }
   ],
-  "total_s": 4683,
+  "total_s": 4752,
   "avatar_s": 1118,
-  "sin_avatar_s": 3566,
+  "sin_avatar_s": 3634,
   "cerrado": false
  }
 }
