@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794337077.4786723,
+ "actualizado": 1794337149.2656493,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "102 segmentos"
+   "info": "125 segmentos"
   },
   {
    "k": "qc",
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1469,
+  "deepseek": 0.1488,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8897
+  "total": 0.8916
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "sleep 120; cat /tmp/claude-1002/-opt-estudio-datos-videos-my-grandmother-walked-every-day-until-98/3da76201-7f6d-4e0f-aca2-60272869422e/tasks/b7wpojxtt.output 2>/dev/null | tail -15"
-  },
-  {
-   "k": "res",
-   "t": "(Bash completed with no output)"
-  },
-  {
-   "k": "tool",
-   "t": "ls fotos/s01.png 2>&1; tail -2 fotos/fotos_s01.log"
-  },
-  {
-   "k": "res",
-   "t": "ls: cannot access 'fotos/s01.png': No such file or directory\n18:31:01 batch ec2a26f0: validating 0/0\n18:31:31 batch ec2a26f0: in_progress 0/1"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 300; ls fotos/s01.png 2>&1; tail -1 fotos/fotos_s01.log"
-  },
   {
    "k": "res",
    "t": "fotos/s01.png\n18:52:07 FIN: 1/1 fotos en fotos/ (21 min)"
@@ -178,6 +158,26 @@
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/gates/render_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa render --min 10 2>&1 | tail -12"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ render: movimiento al azar (plan_motion de tools/render.py)\n  ✓ render: escala 3840x2160 antes de zoompan (anti-temblequeo)\n  ✓ render: segments/xf.json (fundidos avatar 0,6 s / foto 0,3 s)\n  ✓ plan.json: 0 huecos sin imagen\n  ✓ fotos repetidas: ninguna (cada plano con su foto)\n  ✓ apertura: lo primero que se ve es el AVATAR hablando (clip real) desde el segundo 0 (nunca una foto antes)\n  ✓ ap"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py . > render.log 2>&1 &\necho started; sleep 30; tail -3 render.log"
+  },
+  {
+   "k": "res",
+   "t": "started\nextrema: esperando las piezas (máx. 10 min)"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 240; tail -5 render.log; ps -eo pid,etime,cmd | grep \"[e]scenas.py\" | cut -c1-80"
   }
  ],
  "maquinas": 1,
@@ -237,21 +237,21 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 263,
+    "seg": 334,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 324,
-    "pasadas": 1,
+    "seg": 457,
+    "pasadas": 2,
     "fin": false
    }
   ],
-  "total_s": 15147,
+  "total_s": 15218,
   "avatar_s": 816,
-  "sin_avatar_s": 14331,
+  "sin_avatar_s": 14403,
   "cerrado": false
  }
 }
