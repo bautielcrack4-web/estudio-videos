@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794320017.9723728,
+ "actualizado": 1794320081.2460592,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0497,
+  "deepseek": 0.0501,
   "gpt": 0.0812,
   "gpt_img": 33,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.3809
+  "total": 0.3813
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "batch_6af31ee5d0e88190928789818c30d054 1 True ['p019']\nbatch_6af31f69c6e88190ab0984161b8448d2 16 True ['p006', 'p009', 'p017']\nbatch_6af31f6a68848190a4f922152bcc1dde 5 True ['p001_a', 'p001_b', 'p001_c']"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nout=json.load(open('pedidos_02.json'))\nprint(sum(1 for x in out if x['cara']))\nprint([x['id'] for x in out if x['cara']])\n\"; ls fotos/p001*"
-  },
   {
    "k": "res",
    "t": "28\n['p002', 'p005', 'p011', 'p015', 'p018', 'p022', 'p031', 'p036', 'p039', 'p040', 'p042', 'p051', 'p061', 'p072', 'p074', 'p075', 'p082', 'p083', 'p093', 'p094', 'p095', 'p099', 'p101', 'p108', 'p109', 'p112', 'p115', 'p116']\nfotos/p001.json\nfotos/p001.png\nfotos/p001_a.json\nfotos/p001_a.png\nfotos/p001_b.json\nfotos/p001_b.png\nfotos/p001_c.json\nfotos/p001_c.png"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 295; ls fotos/*.png | wc -l; tail -1 fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "31\n13:59:53 batch 6beec17e: in_progress 78/85"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 295; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1933,
+    "seg": 1996,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2480,
+  "total_s": 2543,
   "avatar_s": 1118,
-  "sin_avatar_s": 1362,
+  "sin_avatar_s": 1426,
   "cerrado": false
  }
 }
