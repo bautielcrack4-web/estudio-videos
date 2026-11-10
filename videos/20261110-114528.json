@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322646.1469045,
+ "actualizado": 1794322709.8023534,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0194,
+  "deepseek": 0.0219,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0194
+  "total": 0.0219
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "✓ captions.json: 1857 palabras en 12.4 min"
-  },
-  {
-   "k": "tool",
-   "t": "import json\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", c.get(\"captions\", []))\nprint(W[0])\ntxt = []\nt0 = W[0][\"startMs\"]\n# print a compact line every 5 seconds with current word\nlast = -5000\nfor w in W:\n    if w[\"startMs\"] - last >= 5000:\n        last = w[\"startMs\"]\n        print(\"%6.1fs  %s\" % (w[\"startMs\"]/1000.0, w[\"text\"]))\nprint(\"END\", W[-1][\"endMs\"]/"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/tiempos_ayuda.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python tiempos_ayuda.py 2>&1 | head -40"
-  },
-  {
-   "k": "res",
-   "t": "{'text': ' My', 'startMs': 0, 'endMs': 140, 'timestampMs': 0, 'confidence': 1.0}\n   0.0s   My\n   5.5s   rain,\n  11.0s   And\n  16.3s   a\n  22.6s   Her\n  27.8s   a\n  32.9s   She\n  38.7s   she\n  44.0s   her\n  49.1s   bag.\n  54.4s   physical\n  59.7s   on\n  65.0s   jump\n  70.1s   I\n  75.3s   a\n  80.5s   So,\n  85.7s   five\n  90.9s   you\n  95.9s   mat,\n 101.4s   sit\n 107.2s   like\n 112.6s   It\n 117.8s   "
-  },
-  {
-   "k": "tool",
-   "t": "import json, sys\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", c.get(\"captions\", []))\nqs = sys.argv[1:]\nfor q in qs:\n    ql = q.lower().split()\n    for i in range(len(W) - len(ql) + 1):\n        ok = True\n        for k, qw in enumerate(ql):\n            wt = W[i+k][\"text\"].strip().lower().strip(\".,!?\\\"'()\")\n            if wt != qw:\n                ok = False\n "
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/tiempos_busca.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python tiempos_busca.py \"so. this morning\" \"five movements. number one\" \"let's begin\" \"movement number two\" \"movement number three\" \"movement number four\" \"movement number five\" \"so. that is the routine\" \"now, what to notice\" \"one more thing\" \"let me show\" \"so. tell me below\" \"fine, stop\" \"in the\" \"i want\" \"two weeks\""
-  },
-  {
-   "k": "res",
-   "t": "   166.4s -    166.9s   let's begin\n   238.3s -    240.0s   movement number two\n   328.8s -    330.4s   movement number three\n   645.5s -    646.2s   one more thing\n   657.4s -    658.4s   let me show\n    31.4s -     31.7s   in the\n    42.9s -     43.2s   in the\n   273.3s -    273.5s   in the\n   383.2s -    383.5s   in the\n   575.2s -    575.4s   in the\n   597.2s -    597.8s   in the\n    82.5s -  "
-  },
-  {
-   "k": "tool",
-   "t": "python tiempos_busca.py \"so\" \"movement\" \"number four\" \"number five\" \"until she was ninety-eight\" \"her name was fumiko\" \"thirty-two\" \"this morning\" \"begin\" \"that is the routine\" \"what to notice\" \"before i finish\" \"show you\" \"tell me below\" \"if something hurts\" \"write it down\" \"mrs. sato\" \"like button\" \"next week\" \"thank you\" \"so. tell\""
-  },
-  {
-   "k": "res",
-   "t": "    80.5s -     81.3s   so\n   540.6s -    541.2s   so\n   652.8s -    653.6s   so\n   723.3s -    723.8s   so\n   238.3s -    238.6s   movement\n   279.2s -    279.6s   movement\n   328.8s -    329.1s   movement\n   405.6s -    406.0s   movement\n   477.3s -    477.6s   movement\n   688.8s -    689.3s   movement\n   698.8s -    699.2s   movement\n   717.3s -    717.7s   movement\n   149.1s -    150.2s   numb"
-  },
-  {
-   "k": "tool",
-   "t": "python tiempos_busca.py \"it\" \"her\" \"one?\" \"one foot\" \"one.\" \"ten\" \"again tomorrow\" \"nightgown\" \"so.\" \"the\" \"two,\" \"before your tea\" \"legs feel\" \"days.\" \"eleven\" \"a kitchen chair is perfect\" \"count out loud with me\""
-  },
-  {
-   "k": "res",
-   "t": "   112.6s -    112.7s   it\n   114.7s -    114.9s   it\n   123.5s -    123.9s   it\n   124.7s -    125.3s   it\n   127.0s -    127.4s   it\n   128.6s -    128.8s   it\n   129.9s -    130.0s   it\n   136.7s -    137.1s   it\n   192.0s -    192.4s   it\n   198.5s -    198.7s   it\n   202.0s -    202.4s   it\n   273.1s -    273.3s   it\n   280.1s -    280.2s   it\n   296.8s -    297.0s   it\n   339.5s -    339.6s "
-  },
   {
    "k": "tool",
    "t": "python tiempos_busca.py \"one, arms up\" \"two, shoulder\" \"three, seated\" \"four, ankle\" \"five. breathing\" \"with a red circle\" \"that is the whole class\" \"thank you for being here\" \"next week\" \"remember that feeling\" \"your little measuring cup\" \"open your arms\" \"stand up from your chair once\" \"my grandmother walked every day until ninety-eight. not\" \"if you forget everything\""
@@ -178,6 +126,58 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . escenas/pedidos_escenas.json > fotos/fotos_escenas.log 2>&1 &\necho \"pid $!\"; sleep 8; cat fotos/fotos_escenas.log"
+  },
+  {
+   "k": "res",
+   "t": "pid 5478\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p076: palabras prohibidas ['out of focus'] (dan look de IA/stock)"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\np = \"escenas/pedidos_escenas.json\"\nd = json.load(open(p))\nfor x in d:\n    pr = x[\"prompt\"]\n    pr[\"camera\"] = pr[\"camera\"].replace(\" is slightly out of focus to allow\", \" stays visible so the push-in follows the floor grain and\").replace(\"slightly out of focus\", \"in focus\")\n    pr[\"camera\"] = pr[\"camera\"].replace(\", and the background\", \", and the background\")\njson.du"
+  },
+  {
+   "k": "res",
+   "t": "['Overhead shot, whiteboard centered with clear empty floor space on all sides; the four corners of the board are left unobstructed so the image can be cut into four panels along the gaps between the listed items.', 'Side view, close-up on the foot, with the chair leg in the background; the foot is the main subject, and the background stays visible so the push-in follows the floor grain and a smoo"
+  },
+  {
+   "k": "tool",
+   "t": "import json\np = json.load(open(\"planos.json\"))\nfields = [\"id\", \"startMs\", \"endMs\", \"text\", \"tipo\", \"av\"]\nfor x in p:\n    print(x.get(\"id\"), x.get(\"startMs\"), x.get(\"endMs\"), \"|\", x.get(\"text\", \"\")[:200], \"|\", {k: x[k] for k in x if k in (\"tipo\", \"av\", \"foto\", \"escena\", \"partida\")})\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/ver_planos.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python ver_planos.py 2>&1 | head -70"
+  },
+  {
+   "k": "res",
+   "t": "p001 6000 11000 |  | {}\np002 11000 15325 |  | {}\np003 15325 19987 |  | {}\np004 19987 24680 |  | {}\np005 24680 29312 |  | {}\np006 29312 33975 |  | {}\np007 33975 38637 |  | {}\np008 38637 42600 |  | {}\np009 42600 47962 |  | {}\np010 47962 52625 |  | {}\np011 52625 57287 |  | {}\np012 57287 62760 |  | {}\np013 62760 65860 |  | {}\np014 65860 71275 |  | {}\np015 71275 76340 |  | {}\np016 76340 80600 |  | {}\np"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\np=json.load(open('planos.json'))\nprint(json.dumps(p[0], ensure_ascii=False, indent=1)[:1500])\nprint('KEYS', sorted(p[0].keys()))\n\""
+  },
+  {
+   "k": "res",
+   "t": "{\n \"id\": \"p001\",\n \"startMs\": 6000,\n \"endMs\": 11000,\n \"seg\": 5.0,\n \"texto\": \"snow and those grey mornings when nobody wants to leave the house.\"\n}\nKEYS ['endMs', 'id', 'seg', 'startMs', 'texto']"
+  },
+  {
+   "k": "tool",
+   "t": "sed -i 's/x.get(\"text\", \"\")\\[:200\\]/x.get(\"texto\", \"\")[:170]/; s/{k: x\\[k\\] for k in x if k in (\"tipo\", \"av\", \"foto\", \"escena\", \"partida\")}/x.get(\"seg\")/' ver_planos.py && python ver_planos.py 2>&1 | head -140"
+  },
+  {
+   "k": "res",
+   "t": "p001 6000 11000 | snow and those grey mornings when nobody wants to leave the house. | 5.0\np002 11000 15325 | And every one of those mornings started the same way, a wooden kitchen | 4.3\np003 15325 19987 | chair, a small silver radio and a five-minute radio Taiso | 4.7\np004 19987 24680 | warm-up we did together. Her name was Fumiko. | 4.7\np005 24680 29312 | She lived in a small town north of Senda"
+  },
+  {
+   "k": "tool",
+   "t": "cat fotos/fotos_escenas.log | tail -5; ls fotos/"
+  },
+  {
+   "k": "res",
+   "t": "14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n_batches.json\n_fotos.lock\nfotos_escenas.log\np027.json\np076.json\np106.json\np118.json"
   }
  ],
  "maquinas": 1,
@@ -214,9 +214,9 @@
     "fin": true
    }
   ],
-  "total_s": 715,
+  "total_s": 779,
   "avatar_s": 0,
-  "sin_avatar_s": 715,
+  "sin_avatar_s": 779,
   "cerrado": false
  }
 }
