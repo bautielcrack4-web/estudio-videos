@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794321044.8841023,
+ "actualizado": 1794321109.7817543,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -35,13 +35,13 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "done",
-   "info": "115 fotos"
+   "info": "116 fotos"
   },
   {
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "28 segmentos"
+   "info": "62 segmentos"
   },
   {
    "k": "qc",
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0595,
-  "gpt": 0.2634,
-  "gpt_img": 120,
+  "deepseek": 0.0615,
+  "gpt": 0.2654,
+  "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5729
+  "total": 0.5769
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_d.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"id\":\"p055\",\"cara\":false,\"prompt\":{\"type\":\"amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n  \"moment\":\"A hand lifts the tallest heel off a display block of different heel heights in the middle of the fitting area, the moment Sal says the high heel is the second trap before he "
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/fix.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f fotos/p055.png fotos/p055.json fotos/p020.png fotos/p020.json && nohup python /opt/estudio/repo/motor/tools/fotos.py . fix.json > fotos/fotos_fix.log 2>&1 & sleep 8; cat fotos/fotos_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p020: falta la cláusula \"nothing blurred out\" (en type)"
-  },
-  {
-   "k": "tool",
-   "t": "sed -i 's/\"type\":\"close phone snapshot of a handwritten index card on a wooden counter\"/\"type\":\"close phone snapshot of a handwritten index card on a wooden counter, nothing blurred out, everything in focus, 16:9\"/' fix.json && nohup python /opt/estudio/repo/motor/tools/fotos.py . fix.json > fotos/fotos_fix.log 2>&1 & sleep 8; cat fotos/fotos_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "14:19:39 → batch batch_6af327faac9c8190aa371ba877c33c18 · 2 fotos · sin referencia · low 1088x608\n14:19:39 batch 77c33c18: validating 0/0"
-  },
   {
    "k": "tool",
    "t": "rm -f fotos/p061.png fotos/p061.json && python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nx=[x for x in p if x['id']=='p061'][0]\nx['cara']=False\nx['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump([x],open('fix2.json','w'),ensure_ascii=False,indent=1)\nEOF\ntail -1 fotos/fotos_fix.log"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg segments/*.mp4 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_render.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_render.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "echo \"render test: 10 segmentos mirados en qc/hoja_render.jpg. Arranca en avatar (cuadro 1 = Sal hablando), luego p001 (indice de 4 cajas con tarjetas), p002, p003, p004, p005, p006, p007 (campanilla), p008, p009 (zapato doblado), p010. Movimiento y encuadres ok, sin caras rotas, sin cartel de espera. Nota: p001 elegida a; p003 saco 4 cajas con etiquetas 1-4 distintas de las tarjetas de p001 (buen"
+  },
+  {
+   "k": "res",
+   "t": "total 90312\ndrwxrwxrwx+  2 sesion sesion     4096 Nov 10 14:31 .\ndrwxrwxrwx+ 11 runner runner     4096 Nov 10 14:29 .."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py . > render.log 2>&1 &\necho started; sleep 30; tail -3 render.log"
+  },
+  {
+   "k": "res",
+   "t": "started"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"id\":\"campanilla\",\"tags\":[\"bell\",\"door\",\"shop\"],\"q\":\"door bell\",\"min\":0.3,\"max\":3},\n {\"id\":\"carton\",\"tags\":[\"cardboard\",\"box\",\"paper\"],\"q\":\"cardboard box\",\"min\":0.4,\"max\":2.5},\n {\"id\":\"papel\",\"tags\":[\"paper\",\"page\",\"folding\"],\"q\":\"paper\",\"min\":0.3,\"max\":2},\n {\"id\":\"cuero\",\"tags\":[\"leather\",\"fabric\",\"rub\"],\"q\":\"leather\",\"min\":0.4,\"max\":2.5}\n]\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
   }
  ],
  "maquinas": 1,
@@ -237,14 +237,14 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 58,
-    "pasadas": 1,
+    "seg": 158,
+    "pasadas": 2,
     "fin": false
    }
   ],
-  "total_s": 3507,
+  "total_s": 3572,
   "avatar_s": 1118,
-  "sin_avatar_s": 2389,
+  "sin_avatar_s": 2454,
   "cerrado": false
  }
 }
