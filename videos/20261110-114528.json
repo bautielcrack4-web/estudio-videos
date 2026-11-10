@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794324471.2297149,
+ "actualizado": 1794324534.6458938,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0816,
+  "deepseek": 0.0828,
   "gpt": 0.2159,
   "gpt_img": 93,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5475
+  "total": 0.5487
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "tail -2 escenas/escenas.log; ls extrema/; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg fotos/p001.png fotos/p002.png fotos/p003.png fotos/p004.png fotos/p005.png fotos/p006.png fotos/p007.png fotos/p008.png fotos/p009.png fotos/p011.png fotos/p012.png fotos/p013.png 2>&1|tail -1"
-  },
-  {
-   "k": "res",
-   "t": "15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\nes01.mp4\nes02.mp4\nrender.json\nhoja: qc/hoja_render.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "# Control de fotos — qué miré y qué arreglé\n\n## Gancho p001 (3 variantes, miré las 3 en qc/hoja_fotos.jpg)\n- p001_a: Yoko de espaldas saliendo hacia la ventana con bolsa de mercado: linda pero de espaldas y en chico no se entiende tanto.\n- p001_b: Yoko a mitad de levantarse de la silla, brazos abiertos, sonrisa de \"me agarraste\" — se entiende sin audio y en chico, y la idea (levantarse sin manos) "
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote06.json > fotos/fotos_06.log 2>&1 &\nsleep 10; tail -1 fotos/fotos_06.log; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_f.jpg fotos/p056.png fotos/p057.png fotos/p058.png fotos/p061.png fotos/p065.png fotos/p068.png fotos/p069.png fotos/p070.png fotos/p071.png fotos/p074.png fotos/p075.png fotos/p076.png 2>&1|tail -1"
+  },
+  {
+   "k": "res",
+   "t": "15:27:43 ya hay otro fotos.py en este video (pid 17978): espero que termine\nhoja: qc/hoja_fotos_f.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_f.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_04.log --cuenta \"fotos/*.png\" 115 2>&1 | tail -2"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1693,
+    "seg": 1756,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2540,
+  "total_s": 2604,
   "avatar_s": 816,
-  "sin_avatar_s": 1725,
+  "sin_avatar_s": 1788,
   "cerrado": false
  }
 }
