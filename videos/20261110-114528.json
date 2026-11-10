@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794325382.3299382,
+ "actualizado": 1794325442.8783503,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0916,
+  "deepseek": 0.0927,
   "gpt": 0.2995,
   "gpt_img": 131,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6411
+  "total": 0.6422
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote06.json > fotos/fotos_06.log 2>&1 &\nsleep 10; tail -1 fotos/fotos_06.log; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_f.jpg fotos/p056.png fotos/p057.png fotos/p058.png fotos/p061.png fotos/p065.png fotos/p068.png fotos/p069.png fotos/p070.png fotos/p071.png fotos/p074.png fotos/p075.png fotos/p076.png 2>&1|tail -1"
-  },
-  {
-   "k": "res",
-   "t": "15:27:43 ya hay otro fotos.py en este video (pid 17978): espero que termine\nhoja: qc/hoja_fotos_f.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_f.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "✓ hay 103 archivos (0 s)"
+  },
+  {
+   "k": "tool",
+   "t": "tail -2 fotos/fotos_07.log; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_i.jpg fotos/p021.png fotos/p022.png fotos/p023.png fotos/p024.png fotos/p030.png fotos/p031.png fotos/p034.png fotos/p040.png fotos/p042.png fotos/p056.png fotos/p059.png fotos/p060.png 2>&1|tail -1"
+  },
+  {
+   "k": "res",
+   "t": "15:42:45 batch 240fdd4b: in_progress 0/10\n15:42:45 batch 34284dae: in_progress 0/11\nninguna imagen existe"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 120; tail -2 fotos/fotos_07.log; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2604,
+    "seg": 2665,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3451,
+  "total_s": 3512,
   "avatar_s": 816,
-  "sin_avatar_s": 2636,
+  "sin_avatar_s": 2696,
   "cerrado": false
  }
 }
