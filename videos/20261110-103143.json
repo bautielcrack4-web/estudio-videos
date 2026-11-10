@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794320341.1590514,
+ "actualizado": 1794320405.8815813,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "116 fotos"
+   "info": "113 fotos"
   },
   {
    "k": "armado",
@@ -51,90 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0506,
+  "deepseek": 0.0557,
   "gpt": 0.2588,
   "gpt_img": 118,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5594
+  "total": 0.5645
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p036','p040','p042','p051','p074','p083','p094','p095','p101','p108','p112'):\n        x['cara']=False\n        x['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ("
-  },
-  {
-   "k": "res",
-   "t": "114 17\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 21 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f fotos/p001_a.json fotos/p001_b.json fotos/p001_c.json fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png && mkdir -p qc/variantes && nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_02.json > fotos/fotos_02.log 2>&1 & sleep 12; tail -3 fotos/fotos_02.log"
-  },
-  {
-   "k": "res",
-   "t": "⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 18 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p002','p039','p075','p093'):\n        x['cara']=False\n        x['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ('p001_a','p001_b','p001_c')]\njson.dump(out,open('"
-  },
-  {
-   "k": "res",
-   "t": "114 13\n13:51:16 → batch batch_6af32154752081909e00d70a8c628d9a · 11 fotos · con la cara del presentador · low 1088x608\n13:51:16 batch 6beec17e: in_progress 0/85\n13:51:16 batch 8c628d9a: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/avatar_it.py . > avatar/it.log 2>&1 &\necho started; sleep 5; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "started\n13:51:29 InfiniteTalk: 20 ventanas · reel 109.0 s · 1 llamada"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/escenas.py . construir --fondo > escenas/escenas.log 2>&1 &\necho ok; sleep 3; tail -3 escenas/escenas.log"
-  },
-  {
-   "k": "res",
-   "t": "ok"
-  },
-  {
-   "k": "tool",
-   "t": "## Control de fotos (prueba de 21 + escena firma p019)\n\nRevisadas con Read en qc/hoja_fotos_test.jpg y qc/hoja_fotos_test2.jpg.\n\n- p001_a / p001_b / p001_c (3 variantes del gancho, índice de cajas+tarjetas): las tres muestran las tarjetas a mano, Sal señalando y las cajas en fila, con texto legible y bien escrito. **Elegida p001_a** (copiada a fotos/p001.png + p001.json): es la más limpia y la más"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "{\n \"title\": \"I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65\",\n \"description\": \"I'm Sal. I've been fitting shoes on the same wooden stool in my family's store in South Philadelphia since I was twelve, and my father opened the door in 1951. In forty-two years on that bench I've watched feet change after sixty-five, and I've watched a lot of good people walk out of a store wit"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/meta.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 240; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log; tail -2 avatar/it.log; cat escenas/escenas.log"
-  },
-  {
-   "k": "res",
-   "t": "20\n13:55:49 batch 6beec17e: in_progress 0/85\n13:55:49 batch 8c628d9a: in_progress 0/11\n13:51:35 RUN 66771b4e-87ce-479f-842b-cf0e1e74ae43-u2\n13:52:05 estado: IN_PROGRESS\n13:51:59 escenas: es01 lista · 0 capas · cámara 4 viajes\nDownloading Chrome Headless Shell https://www.remotion.dev/chrome-headless-shell\nCustomize this behavior by adding a onBrowserDownload function to openBrowser().\nDownloading "
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 131 --log fotos/fotos_02.log 2>&1 | tail -5; ls fotos/*.png | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "13:58:51 batch 6beec17e: in_progress 60/85\n13:58:51 batch 8c628d9a: in_progress 0/11\n13:59:21 batch 6beec17e: in_progress 78/85\n13:59:21 batch 8c628d9a: completed 11/11\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n31"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 131 --log fotos/fotos_02.log 2>&1 | tail -4; ls fotos/*.png | wc -l"
-  },
   {
    "k": "res",
    "t": "13:58:51 batch 8c628d9a: in_progress 0/11\n13:59:21 batch 6beec17e: in_progress 78/85\n13:59:21 batch 8c628d9a: completed 11/11\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n31"
@@ -178,6 +102,82 @@
   {
    "k": "res",
    "t": "hoja: qc/h_a.jpg (12 cuadros, 4x3)\nhoja: qc/h_b.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_a.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_b.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/h_c.jpg fotos/p089.png fotos/p097.png fotos/p108.png fotos/p115.png fotos/p116.png fotos/p110.png fotos/p111.png fotos/p104.png fotos/p107.png fotos/p106.png fotos/p103.png fotos/p102.png | tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/h_d.jpg fotos/p012.png fotos/p013.png fotos/p016.png fotos/p020.png fotos/p021.png fotos/p028.png fotos/p"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/h_c.jpg (12 cuadros, 4x3)\nhoja: qc/h_d.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_c.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_d.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"id\":\"p055\",\"cara\":false,\"prompt\":{\"type\":\"amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n  \"moment\":\"A hand lifts the tallest heel off a display block of different heel heights in the middle of the fitting area, the moment Sal says the high heel is the second trap before he "
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/fix.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f fotos/p055.png fotos/p055.json fotos/p020.png fotos/p020.json && nohup python /opt/estudio/repo/motor/tools/fotos.py . fix.json > fotos/fotos_fix.log 2>&1 & sleep 8; cat fotos/fotos_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p020: falta la cláusula \"nothing blurred out\" (en type)"
+  },
+  {
+   "k": "tool",
+   "t": "sed -i 's/\"type\":\"close phone snapshot of a handwritten index card on a wooden counter\"/\"type\":\"close phone snapshot of a handwritten index card on a wooden counter, nothing blurred out, everything in focus, 16:9\"/' fix.json && nohup python /opt/estudio/repo/motor/tools/fotos.py . fix.json > fotos/fotos_fix.log 2>&1 & sleep 8; cat fotos/fotos_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "14:19:39 → batch batch_6af327faac9c8190aa371ba877c33c18 · 2 fotos · sin referencia · low 1088x608\n14:19:39 batch 77c33c18: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f fotos/p061.png fotos/p061.json && python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nx=[x for x in p if x['id']=='p061'][0]\nx['cara']=False\nx['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump([x],open('fix2.json','w'),ensure_ascii=False,indent=1)\nEOF\ntail -1 fotos/fotos_fix.log"
+  },
+  {
+   "k": "res",
+   "t": "14:19:39 batch 77c33c18: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 200; tail -2 fotos/fotos_fix.log; ls fotos/p020.png fotos/p055.png 2>&1"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2256,
+    "seg": 2321,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2803,
+  "total_s": 2868,
   "avatar_s": 1118,
-  "sin_avatar_s": 1686,
+  "sin_avatar_s": 1750,
   "cerrado": false
  }
 }
