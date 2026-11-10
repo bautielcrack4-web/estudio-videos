@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794328201.7064924,
+ "actualizado": 1794328264.9581208,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1041,
+  "deepseek": 0.1053,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6195
+  "total": 0.6207
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "extrema: esperando las piezas (máx. 10 min)\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 290; cat render3.log; ls -lt segments/*.mp4 | head -2; cat extrema/render.json"
-  },
-  {
-   "k": "res",
-   "t": "extrema: esperando las piezas (máx. 10 min)\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 516\n }\n}"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 295; cat render3.log; cat extrema/render.json; ls -lt segments/*.mp4 final.mp4 | head -3"
-  },
   {
    "k": "res",
    "t": "extrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\nextrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 135\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 516\n }\n}-rw-rw-rw-+ 1 sesion sesion   1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion   1233572 Nov 10 15:48 segments/0133.mp4\n-rw-rw-rw-+ 1 sesion sesion   1348413 Nov 10 15:48 segme"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 295; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json | tr -d '\\n '; echo; ps -o etime -p 4842 | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "ls: cannot access 'extrema/EN_CURSO': No such file or directory\n-rw-rw-rw-+ 1 runner runner 298 Nov 10 16:28 extrema/capas.json\n{\"xm01\":{\"ok\":true,\"s\":516},\"xm02\":{\"ok\":true,\"s\":694},\"xm03\":{\"ok\":true,\"s\":218},\"xm04\":{\"ok\":true,\"s\":211},\"xm05\":{\"ok\":true,\"s\":220},\"xm06\":{\"ok\":true,\"s\":589},\"xm07\":{\"ok\":true,\"s\":172}}\n    ELAPSED"
+  },
+  {
+   "k": "tool",
+   "t": "cat extrema/manifest.json; echo; cat extrema/capas.json; ls -la extrema/*.m*"
+  },
+  {
+   "k": "res",
+   "t": "[\n {\n  \"mp4\": \"extrema/xm02.mp4\",\n  \"startMs\": 23100,\n  \"endMs\": 41520,\n  \"texto\": \"A full-screen memory scene built from the store photos: a sepia-toned photo of the shopfront with one window and one ben\"\n }\n]\n[\n {\n  \"mov\": \"extrema/xm01.mov\",\n  \"startMs\": 6820,\n  \"endMs\": 22900\n },\n {\n  \"mov\": \"extrema/xm03.mov\",\n  \"startMs\": 92240,\n  \"endMs\": 115880\n },\n {\n  \"mov\": \"extrema/xm05.mov\",\n  \"startM"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/render.py . > render5.log 2>&1 &\nsleep 150; cat render5.log; ls -lt segments/*.mp4 | head -2"
   }
  ],
  "maquinas": 3,
@@ -265,9 +265,9 @@
    {
     "k": "correcciones",
     "n": "Correcciones",
-    "seg": 1793,
-    "pasadas": 4,
-    "fin": true
+    "seg": 0,
+    "pasadas": 5,
+    "fin": false
    },
    {
     "k": "entrega",
