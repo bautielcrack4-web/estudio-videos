@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794337471.1569161,
+ "actualizado": 1794337537.9687173,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -237,28 +237,28 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 656,
+    "seg": 723,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 857,
+    "seg": 924,
     "pasadas": 2,
     "fin": false
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 244,
+    "seg": 311,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 15540,
+  "total_s": 15607,
   "avatar_s": 816,
-  "sin_avatar_s": 14725,
+  "sin_avatar_s": 14791,
   "cerrado": false
  }
 }
