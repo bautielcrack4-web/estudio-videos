@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794325242.6872253,
+ "actualizado": 1794325310.1440332,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "65 fotos"
+   "info": "103 fotos"
   },
   {
    "k": "armado",
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0839,
-  "gpt": 0.2159,
-  "gpt_img": 93,
+  "deepseek": 0.0875,
+  "gpt": 0.2995,
+  "gpt_img": 131,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5498
+  "total": 0.637
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "es04 {\"ok\":true,\"s\":340}\n \n15:26:00 escenas: 4 escenas en la línea en 1133 s\n15:26:00 escenas: gasto US$0.0077 en 49 llamadas\n<class 'list'> 4\n[{\"mp4\": \"extrema/es01.mp4\", \"startMs\": 143800, \"endMs\": 152900, \"texto\": \"Number two, shoulder rolls. Number three, seated marching. Number four, ankle circles. Number five, deep breathing with \"}, {\"mp4\": \"extrema/es02.mp4\", \"startMs\": 407175, \"endMs\": 41"
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p qc/esc && for n in 01 02 03 04; do for t in 1 4 7; do ffmpeg -y -loglevel error -ss $t -i extrema/es$n.mp4 -frames:v 1 -vf scale=640:-1 qc/esc/es${n}_$t.jpg; done; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_escenas_render.jpg qc/esc/*.jpg 2>&1|tail -1"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_escenas_render.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_escenas_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "tail -2 avatar/it.log; ls avatar/*.mp4 2>/dev/null | wc -l; tail -2 fotos/fotos_03.log; ps -eo pid,etime,cmd | grep \"[f]otos.py\" | cut -c1-90; ls fotos/*.png | wc -l"
-  },
   {
    "k": "res",
    "t": "15:20:22 estado: COMPLETED\n✓ 21 clips cortados · desfase corregido (máx 0 ms) · ⛔ el reel salió corto: sin clip ['avatar/A24.mp4', 'avatar/A26.mp4'] → sacalas de avatar_ranges.json (van con foto)\n21\n15:18:40 ✓ batch 2406b9a7: 40 fotos bajadas, 0 fallidas (US$0.088)\n15:18:40 FIN: 40/40 fotos en fotos/ (7 min)\n   3872       34:21 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C."
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_04.log --cuenta \"fotos/*.png\" 108 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "15:41:02 ✓ batch d0d46200: 38 fotos bajadas, 0 fallidas (US$0.084)\n15:41:02 FIN: 38/42 fotos en fotos/ (14 min) · faltan ['p089', 'p090', 'p091', 'p092'] → corregí esos prompts (si los rechazó el filtro) y volvé a correr"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF0 = json.load(open(\"pedidos/_todos.json\"))\nAV = (\"a 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brown eyes, freckles and sun \"\n      \"spots on her cheeks, a bright open smile, wearing a navy blue zip-up track jacket with white stripes down the \"\n      \"sleeves over a white crew-neck t-shirt, a dark sports watch on her left wrist\""
+  },
+  {
+   "k": "res",
+   "t": "21\n15:41:13 ✓ nada que pedir: 21/21 fotos listas"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote07.json > fotos/fotos_07.log 2>&1 &\nsleep 15; tail -3 fotos/fotos_07.log"
+  },
+  {
+   "k": "res",
+   "t": "⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 24 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nL = json.load(open(\"pedidos/lote07.json\"))\nkeep_face = {\"p021\",\"p022\",\"p024\",\"p030\",\"p034\",\"p040\",\"p062\",\"p064\",\"p090\",\"p091\",\"p092\"}\nout=[]\nfor x in L:\n    if x[\"id\"] in keep_face:\n        out.append(x); continue\n    p = x[\"prompt\"]\n    p[\"type\"] = p[\"type\"].replace(\", wrinkles, age spots, flyaway grey hairs\", \"\")\n    p.pop(\"person\", None); p.pop(\"clothing\", None)\n  "
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2464,
+    "seg": 2532,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3312,
+  "total_s": 3379,
   "avatar_s": 816,
-  "sin_avatar_s": 2496,
+  "sin_avatar_s": 2564,
   "cerrado": false
  }
 }
