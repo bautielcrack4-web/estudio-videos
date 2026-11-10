@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794335554.9439793,
+ "actualizado": 1794335617.822282,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1353,
+  "deepseek": 0.1359,
   "gpt": 0.4905,
   "gpt_img": 208,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8758
+  "total": 0.8764
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "113\n17:39:25 FIN: 4/4 fotos en fotos/ (5 min)"
-  },
-  {
-   "k": "tool",
-   "t": "grep -l '\"p066\"\\|\"p095\"\\|\"p122\"' pedidos/*.json; ls -la fotos/_fotos.lock; pgrep -f \"tools/fotos.py\""
-  },
   {
    "k": "res",
    "t": "pedidos/lote04.json\npedidos/rest_ids.json\npedidos/lote03.json\npedidos/lote06.json\npedidos/_todos.json\nls: cannot access 'fotos/_fotos.lock': No such file or directory\n3872\n3874\n39980"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\np = dict(F[\"p063\"][\"prompt\"])\np[\"subject\"] = \"A wooden kitchen chair turned to the balcony window, the deep dent in its cream cushion and a pair of slippers left in front of it, the morning light across the seat.\"\np[\"action\"] = \"Nobody; the chair is turned slightly toward the window, cushion dented from use, the slippers step"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n18:31:01 batch ec2a26f0: validating 0/0\n18:31:31 batch ec2a26f0: in_progress 0/1\nls: cannot access 'fotos/s01.png': No such file or directory"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 200; tail -2 fotos/fotos_s01.log; ls fotos/s01.png 2>&1"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 12777,
+    "seg": 12840,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 13624,
+  "total_s": 13687,
   "avatar_s": 816,
-  "sin_avatar_s": 12808,
+  "sin_avatar_s": 12871,
   "cerrado": false
  }
 }
