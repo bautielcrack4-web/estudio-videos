@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794326634.866553,
+ "actualizado": 1794326698.6828241,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0975,
+  "deepseek": 0.0981,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6129
+  "total": 0.6135
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "# EDICIÓN EXTREMA (opcional): extrema/manifest.json = [{\"mp4\":\"extrema/xm03.mp4\",\"startMs\":..,\"endMs\":..}]\n# Cada pieza tapa la línea de fotos/clips en su tramo. Nunca pisa un tramo de avatar; si falta el mp4 queda el b-roll normal.\n# Las piezas se hacen en segundo plano mientras llega el avatar (extrema/EN_CURSO). En el armado final (todos los clips de\n# avatar ya están) se esperan como mucho 10 "
-  },
-  {
-   "k": "tool",
-   "t": "ls -la extrema/EN_CURSO 2>&1; python3 -c \"\nimport json;d=json.load(open('extrema/momentos.json'))\nprint(len(d))\nfor x in d: print(x['id'],x['startMs'],x['endMs'])\nprint(json.load(open('extrema/render.json')))\""
-  },
   {
    "k": "res",
    "t": "ls: cannot access 'extrema/EN_CURSO': No such file or directory\n7\nxm01 6820 22900\nxm02 23100 41520\nxm03 92240 115880\nxm04 132280 150260\nxm05 169309 188169\nxm06 554888 578988\nxm07 585888 601288\n{'xm01': {'ok': True, 's': 329}, 'xm02': {'ok': True, 's': 712}}"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 280; python3 -c \"import json;d=json.load(open('extrema/render.json'));print(d)\"; ls -la extrema/*.m* final.mp4 | head; ls extrema/gen | head -3; ls extrema/gen/*.tsx | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "{'xm01': {'ok': True, 's': 516}}\n-rwxrwxrw-+ 1 runner runner  38713774 Nov 10 13:55 extrema/es01.mp4\n-rw-rwxrw-+ 1 runner runner 532926806 Nov 10 15:53 extrema/xm01.mov\n-rw-rwxrw-+ 1 runner runner  18662619 Nov 10 15:21 extrema/xm02.mp4\n-rw-rwxrw-+ 1 runner runner 316145700 Nov 10 15:24 extrema/xm03.mov\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\nxm01.tsx\nxm02.tsx\nxm03.tsx\n7"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/render.py . > render4.log 2>&1 &\nsleep 120; cat render4.log; ls -lt segments/*.mp4 | head -2"
   }
  ],
  "maquinas": 3,
@@ -265,9 +265,9 @@
    {
     "k": "correcciones",
     "n": "Correcciones",
-    "seg": 1193,
-    "pasadas": 3,
-    "fin": true
+    "seg": 0,
+    "pasadas": 4,
+    "fin": false
    },
    {
     "k": "entrega",
