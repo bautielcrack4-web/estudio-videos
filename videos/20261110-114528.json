@@ -2,8 +2,8 @@
  "vid": "20261110-114528",
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
- "estado": "trabajando",
- "actualizado": 1794342789.000923,
+ "estado": "listo",
+ "actualizado": 1794343046.7664936,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42893394757",
  "pasos": [
@@ -251,7 +251,7 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 6070,
+    "seg": 10270,
     "pasadas": 3,
     "fin": false
    },
@@ -263,19 +263,25 @@
     "fin": true
    },
    {
+    "k": "correcciones",
+    "n": "Correcciones",
+    "seg": 230,
+    "pasadas": 2,
+    "fin": true
+   },
+   {
     "k": "entrega",
     "n": "Entrega",
-    "seg": 14,
+    "seg": 13,
     "pasadas": 1,
     "fin": true
    }
   ],
-  "total_s": 19016,
+  "total_s": 21116,
   "avatar_s": 816,
-  "sin_avatar_s": 18200,
+  "sin_avatar_s": 20300,
   "cerrado": true
  },
  "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-20261110-114528/My-Grandmother-Walked-Every-Day-Until-98-The-5-Minute-Japanese-Morning-Routine-for-Weak-Le.mp4",
- "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261110-114528",
- "nota": "edición extrema"
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261110-114528"
 }
