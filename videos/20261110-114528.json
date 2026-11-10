@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794335238.64917,
+ "actualizado": 1794335301.659184,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,54 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1311,
+  "deepseek": 0.1346,
   "gpt": 0.4905,
   "gpt_img": 208,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8716
+  "total": 0.8751
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "PreToolUse:Bash hook error: [\"/opt/hostedtoolcache/Python/3.11.18/x64/bin/python\" \"/opt/estudio/repo/motor/tools/guard.py\"]: BLOQUEADO (regla dura del Estudio): no se leen ni se imprimen claves.\n"
-  },
-  {
-   "k": "tool",
-   "t": "ps -p 30459 -o args= | cut -c1-60; tail -4 fotos/fotos_10.log; tail -3 fotos/fotos_11.log"
-  },
-  {
-   "k": "res",
-   "t": "python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote\n16:49:05 batch a454b95b: finalizing 12/12\n16:49:35 batch a454b95b: completed 12/12\n16:49:37 ✓ batch a454b95b: 12 fotos bajadas, 0 fallidas (US$0.027)\n16:49:37 FIN: 14/17 fotos en fotos/ (15 min) · faltan ['p074', 'p075', 'p092'] → corregí esos prompts (si los rechazó el filtro) y volvé a correr\n17:32:52 ya hay otro fotos.py en este video"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la fotos/_fotos.lock; pgrep -f \"fotos.py \\. pedidos/lote10\" ; pgrep -f \"lote11\""
-  },
-  {
-   "k": "res",
-   "t": "-rwxrwxrwx+ 1 sesion sesion 5 Nov 10 17:06 fotos/_fotos.lock\n30459\n36657\n37763"
-  },
-  {
-   "k": "tool",
-   "t": "kill 30459 2>/dev/null; sleep 45; tail -2 fotos/fotos_11.log"
-  },
-  {
-   "k": "res",
-   "t": "17:33:52 ya hay otro fotos.py en este video (pid 30459): espero que termine\n17:34:22 batch fc578711: in_progress 3/4"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 400; tail -2 fotos/fotos_11.log; tail -2 fotos/fotos_12.log; ls fotos/*.png | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "17:39:25 ✓ batch fc578711: 4 fotos bajadas, 0 fallidas (US$0.009)\n17:39:25 FIN: 4/4 fotos en fotos/ (5 min)\n17:06:45 ✓ batch af3d8923: 3 fotos bajadas, 0 fallidas (US$0.009)\n17:06:45 FIN: 7/7 fotos en fotos/ (17 min)\n113"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 330; tail -1 fotos/fotos_11.log; ls fotos/*.png | wc -l; python3 - <<'EOF'\nimport json, os\np = json.load(open(\"planos.json\"))\nmiss = [x[\"id\"] for x in p if not (os.path.exists(\"fotos/%s.png\" % x[\"id\"]) or os.path.exists(\"fotos/%s.jpg\" % x[\"id\"]))]\nprint(\"missing\", miss)\nEOF"
-  },
   {
    "k": "res",
    "t": "17:39:25 FIN: 4/4 fotos en fotos/ (5 min)\n113\nmissing ['p066', 'p067', 'p072', 'p073', 'p077', 'p078', 'p080', 'p088', 'p095', 'p096', 'p100', 'p102', 'p112', 'p114', 'p117', 'p122', 'p125', 'p126', 'p127', 'p128', 'p129', 's01']"
@@ -178,6 +138,46 @@
   {
    "k": "tool",
    "t": "sleep 540; tail -2 fotos/fotos_06b.log; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "18:24:15 ✓ batch 40d7e923: 20 fotos bajadas, 0 fallidas (US$0.044)\n18:24:15 FIN: 21/21 fotos en fotos/ (32 min)\n134"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_m.jpg fotos/p066.png fotos/p067.png fotos/p072.png fotos/p073.png fotos/p077.png fotos/p078.png fotos/p080.png fotos/p088.png fotos/p095.png fotos/p096.png fotos/p100.png fotos/p102.png 2>&1|tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_n.jpg fotos/p112.png fotos/p114.png fotos/p117.png fotos/p122.png fotos/p125.png f"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fotos_m.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_n.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_m.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_n.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/planos.py . --shots 2>&1 | tail -3; python /opt/estudio/repo/motor/tools/validar.py . --etapa fotos --min 10 2>&1 | tail -20"
+  },
+  {
+   "k": "res",
+   "t": "⛔ faltan 1 fotos o clips (s01). Esperalas con esperar.py o repedilas.\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa fotos\n  ✓ guion: 9968 caracteres, 1865 palabras (hacen falta 9000-11500 para 10 min: bien)\n  ✓ fotos: 134 · 0 sin su prompt al lado (no salieron de tools/fotos.py)\n  ✓ fotos: 0 con prompt incompleto\nRESULTADO: OK"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json, shutil\nF = json.load(open(\"pedidos/_todos.json\"))\nprompt = F[\"p063\"][\"prompt\"]\np = dict(prompt)\np[\"subject\"] = \"A wooden kitchen chair turned to the balcony window, the deep dent in its cream cushion and a pair of slippers left in front of it, the morning light across the seat.\"\np[\"action\"] = \"Nobody; the chair is turned slightly toward the window, cushion dented fro"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 12460,
+    "seg": 12523,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 13308,
+  "total_s": 13371,
   "avatar_s": 816,
-  "sin_avatar_s": 12492,
+  "sin_avatar_s": 12555,
   "cerrado": false
  }
 }
