@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794329679.1510494,
+ "actualizado": 1794329744.788751,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1107,
+  "deepseek": 0.1113,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6261
+  "total": 0.6267
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n20843 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash\n   3701       34:31 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITH\n   3703       34:31 /opt/hostedtoolcache/node/20.20.2/x6"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 240; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json | tr -d '\\n '; echo; ls -la extrema/manifest.json"
-  },
-  {
-   "k": "res",
-   "t": "ls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extrema/EN_CURSO\n{\"xm01\":{\"ok\":true,\"s\":516},\"xm02\":{\"ok\":true,\"s\":694},\"xm03\":{\"ok\":true,\"s\":218},\"xm04\":{\"ok\":true,\"s\":211},\"xm05\":{\"ok\":true,\"s\":220}}\n-rwxrwxrw-+ 1 runner runner 198 Nov 10 13:55 extrema/manifest.json"
-  },
   {
    "k": "tool",
    "t": "crontab -l 2>/dev/null | head -5; pgrep -af \"cron|systemd\" | head -5; cat gates/etapas.jsonl 2>/dev/null | tail -3"
@@ -178,6 +166,18 @@
   {
    "k": "tool",
    "t": "sleep 290; tail -2 assemble.log; ls -la final.mp4 video_noaudio.mp4 2>/dev/null; ls -lt xf_tmp 2>/dev/null | head -3"
+  },
+  {
+   "k": "res",
+   "t": "Error opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\n-rwxrwxrw-+ 1 runner runner 322961456 Nov 10 16:55 video_noaudio.mp4\ntotal 490020\n-rw-rw-rw-+ 1 sesion sesion  31694312 Nov 10 16:43 c005.mp4\n-rw-rw-rw-+ 1 sesion sesion  91663969 Nov 10 16:43 c004.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json;L=json.load(open('extrema/capas.json'));print(L)\"; ffprobe -v error -show_entries format=duration -of csv=p=0 final.mp4"
+  },
+  {
+   "k": "res",
+   "t": "[{'mov': 'extrema/xm01.mov', 'startMs': 6820, 'endMs': 22900}, {'mov': 'extrema/xm03.mov', 'startMs': 92240, 'endMs': 115880}, {'mov': 'extrema/xm05.mov', 'startMs': 169309, 'endMs': 188169}, {'mov': 'extrema/xm06.mov', 'startMs': 554888, 'endMs': 578988}]\n654.037000"
   }
  ],
  "maquinas": 3,
