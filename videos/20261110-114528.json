@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794340799.3807716,
+ "actualizado": 1794340863.5986543,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,82 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1654,
+  "deepseek": 0.1713,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9082
+  "total": 0.9141
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "    PID     ELAPSED \n  48245       31:44 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/nod\n  48248       31:44 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.1"
-  },
-  {
-   "k": "tool",
-   "t": "ps -eo pid,etime,args | grep -E \"[r]ender.py|[a]ssemble.py\" | cut -c1-100; ls -la segments/*.mp4 | grep -v src | wc -l; du -sh segments"
-  },
-  {
-   "k": "res",
-   "t": "   3872    04:32:10 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITH\n   3874    04:32:10 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissio\n  48245       31:48 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/node/20.20.2/x64/bin:/o\n  48248       31:48 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/pyth"
-  },
-  {
-   "k": "tool",
-   "t": "ps -o pid,pcpu,etime,args= -p 48248,58109,67070 | cut -c1-160"
-  },
-  {
-   "k": "res",
-   "t": "    PID %CPU     ELAPSED \n  48248  0.0       31:52 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/fondo_avatar.py /opt/e\n  58109  0.0       23:56 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/my-grandmothe\n  67070  0.0       07:07 python /opt/estudio/repo/mo"
-  },
-  {
-   "k": "tool",
-   "t": "kill 58109 2>/dev/null; sleep 3; pgrep -af \"assemble.py\" | cut -c1-60; tail -3 assemble.log"
-  },
-  {
-   "k": "res",
-   "t": "3872 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudi\n3874 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --d\n67070 python /opt/estudio/repo/motor/tools/assemble.py .\n68340 /bin/bash -c source /opt/estudio/datos/brain/shell-sna\nsegmentos: 152\ntramos: 6 de 25 por codificar · 4 a la vez"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 300; tail -4 assemble.log; pgrep -f \"fondo_avatar.py\" >/dev/null && echo \"fondo_avatar running\" || echo \"fondo_avatar done\""
-  },
-  {
-   "k": "res",
-   "t": "segmentos: 152\ntramos: 6 de 25 por codificar · 4 a la vez\nfondo_avatar running"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 480; tail -4 assemble.log; pgrep -f \"fondo_avatar.py\" >/dev/null && echo \"fondo_avatar running\" || echo \"fondo_avatar done\"; ls -la final.mp4 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n[in#0 @ 0x5fe471f28c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\nfondo_avatar running"
-  },
-  {
-   "k": "tool",
-   "t": "tail -25 assemble.log"
-  },
-  {
-   "k": "res",
-   "t": "segmentos: 152\ntramos: 6 de 25 por codificar · 4 a la vez\nel armado por tramos falló (pegado: [concat @ 0x5fe471f28f00] Impossible to open './tramos/./tramos/fbcc7656c5c77699653f.mp4'\n[in#0 @ 0x5fe471f28c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 420; tail -3 assemble.log; ls -la final.mp4 2>/dev/null; ls tramos | head"
-  },
-  {
-   "k": "res",
-   "t": "Error opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n014c2460fe2e4bc4ccca.mp4\n09750f774a2c266aa10d.mp4\n0dd8c4be6c1138e9a7af.mp4\n1872292dc930f99bf369.mp4\n2246ec2969bdefd1328b.mp4\n2d20e149ad0c09a00ff2.mp4\n561f75afc12f33445a62.mp4\n7132f471c868dcbc4694.mp4\n730a1298b2f1ba594e35.mp4\n7f5b0ead54423ca915db.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 300; tail -2 assemble.log; ls -la final.mp4 2>/dev/null; pgrep -f \"[a]ssemble.py\" | head -2"
-  },
-  {
-   "k": "res",
-   "t": "Error opening input files: No such file or directory\n): va el armado completo\n3872\n3874"
-  },
   {
    "k": "tool",
    "t": "ls -la final.mp4; tail -6 assemble.log; pgrep -f \"[f]ondo_avatar.py\" || echo \"fondo done\"; cat gates/fondo_avatar.json 2>/dev/null | head -20"
@@ -178,6 +110,74 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/revisor.py . > revisor.log 2>&1 &\nsleep 240; tail -8 revisor.log; ls qc/f_*.jpg 2>/dev/null | head"
+  },
+  {
+   "k": "res",
+   "t": "✓ el revisor no encontró fallas.\n(25 cuadros revisados, US$0.001)\nqc/f_001.jpg\nqc/f_002.jpg\nqc/f_003.jpg\nqc/f_004.jpg\nqc/f_005.jpg\nqc/f_006.jpg\nqc/f_007.jpg\nqc/f_008.jpg\nqc/f_009.jpg\nqc/f_010.jpg"
+  },
+  {
+   "k": "tool",
+   "t": "ls qc/f_*.jpg | wc -l; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final.jpg $(ls qc/f_*.jpg | head -12) 2>&1|tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final2.jpg $(ls qc/f_*.jpg | tail -13) 2>&1|tail -1; ls gates/"
+  },
+  {
+   "k": "res",
+   "t": "25\nhoja: qc/hoja_final.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_final2.jpg (12 cuadros, 4x3)\narmado.json\netapas.jsonl\nfondo_avatar.json\nfotos_auto.txt\nqc_ok.json\nrender_auto.txt\nrevisor_final.json"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_final.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_final2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\npl=json.load(open('plan.json'))\nsegs=pl['segments']\nprint(json.dumps(segs[0])[:400])\nfor i in range(len(segs)-3,len(segs)): print(i, segs[i].get('startMs'), segs[i].get('endMs'), segs[i].get('av'), segs[i].get('foto','')[:20], segs[i].get('tipo'))\n\"; ls avatar/sin_fondo 2>/dev/null | head -3"
+  },
+  {
+   "k": "res",
+   "t": "{\"kind\": \"av\", \"t0\": 0.0, \"t1\": 6.32, \"file\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/avatar/A0.mp4\"}\n149 None None None  None\n150 None None None  None\n151 None None None  None"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\npl=json.load(open('plan.json'))\nsegs=pl['segments']\nprint(json.dumps(segs[145:152], indent=0)[:900])\n\""
+  },
+  {
+   "k": "res",
+   "t": "[\n{\n\"kind\": \"foto\",\n\"t0\": 713.86,\n\"t1\": 718.395,\n\"file\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/fotos/p129.png\"\n},\n{\n\"kind\": \"foto\",\n\"t0\": 718.395,\n\"t1\": 722.93,\n\"file\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/fotos/p130.png\"\n},\n{\n\"kind\": \"foto\",\n\"t0\": 722.93,\n\"t1\": 727.933,\n\"file\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-"
+  },
+  {
+   "k": "tool",
+   "t": "for t in 733 738 742 745; do ffmpeg -y -loglevel error -ss $t -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/end_$t.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_end.jpg qc/end_733.jpg qc/end_738.jpg qc/end_742.jpg qc/end_745.jpg 2>&1|tail -1"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_end.jpg (4 cuadros, 4x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_end.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "# Control final — miré y arreglé\n\nMiré qc/hoja_final.jpg y qc/hoja_final2.jpg (los 25 cuadros del revisor, cada 30 s) y qc/hoja_end.jpg (los últimos fotogramas).\n- Abre con el avatar hablando desde el 0 s (✓ validador). El gancho p001 va justo después.\n- Recorrido completo: radio, calle del pueblo, Yoko con la foto del colegio, la hoja \"5 Movements\", la escena firma del índice (paneles), la silla "
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/gates/final_auto.txt (file state is current in your context — no need to Read it back)"
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 3985,
+    "seg": 4049,
     "pasadas": 1,
     "fin": false
    },
@@ -251,7 +251,7 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 5776,
+    "seg": 5904,
     "pasadas": 3,
     "fin": false
    },
@@ -263,9 +263,9 @@
     "fin": true
    }
   ],
-  "total_s": 18868,
+  "total_s": 18933,
   "avatar_s": 816,
-  "sin_avatar_s": 18053,
+  "sin_avatar_s": 18117,
   "cerrado": false
  }
 }
