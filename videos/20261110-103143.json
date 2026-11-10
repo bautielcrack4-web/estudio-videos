@@ -3,21 +3,21 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794317720.4143686,
+ "actualizado": 1794317783.67201,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
   {
    "k": "guion",
    "n": "Guion",
-   "st": "active",
-   "info": "1.985 palabras"
+   "st": "done",
+   "info": "1.987 palabras"
   },
   {
    "k": "voz",
    "n": "Voz",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "3 bloques"
   },
   {
    "k": "tiempos",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0155,
+  "deepseek": 0.0177,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0155
+  "total": 0.0177
  },
  "eventos": [
-  {
-   "k": "user",
-   "t": "Hacé este video completo de punta a punta, solo, sin preguntar y sin frenar. Tus herramientas están en el KIT del system prompt. Este es el brief entero (también quedó en /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/BRIEF.md por si lo necesitás releer después de una compactación):\n\n# BRIEF — I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65 · Sal's Fittin"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/ && ls /opt/estudio/repo/motor/tools/"
-  },
-  {
-   "k": "res",
-   "t": "total 60\ndrwxrwxrwx+ 6 runner runner  4096 Nov 10 13:33 .\ndrwxrwxrwx+ 3 runner runner  4096 Nov 10 13:33 ..\n-rw-rw-rw-+ 1 runner runner 11538 Nov 10 13:33 BRIEF.md\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 avatar\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 fotos\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 refs\ndrwxrwxrwx+ 2 runner runner  4096 Nov 10 13:33 voz\n_cfg.py\nassemble.py\navatar"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la refs/ && python /opt/estudio/repo/motor/tools/mundo.py . \"I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65\" \"A 70-year-old shoe fitter in South Philadelphia gives the only 4 kinds of shoes he'd buy after 65, the 3 traps, and how to measure your foot\" 2>&1 | tail -20"
-  },
   {
    "k": "res",
    "t": "total 4788\ndrwxrwxrwx+ 2 runner runner    4096 Nov 10 13:33 .\ndrwxrwxrwx+ 6 runner runner    4096 Nov 10 13:33 ..\n-rw-rw-rw-+ 1 runner runner 2274664 Nov 10 13:33 avatar.png\n-rw-rw-rw-+ 1 runner runner    2063 Nov 10 13:33 canal.json\n-rw-rw-rw-+ 1 runner runner   45317 Nov 10 13:33 cara.png\n-rw-rw-rw-+ 1 runner runner     381 Nov 10 13:33 voz.txt\n-rw-rw-rw-+ 1 runner runner 2549058 Nov 10 13:33 vo"
@@ -166,6 +150,34 @@
   {
    "k": "res",
    "t": "9866 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✓ guion: 9843 caracteres, 1993 palabras (hacen falta 9000-11500 para 10 min: bien)\nRESULTADO: OK"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\np='guion.txt'\nt=open(p).read()\nreps=[\n(\"I don't do brands.\",\"I don't do brands.\"),\n(\"Number one. A shoe with a removable insole.\",\"[emphatically] Number one. A shoe with a removable insole.\"),\n(\"Number two. A wide toe box.\",\"Number two. A wide toe box.\"),\n(\"Number three. A low, stable heel.\",\"Number three. A low, stable heel.\"),\n(\"Number four. A firm heel counter.\",\"Number four. "
+  },
+  {
+   "k": "res",
+   "t": "9890 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✓ guion: 9843 caracteres, 1995 palabras (hacen falta 9000-11500 para 10 min: bien)\nRESULTADO: OK"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/voz.py . > voz/voz.log 2>&1 & echo started $!"
+  },
+  {
+   "k": "res",
+   "t": "started 4278"
+  },
+  {
+   "k": "tool",
+   "t": "sed -n 1,200p /opt/estudio/repo/motor/tools/fotos.py"
+  },
+  {
+   "k": "res",
+   "t": "# -*- coding: utf-8 -*-\n\"\"\"Fotos del b-roll. Motor (Configuración → Fotos): \"openai\" = gpt-image-2.5-sunburst SIEMPRE low + Batch; referencia SOLO en las fotos del presentador;\n\"manual\" = las hace el usuario con lo que quiera (gratis).\n   python <APP>/tools/fotos.py <carpeta_del_video> <pedidos.json> > <carpeta>/fotos/fotos.log 2>&1      (en segundo plano)\npedidos.json = [{\"id\":\"b01_gancho\", \"cara"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/voz.py . 2>&1 | tail -5"
   }
  ],
  "maquinas": 1,
@@ -190,14 +202,14 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 4,
+    "seg": 67,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 182,
+  "total_s": 246,
   "avatar_s": 0,
-  "sin_avatar_s": 182,
+  "sin_avatar_s": 246,
   "cerrado": false
  }
 }
