@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794324978.1708949,
+ "actualizado": 1794325050.7668192,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "77 fotos"
+   "info": "65 fotos"
   },
   {
    "k": "armado",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0828,
+  "deepseek": 0.0839,
   "gpt": 0.2159,
   "gpt_img": 93,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5487
+  "total": 0.5498
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_03.log --cuenta \"fotos/*.png\" 100 2>&1 | tail -2; python /opt/estudio/repo/motor/tools/esperar.py --log escenas/escenas.log --existe extrema/manifest.json 2>&1 | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "15:18:40 ✓ batch 2406b9a7: 40 fotos bajadas, 0 fallidas (US$0.088)\n15:18:40 FIN: 40/40 fotos en fotos/ (7 min)\n✓ existe extrema/manifest.json (0.0 MB, 420 s)"
-  },
-  {
-   "k": "tool",
-   "t": "tail -4 escenas/escenas.log; python3 -c \"\nimport json; m=json.load(open('extrema/manifest.json'))\nprint(type(m), list(m)[:8] if isinstance(m,dict) else len(m))\nprint(json.dumps(m)[:600])\n\"; ls -la extrema/"
-  },
   {
    "k": "res",
    "t": "es04 {\"ok\":true,\"s\":340}\n \n15:26:00 escenas: 4 escenas en la línea en 1133 s\n15:26:00 escenas: gasto US$0.0077 en 49 llamadas\n<class 'list'> 4\n[{\"mp4\": \"extrema/es01.mp4\", \"startMs\": 143800, \"endMs\": 152900, \"texto\": \"Number two, shoulder rolls. Number three, seated marching. Number four, ankle circles. Number five, deep breathing with \"}, {\"mp4\": \"extrema/es02.mp4\", \"startMs\": 407175, \"endMs\": 41"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_04.log --cuenta \"fotos/*.png\" 115 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "… sigue esperando tras 540 s · log: 15:27:56 batch d0d46200: in_progress 0/38 · archivos: 77/115 → hacé otra cosa útil y volvé a llamar"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nfor i in [\"p021\",\"p022\",\"p023\",\"p024\",\"p030\",\"p031\",\"p034\",\"p040\",\"p042\",\"p056\",\"p059\",\"p060\",\"p062\",\"p063\",\"p064\",\"p074\",\"p075\",\"p089\",\"p090\",\"p091\",\"p092\"]:\n    F.pop(i, None)\njson.dump(F, open(\"pedidos/_todos.json\",\"w\"), ensure_ascii=False, indent=1)\nprint(len(F))\nEOF\nrm -f fotos/p021.* fotos/p022.* fotos/p023.* fotos/p024"
+  },
+  {
+   "k": "res",
+   "t": "100\n15:27:56 batch d0d46200: in_progress 0/38\n15:36:13 ya hay otro fotos.py en este video (pid 17978): espero que termine\n15:36:43 ya hay otro fotos.py en este video (pid 17978): espero que termine"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_04.log --cuenta \"fotos/*.png\" 108 2>&1 | tail -2"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2200,
+    "seg": 2272,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3047,
+  "total_s": 3120,
   "avatar_s": 816,
-  "sin_avatar_s": 2232,
+  "sin_avatar_s": 2304,
   "cerrado": false
  }
 }
