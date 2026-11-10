@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794318172.911302,
+ "actualizado": 1794318236.5844812,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0345,
+  "deepseek": 0.0371,
   "gpt": 0.0025,
   "gpt_img": 1,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.037
+  "total": 0.0396
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/voz.py . 2>&1 | tail -5"
-  },
-  {
-   "k": "res",
-   "t": "  ✓ bloque 1: 151 s (s2.1-pro-free)\n  ✓ bloque 4: ya estaba\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 3: 162 s (s2.1-pro-free)\n✓ voz/master.wav 10.9 min"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/tiempos.py . en 2>&1 | tail -5 && python3 -c \"import json;d=json.load(open('captions.json'));print(len(d),d[-1])\""
-  },
-  {
-   "k": "res",
-   "t": "✓ captions.json: 1982 palabras en 10.9 min\n1982 {'text': ' you.', 'startMs': 654188, 'endMs': 654228, 'timestampMs': 654188, 'confidence': 1.0}"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":7000},\n {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":70500,\"endMs\":76500},\n {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":135000,\"endMs\":141000},\n {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":188000,\"endMs\":193000},\n {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":244000"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/avatar_ranges.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nc=json.load(open('captions.json'))\ntargets=[7000,70000,76400,135000,140500,188000,192500,244000,248500,292000,296500,343000,347500,392000,396500,439000,443500,486000,490500,534000,538500,600000,620000,644000]\ni=0\nout=[]\nfor t in targets:\n    while i<len(c)-1 and c[i]['endMs']<t: i+=1\n    # pick word ending after t\n    j=i\n    while j<len(c)-1 and c[j]['endMs']>=t: j+="
-  },
-  {
-   "k": "res",
-   "t": "(7000, 654188, 654228, ' with me on that stool. Thank you.')\n(70000, 654188, 654228, ' with me on that stool. Thank you.')\n(76400, 654188, 654228, ' with me on that stool. Thank you.')\n(135000, 654188, 654228, ' with me on that stool. Thank you.')\n(140500, 654188, 654228, ' with me on that stool. Thank you.')\n(188000, 654188, 654228, ' with me on that stool. Thank you.')\n(192500, 654188, 654228, '"
-  },
-  {
-   "k": "tool",
-   "t": "import json, sys\nc=json.load(open('captions.json'))\ns=sys.argv[1].lower()\n# build full text with word index\nfull=''\nspans=[]\nfor i,w in enumerate(c):\n    t=w['text']\n    spans.append((len(full),len(full)+len(t),i))\n    full+=t\npos=full.lower().find(s)\nwhile pos!=-1:\n    for a,b,i in spans:\n        if a<=pos<b:\n            st=i; break\n    print(f\"...{full[max(0,pos-60):pos+len(s)+60]}...  [{c[st]['"
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/ctx.py (file state is current in your context — no need to Read it back)"
@@ -178,6 +142,42 @@
   {
    "k": "res",
    "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gen_pedidos.py\", line 668, in <module>\n    assert not missing, missing\n           ^^^^^^^^^^^\nAssertionError: ['p001']"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nold='missing = [f\"p{i:03d}\" for i in range(1, 117) if i != 19 and f\"p{i:03d}\" not in ids]'\nnew='missing = [f\"p{i:03d}\" for i in range(2, 117) if i != 19 and f\"p{i:03d}\" not in ids]'\nassert old in t\nt=t.replace(old,new)\nopen(p,'w').write(t)\nEOF\npython3 gen_pedidos.py && python3 - <<'EOF'\nimport json,re\np=json.load(open('pedidos_01.json'))\nPROHIB"
+  },
+  {
+   "k": "res",
+   "t": "117 pedidos 31 con cara\np001_a prohib ['cinematic']\np001_b prohib ['cinematic', 'out of focus']\np001_c prohib ['cinematic']\np002 prohib ['cinematic']\np003 prohib ['cinematic']\np004 prohib ['cinematic']\np005 prohib ['cinematic']\np006 prohib ['cinematic']\np007 prohib ['cinematic']\np008 prohib ['cinematic']\np009 prohib ['cinematic']\np010 prohib ['cinematic']\np011 prohib ['cinematic']\np012 prohib ['ci"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nt=t.replace(\"SHOP + \\\", the counter with the cash register out of focus to the right\\\"\",\"SHOP + \\\", the counter with the cash register at the right edge\\\"\")\nt=t.replace('\"A winter boot pressing down on ice near the store door\"',None) if False else t\nopen(p,'w').write(t)\nEOF\ngrep -n 'winter boot pressing down on ice' gen_pedidos.py"
+  },
+  {
+   "k": "res",
+   "t": "516:  \"A winter boot pressing down on ice near the store door\","
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nreps={\n'\"A winter boot pressing down on ice near the store door\"':'\"A winter boot pressing down hard on a patch of ice at the store door\"',\n'\"A foot in a brown shoe stepping forward on the floorboards\"':'\"A foot in a brown shoe stepping forward on the floorboards of the shop\"',\n'\"A horsehair shoe brush leaning against an old cash register on th"
+  },
+  {
+   "k": "res",
+   "t": "117 pedidos 31 con cara\nbad 0\n['p089', 'p097', 'p108']"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nd={x['id']:x for x in p}\nsel=['p001_a','p001_b','p001_c','p006','p009','p017','p025','p032','p041','p044','p048','p057','p061','p066','p069','p077','p084','p090','p099','p105','p113']\nout=[{'id':x['id'],'cara':x['cara'],'prompt':x['prompt']} for x in (d[i] for i in sel)]\njson.dump(out,open('pedidos_test.json','w'),ensure_ascii=Fals"
+  },
+  {
+   "k": "res",
+   "t": "21 5\n13:43:05 → batch batch_6af31f69c6e88190ab0984161b8448d2 · 16 fotos · sin referencia · low 1088x608\n13:43:06 → batch batch_6af31f6a68848190a4f922152bcc1dde · 5 fotos · con la cara del presentador · low 1088x608\n13:43:06 batch 1b8448d2: in_progress 0/16\n13:43:06 batch 2bcc1dde: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 22 2>&1 | tail -3; ls fotos/ | head; cat fotos/fotos_escenas.log | tail -2; tail -2 fotos/fotos_test.log"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 88,
+    "seg": 152,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 635,
+  "total_s": 699,
   "avatar_s": 0,
-  "sin_avatar_s": 635,
+  "sin_avatar_s": 699,
   "cerrado": false
  }
 }
