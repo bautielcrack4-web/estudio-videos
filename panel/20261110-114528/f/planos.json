@@ -1,983 +1,941 @@
 [
  {
   "id": "p001",
-  "startMs": 6000,
+  "startMs": 6320,
   "endMs": 11000,
-  "seg": 5.0,
+  "seg": 4.7,
   "texto": "snow and those grey mornings when nobody wants to leave the house."
  },
  {
   "id": "p002",
   "startMs": 11000,
-  "endMs": 15325,
-  "seg": 4.3,
-  "texto": "And every one of those mornings started the same way, a wooden kitchen"
+  "endMs": 16224,
+  "seg": 5.2,
+  "texto": "And every one of those mornings started the same way, a wooden kitchen chair,"
  },
  {
   "id": "p003",
-  "startMs": 15325,
-  "endMs": 19987,
-  "seg": 4.7,
-  "texto": "chair, a small silver radio and a five-minute radio Taiso"
+  "startMs": 16224,
+  "endMs": 21176,
+  "seg": 5.0,
+  "texto": "a small silver radio and a five-minute radio Taiso warm-up we did together."
  },
  {
   "id": "p004",
-  "startMs": 19987,
-  "endMs": 24680,
-  "seg": 4.7,
-  "texto": "warm-up we did together. Her name was Fumiko."
+  "startMs": 21176,
+  "endMs": 26128,
+  "seg": 5.0,
+  "texto": "Her name was Fumiko. She lived in a small town"
  },
  {
   "id": "p005",
-  "startMs": 24680,
-  "endMs": 29312,
-  "seg": 4.6,
-  "texto": "She lived in a small town north of Sendai, in a wooden house with a narrow garden"
+  "startMs": 26128,
+  "endMs": 31080,
+  "seg": 5.0,
+  "texto": "north of Sendai, in a wooden house with a narrow garden and a screen door that"
  },
  {
   "id": "p006",
-  "startMs": 29312,
-  "endMs": 33975,
-  "seg": 4.7,
-  "texto": "and a screen door that stuck in the summer. She lived to 98 and"
+  "startMs": 31080,
+  "endMs": 36032,
+  "seg": 5.0,
+  "texto": "stuck in the summer. She lived to 98 and she walked every one of those"
  },
  {
   "id": "p007",
-  "startMs": 33975,
-  "endMs": 38637,
-  "seg": 4.7,
-  "texto": "she walked every one of those days. When she was 90,"
+  "startMs": 36032,
+  "endMs": 40984,
+  "seg": 5.0,
+  "texto": "days. When she was 90, she could still walk to the fish shop and back without"
  },
  {
   "id": "p008",
-  "startMs": 38637,
-  "endMs": 42600,
-  "seg": 4.0,
-  "texto": "she could still walk to the fish shop and back without stopping."
+  "startMs": 40984,
+  "endMs": 45060,
+  "seg": 4.1,
+  "texto": "stopping. People in the town knew her walk."
  },
  {
   "id": "p009",
-  "startMs": 42600,
-  "endMs": 47962,
-  "seg": 5.4,
-  "texto": "People in the town knew her walk. Small steps, one hand on her hip, one"
+  "startMs": 45060,
+  "endMs": 50140,
+  "seg": 5.1,
+  "texto": "Small steps, one hand on her hip, one hand with the shopping bag."
  },
  {
   "id": "p010",
-  "startMs": 47962,
-  "endMs": 52625,
-  "seg": 4.7,
-  "texto": "hand with the shopping bag. She never ran, she never hurried,"
+  "startMs": 50140,
+  "endMs": 55840,
+  "seg": 5.7,
+  "texto": "She never ran, she never hurried, she just went. I taught physical education for"
  },
  {
   "id": "p011",
-  "startMs": 52625,
-  "endMs": 57287,
-  "seg": 4.7,
-  "texto": "she just went. I taught physical education for 32 years,"
+  "startMs": 55840,
+  "endMs": 60792,
+  "seg": 5.0,
+  "texto": "32 years, boys and girls, middle school, on a schoolyard with"
  },
  {
   "id": "p012",
-  "startMs": 57287,
-  "endMs": 62760,
-  "seg": 5.5,
-  "texto": "boys and girls, middle school, on a schoolyard with more dust than grass."
+  "startMs": 60792,
+  "endMs": 65860,
+  "seg": 5.1,
+  "texto": "more dust than grass. I taught them volleyball, running, jump rope,"
  },
  {
   "id": "p013",
-  "startMs": 62760,
-  "endMs": 65860,
-  "seg": 3.1,
-  "texto": "I taught them volleyball, running, jump rope,"
+  "startMs": 65860,
+  "endMs": 70696,
+  "seg": 4.8,
+  "texto": "and I taught them to stretch before the bell. And after I retired, I taught"
  },
  {
   "id": "p014",
-  "startMs": 65860,
-  "endMs": 71275,
-  "seg": 5.4,
-  "texto": "and I taught them to stretch before the bell. And after I retired, I taught the neighbour women"
+  "startMs": 70696,
+  "endMs": 76340,
+  "seg": 5.6,
+  "texto": "the neighbour women in their 70s how to do these same movements while sitting on a chair."
  },
  {
   "id": "p015",
-  "startMs": 71275,
-  "endMs": 76340,
-  "seg": 5.1,
-  "texto": "in their 70s how to do these same movements while sitting on a chair."
- },
- {
-  "id": "p016",
   "startMs": 76340,
   "endMs": 80600,
   "seg": 4.3,
   "texto": "They came to my living room on Tuesdays, some of them in their slippers. So,"
  },
  {
+  "id": "p016",
+  "startMs": 86360,
+  "endMs": 91780,
+  "seg": 5.4,
+  "texto": "them, done on a chair, five minutes, and at the end I'll tell you what to look for"
+ },
+ {
   "id": "p017",
-  "startMs": 86000,
-  "endMs": 91600,
-  "seg": 5.6,
-  "texto": "of them, done on a chair, five minutes, and at the end I'll tell you what to look"
+  "startMs": 91780,
+  "endMs": 97200,
+  "seg": 5.4,
+  "texto": "after two weeks. You don't need a gym, you don't need a mat, a kitchen chair"
  },
  {
   "id": "p018",
-  "startMs": 91600,
-  "endMs": 97200,
-  "seg": 5.6,
-  "texto": "for after two weeks. You don't need a gym, you don't need a mat, a kitchen chair"
+  "startMs": 102520,
+  "endMs": 106140,
+  "seg": 3.6,
+  "texto": "the seat, feet flat, as wide as your hips,"
  },
  {
   "id": "p019",
-  "startMs": 102200,
-  "endMs": 106140,
-  "seg": 3.9,
-  "texto": "of the seat, feet flat, as wide as your hips,"
+  "startMs": 106140,
+  "endMs": 111514,
+  "seg": 5.4,
+  "texto": "Back straight, like a string pulls the top of your head. Good. One small test before we"
  },
  {
   "id": "p020",
-  "startMs": 106140,
-  "endMs": 111285,
-  "seg": 5.1,
-  "texto": "Back straight, like a string pulls the top of your head. Good. One small test before"
+  "startMs": 111514,
+  "endMs": 116540,
+  "seg": 5.0,
+  "texto": "start. It takes 10 seconds and I do it every morning."
  },
  {
   "id": "p021",
-  "startMs": 111285,
-  "endMs": 116540,
-  "seg": 5.3,
-  "texto": "we start. It takes 10 seconds and I do it every morning."
+  "startMs": 116540,
+  "endMs": 120508,
+  "seg": 4.0,
+  "texto": "Stand up from your chair once, slowly, without using your hands,"
  },
  {
   "id": "p022",
-  "startMs": 116540,
-  "endMs": 120371,
-  "seg": 3.8,
-  "texto": "Stand up from your chair once, slowly, without using your"
+  "startMs": 120508,
+  "endMs": 125005,
+  "seg": 4.5,
+  "texto": "and sit down again. That is it. Don't hurry it,"
  },
  {
   "id": "p023",
-  "startMs": 120371,
-  "endMs": 124914,
-  "seg": 4.5,
-  "texto": "hands, and sit down again. That is it. Don't hurry it,"
- },
- {
-  "id": "p024",
-  "startMs": 124914,
+  "startMs": 125005,
   "endMs": 129740,
-  "seg": 4.8,
+  "seg": 4.7,
   "texto": "don't be brave, and don't judge it. Just notice how it feels."
  },
  {
-  "id": "p025",
+  "id": "p024",
   "startMs": 129740,
   "endMs": 134000,
   "seg": 4.3,
   "texto": "Was it one push? Two? Did you use the armrest? Remember that"
  },
  {
-  "id": "p026",
-  "startMs": 139000,
+  "id": "p025",
+  "startMs": 139360,
   "endMs": 143800,
-  "seg": 4.8,
+  "seg": 4.4,
   "texto": "Five movements. Number one, arms up."
  },
  {
-  "id": "p027",
+  "id": "p026",
   "startMs": 143800,
   "endMs": 149100,
   "seg": 5.3,
   "texto": "Number two, shoulder rolls. Number three, seated marching."
  },
  {
-  "id": "p028",
+  "id": "p027",
   "startMs": 149100,
-  "endMs": 152900,
-  "seg": 3.8,
+  "endMs": 153080,
+  "seg": 4.0,
   "texto": "Number four, ankle circles. Number five, deep"
  },
  {
-  "id": "p029",
-  "startMs": 152900,
-  "endMs": 157533,
+  "id": "p028",
+  "startMs": 153080,
+  "endMs": 157653,
   "seg": 4.6,
   "texto": "breathing with a slow arm lift. That is the whole routine my grandmother did"
  },
  {
-  "id": "p030",
-  "startMs": 157533,
+  "id": "p029",
+  "startMs": 157653,
   "endMs": 162620,
-  "seg": 5.1,
+  "seg": 5.0,
   "texto": "for 60 years. Nothing fancy. Nothing expensive."
  },
  {
-  "id": "p031",
+  "id": "p030",
   "startMs": 162620,
   "endMs": 166800,
   "seg": 4.2,
   "texto": "One chair, one radio, five minutes. Let's begin"
  },
  {
+  "id": "p031",
+  "startMs": 172320,
+  "endMs": 177405,
+  "seg": 5.1,
+  "texto": "ten times. Both arms rise slowly up to the ceiling and"
+ },
+ {
   "id": "p032",
-  "startMs": 172000,
-  "endMs": 176555,
-  "seg": 4.6,
-  "texto": "up ten times. Both arms rise slowly up to the"
+  "startMs": 177405,
+  "endMs": 182080,
+  "seg": 4.7,
+  "texto": "at the same time the heels lift from the floor. Only the heels."
  },
  {
   "id": "p033",
-  "startMs": 176555,
-  "endMs": 180680,
-  "seg": 4.1,
-  "texto": "ceiling and at the same time the heels lift from the floor."
+  "startMs": 182080,
+  "endMs": 187480,
+  "seg": 5.4,
+  "texto": "The toes stay down. Then arms down, heels down. Ten times."
  },
  {
   "id": "p034",
-  "startMs": 180680,
-  "endMs": 185666,
-  "seg": 5.0,
-  "texto": "Only the heels. The toes stay down. Then arms down, heels down."
+  "startMs": 187480,
+  "endMs": 192660,
+  "seg": 5.2,
+  "texto": "Slow, like the string on your head is pulling up, and your hands just follow it. Why"
  },
  {
   "id": "p035",
-  "startMs": 185666,
-  "endMs": 190222,
-  "seg": 4.6,
-  "texto": "Ten times. Slow, like the string on your head is pulling up,"
+  "startMs": 192660,
+  "endMs": 197745,
+  "seg": 5.1,
+  "texto": "does arms up matter? Because of the balance. When you reach up, the body"
  },
  {
   "id": "p036",
-  "startMs": 190222,
-  "endMs": 194777,
-  "seg": 4.6,
-  "texto": "and your hands just follow it. Why does arms up matter? Because"
+  "startMs": 197745,
+  "endMs": 202830,
+  "seg": 5.1,
+  "texto": "finds where it is. The shoulders open and the chest opens with it. And"
  },
  {
   "id": "p037",
-  "startMs": 194777,
-  "endMs": 199333,
-  "seg": 4.6,
-  "texto": "of the balance. When you reach up, the body finds where it is. The"
+  "startMs": 202830,
+  "endMs": 207915,
+  "seg": 5.1,
+  "texto": "the heels? The heels teach the ankles they still have a job. Standing balance"
  },
  {
   "id": "p038",
-  "startMs": 199333,
-  "endMs": 203888,
-  "seg": 4.6,
-  "texto": "shoulders open and the chest opens with it. And the heels? The"
+  "startMs": 207915,
+  "endMs": 213000,
+  "seg": 5.1,
+  "texto": "in a chair. My grandmother did this one first, always"
  },
  {
   "id": "p039",
-  "startMs": 203888,
-  "endMs": 208444,
-  "seg": 4.6,
-  "texto": "heels teach the ankles they still have a job. Standing balance in a chair."
+  "startMs": 218360,
+  "endMs": 222798,
+  "seg": 4.4,
+  "texto": "to count with me in Japanese. Ichi, ni, san."
  },
  {
   "id": "p040",
-  "startMs": 208444,
-  "endMs": 213000,
-  "seg": 4.6,
-  "texto": "My grandmother did this one first, always"
- },
- {
-  "id": "p041",
-  "startMs": 218000,
-  "endMs": 222798,
-  "seg": 4.8,
-  "texto": "She used to count with me in Japanese. Ichi, ni, san."
- },
- {
-  "id": "p042",
   "startMs": 222798,
   "endMs": 228018,
   "seg": 5.2,
   "texto": "She never once missed ten. Ten times, count out loud with me."
  },
  {
-  "id": "p043",
+  "id": "p041",
   "startMs": 228018,
-  "endMs": 232025,
-  "seg": 4.0,
+  "endMs": 232115,
+  "seg": 4.1,
   "texto": "One, two, three, slowly, four, five,"
  },
  {
-  "id": "p044",
-  "startMs": 232025,
+  "id": "p042",
+  "startMs": 232115,
   "endMs": 236700,
-  "seg": 4.7,
+  "seg": 4.6,
   "texto": "six, seven, eight, nine, ten. Good."
  },
  {
+  "id": "p043",
+  "startMs": 242100,
+  "endMs": 247028,
+  "seg": 4.9,
+  "texto": "chair, hands rest on your thighs. Now lift the shoulders toward the"
+ },
+ {
+  "id": "p044",
+  "startMs": 247028,
+  "endMs": 251957,
+  "seg": 4.9,
+  "texto": "ears, then roll them back, back, back, down. Ten times back,"
+ },
+ {
   "id": "p045",
-  "startMs": 241800,
-  "endMs": 246771,
-  "seg": 5.0,
-  "texto": "the same chair, hands rest on your thighs. Now lift the shoulders toward"
+  "startMs": 251957,
+  "endMs": 256885,
+  "seg": 4.9,
+  "texto": "then forward, ten times forward. Slowly, in big circles, like"
  },
  {
   "id": "p046",
-  "startMs": 246771,
-  "endMs": 251742,
-  "seg": 5.0,
-  "texto": "the ears, then roll them back, back, back, down. Ten times back,"
+  "startMs": 256885,
+  "endMs": 261318,
+  "seg": 4.4,
+  "texto": "you are drawing a circle on the wall behind you with your elbow."
  },
  {
   "id": "p047",
-  "startMs": 251742,
-  "endMs": 256714,
-  "seg": 5.0,
-  "texto": "then forward, ten times forward. Slowly, in big circles,"
+  "startMs": 261318,
+  "endMs": 266742,
+  "seg": 5.4,
+  "texto": "The shoulders are where I keep my mornings. When I was teaching, I carried a bag of exams in one"
  },
  {
   "id": "p048",
-  "startMs": 256714,
-  "endMs": 261318,
-  "seg": 4.6,
-  "texto": "like you are drawing a circle on the wall behind you with your elbow."
+  "startMs": 266742,
+  "endMs": 272558,
+  "seg": 5.8,
+  "texto": "hand every day for years, and my right shoulder sat up by my ear by Friday."
  },
  {
   "id": "p049",
-  "startMs": 261318,
-  "endMs": 266657,
-  "seg": 5.3,
-  "texto": "The shoulders are where I keep my mornings. When I was teaching, I carried a bag of exams in"
- },
- {
-  "id": "p050",
-  "startMs": 266657,
-  "endMs": 271628,
-  "seg": 5.0,
-  "texto": "one hand every day for years, and my right shoulder sat up by my ear by Friday."
- },
- {
-  "id": "p051",
-  "startMs": 271628,
+  "startMs": 272558,
   "endMs": 276600,
-  "seg": 5.0,
+  "seg": 4.0,
   "texto": "I would rub it in the staff room, and the history teacher would say, Kurosawa"
  },
  {
-  "id": "p052",
-  "startMs": 281600,
-  "endMs": 286376,
+  "id": "p050",
+  "startMs": 281920,
+  "endMs": 286672,
   "seg": 4.8,
-  "texto": "thing you will notice. Your hands go down. When the shoulders loosen, the"
+  "texto": "you will notice. Your hands go down. When the shoulders loosen, the hands"
  },
  {
-  "id": "p053",
-  "startMs": 286376,
+  "id": "p051",
+  "startMs": 286672,
   "endMs": 290938,
-  "seg": 4.6,
-  "texto": "hands hang beside the chair instead of climbing up to the ears."
+  "seg": 4.3,
+  "texto": "hang beside the chair instead of climbing up to the ears."
  },
  {
-  "id": "p054",
+  "id": "p052",
   "startMs": 290938,
   "endMs": 296558,
   "seg": 5.6,
   "texto": "Stand in front of a mirror if you have one. That is the whole test. Where are my hands?"
  },
  {
-  "id": "p055",
+  "id": "p053",
   "startMs": 296558,
-  "endMs": 300707,
-  "seg": 4.1,
-  "texto": "Why it matters. The neck, the tops of the shoulders, the inside of"
+  "endMs": 300929,
+  "seg": 4.4,
+  "texto": "Why it matters. The neck, the tops of the shoulders, the inside of the"
+ },
+ {
+  "id": "p054",
+  "startMs": 300929,
+  "endMs": 305681,
+  "seg": 4.8,
+  "texto": "shoulder blades. That is where the stiffness lives after a night in bed. Ten circles"
+ },
+ {
+  "id": "p055",
+  "startMs": 305681,
+  "endMs": 310758,
+  "seg": 5.1,
+  "texto": "and they open a little. The first day may be one centimetre."
  },
  {
   "id": "p056",
-  "startMs": 300707,
-  "endMs": 305484,
-  "seg": 4.8,
-  "texto": "the shoulder blades. That is where the stiffness lives after a night in bed. Ten"
- },
- {
-  "id": "p057",
-  "startMs": 305484,
-  "endMs": 310758,
-  "seg": 5.3,
-  "texto": "circles and they open a little. The first day may be one centimetre."
- },
- {
-  "id": "p058",
   "startMs": 310758,
   "endMs": 315098,
   "seg": 4.3,
   "texto": "The two months may be more. Ten back. Count with me."
  },
  {
-  "id": "p059",
+  "id": "p057",
   "startMs": 315098,
-  "endMs": 319815,
-  "seg": 4.7,
+  "endMs": 319938,
+  "seg": 4.8,
   "texto": "One, two, three, four, five, six,"
  },
  {
-  "id": "p060",
-  "startMs": 319815,
+  "id": "p058",
+  "startMs": 319938,
   "endMs": 325458,
-  "seg": 5.6,
+  "seg": 5.5,
   "texto": "seven, eight, nine, ten. Now forward, ten more."
  },
  {
-  "id": "p061",
+  "id": "p059",
   "startMs": 325458,
   "endMs": 328758,
   "seg": 3.3,
   "texto": "Slowly, slowly is strong."
  },
  {
-  "id": "p062",
+  "id": "p060",
   "startMs": 328758,
-  "endMs": 334146,
+  "endMs": 334195,
   "seg": 5.4,
   "texto": "Movement number three. Seated marching. Back straight, hands on the seat of the chair"
  },
  {
-  "id": "p063",
-  "startMs": 334146,
-  "endMs": 338923,
+  "id": "p061",
+  "startMs": 334195,
+  "endMs": 338947,
   "seg": 4.8,
   "texto": "or on your knees if that is easier. Now pick up one foot,"
  },
  {
-  "id": "p064",
-  "startMs": 338923,
+  "id": "p062",
+  "startMs": 338947,
   "endMs": 343700,
   "seg": 4.8,
   "texto": "set it down, pick up the other, set it down. Like a marching soldier"
  },
  {
-  "id": "p065",
-  "startMs": 349000,
-  "endMs": 353900,
-  "seg": 4.9,
-  "texto": "the knee a little, not high. Little is fine. Why marching in a chair?"
+  "id": "p063",
+  "startMs": 349340,
+  "endMs": 354155,
+  "seg": 4.8,
+  "texto": "knee a little, not high. Little is fine. Why marching in a chair?"
  },
  {
-  "id": "p066",
-  "startMs": 353900,
-  "endMs": 358800,
-  "seg": 4.9,
+  "id": "p064",
+  "startMs": 354155,
+  "endMs": 358970,
+  "seg": 4.8,
   "texto": "Because it wakes the hip. The hip is a big joint and it likes to"
  },
  {
+  "id": "p065",
+  "startMs": 358970,
+  "endMs": 363785,
+  "seg": 4.8,
+  "texto": "be used. When you lift the knee, the front of the hip opens and the thigh"
+ },
+ {
+  "id": "p066",
+  "startMs": 363785,
+  "endMs": 368600,
+  "seg": 4.8,
+  "texto": "does the work and the circulation. The blood moves down to the feet"
+ },
+ {
   "id": "p067",
-  "startMs": 358800,
-  "endMs": 363700,
-  "seg": 4.9,
-  "texto": "be used. When you lift the knee, the front of the hip opens and the"
+  "startMs": 373960,
+  "endMs": 378602,
+  "seg": 4.6,
+  "texto": "waiting for the rice to finish cooking. She said, march while the rice"
  },
  {
   "id": "p068",
-  "startMs": 363700,
-  "endMs": 368600,
-  "seg": 4.9,
-  "texto": "thigh does the work and the circulation. The blood moves down to the feet"
+  "startMs": 378602,
+  "endMs": 383245,
+  "seg": 4.6,
+  "texto": "cooks and the rice will not wait for you. She marched 20 steps in"
  },
  {
   "id": "p069",
-  "startMs": 373600,
-  "endMs": 378266,
-  "seg": 4.7,
-  "texto": "while waiting for the rice to finish cooking. She said, march while the"
+  "startMs": 383245,
+  "endMs": 387888,
+  "seg": 4.6,
+  "texto": "the kitchen beside the pot. 20 steps, count out loud. 1,"
  },
  {
   "id": "p070",
-  "startMs": 378266,
-  "endMs": 382933,
-  "seg": 4.7,
-  "texto": "rice cooks and the rice will not wait for you. She marched 20 steps"
+  "startMs": 387888,
+  "endMs": 392855,
+  "seg": 5.0,
+  "texto": "2, 3, 4, 5, 6,"
  },
  {
   "id": "p071",
-  "startMs": 382933,
-  "endMs": 387600,
-  "seg": 4.7,
-  "texto": "in the kitchen beside the pot. 20 steps, count out loud."
+  "startMs": 392855,
+  "endMs": 397173,
+  "seg": 4.3,
+  "texto": "7, 8, 9, 10, 11, 12,"
  },
  {
   "id": "p072",
-  "startMs": 387600,
-  "endMs": 392855,
-  "seg": 5.3,
-  "texto": "1, 2, 3, 4, 5, 6,"
+  "startMs": 397173,
+  "endMs": 401816,
+  "seg": 4.6,
+  "texto": "13, 14, 15, 16, 17,"
  },
  {
   "id": "p073",
-  "startMs": 392855,
-  "endMs": 396933,
-  "seg": 4.1,
-  "texto": "7, 8, 9, 10, 11,"
+  "startMs": 401816,
+  "endMs": 407175,
+  "seg": 5.4,
+  "texto": "18, 19, 20. Good. Movement number 4."
  },
  {
   "id": "p074",
-  "startMs": 396933,
-  "endMs": 401600,
-  "seg": 4.7,
-  "texto": "12, 13, 14, 15, 16, 17,"
+  "startMs": 407175,
+  "endMs": 411101,
+  "seg": 3.9,
+  "texto": "Ankle circles. Sit up straight. Lift one foot just"
  },
  {
   "id": "p075",
-  "startMs": 401600,
-  "endMs": 405555,
-  "seg": 4.0,
-  "texto": "18, 19, 20. Good."
- },
- {
-  "id": "p076",
-  "startMs": 405555,
-  "endMs": 410933,
-  "seg": 5.4,
-  "texto": "Movement number 4. Ankle circles. Sit up straight. Lift one foot just"
- },
- {
-  "id": "p077",
-  "startMs": 410933,
+  "startMs": 411101,
   "endMs": 415695,
-  "seg": 4.8,
+  "seg": 4.6,
   "texto": "a little off the floor. Now draw a circle with the toes."
  },
  {
-  "id": "p078",
+  "id": "p076",
   "startMs": 415695,
-  "endMs": 420266,
-  "seg": 4.6,
-  "texto": "Like you are drawing a circle on a table with a pencil, and the pencil is your big"
+  "endMs": 420386,
+  "seg": 4.7,
+  "texto": "Like you are drawing a circle on a table with a pencil, and the pencil is your big toe."
  },
  {
-  "id": "p079",
-  "startMs": 420266,
+  "id": "p077",
+  "startMs": 420386,
   "endMs": 425355,
-  "seg": 5.1,
-  "texto": "toe. Ten circles one way, ten circles the other way."
+  "seg": 5.0,
+  "texto": "Ten circles one way, ten circles the other way."
  },
  {
-  "id": "p080",
+  "id": "p078",
   "startMs": 425355,
   "endMs": 430275,
   "seg": 4.9,
   "texto": "Then the other foot. Same, gentle, never fast."
  },
  {
-  "id": "p081",
+  "id": "p079",
   "startMs": 430275,
   "endMs": 434435,
   "seg": 4.2,
   "texto": "Why the ankle? Because the ankle is the door to the ground."
  },
  {
-  "id": "p082",
+  "id": "p080",
   "startMs": 434435,
-  "endMs": 438933,
+  "endMs": 438957,
   "seg": 4.5,
-  "texto": "Every step you take starts at the ankle. If it is stiff, the"
+  "texto": "Every step you take starts at the ankle. If it is stiff, the walk"
+ },
+ {
+  "id": "p081",
+  "startMs": 438957,
+  "endMs": 443600,
+  "seg": 4.6,
+  "texto": "is short and careful. Little circles open that door again."
+ },
+ {
+  "id": "p082",
+  "startMs": 448920,
+  "endMs": 453574,
+  "seg": 4.7,
+  "texto": "had told her to. She just felt they were tight. She did them every morning"
  },
  {
   "id": "p083",
-  "startMs": 438933,
-  "endMs": 443600,
+  "startMs": 453574,
+  "endMs": 458228,
   "seg": 4.7,
-  "texto": "walk is short and careful. Little circles open that door again."
+  "texto": "for 20 years, and her ankles let her walk all the way to 98."
  },
  {
   "id": "p084",
-  "startMs": 448600,
-  "endMs": 453300,
-  "seg": 4.7,
-  "texto": "had told her to. She just felt they were tight. She did them every"
- },
- {
-  "id": "p085",
-  "startMs": 453300,
-  "endMs": 458000,
-  "seg": 4.7,
-  "texto": "morning for 20 years, and her ankles let her walk all the way to 98."
- },
- {
-  "id": "p086",
-  "startMs": 458000,
-  "endMs": 462700,
+  "startMs": 458228,
+  "endMs": 462882,
   "seg": 4.7,
   "texto": "On the bad days, I did them with her. One foot each,"
  },
  {
-  "id": "p087",
-  "startMs": 462700,
-  "endMs": 467400,
+  "id": "p085",
+  "startMs": 462882,
+  "endMs": 467537,
   "seg": 4.7,
   "texto": "sitting side by side on that chair. Then the other foot. Ten circles."
  },
  {
-  "id": "p088",
-  "startMs": 467400,
-  "endMs": 472100,
+  "id": "p086",
+  "startMs": 467537,
+  "endMs": 472191,
   "seg": 4.7,
   "texto": "Breathe slowly while you draw. And when you finish, rest"
  },
  {
-  "id": "p089",
-  "startMs": 472100,
+  "id": "p087",
+  "startMs": 472191,
   "endMs": 477275,
-  "seg": 5.2,
+  "seg": 5.1,
   "texto": "the foot on the floor and shake it gently like shaking water off your hand."
  },
  {
-  "id": "p090",
+  "id": "p088",
   "startMs": 477275,
   "endMs": 481500,
   "seg": 4.2,
   "texto": "Movement number 5. Deep breathing with a slow arm lift. Sitting"
  },
  {
-  "id": "p091",
-  "startMs": 486500,
-  "endMs": 491458,
-  "seg": 5.0,
+  "id": "p089",
+  "startMs": 486860,
+  "endMs": 491788,
+  "seg": 4.9,
   "texto": "and lift the arms out to the sides and up to the ceiling. At the top,"
  },
  {
-  "id": "p092",
-  "startMs": 491458,
-  "endMs": 496416,
-  "seg": 5.0,
-  "texto": "hold for one slow breath. Then lower the arms as you breathe out, five"
+  "id": "p090",
+  "startMs": 491788,
+  "endMs": 496716,
+  "seg": 4.9,
+  "texto": "hold for one slow breath. Then lower the arms as you breathe out, five times,"
  },
  {
-  "id": "p093",
-  "startMs": 496416,
+  "id": "p091",
+  "startMs": 496716,
   "endMs": 501795,
-  "seg": 5.4,
-  "texto": "times, only five, and each one slower than the last."
+  "seg": 5.1,
+  "texto": "only five, and each one slower than the last."
  },
  {
-  "id": "p094",
+  "id": "p092",
   "startMs": 501795,
   "endMs": 505695,
   "seg": 3.9,
   "texto": "Why breathing? Because the body is not only the legs."
  },
  {
-  "id": "p095",
+  "id": "p093",
   "startMs": 505695,
-  "endMs": 511291,
-  "seg": 5.6,
-  "texto": "When we breathe slowly, the whole body slows down with us. And a slow breath before"
+  "endMs": 511501,
+  "seg": 5.8,
+  "texto": "When we breathe slowly, the whole body slows down with us. And a slow breath before you"
+ },
+ {
+  "id": "p094",
+  "startMs": 511501,
+  "endMs": 517275,
+  "seg": 5.8,
+  "texto": "stand up makes the standing easier. It is like a small pause before the music."
+ },
+ {
+  "id": "p095",
+  "startMs": 517275,
+  "endMs": 521635,
+  "seg": 4.4,
+  "texto": "My grandmother finished this way every morning for 60 years."
  },
  {
   "id": "p096",
-  "startMs": 511291,
-  "endMs": 516250,
-  "seg": 5.0,
-  "texto": "you stand up makes the standing easier. It is like a small pause before"
- },
- {
-  "id": "p097",
-  "startMs": 516250,
-  "endMs": 521635,
-  "seg": 5.4,
-  "texto": "the music. My grandmother finished this way every morning for 60 years."
- },
- {
-  "id": "p098",
   "startMs": 521635,
   "endMs": 525455,
   "seg": 3.8,
   "texto": "Arms up, breathe in, arms down, breathe out."
  },
  {
-  "id": "p099",
+  "id": "p097",
   "startMs": 525455,
   "endMs": 531395,
   "seg": 5.9,
   "texto": "Then she would say, now the day can start. And she stood up and she went out."
  },
  {
-  "id": "p100",
+  "id": "p098",
   "startMs": 531395,
-  "endMs": 536083,
+  "endMs": 536143,
   "seg": 4.7,
   "texto": "Five times. Count with me. One, two, three,"
  },
  {
-  "id": "p101",
-  "startMs": 536083,
-  "endMs": 541041,
-  "seg": 5.0,
+  "id": "p099",
+  "startMs": 536143,
+  "endMs": 541071,
+  "seg": 4.9,
   "texto": "four, five. Then sit and breathe. Good. So,"
  },
  {
-  "id": "p102",
-  "startMs": 541041,
+  "id": "p100",
+  "startMs": 541071,
   "endMs": 546000,
-  "seg": 5.0,
+  "seg": 4.9,
   "texto": "that is the routine. Five movements, five minutes, one chair."
  },
  {
-  "id": "p103",
-  "startMs": 551000,
+  "id": "p101",
+  "startMs": 551320,
   "endMs": 556000,
-  "seg": 5.0,
-  "texto": "first day, not the second. Two weeks. The first thing most people"
+  "seg": 4.7,
+  "texto": "day, not the second. Two weeks. The first thing most people"
+ },
+ {
+  "id": "p102",
+  "startMs": 559840,
+  "endMs": 564755,
+  "seg": 4.9,
+  "texto": "and it feels lighter. The second thing is the stairs. Going"
+ },
+ {
+  "id": "p103",
+  "startMs": 564755,
+  "endMs": 569533,
+  "seg": 4.8,
+  "texto": "down is easier because the ankles know what to do."
  },
  {
   "id": "p104",
-  "startMs": 559500,
-  "endMs": 564500,
-  "seg": 5.0,
-  "texto": "the chair and it feels lighter. The second thing is the stairs."
- },
- {
-  "id": "p105",
-  "startMs": 564500,
-  "endMs": 569533,
-  "seg": 5.0,
-  "texto": "Going down is easier because the ankles know what to do."
- },
- {
-  "id": "p106",
   "startMs": 569533,
-  "endMs": 574500,
-  "seg": 5.0,
+  "endMs": 574585,
+  "seg": 5.1,
   "texto": "The third thing, and this is my favourite, you stop thinking about it. You just"
  },
  {
-  "id": "p107",
-  "startMs": 574500,
+  "id": "p105",
+  "startMs": 574585,
   "endMs": 579500,
-  "seg": 5.0,
+  "seg": 4.9,
   "texto": "do it in the morning, like brushing your teeth. On the first morning with my Tuesday class,"
  },
  {
+  "id": "p106",
+  "startMs": 584860,
+  "endMs": 590406,
+  "seg": 5.5,
+  "texto": "Sato, 79, and she brought her own cushion. She could not lift her"
+ },
+ {
+  "id": "p107",
+  "startMs": 590406,
+  "endMs": 595953,
+  "seg": 5.5,
+  "texto": "arms past her ears that first day because of a bad shoulder from years of carrying laundry"
+ },
+ {
   "id": "p108",
-  "startMs": 584500,
-  "endMs": 588750,
-  "seg": 4.2,
-  "texto": "Sato, 79, and she brought her own cushion. She"
+  "startMs": 595953,
+  "endMs": 601500,
+  "seg": 5.5,
+  "texto": "up the stairs. In the third week, she lifted them all the way, and she laughed and"
  },
  {
   "id": "p109",
-  "startMs": 588750,
-  "endMs": 593000,
-  "seg": 4.2,
-  "texto": "could not lift her arms past her ears that first day because"
- },
- {
-  "id": "p110",
-  "startMs": 593000,
-  "endMs": 597250,
-  "seg": 4.2,
-  "texto": "of a bad shoulder from years of carrying laundry up the stairs. In"
- },
- {
-  "id": "p111",
-  "startMs": 597250,
-  "endMs": 601500,
-  "seg": 4.2,
-  "texto": "the third week, she lifted them all the way, and she laughed and"
- },
- {
-  "id": "p112",
-  "startMs": 606500,
-  "endMs": 611071,
-  "seg": 4.6,
+  "startMs": 606820,
+  "endMs": 611345,
+  "seg": 4.5,
   "texto": "is a good sign, not a bad one. Write it down somewhere."
  },
  {
-  "id": "p113",
-  "startMs": 611071,
-  "endMs": 615642,
-  "seg": 4.6,
+  "id": "p110",
+  "startMs": 611345,
+  "endMs": 615871,
+  "seg": 4.5,
   "texto": "A small notebook, a calendar on the wall. Mark the days with"
  },
  {
-  "id": "p114",
-  "startMs": 615642,
-  "endMs": 620214,
-  "seg": 4.6,
-  "texto": "a red circle when you finish. My students' mothers did this"
+  "id": "p111",
+  "startMs": 615871,
+  "endMs": 620397,
+  "seg": 4.5,
+  "texto": "a red circle when you finish. My students' mothers did this in"
  },
  {
-  "id": "p115",
-  "startMs": 620214,
-  "endMs": 624785,
-  "seg": 4.6,
-  "texto": "in their notebooks and they would show me almost shy, like a school"
+  "id": "p112",
+  "startMs": 620397,
+  "endMs": 624922,
+  "seg": 4.5,
+  "texto": "their notebooks and they would show me almost shy, like a school"
  },
  {
-  "id": "p116",
-  "startMs": 624785,
-  "endMs": 629357,
-  "seg": 4.6,
+  "id": "p113",
+  "startMs": 624922,
+  "endMs": 629448,
+  "seg": 4.5,
   "texto": "report. If something hurts sharply or if you feel dizzy,"
  },
  {
+  "id": "p114",
+  "startMs": 629448,
+  "endMs": 633974,
+  "seg": 4.5,
+  "texto": "stop. That is not the routine. Ask your doctor before you"
+ },
+ {
+  "id": "p115",
+  "startMs": 633974,
+  "endMs": 638500,
+  "seg": 4.5,
+  "texto": "begin, especially if you have had an operation or you are not sure"
+ },
+ {
+  "id": "p116",
+  "startMs": 643860,
+  "endMs": 648248,
+  "seg": 4.4,
+  "texto": "to be careful. One more thing before I finish. If you"
+ },
+ {
   "id": "p117",
-  "startMs": 629357,
-  "endMs": 633928,
-  "seg": 4.6,
-  "texto": "stop. That is not the routine. Ask your doctor before"
+  "startMs": 648248,
+  "endMs": 652636,
+  "seg": 4.4,
+  "texto": "are enjoying these mornings with me, please press the like button and subscribe"
  },
  {
   "id": "p118",
-  "startMs": 633928,
-  "endMs": 638500,
-  "seg": 4.6,
-  "texto": "you begin, especially if you have had an operation or you are not sure"
- },
- {
-  "id": "p119",
-  "startMs": 643500,
-  "endMs": 647960,
-  "seg": 4.5,
-  "texto": "is fine to be careful. One more thing before I finish. If"
- },
- {
-  "id": "p120",
-  "startMs": 647960,
-  "endMs": 652420,
-  "seg": 4.5,
-  "texto": "you are enjoying these mornings with me, please press the like button and subscribe"
- },
- {
-  "id": "p121",
-  "startMs": 652420,
-  "endMs": 656880,
-  "seg": 4.5,
+  "startMs": 652636,
+  "endMs": 657024,
+  "seg": 4.4,
   "texto": "so we can keep doing them together. It helps this small class"
  },
  {
-  "id": "p122",
-  "startMs": 656880,
-  "endMs": 661340,
-  "seg": 4.5,
+  "id": "p119",
+  "startMs": 657024,
+  "endMs": 661412,
+  "seg": 4.4,
   "texto": "grow. Let me show you the list one more time. 1."
  },
  {
-  "id": "p123",
-  "startMs": 661340,
+  "id": "p120",
+  "startMs": 661412,
   "endMs": 665800,
-  "seg": 4.5,
+  "seg": 4.4,
   "texto": "Arms up. 2. Shoulder rolls. 3."
  },
  {
-  "id": "p124",
-  "startMs": 670800,
-  "endMs": 675412,
+  "id": "p121",
+  "startMs": 671120,
+  "endMs": 675692,
   "seg": 4.6,
-  "texto": "all five with a red circle next to them. That is the whole"
+  "texto": "all five with a red circle next to them. That is the whole class,"
  },
  {
-  "id": "p125",
-  "startMs": 675412,
-  "endMs": 680025,
+  "id": "p122",
+  "startMs": 675692,
+  "endMs": 680265,
   "seg": 4.6,
-  "texto": "class, a kitchen chair, five minutes, before your tea gets cold."
+  "texto": "a kitchen chair, five minutes, before your tea gets cold."
  },
  {
-  "id": "p126",
-  "startMs": 680025,
-  "endMs": 684637,
+  "id": "p123",
+  "startMs": 680265,
+  "endMs": 684837,
   "seg": 4.6,
   "texto": "If you forget everything I said today, keep two words,"
  },
  {
+  "id": "p124",
+  "startMs": 684837,
+  "endMs": 689410,
+  "seg": 4.6,
+  "texto": "slow and together. Slow is strong because a slow movement lets"
+ },
+ {
+  "id": "p125",
+  "startMs": 689410,
+  "endMs": 693982,
+  "seg": 4.6,
+  "texto": "the body answer you. Together is kind because you do not"
+ },
+ {
+  "id": "p126",
+  "startMs": 693982,
+  "endMs": 698555,
+  "seg": 4.6,
+  "texto": "have to do all five on the first morning. One is enough,"
+ },
+ {
   "id": "p127",
-  "startMs": 684637,
-  "endMs": 689250,
-  "seg": 4.6,
-  "texto": "slow and together. Slow is strong because a slow movement"
- },
- {
-  "id": "p128",
-  "startMs": 689250,
-  "endMs": 693862,
-  "seg": 4.6,
-  "texto": "lets the body answer you. Together is kind because you do"
- },
- {
-  "id": "p129",
-  "startMs": 693862,
-  "endMs": 698475,
-  "seg": 4.6,
-  "texto": "not have to do all five on the first morning. One is enough,"
- },
- {
-  "id": "p130",
-  "startMs": 698475,
+  "startMs": 698555,
   "endMs": 703153,
-  "seg": 4.7,
+  "seg": 4.6,
   "texto": "one movement ten times in your nightgown before the tea."
  },
  {
-  "id": "p131",
+  "id": "p128",
   "startMs": 703153,
   "endMs": 707700,
   "seg": 4.5,
   "texto": "Then tomorrow, two. The chair is not going anywhere and neither are"
  },
  {
-  "id": "p132",
-  "startMs": 713500,
-  "endMs": 718125,
-  "seg": 4.6,
-  "texto": "by being the same every morning, one small movement after"
+  "id": "p129",
+  "startMs": 713860,
+  "endMs": 718395,
+  "seg": 4.5,
+  "texto": "by being the same every morning, one small movement after another."
  },
  {
-  "id": "p133",
-  "startMs": 718125,
-  "endMs": 722750,
-  "seg": 4.6,
-  "texto": "another. the radio, the chair, the counting that is all it"
+  "id": "p130",
+  "startMs": 718395,
+  "endMs": 722930,
+  "seg": 4.5,
+  "texto": "the radio, the chair, the counting that is all it was"
  },
  {
-  "id": "p134",
-  "startMs": 722750,
+  "id": "p131",
+  "startMs": 722930,
   "endMs": 727933,
-  "seg": 5.2,
-  "texto": "was so tell me below which one you will try tomorrow morning"
+  "seg": 5.0,
+  "texto": "so tell me below which one you will try tomorrow morning"
  },
  {
-  "id": "p135",
+  "id": "p132",
   "startMs": 727933,
   "endMs": 732000,
   "seg": 4.1,
   "texto": "arms up or the marching and how did your legs feel today? I"
  },
  {
-  "id": "p136",
-  "startMs": 737000,
+  "id": "p133",
+  "startMs": 737320,
   "endMs": 741000,
-  "seg": 4.0,
-  "texto": "my grandmother's chair and why she touched that object every"
- },
- {
-  "id": "p137",
-  "startMs": 746500,
-  "endMs": 751800,
-  "seg": 5.3,
-  "texto": ""
- },
- {
-  "id": "p138",
-  "startMs": 756800,
-  "endMs": 761550,
-  "seg": 4.8,
-  "texto": ""
- },
- {
-  "id": "p139",
-  "startMs": 761550,
-  "endMs": 766300,
-  "seg": 4.8,
-  "texto": ""
+  "seg": 3.7,
+  "texto": "grandmother's chair and why she touched that object every"
  },
  {
   "id": "s01",
   "startMs": 166800,
-  "endMs": 172000,
-  "seg": 5.2,
-  "texto": "with the first one. Arms up on my whiteboard. One. Arms",
+  "endMs": 172320,
+  "seg": 5.5,
+  "texto": "with the first one. Arms up on my whiteboard. One. Arms up",
   "split": true
  }
 ]
