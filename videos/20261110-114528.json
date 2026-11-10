@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794323943.0791261,
+ "actualizado": 1794324013.5700846,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0736,
+  "deepseek": 0.0751,
   "gpt": 0.2034,
   "gpt_img": 89,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.277
+  "total": 0.2785
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "ls fotos/lote03_*.json fotos/*.json 2>/dev/null | head -5; ls fotos | wc -l; python3 -c \"\nimport json,os\nd=json.load(open('fotos/_batches.json'))\nprint(json.dumps(d)[-1500:])\n\""
-  },
-  {
-   "k": "res",
-   "t": "fotos/_batches.json\nfotos/p001.json\nfotos/p001_b.json\nfotos/p002.json\nfotos/p003.json\n139\n1794322656.7562528, \"bajado\": true, \"ok\": 4, \"fail\": 0}, {\"id\": \"batch_6af331773eb4819081f5b50bd5b613ce\", \"endpoint\": \"/v1/images/generations\", \"names\": [\"p001_c\", \"p004\", \"p012\", \"p016\", \"p009\"], \"t\": 1794322807.405399, \"bajado\": true, \"ok\": 5, \"fail\": 0}, {\"id\": \"batch_6af33178759c8190bb775ce008bd8103\", \"en"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_b.jpg fotos/p002.png fotos/p003.png fotos/p005.png fotos/p006.png fotos/p007.png fotos/p008.png fotos/p010.png fotos/p013.png fotos/p014.png fotos/p015.png fotos/p017.png fotos/p018.png 2>&1|tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_c.jpg fotos/p021.png fotos/p022.png fotos/p023.png fotos/p024.png fotos/p025.png f"
-  },
   {
    "k": "res",
    "t": "hoja: qc/hoja_fotos_b.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_c.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_d.jpg (12 cuadros, 4x3)"
@@ -178,6 +166,18 @@
   {
    "k": "res",
    "t": "15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\nes01.mp4\nes02.mp4\nrender.json\nhoja: qc/hoja_render.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "# Control de fotos — qué miré y qué arreglé\n\n## Gancho p001 (3 variantes, miré las 3 en qc/hoja_fotos.jpg)\n- p001_a: Yoko de espaldas saliendo hacia la ventana con bolsa de mercado: linda pero de espaldas y en chico no se entiende tanto.\n- p001_b: Yoko a mitad de levantarse de la silla, brazos abiertos, sonrisa de \"me agarraste\" — se entiende sin audio y en chico, y la idea (levantarse sin manos) "
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/gates/fotos_auto.txt (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_03.log --cuenta \"fotos/*.png\" 100 2>&1 | tail -2; python /opt/estudio/repo/motor/tools/esperar.py --log escenas/escenas.log --existe extrema/manifest.json 2>&1 | tail -2"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 702,
+    "seg": 772,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1165,
+    "seg": 1235,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2012,
+  "total_s": 2083,
   "avatar_s": 30,
-  "sin_avatar_s": 1982,
+  "sin_avatar_s": 2052,
   "cerrado": false
  }
 }
