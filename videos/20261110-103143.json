@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794325766.5804355,
+ "actualizado": 1794325830.080265,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0952,
+  "deepseek": 0.0957,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6106
+  "total": 0.6111
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "-rwxrwxrw-+ 1 runner runner      5098 Nov 10 15:29 REPORTE.md\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\n-rwxrwxrw-+ 1 runner runner      1805 Nov 10 13:51 meta.json\nes01.mp4\ngen\nlibre.json\nmanifest.json\nmomentos.json\nrender.json\nxm01.mov\nxm02.mp4\nxm03.mov\n  !  dinámico: avatar a pantalla completa ≤ 6 s por vez (1 tramos más largos, ej. 7.0 s en 0 s → partilo o usá pantalla parti"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la extrema/*.m* ; python3 -c \"\nimport json;print(json.dumps(json.load(open('extrema/manifest.json')),indent=1)[:800])\""
-  },
   {
    "k": "res",
    "t": "-rwxrwxrw-+ 1 runner runner  38713774 Nov 10 13:55 extrema/es01.mp4\n-rw-rwxrw-+ 1 runner runner 532818269 Nov 10 15:09 extrema/xm01.mov\n-rw-rwxrw-+ 1 runner runner  18662619 Nov 10 15:21 extrema/xm02.mp4\n-rw-rwxrw-+ 1 runner runner 316145700 Nov 10 15:24 extrema/xm03.mov\n[\n {\n  \"mp4\": \"extrema/es01.mp4\",\n  \"startMs\": 99342,\n  \"endMs\": 108571,\n  \"texto\": \"says 9D. underneath, in my own hand, 9E. Wi"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/render.py . > render3.log 2>&1 &\nsleep 60; cat render3.log; ls -lt segments/*.mp4 | head -2"
+  },
+  {
+   "k": "res",
+   "t": "extrema: esperando las piezas (máx. 10 min)\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 290; cat render3.log; ls -lt segments/*.mp4 | head -2; cat extrema/render.json"
   }
  ],
  "maquinas": 3,
