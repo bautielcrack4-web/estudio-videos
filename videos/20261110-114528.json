@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794326420.9888122,
+ "actualizado": 1794326487.5724776,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,34 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1,
+  "deepseek": 0.1023,
   "gpt": 0.3569,
   "gpt_img": 152,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.7069
+  "total": 0.7092
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_07.log --cuenta \"fotos/*.png\" 100 2>&1 | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 103 archivos (0 s)"
-  },
-  {
-   "k": "tool",
-   "t": "tail -2 fotos/fotos_07.log; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_i.jpg fotos/p021.png fotos/p022.png fotos/p023.png fotos/p024.png fotos/p030.png fotos/p031.png fotos/p034.png fotos/p040.png fotos/p042.png fotos/p056.png fotos/p059.png fotos/p060.png 2>&1|tail -1"
-  },
-  {
-   "k": "res",
-   "t": "15:42:45 batch 240fdd4b: in_progress 0/10\n15:42:45 batch 34284dae: in_progress 0/11\nninguna imagen existe"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 120; tail -2 fotos/fotos_07.log; ls fotos/*.png | wc -l"
-  },
   {
    "k": "res",
    "t": "15:44:46 batch 240fdd4b: in_progress 0/10\n15:44:46 batch 34284dae: in_progress 0/11\n103"
@@ -178,6 +158,26 @@
   {
    "k": "res",
    "t": "[]\n81"
+  },
+  {
+   "k": "tool",
+   "t": "import json\nAV = (\"a 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brown eyes, freckles and sun \"\n      \"spots on her cheeks, a bright open smile, wearing a navy blue zip-up track jacket with white stripes down the \"\n      \"sleeves over a white crew-neck t-shirt, a dark sports watch on her left wrist\")\nRM = (\"the living room: light wood floor, wooden kitchen cha"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedidos/lote09.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python pedidos/lote09.py && nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote09.json > fotos/fotos_09.log 2>&1 &\nsleep 20; tail -2 fotos/fotos_08.log; tail -1 fotos/fotos_09.log"
+  },
+  {
+   "k": "res",
+   "t": "5\n16:00:32 batch d7ff1456: validating 0/0\n16:00:33 batch e0b1f454: validating 0/0\n16:00:29 ya hay otro fotos.py en este video (pid 25479): espero que termine"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 280; tail -2 fotos/fotos_08.log; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 3643,
+    "seg": 3709,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 4490,
+  "total_s": 4557,
   "avatar_s": 816,
-  "sin_avatar_s": 3674,
+  "sin_avatar_s": 3741,
   "cerrado": false
  }
 }
