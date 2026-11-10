@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794318617.8705366,
+ "actualizado": 1794318682.8653817,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "23 fotos"
+   "info": "20 fotos"
   },
   {
    "k": "armado",
@@ -51,78 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0413,
+  "deepseek": 0.045,
   "gpt": 0.0508,
   "gpt_img": 22,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0921
+  "total": 0.0958
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "82:P.append(p(\"p007\", \"The brass bell over the door, hanging still between customers, at the moment Sal remembers his father's rule that a customer should hear they arrived\",\n83-  \"A brass bell hanging from a bracket above the shop door\",\n84-  \"The door below is just closing, the glass still swinging, and the bell is about to ring.\",\n85-  [\"tarnished brass bell\", \"leather strap\", \"metal bracket sc"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nold='\"brass gold, faded green paint, grey\")\\nP.append(p(\"p008\"'\nnew='\"brass gold, faded green paint, grey\"))\\nP.append(p(\"p008\"'\nassert old in t\nt=t.replace(old,new,1)\nopen(p,'w').write(t)\nEOF\npython3 -c \"import ast;ast.parse(open('gen_pedidos.py').read())\" && python3 gen_pedidos.py"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gen_pedidos.py\", line 668, in <module>\n    assert not missing, missing\n           ^^^^^^^^^^^\nAssertionError: ['p001']"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nold='missing = [f\"p{i:03d}\" for i in range(1, 117) if i != 19 and f\"p{i:03d}\" not in ids]'\nnew='missing = [f\"p{i:03d}\" for i in range(2, 117) if i != 19 and f\"p{i:03d}\" not in ids]'\nassert old in t\nt=t.replace(old,new)\nopen(p,'w').write(t)\nEOF\npython3 gen_pedidos.py && python3 - <<'EOF'\nimport json,re\np=json.load(open('pedidos_01.json'))\nPROHIB"
-  },
-  {
-   "k": "res",
-   "t": "117 pedidos 31 con cara\np001_a prohib ['cinematic']\np001_b prohib ['cinematic', 'out of focus']\np001_c prohib ['cinematic']\np002 prohib ['cinematic']\np003 prohib ['cinematic']\np004 prohib ['cinematic']\np005 prohib ['cinematic']\np006 prohib ['cinematic']\np007 prohib ['cinematic']\np008 prohib ['cinematic']\np009 prohib ['cinematic']\np010 prohib ['cinematic']\np011 prohib ['cinematic']\np012 prohib ['ci"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nt=t.replace(\"SHOP + \\\", the counter with the cash register out of focus to the right\\\"\",\"SHOP + \\\", the counter with the cash register at the right edge\\\"\")\nt=t.replace('\"A winter boot pressing down on ice near the store door\"',None) if False else t\nopen(p,'w').write(t)\nEOF\ngrep -n 'winter boot pressing down on ice' gen_pedidos.py"
-  },
-  {
-   "k": "res",
-   "t": "516:  \"A winter boot pressing down on ice near the store door\","
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nreps={\n'\"A winter boot pressing down on ice near the store door\"':'\"A winter boot pressing down hard on a patch of ice at the store door\"',\n'\"A foot in a brown shoe stepping forward on the floorboards\"':'\"A foot in a brown shoe stepping forward on the floorboards of the shop\"',\n'\"A horsehair shoe brush leaning against an old cash register on th"
-  },
-  {
-   "k": "res",
-   "t": "117 pedidos 31 con cara\nbad 0\n['p089', 'p097', 'p108']"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nd={x['id']:x for x in p}\nsel=['p001_a','p001_b','p001_c','p006','p009','p017','p025','p032','p041','p044','p048','p057','p061','p066','p069','p077','p084','p090','p099','p105','p113']\nout=[{'id':x['id'],'cara':x['cara'],'prompt':x['prompt']} for x in (d[i] for i in sel)]\njson.dump(out,open('pedidos_test.json','w'),ensure_ascii=Fals"
-  },
-  {
-   "k": "res",
-   "t": "21 5\n13:43:05 → batch batch_6af31f69c6e88190ab0984161b8448d2 · 16 fotos · sin referencia · low 1088x608\n13:43:06 → batch batch_6af31f6a68848190a4f922152bcc1dde · 5 fotos · con la cara del presentador · low 1088x608\n13:43:06 batch 1b8448d2: in_progress 0/16\n13:43:06 batch 2bcc1dde: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 22 2>&1 | tail -3; ls fotos/ | head; cat fotos/fotos_escenas.log | tail -2; tail -2 fotos/fotos_test.log"
-  },
-  {
-   "k": "res",
-   "t": "✓ hay 22 archivos (390 s)\n_batches.json\nfotos_escenas.log\nfotos_test.log\np001_a.json\np001_a.png\np001_b.json\np001_b.png\np001_c.json\np001_c.png\np006.json\n13:41:24 ✓ batch 8c30d054: 1 fotos bajadas, 0 fallidas (US$0.003)\n13:41:24 FIN: 1/1 fotos en fotos/ (1 min)\n13:49:43 ✓ batch 1b8448d2: 16 fotos bajadas, 0 fallidas (US$0.033)\n13:49:43 FIN: 21/21 fotos en fotos/ (7 min)"
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p qc && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_test.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png fotos/p019.png fotos/p006.png fotos/p009.png fotos/p017.png fotos/p025.png fotos/p032.png fotos/p041.png fotos/p044.png fotos/p048.png 2>&1 | tail -2 && python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_test2.jpg fotos/p057.png fotos/p061.png fotos/p066.png"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos_test.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_test2.jpg (10 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_fotos_test.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +114,70 @@
   {
    "k": "tool",
    "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p001_a','p001_b','p001_c'):\n        x['prompt']['avoid']=x['prompt']['avoid'].replace(', text, letters','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ('p001_a','p001_b','p001_c')]\njson.dump(out,open('pedidos_02.json','w'),ensure_ascii=Fal"
+  },
+  {
+   "k": "res",
+   "t": "114 28\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p089: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\n  · p097: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\n  · p108: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\n  · lote: 32 fotos con el presentador en este video (tope 15): dejá el ganc"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nreps={\n'\"A winter boot tested on a patch of ice by the door, the sole gripping\"':'\"A winter boot tested on a patch of ice by the door, the deep tread biting in so a person can cross the step without slipping\"',\n'\"A foot stepping off the floor, the new shoe tested on the fifth step\"':'\"A foot stepping forward on the fifth step, the new shoe roll"
+  },
+  {
+   "k": "res",
+   "t": "117 pedidos 31 con cara\n114 28\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 32 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json,glob\nfrom collections import Counter\nc=Counter()\nfor f in glob.glob('fotos/p*.json'):\n    try: d=json.load(open(f))\n    except: continue\n    if isinstance(d,dict) and d.get('cara'): c[d['id']]+=1; print('cara:',d['id'])\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "cara: p061\ncara: p099\ncara: p001_a\ncara: p001_c\ncara: p001_a\ncara: p001_b"
+  },
+  {
+   "k": "tool",
+   "t": "cat fotos/_batches.json | python3 -c \"import json,sys;d=json.load(sys.stdin);[print(b['id'],len(b['names']),b.get('bajado'),b['names'][:3]) for b in d['batches']]\""
+  },
+  {
+   "k": "res",
+   "t": "batch_6af31ee5d0e88190928789818c30d054 1 True ['p019']\nbatch_6af31f69c6e88190ab0984161b8448d2 16 True ['p006', 'p009', 'p017']\nbatch_6af31f6a68848190a4f922152bcc1dde 5 True ['p001_a', 'p001_b', 'p001_c']"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"\nimport json\nout=json.load(open('pedidos_02.json'))\nprint(sum(1 for x in out if x['cara']))\nprint([x['id'] for x in out if x['cara']])\n\"; ls fotos/p001*"
+  },
+  {
+   "k": "res",
+   "t": "28\n['p002', 'p005', 'p011', 'p015', 'p018', 'p022', 'p031', 'p036', 'p039', 'p040', 'p042', 'p051', 'p061', 'p072', 'p074', 'p075', 'p082', 'p083', 'p093', 'p094', 'p095', 'p099', 'p101', 'p108', 'p109', 'p112', 'p115', 'p116']\nfotos/p001.json\nfotos/p001.png\nfotos/p001_a.json\nfotos/p001_a.png\nfotos/p001_b.json\nfotos/p001_b.png\nfotos/p001_c.json\nfotos/p001_c.png"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json,glob\nfrom collections import Counter\nc=Counter()\nfor f in glob.glob('fotos/p*.json'):\n    try: d=json.load(open(f))\n    except Exception as e: print('ERR',f,e); continue\n    if isinstance(d,dict) and d.get('cara'): c[d['id']]+=1\nprint(len(c),c)\nEOF\npython3 -c \"\nimport json\np=json.load(open('pedidos_02.json'))\nids={x['id'] for x in p}\nimport glob\nextra=[f for f in glob"
+  },
+  {
+   "k": "res",
+   "t": "5 Counter({'p001_a': 2, 'p061': 1, 'p099': 1, 'p001_c': 1, 'p001_b': 1})\n['fotos/p019.json', 'fotos/p001_c.json', 'fotos/_batches.json', 'fotos/p001_a.json', 'fotos/p001_b.json']"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p036','p040','p042','p051','p074','p083','p094','p095','p101','p108','p112'):\n        x['cara']=False\n        x['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ("
+  },
+  {
+   "k": "res",
+   "t": "114 17\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 21 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f fotos/p001_a.json fotos/p001_b.json fotos/p001_c.json fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png && mkdir -p qc/variantes && nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos_02.json > fotos/fotos_02.log 2>&1 & sleep 12; tail -3 fotos/fotos_02.log"
+  },
+  {
+   "k": "res",
+   "t": "⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 18 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p002','p039','p075','p093'):\n        x['cara']=False\n        x['prompt']['type']=x['prompt']['type'].replace('real skin texture with pores, ','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ('p001_a','p001_b','p001_c')]\njson.dump(out,open('"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 533,
+    "seg": 598,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1080,
+  "total_s": 1145,
   "avatar_s": 0,
-  "sin_avatar_s": 1080,
+  "sin_avatar_s": 1145,
   "cerrado": false
  }
 }
