@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794337343.697417,
+ "actualizado": 1794337407.3950987,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -40,41 +40,25 @@
   {
    "k": "armado",
    "n": "Armado",
-   "st": "active",
+   "st": "done",
    "info": "152 segmentos"
   },
   {
    "k": "qc",
    "n": "QC",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "REPORTE.md"
   }
  ],
  "costo": {
-  "deepseek": 0.1488,
+  "deepseek": 0.1511,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8916
+  "total": 0.8939
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "fotos/s01.png\n18:52:07 FIN: 1/1 fotos en fotos/ (21 min)"
-  },
-  {
-   "k": "tool",
-   "t": "cat /tmp/claude-1002/-opt-estudio-datos-videos-my-grandmother-walked-every-day-until-98/3da76201-7f6d-4e0f-aca2-60272869422e/tasks/b7wpojxtt.output | tail -8"
-  },
-  {
-   "k": "res",
-   "t": "18:52:07 ✓ batch ec2a26f0: 1 fotos bajadas, 0 fallidas (US$0.002)\n18:52:07 FIN: 1/1 fotos en fotos/ (21 min)\n✓ shots_timed.json: 133 planos, 133 fotos distintas (cero repetidas). Seguí con render.py.\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa fotos\n  ✓ guion: 9968 caracteres, 1865 palabras (hacen falta 9000-11500 para 10 min: bien)\n  ✓ fotos: 135 · 0 sin su "
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", [])\ndef t(q):\n    ql=q.lower().split()\n    for i in range(len(W)-len(ql)+1):\n        if all(W[i+k][\"text\"].strip().lower().strip(\".,!?\\\"'()\")==qk for k,qk in enumerate(ql)):\n            return W[i][\"startMs\"]\nfor q in [\"the\",\"radio\",\"chair\",\"wooden\",\"morning\",\"ten\",\"counting\",\"screen"
-  },
   {
    "k": "res",
    "t": "the 9800\nradio 17140\nchair 15360\nwooden 14680\nmorning 82100\nten 172420\ncounting 720993\nscreen 30260\ndoor 30540\nair None\nask 632753\nyour 105140\none 11540\nwe 20600"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 240; tail -5 render.log; ps -eo pid,etime,cmd | grep \"[e]scenas.py\" | cut -c1-80"
+  },
+  {
+   "k": "res",
+   "t": "extrema: esperando las piezas (máx. 10 min)\n   3872    04:10:32 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/dat\n   3874    04:10:32 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --danger"
+  },
+  {
+   "k": "tool",
+   "t": "# Reporte — My Grandmother Walked Every Day Until 98 (Yoko's Morning Legs, video 1)\n\n## En una línea, el mundo (mundo.json)\nEl living chico y luminoso de un departamento japonés (silla de madera, radio plateada, colchoneta violeta junto a la puerta del balcón), donde todo lleva información escrita a mano —la pizarra con los 5 movimientos y círculos rojos, el cronómetro tomate, el almanaque, el cua"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/REPORTE.md (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 420; tail -4 render.log; ls segments/*.mp4 2>/dev/null | grep -v src | wc -l"
   }
  ],
  "maquinas": 1,
@@ -237,28 +237,28 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 529,
+    "seg": 593,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 729,
+    "seg": 793,
     "pasadas": 2,
     "fin": false
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 117,
+    "seg": 180,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 15413,
+  "total_s": 15476,
   "avatar_s": 816,
-  "sin_avatar_s": 14597,
+  "sin_avatar_s": 14661,
   "cerrado": false
  }
 }
