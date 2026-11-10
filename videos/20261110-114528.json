@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794328039.0907907,
+ "actualizado": 1794328102.9517536,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.109,
+  "deepseek": 0.1095,
   "gpt": 0.3826,
   "gpt_img": 163,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.7416
+  "total": 0.7421
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "1 11\n16:00:02 batch d7ff1456: validating 0/0\n16:00:02 batch e0b1f454: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nfor i in [\"p074\",\"p075\",\"p089\",\"p091\",\"p092\"]: F.pop(i, None)\njson.dump(F, open(\"pedidos/_todos.json\",\"w\"), ensure_ascii=False, indent=1)\njson.dump([F[i] for i in [\"p074\",\"p075\",\"p089\",\"p091\",\"p092\"] if i in F], open(\"pedidos/lote09.json\",\"w\"), ensure_ascii=False, indent=1)\nprint([i for i in [\"p074\",\"p075\",\"p089\",\"p091\",\"p092"
-  },
   {
    "k": "res",
    "t": "[]\n81"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 240; tail -2 fotos/fotos_09.log; ls fotos/p074.png fotos/p091.png 2>&1"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n16:19:30 batch 44caad5f: validating 0/0\n16:20:00 batch 44caad5f: in_progress 0/5\nls: cannot access 'fotos/p074.png': No such file or directory\nls: cannot access 'fotos/p091.png': No such file or directory"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 420; tail -2 fotos/fotos_09.log"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 5261,
+    "seg": 5325,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 6108,
+  "total_s": 6172,
   "avatar_s": 816,
-  "sin_avatar_s": 5292,
+  "sin_avatar_s": 5356,
   "cerrado": false
  }
 }
