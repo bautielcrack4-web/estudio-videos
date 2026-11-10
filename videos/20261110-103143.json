@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794318109.5045762,
+ "actualizado": 1794318172.911302,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0222,
+  "deepseek": 0.0345,
   "gpt": 0.0025,
   "gpt_img": 1,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0247
+  "total": 0.037
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -5"
-  },
-  {
-   "k": "res",
-   "t": "9866 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✓ guion: 9843 caracteres, 1993 palabras (hacen falta 9000-11500 para 10 min: bien)\nRESULTADO: OK"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\np='guion.txt'\nt=open(p).read()\nreps=[\n(\"I don't do brands.\",\"I don't do brands.\"),\n(\"Number one. A shoe with a removable insole.\",\"[emphatically] Number one. A shoe with a removable insole.\"),\n(\"Number two. A wide toe box.\",\"Number two. A wide toe box.\"),\n(\"Number three. A low, stable heel.\",\"Number three. A low, stable heel.\"),\n(\"Number four. A firm heel counter.\",\"Number four. "
-  },
-  {
-   "k": "res",
-   "t": "9890 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✓ guion: 9843 caracteres, 1995 palabras (hacen falta 9000-11500 para 10 min: bien)\nRESULTADO: OK"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/voz.py . > voz/voz.log 2>&1 & echo started $!"
-  },
-  {
-   "k": "res",
-   "t": "started 4278"
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 1,200p /opt/estudio/repo/motor/tools/fotos.py"
-  },
-  {
-   "k": "res",
-   "t": "# -*- coding: utf-8 -*-\n\"\"\"Fotos del b-roll. Motor (Configuración → Fotos): \"openai\" = gpt-image-2.5-sunburst SIEMPRE low + Batch; referencia SOLO en las fotos del presentador;\n\"manual\" = las hace el usuario con lo que quiera (gratis).\n   python <APP>/tools/fotos.py <carpeta_del_video> <pedidos.json> > <carpeta>/fotos/fotos.log 2>&1      (en segundo plano)\npedidos.json = [{\"id\":\"b01_gancho\", \"cara"
-  },
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/voz.py . 2>&1 | tail -5"
@@ -178,6 +146,38 @@
   {
    "k": "res",
    "t": "ok\n13:40:53 → batch batch_6af31ee5d0e88190928789818c30d054 · 1 fotos · sin referencia · low 1088x608\n13:40:54 batch 8c30d054: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "import json\n\nTYPE = \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\"\nTYPE_NOFACE = \"amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\"\nAV"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gen_pedidos.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "sed -i 's/reflec tions/reflections/' gen_pedidos.py && python3 gen_pedidos.py && python3 - <<'EOF'\n# dry-run gate check by importing fotos' logic quickly: just run fotos.py with a nonexistent path? Simpler: check campos here\nimport json,re\np=json.load(open('pedidos_01.json'))\nPROHIBIDOS = [\"cinematic\", \"35mm\", \"bokeh\", \"8k\", \"highly detailed\", \"photorealistic\", \"golden hour\", \"out of focus\", \"blur"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\n  File \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gen_pedidos.py\", line 82\n    P.append(p(\"p007\", \"The brass bell over the door, hanging still between customers, at the moment Sal remembers his father's rule that a customer should hear they arrived\",\n            ^\nSyntaxError: '(' was never closed"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n 'P.append(p(\"p007\"' -A 8 gen_pedidos.py"
+  },
+  {
+   "k": "res",
+   "t": "82:P.append(p(\"p007\", \"The brass bell over the door, hanging still between customers, at the moment Sal remembers his father's rule that a customer should hear they arrived\",\n83-  \"A brass bell hanging from a bracket above the shop door\",\n84-  \"The door below is just closing, the glass still swinging, and the bell is about to ring.\",\n85-  [\"tarnished brass bell\", \"leather strap\", \"metal bracket sc"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nold='\"brass gold, faded green paint, grey\")\\nP.append(p(\"p008\"'\nnew='\"brass gold, faded green paint, grey\"))\\nP.append(p(\"p008\"'\nassert old in t\nt=t.replace(old,new,1)\nopen(p,'w').write(t)\nEOF\npython3 -c \"import ast;ast.parse(open('gen_pedidos.py').read())\" && python3 gen_pedidos.py"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/gen_pedidos.py\", line 668, in <module>\n    assert not missing, missing\n           ^^^^^^^^^^^\nAssertionError: ['p001']"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 25,
+    "seg": 88,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 572,
+  "total_s": 635,
   "avatar_s": 0,
-  "sin_avatar_s": 572,
+  "sin_avatar_s": 635,
   "cerrado": false
  }
 }
