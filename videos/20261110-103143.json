@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794326377.8529792,
+ "actualizado": 1794326442.008074,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0963,
+  "deepseek": 0.0975,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6117
+  "total": 0.6129
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 329\n },\n \"xm02\": {\n  \"ok\": true,\n  \"s\": 712\n }\n}\n[\n {\n  \"id\": \"xm01\",\n  \"tipo\": \"overlay\",\n  \"startMs\": 6820,\n  \"endMs\": 22900,\n  \"frames\": 482,\n  \"idea\": \"As Sal describes the four shoe boxes with handwritten cards, four photo cards of shoes pop up one by one beside his face in the free right side of the frame, each rotating slightly as if placed on a shelf, with"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"xm\\|manifest\" /opt/estudio/repo/motor/tools/render.py | head -20"
-  },
-  {
-   "k": "res",
-   "t": "66:# EDICIÓN EXTREMA (opcional): extrema/manifest.json = [{\"mp4\":\"extrema/xm03.mp4\",\"startMs\":..,\"endMs\":..}]\n70:def _xm_en_curso():\n73:if \"--limit\" not in sys.argv and not PREVIO and _xm_en_curso() and all(os.path.exists(B + \"/\" + r[\"file\"]) for r in ranges if r.get(\"file\")):\n75:    while _xm_en_curso() and time.time() - _t0 < 600: time.sleep(10)\n76:    print(\"extrema: %s tras %d s\" % (\"llegaron\""
-  },
-  {
-   "k": "tool",
-   "t": "sed -n 66,100p /opt/estudio/repo/motor/tools/render.py; ls extrema/gen | head; ls -la extrema/gen | tail -2"
-  },
   {
    "k": "res",
    "t": "# EDICIÓN EXTREMA (opcional): extrema/manifest.json = [{\"mp4\":\"extrema/xm03.mp4\",\"startMs\":..,\"endMs\":..}]\n# Cada pieza tapa la línea de fotos/clips en su tramo. Nunca pisa un tramo de avatar; si falta el mp4 queda el b-roll normal.\n# Las piezas se hacen en segundo plano mientras llega el avatar (extrema/EN_CURSO). En el armado final (todos los clips de\n# avatar ya están) se esperan como mucho 10 "
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 295; cat render3.log; cat extrema/render.json; ls -lt segments/*.mp4 final.mp4 | head -3"
+  },
+  {
+   "k": "res",
+   "t": "extrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\nextrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 135\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 516\n }\n}-rw-rw-rw-+ 1 sesion sesion   1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion   1233572 Nov 10 15:48 segments/0133.mp4\n-rw-rw-rw-+ 1 sesion sesion   1348413 Nov 10 15:48 segme"
+  },
+  {
+   "k": "tool",
+   "t": "python3 -c \"import json;print(json.dumps(json.load(open('extrema/manifest.json')).__len__()))\"; pgrep -af \"python.*(assemble|extrema).py\" | cut -c1-90; ls -la extrema/EN_CURSO extrema/capas.json 2>&1"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n1\n3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SE\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --\n4842 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extr\nls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extr"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 280; python3 -c \"import json;d=json.load(open('extrema/render.json'));print(d)\"; ls -la extrema/*.m* final.mp4 | head; ls extrema/gen | head -3; ls extrema/gen/*.tsx | wc -l"
   }
  ],
  "maquinas": 3,
