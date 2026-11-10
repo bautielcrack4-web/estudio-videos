@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794320533.813555,
+ "actualizado": 1794320597.235647,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0557,
+  "deepseek": 0.0562,
   "gpt": 0.2588,
   "gpt_img": 118,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5645
+  "total": 0.565
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "13:58:51 batch 8c628d9a: in_progress 0/11\n13:59:21 batch 6beec17e: in_progress 78/85\n13:59:21 batch 8c628d9a: completed 11/11\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n31"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 280; ls fotos/*.png | wc -l; tail -3 fotos/fotos_02.log; tail -2 avatar/it.log"
-  },
   {
    "k": "res",
    "t": "31\n13:59:21 batch 8c628d9a: completed 11/11\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n13:59:53 batch 6beec17e: in_progress 78/85\n13:51:35 RUN 66771b4e-87ce-479f-842b-cf0e1e74ae43-u2\n13:52:05 estado: IN_PROGRESS"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 200; tail -2 fotos/fotos_fix.log; ls fotos/p020.png fotos/p055.png 2>&1"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n14:19:39 batch 77c33c18: validating 0/0\n14:21:09 batch 77c33c18: in_progress 0/2\nls: cannot access 'fotos/p020.png': No such file or directory\nls: cannot access 'fotos/p055.png': No such file or directory"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 290; tail -2 fotos/fotos_fix.log"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2449,
+    "seg": 2512,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 2996,
+  "total_s": 3059,
   "avatar_s": 1118,
-  "sin_avatar_s": 1878,
+  "sin_avatar_s": 1942,
   "cerrado": false
  }
 }
