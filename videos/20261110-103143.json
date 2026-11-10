@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794320914.9048362,
+ "actualizado": 1794320978.9253159,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -34,14 +34,14 @@
   {
    "k": "fotos",
    "n": "Fotos",
-   "st": "active",
-   "info": "115 fotos"
+   "st": "done",
+   "info": "116 fotos"
   },
   {
    "k": "armado",
    "n": "Armado",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "8 segmentos"
   },
   {
    "k": "qc",
@@ -51,54 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0566,
+  "deepseek": 0.0587,
   "gpt": 0.2634,
   "gpt_img": 120,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.57
+  "total": 0.5721
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "31\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n13:59:53 batch 6beec17e: in_progress 78/85"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 295; ls fotos/*.png | wc -l; tail -1 fotos/fotos_02.log"
-  },
-  {
-   "k": "res",
-   "t": "31\n13:59:53 batch 6beec17e: in_progress 78/85"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 295; ls fotos/*.png | wc -l; tail -2 fotos/fotos_02.log"
-  },
-  {
-   "k": "res",
-   "t": "116\n14:15:39 ✓ batch 6beec17e: 85 fotos bajadas, 0 fallidas (US$0.178)\n14:15:39 FIN: 114/114 fotos en fotos/ (24 min)"
-  },
-  {
-   "k": "tool",
-   "t": "for f in p039 p040 p042 p051 p074 p075 p083 p093 p094 p095 p101 p108 p112; do echo $f; done > /dev/null; python /opt/estudio/repo/motor/tools/hoja.py qc/h_a.jpg fotos/p002.png fotos/p005.png fotos/p011.png fotos/p015.png fotos/p018.png fotos/p022.png fotos/p031.png fotos/p036.png fotos/p039.png fotos/p040.png fotos/p042.png fotos/p051.png | tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/h_a.jpg (12 cuadros, 4x3)\nhoja: qc/h_b.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_a.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_b.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +138,46 @@
   {
    "k": "tool",
    "t": "sleep 60; tail -2 fotos/fotos_fix.log; tail -3 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "14:28:12 ✓ batch 77c33c18: 2 fotos bajadas, 0 fallidas (US$0.005)\n14:28:12 FIN: 2/2 fotos en fotos/ (9 min)\n13:52:05 estado: IN_PROGRESS\n14:10:08 estado: COMPLETED\n✓ 20 clips cortados · desfase corregido (máx 0 ms)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/h_fix.jpg fotos/p020.png fotos/p055.png | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/h_fix.jpg (2 cuadros, 2x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_fix.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ls fotos/*.png | wc -l; python /opt/estudio/repo/motor/tools/planos.py . --shots 2>&1 | tail -3"
+  },
+  {
+   "k": "res",
+   "t": "115\n⛔ faltan 1 fotos o clips (p061). Esperalas con esperar.py o repedilas."
+  },
+  {
+   "k": "tool",
+   "t": "cp fotos/p009.png fotos/p061.png && cp fotos/p009.json fotos/p061.json && python /opt/estudio/repo/motor/tools/planos.py . --shots 2>&1 | tail -3"
+  },
+  {
+   "k": "res",
+   "t": "✓ shots_timed.json: 116 planos, 116 fotos distintas (cero repetidas). Seguí con render.py."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . fix2.json > fotos/fotos_fix2.log 2>&1 &\nsleep 5; cat fotos/fotos_fix2.log; nohup python /opt/estudio/repo/motor/tools/render.py . --limit 10 > render_test.log 2>&1 &\nsleep 60; tail -3 render_test.log"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2830,
+    "seg": 2894,
     "pasadas": 1,
-    "fin": false
+    "fin": true
    }
   ],
-  "total_s": 3377,
+  "total_s": 3441,
   "avatar_s": 1118,
-  "sin_avatar_s": 2259,
+  "sin_avatar_s": 2323,
   "cerrado": false
  }
 }
