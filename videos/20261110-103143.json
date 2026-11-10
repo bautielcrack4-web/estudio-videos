@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794327362.8587673,
+ "actualizado": 1794327428.658703,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1011,
+  "deepseek": 0.1024,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6165
+  "total": 0.6178
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "    return M\n\n\ndef guardar_qc(M):\n    json.dump(QC, open(QCF, \"w\", encoding=\"utf-8\"))\n    json.dump([{\"i\": i, \"file\": os.path.relpath(plan[i][0], B).replace(\"\\\\\", \"/\"), \"t0\": round(T0S[i] / 1000, 2), \"stock\": \"/clips/\" in plan[i][0]} for i in M], open(SEG + \"/_malos.json\", \"w\", encoding=\"utf-8\"), ensure_ascii=False)\n\n\nif \"--limit\" not in sys.argv:         # un clip negro o roto se cambia acá, ante"
-  },
-  {
-   "k": "tool",
-   "t": "grep -n \"extrema\" /opt/estudio/repo/motor/tools/assemble.py | head -20; pgrep -af \"python.*assemble.py\" | cut -c1-80"
-  },
-  {
-   "k": "res",
-   "t": "34:    \"\"\"Edición extrema: componentes con transparencia que van encima de lo que hay en pantalla (extrema/capas.json).\"\"\"\n35:    try: L = json.load(open(B + \"/extrema/capas.json\", encoding=\"utf-8\"))\n41:            if re.fullmatch(r\"extrema/xm\\d+\\.mov\", m) and t >= 0 and os.path.getsize(B + \"/\" + m) > 10000: out.append((B + \"/\" + m, t))\n100:    if CAPAS: print(\"capas de edición extrema:\", len(CAPA"
-  },
-  {
-   "k": "tool",
-   "t": "ls -la extrema/capas.json extrema/EN_CURSO 2>&1; ps -o pid,etime,cmd -p 4842 | cut -c1-120"
-  },
   {
    "k": "res",
    "t": "ls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extrema/EN_CURSO\n    PID     ELAPSED CMD\n   4842       05:56 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extrema.py /opt/est"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 290; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json | tr -d '\\n '; echo; ps -o etime -p 4842 | tail -1; cat render4.log"
+  },
+  {
+   "k": "res",
+   "t": "ls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extrema/EN_CURSO\n{\"xm01\":{\"ok\":true,\"s\":516},\"xm02\":{\"ok\":true,\"s\":694},\"xm03\":{\"ok\":true,\"s\":218},\"xm04\":{\"ok\":true,\"s\":211},\"xm05\":{\"ok\":true,\"s\":220}}\n      33:37\nextrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\nextrema: 1 piezas en la línea\nclips"
+  },
+  {
+   "k": "tool",
+   "t": "pgrep -af \"python /opt/estudio/repo/motor/tools/assemble.py\" | cut -c1-80; ps -eo pid,etime,cmd --sort=start_time | grep -E \"assemble.py|tramos\" | grep -v grep | cut -c1-100 | tail -3; ls -lt segments/*.mp4 | head -2"
+  },
+  {
+   "k": "res",
+   "t": "3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n20843 /bin/bash -c source /opt/estudio/datos/brain/shell-snapshots/snapshot-bash\n   3701       34:31 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITH\n   3703       34:31 /opt/hostedtoolcache/node/20.20.2/x6"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 240; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json | tr -d '\\n '; echo; ls -la extrema/manifest.json"
   }
  ],
  "maquinas": 3,
