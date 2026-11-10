@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794322092.0461524,
+ "actualizado": 1794322156.1451478,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0693,
+  "deepseek": 0.0711,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5847
+  "total": 0.5865
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "bell 37160\npicture 195909\nfile 93780\nunderneath 101380\nbox 8420\ntowel 269349\nclock 374698\nwindow 34280\nbent 46820\nthumb 181929\nfolds 268369\ncup None"
-  },
-  {
-   "k": "tool",
-   "t": "cat > cues.json <<'EOF'\n[\n {\"file\":\"campanilla_3.mp3\",\"t\":36700,\"gain\":0.045,\"fade\":0.4},\n {\"file\":\"cuero.mp3\",\"t\":46800,\"gain\":0.05,\"fade\":0.3},\n {\"file\":\"papel.mp3\",\"t\":93780,\"gain\":0.045,\"fade\":0.3},\n {\"file\":\"papel_2.mp3\",\"t\":101380,\"gain\":0.04,\"fade\":0.3},\n {\"file\":\"carton.mp3\",\"t\":200000,\"gain\":0.04,\"fade\":0.3},\n {\"file\":\"cuero_2.mp3\",\"t\":269349,\"gain\":0.045,\"fade\":0.3},\n {\"file\":\"papel_3.mp"
-  },
-  {
-   "k": "res",
-   "t": "14:31:04 ✓ batch da4a4e7f: 1 fotos bajadas, 0 fallidas (US$0.002)\n14:31:04 FIN: 1/1 fotos en fotos/ (1 min)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/h_061.jpg fotos/p061.png | tail -1; tail -2 render.log"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/h_061.jpg (1 cuadros, 1x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_061.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 5; grep -c \"fotos/.*\" shots_timed.json; ps aux | grep -c \"render.py\""
-  },
   {
    "k": "res",
    "t": "0\n9"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "for i in $(seq 1 18); do ls segments/*.mp4 | wc -l; sleep 30; done 2>&1 | tail -3; ls segments/*.mp4 | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "135\n135\n135\n135"
+  },
+  {
+   "k": "tool",
+   "t": "ls -lt segments/*.mp4 | head -3; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-80; ls -la render.log final.mp4 2>&1"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 14:40 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 14:40 segments/0133.mp4\n-rw-rw-rw-+ 1 sesion sesion  1200038 Nov 10 14:40 segments/0132.mp4\n3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n35122 /bin/bash -c sou"
+  },
+  {
+   "k": "tool",
+   "t": "cat render.log"
+  },
+  {
+   "k": "res",
+   "t": "extrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 135"
+  },
+  {
+   "k": "tool",
+   "t": "pgrep -af \"python.*(assemble|render)\\.py\" | cut -c1-90; ls final.mp4 2>&1"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SE\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --\n18494 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/node/20.20.2/x64/bin:/opt/h\n18496 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /\n26354 /opt/hostedtoolcac"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --existe final.mp4 2>&1 | tail -2"
   }
  ],
  "maquinas": 1,
@@ -237,21 +237,21 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 1539,
+    "seg": 1603,
     "pasadas": 3,
     "fin": false
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 837,
+    "seg": 901,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 4554,
+  "total_s": 4618,
   "avatar_s": 1118,
-  "sin_avatar_s": 3437,
+  "sin_avatar_s": 3501,
   "cerrado": false
  }
 }
