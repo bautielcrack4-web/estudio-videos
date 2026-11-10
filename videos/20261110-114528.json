@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794336879.6351826,
+ "actualizado": 1794336945.435031,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "45 segmentos"
+   "info": "62 segmentos"
   },
   {
    "k": "qc",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1412,
+  "deepseek": 0.1428,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.884
+  "total": 0.8856
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "18:24:15 ✓ batch 40d7e923: 20 fotos bajadas, 0 fallidas (US$0.044)\n18:24:15 FIN: 21/21 fotos en fotos/ (32 min)\n134"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_m.jpg fotos/p066.png fotos/p067.png fotos/p072.png fotos/p073.png fotos/p077.png fotos/p078.png fotos/p080.png fotos/p088.png fotos/p095.png fotos/p096.png fotos/p100.png fotos/p102.png 2>&1|tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_n.jpg fotos/p112.png fotos/p114.png fotos/p117.png fotos/p122.png fotos/p125.png f"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos_m.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_n.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_m.jpg\"}"
-  },
   {
    "k": "res",
    "t": "[imagen]"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/sonidos.py . sfx_pedidos.json --tomas 3 > sonidos.log 2>&1; tail -15 sonidos.log; python3 -c \"\nimport json;d=json.load(open('sfx/_sfx_fuentes.json'));print(json.dumps(d,ensure_ascii=False)[:2000])\""
+  },
+  {
+   "k": "res",
+   "t": "ok madera: madera.mp3 (1 s, Wooden floorboard creak) · madera_2.mp3 (2 s, Creaky wooden scrap) · madera_3.mp3 (2 s, Creaky door open)\nok radio: radio.mp3 (1 s, Radio static fx) · radio_2.mp3 (3 s, Creepy radio frequency) · radio_3.mp3 (1 s, Metal button radio ping)\nok pajaros: pajaros.mp3 (2 s, Forest birds singing) · pajaros_2.mp3 (6 s, Birds chirping in the jungle) · pajaros_3.mp3 (3 s, Little b"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"file\": \"radio.mp3\", \"t\": 17140, \"gain\": 0.045, \"fade\": 0.5},\n {\"file\": \"madera_2.mp3\", \"t\": 14680, \"gain\": 0.04, \"fade\": 0.4},\n {\"file\": \"pajaros_3.mp3\", \"t\": 34200, \"gain\": 0.035, \"fade\": 0.8},\n {\"file\": \"pasos.mp3\", \"t\": 38637, \"gain\": 0.03, \"fade\": 0.5},\n {\"file\": \"papel_2.mp3\", \"t\": 19987, \"gain\": 0.045, \"fade\": 0.3},\n {\"file\": \"cronometro_2.mp3\", \"t\": 101200, \"gain\": 0.03, \"fade\": 0.4},\n"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/cues.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/render.py . --limit 10 > render_test.log 2>&1 &\necho started; sleep 60; tail -5 render_test.log"
   }
  ],
  "maquinas": 1,
@@ -237,21 +237,21 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 65,
+    "seg": 131,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 126,
+    "seg": 192,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 14949,
+  "total_s": 15015,
   "avatar_s": 816,
-  "sin_avatar_s": 14133,
+  "sin_avatar_s": 14199,
   "cerrado": false
  }
 }
