@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794319127.7642188,
+ "actualizado": 1794319190.9593544,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "20 fotos"
+   "info": "31 fotos"
   },
   {
    "k": "armado",
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.048,
-  "gpt": 0.0508,
-  "gpt_img": 22,
+  "deepseek": 0.0489,
+  "gpt": 0.0812,
+  "gpt_img": 33,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0988
+  "total": 0.1301
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "117 pedidos 31 con cara\n[This command modified 1 file you've previously read: gen_pedidos.py. Call Read before editing.]"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\np=json.load(open('pedidos_01.json'))\nfor x in p:\n    if x['id'] in ('p001_a','p001_b','p001_c'):\n        x['prompt']['avoid']=x['prompt']['avoid'].replace(', text, letters','')\njson.dump(p,open('pedidos_01.json','w'),ensure_ascii=False,indent=1)\nout=[x for x in p if x['id'] not in ('p001_a','p001_b','p001_c')]\njson.dump(out,open('pedidos_02.json','w'),ensure_ascii=Fal"
-  },
-  {
-   "k": "res",
-   "t": "114 28\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p089: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\n  · p097: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\n  · p108: 'moment' muy corto (≥70 caracteres: QUÉ pasa en ese segundo y POR QUÉ importa)\n  · lote: 32 fotos con el presentador en este video (tope 15): dejá el ganc"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\np='gen_pedidos.py'\nt=open(p).read()\nreps={\n'\"A winter boot tested on a patch of ice by the door, the sole gripping\"':'\"A winter boot tested on a patch of ice by the door, the deep tread biting in so a person can cross the step without slipping\"',\n'\"A foot stepping off the floor, the new shoe tested on the fifth step\"':'\"A foot stepping forward on the fifth step, the new shoe roll"
-  },
   {
    "k": "res",
    "t": "117 pedidos 31 con cara\n114 28\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · lote: 32 fotos con el presentador en este video (tope 15): dejá el gancho y las mejores, el resto con cara:false"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 131 --log fotos/fotos_02.log 2>&1 | tail -5; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "13:58:51 batch 6beec17e: in_progress 60/85\n13:58:51 batch 8c628d9a: in_progress 0/11\n13:59:21 batch 6beec17e: in_progress 78/85\n13:59:21 batch 8c628d9a: completed 11/11\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n31"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --cuenta \"fotos/*.png\" 131 --log fotos/fotos_02.log 2>&1 | tail -4; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "13:58:51 batch 8c628d9a: in_progress 0/11\n13:59:21 batch 6beec17e: in_progress 78/85\n13:59:21 batch 8c628d9a: completed 11/11\n13:59:23 ✓ batch 8c628d9a: 11 fotos bajadas, 0 fallidas (US$0.030)\n31"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 280; ls fotos/*.png | wc -l; tail -3 fotos/fotos_02.log; tail -2 avatar/it.log"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 402,
+    "seg": 465,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1043,
+    "seg": 1106,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1590,
+  "total_s": 1653,
   "avatar_s": 30,
-  "sin_avatar_s": 1559,
+  "sin_avatar_s": 1623,
   "cerrado": false
  }
 }
