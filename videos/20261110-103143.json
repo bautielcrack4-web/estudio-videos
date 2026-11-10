@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794326762.535301,
+ "actualizado": 1794326830.7022996,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0981,
+  "deepseek": 0.1005,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6135
+  "total": 0.6159
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "ls: cannot access 'extrema/EN_CURSO': No such file or directory\n7\nxm01 6820 22900\nxm02 23100 41520\nxm03 92240 115880\nxm04 132280 150260\nxm05 169309 188169\nxm06 554888 578988\nxm07 585888 601288\n{'xm01': {'ok': True, 's': 329}, 'xm02': {'ok': True, 's': 712}}"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/render.py . > render2.log 2>&1 &\nsleep 90; cat render2.log; ls -lt segments/*.mp4 | head -2"
-  },
-  {
-   "k": "res",
-   "t": "-rw-rw-rw-+ 1 sesion sesion   786480 Nov 10  2026 segments/_t0038.mp4\n-rw-rw-rw-+ 1 sesion sesion   262192 Nov 10 15:44 segments/_t0040.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -af \"python /opt/estudio/repo/motor/tools/(render|assemble|extrema).py\" | cut -c1-90; ls -la render2.log"
-  },
-  {
-   "k": "res",
-   "t": "3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SE\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --\n4016 python /opt/estudio/repo/motor/tools/render.py .\n4842 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extr\n-rw-rw-rw-+ 1 sesion sesion 0 Nov 10 15:42 render2.log"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 280; cat render2.log; ls -lt segments/*.mp4 | head -2; ls -la extrema/render.json"
-  },
-  {
-   "k": "res",
-   "t": "extrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 135\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4\n-rwxrwxrw-+ 1 runner runner 82 Nov 10 15:21 extrema/render.json"
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -af \"python.*(assemble|extrema).py\" | cut -c1-80; cat extrema/render.json; ls -lt final.mp4"
-  },
   {
    "k": "res",
    "t": "3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n4842 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 329\n },\n \"xm02\": {\n  \"ok\": true,\n  \"s\": 712\n }\n}-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/render.py . > render4.log 2>&1 &\nsleep 120; cat render4.log; ls -lt segments/*.mp4 | head -2"
+  },
+  {
+   "k": "res",
+   "t": "extrema: esperando las piezas (máx. 10 min)\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"def armar\\|merge\\|script\\|filter_complex\" /opt/estudio/repo/motor/tools/extrema.py | head -20"
+  },
+  {
+   "k": "res",
+   "t": "297:def armar(m, s, W, fichas, look):\r\n331:        if a[\"b\"] - a[\"a\"] < 22: err.append(\"act %d (%s) lasts %d frames: minimum 22, merge it\" % (k, a[\"op\"], a[\"b\"] - a[\"a\"]))"
+  },
+  {
+   "k": "tool",
+   "t": "grep -n \"EN_CURSO\\|render.json\\|manifest.json\\|capas.json\\|def main\\|^if __name__\\|argv\" /opt/estudio/repo/motor/tools/extrema.py | head -30"
+  },
+  {
+   "k": "res",
+   "t": "4:Deja extrema/manifest.json (escenas completas: render.py las mete en la línea, nunca sobre el avatar) y extrema/capas.json (capas con\r\n368:def main():\r\n369:    a = sys.argv[1:]\r\n603:    res = jl(X + \"/render.json\", {}) or {}\r\n611:    firma = [m for m in (jl(X + \"/manifest.json\", []) or []) if str(m.get(\"mp4\", \"\")).startswith(\"extrema/es\")]\r\n614:    os.replace(X + \"/manifest.tmp\", X + \"/manifest."
+  },
+  {
+   "k": "tool",
+   "t": "sed -n 595,640p /opt/estudio/repo/motor/tools/extrema.py"
+  },
+  {
+   "k": "res",
+   "t": "        \"export const comps = [%s];\\n\" % \",\".join(\"{id:'%s',C:c%d,frames:%d}\" % (x, i, partes[int(x[2:]) - 1][\"frames\"]) for i, x in enumerate(ids)))\r\n    os.makedirs(X, exist_ok=True)      # el panel muestra cada pieza en su lugar apenas termina de renderizarse\r\n    json.dump([{\"id\": \"xm%02d\" % (k + 1), \"startMs\": momentos[k][\"startMs\"], \"endMs\": momentos[k][\"endMs\"], \"texto\": momentos[k][\"texto\""
+  },
+  {
+   "k": "tool",
+   "t": "sleep 290; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json; ps -o etime -p 4842 | tail -1"
   }
  ],
  "maquinas": 3,
