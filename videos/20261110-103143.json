@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794322917.2470553,
+ "actualizado": 1794322965.2011125,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42839400627",
  "pasos": [
@@ -51,86 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.078,
+  "deepseek": 0.0835,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5934
+  "total": 0.5989
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Exit code 2\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 14:40 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 14:40 segments/0133.mp4\n-rw-rw-rw-+ 1 sesion sesion  1200038 Nov 10 14:40 segments/0132.mp4\n3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n35122 /bin/bash -c sou"
-  },
-  {
-   "k": "tool",
-   "t": "cat render.log"
-  },
-  {
-   "k": "res",
-   "t": "extrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 135"
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -af \"python.*(assemble|render)\\.py\" | cut -c1-90; ls final.mp4 2>&1"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SE\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --\n18494 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/node/20.20.2/x64/bin:/opt/h\n18496 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /\n26354 /opt/hostedtoolcac"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py . --existe final.mp4 2>&1 | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "✓ existe final.mp4 (344.1 MB, 45 s)"
-  },
-  {
-   "k": "tool",
-   "t": "ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of compact final.mp4; python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 10 2>&1 | tail -25"
-  },
-  {
-   "k": "res",
-   "t": "stream|codec_name=h264|width=1920|height=1080|r_frame_rate=30/1\nstream|codec_name=aac|r_frame_rate=0/0\nformat|duration=654.037000|size=344096035\n  ✓ render: escala 3840x2160 antes de zoompan (anti-temblequeo)\n  ✓ render: segments/xf.json (fundidos avatar 0,6 s / foto 0,3 s)\n  ✓ plan.json: 0 huecos sin imagen\n  ✓ fotos repetidas: ninguna (cada plano con su foto)\n  ✓ apertura: lo primero que se ve e"
-  },
-  {
-   "k": "tool",
-   "t": "mkdir -p qc/frames && for i in 0 20 45 70 95 120 150 180 210 240 270 300 330 360 390 420 450 480 510 540 570 600 630 650; do ffmpeg -v error -ss $i -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/frames/f_$i.jpg -y; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_final1.jpg qc/frames/f_0.jpg qc/frames/f_20.jpg qc/frames/f_45.jpg qc/frames/f_70.jpg qc/frames/f_95.jpg qc/frames/f_120.jpg qc/"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_final1.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_final2.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_final1.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/hoja_final2.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "cat > gates/final_auto.txt <<'EOF'\nMiré 24 cuadros del final (uno cada ~25-30 s) en qc/hoja_final1.jpg y qc/hoja_final2.jpg.\n- Arranca con el avatar (Sal) desde el segundo 0, sigue con el índice de 4 cajas (1 D'Orford 2 Loafer 3 Derby 4 Boot), el gancho, la memoria del padre (foto 1951, campanilla), el file box de tarjetas, el Brannock, la tarjeta de Rossi, el zapato doblado de 1959, la suela, la "
-  },
-  {
-   "k": "res",
-   "t": "✓ el revisor no encontró fallas.\n(22 cuadros revisados, US$0.001)"
-  },
-  {
-   "k": "tool",
-   "t": "grep -h \"gasto\\|US\\$\" fotos/fotos_test.log fotos/fotos_02.log fotos/fotos_fix.log fotos/fotos_fix2.log fotos/fotos_escenas.log escenas/escenas.log revisor.log 2>/dev/null | grep \"US\\$\" | tail -10; ls gates/"
-  },
   {
    "k": "res",
    "t": "armado.json\netapas.jsonl\nfinal_auto.txt\nfondo_avatar.json\nfotos_auto.txt\nguion_auto.txt\nqc_ok.json\nrender_auto.txt\nrevisor_final.json"
@@ -178,6 +106,78 @@
   {
    "k": "user",
    "t": "La sesión siguió en otra máquina (GitHub corta cada 6 h). Todo lo tuyo está igual en tu carpeta: mirá qué hay, NO rehagas nada y seguí el CAMINO RECTO del KIT hasta el final."
+  },
+  {
+   "k": "tool",
+   "t": "ls -la final.mp4 meta.json REPORTE.md 2>&1; ls gates/; ls qc | head; cat gates/correcciones.txt 2>/dev/null; ls -la gates/correcciones_hechas.txt 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n-rw-rwxrw-+ 1 runner runner      4479 Nov 10 14:52 REPORTE.md\n-rw-rwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4\n-rw-rwxrw-+ 1 runner runner      1805 Nov 10 13:51 meta.json\narmado.json\netapas.jsonl\nfinal_auto.txt\nfondo_avatar.json\nfotos_auto.txt\nguion_auto.txt\nqc_ok.json\nrender_auto.txt\nrevisor_final.json\nf_001.jpg\nf_002.jpg\nf_003.jpg\nf_004.jpg\nf_005.jpg\nf_006.jpg\nf_007.jpg\n"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 10 2>&1 | tail -8; ffprobe -v error -show_entries format=duration -of csv=p=0 final.mp4"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ meta.json con title y description (>200 caracteres)\n  ✓ REPORTE.md\n  ✓ sonido: cues.json con sus archivos\n  !  fotos: 3 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  !  dinámico: avatar a pantalla completa ≤ 6 s por vez (1 tramos más largos, ej. 7.0 s en 0 s → partilo o usá pantalla partida)\n  !  ritmo del avatar: avatar 103 s = 16 % del video (ideal ~50 %: más avatar "
+  },
+  {
+   "k": "tool",
+   "t": "ls segments/xm* extrema/*.mp4 2>/dev/null | head; python3 -c \"\nimport json;d=json.load(open('extrema/manifest.json'));print(json.dumps(d)[:500])\" 2>&1 | head -5; ffmpeg -v error -ss 99 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/f_escena.jpg -y && python /opt/estudio/repo/motor/tools/hoja.py qc/h_escena.jpg qc/f_escena.jpg | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "extrema/es01.mp4\n[{\"mp4\": \"extrema/es01.mp4\", \"startMs\": 99342, \"endMs\": 108571, \"texto\": \"says 9D. underneath, in my own hand, 9E. Wide, high instep. Same man. Eleven years between those two lines.\"}]\nhoja: qc/h_escena.jpg (1 cuadros, 1x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_escena.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "ffmpeg -v error -ss 100.6 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/f_escena2.jpg -y && ffmpeg -v error -ss 108.2 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/f_escena3.jpg -y && python /opt/estudio/repo/motor/tools/hoja.py qc/h_escena2.jpg qc/f_escena2.jpg qc/f_escena3.jpg | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/h_escena2.jpg (2 cuadros, 2x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_escena2.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "## Gastos aproximado"
+  },
+  {
+   "k": "res",
+   "t": "<tool_use_error>No changes to make: old_string and new_string are exactly the same.</tool_use_error>"
+  },
+  {
+   "k": "tool",
+   "t": "cat >> REPORTE.md <<'EOF'\n\n## Verificación post-sesión (tras la reconexión)\n- `final.mp4` intacto: 654,04 s, 344 MB. `validar.py --etapa final` → **OK**. `revisor.py` ya corrido: 0 fallas, y `gates/correcciones.txt` no existe porque no hubo nada que corregir.\n- Escena firma comprobada dentro de `final.mp4` (99-108 s): viaje de cámara del file box a la tarjeta, pool de luz que baja a \"9E — wide, hi"
+  },
+  {
+   "k": "res",
+   "t": "  !  ritmo del avatar: nunca más de 15 s sin avatar (14 huecos, ej. 7-80 s)\nRESULTADO: OK"
+  },
+  {
+   "k": "ai",
+   "t": "Revisé lo que hay en la carpeta: el video ya estaba terminado y no hizo falta rehacer nada.\n\n**Estado:**\n- `final.mp4` — 654 s (10,9 min), 1920×1080, 30 fps, 344 MB.\n- `meta.json` y `REPORTE.md` en su lugar. El revisor ya había corrido sobre este mismo archivo (0 fallas) y no dejó nada en `gates/correcciones.txt`.\n- `validar.py --etapa final` → **OK**, reconfirmado ahora.\n\n**Una cosa que quiero qu"
+  },
+  {
+   "k": "end",
+   "t": "Revisé lo que hay en la carpeta: el video ya estaba terminado y no hizo falta rehacer nada.\n\n**Estado:**\n- `final.mp4` — 654 s (10,9 min), 1920×1080, 30 fps, 344 MB.\n- `meta.json` y `REPORTE.md` en su lugar. El revisor ya había corrido sobre este mismo archivo (0 fallas) y no dejó nada en `gates/correcciones.txt`.\n- `validar.py --etapa final` → **OK**, reconfirmado ahora.\n\n**Una cosa que quiero qu"
   }
  ],
  "maquinas": 2,
@@ -233,6 +233,13 @@
     "seg": 2894,
     "pasadas": 1,
     "fin": true
+   },
+   {
+    "k": "extrema",
+    "n": "Edición extrema",
+    "seg": 0,
+    "pasadas": 1,
+    "fin": false
    },
    {
     "k": "render",
