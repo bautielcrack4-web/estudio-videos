@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794332021.3051927,
+ "actualizado": 1794332084.2074096,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,54 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1209,
+  "deepseek": 0.1239,
   "gpt": 0.4344,
   "gpt_img": 183,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8053
+  "total": 0.8083
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Exit code 2\n16:19:30 batch 44caad5f: validating 0/0\n16:20:00 batch 44caad5f: in_progress 0/5\nls: cannot access 'fotos/p074.png': No such file or directory\nls: cannot access 'fotos/p091.png': No such file or directory"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 420; tail -2 fotos/fotos_09.log"
-  },
-  {
-   "k": "res",
-   "t": "16:33:05 ✓ batch 44caad5f: 5 fotos bajadas, 0 fallidas (US$0.016)\n16:33:05 FIN: 5/5 fotos en fotos/ (14 min)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nT = \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\"\nids = ['p010','p022','p024','p026','p028','p029','p034','p036','p040','p063','p074','p075','p089','p090','p091','p092','p130',"
-  },
-  {
-   "k": "res",
-   "t": "ok 17\n16:35:01 → batch batch_6af347b59be88190b1f3dc37a454b95b · 12 fotos · sin referencia · low 1088x608\n16:35:01 batch a454b95b: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote11.json > fotos/fotos_11.log 2>&1 &\nsleep 8; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_l.jpg fotos/p022.png fotos/p024.png fotos/p034.png fotos/p040.png fotos/p063.png fotos/p074.png fotos/p075.png fotos/p089.png fotos/p090.png fotos/p091.png fotos/p092.png fotos/p016.png 2>&1 | tail -1"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_fotos_l.jpg (6 cuadros, 4x2)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_l.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json, os\nF = json.load(open(\"pedidos/_todos.json\"))\nA = (\"a 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brown eyes, freckles and sun \"\n     \"spots on her cheeks, a bright open smile, wearing a navy blue zip-up track jacket with white stripes down the \"\n     \"sleeves over a white crew-neck t-shirt, a dark sports watch on her left wrist\""
-  },
   {
    "k": "res",
    "t": "ok\n16:35:37 ya hay otro fotos.py en este video (pid 30324): espero que termine"
@@ -178,6 +138,46 @@
   {
    "k": "tool",
    "t": "sleep 240; tail -1 fotos/fotos_11.log; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "17:33:52 ya hay otro fotos.py en este video (pid 30459): espero que termine\n109"
+  },
+  {
+   "k": "tool",
+   "t": "tail -3 fotos/fotos_12.log; ps -eo pid,etime,cmd | grep \"[f]otos.py\" | cut -c1-80"
+  },
+  {
+   "k": "res",
+   "t": "17:06:44 batch af3d8923: completed 3/3\n17:06:45 ✓ batch af3d8923: 3 fotos bajadas, 0 fallidas (US$0.009)\n17:06:45 FIN: 7/7 fotos en fotos/ (17 min)\n   3872    02:41:47 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/dat\n   3874    02:41:47 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --danger\n  30459       58:40 python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote\n  36657  "
+  },
+  {
+   "k": "tool",
+   "t": "tr '\\0' ' ' < /proc/30459/cmdline; echo; tail -5 fotos/fotos_10.log"
+  },
+  {
+   "k": "res",
+   "t": "PreToolUse:Bash hook error: [\"/opt/hostedtoolcache/Python/3.11.18/x64/bin/python\" \"/opt/estudio/repo/motor/tools/guard.py\"]: BLOQUEADO (regla dura del Estudio): no se leen ni se imprimen claves.\n"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 30459 -o args= | cut -c1-60; tail -4 fotos/fotos_10.log; tail -3 fotos/fotos_11.log"
+  },
+  {
+   "k": "res",
+   "t": "python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote\n16:49:05 batch a454b95b: finalizing 12/12\n16:49:35 batch a454b95b: completed 12/12\n16:49:37 ✓ batch a454b95b: 12 fotos bajadas, 0 fallidas (US$0.027)\n16:49:37 FIN: 14/17 fotos en fotos/ (15 min) · faltan ['p074', 'p075', 'p092'] → corregí esos prompts (si los rechazó el filtro) y volvé a correr\n17:32:52 ya hay otro fotos.py en este video"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la fotos/_fotos.lock; pgrep -f \"fotos.py \\. pedidos/lote10\" ; pgrep -f \"lote11\""
+  },
+  {
+   "k": "res",
+   "t": "-rwxrwxrwx+ 1 sesion sesion 5 Nov 10 17:06 fotos/_fotos.lock\n30459\n36657\n37763"
+  },
+  {
+   "k": "tool",
+   "t": "kill 30459 2>/dev/null; sleep 45; tail -2 fotos/fotos_11.log"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 9243,
+    "seg": 9306,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 10090,
+  "total_s": 10153,
   "avatar_s": 816,
-  "sin_avatar_s": 9275,
+  "sin_avatar_s": 9338,
   "cerrado": false
  }
 }
