@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794329744.788751,
+ "actualizado": 1794329809.056513,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,18 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1113,
+  "deepseek": 0.1119,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6267
+  "total": 0.6273
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "crontab -l 2>/dev/null | head -5; pgrep -af \"cron|systemd\" | head -5; cat gates/etapas.jsonl 2>/dev/null | tail -3"
-  },
   {
    "k": "res",
    "t": "165 /usr/lib/systemd/systemd-journald\n220 /usr/lib/systemd/systemd-resolved\n232 /usr/lib/systemd/systemd-udevd\n723 /usr/lib/systemd/systemd-networkd\n897 /bin/sh /usr/lib/systemd/scripts/chronyd-starter.sh -n -F 1\n{\"t\": 1794326354.8, \"e\": \"render\", \"q\": \"fin\"}\n{\"t\": 1794326695.0, \"e\": \"render\", \"q\": \"ini\"}\n{\"t\": 1794327295.1, \"e\": \"render\", \"q\": \"fin\"}"
@@ -178,6 +174,10 @@
   {
    "k": "res",
    "t": "[{'mov': 'extrema/xm01.mov', 'startMs': 6820, 'endMs': 22900}, {'mov': 'extrema/xm03.mov', 'startMs': 92240, 'endMs': 115880}, {'mov': 'extrema/xm05.mov', 'startMs': 169309, 'endMs': 188169}, {'mov': 'extrema/xm06.mov', 'startMs': 554888, 'endMs': 578988}]\n654.037000"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 120; tail -3 assemble.log; ls -la final.mp4"
   }
  ],
  "maquinas": 3,
