@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794340151.9424212,
+ "actualizado": 1794340216.3987522,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,50 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1607,
+  "deepseek": 0.1634,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9035
+  "total": 0.9062
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "extrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\n156"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 420; tail -4 render.log; ls segments/*.mp4 2>/dev/null | grep -v src | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "extrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 152\n152"
-  },
-  {
-   "k": "tool",
-   "t": "tail -6 render.log; ls -la render.json 2>/dev/null; ls segments/ | tail -3"
-  },
-  {
-   "k": "res",
-   "t": "extrema: no llegaron, va sin ellas tras 600 s\nextrema: pisa al avatar, va b-roll -> extrema/es03.mp4\nextrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 152\n_malos.json\n_qc.json\nxf.json"
-  },
-  {
-   "k": "tool",
-   "t": "pgrep -f \"tools/render.py\"; tail -c 600 segments/_qc.json"
-  },
-  {
-   "k": "res",
-   "t": "3872\n3874\n48245\n48248\n67006\n.9179129058629761, \\\"cx\\\": 0.6759660562609621, \\\"cy\\\": 0.4773779249566259, \\\"t\\\": \\\"in\\\"}||1213436:1794332365\": [], \"./fotos/p131.png|159|0|0.000|{\\\"A\\\": 0.08035005576133337, \\\"Z\\\": 1.1065687391799555, \\\"a\\\": 0.28328327740415055, \\\"b\\\": 0.9687415243439726, \\\"cx\\\": 0.4037024441427695, \\\"cy\\\": 0.47232113334558673, \\\"t\\\": \\\"out\\\"}||1195091:1794332365\": [], \"./fotos/p133.pn"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py . > assemble.log 2>&1 &\necho started; sleep 90; tail -5 assemble.log"
-  },
-  {
-   "k": "res",
-   "t": "started"
-  },
   {
    "k": "tool",
    "t": "sleep 120; tail -5 assemble.log; ls -la final.mp4 2>/dev/null"
@@ -178,6 +142,42 @@
   {
    "k": "tool",
    "t": "sleep 300; tail -2 assemble.log; ls -la final.mp4 2>/dev/null; pgrep -f \"[a]ssemble.py\" | head -2"
+  },
+  {
+   "k": "res",
+   "t": "Error opening input files: No such file or directory\n): va el armado completo\n3872\n3874"
+  },
+  {
+   "k": "tool",
+   "t": "ls -la final.mp4; tail -6 assemble.log; pgrep -f \"[f]ondo_avatar.py\" || echo \"fondo done\"; cat gates/fondo_avatar.json 2>/dev/null | head -20"
+  },
+  {
+   "k": "res",
+   "t": "ls: cannot access 'final.mp4': No such file or directory\ntramos: 6 de 25 por codificar · 4 a la vez\nel armado por tramos falló (pegado: [concat @ 0x5fe471f28f00] Impossible to open './tramos/./tramos/fbcc7656c5c77699653f.mp4'\n[in#0 @ 0x5fe471f28c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va"
+  },
+  {
+   "k": "tool",
+   "t": "ps -eo pid,etime,pcpu,args | grep -E \"[a]ssemble.py|[f]fmpeg\" | cut -c1-120 | head"
+  },
+  {
+   "k": "res",
+   "t": "   3872    04:57:52  0.0 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=h\n   3874    04:57:52  0.5 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --disallowed\n  53401       53:20  1.4 /tmp/extrema_pkg/node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg -r 30 -f image2pipe -s \n  67070       32:45  0.0 python /opt/"
+  },
+  {
+   "k": "tool",
+   "t": "kill 67070 2>/dev/null; sleep 5; ps -eo pid,etime,pcpu,args | grep -E \"[a]ssemble.py|[f]fmpeg\" | cut -c1-100"
+  },
+  {
+   "k": "res",
+   "t": "   3872    04:58:00  0.0 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8\n   3874    04:58:00  0.5 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-perm\n  53401       53:28  1.4 /tmp/extrema_pkg/node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg -r \n  68474       24:53  0.0 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/node/20.20.2/x6"
+  },
+  {
+   "k": "tool",
+   "t": "ps -p 79040,80256 -o pid,args= | cut -c1-150"
+  },
+  {
+   "k": "res",
+   "t": "    PID \n  79040 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/my-grandmother-walke\n  80256 ffmpeg -v error -y -i ./xf_tmp/c000.mp4 -i ./xf_tmp/c001.mp4 -i ./xf_tmp/c002.mp4 -i ./xf_tmp/c003.mp4 -i ./xf_tmp/c004.mp4 -i ./xf_tmp/c005.m"
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 3337,
+    "seg": 3402,
     "pasadas": 1,
     "fin": false
    },
@@ -251,14 +251,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 4410,
-    "pasadas": 2,
+    "seg": 4550,
+    "pasadas": 3,
     "fin": false
    }
   ],
-  "total_s": 18221,
+  "total_s": 18285,
   "avatar_s": 816,
-  "sin_avatar_s": 17405,
+  "sin_avatar_s": 17470,
   "cerrado": false
  }
 }
