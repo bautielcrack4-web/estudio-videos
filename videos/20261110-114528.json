@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794323878.5510678,
+ "actualizado": 1794323943.0791261,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "33 fotos"
+   "info": "73 fotos"
   },
   {
    "k": "armado",
@@ -51,58 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0708,
-  "gpt": 0.1158,
-  "gpt_img": 49,
+  "deepseek": 0.0736,
+  "gpt": 0.2034,
+  "gpt_img": 89,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.1866
+  "total": 0.277
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "   3872 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SERVER_URL=https://github.com GITHUB_REPOSITORY=bautielcrac\n   3874 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --disallowedTools Task,Agent,WebFetch,WebSearch,NotebookEdi\n   8116 python /opt/estudio/repo/motor/tools/escenas.py . construir --fondo\nescenas/:\n_m\n_punteria"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nfor i in range(1,5):\n    m=json.load(open('escenas/es0%d.json'%i))\n    print(json.dumps(m, ensure_ascii=False)[:600]); print()\n\""
-  },
-  {
-   "k": "res",
-   "t": "{\"sp\": {\"cosas\": [\"hoja de papel con dibujos\", \"lápiz rojo\", \"regla de madera\", \"bolígrafo negro\", \"dibujo de la mujer con brazos arriba\", \"dibujo de la mujer sentada\"], \"camara\": [{\"en\": \"inicio\", \"mira\": \"todo\", \"zoom\": 1.0}, {\"en\": 379, \"mira\": \"hoja de papel con dibujos\", \"zoom\": 1.3}, {\"en\": 387, \"mira\": \"dibujo de la mujer con brazos arriba\", \"zoom\": 1.6}], \"cuarto\": [{\"en\": 383, \"efecto\": {"
-  },
-  {
-   "k": "tool",
-   "t": "tail -5 escenas/escenas.log; ls extrema/; tail -2 fotos/fotos_02.log"
-  },
-  {
-   "k": "res",
-   "t": "15:05:50 escenas: es01 lista · paneles · cámara 1 viajes\n15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes\n15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\n15:05:47 batch 18e74a0a: validating 0/0\n15:06:18 batch 18e74a0a: in_progress 0/33"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log escenas/escenas.log --existe extrema/manifest.json 2>&1 | tail -4"
-  },
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes · archivo: todavía no existe → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "tail -3 fotos/fotos_02.log; ls fotos/*.png | wc -l; ps -eo pid,etime,cmd | grep \"[e]scenas.py\" | cut -c1-80; tail -3 avatar/it.log"
-  },
-  {
-   "k": "res",
-   "t": "15:11:49 batch 18e74a0a: completed 33/33\n15:11:52 ✓ batch 18e74a0a: 33 fotos bajadas, 0 fallidas (US$0.074)\n15:11:52 FIN: 40/40 fotos en fotos/ (6 min)\n46\n   3872       24:09 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/dat\n   3874       24:09 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --danger\n   8116       10:57 python /opt/estudio/repo/motor/tools/escenas.py . construir \n15"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote03.json > fotos/fotos_03.log 2>&1 &\nsleep 12; tail -2 fotos/fotos_03.log"
-  },
-  {
-   "k": "res",
-   "t": "15:16:21 ya hay otro fotos.py en este video (pid 8355): espero que termine"
-  },
   {
    "k": "tool",
    "t": "ls fotos/lote03_*.json fotos/*.json 2>/dev/null | head -5; ls fotos | wc -l; python3 -c \"\nimport json,os\nd=json.load(open('fotos/_batches.json'))\nprint(json.dumps(d)[-1500:])\n\""
@@ -178,6 +134,50 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_03.log --cuenta \"fotos/*.png\" 116 2>&1 | tail -3; tail -2 escenas/escenas.log"
+  },
+  {
+   "k": "res",
+   "t": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+  },
+  {
+   "k": "tool",
+   "t": "ls fotos/*.png | wc -l; tail -2 fotos/fotos_03.log; tail -1 fotos/fotos_04.log 2>/dev/null; tail -1 fotos/fotos_05.log"
+  },
+  {
+   "k": "res",
+   "t": "73\n15:18:40 ✓ batch 2406b9a7: 40 fotos bajadas, 0 fallidas (US$0.088)\n15:18:40 FIN: 40/40 fotos en fotos/ (7 min)\n15:18:31 ya hay otro fotos.py en este video (pid 8355): espero que termine"
+  },
+  {
+   "k": "tool",
+   "t": "ps -eo pid,etime,cmd | grep \"[f]otos.py\" | cut -c1-100; ls fotos/*.png | head -80 | xargs -n1 basename | tr '\\n' ' '"
+  },
+  {
+   "k": "res",
+   "t": "   3872       26:37 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITH\n   3874       26:37 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissio\n  11374       02:25 python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote03.json\n  12652       01:45 python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote05.json\np001.png p001_b.png p0"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\njson.dump([F[i] for i in [\"p044\",\"p059\",\"p060\",\"p062\",\"p063\",\"p064\",\"p074\",\"p075\",\"p089\",\"p090\",\"p091\",\"p092\"]], open(\"pedidos/lote05.json\",\"w\"), ensure_ascii=False, indent=1)\nEOF\npython /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_e.jpg fotos/p044.png fotos/p045.png fotos/p046.png fotos/p047.png fotos/p048.png fotos/p"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fotos_e.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_e.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "tail -2 escenas/escenas.log; ls extrema/; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg fotos/p001.png fotos/p002.png fotos/p003.png fotos/p004.png fotos/p005.png fotos/p006.png fotos/p007.png fotos/p008.png fotos/p009.png fotos/p011.png fotos/p012.png fotos/p013.png 2>&1|tail -1"
+  },
+  {
+   "k": "res",
+   "t": "15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\nes01.mp4\nes02.mp4\nrender.json\nhoja: qc/hoja_render.jpg (12 cuadros, 4x3)"
   }
  ],
  "maquinas": 1,
@@ -223,21 +223,21 @@
    {
     "k": "avatar_gen",
     "n": "Avatar generando",
-    "seg": 637,
+    "seg": 702,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 1100,
+    "seg": 1165,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1948,
+  "total_s": 2012,
   "avatar_s": 30,
-  "sin_avatar_s": 1917,
+  "sin_avatar_s": 1982,
   "cerrado": false
  }
 }
