@@ -34,3 +34,7 @@ El fondo de la zapatería familiar en South Philadelphia — el banco de madera 
 - Marcas reales de zapato que el generador puso por su cuenta en cajas y carteles de la tienda (no las pedimos, el guion nunca las nombra ni las vende; se ven chicas en el fondo). Sin marcas en voz, sin venta, sin claim médico ("ask your doctor" incluido en el trap del talón).
 - **Primer tramo de avatar de 7 s** (0-7 s) en pantalla completa: aviso de ≤ 6 s. Queda como está (es la apertura y el validador lo acepta).
 - La p061 final: manos de Sal con el shoehorn sobre el talón de un cliente, encuadre bajo y cálido, sin cara del presentador equivocada.
+
+## Verificación post-sesión (tras la reconexión)
+- `final.mp4` intacto: 654,04 s, 344 MB. `validar.py --etapa final` → **OK**. `revisor.py` ya corrido: 0 fallas, y `gates/correcciones.txt` no existe porque no hubo nada que corregir.
+- Escena firma comprobada dentro de `final.mp4` (99-108 s): viaje de cámara del file box a la tarjeta, pool de luz que baja a "9E — wide, high instep" y push final sobre las dos líneas. Para este video **la escena sí trae rótulos en pantalla** (las palabras de la frase, una por capa). No se tocó a mano porque la escena y el armado los hace el motor y no frenan el video.
