@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794325310.1440332,
+ "actualizado": 1794325382.3299382,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,74 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0875,
+  "deepseek": 0.0916,
   "gpt": 0.2995,
   "gpt_img": 131,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.637
+  "total": 0.6411
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "15:20:22 estado: COMPLETED\n✓ 21 clips cortados · desfase corregido (máx 0 ms) · ⛔ el reel salió corto: sin clip ['avatar/A24.mp4', 'avatar/A26.mp4'] → sacalas de avatar_ranges.json (van con foto)\n21\n15:18:40 ✓ batch 2406b9a7: 40 fotos bajadas, 0 fallidas (US$0.088)\n15:18:40 FIN: 40/40 fotos en fotos/ (7 min)\n   3872       34:21 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C."
-  },
-  {
-   "k": "tool",
-   "t": "grep -v \"^$\" avatar/it.log | tail -25"
-  },
-  {
-   "k": "res",
-   "t": "15:06:44 InfiniteTalk: 23 ventanas · reel 126.2 s · 1 llamada\n15:06:51 RUN dbc63fbb-6ef3-4999-92d3-f500514cc0d1-u2\n15:07:21 estado: IN_PROGRESS\n15:20:22 estado: COMPLETED\n✓ 21 clips cortados · desfase corregido (máx 0 ms) · ⛔ el reel salió corto: sin clip ['avatar/A24.mp4', 'avatar/A26.mp4'] → sacalas de avatar_ranges.json (van con foto)"
-  },
-  {
-   "k": "tool",
-   "t": "ls avatar/; ls avatar/A*.mp4 | head -30 2>/dev/null; find . -name \"A2[0-9].mp4\" | head"
-  },
-  {
-   "k": "res",
-   "t": "A0.mp4\nA1.mp4\nA10.mp4\nA11.mp4\nA12.mp4\nA13.mp4\nA14.mp4\nA15.mp4\nA16.mp4\nA18.mp4\nA2.mp4\nA20.mp4\nA22.mp4\nA23.mp4\nA3.mp4\nA4.mp4\nA5.mp4\nA6.mp4\nA7.mp4\nA8.mp4\nA9.mp4\nit\nit.log\nit_llamada.json\nit_sync.json\navatar/A0.mp4\navatar/A1.mp4\navatar/A10.mp4\navatar/A11.mp4\navatar/A12.mp4\navatar/A13.mp4\navatar/A14.mp4\navatar/A15.mp4\navatar/A16.mp4\navatar/A18.mp4\navatar/A2.mp4\navatar/A20.mp4\navatar/A22.mp4\navatar/A23."
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json, subprocess\nR = json.load(open(\"avatar_ranges.json\"))\nout=[]\nfor r in R:\n    if r[\"file\"] in (\"avatar/A24.mp4\",\"avatar/A26.mp4\"): continue\n    dur = float(subprocess.check_output([\"ffprobe\",\"-v\",\"error\",\"-show_entries\",\"format=duration\",\"-of\",\"csv=p=0\", r[\"file\"]]))\n    want=(r[\"endMs\"]-r[\"startMs\"])/1000\n    print(r[\"file\"], \"wanted %.1f have %.2f\" % (want,dur))\n    "
-  },
-  {
-   "k": "res",
-   "t": "avatar/A0.mp4 wanted 6.0 have 6.32\navatar/A1.mp4 wanted 5.4 have 5.76\navatar/A2.mp4 wanted 5.0 have 5.32\navatar/A3.mp4 wanted 5.0 have 5.36\navatar/A4.mp4 wanted 5.2 have 5.52\navatar/A5.mp4 wanted 5.0 have 5.36\navatar/A6.mp4 wanted 5.1 have 5.40\navatar/A7.mp4 wanted 5.0 have 5.32\navatar/A8.mp4 wanted 5.3 have 5.64\navatar/A9.mp4 wanted 5.0 have 5.36\navatar/A10.mp4 wanted 5.0 have 5.32\navatar/A11.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -2; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_avatar.jpg avatar/A0.mp4 avatar/A4.mp4 avatar/A8.mp4 avatar/A14.mp4 2>&1 | tail -1"
-  },
-  {
-   "k": "res",
-   "t": "✓ planos.json: 133 planos de b-roll (10.5 min de b-roll, 12.6 por minuto) + 1 fotos de pantalla partida · 21 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\nhoja: qc/hoja_avatar.jpg (4 cuadros, 4x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_avatar.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote05.json > fotos/fotos_05.log 2>&1 &\nsleep 8; nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote04.json > fotos/fotos_04.log 2>&1 &\nsleep 12; tail -2 fotos/fotos_05.log; tail -2 fotos/fotos_04.log"
-  },
-  {
-   "k": "res",
-   "t": "15:26:48 → batch batch_6af337b892bc8190a995efe6eb53484e · 1 fotos · con la cara del presentador · low 1088x608\n15:26:48 batch eb53484e: validating 0/0\n15:26:55 ya hay otro fotos.py en este video (pid 17594): espero que termine"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nneed = {\"p066\",\"p067\",\"p072\",\"p073\",\"p077\",\"p078\",\"p080\",\"p083\",\"p088\",\"p095\",\"p096\",\"p100\",\"p102\",\"p112\",\"p114\",\"p126\",\"p127\",\"p128\",\"p129\",\"p117\",\"p122\",\"p125\"}\nm = [i for i in need if i in F]\njson.dump([F[i] for i in m], open(\"pedidos/lote06.json\",\"w\"), ensure_ascii=False, indent=1)\nprint(len(m), sorted(m))\nEOF\nsleep 30; t"
-  },
-  {
-   "k": "res",
-   "t": "21 ['p066', 'p067', 'p072', 'p073', 'p077', 'p078', 'p080', 'p088', 'p095', 'p096', 'p100', 'p102', 'p112', 'p114', 'p117', 'p122', 'p125', 'p126', 'p127', 'p128', 'p129']\n15:27:19 ✓ batch eb53484e: 1 fotos bajadas, 0 fallidas (US$0.003)\n15:27:19 FIN: 12/12 fotos en fotos/ (1 min)\n15:27:26 → batch batch_6af337ddfaf8819089d053fcd0d46200 · 38 fotos · sin referencia · low 1088x608\n15:27:26 batch d0d4"
-  },
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote06.json > fotos/fotos_06.log 2>&1 &\nsleep 10; tail -1 fotos/fotos_06.log; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_f.jpg fotos/p056.png fotos/p057.png fotos/p058.png fotos/p061.png fotos/p065.png fotos/p068.png fotos/p069.png fotos/p070.png fotos/p071.png fotos/p074.png fotos/p075.png fotos/p076.png 2>&1|tail -1"
@@ -178,6 +118,66 @@
   {
    "k": "tool",
    "t": "python3 - <<'EOF'\nimport json\nL = json.load(open(\"pedidos/lote07.json\"))\nkeep_face = {\"p021\",\"p022\",\"p024\",\"p030\",\"p034\",\"p040\",\"p062\",\"p064\",\"p090\",\"p091\",\"p092\"}\nout=[]\nfor x in L:\n    if x[\"id\"] in keep_face:\n        out.append(x); continue\n    p = x[\"prompt\"]\n    p[\"type\"] = p[\"type\"].replace(\", wrinkles, age spots, flyaway grey hairs\", \"\")\n    p.pop(\"person\", None); p.pop(\"clothing\", None)\n  "
+  },
+  {
+   "k": "res",
+   "t": "11\n15:41:44 batch 240fdd4b: in_progress 0/10\n15:41:45 batch 34284dae: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "tail -2 fotos/fotos_06.log; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_g.jpg fotos/p086.png fotos/p087.png fotos/p093.png fotos/p094.png fotos/p097.png fotos/p098.png fotos/p101.png fotos/p103.png fotos/p104.png fotos/p105.png fotos/p107.png fotos/p108.png 2>&1|tail -1; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_h.jpg fotos/p109.png fotos/p110.png fotos/p111.png fot"
+  },
+  {
+   "k": "res",
+   "t": "15:40:43 ya hay otro fotos.py en este video (pid 17978): espero que termine\n15:41:13 ✓ nada que pedir: 21/21 fotos listas\nhoja: qc/hoja_fotos_g.jpg (12 cuadros, 4x3)\nhoja: qc/hoja_fotos_h.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_g.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_h.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "tail -3 fotos/fotos_07.log; tail -2 fotos/fotos_06.log"
+  },
+  {
+   "k": "res",
+   "t": "15:41:44 → batch batch_6af33b384d0c819083efceb534284dae · 11 fotos · con la cara del presentador · low 1088x608\n15:41:44 batch 240fdd4b: in_progress 0/10\n15:41:45 batch 34284dae: validating 0/0\n15:40:43 ya hay otro fotos.py en este video (pid 17978): espero que termine\n15:41:13 ✓ nada que pedir: 21/21 fotos listas"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\njson.dump([F[i] for i in [\"p002\",\"p003\",\"p005\",\"p006\",\"p008\",\"p010\",\"p017\",\"p022\",\"p024\",\"p029\",\"p034\",\"p036\",\"p040\",\"p047\",\"p049\",\"p053\",\"p058\",\"p061\"]], open(\"pedidos/lote08.json\",\"w\"), ensure_ascii=False, indent=1)\nprint(\"built\")\nEOF\nsleep 40; tail -2 fotos/fotos_07.log"
+  },
+  {
+   "k": "res",
+   "t": "Traceback (most recent call last):\n  File \"<stdin>\", line 3, in <module>\n  File \"<stdin>\", line 3, in <listcomp>\nKeyError: 'p010'\n15:42:45 batch 240fdd4b: in_progress 0/10\n15:42:45 batch 34284dae: in_progress 0/11"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nidw = [\"p002\",\"p003\",\"p005\",\"p006\",\"p008\",\"p010\",\"p017\",\"p022\",\"p024\",\"p029\",\"p034\",\"p036\",\"p040\",\"p047\",\"p049\",\"p053\",\"p058\",\"p061\"]\njson.dump([F[i] for i in idw if i in F], open(\"pedidos/lote08.json\",\"w\"), ensure_ascii=False, indent=1)\nprint([i for i in idw if i not in F])\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "['p010', 'p022', 'p024', 'p029', 'p034', 'p036', 'p040']"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_07.log --cuenta \"fotos/*.png\" 100 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "✓ hay 103 archivos (0 s)"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 2532,
+    "seg": 2604,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 3379,
+  "total_s": 3451,
   "avatar_s": 816,
-  "sin_avatar_s": 2564,
+  "sin_avatar_s": 2636,
   "cerrado": false
  }
 }
