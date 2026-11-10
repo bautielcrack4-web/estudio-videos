@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794327003.295359,
+ "actualizado": 1794327069.128611,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1028,
+  "deepseek": 0.1034,
   "gpt": 0.3569,
   "gpt_img": 152,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.7097
+  "total": 0.7103
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "… sigue esperando tras 540 s · log: 15:53:51 batch 34284dae: in_progress 0/11 · archivos: 103/124 → hacé otra cosa útil y volvé a llamar"
-  },
-  {
-   "k": "tool",
-   "t": "{\n  \"title\": \"My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs\",\n  \"description\": \"My grandmother walked every day until she was ninety-eight. Every single day, rain or snow, and every one of those mornings started the same way: a wooden kitchen chair, a small silver radio, and a five-minute radio taiso warm-up we did together. Her name was Fumiko, and"
-  },
   {
    "k": "res",
    "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/meta.json (file state is current in your context — no need to Read it back)"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 300; tail -2 fotos/fotos_08.log; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "16:10:07 batch d7ff1456: in_progress 0/10\n16:10:07 batch e0b1f454: in_progress 0/1\n81"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 300; tail -2 fotos/fotos_08.log; tail -2 fotos/fotos_09.log; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 4225,
+    "seg": 4291,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 5072,
+  "total_s": 5138,
   "avatar_s": 816,
-  "sin_avatar_s": 4257,
+  "sin_avatar_s": 4323,
   "cerrado": false
  }
 }
