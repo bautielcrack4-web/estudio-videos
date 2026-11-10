@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794328507.2759101,
+ "actualizado": 1794328571.6092238,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "97 fotos"
+   "info": "94 fotos"
   },
   {
    "k": "armado",
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1121,
+  "deepseek": 0.1155,
   "gpt": 0.3983,
   "gpt_img": 168,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.7604
+  "total": 0.7638
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedidos/lote09.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python pedidos/lote09.py && nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote09.json > fotos/fotos_09.log 2>&1 &\nsleep 20; tail -2 fotos/fotos_08.log; tail -1 fotos/fotos_09.log"
-  },
-  {
-   "k": "res",
-   "t": "5\n16:00:32 batch d7ff1456: validating 0/0\n16:00:33 batch e0b1f454: validating 0/0\n16:00:29 ya hay otro fotos.py en este video (pid 25479): espero que termine"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 280; tail -2 fotos/fotos_08.log; ls fotos/*.png | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "16:05:05 batch d7ff1456: in_progress 0/10\n16:05:05 batch e0b1f454: in_progress 0/1\n81"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 300; tail -2 fotos/fotos_08.log; ls fotos/*.png | wc -l"
-  },
-  {
-   "k": "res",
-   "t": "16:10:07 batch d7ff1456: in_progress 0/10\n16:10:07 batch e0b1f454: in_progress 0/1\n81"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 300; tail -2 fotos/fotos_08.log; tail -2 fotos/fotos_09.log; ls fotos/*.png | wc -l"
-  },
   {
    "k": "res",
    "t": "16:15:10 batch d7ff1456: in_progress 0/10\n16:15:10 batch e0b1f454: in_progress 0/1\n16:14:59 ya hay otro fotos.py en este video (pid 25479): espero que termine\n16:15:29 ya hay otro fotos.py en este video (pid 25479): espero que termine\n81"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nT = \"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\"\nids = ['p010','p022','p024','p026','p028','p029','p034','p036','p040','p063','p074','p075','p089','p090','p091','p092','p130',"
+  },
+  {
+   "k": "res",
+   "t": "ok 17\n16:35:01 → batch batch_6af347b59be88190b1f3dc37a454b95b · 12 fotos · sin referencia · low 1088x608\n16:35:01 batch a454b95b: validating 0/0"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote11.json > fotos/fotos_11.log 2>&1 &\nsleep 8; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos_l.jpg fotos/p022.png fotos/p024.png fotos/p034.png fotos/p040.png fotos/p063.png fotos/p074.png fotos/p075.png fotos/p089.png fotos/p090.png fotos/p091.png fotos/p092.png fotos/p016.png 2>&1 | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_fotos_l.jpg (6 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos_l.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json, os\nF = json.load(open(\"pedidos/_todos.json\"))\nA = (\"a 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brown eyes, freckles and sun \"\n     \"spots on her cheeks, a bright open smile, wearing a navy blue zip-up track jacket with white stripes down the \"\n     \"sleeves over a white crew-neck t-shirt, a dark sports watch on her left wrist\""
+  },
+  {
+   "k": "res",
+   "t": "ok\n16:35:37 ya hay otro fotos.py en este video (pid 30324): espero que termine"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 420; tail -2 fotos/fotos_10.log; tail -1 fotos/fotos_11.log; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 5729,
+    "seg": 5793,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 6576,
+  "total_s": 6641,
   "avatar_s": 816,
-  "sin_avatar_s": 5761,
+  "sin_avatar_s": 5825,
   "cerrado": false
  }
 }
