@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794330056.613047,
+ "actualizado": 1794330122.2340708,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.113,
+  "deepseek": 0.1156,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6284
+  "total": 0.631
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "ls: cannot access 'extrema/EN_CURSO': No such file or directory\n-rw-rw-rw-+ 1 runner runner 298 Nov 10 16:28 extrema/capas.json\n{\"xm01\":{\"ok\":true,\"s\":516},\"xm02\":{\"ok\":true,\"s\":694},\"xm03\":{\"ok\":true,\"s\":218},\"xm04\":{\"ok\":true,\"s\":211},\"xm05\":{\"ok\":true,\"s\":220},\"xm06\":{\"ok\":true,\"s\":589},\"xm07\":{\"ok\":true,\"s\":172}}\n    ELAPSED"
-  },
-  {
-   "k": "tool",
-   "t": "cat extrema/manifest.json; echo; cat extrema/capas.json; ls -la extrema/*.m*"
-  },
-  {
-   "k": "res",
-   "t": "[\n {\n  \"mp4\": \"extrema/xm02.mp4\",\n  \"startMs\": 23100,\n  \"endMs\": 41520,\n  \"texto\": \"A full-screen memory scene built from the store photos: a sepia-toned photo of the shopfront with one window and one ben\"\n }\n]\n[\n {\n  \"mov\": \"extrema/xm01.mov\",\n  \"startMs\": 6820,\n  \"endMs\": 22900\n },\n {\n  \"mov\": \"extrema/xm03.mov\",\n  \"startMs\": 92240,\n  \"endMs\": 115880\n },\n {\n  \"mov\": \"extrema/xm05.mov\",\n  \"startM"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/render.py . > render5.log 2>&1 &\nsleep 150; cat render5.log; ls -lt segments/*.mp4 | head -2"
-  },
-  {
-   "k": "res",
-   "t": "extrema: 1 piezas en la línea\nclips=134 frames=19621 (654.03s)\nreusados de otra posición: 125\nhechos 134\n-rw-rw-rw-+ 1 sesion sesion 12026931 Nov 10 16:31 segments/0005.mp4\n-rw-rw-rw-+ 1 sesion sesion  1347076 Nov 10 16:31 segments/0019.mp4"
-  },
-  {
-   "k": "tool",
-   "t": "ARMADO_EXTREMA=1 nohup python /opt/estudio/repo/motor/tools/assemble.py . > assemble.log 2>&1 &\nsleep 90; cat assemble.log | tail -10"
-  },
-  {
-   "k": "res",
-   "t": "segmentos: 134\ncapas de edición extrema: 4\ntramos: 7 de 22 por codificar · 4 a la vez"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 290; tail -5 assemble.log; ls -la final.mp4"
-  },
   {
    "k": "res",
    "t": "el armado por tramos falló (pegado: [concat @ 0x5d09548d1f00] Impossible to open './tramos/./tramos/174568aa4cdfba0812c8.mp4'\n[in#0 @ 0x5d09548d1c40] Error opening input: No such file or directory\nError opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "sleep 200; tail -2 assemble.log; ls -la final.mp4"
+  },
+  {
+   "k": "res",
+   "t": "tramo 6 listo\nfinal: ./final.mp4 654.037000 s\n-rw-rw-rw-+ 1 sesion sesion 384041689 Nov 10 16:57 final.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 10 2>&1 | tail -6; grep -c \"✗\" <(python /opt/estudio/repo/motor/tools/validar.py . --etapa final --min 10 2>&1)"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ sonido: cues.json con sus archivos\n  !  fotos: 3 imágenes creativas con detalle_narrativo (lo pedido: 4 a 6, KIT §4b)\n  !  dinámico: avatar a pantalla completa ≤ 6 s por vez (1 tramos más largos, ej. 7.0 s en 0 s → partilo o usá pantalla partida)\n  !  ritmo del avatar: avatar 103 s = 16 % del video (ideal ~50 %: más avatar = menos fotos)\n  !  ritmo del avatar: nunca más de 15 s sin avatar (14 "
+  },
+  {
+   "k": "tool",
+   "t": "for t in 10 15 25 100 175 560; do ffmpeg -v error -ss $t -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/xf_$t.jpg -y; done; ffmpeg -v error -ss 35 -i final.mp4 -frames:v 1 -vf scale=480:-1 qc/xf_35.jpg -y; python /opt/estudio/repo/motor/tools/hoja.py qc/h_extrema.jpg qc/xf_10.jpg qc/xf_15.jpg qc/xf_25.jpg qc/xf_35.jpg qc/xf_100.jpg qc/xf_175.jpg qc/xf_560.jpg | tail -1"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/h_extrema.jpg (7 cuadros, 4x2)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/qc/h_extrema.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/revisor.py . > revisor2.log 2>&1; tail -3 revisor2.log; cat gates/correcciones.txt 2>/dev/null | head -5"
   }
  ],
  "maquinas": 3,
@@ -265,9 +265,9 @@
    {
     "k": "correcciones",
     "n": "Correcciones",
-    "seg": 3276,
-    "pasadas": 6,
-    "fin": true
+    "seg": 0,
+    "pasadas": 7,
+    "fin": false
    },
    {
     "k": "entrega",
