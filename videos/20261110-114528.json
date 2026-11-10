@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322449.54987,
+ "actualizado": 1794322513.289797,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -17,7 +17,7 @@
    "k": "voz",
    "n": "Voz",
    "st": "active",
-   "info": "3 bloques"
+   "info": "5 bloques"
   },
   {
    "k": "tiempos",
@@ -51,70 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0116,
+  "deepseek": 0.0135,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0116
+  "total": 0.0135
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/refs/avatar.png\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python -c \"print(1)\" && wc -c refs/voz.txt"
-  },
-  {
-   "k": "res",
-   "t": "1\n352 refs/voz.txt"
-  },
-  {
-   "k": "tool",
-   "t": "My grandmother walked every day until she was ninety-eight. Every single day. Rain, snow, and those grey mornings when nobody wants to leave the house. And every one of those mornings started the same way: a wooden kitchen chair, a small silver radio, and a five-minute radio taiso warm-up we did together.\n\nHer name was Fumiko. She lived to ninety-eight, and she walked every one of those days. When"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "wc -c guion.txt; python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -30"
-  },
-  {
-   "k": "res",
-   "t": "7495 guion.txt\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa guion\n  ✗ guion: 7440 caracteres, 1385 palabras (hacen falta 9000-11500 para 10 min: alargalo con puntos nuevos)\nRESULTADO: FALLA (1)"
-  },
-  {
-   "k": "tool",
-   "t": "My grandmother walked every day until she was ninety-eight. Every single day. Rain, snow, and those grey mornings when nobody wants to leave the house. And every one of those mornings started the same way: a wooden kitchen chair, a small silver radio, and a five-minute radio taiso warm-up we did together.\n\nHer name was Fumiko. She lived in a small town north of Sendai, in a wooden house with a nar"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "wc -c guion.txt; python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -30"
-  },
-  {
-   "k": "res",
-   "t": "8373 guion.txt\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa guion\n  ✗ guion: 8316 caracteres, 1552 palabras (hacen falta 9000-11500 para 10 min: alargalo con puntos nuevos)\nRESULTADO: FALLA (1)"
-  },
-  {
-   "k": "tool",
-   "t": "You don't need a gym. You don't need a mat. A kitchen chair is perfect. Strong chair, no wheels, sit on the front half of the seat. Feet flat, as wide as your hips. Back straight, like a string pulls the top of your head. Good.\n\nOne small test before we start. It takes ten seconds, and I do it every morning. Stand up from your chair once, slowly, without using your hands, and sit down again. That "
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
   {
    "k": "tool",
    "t": "On the first morning with my Tuesday class, I had twelve women in my living room. The oldest was Mrs. Sato, seventy-nine, and she brought her own cushion. She could not lift her arms past her ears that first day, because of a bad shoulder from years of carrying laundry up the stairs. In the third week, she lifted them all the way, and she laughed and almost fell back in her chair. Nobody is fast a"
@@ -178,6 +122,62 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -10"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene '✓' (75 s):\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -10; ls -la voz/"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene '✓' (0 s):\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\ntotal 44732\ndrwxrwxrwx+  2 runner runner     4096 Nov 10 14:54 .\ndrwxrwxrwx+ 13 runner runner     4096 Nov 10 14:53 ..\n-rw-rw-rw-+  1 sesion sesion 14945344 Nov 10 14:54 blk_000.wav\n-rw-rw-rw-+  1 sesion sesion 15414996 Nov 10 14:54 blk_001.w"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/repo/motor/tools/escenas.py\", \"limit\": 80}"
+  },
+  {
+   "k": "res",
+   "t": "1\t# -*- coding: utf-8 -*-\n2\t\"\"\"ESCENAS FIRMA — la edición se piensa AL PRINCIPIO, con el video entero, y las fotos de esas escenas se ENCARGAN para ellas.\n3\t  1) python <APP>/tools/escenas.py <carpeta> ficha [--n 3]\n4\t       Después de planos.py y ANTES de pedir las fotos. Lee el guion entero y decide: la tesis, un recurso propio del video y\n5\t       las escenas firma (2 a 4), cada una con la FOTO"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/"
+  },
+  {
+   "k": "res",
+   "t": "✓ el log tiene '✓' (0 s):\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\ntotal 47232\ndrwxrwxrwx+  2 runner runner     4096 Nov 10 14:54 .\ndrwxrwxrwx+ 13 runner runner     4096 Nov 10 14:53 ..\n-rw-rw-rw-+  1 sesion sesion 14945344 Nov 10 14:54 blk_000.wav\n-rw-rw-rw-+  1 sesion se"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/master.wav 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pro-free)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/master.wav 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pro-free)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/master.wav 2>/dev/null; tail -c 400 voz/voz.log"
+  },
+  {
+   "k": "res",
+   "t": "voz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pro-free)\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pr"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 90; ls -la voz/; tail -c 600 voz/voz.log"
   }
  ],
  "maquinas": 1,
@@ -202,14 +202,14 @@
    {
     "k": "voz",
     "n": "Voz",
-    "seg": 66,
+    "seg": 130,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 519,
+  "total_s": 582,
   "avatar_s": 0,
-  "sin_avatar_s": 519,
+  "sin_avatar_s": 582,
   "cerrado": false
  }
 }
