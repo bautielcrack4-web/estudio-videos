@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794329809.056513,
+ "actualizado": 1794329993.8216698,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,30 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1119,
+  "deepseek": 0.113,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6273
+  "total": 0.6284
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "165 /usr/lib/systemd/systemd-journald\n220 /usr/lib/systemd/systemd-resolved\n232 /usr/lib/systemd/systemd-udevd\n723 /usr/lib/systemd/systemd-networkd\n897 /bin/sh /usr/lib/systemd/scripts/chronyd-starter.sh -n -F 1\n{\"t\": 1794326354.8, \"e\": \"render\", \"q\": \"fin\"}\n{\"t\": 1794326695.0, \"e\": \"render\", \"q\": \"ini\"}\n{\"t\": 1794327295.1, \"e\": \"render\", \"q\": \"fin\"}"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 290; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json | tr -d '\\n '; echo; ps -o etime -p 4842 | tail -1"
-  },
-  {
-   "k": "res",
-   "t": "ls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extrema/EN_CURSO\n{\"xm01\":{\"ok\":true,\"s\":516},\"xm02\":{\"ok\":true,\"s\":694},\"xm03\":{\"ok\":true,\"s\":218},\"xm04\":{\"ok\":true,\"s\":211},\"xm05\":{\"ok\":true,\"s\":220}}\n      42:38"
-  },
-  {
-   "k": "tool",
-   "t": "sleep 295; ls -la extrema/EN_CURSO extrema/capas.json 2>&1; cat extrema/render.json | tr -d '\\n '; echo; ps -o etime -p 4842 | tail -1"
-  },
   {
    "k": "res",
    "t": "ls: cannot access 'extrema/EN_CURSO': No such file or directory\n-rw-rw-rw-+ 1 runner runner 298 Nov 10 16:28 extrema/capas.json\n{\"xm01\":{\"ok\":true,\"s\":516},\"xm02\":{\"ok\":true,\"s\":694},\"xm03\":{\"ok\":true,\"s\":218},\"xm04\":{\"ok\":true,\"s\":211},\"xm05\":{\"ok\":true,\"s\":220},\"xm06\":{\"ok\":true,\"s\":589},\"xm07\":{\"ok\":true,\"s\":172}}\n    ELAPSED"
@@ -178,6 +162,22 @@
   {
    "k": "tool",
    "t": "sleep 120; tail -3 assemble.log; ls -la final.mp4"
+  },
+  {
+   "k": "res",
+   "t": "Error opening input file ./tramos/lista.txt.\nError opening input files: No such file or directory\n): va el armado completo\n-rwxrwxrw-+ 1 runner runner 344096035 Nov 10 14:49 final.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "pgrep -af \"python.*assemble.py\" | grep -c assemble; ls -la video_noaudio.mp4 final.mp4*.tmp* 2>/dev/null; date"
+  },
+  {
+   "k": "res",
+   "t": "5\n-rwxrwxrw-+ 1 runner runner 368091911 Nov 10 16:57 video_noaudio.mp4\nTue Nov 10 16:57:50 UTC 2026"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 200; tail -2 assemble.log; ls -la final.mp4"
   }
  ],
  "maquinas": 3,
@@ -265,9 +265,9 @@
    {
     "k": "correcciones",
     "n": "Correcciones",
-    "seg": 0,
+    "seg": 3276,
     "pasadas": 6,
-    "fin": false
+    "fin": true
    },
    {
     "k": "entrega",
