@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794322965.2011125,
+ "actualizado": 1794323034.0356817,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42839400627",
  "pasos": [
@@ -51,26 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0835,
+  "deepseek": 0.0849,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5989
+  "total": 0.6003
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "armado.json\netapas.jsonl\nfinal_auto.txt\nfondo_avatar.json\nfotos_auto.txt\nguion_auto.txt\nqc_ok.json\nrender_auto.txt\nrevisor_final.json"
-  },
-  {
-   "k": "tool",
-   "t": "grep -h \"US\\$\" fotos/*.log escenas/escenas.log revisor.log 2>/dev/null | tail -8; cat gates/revisor_final.json | head -c 600"
-  },
-  {
-   "k": "res",
-   "t": "{\"t\": 1794322265.581613, \"n\": 22, \"malas\": 0, \"costo_usd\": 0.0008, \"ia\": true, \"corridas\": 1, \"final_mtime\": 1794322182.3649168}"
-  },
   {
    "k": "tool",
    "t": "grep -h \"US\" fotos/fotos_test.log fotos/fotos_02.log fotos/fotos_fix.log fotos/fotos_fix2.log fotos/fotos_escenas.log escenas/escenas.log 2>/dev/null"
@@ -178,6 +166,18 @@
   {
    "k": "end",
    "t": "Revisé lo que hay en la carpeta: el video ya estaba terminado y no hizo falta rehacer nada.\n\n**Estado:**\n- `final.mp4` — 654 s (10,9 min), 1920×1080, 30 fps, 344 MB.\n- `meta.json` y `REPORTE.md` en su lugar. El revisor ya había corrido sobre este mismo archivo (0 fallas) y no dejó nada en `gates/correcciones.txt`.\n- `validar.py --etapa final` → **OK**, reconfirmado ahora.\n\n**Una cosa que quiero qu"
+  },
+  {
+   "k": "user",
+   "t": "El video queda como está: no rehagas guion, voz, fotos, avatar ni el armado. En esta pasada se le suma la Edición extrema, que la hace el motor solo por detrás (no la programes vos ni toques extrema/). Respondé en una línea que quedó listo y terminá."
+  },
+  {
+   "k": "ai",
+   "t": "Listo: la Edición extrema la agrega el motor solo en segundo plano y el video queda como estaba."
+  },
+  {
+   "k": "end",
+   "t": "Listo: la Edición extrema la agrega el motor solo en segundo plano y el video queda como estaba."
   }
  ],
  "maquinas": 2,
