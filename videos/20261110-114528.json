@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794330698.6832569,
+ "actualizado": 1794330761.82168,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1185,
+  "deepseek": 0.1191,
   "gpt": 0.4344,
   "gpt_img": 183,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8029
+  "total": 0.8035
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "134 43 ['p010', 'p022', 'p024', 'p026', 'p028', 'p029', 'p034', 'p036', 'p040', 'p063', 'p066', 'p067', 'p072', 'p073', 'p074', 'p075', 'p077', 'p078', 'p080', 'p083', 'p088', 'p089', 'p090', 'p091', 'p092', 'p095', 'p096', 'p100', 'p102', 'p112', 'p114', 'p117', 'p122', 'p125', 'p126', 'p127', 'p128', 'p129', 'p130', 'p131', 'p132', 'p133', 's01']\np010 50140 55840 | She never ran, she never hurri"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nids = ['p010','p022','p024','p026','p028','p029','p034','p036','p040','p063','p066','p067','p072','p073','p074','p075','p077','p078','p080','p083','p088','p089','p090','p091','p092','p095','p096','p100','p102','p112','p114','p117','p122','p125','p126','p127','p128','p129','p130','p131','p132','p133']\nprint(\"faltan de _todos:\""
-  },
   {
    "k": "res",
    "t": "faltan de _todos: ['p010', 'p022', 'p024', 'p026', 'p028', 'p029', 'p034', 'p036', 'p040', 'p063', 'p074', 'p075', 'p083', 'p089', 'p090', 'p091', 'p092', 'p130', 'p131', 'p132', 'p133']\np083 cara: None"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 420; tail -1 fotos/fotos_11.log; tail -1 fotos/fotos_12.log; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "17:07:17 batch fc578711: in_progress 0/4\n17:06:45 FIN: 7/7 fotos en fotos/ (17 min)\n109"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 400; tail -1 fotos/fotos_11.log; tail -2 fotos/fotos_12.log; ls fotos/*.png | wc -l"
   }
  ],
  "maquinas": 1,
@@ -230,14 +230,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 7920,
+    "seg": 7984,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 8768,
+  "total_s": 8831,
   "avatar_s": 816,
-  "sin_avatar_s": 7952,
+  "sin_avatar_s": 8015,
   "cerrado": false
  }
 }
