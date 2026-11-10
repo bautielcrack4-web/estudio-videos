@@ -32,8 +32,14 @@ El living chico y luminoso de un departamento japonés (silla de madera, radio p
 ## Piezas de la extrema
 - Corre el motor (`extrema/`, renderizado) con 2 piezas de escenas firma. Las piezas animadas "libres" no se programaron a mano: el kit pide no pisotear las escenas firma y el motor trae las suyas.
 
+## QC final
+- Revisor: 25 cuadros cada 30 s, **0 fallas** (gates/revisor_final.json). Sin ronda de correcciones.
+- `validar.py --etapa final`: **OK**. Avisos: avatar al 15 % (el reel salió corto) y huecos de más de 15 s sin avatar.
+- Duración: 12,4 min (746,97 s) · 1920x1080 · 30 fps · H.264 CRF 20 · AAC 192k.
+- Una toma de movimiento 4/5 (p074/p075) es de la pantalla de movimiento sin la cara del canal (tope de caras agotado); no se puede repedir sin re-render completo, queda anotada.
+
 ## Gasto (estimado con los logs de las herramientas)
-- Fotos gpt-image low/Batch: ~US$0,45 (≈150 imágenes generadas, incluidas repedidas).
+- Fotos gpt-image low/Batch: ~US$0,60 (209 imágenes bajadas, incluidas repedidas y hojas).
 - Escenas firma: US$0,0077 (DeepSeek) + render local.
 - Avatar: 1 llamada fija por video (precio según panel; 126 s de reel).
 - Sonidos: gratis. Voz: incluida en el plan del canal.
