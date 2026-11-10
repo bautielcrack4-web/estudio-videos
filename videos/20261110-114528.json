@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322576.7352982,
+ "actualizado": 1794322646.1469045,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -16,14 +16,14 @@
   {
    "k": "voz",
    "n": "Voz",
-   "st": "active",
+   "st": "done",
    "info": "12:26 min"
   },
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "por palabra"
   },
   {
    "k": "avatar",
@@ -51,133 +51,133 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0135,
+  "deepseek": 0.0194,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0135
+  "total": 0.0194
  },
  "eventos": [
   {
+   "k": "res",
+   "t": "✓ captions.json: 1857 palabras en 12.4 min"
+  },
+  {
    "k": "tool",
-   "t": "On the first morning with my Tuesday class, I had twelve women in my living room. The oldest was Mrs. Sato, seventy-nine, and she brought her own cushion. She could not lift her arms past her ears that first day, because of a bad shoulder from years of carrying laundry up the stairs. In the third week, she lifted them all the way, and she laughed and almost fell back in her chair. Nobody is fast a"
+   "t": "import json\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", c.get(\"captions\", []))\nprint(W[0])\ntxt = []\nt0 = W[0][\"startMs\"]\n# print a compact line every 5 seconds with current word\nlast = -5000\nfor w in W:\n    if w[\"startMs\"] - last >= 5000:\n        last = w[\"startMs\"]\n        print(\"%6.1fs  %s\" % (w[\"startMs\"]/1000.0, w[\"text\"]))\nprint(\"END\", W[-1][\"endMs\"]/"
   },
   {
    "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/tiempos_ayuda.py (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "And a small thing you will notice: your hands go down. When the shoulders loosen, the hands hang beside the chair instead of climbing up to the ears. Stand in front of a mirror if you have one. That is the whole test — where are my hands?\n\nWhy it matters: the neck, the tops of the shoulders, the inside of the shoulder blades."
+   "t": "python tiempos_ayuda.py 2>&1 | head -40"
   },
   {
    "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+   "t": "{'text': ' My', 'startMs': 0, 'endMs': 140, 'timestampMs': 0, 'confidence': 1.0}\n   0.0s   My\n   5.5s   rain,\n  11.0s   And\n  16.3s   a\n  22.6s   Her\n  27.8s   a\n  32.9s   She\n  38.7s   she\n  44.0s   her\n  49.1s   bag.\n  54.4s   physical\n  59.7s   on\n  65.0s   jump\n  70.1s   I\n  75.3s   a\n  80.5s   So,\n  85.7s   five\n  90.9s   you\n  95.9s   mat,\n 101.4s   sit\n 107.2s   like\n 112.6s   It\n 117.8s   "
   },
   {
    "k": "tool",
-   "t": "A kitchen chair. Five minutes. Before your tea gets cold.\n\nIf you forget everything I said today, keep two words: slow, and together. Slow is strong, because a slow movement lets the body answer you. Together is kind, because you do not have to do all five on the first morning. One is enough. One movement, ten times, in your nightgown, before the tea. Then tomorrow, two. The chair is not going any"
+   "t": "import json, sys\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", c.get(\"captions\", []))\nqs = sys.argv[1:]\nfor q in qs:\n    ql = q.lower().split()\n    for i in range(len(W) - len(ql) + 1):\n        ok = True\n        for k, qw in enumerate(ql):\n            wt = W[i+k][\"text\"].strip().lower().strip(\".,!?\\\"'()\")\n            if wt != qw:\n                ok = False\n "
   },
   {
    "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/tiempos_busca.py (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "wc -c guion.txt; python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -30"
+   "t": "python tiempos_busca.py \"so. this morning\" \"five movements. number one\" \"let's begin\" \"movement number two\" \"movement number three\" \"movement number four\" \"movement number five\" \"so. that is the routine\" \"now, what to notice\" \"one more thing\" \"let me show\" \"so. tell me below\" \"fine, stop\" \"in the\" \"i want\" \"two weeks\""
   },
   {
    "k": "res",
-   "t": "10032 guion.txt\nVALIDAR /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98 · etapa guion\n  ✓ guion: 9968 caracteres, 1865 palabras (hacen falta 9000-11500 para 10 min: bien)\nRESULTADO: OK"
-  },
-  {
-   "k": "ai",
-   "t": "Guion OK (9.968 caracteres). Lanzo la voz en segundo plano y en paralelo planifico el gancho y las imágenes."
+   "t": "   166.4s -    166.9s   let's begin\n   238.3s -    240.0s   movement number two\n   328.8s -    330.4s   movement number three\n   645.5s -    646.2s   one more thing\n   657.4s -    658.4s   let me show\n    31.4s -     31.7s   in the\n    42.9s -     43.2s   in the\n   273.3s -    273.5s   in the\n   383.2s -    383.5s   in the\n   575.2s -    575.4s   in the\n   597.2s -    597.8s   in the\n    82.5s -  "
   },
   {
    "k": "tool",
-   "t": "mkdir -p gates qc sfx segments clips extrema escenas && nohup python /opt/estudio/repo/motor/tools/voz.py . > voz/voz.log 2>&1 & \necho \"voz pid $!\""
+   "t": "python tiempos_busca.py \"so\" \"movement\" \"number four\" \"number five\" \"until she was ninety-eight\" \"her name was fumiko\" \"thirty-two\" \"this morning\" \"begin\" \"that is the routine\" \"what to notice\" \"before i finish\" \"show you\" \"tell me below\" \"if something hurts\" \"write it down\" \"mrs. sato\" \"like button\" \"next week\" \"thank you\" \"so. tell\""
   },
   {
    "k": "res",
-   "t": "voz pid 4490"
+   "t": "    80.5s -     81.3s   so\n   540.6s -    541.2s   so\n   652.8s -    653.6s   so\n   723.3s -    723.8s   so\n   238.3s -    238.6s   movement\n   279.2s -    279.6s   movement\n   328.8s -    329.1s   movement\n   405.6s -    406.0s   movement\n   477.3s -    477.6s   movement\n   688.8s -    689.3s   movement\n   698.8s -    699.2s   movement\n   717.3s -    717.7s   movement\n   149.1s -    150.2s   numb"
   },
   {
    "k": "tool",
-   "t": "[\n  {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":6000},\n  {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":85000,\"endMs\":90000},\n  {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":150000,\"endMs\":155000},\n  {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":160000,\"endMs\":166000},\n  {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":6"
+   "t": "python tiempos_busca.py \"it\" \"her\" \"one?\" \"one foot\" \"one.\" \"ten\" \"again tomorrow\" \"nightgown\" \"so.\" \"the\" \"two,\" \"before your tea\" \"legs feel\" \"days.\" \"eleven\" \"a kitchen chair is perfect\" \"count out loud with me\""
   },
   {
    "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/avatar_ranges.json (file state is current in your context — no need to Read it back)"
+   "t": "   112.6s -    112.7s   it\n   114.7s -    114.9s   it\n   123.5s -    123.9s   it\n   124.7s -    125.3s   it\n   127.0s -    127.4s   it\n   128.6s -    128.8s   it\n   129.9s -    130.0s   it\n   136.7s -    137.1s   it\n   192.0s -    192.4s   it\n   198.5s -    198.7s   it\n   202.0s -    202.4s   it\n   273.1s -    273.3s   it\n   280.1s -    280.2s   it\n   296.8s -    297.0s   it\n   339.5s -    339.6s "
   },
   {
    "k": "tool",
-   "t": "cat voz/voz.log 2>/dev/null | tail -20; ls -la voz/"
+   "t": "python tiempos_busca.py \"one, arms up\" \"two, shoulder\" \"three, seated\" \"four, ankle\" \"five. breathing\" \"with a red circle\" \"that is the whole class\" \"thank you for being here\" \"next week\" \"remember that feeling\" \"your little measuring cup\" \"open your arms\" \"stand up from your chair once\" \"my grandmother walked every day until ninety-eight. not\" \"if you forget everything\""
   },
   {
    "k": "res",
-   "t": "total 16\ndrwxrwxrwx+  2 runner runner 4096 Nov 10 14:53 .\ndrwxrwxrwx+ 13 runner runner 4096 Nov 10 14:53 ..\n-rw-rw-rw-+  1 sesion sesion    0 Nov 10 14:53 voz.log"
+   "t": "   615.6s -    616.7s   with a red circle\n   672.2s -    673.3s   with a red circle\n   674.1s -    676.3s   that is the whole class\n   744.3s -    746.2s   thank you for being here\n   734.0s -    735.1s   next week\n   133.5s -    134.7s   remember that feeling\n   138.0s -    139.4s   your little measuring cup\n   116.5s -    118.6s   stand up from your chair once\n   680.4s -    682.0s   if you forg"
   },
   {
    "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -10"
+   "t": "python tiempos_busca.py \"let\" \"arms\" \"about\" \"back.\" \"neck,\" \"mrs.\" \"best\" \"my\" \"again\" \"over\" \"behind\" \"hands\" \"here\" \"always\" \"up.\" \"down.\" \"the hips\" \"again tomorrow\" \"begin with\" \"number one: arms\" \"let's look\" | head -60"
   },
   {
    "k": "res",
-   "t": "✓ el log tiene '✓' (75 s):\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)"
+   "t": "   455.9s -    456.4s   let\n   657.4s -    658.0s   let\n   142.7s -    143.1s   arms\n   168.5s -    168.8s   arms\n   171.7s -    172.1s   arms\n   174.5s -    174.8s   arms\n   183.9s -    184.3s   arms\n   193.3s -    193.7s   arms\n   487.8s -    488.0s   arms\n   494.8s -    495.1s   arms\n   521.6s -    522.0s   arms\n   523.4s -    523.7s   arms\n   590.6s -    590.9s   arms\n   661.6s -    661.9s   a"
   },
   {
    "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -10; ls -la voz/"
+   "t": "[\n  {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":6000},\n  {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":80600,\"endMs\":86000},\n  {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":97200,\"endMs\":102200},\n  {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":134000,\"endMs\":139000},\n  {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":16"
   },
   {
    "k": "res",
-   "t": "✓ el log tiene '✓' (0 s):\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\ntotal 44732\ndrwxrwxrwx+  2 runner runner     4096 Nov 10 14:54 .\ndrwxrwxrwx+ 13 runner runner     4096 Nov 10 14:53 ..\n-rw-rw-rw-+  1 sesion sesion 14945344 Nov 10 14:54 blk_000.wav\n-rw-rw-rw-+  1 sesion sesion 15414996 Nov 10 14:54 blk_001.w"
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/avatar_ranges.json has been updated successfully. (file state is current in your context — no need to Read it back)"
   },
   {
    "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/repo/motor/tools/escenas.py\", \"limit\": 80}"
+   "t": "python3 -c \"\nimport json\nR=json.load(open('avatar_ranges.json'))\ntot=sum(r['endMs']-r['startMs'] for r in R)/1000\nprint('total avatar s', tot)\nmx=0\nfor a,b in zip(R,R[1:]):\n    g=b['startMs']-a['endMs']; mx=max(mx,g)\nprint('max gap s', mx/1000)\nprint('windows', len(R))\n\""
   },
   {
    "k": "res",
-   "t": "1\t# -*- coding: utf-8 -*-\n2\t\"\"\"ESCENAS FIRMA — la edición se piensa AL PRINCIPIO, con el video entero, y las fotos de esas escenas se ENCARGAN para ellas.\n3\t  1) python <APP>/tools/escenas.py <carpeta> ficha [--n 3]\n4\t       Después de planos.py y ANTES de pedir las fotos. Lee el guion entero y decide: la tesis, un recurso propio del video y\n5\t       las escenas firma (2 a 4), cada una con la FOTO"
+   "t": "total avatar s 145.1\nmax gap s 74.6\nwindows 27"
   },
   {
    "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/"
+   "t": "python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -15"
   },
   {
    "k": "res",
-   "t": "✓ el log tiene '✓' (0 s):\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\ntotal 47232\ndrwxrwxrwx+  2 runner runner     4096 Nov 10 14:54 .\ndrwxrwxrwx+ 13 runner runner     4096 Nov 10 14:53 ..\n-rw-rw-rw-+  1 sesion sesion 14945344 Nov 10 14:54 blk_000.wav\n-rw-rw-rw-+  1 sesion se"
+   "t": "⛔ la foto 'p006' se usa dos veces en avatar_ranges.json o choca con un plano: cada ventana partida lleva su foto propia (ej. s01, s02…)"
   },
   {
    "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/master.wav 2>/dev/null"
+   "t": "sed -i 's/\"foto\":\"p006\"/\"foto\":\"s01\"/' avatar_ranges.json && python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -8 && python3 -c \"\nimport json\np=json.load(open('planos.json'))\nprint(len(p))\nfor x in p[:12]: print(x.get('id'), x.get('startMs'), x.get('endMs'), x.get('text','')[:90])\n\""
   },
   {
    "k": "res",
-   "t": "Exit code 2\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pro-free)"
+   "t": "✓ planos.json: 130 planos de b-roll (10.2 min de b-roll, 12.8 por minuto) + 1 fotos de pantalla partida · 27 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n⚠ 3 huecos de menos de 2.8 s entre ventanas: si podés, dejá ≥ 3 s (una foto tan corta casi no se ve).\n131\np001 6000 11000 \np002 11000 15325 \np003 15325 19987 \np004 19987 2"
   },
   {
    "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/master.wav 2>/dev/null"
+   "t": "python /opt/estudio/repo/motor/tools/escenas.py . ficha --n 4 2>&1 | tail -20"
   },
   {
    "k": "res",
-   "t": "Exit code 2\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pro-free)"
+   "t": "✓ escenas/ficha.json: 4 escenas firma · tesis: Five simple chair movements, done slowly and together, bring balance and ease into daily life, just as Yoko's grandmother did until ninety-eight.\n  es01 · planos p027+p028 · 9.1s · c) The photo is cut along real straight gaps into 2-7 panels; each panel arrives on its word.\n  es02 · planos p076+p077 · 10.1s · d) One continuous camera that travels and "
   },
   {
    "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/esperar.py --log voz/voz.log --existe voz/master.wav 2>&1 | tail -5; ls -la voz/master.wav 2>/dev/null; tail -c 400 voz/voz.log"
+   "t": "cat escenas/pedidos_escenas.json; echo ---; python3 -c \"\nimport json\nf=json.load(open('escenas/ficha.json'))\nprint(json.dumps(f, ensure_ascii=False)[:3500])\n\""
   },
   {
    "k": "res",
-   "t": "voz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pro-free)\nvoz: clon creado en Fish, sin filtros (no se vuelve a clonar)\nvoz: 5 bloques · 10027 caracteres\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 1: 183 s (s2.1-pro-free)\n  ✓ bloque 2: 188 s (s2.1-pr"
+   "t": "[\n {\n  \"id\": \"p027\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"overhead amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The second after Yoko has written the five movements on the whiteboard; she is about to demonstrate them, and the board is clear with all five numbers visible.\",\n  "
   },
   {
    "k": "tool",
-   "t": "sleep 90; ls -la voz/; tail -c 600 voz/voz.log"
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . escenas/pedidos_escenas.json > fotos/fotos_escenas.log 2>&1 &\necho \"pid $!\"; sleep 8; cat fotos/fotos_escenas.log"
   }
  ],
  "maquinas": 1,
@@ -209,14 +209,14 @@
    {
     "k": "tiempos",
     "n": "Tiempos",
-    "seg": 18,
+    "seg": 37,
     "pasadas": 1,
-    "fin": false
+    "fin": true
    }
   ],
-  "total_s": 646,
+  "total_s": 715,
   "avatar_s": 0,
-  "sin_avatar_s": 646,
+  "sin_avatar_s": 715,
   "cerrado": false
  }
 }
