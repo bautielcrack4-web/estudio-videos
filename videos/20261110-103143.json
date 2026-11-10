@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794326052.1642818,
+ "actualizado": 1794326122.2347717,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0957,
+  "deepseek": 0.0963,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6111
+  "total": 0.6117
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "-rwxrwxrw-+ 1 runner runner  38713774 Nov 10 13:55 extrema/es01.mp4\n-rw-rwxrw-+ 1 runner runner 532818269 Nov 10 15:09 extrema/xm01.mov\n-rw-rwxrw-+ 1 runner runner  18662619 Nov 10 15:21 extrema/xm02.mp4\n-rw-rwxrw-+ 1 runner runner 316145700 Nov 10 15:24 extrema/xm03.mov\n[\n {\n  \"mp4\": \"extrema/es01.mp4\",\n  \"startMs\": 99342,\n  \"endMs\": 108571,\n  \"texto\": \"says 9D. underneath, in my own hand, 9E. Wi"
-  },
-  {
-   "k": "tool",
-   "t": "head -c 1500 extrema/render.json; echo; head -c 400 extrema/libre.json; echo; head -c 300 extrema/momentos.json"
-  },
   {
    "k": "res",
    "t": "{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 329\n },\n \"xm02\": {\n  \"ok\": true,\n  \"s\": 712\n }\n}\n[\n {\n  \"id\": \"xm01\",\n  \"tipo\": \"overlay\",\n  \"startMs\": 6820,\n  \"endMs\": 22900,\n  \"frames\": 482,\n  \"idea\": \"As Sal describes the four shoe boxes with handwritten cards, four photo cards of shoes pop up one by one beside his face in the free right side of the frame, each rotating slightly as if placed on a shelf, with"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 290; cat render3.log; ls -lt segments/*.mp4 | head -2; cat extrema/render.json"
+  },
+  {
+   "k": "res",
+   "t": "extrema: esperando las piezas (máx. 10 min)\n-rw-rw-rw-+ 1 sesion sesion  1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion  1233572 Nov 10 15:48 segments/0133.mp4\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 516\n }\n}"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 295; cat render3.log; cat extrema/render.json; ls -lt segments/*.mp4 final.mp4 | head -3"
   }
  ],
  "maquinas": 3,
