@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794338651.8911119,
+ "actualizado": 1794338716.3505027,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,46 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1555,
+  "deepseek": 0.1581,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8983
+  "total": 0.9009
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "0000.mp4\n0001.mp4\n0002.mp4\n0003.mp4\n0004.mp4\n0005.mp4\n0006.mp4\n0007.mp4\n0008.mp4\n0009.mp4\n0010.mp4\n0011.mp4\n<class 'dict'> 2\n[\"voice_dur\", \"segments\"]"
-  },
-  {
-   "k": "tool",
-   "t": "for i in 0000 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011; do ffmpeg -y -loglevel error -ss 1 -i segments/$i.mp4 -frames:v 1 -vf scale=480:-1 qc/r_$i.jpg; done; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_render.jpg qc/r_0000.jpg qc/r_0001.jpg qc/r_0002.jpg qc/r_0003.jpg qc/r_0004.jpg qc/r_0005.jpg qc/r_0006.jpg qc/r_0007.jpg qc/r_0008.jpg qc/r_0009.jpg qc/r_0010.jpg qc/r_0011."
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_render.jpg (12 cuadros, 4x3)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_render.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "# Control de render (prueba de 10 planos)\n\nMiré qc/hoja_render.jpg (12 cuadros del render de prueba, 1 s dentro de cada segmento).\n- 0000: avatar (A0) hablando desde el segundo 0, la primera cosa que se ve. Bien.\n- 0001: p001 (Yoko a mitad de levantarse). Fotograma de entrada del zoom, algo suave: el movimiento llega en el zoom lento.\n- 0002: radio, 0003: silla con radio, 0004: fotos en sobre, 000"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/gates/render_auto.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/validar.py . --etapa render --min 10 2>&1 | tail -12"
-  },
   {
    "k": "res",
    "t": "  ✓ render: movimiento al azar (plan_motion de tools/render.py)\n  ✓ render: escala 3840x2160 antes de zoompan (anti-temblequeo)\n  ✓ render: segments/xf.json (fundidos avatar 0,6 s / foto 0,3 s)\n  ✓ plan.json: 0 huecos sin imagen\n  ✓ fotos repetidas: ninguna (cada plano con su foto)\n  ✓ apertura: lo primero que se ve es el AVATAR hablando (clip real) desde el segundo 0 (nunca una foto antes)\n  ✓ ap"
@@ -178,6 +146,38 @@
   {
    "k": "tool",
    "t": "sleep 200; tail -5 assemble.log; ls -la final.mp4 2>/dev/null; ps -p 48245,48248,67006 -o pid,etime,args= 2>/dev/null | cut -c1-80"
+  },
+  {
+   "k": "res",
+   "t": "    PID     ELAPSED \n  48245       31:44 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/nod\n  48248       31:44 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.1"
+  },
+  {
+   "k": "tool",
+   "t": "ps -eo pid,etime,args | grep -E \"[r]ender.py|[a]ssemble.py\" | cut -c1-100; ls -la segments/*.mp4 | grep -v src | wc -l; du -sh segments"
+  },
+  {
+   "k": "res",
+   "t": "   3872    04:32:10 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITH\n   3874    04:32:10 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissio\n  48245       31:48 sudo -n -H -u sesion -- env -i PATH=/opt/hostedtoolcache/node/20.20.2/x64/bin:/o\n  48248       31:48 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/pyth"
+  },
+  {
+   "k": "tool",
+   "t": "ps -o pid,pcpu,etime,args= -p 48248,58109,67070 | cut -c1-160"
+  },
+  {
+   "k": "res",
+   "t": "    PID %CPU     ELAPSED \n  48248  0.0       31:52 bash -c umask 002; nice -n 0 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/fondo_avatar.py /opt/e\n  58109  0.0       23:56 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/my-grandmothe\n  67070  0.0       07:07 python /opt/estudio/repo/mo"
+  },
+  {
+   "k": "tool",
+   "t": "kill 58109 2>/dev/null; sleep 3; pgrep -af \"assemble.py\" | cut -c1-60; tail -3 assemble.log"
+  },
+  {
+   "k": "res",
+   "t": "3872 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudi\n3874 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --d\n67070 python /opt/estudio/repo/motor/tools/assemble.py .\n68340 /bin/bash -c source /opt/estudio/datos/brain/shell-sna\nsegmentos: 152\ntramos: 6 de 25 por codificar · 4 a la vez"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 300; tail -4 assemble.log; pgrep -f \"fondo_avatar.py\" >/dev/null && echo \"fondo_avatar running\" || echo \"fondo_avatar done\""
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 1837,
+    "seg": 1901,
     "pasadas": 1,
     "fin": false
    },
@@ -251,14 +251,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 1425,
-    "pasadas": 1,
+    "seg": 1539,
+    "pasadas": 2,
     "fin": false
    }
   ],
-  "total_s": 16721,
+  "total_s": 16785,
   "avatar_s": 816,
-  "sin_avatar_s": 15905,
+  "sin_avatar_s": 15970,
   "cerrado": false
  }
 }
