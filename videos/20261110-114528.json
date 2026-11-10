@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322964.6567943,
+ "actualizado": 1794323028.686216,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -35,7 +35,7 @@
    "k": "fotos",
    "n": "Fotos",
    "st": "active",
-   "info": "9 fotos"
+   "info": "11 fotos"
   },
   {
    "k": "armado",
@@ -51,66 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0482,
-  "gpt": 0.0254,
-  "gpt_img": 9,
+  "deepseek": 0.0514,
+  "gpt": 0.0367,
+  "gpt_img": 14,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0736
+  "total": 0.0881
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 252, in <module>\n    json.dump([F[k] for k in lote1], open(\"pedidos/lote01.json\", \"w\"), ensure_ascii=False, indent=1)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 2"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport re\ns = open(\"armar_pedidos.py\").read()\nold = 'lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p026\", \"p043\", \"p069\", \"p090\"]'\nnew = '''lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p019\", \"p049\", \"p069\", \"p097\"]'''\nassert old in s\ns = s.replace(old, new)\nopen(\"armar_pedidos.py\", \"w\").write(s)\nEOF\npython armar_pedidos.py"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 252, in <module>\n    json.dump([F[k] for k in lote1], open(\"pedidos/lote01.json\", \"w\"), ensure_ascii=False, indent=1)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 2"
-  },
-  {
-   "k": "tool",
-   "t": "cat fotos/fotos_escenas.log | tail -5; ls fotos/*.png 2>/dev/null"
-  },
-  {
-   "k": "res",
-   "t": "Exit code 2\n14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n14:59:07 batch adf97efe: in_progress 0/4"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\ns = open(\"armar_pedidos.py\").read()\ns = s.replace('lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p019\", \"p049\", \"p069\", \"p097\"]',\n              'lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p019\", \"p011\", \"p009\", \"p020\"]')\nopen(\"armar_pedidos.py\", \"w\").write(s)\nEOF\npython armar_pedidos.py && nohup python /opt/estudio/repo/motor/tools/fotos.py "
-  },
-  {
-   "k": "res",
-   "t": "lote1 10 definidas 23\n14:59:36 ya hay otro fotos.py en este video (pid 5611): espero que termine"
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\n# Segundo bloque de pedidos (p022..p130). Se ejecuta importando las definiciones del original.\nimport runpy, json, sys\nG = runpy.run_path(\"armar_pedidos.py\")\nF, RM, AV, TR, AVOID, AVOIDT = G[\"F\"], G[\"RM\"], G[\"AV\"], G[\"TR\"], G[\"AVOID\"], G[\"AVOIDT\"]\nf, yoko, raw = G[\"f\"], G[\"yoko\"], G[\"raw\"]\n\n# ═══════════════ BLOQUE 2 — el índice de los cinco ═══════════════\nyoko(\"p022\",\n   "
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\ns=open(\"pedido_parte2.py\").read()\ns=s.replace('yoko(\"p027s\",  # unused placeholder id guard (not ordered)\\n     \"x\", \"x\", \"x\", [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"],\\n     \"x\", \"x\", \"x\")\\ndel F[\"p027s\"]\\nyoko(\"p028b0\", \"x\", \"x\", \"x\", [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"], \"x\", \"x\", \"x\"); del F[\"p028b0\"]\\n','')\nopen(\"pedido_parte2.py\",\"w\").write(s)\nEOF\ngrep -n \"p027s\\|p028b0\" pedido_parte2.py; "
-  },
-  {
-   "k": "res",
-   "t": "lote1 10 definidas 23\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 179, in <module>\n    f(\"p044\", False,\nTypeError: f() missing 2 required positional arguments: 'color' and 'det'\n_batches.json\n_fotos.lock\nfotos_01.log\nfotos_escenas.log\np001_a.json\np001_a.png\np001_b.json\np001_b.png\np001_c.json\np004.json\np009.js"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\ns=open(\"pedido_parte2.py\").read()\nold='''  \"Six, seven, eight, nine, ten. Good.\",\n  \"A hand closing a little book of numbers after the last count, on the floor beside the chair.\",\n  \"The hand places the book on the floor, the page showing the number ten.\",\n  [\"small notebook with written numbers\", \"the hand\", \"chair leg\", \"a mug\", \"a slipper\", \"floor grain\"],'''\nnew='''  \"Six, se"
-  },
-  {
-   "k": "res",
-   "t": "lote1 10 definidas 23\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", line 179, in <module>\n    f(\"p044\", False,\nTypeError: f() missing 2 required positional arguments: 'color' and 'det'"
-  },
   {
    "k": "tool",
    "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedido_parte2.py\", \"offset\": 170, \"limit\": 80}"
@@ -178,6 +126,58 @@
   {
    "k": "tool",
    "t": "sleep 60; tail -3 fotos/fotos_01.log; ls fotos/*.png | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "15:01:41 ✓ batch 08bd8103: 5 fotos bajadas, 0 fallidas (US$0.016)\n15:02:11 batch d5b613ce: in_progress 0/5\n15:03:11 batch d5b613ce: completed 5/5\n9"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 15; tail -2 fotos/fotos_01.log; ls fotos/*.png | wc -l; python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_fotos.jpg fotos/p001_a.png fotos/p001_b.png fotos/p001_c.png fotos/p004.png fotos/p009.png fotos/p011.png fotos/p012.png fotos/p016.png fotos/p019.png fotos/p020.png fotos/p027.png fotos/p076.png 2>&1 | tail -3"
+  },
+  {
+   "k": "res",
+   "t": "15:03:13 ✓ batch d5b613ce: 5 fotos bajadas, 0 fallidas (US$0.011)\n15:03:13 FIN: 10/10 fotos en fotos/ (3 min)\n14\nhoja: qc/hoja_fotos.jpg (12 cuadros, 4x3)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_fotos.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_escenas.jpg fotos/p027.png fotos/p076.png fotos/p106.png fotos/p118.png 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "hoja: qc/hoja_escenas.jpg (4 cuadros, 4x1)"
+  },
+  {
+   "k": "tool",
+   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_escenas.jpg\"}"
+  },
+  {
+   "k": "res",
+   "t": "[imagen]"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\n  \"id\": \"p027\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"overhead amateur phone photo of paper on a floor, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The index of the video, photographed from above and ready to be cut line by line: the five chair movements written in her own "
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedidos/fix_escenas.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "rm -f fotos/p027.png fotos/p027.json fotos/p118.png fotos/p118.json fotos/p001_a.png fotos/p001_a.json fotos/p001_c.png fotos/p001_c.json && cp fotos/p001_b.png fotos/p001.png && cp fotos/p001_b.json fotos/p001.json && ls fotos/ | head -30"
+  },
+  {
+   "k": "res",
+   "t": "_batches.json\nfotos_01.log\nfotos_escenas.log\np001.json\np001.png\np001_b.json\np001_b.png\np004.json\np004.png\np009.json\np009.png\np011.json\np011.png\np012.json\np012.png\np016.json\np016.png\np019.json\np019.png\np020.json\np020.png\np076.json\np076.png\np106.json\np106.png"
   }
  ],
  "maquinas": 1,
@@ -216,14 +216,14 @@
    {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 186,
+    "seg": 250,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1034,
+  "total_s": 1098,
   "avatar_s": 0,
-  "sin_avatar_s": 1034,
+  "sin_avatar_s": 1098,
   "cerrado": false
  }
 }
