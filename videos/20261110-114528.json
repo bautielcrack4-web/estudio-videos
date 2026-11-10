@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794338196.077857,
+ "actualizado": 1794338262.1501136,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "done",
-   "info": "154 segmentos"
+   "info": "152 segmentos"
   },
   {
    "k": "qc",
@@ -51,38 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1517,
+  "deepseek": 0.1536,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.8945
+  "total": 0.8964
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/sfx_pedidos.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/sonidos.py . sfx_pedidos.json --tomas 3 > sonidos.log 2>&1; tail -15 sonidos.log; python3 -c \"\nimport json;d=json.load(open('sfx/_sfx_fuentes.json'));print(json.dumps(d,ensure_ascii=False)[:2000])\""
-  },
-  {
-   "k": "res",
-   "t": "ok madera: madera.mp3 (1 s, Wooden floorboard creak) · madera_2.mp3 (2 s, Creaky wooden scrap) · madera_3.mp3 (2 s, Creaky door open)\nok radio: radio.mp3 (1 s, Radio static fx) · radio_2.mp3 (3 s, Creepy radio frequency) · radio_3.mp3 (1 s, Metal button radio ping)\nok pajaros: pajaros.mp3 (2 s, Forest birds singing) · pajaros_2.mp3 (6 s, Birds chirping in the jungle) · pajaros_3.mp3 (3 s, Little b"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\"file\": \"radio.mp3\", \"t\": 17140, \"gain\": 0.045, \"fade\": 0.5},\n {\"file\": \"madera_2.mp3\", \"t\": 14680, \"gain\": 0.04, \"fade\": 0.4},\n {\"file\": \"pajaros_3.mp3\", \"t\": 34200, \"gain\": 0.035, \"fade\": 0.8},\n {\"file\": \"pasos.mp3\", \"t\": 38637, \"gain\": 0.03, \"fade\": 0.5},\n {\"file\": \"papel_2.mp3\", \"t\": 19987, \"gain\": 0.045, \"fade\": 0.3},\n {\"file\": \"cronometro_2.mp3\", \"t\": 101200, \"gain\": 0.03, \"fade\": 0.4},\n"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/cues.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/render.py . --limit 10 > render_test.log 2>&1 &\necho started; sleep 60; tail -5 render_test.log"
-  },
   {
    "k": "res",
    "t": "started"
@@ -178,6 +154,30 @@
   {
    "k": "tool",
    "t": "sleep 420; tail -4 render.log; ls segments/*.mp4 2>/dev/null | grep -v src | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "extrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 152\n152"
+  },
+  {
+   "k": "tool",
+   "t": "tail -6 render.log; ls -la render.json 2>/dev/null; ls segments/ | tail -3"
+  },
+  {
+   "k": "res",
+   "t": "extrema: no llegaron, va sin ellas tras 600 s\nextrema: pisa al avatar, va b-roll -> extrema/es03.mp4\nextrema: pisa al avatar, va b-roll -> extrema/es04.mp4\nextrema: 2 piezas en la línea\nclips=152 frames=22409 (746.97s)\nhechos 152\n_malos.json\n_qc.json\nxf.json"
+  },
+  {
+   "k": "tool",
+   "t": "pgrep -f \"tools/render.py\"; tail -c 600 segments/_qc.json"
+  },
+  {
+   "k": "res",
+   "t": "3872\n3874\n48245\n48248\n67006\n.9179129058629761, \\\"cx\\\": 0.6759660562609621, \\\"cy\\\": 0.4773779249566259, \\\"t\\\": \\\"in\\\"}||1213436:1794332365\": [], \"./fotos/p131.png|159|0|0.000|{\\\"A\\\": 0.08035005576133337, \\\"Z\\\": 1.1065687391799555, \\\"a\\\": 0.28328327740415055, \\\"b\\\": 0.9687415243439726, \\\"cx\\\": 0.4037024441427695, \\\"cy\\\": 0.47232113334558673, \\\"t\\\": \\\"out\\\"}||1195091:1794332365\": [], \"./fotos/p133.pn"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/assemble.py . > assemble.log 2>&1 &\necho started; sleep 90; tail -5 assemble.log"
   }
  ],
  "maquinas": 1,
@@ -237,28 +237,28 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 1381,
+    "seg": 1447,
     "pasadas": 1,
     "fin": false
    },
    {
     "k": "render",
     "n": "Render",
-    "seg": 1582,
+    "seg": 1602,
     "pasadas": 2,
-    "fin": false
+    "fin": true
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 969,
+    "seg": 1035,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 16265,
+  "total_s": 16331,
   "avatar_s": 816,
-  "sin_avatar_s": 15450,
+  "sin_avatar_s": 15516,
   "cerrado": false
  }
 }
