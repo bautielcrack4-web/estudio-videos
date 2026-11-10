@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794328391.7600095,
+ "actualizado": 1794328455.4344788,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42846474494",
  "pasos": [
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.1053,
+  "deepseek": 0.1059,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.6207
+  "total": 0.6213
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "extrema: esperando las piezas (máx. 10 min)\nextrema: no llegaron, va sin ellas tras 600 s\nextrema: 1 piezas en la línea\nclips=135 frames=19621 (654.03s)\nhechos 135\n{\n \"xm01\": {\n  \"ok\": true,\n  \"s\": 516\n }\n}-rw-rw-rw-+ 1 sesion sesion   1281013 Nov 10 15:48 segments/0134.mp4\n-rw-rw-rw-+ 1 sesion sesion   1233572 Nov 10 15:48 segments/0133.mp4\n-rw-rw-rw-+ 1 sesion sesion   1348413 Nov 10 15:48 segme"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"import json;print(json.dumps(json.load(open('extrema/manifest.json')).__len__()))\"; pgrep -af \"python.*(assemble|extrema).py\" | cut -c1-90; ls -la extrema/EN_CURSO extrema/capas.json 2>&1"
-  },
   {
    "k": "res",
    "t": "Exit code 2\n1\n3701 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudio/datos LANG=C.UTF-8 GITHUB_SE\n3703 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --dangerously-skip-permissions --\n4842 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python /opt/estudio/repo/motor/tools/extr\nls: cannot access 'extrema/capas.json': No such file or directory\n-rw-rw-rw-+ 1 runner runner 4 Nov 10 15:43 extr"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/render.py . > render5.log 2>&1 &\nsleep 150; cat render5.log; ls -lt segments/*.mp4 | head -2"
+  },
+  {
+   "k": "res",
+   "t": "extrema: 1 piezas en la línea\nclips=134 frames=19621 (654.03s)\nreusados de otra posición: 125\nhechos 134\n-rw-rw-rw-+ 1 sesion sesion 12026931 Nov 10 16:31 segments/0005.mp4\n-rw-rw-rw-+ 1 sesion sesion  1347076 Nov 10 16:31 segments/0019.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "ARMADO_EXTREMA=1 nohup python /opt/estudio/repo/motor/tools/assemble.py . > assemble.log 2>&1 &\nsleep 90; cat assemble.log | tail -10"
   }
  ],
  "maquinas": 3,
@@ -265,9 +265,9 @@
    {
     "k": "correcciones",
     "n": "Correcciones",
-    "seg": 1808,
-    "pasadas": 5,
-    "fin": true
+    "seg": 0,
+    "pasadas": 6,
+    "fin": false
    },
    {
     "k": "entrega",
