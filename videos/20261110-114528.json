@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794322709.8023534,
+ "actualizado": 1794322773.8494287,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,86 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0219,
+  "deepseek": 0.032,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0219
+  "total": 0.032
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "python tiempos_busca.py \"one, arms up\" \"two, shoulder\" \"three, seated\" \"four, ankle\" \"five. breathing\" \"with a red circle\" \"that is the whole class\" \"thank you for being here\" \"next week\" \"remember that feeling\" \"your little measuring cup\" \"open your arms\" \"stand up from your chair once\" \"my grandmother walked every day until ninety-eight. not\" \"if you forget everything\""
-  },
-  {
-   "k": "res",
-   "t": "   615.6s -    616.7s   with a red circle\n   672.2s -    673.3s   with a red circle\n   674.1s -    676.3s   that is the whole class\n   744.3s -    746.2s   thank you for being here\n   734.0s -    735.1s   next week\n   133.5s -    134.7s   remember that feeling\n   138.0s -    139.4s   your little measuring cup\n   116.5s -    118.6s   stand up from your chair once\n   680.4s -    682.0s   if you forg"
-  },
-  {
-   "k": "tool",
-   "t": "python tiempos_busca.py \"let\" \"arms\" \"about\" \"back.\" \"neck,\" \"mrs.\" \"best\" \"my\" \"again\" \"over\" \"behind\" \"hands\" \"here\" \"always\" \"up.\" \"down.\" \"the hips\" \"again tomorrow\" \"begin with\" \"number one: arms\" \"let's look\" | head -60"
-  },
-  {
-   "k": "res",
-   "t": "   455.9s -    456.4s   let\n   657.4s -    658.0s   let\n   142.7s -    143.1s   arms\n   168.5s -    168.8s   arms\n   171.7s -    172.1s   arms\n   174.5s -    174.8s   arms\n   183.9s -    184.3s   arms\n   193.3s -    193.7s   arms\n   487.8s -    488.0s   arms\n   494.8s -    495.1s   arms\n   521.6s -    522.0s   arms\n   523.4s -    523.7s   arms\n   590.6s -    590.9s   arms\n   661.6s -    661.9s   a"
-  },
-  {
-   "k": "tool",
-   "t": "[\n  {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":6000},\n  {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":80600,\"endMs\":86000},\n  {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":97200,\"endMs\":102200},\n  {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":134000,\"endMs\":139000},\n  {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":16"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/avatar_ranges.json has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python3 -c \"\nimport json\nR=json.load(open('avatar_ranges.json'))\ntot=sum(r['endMs']-r['startMs'] for r in R)/1000\nprint('total avatar s', tot)\nmx=0\nfor a,b in zip(R,R[1:]):\n    g=b['startMs']-a['endMs']; mx=max(mx,g)\nprint('max gap s', mx/1000)\nprint('windows', len(R))\n\""
-  },
-  {
-   "k": "res",
-   "t": "total avatar s 145.1\nmax gap s 74.6\nwindows 27"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -15"
-  },
-  {
-   "k": "res",
-   "t": "⛔ la foto 'p006' se usa dos veces en avatar_ranges.json o choca con un plano: cada ventana partida lleva su foto propia (ej. s01, s02…)"
-  },
-  {
-   "k": "tool",
-   "t": "sed -i 's/\"foto\":\"p006\"/\"foto\":\"s01\"/' avatar_ranges.json && python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -8 && python3 -c \"\nimport json\np=json.load(open('planos.json'))\nprint(len(p))\nfor x in p[:12]: print(x.get('id'), x.get('startMs'), x.get('endMs'), x.get('text','')[:90])\n\""
-  },
-  {
-   "k": "res",
-   "t": "✓ planos.json: 130 planos de b-roll (10.2 min de b-roll, 12.8 por minuto) + 1 fotos de pantalla partida · 27 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n⚠ 3 huecos de menos de 2.8 s entre ventanas: si podés, dejá ≥ 3 s (una foto tan corta casi no se ve).\n131\np001 6000 11000 \np002 11000 15325 \np003 15325 19987 \np004 19987 2"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/escenas.py . ficha --n 4 2>&1 | tail -20"
-  },
-  {
-   "k": "res",
-   "t": "✓ escenas/ficha.json: 4 escenas firma · tesis: Five simple chair movements, done slowly and together, bring balance and ease into daily life, just as Yoko's grandmother did until ninety-eight.\n  es01 · planos p027+p028 · 9.1s · c) The photo is cut along real straight gaps into 2-7 panels; each panel arrives on its word.\n  es02 · planos p076+p077 · 10.1s · d) One continuous camera that travels and "
-  },
-  {
-   "k": "tool",
-   "t": "cat escenas/pedidos_escenas.json; echo ---; python3 -c \"\nimport json\nf=json.load(open('escenas/ficha.json'))\nprint(json.dumps(f, ensure_ascii=False)[:3500])\n\""
-  },
-  {
-   "k": "res",
-   "t": "[\n {\n  \"id\": \"p027\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"overhead amateur phone photo, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The second after Yoko has written the five movements on the whiteboard; she is about to demonstrate them, and the board is clear with all five numbers visible.\",\n  "
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . escenas/pedidos_escenas.json > fotos/fotos_escenas.log 2>&1 &\necho \"pid $!\"; sleep 8; cat fotos/fotos_escenas.log"
-  },
-  {
-   "k": "res",
-   "t": "pid 5478\n⛔ COMPUERTA: no mando nada. Reescribí los prompts:\n  · p076: palabras prohibidas ['out of focus'] (dan look de IA/stock)"
-  },
   {
    "k": "tool",
    "t": "python3 - <<'EOF'\nimport json\np = \"escenas/pedidos_escenas.json\"\nd = json.load(open(p))\nfor x in d:\n    pr = x[\"prompt\"]\n    pr[\"camera\"] = pr[\"camera\"].replace(\" is slightly out of focus to allow\", \" stays visible so the push-in follows the floor grain and\").replace(\"slightly out of focus\", \"in focus\")\n    pr[\"camera\"] = pr[\"camera\"].replace(\", and the background\", \", and the background\")\njson.du"
@@ -178,6 +106,78 @@
   {
    "k": "res",
    "t": "14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n_batches.json\n_fotos.lock\nfotos_escenas.log\np027.json\np076.json\np106.json\np118.json"
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\nimport json\n\nT = (\"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n     \"slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\")\nTA = (\"overhead amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n      \"slightly crooked framin"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "cat fotos/fotos_escenas.log | tail -4; ls fotos/*.png 2>/dev/null | wc -l"
+  },
+  {
+   "k": "res",
+   "t": "14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n0"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport re, json, subprocess\n# quick timings for the new shots\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", [])\ndef find(q, start=0):\n    ql=q.lower().split()\n    for i in range(len(W)-len(ql)+1):\n        if W[i][\"startMs\"] < start*1000: continue\n        if all(W[i+k][\"text\"].strip().lower().strip(\".,!?\\\"'()\")==qk for k,qk in enumerate(ql))"
+  },
+  {
+   "k": "res",
+   "t": "first one (167.32, 168.12)\narms up (142.74, 143.58)\non my whiteboard (169.2, 170.6)\none, arms None\nten times (172.42, 173.54)\nboth arms rise (174.24, 175.28)\nwhy does arms up matter (192.418, 194.498)\nmy grandmother did this one first (209.818, 212.778)\nhands on her knees (214.498, 215.758)\nshe used to count (218.158, 218.938)\nichi (220.358, 221.338)\nshe never once missed (222.798, 224.038)\ncount "
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nc = json.load(open(\"captions.json\"))\nW = c if isinstance(c, list) else c.get(\"words\", [])\ntxt = \" \".join(w[\"text\"].strip() for w in W)\nprint(len(txt))\nprint(txt[:600])\nprint(\"...\")\nprint(txt[1900:2600])\nEOF"
+  },
+  {
+   "k": "res",
+   "t": "9719\nMy grandmother walked every day until she was 98, every single day, rain, snow and those grey mornings when nobody wants to leave the house. And every one of those mornings started the same way, a wooden kitchen chair, a small silver radio and a five-minute radio Taiso warm-up we did together. Her name was Fumiko. She lived in a small town north of Sendai, in a wooden house with a narrow gard"
+  },
+  {
+   "k": "tool",
+   "t": "# -*- coding: utf-8 -*-\nimport json, os\n\nT = (\"amateur phone photo, mild JPEG compression, real skin texture with pores, uneven ordinary indoor light, \"\n     \"slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\")\nTR = T + \", wrinkles, age spots, flyaway grey hairs\"\nAV = (\"a 64-year-old Japanese woman with short grey-and-black hair swept to the side, warm brow"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "cat fotos/fotos_escenas.log | tail -3; ls fotos/"
+  },
+  {
+   "k": "res",
+   "t": "14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n_batches.json\n_fotos.lock\nfotos_escenas.log\np027.json\np076.json\np106.json\np118.json"
+  },
+  {
+   "k": "tool",
+   "t": "python armar_pedidos.py && nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote01.json > fotos/fotos_01.log 2>&1 &\nsleep 20; cat fotos/fotos_01.log"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 252, in <module>\n    json.dump([F[k] for k in lote1], open(\"pedidos/lote01.json\", \"w\"), ensure_ascii=False, indent=1)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 2"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport re\ns = open(\"armar_pedidos.py\").read()\nold = 'lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p026\", \"p043\", \"p069\", \"p090\"]'\nnew = '''lote1 = [\"p001_a\", \"p001_b\", \"p001_c\", \"p004\", \"p012\", \"p016\", \"p019\", \"p049\", \"p069\", \"p097\"]'''\nassert old in s\ns = s.replace(old, new)\nopen(\"armar_pedidos.py\", \"w\").write(s)\nEOF\npython armar_pedidos.py"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\nTraceback (most recent call last):\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 252, in <module>\n    json.dump([F[k] for k in lote1], open(\"pedidos/lote01.json\", \"w\"), ensure_ascii=False, indent=1)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/armar_pedidos.py\", line 2"
+  },
+  {
+   "k": "tool",
+   "t": "cat fotos/fotos_escenas.log | tail -5; ls fotos/*.png 2>/dev/null"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 2\n14:57:36 → batch batch_6af330e0461c819097acc758adf97efe · 4 fotos · sin referencia · low 1088x608\n14:57:36 batch adf97efe: validating 0/0\n14:59:07 batch adf97efe: in_progress 0/4"
   }
  ],
  "maquinas": 1,
@@ -214,9 +214,9 @@
     "fin": true
    }
   ],
-  "total_s": 779,
+  "total_s": 843,
   "avatar_s": 0,
-  "sin_avatar_s": 779,
+  "sin_avatar_s": 843,
   "cerrado": false
  }
 }
