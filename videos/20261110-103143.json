@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794317977.668296,
+ "actualizado": 1794318040.7821,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -16,14 +16,14 @@
   {
    "k": "voz",
    "n": "Voz",
-   "st": "active",
-   "info": "11:00 min"
+   "st": "done",
+   "info": "10:54 min"
   },
   {
    "k": "tiempos",
    "n": "Tiempos",
-   "st": "pending",
-   "info": ""
+   "st": "active",
+   "info": "por palabra"
   },
   {
    "k": "avatar",
@@ -51,78 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0177,
+  "deepseek": 0.0214,
   "gpt": 0.0,
   "gpt_img": 0,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0177
+  "total": 0.0214
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "total 4788\ndrwxrwxrwx+ 2 runner runner    4096 Nov 10 13:33 .\ndrwxrwxrwx+ 6 runner runner    4096 Nov 10 13:33 ..\n-rw-rw-rw-+ 1 runner runner 2274664 Nov 10 13:33 avatar.png\n-rw-rw-rw-+ 1 runner runner    2063 Nov 10 13:33 canal.json\n-rw-rw-rw-+ 1 runner runner   45317 Nov 10 13:33 cara.png\n-rw-rw-rw-+ 1 runner runner     381 Nov 10 13:33 voz.txt\n-rw-rw-rw-+ 1 runner runner 2549058 Nov 10 13:33 vo"
-  },
-  {
-   "k": "tool",
-   "t": "cat mundo.json | python3 -c \"import json,sys; d=json.load(sys.stdin); print(json.dumps(d,indent=1,ensure_ascii=False))\" | head -200"
-  },
-  {
-   "k": "res",
-   "t": "{\n \"1_la_habitacion\": \"The back of the store: a wooden fitting stool worn smooth in the center, a metal Brannock device on the floor, shelves of leather shoes in boxes with handwritten labels, a tall mirror with a crack in one corner, a counter with a cash register and a stack of index cards, a wall calendar from the local pharmacy, a brass shoehorn hanging by the door, the smell of leather and po"
-  },
-  {
-   "k": "tool",
-   "t": "cat /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/refs/canal.json; echo ---; cat /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/refs/voz.txt; echo ---; python /opt/estudio/repo/motor/tools/validar.py --help 2>&1 | head -30"
-  },
-  {
-   "k": "res",
-   "t": "{\n \"nombre\": \"Sal's Fitting Bench\",\n \"idioma\": \"en\",\n \"presentador\": \"A 70-year-old Italian-American man, mostly bald with short grey hair on the sides, bushy grey eyebrows, a broad nose, a warm closed-mouth smile, olive skin with age spots, thin rectangular reading glasses worn low on his nose, wearing a white long-sleeved shirt with the collar open under a navy cable-knit sweater vest, a metal s"
-  },
-  {
-   "k": "tool",
-   "t": "Forty-two years on that stool. I want you to picture it for a second. The same wooden stool, worn smooth in the middle where four generations of Pizzuti backsides have sat. Behind me, four shoe boxes on the shelf. Each one has a card in front of it, in my handwriting, because I never trusted a label I didn't write myself. By the end of this video, those four cards are the only four kinds of shoe I"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -20"
-  },
-  {
-   "k": "res",
-   "t": "14397 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✗ guion: 14374 caracteres, 2922 palabras (hacen falta 9000-11500 para 10 min: recortalo)\nRESULTADO: FALLA (1)"
-  },
-  {
-   "k": "tool",
-   "t": "Forty-two years on that stool. Picture it. The same wooden stool, worn smooth in the middle. Behind me, four shoe boxes on the shelf, each with a card in front in my handwriting, because I never trusted a label I didn't write myself. By the end, those four cards are the only four kinds of shoe I'd tell you to buy after sixty-five. Not four brands. I don't do brands. Four kinds of shoe, and what to"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -5"
-  },
-  {
-   "k": "res",
-   "t": "15211 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✗ guion: 15187 caracteres, 3078 palabras (hacen falta 9000-11500 para 10 min: recortalo)\nRESULTADO: FALLA (1)"
-  },
-  {
-   "k": "tool",
-   "t": "Forty-two years on that stool. Picture it. The same wooden stool, worn smooth in the middle. Behind me, four shoe boxes on the shelf, each with a card in front in my handwriting, because I never trusted a label I didn't write myself. By the end, those four cards are the only four kinds of shoe I'd tell you to buy after sixty-five. Not four brands. I don't do brands. Four kinds of shoe, and what to"
-  },
-  {
-   "k": "res",
-   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/guion.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "wc -c guion.txt && python /opt/estudio/repo/motor/tools/validar.py . --etapa guion --min 10 2>&1 | tail -5"
-  },
   {
    "k": "res",
    "t": "14158 guion.txt\nVALIDAR /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are · etapa guion\n  ✗ guion: 14135 caracteres, 2861 palabras (hacen falta 9000-11500 para 10 min: recortalo)\nRESULTADO: FALLA (1)"
@@ -178,6 +114,70 @@
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/voz.py . 2>&1 | tail -5"
+  },
+  {
+   "k": "res",
+   "t": "  ✓ bloque 1: 151 s (s2.1-pro-free)\n  ✓ bloque 4: ya estaba\n  ✓ bloque 0: 169 s (s2.1-pro-free)\n  ✓ bloque 3: 162 s (s2.1-pro-free)\n✓ voz/master.wav 10.9 min"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/tiempos.py . en 2>&1 | tail -5 && python3 -c \"import json;d=json.load(open('captions.json'));print(len(d),d[-1])\""
+  },
+  {
+   "k": "res",
+   "t": "✓ captions.json: 1982 palabras en 10.9 min\n1982 {'text': ' you.', 'startMs': 654188, 'endMs': 654228, 'timestampMs': 654188, 'confidence': 1.0}"
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":7000},\n {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":70500,\"endMs\":76500},\n {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":135000,\"endMs\":141000},\n {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":188000,\"endMs\":193000},\n {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":244000"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/avatar_ranges.json (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nc=json.load(open('captions.json'))\ntargets=[7000,70000,76400,135000,140500,188000,192500,244000,248500,292000,296500,343000,347500,392000,396500,439000,443500,486000,490500,534000,538500,600000,620000,644000]\ni=0\nout=[]\nfor t in targets:\n    while i<len(c)-1 and c[i]['endMs']<t: i+=1\n    # pick word ending after t\n    j=i\n    while j<len(c)-1 and c[j]['endMs']>=t: j+="
+  },
+  {
+   "k": "res",
+   "t": "(7000, 654188, 654228, ' with me on that stool. Thank you.')\n(70000, 654188, 654228, ' with me on that stool. Thank you.')\n(76400, 654188, 654228, ' with me on that stool. Thank you.')\n(135000, 654188, 654228, ' with me on that stool. Thank you.')\n(140500, 654188, 654228, ' with me on that stool. Thank you.')\n(188000, 654188, 654228, ' with me on that stool. Thank you.')\n(192500, 654188, 654228, '"
+  },
+  {
+   "k": "tool",
+   "t": "import json, sys\nc=json.load(open('captions.json'))\ns=sys.argv[1].lower()\n# build full text with word index\nfull=''\nspans=[]\nfor i,w in enumerate(c):\n    t=w['text']\n    spans.append((len(full),len(full)+len(t),i))\n    full+=t\npos=full.lower().find(s)\nwhile pos!=-1:\n    for a,b,i in spans:\n        if a<=pos<b:\n            st=i; break\n    print(f\"...{full[max(0,pos-60):pos+len(s)+60]}...  [{c[st]['"
+  },
+  {
+   "k": "res",
+   "t": "File created successfully at: /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/ctx.py (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "for s in \"my father opened\" \"forty-two years I've been\" \"here's the part nobody\" \"now the four\" \"number one\" \"number two\" \"number three\" \"number four\" \"now the three traps\" \"first trap\" \"second trap\" \"third trap\" \"do something today\" \"part I owe you\" \"walking shoe\" \"dress shoe\" \"house shoe\" \"winter shoe\" \"take those four jobs\" \"stayed with me this far\" \"hit that like\" \"here's my question\" \"picture"
+  },
+  {
+   "k": "res",
+   "t": "== my father opened\n...hoe and what to look at in each one so you don't get taken. My father opened that store in 1951. One window, one bench. One brass bell o...  [30660-32400]\n== forty-two years I've been\n== here's the part nobody\n... first time. That look. That's why I still unlock the door. Here's the part nobody tells you. Your feet change after 65. The arch can flatten ...  [79700-81420]\n== "
+  },
+  {
+   "k": "tool",
+   "t": "[\n {\"file\":\"avatar/A0.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":0,\"endMs\":7000},\n {\"file\":\"avatar/A1.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":79500,\"endMs\":85500},\n {\"file\":\"avatar/A2.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":117800,\"endMs\":122800},\n {\"file\":\"avatar/A3.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":128900,\"endMs\":133900},\n {\"file\":\"avatar/A4.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":169500"
+  },
+  {
+   "k": "res",
+   "t": "The file /opt/estudio/datos/videos/i-ve-fitted-shoes-for-42-years-these-are/avatar_ranges.json has been updated successfully. (file state is current in your context — no need to Read it back)"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -10 && python3 -c \"\nimport json;d=json.load(open('planos.json'));print(len(d));[print(p['id'],p['startMs'],p['endMs'],p['texto'][:90]) for p in d]\""
+  },
+  {
+   "k": "res",
+   "t": "✓ planos.json: 116 planos de b-roll (9.2 min de b-roll, 12.6 por minuto) · 20 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n⚠ 1 huecos de menos de 2.8 s entre ventanas: si podés, dejá ≥ 3 s (una foto tan corta casi no se ve).\n116\np001 7000 11833 me, four shoe boxes on the shelf, each with a card in front in my handwriting,\np"
+  },
+  {
+   "k": "tool",
+   "t": "python /opt/estudio/repo/motor/tools/escenas.py . ficha 2>&1 | tail -20 && python3 -c \"\nimport json;d=json.load(open('escenas/ficha.json'));print(json.dumps(d,indent=1,ensure_ascii=False)[:3000])\""
   }
  ],
  "maquinas": 1,
@@ -209,14 +209,14 @@
    {
     "k": "tiempos",
     "n": "Tiempos",
-    "seg": 108,
+    "seg": 148,
     "pasadas": 1,
-    "fin": false
+    "fin": true
    }
   ],
-  "total_s": 440,
+  "total_s": 503,
   "avatar_s": 0,
-  "sin_avatar_s": 440,
+  "sin_avatar_s": 503,
   "cerrado": false
  }
 }
