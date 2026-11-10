@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794340216.3987522,
+ "actualizado": 1794340280.6718695,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -41,28 +41,24 @@
    "k": "armado",
    "n": "Armado",
    "st": "done",
-   "info": "152 segmentos"
+   "info": "final.mp4 · 12.4 min"
   },
   {
    "k": "qc",
    "n": "QC",
-   "st": "active",
+   "st": "done",
    "info": "REPORTE.md"
   }
  ],
  "costo": {
-  "deepseek": 0.1634,
+  "deepseek": 0.1641,
   "gpt": 0.4928,
   "gpt_img": 209,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.9062
+  "total": 0.9069
  },
  "eventos": [
-  {
-   "k": "tool",
-   "t": "sleep 120; tail -5 assemble.log; ls -la final.mp4 2>/dev/null"
-  },
   {
    "k": "res",
    "t": "Exit code 2"
@@ -178,6 +174,10 @@
   {
    "k": "res",
    "t": "    PID \n  79040 /opt/hostedtoolcache/Python/3.11.18/x64/bin/python -B /opt/estudio/repo/motor/tools/assemble.py /opt/estudio/datos/videos/my-grandmother-walke\n  80256 ffmpeg -v error -y -i ./xf_tmp/c000.mp4 -i ./xf_tmp/c001.mp4 -i ./xf_tmp/c002.mp4 -i ./xf_tmp/c003.mp4 -i ./xf_tmp/c004.mp4 -i ./xf_tmp/c005.m"
+  },
+  {
+   "k": "tool",
+   "t": "sleep 360; ps -p 79040 >/dev/null && echo \"assemble still running\" || echo \"assemble ended\"; ls -la final.mp4 2>/dev/null; tail -3 assemble.log"
   }
  ],
  "maquinas": 1,
@@ -237,7 +237,7 @@
    {
     "k": "extrema",
     "n": "Edición extrema",
-    "seg": 3402,
+    "seg": 3466,
     "pasadas": 1,
     "fin": false
    },
@@ -251,14 +251,14 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 4550,
+    "seg": 4738,
     "pasadas": 3,
     "fin": false
    }
   ],
-  "total_s": 18285,
+  "total_s": 18350,
   "avatar_s": 816,
-  "sin_avatar_s": 17470,
+  "sin_avatar_s": 17534,
   "cerrado": false
  }
 }
