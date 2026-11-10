@@ -3,7 +3,7 @@
  "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
  "canal": "yokos-morning-legs",
  "estado": "trabajando",
- "actualizado": 1794323159.59026,
+ "actualizado": 1794323223.6144662,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42837328577",
  "pasos": [
@@ -51,98 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0566,
+  "deepseek": 0.0616,
   "gpt": 0.0416,
   "gpt_img": 16,
   "whisper": 0.0,
   "avatar": 0.0,
-  "total": 0.0982
+  "total": 0.1032
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_escenas.jpg fotos/p027.png fotos/p076.png fotos/p106.png fotos/p118.png 2>&1 | tail -2"
-  },
-  {
-   "k": "res",
-   "t": "hoja: qc/hoja_escenas.jpg (4 cuadros, 4x1)"
-  },
-  {
-   "k": "tool",
-   "t": "{\"file_path\": \"/opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/qc/hoja_escenas.jpg\"}"
-  },
-  {
-   "k": "res",
-   "t": "[imagen]"
-  },
-  {
-   "k": "tool",
-   "t": "[\n {\n  \"id\": \"p027\",\n  \"cara\": false,\n  \"prompt\": {\n   \"type\": \"overhead amateur phone photo of paper on a floor, mild JPEG compression, uneven ordinary indoor light, slightly crooked framing, everyday clutter, nothing blurred out, everything in focus, 16:9\",\n   \"moment\": \"The index of the video, photographed from above and ready to be cut line by line: the five chair movements written in her own "
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedidos/fix_escenas.json (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "rm -f fotos/p027.png fotos/p027.json fotos/p118.png fotos/p118.json fotos/p001_a.png fotos/p001_a.json fotos/p001_c.png fotos/p001_c.json && cp fotos/p001_b.png fotos/p001.png && cp fotos/p001_b.json fotos/p001.json && ls fotos/ | head -30"
-  },
-  {
-   "k": "res",
-   "t": "_batches.json\nfotos_01.log\nfotos_escenas.log\np001.json\np001.png\np001_b.json\np001_b.png\np004.json\np004.png\np009.json\np009.png\np011.json\np011.png\np012.json\np012.png\np016.json\np016.png\np019.json\np019.png\np020.json\np020.png\np076.json\np076.png\np106.json\np106.png"
-  },
-  {
-   "k": "tool",
-   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/fix_escenas.json > fotos/fotos_fix.log 2>&1 &\necho started; sleep 5; tail -2 fotos/fotos_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "started\n15:03:49 → batch batch_6af3325573508190b2218d87fab51268 · 2 fotos · sin referencia · low 1088x608\n15:03:49 batch fab51268: validating 0/0"
-  },
-  {
-   "k": "tool",
-   "t": "# -*- coding: utf-8 -*-\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nfor k in (\"p001_a\", \"p001_b\", \"p001_c\"):\n    F.pop(k, None)\nhave = {\"p027\", \"p076\", \"p106\", \"p118\", \"p001\"}\nids = []\nfor x in json.load(open(\"planos.json\")):\n    i = x[\"id\"]\n    if i in F and i not in have and not i.startswith(\"s0\"):\n        ids.append(i)\nprint(len(ids), ids)\nlotes = [ids[:40], ids[40:80]]\nfor n, L in e"
-  },
-  {
-   "k": "res",
-   "t": "File created successfully at: /opt/estudio/datos/videos/my-grandmother-walked-every-day-until-98/pedidos/lote02.py (file state is current in your context — no need to Read it back)"
-  },
-  {
-   "k": "tool",
-   "t": "python pedidos/lote02.py 2>&1 | tail -5"
-  },
-  {
-   "k": "res",
-   "t": "122 ['p002', 'p003', 'p004', 'p005', 'p006', 'p007', 'p008', 'p009', 'p010', 'p011', 'p012', 'p013', 'p014', 'p015', 'p016', 'p017', 'p018', 'p019', 'p020', 'p021', 'p022', 'p023', 'p024', 'p025', 'p026', 'p029', 'p030', 'p031', 'p032', 'p033', 'p034', 'p035', 'p036', 'p037', 'p038', 'p039', 'p040', 'p041', 'p042', 'p043', 'p044', 'p045', 'p046', 'p047', 'p048', 'p049', 'p050', 'p051', 'p052', 'p0"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nA = json.load(open(\"pedidos/lote02.json\"))\nB = json.load(open(\"pedidos/lote03.json\"))\nFA = json.load(open(\"pedidos/_todos.json\"))\nids = [x[\"id\"] for x in json.load(open(\"planos.json\"))]\nrest = [i for i in ids if i in FA and i not in {x[\"id\"] for x in A+B} and not i.startswith(\"s0\")]\nprint(len(rest), rest)\njson.dump(rest, open(\"pedidos/rest_ids.json\",\"w\"))\nEOF"
-  },
-  {
-   "k": "res",
-   "t": "42 ['p086', 'p087', 'p088', 'p089', 'p090', 'p091', 'p092', 'p093', 'p094', 'p095', 'p096', 'p097', 'p098', 'p099', 'p100', 'p101', 'p102', 'p103', 'p104', 'p105', 'p107', 'p108', 'p109', 'p110', 'p111', 'p112', 'p113', 'p114', 'p115', 'p116', 'p117', 'p119', 'p120', 'p121', 'p122', 'p123', 'p124', 'p125', 'p126', 'p127', 'p128', 'p129']"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json\nF = json.load(open(\"pedidos/_todos.json\"))\nrest = json.load(open(\"pedidos/rest_ids.json\"))\njson.dump([F[i] for i in rest], open(\"pedidos/lote04.json\",\"w\"), ensure_ascii=False, indent=1)\nprint(\"lote04\", len(rest))\nEOF\nsleep 45; tail -2 fotos/fotos_fix.log"
-  },
-  {
-   "k": "res",
-   "t": "lote04 42\n15:03:49 batch fab51268: validating 0/0\n15:04:19 batch fab51268: in_progress 0/2"
-  },
-  {
-   "k": "tool",
-   "t": "while pgrep -f \"fotos.py \\. pedidos/fix_escenas.json\" > /dev/null; do python /opt/estudio/repo/motor/tools/esperar.py --log fotos/fotos_fix.log --existe fotos/p027.png 2>/dev/null | tail -1; sleep 20; done; tail -3 fotos/fotos_fix.log; ls fotos/p027.png fotos/p118.png 2>&1"
-  },
-  {
-   "k": "res",
-   "t": "15:04:50 FIN: 2/2 fotos en fotos/ (1 min)\n15:04:49 batch fab51268: completed 2/2\n15:04:50 ✓ batch fab51268: 2 fotos bajadas, 0 fallidas (US$0.005)\n15:04:50 FIN: 2/2 fotos en fotos/ (1 min)\nfotos/p027.png\nfotos/p118.png"
-  },
   {
    "k": "tool",
    "t": "python /opt/estudio/repo/motor/tools/hoja.py qc/hoja_esc2.jpg fotos/p027.png fotos/p118.png 2>&1|tail -1"
@@ -178,6 +94,90 @@
   {
    "k": "tool",
    "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote02.json > fotos/fotos_02.log 2>&1 &\nsleep 15; tail -3 fotos/fotos_02.log; echo ---; tail -5 escenas/escenas.log"
+  },
+  {
+   "k": "res",
+   "t": "15:05:47 → batch batch_6af332cba3d08190b1020a5418e74a0a · 33 fotos · sin referencia · low 1088x608\n15:05:47 batch 18e74a0a: validating 0/0\n---\n15:05:50 escenas: es01 lista · paneles · cámara 1 viajes"
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/fotos.py . pedidos/lote03.json > fotos/fotos_03.log 2>&1 &\nsleep 10; tail -2 fotos/fotos_03.log; tail -4 escenas/escenas.log"
+  },
+  {
+   "k": "res",
+   "t": "15:06:04 ya hay otro fotos.py en este video (pid 8192): espero que termine\n15:05:50 escenas: es01 lista · paneles · cámara 1 viajes\n15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nR = json.load(open(\"avatar_ranges.json\"))\nkeep = []\nfor r in R:\n    s, e = r[\"startMs\"], r[\"endMs\"]\n    ok = True\n    for a in R:\n        if a is r: continue\n        if a[\"startMs\"] < e and a[\"endMs\"] > s:  # overlap\n            if a[\"startMs\"] <= s and a[\"endMs\"] >= e:\n                ok = False  # fully contained in another\n    if ok: keep.append(r)\nkeep.sort(key=la"
+  },
+  {
+   "k": "res",
+   "t": "windows 27 total 145.1\n✓ planos.json: 130 planos de b-roll (10.2 min de b-roll, 12.8 por minuto) + 1 fotos de pantalla partida · 27 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n⚠ 3 huecos de menos de 2.8 s entre ventanas: si podés, dejá ≥ 3 s (una foto tan corta casi no se ve)."
+  },
+  {
+   "k": "tool",
+   "t": "nohup python /opt/estudio/repo/motor/tools/avatar_it.py . > avatar/it.log 2>&1 &\necho \"avatar pid $!\"; sleep 10; tail -5 avatar/it.log"
+  },
+  {
+   "k": "res",
+   "t": "avatar pid 8421\n⛔ ventanas superpuestas: avatar/A16.mp4 y avatar/A17.mp4"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nR = json.load(open(\"avatar_ranges.json\"))\nkeep = [r for r in R if r[\"file\"] not in (\"avatar/A17.mp4\",\"avatar/A19.mp4\",\"avatar/A21.mp4\")]\n# also remove A25 (72950 inside A24?) check\nR2 = sorted(keep, key=lambda r: r[\"startMs\"])\nfor a,b in zip(R2, R2[1:]):\n    if b[\"startMs\"] < a[\"endMs\"]: print(\"OVERLAP\", a[\"file\"], b[\"file\"], a[\"endMs\"], b[\"startMs\"])\nprint(len(R2), s"
+  },
+  {
+   "k": "res",
+   "t": "OVERLAP avatar/A24.mp4 avatar/A25.mp4 728800 727900\n24 127.9\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite.\n⚠ 3 huecos de menos de 2.8 s entre ventanas: si podés, dejá ≥ 3 s (una foto tan corta casi no se ve)."
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nR = json.load(open(\"avatar_ranges.json\"))\nR = [r for r in R if r[\"file\"] != \"avatar/A25.mp4\"]\nR.sort(key=lambda r: r[\"startMs\"])\nfor a,b in zip(R, R[1:]):\n    if b[\"startMs\"] < a[\"endMs\"]: print(\"OVERLAP\", a[\"file\"], b[\"file\"])\nfor r in R: print(r[\"file\"], r[\"startMs\"], r[\"endMs\"], r.get(\"foto\",\"\"))\nprint(len(R), sum(r[\"endMs\"]-r[\"startMs\"] for r in R)/1000)\njson.dump"
+  },
+  {
+   "k": "res",
+   "t": "avatar/A0.mp4 0 6000 \navatar/A1.mp4 80600 86000 \navatar/A2.mp4 97200 102200 \navatar/A3.mp4 134000 139000 \navatar/A4.mp4 166800 172000 s01\navatar/A5.mp4 213000 218000 \navatar/A6.mp4 236700 241800 \navatar/A7.mp4 276600 281600 \navatar/A8.mp4 343700 349000 \navatar/A9.mp4 368600 373600 \navatar/A10.mp4 441600 446600 \navatar/A11.mp4 477500 482500 \navatar/A12.mp4 540000 545000 \navatar/A13.mp4 548000 55150"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nR = json.load(open(\"avatar_ranges.json\"))\nshift = 0\nfor r in R:\n    if r[\"startMs\"] >= 441600:\n        shift += 2000\n    r[\"startMs\"] += shift; r[\"endMs\"] += shift\nR.sort(key=lambda r: r[\"startMs\"])\nfor a,b in zip(R, R[1:]):\n    if b[\"startMs\"] < a[\"endMs\"]: print(\"OVERLAP\", a[\"file\"], b[\"file\"])\nprint(R[-1])\njson.dump(R, open(\"avatar_ranges.json\",\"w\"), indent=1)\nprin"
+  },
+  {
+   "k": "res",
+   "t": "{'file': 'avatar/A26.mp4', 'frame': 'refs/avatar.png', 'startMs': 762300, 'endMs': 772400}\n121.9\n✓ planos.json: 138 planos de b-roll (10.8 min de b-roll, 12.7 por minuto) + 1 fotos de pantalla partida · 23 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna foto se repite."
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nR = json.load(open(\"avatar_ranges.json\"))\nfor r in R:\n    if r[\"startMs\"] >= 700000:\n        r[\"startMs\"] += 4000; r[\"endMs\"] += 4000\njson.dump(R, open(\"avatar_ranges.json\",\"w\"), indent=1)\nprint(R[-2:])\nEOF\npython /opt/estudio/repo/motor/tools/planos.py . 2>&1 | tail -2"
+  },
+  {
+   "k": "res",
+   "t": "[{'file': 'avatar/A24.mp4', 'frame': 'refs/avatar.png', 'startMs': 751800, 'endMs': 756800}, {'file': 'avatar/A26.mp4', 'frame': 'refs/avatar.png', 'startMs': 766300, 'endMs': 776400}]\n✓ planos.json: 139 planos de b-roll (10.9 min de b-roll, 12.7 por minuto) + 1 fotos de pantalla partida · 23 ventanas de avatar.\n  Ahora: UN prompt por plano (id = el del plano, p001…) con tools/fotos.py. Ninguna fo"
+  },
+  {
+   "k": "tool",
+   "t": "python3 - <<'EOF'\nimport json\nR = json.load(open(\"avatar_ranges.json\"))\nR = [r for r in R if r[\"file\"] != \"avatar/A26.mp4\"]\nR.append({\"file\":\"avatar/A26.mp4\",\"frame\":\"refs/avatar.png\",\"startMs\":771000,\"endMs\":778500})\nR.sort(key=lambda r: r[\"startMs\"])\njson.dump(R, open(\"avatar_ranges.json\",\"w\"), indent=1)\nEOF\nnohup python /opt/estudio/repo/motor/tools/avatar_it.py . > avatar/it.log 2>&1 &\necho \"a"
+  },
+  {
+   "k": "res",
+   "t": "avatar pid 8576\n15:06:44 InfiniteTalk: 23 ventanas · reel 126.2 s · 1 llamada\n15:06:51 RUN dbc63fbb-6ef3-4999-92d3-f500514cc0d1-u2"
+  },
+  {
+   "k": "tool",
+   "t": "tail -6 escenas/escenas.log; echo ---; tail -2 fotos/fotos_02.log; tail -2 fotos/fotos_03.log"
+  },
+  {
+   "k": "res",
+   "t": "15:05:50 escenas: es01 lista · paneles · cámara 1 viajes\n15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes\n15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\n---\n15:05:47 batch 18e74a0a: validating 0/0\n15:06:18 batch 18e74a0a: in_progress 0/33\n15:06:04 ya hay otro fotos.py en este video (pid 8192): espero que termine\n15:06:34 ya"
+  },
+  {
+   "k": "tool",
+   "t": "cat escenas/escenas.log | grep -v \"^$\" | tail -12; ls extrema/ 2>/dev/null; python3 -c \"\nimport json;m=json.load(open('extrema/manifest.json'));print(json.dumps(m)[:800])\n\" 2>&1"
+  },
+  {
+   "k": "res",
+   "t": "Exit code 1\n15:05:50 escenas: es01 lista · paneles · cámara 1 viajes\n15:06:07 escenas: es02 lista · 0 capas · cámara 4 viajes\n15:06:23 escenas: es03 lista · 1 capas · cámara 3 viajes\n15:06:44 escenas: es04 lista · 1 capas · cámara 4 viajes\nEN_CURSO\nTraceback (most recent call last):\n  File \"<string>\", line 2, in <module>\nFileNotFoundError: [Errno 2] No such file or directory: 'extrema/manifest.jso"
   }
  ],
  "maquinas": 1,
@@ -214,16 +214,23 @@
     "fin": true
    },
    {
+    "k": "avatar_cola",
+    "n": "Avatar en cola",
+    "seg": 13,
+    "pasadas": 1,
+    "fin": false
+   },
+   {
     "k": "fotos",
     "n": "Fotos y stock",
-    "seg": 381,
+    "seg": 445,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 1229,
-  "avatar_s": 0,
-  "sin_avatar_s": 1229,
+  "total_s": 1293,
+  "avatar_s": 13,
+  "sin_avatar_s": 1280,
   "cerrado": false
  }
 }
