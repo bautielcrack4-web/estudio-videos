@@ -3,7 +3,7 @@
  "titulo": "I've Fitted Shoes for 42 Years — These Are the Only 4 I'd Buy After 65",
  "canal": "sals-fitting-bench",
  "estado": "trabajando",
- "actualizado": 1794321570.230206,
+ "actualizado": 1794321634.878758,
  "creado": 1794317612.3583608,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42825418226",
  "pasos": [
@@ -41,7 +41,7 @@
    "k": "armado",
    "n": "Armado",
    "st": "active",
-   "info": "138 segmentos"
+   "info": "135 segmentos"
   },
   {
    "k": "qc",
@@ -51,22 +51,14 @@
   }
  ],
  "costo": {
-  "deepseek": 0.0689,
+  "deepseek": 0.0693,
   "gpt": 0.2654,
   "gpt_img": 121,
   "whisper": 0.0,
   "avatar": 0.25,
-  "total": 0.5843
+  "total": 0.5847
  },
  "eventos": [
-  {
-   "k": "res",
-   "t": "ok campanilla: campanilla.mp3 (2 s, Cartoon door melodic bell) · campanilla_2.mp3 (2 s, Modern classic door bell sound) · campanilla_3.mp3 (3 s, Discrete door bell announcement)\nok carton: carton.mp3 (1 s, Modern click box check) · carton_2.mp3 (1 s, Metal tools box browsing) · carton_3.mp3 (1 s, Box to bag punches)\nok papel: papel.mp3 (1 s, Paper slide) · papel_2.mp3 (1 s, Paper quick movement) ·"
-  },
-  {
-   "k": "tool",
-   "t": "python3 - <<'EOF'\nimport json,wave\nc=json.load(open('captions.json'))\ndef t(word, nth=0):\n    k=0\n    for w in c:\n        if word in w['text']:\n            if k==nth: return w['startMs']\n            k+=1\n    return None\nfor w in [\"bell\",\"picture\",\"file\",\"underneath\",\"box\",\"towel\",\"clock\",\"window\",\"bent\",\"thumb\",\"folds\",\"cup\"]:\n    print(w,t(w))\nEOF"
-  },
   {
    "k": "res",
    "t": "bell 37160\npicture 195909\nfile 93780\nunderneath 101380\nbox 8420\ntowel 269349\nclock 374698\nwindow 34280\nbent 46820\nthumb 181929\nfolds 268369\ncup None"
@@ -178,6 +170,14 @@
   {
    "k": "tool",
    "t": "sleep 150; ls -la render.log; wc -c render.log; ls segments/*.mp4 | wc -l; pgrep -af \"python /opt/estudio/repo/motor/tools/render.py\" | cut -c1-60"
+  },
+  {
+   "k": "res",
+   "t": "-rw-rw-rw-+ 1 sesion sesion 0 Nov 10 14:36 render.log\n0 render.log\n139\n3580 sudo -n -H -u sesion -- env -i ESTUDIO_DATA=/opt/estudi\n3582 /opt/hostedtoolcache/node/20.20.2/x64/bin/claude -p --d\n21509 python /opt/estudio/repo/motor/tools/render.py .\n29964 /bin/bash -c source /opt/estudio/datos/brain/shell-sna"
+  },
+  {
+   "k": "tool",
+   "t": "for i in $(seq 1 18); do ls segments/*.mp4 | wc -l; sleep 30; done 2>&1 | tail -3; ls segments/*.mp4 | wc -l"
   }
  ],
  "maquinas": 1,
@@ -237,21 +237,21 @@
    {
     "k": "render",
     "n": "Render",
-    "seg": 969,
+    "seg": 1081,
     "pasadas": 3,
     "fin": false
    },
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 315,
+    "seg": 380,
     "pasadas": 1,
     "fin": false
    }
   ],
-  "total_s": 4032,
+  "total_s": 4097,
   "avatar_s": 1118,
-  "sin_avatar_s": 2915,
+  "sin_avatar_s": 2979,
   "cerrado": false
  }
 }
