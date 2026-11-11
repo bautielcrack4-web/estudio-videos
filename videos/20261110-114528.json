@@ -1,11 +1,11 @@
 {
  "vid": "20261110-114528",
- "titulo": "My Grandmother Walked Every Day Until 98 — The 5-Minute Japanese Morning Routine for Weak Legs",
+ "titulo": "My Grandmother Walked Every Day Until 98",
  "canal": "yokos-morning-legs",
- "estado": "listo",
- "actualizado": 1794343046.7664936,
+ "estado": "trabajando",
+ "actualizado": 1794368934.1988676,
  "creado": 1794322328.7042422,
- "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42893394757",
+ "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42954991092",
  "pasos": [
   {
    "k": "guion",
@@ -180,7 +180,7 @@
    "t": "El video está terminado. `final.mp4` (12,4 min, 1080p30, con voz, avatar, escenas y sonido), `meta.json` y `REPORTE.md` están en la carpeta del video. `validar.py --etapa final` da **OK** y el revisor revisó 25 cuadros sin encontrar fallas.\n\n**Lo que quedó:**\n- **Guion**: 9.968 caracteres en inglés, con el gancho de los 98 años, la prueba de levantarse sin manos, los cinco movimientos contados en "
   }
  ],
- "maquinas": 2,
+ "maquinas": 3,
  "extrema": "1",
  "ahorro": "",
  "etapas": {
