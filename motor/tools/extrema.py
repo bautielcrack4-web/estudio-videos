@@ -626,7 +626,7 @@ if __name__ == "__main__":
     try:
         _xd = os.path.join(_B, "extrema")       # ya hechas = hay al menos una pieza propia en la línea; si no entró ninguna, se vuelve a intentar (lo programado se reusa)
         _n = len(jl(_xd + "/capas.json", []) or []) + sum(1 for m in (jl(_xd + "/manifest.json", []) or []) if str(m.get("mp4", "")).startswith("extrema/xm"))
-        if _marca and os.path.exists(_xd + "/capas.json") and _n and os.path.exists(_xd + "/director.json"): log("las piezas ya estaban hechas"); sys.exit(0)
+        if _marca and os.path.exists(_xd + "/capas.json") and _n and jl(_xd + "/director.json", []): log("las piezas ya estaban hechas"); sys.exit(0)
         if _marca: os.makedirs(os.path.dirname(_marca), exist_ok=True); open(_marca, "w").write(str(os.getpid()))
         main()
     except Exception as e:      # nunca rompe el video: sin manifest, render.py usa el b-roll normal
