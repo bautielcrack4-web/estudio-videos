@@ -369,7 +369,7 @@ def main():
     a = sys.argv[1:]
     B = os.path.abspath(a[0] if a and not a[0].startswith("--") else os.getcwd()).replace("\\", "/").rstrip("/")
     tope = float(a[a.index("--tope") + 1]) if "--tope" in a else 0.20
-    nmax = int(a[a.index("--max") + 1]) if "--max" in a else 12
+    nmax = int(a[a.index("--max") + 1]) if "--max" in a else 18
     sin_render = "--sin-render" in a or not os.environ.get("GITHUB_ACTIONS")
     X = B + "/extrema"; os.makedirs(X, exist_ok=True)
     W = jl(B + "/captions.json", []); AV = jl(B + "/avatar_ranges.json", []) or []; SH = jl(B + "/shots_timed.json", []) or []
@@ -626,7 +626,7 @@ if __name__ == "__main__":
     try:
         _xd = os.path.join(_B, "extrema")       # ya hechas = hay al menos una pieza propia en la línea; si no entró ninguna, se vuelve a intentar (lo programado se reusa)
         _n = len(jl(_xd + "/capas.json", []) or []) + sum(1 for m in (jl(_xd + "/manifest.json", []) or []) if str(m.get("mp4", "")).startswith("extrema/xm"))
-        if _marca and os.path.exists(_xd + "/capas.json") and _n: log("las piezas ya estaban hechas"); sys.exit(0)
+        if _marca and os.path.exists(_xd + "/capas.json") and _n and os.path.exists(_xd + "/director.json"): log("las piezas ya estaban hechas"); sys.exit(0)
         if _marca: os.makedirs(os.path.dirname(_marca), exist_ok=True); open(_marca, "w").write(str(os.getpid()))
         main()
     except Exception as e:      # nunca rompe el video: sin manifest, render.py usa el b-roll normal

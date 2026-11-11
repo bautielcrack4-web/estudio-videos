@@ -420,7 +420,7 @@ def _caida(t, e, tb):
 
 sys.excepthook = _caida
 
-XM_TOPE = str(min(float(E.get("TOPE_EXTREMA") or 0.20), 0.20))
+XM_TOPE = str(min(float(E.get("TOPE_EXTREMA") or 0.80), 0.80))      # el director mira y corrige cada pieza: son más llamadas
 XM_LOG = os.path.join("/tmp", "extrema_" + VID + ".log")
 
 
@@ -637,8 +637,8 @@ def extrema_tarde():
 
 if XM_ON and st.get("xm_fondo") and not st.get("extrema"):
     if xm["p"] and xm["p"].poll() is None:      # los componentes ya están pagos: se esperan antes de cortarlos, con tope para que el video nunca se trabe
-        publicar("trabajando", {"nota": "edición extrema"}); _x0 = time.time(); log("extrema: el video está listo, espero los componentes (máx. 45 min)")
-        while xm["p"].poll() is None and time.time() - _x0 < 45 * 60 and time.time() - T0 < LIMITE - 40 * 60: time.sleep(10)
+        publicar("trabajando", {"nota": "edición extrema"}); _x0 = time.time(); log("extrema: el video está listo, espero los componentes (máx. 75 min)")
+        while xm["p"].poll() is None and time.time() - _x0 < 75 * 60 and time.time() - T0 < LIMITE - 40 * 60: time.sleep(10)
         log("extrema: terminaron tras %d s" % (time.time() - _x0) if xm["p"].poll() is not None else "extrema: no llegaron en el tope de espera")
     xm_fin()
 if XM_ON and not st.get("extrema"):
