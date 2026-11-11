@@ -445,7 +445,7 @@ def xm_fin(log_tail=True):
         log("extrema: no terminó a tiempo, el video sale sin ella")
     if log_tail and os.path.exists(XM_LOG):
         with open(XM_LOG, encoding="utf8", errors="replace") as f:
-            for _l in [l for l in f.read().splitlines() if "extrema:" in l][-14:]: log(tapar(_l)[:200])
+            for _l in [l for l in f.read().splitlines() if "extrema:" in l][-60:]: log(tapar(_l)[:200])
 
 
 def xm_lanzar():

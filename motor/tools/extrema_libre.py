@@ -198,6 +198,21 @@ def montar(B, T, G, fotos, clips):
 
 
 PUNTOS = (.22, .55, .9)
+VUELTAS = 2          # cuántas veces corrige una pieza después de mirarla
+
+
+def _volcar(X, T, S, NOTAS, log):
+    """Deja lo que el director vio y decidió (cuadros, notas, código) junto al video, para poder revisar su trabajo."""
+    try:
+        if not (os.environ.get("GH_TOKEN") and os.environ.get("GITHUB_REPOSITORY") and os.environ.get("VID")): return
+        import zipfile
+        z = "/tmp/director-%s.zip" % os.environ["VID"]
+        with zipfile.ZipFile(z, "w", zipfile.ZIP_DEFLATED) as Z:
+            Z.writestr("notas.json", json.dumps({"sistema": S, "notas": NOTAS}, ensure_ascii=False, indent=1))
+            for f in glob.glob(X + "/_ver/v*.jpg") + glob.glob(T + "/src/gen/*.tsx"): Z.write(f, os.path.basename(f))
+        r = subprocess.run(["gh", "release", "upload", "video-" + os.environ["VID"], z, "--repo", os.environ["GITHUB_REPOSITORY"], "--clobber"], capture_output=True, text=True, timeout=300)
+        log("lo que vio el director quedó junto al video" if r.returncode == 0 else "no pude dejar los cuadros del director: " + r.stderr.strip()[-120:])
+    except Exception as e: log("volcar:", type(e).__name__)
 
 
 def sacar_cuadros(T, X, G, log):
@@ -295,6 +310,7 @@ def sistema(B, X, T, GUION, HOJAS, fotos, caja, ia, log, SH, AV):
     g = {"id": "canal", "tipo": "full", "frames": 240, "startMs": 0, "endMs": 8000}
     for vuelta in range(2):                 # mira su propio sistema y lo corrige una vez
         montar(B, T, [g], fotos, {}); c = sacar_cuadros(T, X, [g], log); jpg = tira(B, X, g, AV, SH, fotos)
+        if jpg: open(X + "/_ver/v%d_canal.jpg" % vuelta, "wb").write(jpg)
         if not jpg:
             if vuelta: break
             v = {"nota": 1, "problemas": ["it does not render: " + str((c.get("canal") or {}).get("error") or c.get("_error") or "no frames")[:500]], "arreglo": "fix the error"}
@@ -376,40 +392,47 @@ def componer(B, X, T, W, AV, FT, fotos, clips, cara, caja, total, nmax, ia, log)
     if not G: return []
 
     # 4) MIRA lo que hizo y lo corrige: una vuelta de arreglo y un control final. Lo que no llega a 6 no entra al video.
-    def ronda(lote):
+    NOTAS = {}
+    def ronda(lote, vuelta):
         montar(B, T, G, fotos, clips); c = sacar_cuadros(T, X, lote, log); tiras = {}
         def una(g):
             jpg = tira(B, X, g, AV, SH, fotos); tiras[g["id"]] = jpg
-            if not jpg: g["nota"] = 1; g["ojo"] = {"nota": 1, "problemas": ["it does not render: " + str((c.get(g["id"]) or {}).get("error") or c.get("_error") or "no frames")[:500]], "arreglo": "fix the error"}; return
-            v = mirar(caja, ia, jpg, S_txt, g["idea"], g["tipo"] == "overlay", log, g["id"])
-            if v: g["nota"] = v["nota"]; g["ojo"] = v
-            else: g.setdefault("nota", 7)        # no se pudo mirar (tope o red): no se la castiga
+            if jpg: open(X + "/_ver/v%d_%s.jpg" % (vuelta, g["id"]), "wb").write(jpg)
+            if not jpg: g["nota"] = 1; g["ojo"] = {"nota": 1, "problemas": ["it does not render: " + str((c.get(g["id"]) or {}).get("error") or c.get("_error") or "no frames")[:500]], "arreglo": "fix the error"}
+            else:
+                v = mirar(caja, ia, jpg, S_txt, g["idea"], g["tipo"] == "overlay", log, g["id"])
+                if v: g["nota"] = v["nota"]; g["ojo"] = v
+                else: g.setdefault("nota", 7)        # no se pudo mirar (tope o red): no se la castiga
+            NOTAS.setdefault(g["id"], []).append({"vuelta": vuelta, "nota": g["nota"], "ojo": g.get("ojo")})
         with cf.ThreadPoolExecutor(6) as ex: list(ex.map(una, lote))
         return tiras
-    tiras = ronda(G)
-    log("primera mirada: " + " ".join("%s=%d" % (g["id"], g["nota"]) for g in G))
-    flojas = [g for g in G if g["nota"] < 8 and g.get("ojo")]
+    tiras = ronda(G, 1)
+    log("mirada 1: " + " ".join("%s=%d" % (g["id"], g["nota"]) for g in G))
     def arregla(g):
         i = g["id"]; f = T + "/src/gen/%s.tsx" % i; cod = open(f, encoding="utf8").read(); v = g["ojo"]; jpg = tiras.get(i)
         m = [{"role": "user", "content": PED[i]}, {"role": "assistant", "content": "```tsx\n%s\n```" % cod},
-             {"role": "user", "content": con_img("I rendered it and looked at it (3 frames, top to bottom%s). What is on screen: %s\nProblems:\n- %s\n\nWhat to do: %s\n\nReply with the complete corrected file in one ```tsx block." % (
+             {"role": "user", "content": con_img("I rendered it and looked at it (3 frames, top to bottom%s). What is on screen: %s\nProblems:\n- %s\n\nWhat to do: %s\n\nIf the idea asks for something that cannot be built with the real photos and clips, change the idea to one that can, and that looks finished. Reply with the complete corrected file in one ```tsx block." % (
                  ", already on top of the video frame it covers" if g["tipo"] == "overlay" else "", v.get("veo", ""), "\n- ".join(v["problemas"]) or "it is not good enough to publish", v["arreglo"]), [jpg] if jpg else [])}]
         shutil.copyfile(f, f + ".antes")
-        if programar(T, i, g["frames"], m, caja, ia, log): g["antes"] = g["nota"]; return g
+        if programar(T, i, g["frames"], m, caja, ia, log): g["antes"] = g["nota"]; g["ojo_antes"] = g["ojo"]; return g
         shutil.copyfile(f + ".antes", f); return None
-    if flojas:
+    for vuelta in range(2, 2 + VUELTAS):
+        flojas = [g for g in G if g["nota"] < 8 and g.get("ojo")]
+        if not flojas: break
         with cf.ThreadPoolExecutor(6) as ex: rehechas = [g for g in ex.map(arregla, flojas) if g]
-        if rehechas:
-            ronda(rehechas)
-            for g in rehechas:
-                f = T + "/src/gen/%s.tsx" % g["id"]
-                if g["nota"] < g["antes"]: shutil.copyfile(f + ".antes", f); g["nota"] = g["antes"]      # el arreglo la empeoró: vuelve la anterior
-            log("segunda mirada: " + " ".join("%s=%d(antes %d)" % (g["id"], g["nota"], g["antes"]) for g in rehechas))
+        if not rehechas: break
+        nuevas = ronda(rehechas, vuelta)
+        log("mirada %d: " % vuelta + " ".join("%s=%d(antes %d)" % (g["id"], g["nota"], g["antes"]) for g in rehechas))
+        for g in rehechas:
+            f = T + "/src/gen/%s.tsx" % g["id"]
+            if g["nota"] < g["antes"]: shutil.copyfile(f + ".antes", f); g["nota"] = g["antes"]; g["ojo"] = g["ojo_antes"]      # el arreglo la empeoró: vuelve la anterior
+            else: tiras[g["id"]] = nuevas.get(g["id"])
+    _volcar(X, T, S, NOTAS, log)
     for f in glob.glob(T + "/src/gen/*.antes"): os.remove(f)
     fuera = [g for g in G if g["nota"] < 6]
     for g in fuera: log(g["id"], "queda afuera (nota %d): %s" % (g["nota"], "; ".join((g.get("ojo") or {}).get("problemas") or [])[:200]))
     G = [g for g in G if g["nota"] >= 6]
-    res = [{k: v for k, v in g.items() if k not in ("ojo", "antes")} for g in G]
+    res = [{k: v for k, v in g.items() if k not in ("ojo", "antes", "ojo_antes")} for g in G]
     os.makedirs(X + "/gen", exist_ok=True)
     for g in res: shutil.copyfile(T + "/src/gen/%s.tsx" % g["id"], X + "/gen/%s.tsx" % g["id"])
     json.dump(res, open(X + "/director.json", "w", encoding="utf8"), ensure_ascii=False, indent=1)     # otra máquina las reusa: no se paga dos veces
