@@ -66,7 +66,7 @@ def ia(caja, msgs, reserva, max_tokens=9000, pensar=True, js=True, timeout=400, 
     try:
         body = {"model": _cfg.leer().get("modelo") or "deepseek-flash", "max_tokens": max_tokens, "temperature": 0.9, "messages": msgs}
         if js: body["response_format"] = {"type": "json_object"}
-        body["thinking"] = {"type": "disabled"}       # 10-nov: sin razonamiento. Pensando daba vueltas hasta llenar el cupo y no entregaba nada
+        if pensar != "razona": body["thinking"] = {"type": "disabled"}       # sólo razona quien lo pide explícito (las correcciones del director). 10-nov: sin razonamiento. Pensando daba vueltas hasta llenar el cupo y no entregaba nada
         if "flash" not in body["model"]: body["model"] = "deepseek-flash"        # edición extrema va siempre en flash
         try: k = _cfg.clave("deepseek")
         except SystemExit: k = ""

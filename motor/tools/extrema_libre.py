@@ -21,7 +21,8 @@ TEC = """Technical facts of the project (the only fixed things):
 - Stock video clips are in public/ too: <OffthreadVideo muted src={staticFile('clips/s123.mp4')} /> from remotion (it is a video element you can layer, mask, transform and place in CSS 3D like an image).
 - Write every photo and clip id literally in the code, never build ids by computing them.
 - Everything is a pure function of useCurrentFrame(): no CSS animations or transitions, no Math.random (use random('seed') from remotion), no Date, no setTimeout.
-- Any text on screen is in the language of the transcript."""
+- Any text on screen is in the language of the transcript, whatever language these instructions or the reviewer's notes are in. Never show file names or photo ids on screen.
+- Never draw a hand, a finger, a person or an object out of shapes: if it is not in a photo or a clip, it is not in the scene."""
 
 
 def usuario(): return os.environ.get("ESTUDIO_USUARIO_SESION") or ""
@@ -154,11 +155,11 @@ def _bloque(c):
     return bl.group(1) if bl else ""
 
 
-def programar(T, i, frames, msgs, caja, ia, log, vueltas=2):
+def programar(T, i, frames, msgs, caja, ia, log, vueltas=2, pensar=True):
     """Pide el archivo, lo compila y lo prueba; si falla, le devuelve el error. Devuelve True si quedó un archivo que corre."""
     f = T + "/src/gen/%s.tsx" % i
     for n_ in range(vueltas):
-        try: c = ia(caja, msgs, RES_CODIGO, 42000, True, False, 900, 1)
+        try: c = ia(caja, msgs, RES_CODIGO, 42000, pensar, False, 900, 1)
         except RuntimeError as x:
             if str(x) == "tope": log(i, "no alcanzó el tope de gasto"); return False
             log(i, "sin respuesta:", x); continue
@@ -198,7 +199,7 @@ def montar(B, T, G, fotos, clips):
 
 
 PUNTOS = (.22, .55, .9)
-VUELTAS = 2          # cuántas veces corrige una pieza después de mirarla
+VUELTAS = 3          # cuántas veces corrige una pieza después de mirarla
 
 
 def _volcar(X, T, S, NOTAS, log):
@@ -265,7 +266,7 @@ def tira(B, X, g, AV, SH, fotos):
 OJO = ("You are the art director of this channel, reviewing frames of a piece BEFORE it is rendered. The image shows 3 frames of it, top to bottom (early, middle, late), exactly as the viewer will see them%s.\n\n"
        "THE CHANNEL'S VISUAL SYSTEM:\n%s\n\nWHAT THIS PIECE WAS MEANT TO BE:\n%s\n\n"
        "First write what is ACTUALLY on the frames. Then be a hard reviewer and list every concrete defect you can see: text that is unreadable, tiny, cut off, overlapping or outside the frame; a photo that is small, dark, stretched, blank or missing; a frame that is empty, flat or mostly one colour; nothing changing between the three frames; the presenter's face covered; a generic template look (gradient background, glass or rounded UI card, neon glow) instead of the channel's own system; anything that looks broken. Do not be polite: a piece you would not be proud to publish is not an 8.\n"
-       'Return JSON only: {"veo":"...","problemas":["..."],"nota":1-10 (8 = publish as it is),"arreglo":"precise instructions for the programmer: what to change, where, how big"}')
+       'Write in English. Return JSON only: {"veo":"...","problemas":["..."],"nota":1-10 (8 = publish as it is),"arreglo":"precise instructions for the programmer: what to change, where, how big"}')
 
 
 def mirar(caja, ia, jpg, S_txt, idea, capa, log, i):
@@ -414,7 +415,7 @@ def componer(B, X, T, W, AV, FT, fotos, clips, cara, caja, total, nmax, ia, log)
              {"role": "user", "content": con_img("I rendered it and looked at it (3 frames, top to bottom%s). What is on screen: %s\nProblems:\n- %s\n\nWhat to do: %s\n\nIf the idea asks for something that cannot be built with the real photos and clips, change the idea to one that can, and that looks finished. Reply with the complete corrected file in one ```tsx block." % (
                  ", already on top of the video frame it covers" if g["tipo"] == "overlay" else "", v.get("veo", ""), "\n- ".join(v["problemas"]) or "it is not good enough to publish", v["arreglo"]), [jpg] if jpg else [])}]
         shutil.copyfile(f, f + ".antes")
-        if programar(T, i, g["frames"], m, caja, ia, log): g["antes"] = g["nota"]; g["ojo_antes"] = g["ojo"]; return g
+        if programar(T, i, g["frames"], m, caja, ia, log, 2, "razona"): g["antes"] = g["nota"]; g["ojo_antes"] = g["ojo"]; return g
         shutil.copyfile(f + ".antes", f); return None
     for vuelta in range(2, 2 + VUELTAS):
         flojas = [g for g in G if g["nota"] < 8 and g.get("ojo")]
@@ -429,9 +430,9 @@ def componer(B, X, T, W, AV, FT, fotos, clips, cara, caja, total, nmax, ia, log)
             else: tiras[g["id"]] = nuevas.get(g["id"])
     _volcar(X, T, S, NOTAS, log)
     for f in glob.glob(T + "/src/gen/*.antes"): os.remove(f)
-    fuera = [g for g in G if g["nota"] < 6]
+    fuera = [g for g in G if g["nota"] < 5]
     for g in fuera: log(g["id"], "queda afuera (nota %d): %s" % (g["nota"], "; ".join((g.get("ojo") or {}).get("problemas") or [])[:200]))
-    G = [g for g in G if g["nota"] >= 6]
+    G = [g for g in G if g["nota"] >= 5]
     res = [{k: v for k, v in g.items() if k not in ("ojo", "antes", "ojo_antes")} for g in G]
     os.makedirs(X + "/gen", exist_ok=True)
     for g in res: shutil.copyfile(T + "/src/gen/%s.tsx" % g["id"], X + "/gen/%s.tsx" % g["id"])
