@@ -2,8 +2,8 @@
  "vid": "20261110-114528",
  "titulo": "My Grandmother Walked Every Day Until 98",
  "canal": "yokos-morning-legs",
- "estado": "trabajando",
- "actualizado": 1794372977.606964,
+ "estado": "listo",
+ "actualizado": 1794372993.8085527,
  "creado": 1794322328.7042422,
  "run": "https://github.com/bautielcrack4-web/estudio-videos/actions/runs/42959258065",
  "pasos": [
@@ -251,7 +251,7 @@
    {
     "k": "armado",
     "n": "Armado",
-    "seg": 66298,
+    "seg": 70164,
     "pasadas": 3,
     "fin": false
    },
@@ -272,17 +272,16 @@
    {
     "k": "entrega",
     "n": "Entrega",
-    "seg": 13,
+    "seg": 12,
     "pasadas": 1,
     "fin": true
    }
   ],
-  "total_s": 49130,
+  "total_s": 51063,
   "avatar_s": 816,
-  "sin_avatar_s": 48314,
+  "sin_avatar_s": 50247,
   "cerrado": true
  },
  "final": "https://github.com/bautielcrack4-web/estudio-videos/releases/download/video-20261110-114528/My-Grandmother-Walked-Every-Day-Until-98.mp4",
- "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261110-114528",
- "nota": "edición extrema"
+ "release": "https://github.com/bautielcrack4-web/estudio-videos/releases/tag/video-20261110-114528"
 }
